@@ -1,35 +1,36 @@
 #Indicators & Oscillators
 
-**Trade like the professionals!**
+**Handeln wie die Profis!**
 
-AgenaTrader provides you with a variety of powerful indicators that will assist you with your individual market analysis.
+AgenaTrader stellt Ihnen eine Vielzahl von leistungsstarken Indikatoren zur Verfügung, die Sie bei Ihrer individuellen Marktanalyse unterstützen.
 
-Indicators can be used in
--   Charts
--   Condition Escort
+Indikatoren können Sie verwenden
+-   in Charts
+-   im Condition Escort
 -   AgenaScript
 
-For each indicator you will find a brief description of its interpretation, operation and functionality, a graphical representation on a chart and further technical details for its usage with AgenaScript.
+Für jeden Indikator finden Sie eine kurze Beschreibung der Funktionsweise, Wissenswertes zur Interpretation, eine Darstellung im Chart und viele techn. Details zur Verwendung in AgenaScript
 
 ![indicators](./media/image1.png)
 
 ##Accumulation/Distribution (ADL)
-### Description
-The Accumulation Distribution LevelLine (ADL) indicator was developed by Marc Chaikin. The ADL is a volume indicator that represents the money flow. The ADL is an improvement of the On-Balance Volume Indicator created by Joe Granville, which was actually one of the very first volume indicators.
+### Beschreibung
+Das Konzept des Indikators Accumulation Distribution Line (ADL) wurde von Marc Chaikin entwickelt. Der ADL ist ein Volumen Indikator. Er zeigt die Geldströme an.
+Der ADL ist eine Weiterentwicklung des On Balance Volume (OBV). Das OBV von Joe Granville war einer der ersten Volumen Indikatoren.
 
 ### Interpretation
-There are two interpretations of the ADL:
-
-Confirmation of a trend or
+Es gibt zwei Varianten der Interpretation des ADL.
 
 1.  The depiction of *divergence*
+2. die Ausbildung einer Divergenz.
 
-If the ADL is rising in an uptrend, then money is flowing in the direction of the rising prices, thus the uptrend is confirmed. If the ADL is falling in a downward trend, money is being taken out of the stock, thus confirming the downtrend.
+Steigt in einem Aufwärtstrend der ADL an, fließt Geld in Richtung der steigenden Kurse – der Aufwärtstrend wird bestätigt.
+Fällt der ADL in einem Abwärtstrend, wird Geld aus der Aktie herausgezogen. Der Abwärtstrend wird bestätigt.
 
-### Further information
+### Weitere Informationen
 [vtadwiki.vtad.de](http://vtadwiki.vtad.de/index.php/Accumulation_Distribution_Linie)
 
-### Usage
+### Verwendung
 ```cs
 ADL()
 ADL(IDataSeries input)
@@ -37,36 +38,36 @@ ADL()[int barsAgo]
 ADL(IDataSeries input)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using the method with an index (e.g. ADL()\[int barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. ADL()\[int barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![Accumulation/Distribution (ADL)](./media/image2.png)
 
-### Example
+### Beispiel
 ```cs
-//Testing the direction of the ADL
+//Prüfung auf die Richtung des ADL
 if (IsSerieRising(ADL())
 Print("The ADL indicator is rising.");
 ```
 
 ##Adaptive Price Zone (APZ)
-### Description
-This is a technical indicator developed by Lee Leibfarth in 2006. The Adaptive Price Zone is a volatility-based indicator shown as a set of bands laid over a price chart. The APZ, which is particularly useful in non-trending, choppy markets, was developed with the aim of helping traders to find potential turning points in the markets. The APZ is based on a short-term, double-smoothed EMA that reacts rapidly to price changes with reduced lag. It works in the following way: the bands create a channel that envelopes the average price and tracks price changes. If the price crosses over the upper band of the zone, this creates an opportunity for the trader to trade a reversal. For the lower band, the reverse is true.
-
+### Beschreibung
+Der Adaptive Preis Zone Indikator wurde 2006 in dem S&C Artikel "Trading With An Adpative Price Zone" von Lee Leibfarth beschrieben. Es ist ein auf Unbeständigkeit basierender technischer Indikator, der dazu benutzt werden kann, Punkte zu identifizieren, an denen der Markt seine Richtung umkehren kann. Er ist eine Reihe von Bändern, die auf einem doppelt geglätteten exponentiell gleitenden Durchschnitt basieren. Die Bänder bilden einen Kanal, der den Durchschnittspreis umgibt und die Preisschwankungen verfolgt. Er bewährt sich besonders in volatilen Märkten. Überquert der Preis das obere Band der Zone kann dies eine Gelegenheit anzeigen, in Erwartung einer Umkehr zu verkaufen. Andererseits zeigt eine Überschreitung der unteren Begrenzung eine Gelegenheit an, in Erwartung einer Umkehr zu kaufen.
 
 ### Interpretation
-The bigger the price movement, the greater the distance between the upper and lower band will be. The smaller the price movement, the smaller the distance between the bands. More widely spaced bands will indicate increased instability and volatility, whereas closely tuned bands will display reduced volatility. If the price action breaks through the upper or lower band then the APZ will tend to return to its statistical average. This will lead to trading opportunities where the market may try to compensate for imbalances. If the price overshoots the bands for example, as mentioned in the description, then this will present you with a trading opportunity in the opposite direction.
+The bigger the price movement, the greater the distance between the upper and lower band will be. The smaller the price movement, the Je größer die Preisbewegung, desto größer wird der Abstand zwischen dem oberen und dem unteren Band. Je kleiner die Preisbewegung, desto geringer ist der Abstand zwischen den Bändern. Weiter auseinanderliegende Bänder signalisieren gesteigerte Unbeständigkeit, enger zusammenliegende Bänder zeigen eine reduzierte Unbeständigkeit an.
+Wenn die Preisbewegung das obere oder untere Band durchbricht, tendiert die APZ dazu, zu ihrem statistischen Durchschnitt zurückzukehren. Dieser Versuch, das Ungleichgewicht auszugleichen, wenn der Preis über die Bänder hinausschießt, führt zu Handelsgelegenheiten. Daher liefert eine Überschreitung des oberen Bandes eine Verkaufsgelegenheit, während eine Unterschreitung des unteren Bandes eine Kaufgelegenheit bedeutet. (Quelle: www.etoro.de)
 
-### Further information
+### Weitere Informationen
 <http://www.investopedia.com/articles/trading/10/adaptive-price-zone-indicator-explained.asp>
 
-### Usage
+### Verwendung
 ```cs
 APZ(double barPct, int period)
 APZ(IDataSeries input, double barPct, int period)
@@ -78,41 +79,45 @@ APZ(double barPct, int period).Lower[int barsAgo]
 APZ(IDataSeries input, double barPct, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using the method with an index (e.g. **APZ**(2, 20)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **APZ**(2, 20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-barPct Standard deviation
+barPct Standardabweichung
 
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
 period Number of bars included in the calculation
 
-### Visualization
+### Darstellung
 ![Adaptive Price Zone (APZ)](./media/image3.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the current values for the upper and lower band of a 20-period APZ
+//Ausgabe des aktuellen Wertes für das obere und untere Band eines 20 Perioden APZ
 Print("Value for the upper APZ band : " + APZ(2, 20).Upper[0]);
 Print("Value for the lower APZ band: " + APZ(2, 20).Lower[0]);
 ```
 
 ##Aroon
 ### Description
-Aroon, an indicator system that determines whether or not a stock is trending and how strong this trend is, was developed by Tushar Chande in 1995. Its name is derived from the Sanskrit “dawn’s early light”. Chande used this name to signify the indicators’ purpose of revealing the start of a new trend. These indicators measure the number of periods since the last time the price recorded an x-day high or low. There are two distinct indicators: the Aroon-Up and Aroon-Down, whereby a 50-day Aroon-Up measures the number of days since a 50-day high, and a 50-day Aroon-Down measures the days since a 50-day low. This makes the Aroon indicators significantly different from the usual momentum oscillators, which concentrate on price in relation to time. What makes Aroon indicators unique is that they focus on time in relation to price. Aroon indicators can be used to detect emerging trends, identify consolidations, anticipate reversals and define correction periods.
+Der Aroon, 1995 von Tushar Chande entwickelt, ist ein Indikator der technischen Analyse und dient der Trendbestimmung eines Kurses.
+Der AROON besteht aus zwei Indikatorlinien - dem AROON-UP und dem AROON-DOWN. 
+Die AROON-UP Linie misst die Tage, die seit dem letzten Kurshoch vergangen sind, die AROON-DOWN Linie misst die Tage, die seit dem letzten Kurstief vergangen sind. Die Linien oszillieren in einer Skala zwischen 0 und 100. 
+Bei einem neuen 14-Tage Hoch nimmt der 14er AROON-UP den Wert 100 an, analog dazu nimmt bei einem neuen 14-Tage Tief der 14er AROON-DOWNs den Wert 100 an.
+Beim AROON-UP subtrahiert man den Berechnungszeitraum (n) mit der Anzahl der Tage seit dem letzten Hoch (TsH) und dividiert diesen Wert durch n und multipliziert diesen wiederrum mit 100. (Quelle: VTAD)
 
 ### Interpretation
-The Aroon indicators fluctuate above/below a centerline (50) and are bound between 0 and 100. These three levels are important for interpretation. At its most basic, the bulls have the edge when Aroon-Up is above 50 and Aroon-Down is below 50. This indicates a greater propensity for new x-day highs than lows. The converse is true for a downtrend. The bears have the edge when Aroon-Up is below 50 and Aroon-Down is above 50.
+Wenn der AROON-UP oberhalb des AROON-DOWN notiert und sich die Linie im Extrembereich zwischen 80 und 100 befindet, signalisiert dies einen Aufwärtstrend. Ein Abwärtstrend wird signalisiert, wenn der AROON-DOWN über dem AROON-UP notiert und sich die Linie im Extrembereich zwischen 20 und 0 befindet.
+In der Standardeinstellung liegt die Signallinie also bei 80. Der Grenzwert von 70 wurde von Tusher Chande vorgegeben, aber der kann auch verschoben werden, so z.B. benutzt Erich Florek den Wert 90. Befinden sich die beiden Indikatorlinien im neutralen Bereich - also unterhalb der Signallinie, deutet dies auf eine Seitwärtsbewegung hin. Trendfolger interessieren also nur Indikatorstände im Extrembereich oberhalb der Signallinie.
+Ein Überkreuzen der beiden Linien ist ein erstes Anzeichen für einen möglichen Trendwechsel. Befindet sich einer der Indikatoren in der Extremzone, gilt der Trend als bestätigt. Je höher die jeweilige AROON-Linie notiert, desto kontinuierlicher verläuft ein Trend. Der AROON gibt über die Trendstärke keine Auskunft.
 
-A surge to 100 indicates that a trend may be emerging. This can be confirmed with a decline in the other Aroon indicator. For example, a move to 100 in Aroon-Up combined with a decline below 30 in Aroon-Down shows upside strength. Consistently high readings mean prices are regularly hitting new highs or new lows for the specified period. Prices are moving consistently higher when Aroon-Up remains in the 70-100 range for an extended period. Conversely, consistently low readings indicate that prices are seldom hitting new highs or lows. Prices are NOT moving lower when Aroon-Down remains in the 0-30 range for an extended period. This does not mean prices are moving higher though. For that we need to check Aroon-Up.
-
-### Further information
+### Weitere Informationen
 <http://stockcharts.com/school/doku.php?id=chart\_school:technical\_indicators:aroon>
 
-### Usage
+### Verwendung
 ```cs
 Aroon(int period)
 Aroon(IDataSeries input, int period)
@@ -124,34 +129,35 @@ Aroon(int period).Down[int barsAgo]
 Aroon(IDataSeries input, int period).Down[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Aroon**(20)\[**int** barsAgo\] ) the value of the indicator will be displayed for the last referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B. **Aroon**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars taken into consideration when calculating the values
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Aroon](./media/image4.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current up or down values for the 20 period Aroon
+//Ausgabe des aktuellen Up- und Down-Wertes für einen 20 Perioden Aroon
 Print("Current value for Aroon Up is : " + Aroon(20).Up[0]);
 Print("Current value for Aroon Down is: " + Aroon(20).Down[0]);
 ```
 
 ## Aroon Oscillator
-### Description
-This oscillator is calculated by subtracting the Aroon-Down from the Aroon-Up. Usually, these two indicators are plotted next to each other for easy comparison, but traders can also view the difference between the two indicators using the Aroon oscillator, which can fluctuate between -100 and +100, with zero as the middle line. When the oscillator is positive, this indicates a bullish trend bias, whilst when the oscillator is negative, this shows a bearish trend bias. Chartists also have the option to extend the bull-bear threshold to spot stronger signals.
+### Beschreibung
+Der Arron Oszillator ist ein trendfolgender Indikator, der auf dem Konzept des Aroon Indikators ("Aroon Up" und "Aroon Down") aufbaut. Er misst die Stärke eines Trendes und die Wahrscheinlichkeit dafür, dass dieser sich fortsetzt.
+Der Aroon Oszillator berechnet sich aus der Substraktion Aroon Down von Aroon Up. Ergebnisse über der Null-Linie zeigen an, dass ein Aufwärtstrend vorliegt , Werte unter Null stehen für einen aktuellen Abwärtstrend.
 
 ### Interpretation
-The Aroon Oscillator is ideally used as a trend filter and trend strength indicator. It is used analogously to the ADX Indicator.
+Der Arron Oszillator eignet sich als Trendfilter- und Trendstärke-Indikator. Er wird analog zum Average Directional Movement Indikator (ADX) verwendet.
 
-### Usage
+### Verwendung
 ```cs
 AroonOscillator(int period)
 AroonOscillator(IDataSeries input, int period)
@@ -159,41 +165,37 @@ AroonOscillator(int period)[int barsAgo]
 AroonOscillator(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index such as (**AroonOcsillator**(20)\[**int** barsAgo\] ), the value of the indicator will be outputted for the bar that was referenced.
+Bei Verwendung der Methode mit einem Index (**AroonOcsillator**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars taken into consideration for the calculations
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Aroon Oscillator](./media/image5.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the current value for a 20 period Aroon Oscillator
+//Ausgabe des aktuellen Wertes für einen 20 Perioden Aroon Oszillator
 Print("Value for the oscillator is: " + AroonOscillator(20)[0]);
 ```
 
 ##Average Directional Index (ADX)
-### Description
-The ADX is part of a group of directional movement indicators that make up a trading system developed by Welles Wilder: the Average Directional Index, Minus Directional Indicator (-DI) and Plus Directional Indicator (+DI). Wilder designed ADX with daily prices and commodities in mind; however, these indicators can also be applied to stocks. The Average Directional Index measures the trend strength without taking trend direction into account, while the -DI and +DI complement the ADX by defining the trend direction. When used together, traders can find out both the direction and the strength of the trend.
-
-Wilder talks about the Directional Movement indicators in his 1978 book, New Concepts in Technical Trading Systems, which also features details of Average True Range (ATR), the Parabolic SAR system and the RSI. Although he developed them before the computer age, Wilder’s indicators are extremely detailed in their calculation and are still equally effective today.
+### Beschreibung
+Der Average Directional Movement Index ADX ist ein Indikator der technischen Analyse und dient der Trendstärkebestimmung eines Kurses. Er wurde von Welles Wilder 1978 entwickelt und in seinem Buch „New Concepts in Technical Trading Systems“ veröffentlicht. (Quelle: Wikipedia)
 
 
 ### Interpretation
-The Average Directional Index (ADX) is used to measure the strength or weakness of a trend, not the actual direction. Directional movement is defined by +DI and -DI. In general, the bulls have the edge when +DI is greater than -DI, while the bears have the edge when -DI is greater. Crosses of these directional indicators can be combined with ADX for a complete trading system.
+Der ADX zeigt ausschließlich die Stärke eines Trends und nicht die Richtung. So deutet ein steigender ADX auf eine Trendphase und ein fallender ADX auf eine trendlose Phase hin. Viele Experten messen hierbei der Bewegungsrichtung oftmals größerer Bedeutung zu, als seiner absoluten Höhe. Zieht man die Höhe des ADX mit in Betracht, dann stehen im Allgemeinen Werte über 15 für eine Trendphase und Werte unterhalb für eine trendlose Phase.
 
-It should be kept in mind that Wilder was a commodity and currency trader. The examples in his books are based on these instruments, not stocks. This does not mean his indicators cannot be used with stocks. Some stocks have price characteristics similar to commodities, which tend to be more volatile with short and strong trends. Stocks with low volatility may not generate signals based on Wilder's parameters. Chartists will likely need to adjust the indicator settings or the signal parameters according to the characteristics of the security.
-
-### Further information
+### Weitere Informationen
 <http://de.wikipedia.org/wiki/Average\_Directional\_Movement\_Index>
 
-### Usage
+### Verwendung
 ```cs
 ADX(int period)
 ADX(IDataSeries input, int period)
@@ -201,34 +203,35 @@ ADX(int period)[int barsAgo]
 ADX(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ADX**(20)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **ADX**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculation
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Average Directional Index (ADX)](./media/image6.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value of a 20 period ADX
+//Ausgabe des aktuellen Wertes eines 20 Perioden ADX
 Print("Value of the ADX: " + ADX(20)[0]);
 ```
 
 ##Average Directional Movement Rating (ADXR)
-### Description
-The ADXR is the ADX indicator plus the ADX from n days ago divided by 2. Written as an equation, it looks like this: (current ADX + ADX n days ago) / 2.
+### Beschreibung
+Der Indikator Average Directional Movement Rating (ADXR) entspricht dem aktuellen ADX addiert mit dem ADX von vor n Tagen geteilt durch 2.
+( aktueller ADX + ADX vor n Tagen ) / 2
 
 ### Interpretation
-The oscillator moves along a guiding line that typically has a value of 20. When the ADXR rises above 20, a trend exists. If the ADXR is below 20, no trend exists and the market is moving sideways.
-Welles Wilder recommends buying into the market at a value of 25 and higher, and holding the position as long as the value remains above 20.
+Der Oszillator bewegt sich um eine Hilfslinie, die typischerweise auf dem Wert 20 liegt. Wenn der ADXR über 20 steigt, liegt ein Trend vor. Fällt der ADXR unter 20, existiert kein Trend, der Markt tendiert seitwärts.
+Welles Wilder empfiehlt den Markt bei einem ADXR-Wert von 25 und größer zu kaufen, und solange der Wert über 20 bleibt, die Stücke zu halten.
 
-### Usage
+### Verwendung
 ```cs
 ADXR(int interval, int period)
 ADXR(IDataSeries input, int interval, int period)
@@ -236,45 +239,47 @@ ADXR(int interval, int period)[int barsAgo]
 ADXR(IDataSeries input, int interval, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ADXR**(10, 14)\[**int** barsAgo\]), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **ADXR**(10, 14)\[**int** barsAgo\]) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Input Eingangsdatenreihe für den Indikator
 
-interval Interval between the first ADX value and the current ADX value
+interval Intervall zwischen dem ersten ADX-Wert und dem aktuellen ADX-Wert
 
-period Number of bars included in the calculation
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Average Directional Movement Rating (ADXR)](./media/image7.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value of the ADXR
+//Ausgabe des aktuellen Wertes des ADXR
 Print("Value of the ADXR: " + ADXR(10, 14)[0]);
 ```
 
 ##Average True Range (ATR)
-### Description & Interpretation
-The Average True Range (ATR), which was developed by J. Welles Wilder, is an indicator that measures volatility. As is true for most of his indicators, Wilder designed the ATR with commodities and daily prices in mind. Commodities are often more volatile than stocks, and frequently experience gaps and limit moves, which happen when a commodity opens up or down its maximum allowed move for the session. A volatility formula that was based on the high-low range only would be unable to capture volatility from gap or limit moves. Wilder, therefore, developed the Average True Range to capture this "missing" volatility. Keep in mind that ATR does not provide an indication of price direction, but merely volatility.
+### Beschreibung & Interpretation
+Die True Range (TR) - und ihre geglättete Variante, die Average True Range (ATR) - wurde von Welles Wilder 1978 in seinem Buch "New Concepts in Technical Trading Systems" vorgestellt. Die ATR wird auch "Wilders Volatility" genannt. Wilder suchte nach einer Möglichkeit, die Volatilität der Rohstoff- und Terminmärkte in einem Indikator darzustellen.
 
-The ATR is featured in Wilder’s 1978 book, New Concepts in Technical Trading Systems, which also goes into detail about the Parabolic SAR, RSI and the Directional Movement Concept (ADX). Despite having been developed before the computer age, Wilder's indicators are equally functional today and remain extremely popular.
+Laut Definition von Wilder ist die True Range = "wahre Handelsspanne" das Maximum aus folgenden drei Bedingungen:
 
+1. Der heutigen Handelsspanne (Tagestief bis Tageshoch), oder
+2. der Handelsspanne zwischen dem Schlusskurs von gestern und dem Hoch von heute, oder
+3. der Handelsspanne zwischen dem Schlusskurs von gestern und dem Tief von heute.
 
-The starting point for Wilder was a concept called **True Range (TR)**, which is defined as the greatest of the following:
--   Method 1: current high minus the current low
--   Method 2: current high minus the previous close (absolute value)
--   Method 3: current Low minus the previous close (absolute value)
+Insbesondere mit Bedingung 2 und 3 werden Kurslücken (Gaps) in stark volatilen Märkten berücksichtigt.
 
-Absolute values are used for ensuring positive numbers, since Wilder was interested in measuring the distance between two points, not the direction. If the current period's high is above the prior period's high and the low is below the prior period's low, then the current period's high-low range will be used as the True Range. This is an outside day that would use method 1 to calculate the TR, and is quite straightforward. Methods 2 and 3 are used whenever there is a gap or inside day. A gap occurs when the previous close is greater than the current high (indicating a potential gap down or limit move) or the previous close is lower than the current low (indicating a potential gap up or limit move). The image below shows examples of when methods 2 and 3 are appropriate.
+Um die Average True Range zu erhalten, wird die True Range geglättet, sprich mit einem simplen gleitenden Durchschnitt (SMA) versehen. Laut Wilder ergibt die Glättung um 14 Tage den besten Volatilitäts-Indikator. (Quelle: VTAD)
 
-### Further information
+Die ATR wird in vielfältigster Weise zur Volatilitätsbestimmung und insbesondere in Stopp-Strategien verwendet. Zur Bestimmung der Trendstärke ist die Volatilität allein nicht hinreichend, weshalb die ATR hierzu als Volatilitätsfilter in Kombination mit anderen Indikatoren verwendet werden muß.
+
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Average\_True\_Range>
 
-### Usage
+### Verwendung
 ```cs
 ATR(int period)
 ATR(IDataSeries input, int period)
@@ -282,33 +287,35 @@ ATR(int period)[int barsAgo]
 ATR(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ATR**(14)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index(z.B. **ATR**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculation
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Average True Range (ATR)](./media/image8.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value of a 14 period ATR
+//Ausgabe des aktuellen Wertes eines 14 Perioden ATR
 Print("The current ATR value is: " + ATR(14)[0]);
 ```
 
 ##Balance of Power (BOP)
-### Description
-The developer of the Balance of Power indicator was Igor Livshin, who came up with the BOP in August 2001. The BOP indicator represents the strength of the buyers (bulls) vs. the sellers (bears), and oscillates between -100 and 100. The calculation of the BOP = (close - open) / (high - low).
+### Beschreibung
+Der Balance of Power (BOP) wurde von Igor Livshin im August 2001 in der Ausgabe des "Stocks and Commodities Magazine" beschrieben.
+Der BOP-Indikator gibt die Stärke der Käufer (Bullen) gegenüber den Verkäufern (Bären) an. Er oszilliert zwischen den Werten -100 und 100.
+BOP=(Close-Open) / (High-Low)
 
 ### Interpretation
-A directional change of the BOP can be interpreted as a warning signal and will generally be followed by a price change.
+Eine Richtungsänderung des BOP kann als Warnsignal aufgefasst werden und zieht oftmals eine Preisänderung nach sich.
 
-### Usage
+### Verwendung
 ```cs
 BOP(int smooth)
 BOP(IDataSeries input, int smooth)
@@ -316,102 +323,130 @@ BOP(int smooth)[int barsAgo]
 BOP(IDataSeries input, int smooth)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **BOP**(5)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **BOP**(5)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-smooth Settings for the smoothing
+smooth Einstellung zur Glättung
 
-### Visualization
+### Darstellung
 ![Balance of Power (BOP)](./media/image9.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the BOP with a smoothing of 5 periods
+//Ausgabe des Wertes für die Balance of Power mit einer Glättung von 5 Perioden
 Print("The Balance of Power value is: " + BOP(5));
 ```
 
 ##Bollinger Bands
 ### Description & Interpretation
-Bollinger Bands®, which were developed by John Bollinger, are volatility bands that are placed above and below a moving average. The volatility is based on the standard deviation, which fluctuates as volatility increases and decreases. An increase in volatility causes the bands to automatically widen, and a decrease in volatility causes them to automatically narrow. The Bollinger Bands’ dynamic nature means that they can also be used on different securities with the standard settings. When it comes to signals, Bollinger Bands can be used to identify M-Tops and W-Bottoms, or for determining a trend’s strength.
+Die Bollinger Bands (BB) wurden von John Bollinger 1983 entwickelt. Bollinger Bänder sind Kanallinien, die in und um die Preisstruktur in einem Chart gezeichnet werden. Der Unterschied zwischen Prozentbändern (Envelopes) und Bollinger Bändern liegt in der Volatilität. Prozentbänder verlaufen in einem konstanten Abstand zum Preis. Bollinger Bänder hingegen berücksichtigen die 20-Tage-Volatilität (in der Standardeinstellung). In Phasen geringer Volatilität liegen die Bänder eng am Preis, steigt die Volatilität an, weiten sich die beiden Bänder aus.
 
-**Bollinger Bands are made up of a middle band with two outer bands.** The middle band is a simple moving average that is normally set to 20 periods. The reason a simple moving average is used is that the standard deviation formula also uses a simple moving average. The look-back period for the standard deviation is the same as for the simple moving average. The outer bands are generally set 2 standard deviations above and below the middle band, but settings can be adjusted to suit the characteristics of specific securities or trading styles. Bollinger recommends making small, incremental adjustments to the standard deviation multiplier. Changing the number of periods for the moving average also has an effect on the number of periods used to calculate the standard deviation, which is why only small adjustments are required for the standard deviation multiplier. An increase in the moving average period would also automatically increase the number of periods used for calculating the standard deviation, as well as warranting an increase in the standard deviation multiplier. With a 20-day SMA and 20-day Standard Deviation, the standard deviation multiplier is set at 2. Bollinger recommends increasing the standard deviation multiplier to 2.1 for a 50-period SMA and decreasing the standard deviation multiplier to 1.9 for a 10-period SMA.
-**Bollinger Bands reflect direction with the 20-period SMA and volatility with the upper/lower bands**. This means that they can be used to determine whether prices are relatively high or low. Bollinger maintains that the bands should contain 88-89% of price action, rendering a move outside the bands very significant. Technically, prices are relatively high when above the upper band and relatively low when below the lower band. However, relatively high should not be seen as bearish or as a sell signal. Likewise, relatively low should not be regarded as bullish or as a buy signal, since prices are high or low for a reason. As with other indicators, Bollinger Bands are not designed to be used as a stand-alone tool. Traders should combine Bollinger Bands with basic trend analysis and other indicators to confirm a trend.
+Die Basis der Bollinger Bänder ist ein gleitender Durchschnitt (GD, SMA), der den mittelfristigen Trend anzeigt. Dieser wird als mittleres Band bezeichnet und in der Standardeinstellung mit 20 Tagen berechnet. Die Breite des Kanals wird vom Ausmaß der Volatilität, der statistischen Methode der Standardabweichung, bestimmt. Das obere Band ergibt sich aus dem mittleren Band + 2 Standardabweichungen, das untere Band aus dem mittleren Band - 2 Standardabweichungen.
 
-The calculation is performed in the following manner:
+Die Berechnung erfolgt nach folgender Vorschrift:
 
-Upper band = middle band + 2 standard deviations
-Middle band = average of 20 periods
-Lower band = middle period – 2 standard deviations
+Oberes Band = Mittleres Band + 2 Standardabweichungen
+Mittleres Band = Durchschnitt von 20 Zeiteinheiten (Perioden)
+Unteres Band = Mittleres Band - 2 Standardabweichungen
 
-More information can be found here: [*BollingerMTF*](#bollingermtf), [*Bollinger Percent %B*](#bollinger-percent-b-b), [*Bollinger Bands Width*](#bollinger-band-width-bbwidth)
+Der Faktor (Standard = 2) kann natürlich variiert werden und ist dafür verantwortlich, wieviel Prozent der Kurse (statistisch gesehen) innerhalb des oberen und unteren Bandes liegen. Bei einem Faktor von 1 sind es 68% der Kurse, bei Faktor = 2 sind es immerhin schon 95% und bei 3 Standardabweichungen 99% der Kurse.
 
-### Further information
+Wenn man die Anzahl der Tage (Perioden) für die Berechnung des Bollinger Bandes variiert, empfiehlt es sich, gleichzeitig auch den Faktor anzupassen. Nach Bollinger sollten folgende Einstellungen verwendet werden:
+bei Periode = 10 ist Faktor = 1,9
+bei Periode = 50 ist Faktor = 2,1
+
+In der Praxis werden für die Berechnung der Bollinger Bänder zumeist die Schlusskurse verwendet, obwohl Bollinger selbst den typischen Preis (Tageshoch + Tagestief + Tagesschluss) / 3 sowie den gewichteten Kurs (weighted close (Tageshoch + Tagestief + Tagesschluss) / 2+ g, g=Gewichtungsfaktor) empfiehlt, da die auf diese Weise berechneten Kurse das Tagesgeschehen besser widerspiegeln.
+
+Siehe auch:  [*BollingerMTF*](#bollingermtf), [*Bollinger Percent %B*](#bollinger-percent-b-b), [*Bollinger Bands Width*](#bollinger-band-width-bbwidth)
+
+### Interpretation
+In der Praxis häufig (und erfolgreich) herangezogen, um Kauf- bzw. Verkaufsentscheidungen zu treffen. So ist es z.B. ziemlich einfach, anhand einer längerfristigen Entwicklung, den Kursverlauf auf außerordentliche Schwankungen zu überprüfen (trendfolgende Ausbruchssysteme).
+Überschreitet der Kurs das obere Band, werden steigende Kurse erwartet, der sogenannten Long Position. Diese Long-Position wird wieder aufgelöst (geschlossen), wenn der Kurs entweder wieder unter das obere Band fällt, der Kurs unter das mittlere Band fällt oder wenn der Kurs unter das untere Band fällt.
+Bei einem umgekehrten Verlauf werden folglich fallende Kurse erwartet und setzt auf diese indem eine Short-Position aufgebaut wird.
+Jedoch sind die Bollinger Bänder in ihrem theoretischen Ansatz nicht dazu konstruiert, um Kauf- bzw. Verkaufsentscheidungen zu treffen. Sie sollen lediglich dazu dienen, festzustellen, ob ein Kurs über- bzw. unterbewertet ist.
+
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Bollinger_B%C3%A4nder](http://vtadwiki.vtad.de/index.php/Bollinger_B%C3%A4nder)
 
-Book "Technische Indikatoren - simplified" by Oliver Paesler (German only)
+Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)
 
-### Usage
+### Verwendung
 ```cs
 Bollinger(double numStdDev, int period)
 Bollinger(IDataSeries input, double numStdDev, int period)
-//For the upper band
+//Für das obere Band
 Bollinger(double numStdDev, int period).Upper[int barsAgo]
 Bollinger(IDataSeries input, double numStdDev, int period).Upper[int barsAgo]
-//For the lower band
+//Für das untere Band
 Bollinger(double numStdDev, int period).Lower[int barsAgo]
 Bollinger(IDataSeries input, double numStdDev, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Bollinger**(2, 20)\[**int** barsAgo\] ), the value of the indicator will be displayed for the referenced bar.
+Bei Verwendung der Methode mit einem Index(z.B. **Bollinger**(2, 20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-numStdDev Standard deviation
+numStdDev Standardabweichung
 
-period Number of bars included in the calculation
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Bollinger Bands](./media/image10.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the upper Bollinger Band
+//Ausgabe des Wertes des oberen Bollinger Bandes
 Print("Value of the upper band: " + Bollinger(2, 20).Upper[0]);
-//Middle band
+//Ausgabe des Wertes des mittleren Bollinger Bandes
 Print("Value of the middle band: " + Bollinger(2, 20)[0]);
-//Lower band
+//Ausgabe des Wertes des unteren Bollinger Bandes
 Print("Value of the lower band: " + Bollinger(2, 20).Lower[0]);
 ```
 
 ##Bollinger Percent B (%b)
-### Description
-Bollinger %b is an important indicator that is derived from John Bollinger's original Bollinger Bands indicator. %b represents the location of the most recent close price in relation to the Bollinger Bands as well as to what degree it is above or below any of the bands. The Bollinger Percent B equation can be constructed in the following way: Percent B = ((Close - Bollinger Lower Band) / (Bollinger Upper Band - Bollinger Lower Band)) * 100. If the close price is the same as the upper Bollinger Band, %b will be 100 (percent). If the close price is the same as the lower Bollinger Band, %b will be 0.0 (percent). A %b value of 50 indicates that the close price is equal to the middle Bollinger Band. What is more, readings above 100 and below 0 show that the close price is outside of the Bollinger Bands by a corresponding percentage of the Bollinger Bandwidth. A %b value of 125 means that the close price is above the upper Bollinger Band by 25% of the Bandwidth, while a %b value of -25 means that the close price is below the lower Bollinger Band by 25% of the Bandwidth.
+### Beschreibung
+Bänder Indikatoren, wie die Bollinger Bänder haben meist einen direkten Bezug zur Kursentwicklung, wodurch die Beziehung zwischen dem Kurs und den diesen Kurs umschließenden Bändern sehr anschaulich dargestellt werden kann. Aus dieser Beziehung lassen sich weitere Indikatoren (bzw. Oszillatoren) ableiten, die die die relative Position des Kurses in Bezug zu den Bändern darstellen. Diese Art Indikatoren werden unter dem Chart in einem separaten Chartpanel dargestellt. Ein Vertreter dieser Gruppe ist der Bollinger Bands %B (oder auch Bollinger Bands Oszillator - BBO bzw. nur b%)
 
-See [*Bollinger Bands*](#bollingerbands), [*BBWidth*](#bbwidth)
+Der Indikator %b erinnert in seiner Definition an den Stochastik-Indikator, wobei der Wertebereich nicht wie bei der Stochastik auf 0 - 100 begrenzt ist. Der Wert 1 (100%) zeigt das Schneiden des Kurses mit dem oberen Bollinger Band an. Bei einem Wert von 0,5 (50%) befindet sich der Kurs auf dem mittleren Bollinger Band. Der Wert 0 (0%) steht für den Schnittpunkt von Kurs und unterem Bollinger Band. Kurse können auch ausserhalb der Bollinger Bänder notieren, was vom %b-Indikator mit Werten über 100 bzw. unter 0 dargestellt wird. Der Wert -0,2 (-20%) wird angezeigt, wenn der Kurs sich um 20% der Bandbreite unterhalb des unteren Bandes befindet.
 
-**An additional application: normalizing indicators**
+Die Berechnung wird nach folgender Formel vorgenommen:
+%b = (Close - lower Bollinger band) / (upper Bollinger Band - lower Bollinger band) * 100
 
-Bollinger bands, and therefore the %b indicator, can be applied not only to the prices of stocks, futures etc., but also to time series with fundamental data, volume data and other indicators. This is particularly interesting when you need to know whether a value is relatively high or low – in this case, the %b indicator offers you a different perspective. If you wish to find out whether the volume of a stock is exceedingly high or low, you can simply apply it to the volume data. John Bollinger regards the application of the %b onto other indicators as one of the most important aspects of the indicator. If you wish to normalize an indicator with %b, it is important to first calculate the indicator (e.g. the RSI) with the help of the %b for the calculation of the indicator instead of the price data. The application of the %b essentially works in the same way as the application of Bollinger bands onto the indicator itself. The intersection points between the bands and the indicators will therefore be 1 and 0. In principle, the relative position of the original indicator is displayed in relation to its upper and lower bands. This means that the boundaries of the original indicator will be removed. John Bollinger himself wrote: “You’re defining a high or low point on a relative basis, this may allow you to gain a deeper insight and understanding not provided by traditional indicators and guidelines.” John Bollinger provides several parameters for the %b calculation, such as 40-day periods and a factor of 2.0 for a 9-day RSI, and a 50-day period with a factor of 2.1 for the calculation of %b.
+Siehe auch  [*Bollinger Bands*](#bollingerbands), [*BBWidth*](#bbwidth)
 
-(Sources: Oliver Paesler: "Technische Indikatoren - simplified" and John Bollinger: "Bollinger Bänder")
+**Eine weitere Anwendung: Normalisieren von Indikatoren**
 
-(Source: *tradesignalonline*)
+Bollinger Bands und damit auch der %b-Indikator können nicht nur auf die Kurse von Aktien und Indices, sondern auch auf Zeitreihen mit fundamentalen Daten, Volumendaten von Aktien und auf andere Indikatoren, angewendet werden. Immer dann, wenn es interessant zu wissen ist, ob ein Wert relativ hoch oder niedrig ist, kann der %b-Indikator eine neue Perspektive eröffnen. Wenn Sie wissen möchten, ob das Volumen einer Aktie relativ hoch oder niedrig liegt, können Sie die Bollinger Bänder oder %b auch auf die Volumendaten anwenden.
+John Bollinger sieht in der Anwendung der %b auf andere Indikatoren eine der wichtigsten Einsatzgebiete des %b. Wenn Sie einen Indikator mit %b normalisieren, berechnen Sie zuerst den Indikator, z.B. den RSI und nutzen bei der Berechnung des %b die Daten des RSI anstelle der Kursdaten. Sie wenden also den %b auf den RSI an, wie es auch schon beim StochRSI, StochMACD und StochMomentum mit dem Stochastic %K getan wurde. Da zeigt sich die enge Verwandtschaft des %b mit dem Stochastic %K. Die Anwendung des %b auf einen Indikator wirkt genauso, als würden Sie Bollinger Bands über den Verlauf des Indikators legen und die Schnittpunkte der Bänder mit dem Indikator entsprechen folglich den Werten 1 und 0 eines mit %b normalisierten Indikators. Der mit %b normalisierte Indikator stellt die relative Position des Ursprungsindikators zu seinem oberen und unteren Band dar. Damit werden die starren Grenzen durch die Berücksichtigung der Beweglichkeit des Ursprungsindikators aufgehoben. John Bollinger formuliert es sehr treffend: „Sie definieren einen Hoch- oder Tiefstand auf einer relativen Basis. Dies kann oft zu tiefen Einblicken und Erkenntnissen führen, die von den traditionellen Richtlinien und Regelwerken nicht zu erwarten sind." ... 
+John Bollinger gibt für einige Indikatoren die Parameter für die %b-Berechnung an. Für einen 9-Tage-RSI verwendet er 40 Tage und einen Faktor 2,0 und für einen 14-Tage-RSI nutzt er 50 Tage und einen Faktor von 2,1 zur Berechnung des %b. Für den über 10 Tage berechneten Volumenindikator Money Flow Index (MFI) gibt er für %b 40 Tage und einen Faktor von 2,0 an."
 
-### Further information
+(Quelle: Oliver Paesler: "Technische Indikatoren - simplified" und John Bollinger: "Bollinger Bänder")
+
+### Interpretation
+Der BB-Oszillator (%b) bildet die Lage des aktuellen Schlusskurses innerhalb oder außerhalb der Bollinger - Bänder ab. Seine Skalenbreite reicht von Null bis 100, lässt aber auch Extremwerte darüber oder darunter zu. Befindet sich der aktuelle Kurs innerhalb der Bänder, liegt der Indikator zwischen Null und 100. Befindet sich der Kurs genau am oberen Band, hat der Indikator den Wert 100, liegt der Kurs über dem oberen Band hat der Indikator Werte über 100und zeigt damit einen Ausbruch aus dem Bollinger-Band an. Befindet sich der aktuelle Kurs am unteren Bollinger-Band, hat der Indikator den Wert Null, ist er unter das untere Bollinger Band ausgebrochen, hat der Indikator Werte kleiner Null.
+
+Der Indikator %b wird ähnlich wie andere Oszillatoren verwendet:
+Erkennen überdehnter Marktsituationen: Der Indikator lässt uns Situationen erkennen, in denen die Kurse weit überdehnt und somit Korrekturanfällig sind. Bricht der Indikator in eine der Extremzonen aus, wird unterstellt, dass diese Bewegung korrigiert wird. Somit gelten Bewegungen in die Extremzonen als Handelssignale. Der Eintritt oder der Austritt des Indikators in / aus eine(r) Extremzone kann als Signal gewertet werden. Ein solcher Ausbruch ist eine andere Darstellung des Kursausbruches aus den zu Grunde liegenden Bollinger – Bändern.
+
+Richtungsänderungen des Indikators als Hinweis auf Änderungen im Kursmomentum: Durch anlegen einer Signallinie können Richtungsänderungen im Indikatorverlauf in Handelssignale umgewandelt werden. Schneidet der Indikator seine Signallinie nach oben, gilt dies als Kaufsignal, schneidet er sie nach unten, gilt dies als Verkaufssignal. Zusätzlich kann die Mittellinie als Trennung zwischen „nur Kaufsignale“ – Bereich und „nur Verkaufssignale“ – Bereich verwendet werden.
+
+(Quelle: tradesignalonline)
+
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Bollinger_B%C3%A4nder](http://vtadwiki.vtad.de/index.php/Bollinger_B%C3%A4nder)
 
-Book "Technische Indikatoren - simplified" by Oliver Paesler (German only)
+Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)
 
-### Usage
+### Verwendung
 ```cs
 BollingerPercentB(int period, double numStdDev)
 BollingerPercentB(IDataSeries input, int period, double numStdDev)
@@ -419,144 +454,164 @@ BollingerPercentB(int period, double numStdDev) [int barsAgo]
 BollingerPercentB(IDataSeries input, int period, double numStdDev)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **BollingerPercentB**(20, 2)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B.  **BollingerPercentB**(20, 2)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculation
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-numStdDev Standard deviation
+numStdDev	Standardabweichung
 
-### Visualization
+### Darstellung
 ![Bollinger Percent B (%b)](./media/image11.png)
 
-### Example
-//Output for the value of Bollinger %B
+### Beispiel
+//Ausgabe des Wertes des BollingerPercentB
 
 **Print**("Value of the Bollinger Percent B is: " + **BollingerPercentB**(20, 2)\[0\]);
 
 ##Bollinger Band Width (BBWidth)
-### Description
-This indicator is derived from Bollinger Bands. John Bollinger refers to Bollinger Band Width as one of two indicators that one can derive from Bollinger Bands; the other indicator is %B.
-The Band Width measures the percentage difference between the upper and the lower band. It decreases as Bollinger Bands narrow, and increases as they widen. Since Bollinger Bands are based on the standard deviation, falling Band Width reflects decreasing volatility and rising Band Width reflects the opposite.
-
+### Beschreibung
+Bollinger Bands Width (BBWidth) ist neben dem Bollinger Percent B (%b) ein weiterer aus den Bollinger Bändern abgeleiteter Indikator.
+Die Bandweite gibt die Breite der Bänder im Verhältnis zum gleitenden Durchschnitt an und ist damit ein Indikator, der die Volatilität anzeigt. Die Bandweite errechnet sich, indem die Differenz aus dem oberen und dem unteren Band durch das mittlere Band (dem Durchschnitt) geteilt wird.
+Der Indikator wird im Chart mit einer Signallinie dargestellt. Die Signallinie ist ein SMA(150) über die Bandweite, anschließend dividiert durch 1,9.
 
 ### Interpretation
-John Bollinger uses the Band Width to recognize rising and falling trends. Most trends have their origins within sideway market movements that generally have a low volatility. If a breakout is accompanied by a sudden rise in the Band Width, this means that there is definite support for the move.
+John Bollinger verwendet die BandWidth, um einen steigenden oder fallenden Trend zu erkennen. Viele Trends haben ihren Ursprung in einer seitwärtsgerichteten Kursbewegung bei der die Volatilität und damit auch der BandWidth-Indikator niedrig ist. Wird ein Ausbruch aus dieser seitlichen Schiebezone durch ein plötzliches Ansteigen der BandWidth begleitet, deutet dies auf den Beginn eines nachhaltigen Trends in Richtung des Ausbruchs hin.
 
-### Further information
+(Quelle: Oliver Paesler: "Technische Indikatoren - simplified" und John Bollinger: "Bollinger Bänder")
+
+Kreuzungen mit der Signallinie können ebenfalls als Signalgeber Verwendung finden. Hier entspricht die Signalgebung der von den gleitenden Durchschnitten bekannten Weise.
+
+### Weitere Informationen
 VTAD: [*http://vtadwiki.vtad.de/index.php/Bollinger\_B%C3%A4nder*](http://vtadwiki.vtad.de/index.php/Bollinger_B%C3%A4nder)
 
-Book "Technische Indikatoren - simplified" by Oliver Paesler (German only)
+Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)
 
-### Usage
+### Verwendung
 ```cs
 BBWidth(double numStdDev, int period)
 BBWidth(IDataSeries input, double numStdDev, int period)
 BBWidth(double numStdDev, int period)[int barsAgo]
 BBWidth(IDataSeries input, double numStdDev, int period)[int barsAgo]
 
-//For the value of the upper Band Width
+//für den Wert der BandBreite (wie oben)
 BBWidth(double numStdDev, int period).BandWidth
 BBWidth(IDataSeries input, double numStdDev, int period).BandWidth
 BBWidth(double numStdDev, int period).BandWidth[int barsAgo]
 BBWidth(IDataSeries input, double numStdDev, int period).BandWidth[int barsAgo]
 
-//For the value of the trigger line (threshold)
+//für den Wert der Triggerlinie (Threshold)
 BBWidth(double numStdDev, int period).Threshold
 BBWidth(IDataSeries input, double numStdDev, int period).Threshold
 BBWidth(double numStdDev, int period).Threshold[int barsAgo]
 BBWidth(IDataSeries input, double numStdDev, int period).Threshold[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using the method with an index (e.g. **BBWidth**(2, 20)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B **BBWidth**(2, 20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculation
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-numStdDev Standard deviation
+numStdDev	Standardabweichung
 
-### Visualization
+### Darstellung
 ![Bollinger Band Width (BBWidth)](./media/image12.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the values of Bollinger Band Width
+//Ausgabe des Wertes für BollingerBandWidth
 Print("The value of the Bollinger Band Width is: " + BBWidth(2, 20).BandWidth[0]);
-//Output for the values for the signal line
+//Ausgabe des Wertes der Signallinie
 Print("The value of the signal line is: " + BBWidth(2, 20).Threshold[0]);
 ```
 
 ##Bollinger MTF (MultiTimeFrame)
-### Description
-The Bollinger MTF is the multi-timeframe version of the Bollinger Bands, and its main use is in intraday trading. Multi-timeframe means that the indicator is calculated in a separate timeframe than that which is displayed in the chart. With the standard Bollinger band indicator, displaying an hourly Bollinger band in a 5-minute timeframe would not be possible – this is the point at which the MTF becomes useful. BollingerMTF can only be used for display in the chart and cannot be applied/implemented in AgenaScript.
+### Beschreibung
+Der Indikator BollingerMTF ist die Multi TimeFrame-Variante der Bollinger Bänder (Bollinger Bands).
+Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
+Multi TimeFrame bedeutet, dass der Indikator in einer anderen Zeiteinheit berechnet werden kann, als der Kurs im Chart angezeigt wird. Möchte man z.B. in einem 5-Minuten Chart die Bollinger Bänder des Stundencharts angezeigt bekommen, ist das mit dem Indikator Bollinger Bands nicht möglich. Hier ist BollingerMTF zu verwenden.
+Im Indikator BollingerMTF kommt ein weiterer Parameter (MTFMinutes) hinzu, der die Zeiteinheit angibt, auf der die Berechnung der Bollinger-Bänder vorgenommen werden soll.
 
-### Visualization
-The image shows a 5-minute chart with a 60-minute Bollinger band
+### Darstellung
+Die Abbildung zeigt einen 5 Min.-Chart mit einem 60-Min.Bollinger Band
 
 ![Bollinger MTF (MultiTimeFrame)](./media/image13.png)
 
-##BuySellPressure
-### Description
-The BuySellPressure indicator displays the buy or sell pressure for the current bar. Furthermore, these trades are classified as "buy" or “sell”. For this classification, a "buy" is assumed any time the transaction has occurred at or above the ask. Inside trades are not taken into account.
+## BuySellPressure
+### Beschreibung
+Der Indikator BuySellPressure zeigt für den aktuellen Bar den Kauf- und den Verkaufsdruck als prozentualen Wert an. Dazu werden Trades als "Kauf" bzw. als "Verkauf" klassifiziert. Für diese Klassifizierung wird ein "Kauf" immer dann angenommen, wenn die Transaktion am oder über dem Ask ausgeführt wurde. Als "Verkauf" wird ein Umsatz am oder unter dem Bid gewertet. Trades im Inside Market werden ignoriert.
 
-**Caution:
-This is a real-time indicator. It will only work on and with real-time data and cannot therefore be used for historical information.**
+**Achtung:
+Dies ist ein Realtime-Indikator. Er funktioniert nur auf Realtime-Daten und wird deshalb nicht für historische Daten gezeichnet.**
 
-**When the properties dialog for the indicator is open and changes are made, then the indicator must be reloaded. Doing so will delete all previously accumulated data.**
+**Wenn Sie den Eigenschaften-Dialog des Indikators aufrufen und dort Änderungen vornehmen, wird der Indikator im Anschluß neu gestartet und alle bisher in den Chart gezeichneten Daten gehen verloren..**
 
 See [*BuySellVolume*](#buysellvolume).
 
-### Usage
+### Verwendung
 ```cs
 BuySellPressure()
 BuySellPressure(IDataSeries input)
 
-//For the values of buy pressure
+//Für den Wert von buy pressure
 BuySellPressure().BuyPressure[int barsAgo]
 BuySellPressure(IDataSeries input).BuyPressure[int barsAgo]
 
-//For the values of sell Pressure
+//Für den Wert von sell pressure
 BuySellPressure().SellPressure[int barsAgo]
 BuySellPressure(IDataSeries input).SellPressure[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **BuySellPressure**().BuyPressure\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **BuySellPressure**().BuyPressure\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-**Caution:**
-**If BuySellPressure is used with EoD data, the value 50 will always be outputted.**
+**Hinweis:**
+**Wird BuySellPressure mit EOD-Daten verwendet, wird immer der Wert 50 ausgegeben.**
 -   BuySellPressure().SellPressure\[0\] = 50
 -   BuySellPressure().SellPressure\[0\] = 50
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![BuySellPressure](./media/image14.png)
 
-### Example
+### Beispiel
 ```cs
 protected override void OnInit()
 {
+  // Die Eigenschaft CalculateOnBarClose sollte unbedingt hier gesetzt werden,
+    // da im Eigenschaften-Dialog des Indikators bzw. der Strategie
+    // CalculateOnBarClose = true gesetzt sein kann.
+    // Mit CalculateOnBarClose = true werden keine Werte berechnet und angezeigt.
+
   BuySellPressure().CalculateOnClosedBar = false;
 }
 
 protected override void OnCalculate()
 {
+ // Suche nach einem Long Breakout Signal
   if (Close[0] > DonchianChannel(20).Upper[5])
   {
+  // Der Indikator BuySellPressure kann nur für Realtime-Daten berechnet werden.
+     // Um eine Strategie, in der BuySellPressure verwendet wird, dennoch einem Backtest 
+     // unterziehen zu können, muß mit if (Historical ... geprüft werden,
+     // ob die Strategie mit Realtime- oder historischen Daten aufgerufen wurde.
+     // Im Beispiel wird ein Breakout-Signal mit dem DonchianChannel(20) generiert.
+     // Wenn Realtime-Daten zur Verfügung stehen, soll zusätzlich sichergestellt sein,
+     // dass mindestens 70% der Umsätze im Ausbruchbar am bzw. über dem Ask stattgefunden haben.
     if (IsHistoricalMode || BuySellPressure().BuyPressure[0] > 70)
     OpenLong();
   }
@@ -564,45 +619,45 @@ protected override void OnCalculate()
 ```
 
 ##BuySellVolume
-### Description
-This indicator shows us the current buy or sell pressure based on the volume. For this, trades are classified as "buy" or "sell", whereby for the classification, a "buy" is assumed any time the transaction is executed at or above the ask. A transaction at or below the bid is considered a "sell".
+### Beschreibung
+Der Indikator BuySellVolume zeigt für den aktuellen Bar den Kauf- und den Verkaufsdruck als Umsatzbar ähnlich dem Volumen (Vol) unter dem Chart an. Dazu werden Trades als "Kauf" bzw. als "Verkauf" klassifiziert. Für diese Klassifizierung wird ein "Kauf" immer dann angenommen, wenn die Transaktion am oder über dem Ask ausgeführt wurde. Als "Verkauf" wird ein Umsatz am oder unter dem Bid gewertet. Trades im Inside Market werden ignoriert.
 
-**Caution: This is a real-time indicator and will not work with historical data.**
+**Achtung: Dies ist ein Realtime-Indikator. Er funktioniert nur auf Realtime-Daten und wird deshalb nicht für historische Daten gezeichnet. Wenn Sie den Eigenschaften-Dialog des Indikators aufrufen und dort Änderungen vornehmen, wird der Indikator im Anschluß neu gestartet und alle bisher in den Chart gezeichneten Daten gehen verloren.**
 
-Similar conditions as with the [*BuySellPressure*](#buysellpressure) apply.
+Siehe auch [*BuySellPressure*](#buysellpressure) 
 
-### Usage
+### Verwendung
 ```cs
 BuySellVolume BuySellVolume()
 BuySellVolume BuySellVolume(IDataSeries input)
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **BuySellVolume**().BuyVolume\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **BuySellVolume**().BuyVolume\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![BuySellVolume](./media/image15.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the BuySellVolume
+//Output für die  BuySellVolume
 Print("The BuySellVolume is: " + BuySellVolume()[0]);
 ```
 
 ##CandleStickPattern
-### Description
-The CandleStickPattern indicator looks for specific candlestick formations.
+### Beschreibung
+Der Indikator CandleStickPattern sucht nach bestimmten Candlestick-Formationen.
 
 
-### Further information
-Explanations of the formations and their interpretations can be found here: [http://en.wikipedia.org/wiki/Candlestick_pattern](http://en.wikipedia.org/wiki/Candlestick_pattern)
+### Weitere Informationen
+Erklärung der einzelnen Formationen und ihrer jeweiligen Interpretation finden sich z.B. unter: [http://en.wikipedia.org/wiki/Candlestick_pattern](http://en.wikipedia.org/wiki/Candlestick_pattern)
 
-### Usage
+### Verwendung
 ```cs
 CandleStickPattern(ChartPattern pattern, int trendStrength)
 CandleStickPattern(IDataSeries input, ChartPattern pattern, int trendStrength)
@@ -610,20 +665,20 @@ CandleStickPattern(ChartPattern pattern, int trendStrength)[int barsAgo]
 CandleStickPattern(IDataSeries input, ChartPattern pattern, int trendStrength)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-0 – Pattern not existent
-1 – Pattern existent
+0 - Pattern nicht vorhanden
+1 - Pattern vorhanden
 
-When using this method with an index (e.g. **CandleStickPattern**(...)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **CandleStickPattern**(...)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
 |               |                                                                                                                                                                                                                    |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| InSeries      | Input data series for the indicator
+| InSeries      | Eingangsdatenreihe für den Indikator
 |
-| pattern       | Possible values are:
+| pattern       | Mögliche Werte sind:
                 ChartPattern.BearishBeltHold
                  ChartPattern.BearishEngulfing
                  ChartPattern.BearishHarami
@@ -649,28 +704,38 @@ When using this method with an index (e.g. **CandleStickPattern**(...)\[**int** 
                 ChartPattern.ThreeWhiteSoldiers
                 ChartPattern.UpsideGapTwoCrows
                 ChartPattern.UpsideTasukiGap    |
-| trendStrength | Signifies the number of bars to the left and right of the swing high or swing low that are used to identify a trend. The value 0 turns off the search, meaning that the only thing searched for is chart patterns. |
+| trendStrength | Die Anzahl der Bars links und rechts neben dem Umkehrpunkt (Swing High bzw. Low), die zur Identifizierung eines Trends verwendet werden. Der Wert 0 schaltet die Trendsuche ab, d.h. es wird ausschließlich nach den Chartmustern gesucht. |
 
-### Visualization
+### Darstellung
 ![CandleStickPattern](./media/image16.png)
 
-### Example
+### Beispiel
 ```cs
 if (CandelStickPattern(ChartPattern.ShootingStar, 5)[0] == 1)
 Print("Pattern ShootingStar found!");
 ```
 
 ##ChaikinMoneyFlow (CMF)
-### Description
-Marc Chaikin was the one to develop the Chaikin Money Flow Index, which is a volume indicator that tries to find an answer to the following question: Where is the money flowing into? Into the stock = accumulation, and out of the stock = distribution. Clearly, this applies not only to stocks/shares but also to other instruments. With this, Chaikin attempts to expand on and improve the On-Balance Volume that was developed by Granville. Using the CMF, the position of the closing price within the trading range is placed in relation to the volume. What this essentially means is that the trading volume is multiplied by the price. The trading volume displays the amount of money that has “flowed” into the stock or has been “removed” from the stock; the indicator simply displays whether it has been accumulated (buying pressure) or removed (distribution).
+### Beschreibung
+Der Chaikin Money Flow Index (CMF) wurde von Marc Chaikin entwickelt. Es ist ein Volumen-Indikator der versucht, folgende Frage zu beantworten: Wohin fließt das Geld? In die Aktie rein = Akkumulation oder aus der Aktie raus = Distribution. Wobei der CMF nicht nur Anwendung bei Aktien findet. Es können andere Instrumente wie Rohstoffe oder Devisen analysiert werden – sofern Umsätze publiziert werden. Chaikin wollte mit seinem CMF das On Balance Volume (OBV) von Granville erweitern und verbessern. Beim CMF wird die Position der Schlusskurse innerhalb der gehandelten Tagesrange (Handelsspanne) in Relation zum Volumen gestellt. Konkret gesagt geht es um das Handelsvolumen, also die Summe der gehandelten Aktien, multipliziert mit dem jeweiligen Kurs. Denn nur das Handelsvolumen zeigt die Geldmengen an, die in einen Wert geflossen sind oder abgezogen wurden. Der Indikator zeigt an, ob „akkumuliert“ wurde – sprich Kaufdruck aufgebaut wurde, welcher sich in der Regel in steigenden Kurse ausdrückt, oder ob „distributiert“ wurde. In diesem Fall wird Verkaufsdruck aufgebaut und in der Regel fallen die Kurse. (Quelle: VTAD)
 
 ### Interpretation
-The CMF oscillates around the zero line and is shown in a separate window with an open scale. Should the CMF be located above the zero line, then it can be interpreted as accumulation. If higher highs are being created, then the buying pressure is increasing. The reverse is true for the selling pressure. The Chaikin Money Flow should always be used in combination with other methods of technical analysis.
+Der CMF oszilliert um eine Nulllinie, er wird in einem separaten Fenster mit nach oben und unten offener Skala abgetragen.
+Befindet sich der CMF über der Nulllinie, zeigt er an, dass das Wertpapier nachgefragt wird, es wird also akkumuliert. Im beigefügten Beispiel (Abbildung 1) ist der Indikatorwert dann im grünen Bereich. Werden höhere Hochs ausgebildet, nimmt der Kaufdruck zu.
+Ein CMF unterhalb der Nulllinie deutet auf Abgabedruck hin, es wird also distributiert. Der Indikatorwert befindet sich dann im roten Bereich. Werden tiefere Tiefs ausgebildet, nimmt der Verkaufsruck zu. Im beigefügten Beispiel hat der Verkaufsdruck in den letzten Tagen deutlich zugenommen, obwohl der Kurs (noch) kein tieferes Tief ausgebildet hat, ist der CMF regelrecht abgestürzt.
+Werden über Wochen hinweg Divergenzen zwischen Kursverlauf und Indikatorverlauf ausgebildet, ist dies als ernstes Warnsignal zu betrachten.
+Der Chaikin Money Flow sollte immer in Kombination mit anderen Methoden der Technischen Analyse verwendet werden.
+Chaikin schlägt folgende Indikator-Kombination vor:
+Chaikin Money Flow: Ein Volumen-Indikator, er zeigt den Kauf- oder Verkaufsdruck an.
+RSI: Ein Momentum-Indikator, welcher potentielle überkauft- oder überverkauft-Levels anzeigt.
+Gleitende Durchschnitte: Sind Trendfolge-Indikatoren und zeigen den aktuell vorherrschenden Trend an.
+Verhältnis-Chart oder auch Ratio-Chart: Damit wird die Relative Stärke einer Aktie gegen einen Index berechnet. Dabei wird der Kurs der Aktie durch den Kurs des Index geteilt.
+Diese Indikatoren gehören unterschiedlichen Indikatorkategorien an und ergänzen sich gut.
 
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Chaikin\_Money\_Flow>
 
-### Usage
+### Verwendung
 ```cs
 ChaikinMoneyFlow(int period)
 ChaikinMoneyFlow(IDataSeries input, int period)
@@ -678,33 +743,35 @@ ChaikinMoneyFlow(int period)[int barsAgo]
 ChaikinMoneyFlow(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ChaikinMoneyFlow**(21)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B.  **ChaikinMoneyFlow**(21)\[**int** barsAgo\] ),  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculation
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![ChaikinMoneyFlow (CMF)](./media/image17.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the Money Flow value
-Print("The Chaikin Money Flow value is: " + ChaikinMoneyFlow(21)[0]);
+//Ausgabe des ChaikinMoneyFlow Wertes
+Print("Der ChaikinMoneyFlow Wert ist: " + ChaikinMoneyFlow(21)[0]);
 ```
 
 ##Chaikin Oscillator
-### Description
-The Chaikin Oscillator is a volume indicator that lets the trader know whether new highs are also accompanied by new volumes. This oscillator is a simple MACD that is applied to the accumulation/distribution line. Hereby, the difference between a 3-day exponential moving average and a 10-day exponential smoothed average for the accumulation/distribution line is calculated.
+### Beschreibung
+Der Chaikin Oszillator ist ein Volumenindikator, der anzeigt, ob neue Highs von erhöhten Volumen begleitet werden. Nachdem Larry Williams das OBV-Konzept von Joe Granville weiterentwickelt hatte, machte sich Marc Chaikin daran, das Konzept der Accumulation/ Distribution zu verfeinern.
+Der Chaikin Oszillator ist einfach der Moving Average Convergence Divergence Indicator (MACD) angewendet auf die Accumulation/Distribution Linie. Berechnet wird die Differenz zwischen einem 3-Tage exp. gleitenden Durchschnitt und einem 10-Tage exp. gleitenden Durchschnitt der Accumulation/Distribution Linie.
 
 ### Interpretation
-The interpretation of the Chaikin Oscillator is similar to the principle of the accumulation/distribution. All an oscillator does is show the changes in liquidity for the instrument.
+Die Interpretation des Chaikin Oscillator folgt dem Prinzip der Accumulation/Distribution. Wie bei allen Volumenindikatoren ist auch beim Chaikin Oscillator eine der Hauptanwendung die Suche nach Divergenzen, die häufig auf Trendbrüche hinweisen.
+Als Oszillator zeigt er Veränderungen in der Liquidität an, die in eine Aktie hinein oder heraus fließt. Chaikin hat empfohlen, die Oszillator- Signale nur in Trendrichtung zu nutzen: In einem Aufwärtstrend gelten nur die Kaufsignale, in einem Abwärtstrend finden nur die Verkaufssignale Berücksichtigung. Dennoch kann der Chaikin-Oscillator auch gemäß der klassischen Oszillator-Anwendung als Indikator von überkauften bzw. überverkauften Situationen angewendet werden.
 
-### Usage
+### Verwendung
 ```cs
 ChaikinOscillator(int fast, int slow)
 ChaikinOscillator(IDataSeries input, int fast, int slow)
@@ -712,35 +779,40 @@ ChaikinOscillator(int fast, int slow)[int barsAgo]
 ChaikinOscillator(IDataSeries input, int fast, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ChaikinOscillator**(3, 10)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B. **ChaikinOscillator**(3, 10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-fast Number of bars included in the calculation for the fast EMA
+fast		Anzahl der Bars, für die Berechnung des Fast EMA
 
-slow Number of bars included in the calculation for the slow EMA
+slow		Anzahl der Bars, für die Berechnung des Slow EMA
 
-### Visualization
+### Darstellung
 ![Chaikin Oscillator](./media/image18.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the oscillator for the fast and slow values of 3 and 10
+//Ausgabe des ChaikinOscillator Wertes für die Parameter fast=3 und slow=10
 Print("The Chaikin Oscillator value is: " + ChaikinOscillator(3, 10)[0]);
 ```
 
 ##ChaikinVolatility (CVL)
-### Description
-The Chaikin Volatility Indicator is one of a few indicators that are designed to try and measure price movement fluctuations. Chaikin takes the daily price range (daily high minus daily low) as the fundamental measure of volatility. With this indicator, a widening range is, by implication, associated with a higher volatility.
+### Beschreibung
+Der Indikator ChaikinVolatility (CVL) ist einer von mehreren Indikatoren, die das Ziel haben, die Schwankungsbreite von Kursbewegungen zu messen. Andere Vertreter dieser Indikatorengruppe sind z.B. die Bollinger-Bänder, die Standardabweichung (StdDev) oder die Average True Range (ATR).
+In seinem Volatilitätsindikator verwendet Marc Chaikins die tägliche Handelsspanne (Tageshöchstkurs minus Tagestiefstkurs) als grundlegendes Maß für die Volatilität. Damit unterstellt er, dass bei steigender Volatilität die Handelsspanne größer wird und bei nachlassender Volatilität die Handelsspanne kleiner wird. (Quelle: VTAD)
 
 ### Interpretation
-The indicator oscillates around the zero line and fluctuates between a scale of +100 to -100. It can be used on a daily chart as well as on a weekly or monthly chart. All values above the zero line represent rising volatility, and the gradient of the rise implies the seriousness of potential floors forming. The Chaikin Volatility is not specifically used to define exact signals, but is considered as more of an assisting tool in the trading system.
+Der Indikator oszilliert um eine Nulllinie und schwankt zwischen einer Werteskala von +100 bis -100. Er kann sowohl im Tageschart, als auch im Wochen- oder Monatschart verwendet werden.
+Er zeigt bei einem Wert über der Nulllinie an, dass die Volatilität steigt, bei einem Wert unter der Nulllinie fällt die Volatilität.
+Nach Chaikin zeigt ein sehr steiler Anstieg seines Indikators, dass bald mit einer Bodenbildungsphase zu rechnen ist. Ein Rückgang des Indikators, der sich über einen längeren Zeitraum erstreckt, deutet auf eine bevorstehende Topbildung hin.
+Bodenbildungen des Indikators im negativen Bereich deuten auf mögliche Ausbruchsbewegungen aus einer Range hin, die oftmals den Beginn einer Trendphase einleitet.
+Die Chaikin´s Volatility dient in der Regel nicht zur Herleitung konkreter Signale, sondern vielmehr zur "Abrundung" eines Handelssystems. Er ist viel zu hippelig und lässt damit viel Interpretationsspielraum zu. Hinzu kommt, dass Kursverluste fast immer mit steigender Volatilität begleitet werden, Kursgewinne hingegen aber nicht zwingend von ansteigender Volatilität begleitet werden. Auch fehlen - insbesondere in langanhaltenden Trendphasen - eindeutige Signale.
 
-### Usage
+### Verwendung
 ```cs
 ChaikinVolatility(int fast, int slow)
 ChaikinVolatility(IDataSeries input, int fast, int slow)
@@ -748,36 +820,38 @@ ChaikinVolatility(int fast, int slow)[int barsAgo]
 ChaikinVolatility(IDataSeries input, int fast, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ChaikinVolatility**(14)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B. **ChaikinVolatility**(14)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
-
-### Visualization
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+### Darstellung
 ![ChaikinVolatility (CVL)](./media/image19.png)
 
-### Example
+### Beispiel
 ```cs
-//Chaikin output for a period of 14
+//Ausgabe der ChaikinVolatility berechnet auf 14 Perioden
 Print("The value of the Chaikin Volatility is: " + ChaikinVolatility(14)[0]);
 ```
 
 ##Chande Momentum Oscillator (CMO)
-### Description
-The CMO is one of several indicators created by the technical analyst Tushar Chande; it is a technical momentum indicator. This indicator arises from calculating the difference between the total of all recent gains and the total of all recent losses, and then dividing this result by the total of all price movement over the given period. This oscillator shares similarities with other momentum indicators such as the Relative Strength Index and the Stochastic Oscillator, because it is also range-bound (+100 and -100).
+### Beschreibung
+Der Chande Momentum Oscillator (CMO) wurde von Tushar Chande entwickelt und in dem Buch "The New Technical Trader" (Wiley, 1994) von Chande/Kroll präsentiert. Der CMO ähnelt dem herkömmlichen Momentum und auch dem RSI. Während der RSI mit einem Up-Momentum und einer Glättungskomponente arbeitet, werden beim CMO sowohl auf- als auch abwärtsgerichtete Momentum-Daten berücksichtigt. Da auf eine Glättung verzichtet wird, kommt das kurzfristige Momentum besser zur Geltung. Die Formel kreiert einen Oszillator, dessen Range zwischen +100 und -100 schwankt. (Quelle: http://www.boersenwissen.de)
 
 ### Interpretation
-**The security is deemed overbought when the momentum oscillator is above +50 and oversold when it is below -50. Many technical traders add a nine-period moving average to this oscillator to act as a signal line. Bullish signals are generated when the oscillator crosses above the signal, and bearish signals are generated when the oscillator crosses down through the signal.**
+**Tals Oszillator**
+Bei einem CMO-Wert über + 50 ist ein Markt überkauft, unter -50 dagegen überverkauft. Ein Wert von + 50 drückt aus, dass das Up -Momentum dreimal so hoch ist wie das Down-Momentum und umgekehrt.
+**zur Trendbestimmung**
+Je höher / tiefer der CMO ist, desto stärker ist der jeweilige Trend. Schwankt der CMO um seine Null-Linie herum, liegt ein Seitwärtsmarkt vor. Die Mittellinie stellt die Grenze zwischen dem aufwärts- und abwärtsgerichteten Momentum dar. Liegt der CMO darüber, kann man steigende Kurse erwarten, ansonsten eher fallende.**
 
-### Further information
+### Weitere Informationen
 <http://www.boersenwissen.de/content/content\_bin/cont\_bin18.html>
 
-### Usage
+### Verwendung
 ```cs
 CMO(int period)
 CMO(IDataSeries input, int period)
@@ -785,22 +859,22 @@ CMO(int period)[int barsAgo]
 CMO(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **CMO**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B.. **CMO**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Chande Momentum Oscillator (CMO)](./media/image20.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the Chande Momentum Oscillator
+//Ausgabe des Wertes für den Chande Momentum Oscillator
 Print("The current value for the Chande Momentum Oscillator is: " + CMO(14)[0]);
 ```
 ##Climactic Distance
@@ -865,8 +939,8 @@ Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).MovingAverage
 ```
 
 ##Commodity Channel Index (CCI)
-### Description
-The Commodity Channel Index (CCI), which was created by Donald Lambert and actually featured in Commodities magazine in 1980, is a versatile indicator that can be used for identifying a new trend or as a warning of extreme conditions. Lambert originally developed the CCI as a means to identify cyclical turns in commodities – however, the indicator can also successfully be applied to ETFs, indices, stocks and various other securities. In general, what CCI does is to measure the current price level relative to an average price level over a specified period of time. When prices are well above their average, CCI is relatively high. When prices are far below their average, CCI is relatively low. This is how CCI can be used for identifying overbought and oversold levels.
+### Beschreibung
+Der Commodity Channel Index (CCI) wurde 1980 von Donald Lambert entwickelt und fand seine erste Verwendung am Warenterminmarkt. Der CCI ist ein recht komplexer, trendfolgend ausgerichteter Indikator. Er funktioniert besonders gut in Seitwärtsbewegungen mit einem deutlichen Seitwärtstrendkanal. Er wird verwendet, um Beginn und Ende von Kurstrends, von saisonalen Trends und Zyklen zu erkennen. (Quelle: VTAD)
 
 ### Interpretation
 CCI measures the difference between a securitys price change and its average price change. High positive readings indicate that prices are well above their average, which is a show of strength. Low negative readings indicate that prices are well below their average, which is a show of weakness.
@@ -875,10 +949,10 @@ The Commodity Channel Index (CCI) can be used as either a coincident or leading 
 
 As a *leading indicator*, *momentum oscillators*, chartists can look for overbought or oversold conditions that may foreshadow a mean reversion. Similarly, bullish and bearish divergences can be used to detect early momentum shifts and anticipate trend reversals.
 
-### Further information
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index](http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index)
 
-### Usage
+### Verwendung
 ```cs
 CCI(int period)
 CCI(IDataSeries input, int period)
@@ -889,37 +963,42 @@ CCI(IDataSeries input, int period)[int barsAgo]
 ### Return value
 **double**
 
-When using this method with an index (e.g. **CCI**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B **CCI**(14)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Commodity Channel Index (CCI)](./media/image21.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the CCI value calculated using 14 periods
+//Ausgabe des CCI-Wertes berechnet auf 14 Perioden
 Print("The value of the Commodity Channel Index is: " + CCI(14));
 ```
 
 ## Darvas Boxes
-### Description
-Former ballroom dancer Nicolas Darvas developed the Darvas boxes as a trading strategy in 1956. Darvas' trading technique consisted of buying into stocks that were trading at new 52-week highs, with accordingly high volumes. When a stock price rises above the previous 52-week high, but then proceeds to fall back to a price not far from that high, a Darvas box is formed. If the price falls too far, this can signify a false breakout. Otherwise, however, the lower price is used as the bottom of the box and the higher price as the top.
-A box is made up of an upper boundary (top) and a lower boundary (floor). Each new box is created based on a previous box, depicting a “stair” formation.
-If a new high is not formed after three consecutive days, then the high is labeled as the upper boundary. Following this, the floor is specified based on the lowest price.
-
+### Beschreibung
+Die Darvas Boxes sind ein Teil der Handelsstrategie des ungarischen Tänzers Nicolas Darvas. Im stark steigenden Aktienmarkt 1957/58 generierte Darvas mit seinem System innerhalb von 18 Monaten aus etwa 20.000 US$ mehr als 2.000.000 US$. Vorgestellt wurde das Handelssystem erstmals in seinem Buch "How I made 2.000.000$ in the Stock Market". 
+Eine Box besteht aus einer oberen ("Deckel") und einer unteren Begrenzung ("Boden"). Jede neue Box setzt auf der vorhergeneden Box auf, so dass eine treppenförmige Darstellung entsteht.
+Im ersten Schritt wird der "Deckel" bestimmt.  Wenn eine Aktie an drei aufeinanderfolgenden Tagen kein neues Hoch markiert, wird dieses zurückliegende Hoch die obere Begrenzung der Box.
+Anschließend wird der "Boden" der Box bestimmt, der sich als niedrigster Kurs ergibt, auf den die Aktie nachgab. Dieser Tiefstkurs darf dann an den drei Folgetagen nicht mehr unterschritten werden. 
 
 ### Interpretation
-This system is similar to a trend-following channel breakout system. As soon as one of these boxes breaks out, a new buy or sell signal is generated.
+Das System gleicht einem trendfolgenden Channel-Breakout-System. 
+Sobald der Kurs aus eine dieser Boxen ausbricht, entsteht ein Kauf- bzw. Verkauf-Signal.
 
-### Further information
-Here you can read about a trading system based on the Darvas boxes. (German only)
+Wenn der Kurs (in einer Long-Position) durch eine untere Begrenzung fällt, wird die Position geschlossen.
+
+Für Short-Positionen ist der Ablauf analog. 
+
+### Weitere Informationen
+Ein Handelssystem basierend auf Darvas Boxes:
 [http://www.eusdoni.de/index.php?option=com_content&view=article&catid=13:eusdoni-version-3&id=42:darvas-boxen](http://www.eusdoni.de/index.php?option=com_content&view=article&catid=13:eusdoni-version-3&id=42:darvas-boxen)
 
-### Usage
+### Verwendung
 ```cs
 Darvas()
 Darvas(IDataSeries input)
@@ -933,118 +1012,127 @@ Darvas().Lower[int barsAgo]
 Darvas(IDataSeries input).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Darvas**()\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **Darvas**()\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![Darvas Boxes](./media/image22.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the values for the upper markings (box top)
+//Ausgabe des Wertes für die obere Begrenzung der Box (Deckel)
 Print("The upper boundary for the Darvas box is: " + Darvas().Upper[0]);
-//Lower markings
+//Ausgabe des Wertes für die untere Begrenzung der Box (Boden)
 Print("The lower boundary for the Darvas box is: " + Darvas().Lower[0]);
 ```
 
 ##Directional Movement (DM)
-### Description
-The Directional Movement indicator is almost identical to the ADX, with the only difference that the +DM and -DM values are also calculated. These values are then later on used for the DMI.
+### Beschreibung
+Der Directional Movement Indikator (DM) ist identisch mit dem ADX Indikator, wobei hier zusätzlich die Werte +DM und -DM berechnet werden. Diese Werte fließen später in die Berechnung des Directional Movement Index (DMI) ein.
 
 ### Interpretation
-The Directional Movement indicator is positive when the difference between the highs is at its largest.
+Der Directional Movement Indikator ist positiv, wenn die Differenz zwischen den Hochpunkten am größten ist. Er ist nach unten gerichtet (oder negativ), wenn die Differenz zwischen den Kurstiefs den größten Wert hat. Somit ist die nach oben gerichtete Bewegung +DM, und die nach unten gerichtete Bewegung ist -DM.
+Die Plus- bzw. Minus-Zeichen sind nicht im math. Sinne zu verstehen. Sie geben nur nach oben oder unten gerichtete Bewegung an. Der Wert ist immer eine positive Zahl, unabhängig von Aufwärts- oder Abwärtsbewegung.
 
 ### Further information
-See: Directional Movement Index ([*DMI*](#directional-movement-index-dmi))
+siehe Directional Movement Index ([*DMI*](#directional-movement-index-dmi))
 
-### Usage
+### Verwendung
 ```cs
 DM(int period)
 DM(IDataSeries input, int period)
 DM(int period)[int barsAgo]
 DM(IDataSeries input, int period)[int barsAgo]
-//For the value of +DM
+//Für den Wert von +DM
 DM(int period).DiPlus[int barsAgo]
 DM(IDataSeries input, int period).DiPlus[int barsAgo]
-//For the value of -DM
+//Für den Wert von -DM
 DM(int period).DiMinus[int barsAgo]
 DM(IDataSeries input, int period).DiMinus[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DM**(14).DiPlus\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **DM**(14).DiPlus\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Directional Movement (DM)](./media/image23.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the DM values
+//Ausgabe der Directional Movement-Werte +DM und -DM
 Print("The current +DM value is: " + DM(14).DiPlus[0]);
 Print("The current –DM value is: " + DM(14).DiMinus[0]);
 ```
 
 ##Donchian Channel
-### Description
-The Donchian channel can also be called the “4-week-rule”; this is how it works: when the current price reaches a peak above the high of the past 4 weeks, a new long position is opened. If a short position is open simultaneously, it is closed. This works vice versa with shorts. The  Donchian channel trading system is a purely trend-following system based on the concept “buy when it is strong, sell when it is weak”. The famous “Turtles” also employed this breakout system. This indicator displays the highs and lows of the last n days as lines above and below the price development. 20 days represent 4 weeks.
+### Beschreibung
+Der Donchian Channel ist unter dem Begriff 4-Wochen-Regel bekannt geworden und funktioniert folgendermaßen: Wenn der aktuelle Kurs den Höchstkurs der letzten vier Wochen übersteigt, wird eine Long-Position eröffnet. Besteht zur gleichen Zeit eine Short-Position, wird diese geschlossen. Fällt der Kurs unter den Tiefstkurs der letzten vier Wochen, wird eine Long-Position geschlossen bzw. eine Short-Position aufgebaut. 
+Der Handelsansatz des Donchian Channel ist ein reines Trendfolgesystem und setzt das Prinzip „Bei Stärke kaufen, bei Schwäche verkaufen“ direkt um. Es ist ein Breakout System und wurde von den "Turtles" verwendet. 
+Bei diesem Indikator werden die Höchst- und Tiefstkurse der letzten n-Tage als Linien über und unter den Kursverlauf gezeichnet. Die vier Wochen entsprechen 20 Handelstagen.
 
-### Further information
+### Interpretation
+**Früher**
+Zu seiner Anfangszeit verwendete man beim Donchian Channel beim kurzfristigen System für den Einstieg in eine Long-Position das Überschreiten des 20-Tage-Höchstkurses und für den Ausstieg das Unterschreiten des 10-Tage-Tiefstkurses. Umgekehrt erfolgte der Einstieg in eine Short-Position bei einem 20-Tage-Tief und der Ausstieg bei einem 10-Tage-Hoch. Bei langfristigen Systemen verwendete man anstellen der 20 Tage beim Einstieg 55 Tage und anstatt 10 Tage beim Ausstieg nahm man 20 Tage. Zudem benutzte man volatilitätsbasierte Stopps und eine ebenso volatilitätsbasierte Methode zur Positionsbestimmung.
+**Heute**
+Aktuelle Forschungsergebnisse zeigen, dass heute die langfristigen Ausbrüche zwischen 40 und 100 Tagen besser funktionieren als die kurzfristigen. Der Ansatz aus den vergangenen Jahrzehnten ist mittlerweile zu populär geworden.
+
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Donchian\_Channel>
 
-### Usage
+### Verwendung
 ```cs
 DonchianChannel(int period)
 DonchianChannel(IDataSeries input, int period)
 
-//Upper band
+//Für das obere Band
 DonchianChannel(int period).Upper[int barsAgo]
 DonchianChannel(IDataSeries input, int period).Upper[int barsAgo]
 
-//Middle band
+//Für das mittlere Band
 DonchianChannel(int period)[int barsAgo]
 DonchianChannel(IDataSeries input, int period)[int barsAgo]
 
-//Lower band
+//Für das untere Band
 DonchianChannel(int period).Lower[int barsAgo]
 DonchianChannel(IDataSeries input, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DonchianChannel**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B. **DonchianChannel**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Donchian Channel](./media/image24.png)
 
 ### Example
 ```cs
-//Output for the values of the Donchian Channel
+//Ausgabe der Werte für den DDonchianChannel
 Print("The upper band is at: " + DonchianChannel(14).Upper[0]);
 Print("The middle band is at: " + DonchianChannel(14)[0]);
 Print("The lower band is at: " + DonchianChannel(14).Lower[0]);
 ```
 
 ##Directional Movement Index (DMI)
-### Description
-Welles Wilder Jr. developed the Directional Movement concept in 1978. His concept includes the following components:
+### Beschreibung
+Das Directional Movement Konzept wurde 1978 von Welles Wilder jr. in seinem Buch „New Concepts in Technical Trading Systems“ vorgestellt. Dieses Konzept beinhaltet folgende Komponenten:
 
 Directional Movement Index (DMI)
 
@@ -1052,15 +1140,15 @@ Average Directional Movement Index ([*ADX*](#average-directional-index-adx))
 
 True Range (TR)
 
-The Directional Movement Index comes before the Average Directional Movement Index. The DMI shows the strengths of the trend-favoring price movements in percentages. Its standard application is the smoothed ADX.
+Der Directional Movement Index ist eine Vorstufe des Average Directional Movement Index (ADX). Der DMI zeigt die prozentuale Stärke einer trendgerichteten Bewegung an. Verwendet wird in der Regel die geglättete Variante, der ADX. (Quelle: VTAD)
 
 ### Interpretation
-The DMI shows the strength of the trend, but not the trend direction. This means that it is particularly suited as a filter for trading systems employing the Parabolic SAR, for example, in order to filter out sideways phases. When the DMI rises (especially above 25), a trend is displayed; anything below that is recognized as a sideways phase. The +DI and the –DI point towards a trend. An uptrend is classified when the +DI is above the –DI. The further apart they drift, the stronger the trend.
+Der DMI zeigt die Trendstärke an, nicht aber die Trendrichtung. Damit eignet er sich als Filter für trendfolgende Handelssysteme, z.B. den Parabolic SAR, um Seitwärtsphasen herauszufiltern. Bei einem steigenden DMI und ins besondere Werten über 25 wird ein Trend angezeigt, darunter liegt eine Seitwärtsphase vor. +DI und –DI weisen auf die Trendrichtung hin. Im Aufwärtstrend liegt der +DI über dem –DI, im Abwärtstrend entsprechend umgekehrt. Bei Kreuzungen des +DI und –DI wechselt der Trend. Je weiter +DI und –DI auseinander driften, desto stärker ist der Trend. Pendeln +DI und –DI eher lustlos um einander herum und taucht der DMI nach unten ab, liegt eine Seitwärtsphase vor. DMI sowie +DI und –DI eignen sich für Trendlinien- und Divergenzanalyse.
 
-### Further information
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/DMI_-_Directional_Movement_Index](http://vtadwiki.vtad.de/index.php/DMI_-_Directional_Movement_Index)
 
-### Usage
+### Verwendung
 ```cs
 DMI(int period)
 DMI(IDataSeries input, int period)
@@ -1068,35 +1156,46 @@ DMI(int period)[int barsAgo]
 DMI(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DMI**(20)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **DMI**(20)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Directional Movement Index (DMI)](./media/image25.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the DMI
+//Ausgabe des Wertes für den Directional Movement Index
 Print("The current DMI value is: " + DMI(20)[0]);
 ```
 
 ##Double Stochastics (DSS)
-### Description
-William Blau was the developer of the Double Smoothed Stochastic (DSS), which is a double-smoothed stochastic indicator. After a while, it was improved upon by Walter Bressert as a variation of the double-smoothed stochastic. Smaller changes in the price movements cause this indicator to react more sensitively, and it also produces more signals than the one Blau developed. The Bressert version therefore also illustrates extreme zones more clearly than the Blau version.
+### Beschreibung
+Die Double Smothed Stochastic (DSS) wurde zuerst von W. Blau vorgestellt. Es handelt sich um einen doppelt geglätteten Stochastic-Indikator. Einige Zeit später wurde von W. Bressert eine weitere Variante einer doppelt geglätteten Stochastik vorgestellt. Diese auch als DSS Bressert bekannte Variante konnte die Qualität der Signale gegenüber der Variante von Blau deutlich verbessern.  Der Indikator reagiert sensibler auf kleinere Kursbewegungen und erzeugt mehr Signale als die Version von W. Blau. Die Bressert-Version taucht wesentlich deutlicher in die Extremzonen ein als die Blau-Version.
 
-Regardless of the various calculation methods used, the DSS always stays within a scale of 0 to 100. The extreme zones in the developed stochastics are the same as for the original stochastics. The upper extreme area is marked at 80, and the lower extreme zone at 20 - these values cannot be changed. For many applications, it is wise to include an additional middle line at 50, and to adapt this to the circumstances as needed.
+Von der Blau-Version existiert eine weitere Variante, die mit 2 EMA's berechnet wird. Diese Version ist in AgenaTrader mit "Blau2" bezeichnet. 
+
+Unabhängig von der konkreten Berechnungsvariante bewegt sich der Indikator DSS immer in einer Skala von 0 bis 100. Für die Extremzonen gelten die gleichen Werte wie bei Lanes Original-Stochastik und den Blau-Versionen. Der obere Extrembereich wird bei 80 und der untere Extrembereich bei 20 festgelegt. Diese Werte können variiert werden. Es kann oft sehr profitabel sein, die Extremzonen zu verändern. Für diverse Anwendungen ist es sinnvoll, eine zusätzliche Linie als Mittellinie bei 50 einzuzeichnen.
+Die Glättung hat in Bresserts Version nicht die herausragende Bedeutung wie bei Blau. Das soll heißen, der Aufwand zum Auffinden der optimalen Einstellung kann gering gehalten werden. Bei den Blau-Versionen ist es wichtiger, verschiedene Parameter zu testen. (Quelle: z.T. tradesignalonline)
 
 ### Interpretation
-Values above 80 are seen as overbought, and below 20 as oversold. In addition, signals are produced by the signal line’s behavior and movements into and out of the extreme zones.
+Hier gilt das gleiche, was auch zu Lanes Original-Stochastik geschrieben wurde.
+Als Interpretation gilt zunächst, dass Indikatorwerte von über 80 als überkaufter Zustand gelten. Indikatorwerte von unter 20 gelten als überverkaufter Zustand. Solchen Situationen wird zunächst unterstellt, dass sie vom Markt korrigiert werden.
+Hauptanwendung ist jedoch das Generieren von Handelssignalen aus Schnittpunkten einer Signallinie oder einer Linie der Extrembereiche. Als Signallinie kann ein gleitender Durchschnitt variabler Berechnungsmethoden auf den Indikator berechnet werden. In der Regel werden hier Periodeneinstellungen von 3 bis 5 Tagen verwendet.
 
-### Usage
+Da der Indikator ein nahezu „eckenloses“ Verlaufsmuster bildet, bieten sich für die Signallinie eng anliegende Varianten, wie der Kaufmann's Adaptive Moving Average (KAMA), der Weighted Moving Average (WMA) oder ein anderer, sehr reagibler Durchschnitt an. Die Gefahr von ungewollten Überkreuzungen ist bei diesem Indikator sehr gering. Als Signale werden die Schnittpunkte mit der Signallinie verwendet. Schneidet der Indikator die Signallinie nach oben, gilt dies als Kaufsignal, schneidet er sie nach unten als Verkaufssignal.
+Mit Hilfe der Mittellinie oder den Extremzonen können die Signale zusätzlich gefiltert werden. Bullishe Signale können nur dann verwendet werden, wenn sie unter der Mittellinie oder in der unteren Extremzone entstehen. Bearishe Signale werden dann nur verwendet, wenn sie in der oberen Extremzone oder über der Mittellinie entstehen.
+
+Eine andere Variante der Signalerzeugung ist, die direkte Bewegung des Indikators in eine Extremzone hinein oder aus ihr heraus als Signal zu werten. Läuft der Indikator aus der unteren Überverkauft - Zone heraus, kann dies als Kaufsignal gelten, läuft er aus der oberen Überkauft - Zone heraus, gilt das als Verkaufssignal.
+In trendstarken Phasen läuft dieser Indikator relativ oft die entgegengesetzte Extremzone an und liefert so brauchbare Signale.
+
+### Verwendung
 ```cs
 DoubleStochastics(int period)
 DoubleStochastics(int period)[int barsAgo]
@@ -1109,7 +1208,7 @@ DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)[int barsAgo]
 DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)[int barsAgo]
 
-//For the value of %K
+//Für den Wert von %K   (Signaturen sind nur noch aus Gründen der Kompatibilität vorhanden)
 DoubleStochastics(int period).K[int barsAgo]
 DoubleStochastics(IDataSeries input, int period).K[int barsAgo]
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1).K[int barsAgo]
@@ -1118,42 +1217,47 @@ DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1, int E
 DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2).K[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DoubleStochastics**(...)\[**int** barsAgo\] or **DoubleStochastics**(...).K\[**int** barsAgo\]), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **DoubleStochastics**(...)\[**int** barsAgo\] bzw **DoubleStochastics**(...).K\[**int** barsAgo\]) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations (default: 10)
+period		Anzahl der Bars, die in die Berechnung einbezogen werden. (default: 10)
 
-mode Method of calculation, possible inputs are Blau, Blau2, Bressert
+mode		Berechnungsmethode, mögliche Werte sind: Blau, Blau2 und Bressert. (default: Bressert)
 
-EMA-Period1 Periods for the EMA
+EMA-Period1	Periode für den EMA in der Berechnung nach Bressert. (default: 2) 
 
-EMA-Period2 Periods for the second EMA
+EMA-Period2	Periode für den zweiten EMA in der Berechnung für Variante Blau2. (default: 5) 
 
-### Visualization
+### Darstellung
 ![Double Stochastics (DSS)](./media/image26.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for %K
+//Ausgabe des Wertes für %K des DSS-Bressert
 Print("The value of the DSS Bressert %K is: " + DoubleStochastics(10, DoubleStochasticsMode.Bressert, 2)[0]);
 ```
 
 ##Dynamic Momentum Index (DMIndex)
-### Description
-The Dynamic Momentum Index, which was developed by Tushar Chande, is a specific variant of the Relative Strength Index. Chande changed the Dynamic Momentum Index in such a way that, based on various factors, the period settings automatically adjust themselves, which he achieved by coupling it to the RSI in order for a volatility component to be present. The definition of this volatility component is based on a 5-day standard deviation of the closing prices. This, in turn, is then compared to the 10-day average of a 5-day standard deviation.
+### Beschreibung
+Hyperlink+Keywords
+Der Dynamic Momentum Index (DMIndex), wurde von Tushar Chande entwickelt. Es handelt sich hierbei um eine spezielle Variante des Relative Strength Index (RSI).
+
+Chande veränderte den Dynamic Momentum Index so, dass dieser die Periodeneinstellung je nach Marktsituation automatisch selbst verändert. Dies erreichte er durch die Kopplung des RSI an eine Volatilitätskomponente. Diese Volatilitätskomponente des Dynamic Momentum Index bestimmt sich aus einer 5-tägigen Standardabweichung der Schlusskurse, die in das Verhältnis zu einem 10-tätigen Durchschnitt einer 5-tägigen Standardabweichung gesetzt wird. 
+
+Als Basis werden werden beim RSI üblicherweise 14 Tage zur Berechnung gewählt, diese Konstante wird nun durch den Volatilitätsquotienten (V) geteilt. Das Ergebnis wird nun mit einem Minimal- und einem Maximalwert verglichen und darf nicht außerhalb des festgelegten Bereichs von minimal 5 Tagen und maximal 30 Tagen liegen.
 
 ### Interpretation
-If the DMI is inside the oversold zone, it is reasonable to assume that prices are going to start to fall.
+Zeigt der Dynamic Momentum Index den Überkauftbereich an, so wird auf fallende Kurse gesetzt, zeigt der Dynamic Momentum Index den Überverkauftbereich an, so wird auf steigende Kurse gesetzt. Ein solches Handeln ist sinnvoll, wenn andere Indikatoren eine trendlose Phase anzeigen, es soll also gegen den Trend gehandelt werden. Während einer starken Trendphase empfiehlt sich ein Handeln in Trendrichtung, in der Phase eines Aufwärtstrends wird auf eine Überverkauftsituation gewartet bis ein Kaufsignal erfolgt.
 
-### Further and more concise information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Dynamic\_Momentum\_Index>
 
-### Usage
+### Verwendung
 ```cs
 DMIndex(int smooth)
 DMIndex(IDataSeries input, int smooth)
@@ -1161,36 +1265,41 @@ DMIndex(int smooth)[int barsAgo]
 DMIndex(IDataSeries input, int smooth)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DMIndex**(3)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index  (z.B. **DMIndex**(3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-smooth Smoothing settings
+smooth	Einstellung zur Glättung
 
-### Visualization
+### Darstellung
 ![Dynamic Momentum Index (DMIndex)](./media/image27.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the DMIndex Indicator with a smoothing factor of 3
+//Ausgabe des Wertes für den DMIndex Indikator mit einer Glättung von 3
 Print("The current value for the DMIndex is: " + DMIndex(3)[0]);
 ```
 
 ##Ease of Movement (EOM)
-### Description
-Ease of Movement (EMV) is a volume-based oscillator created by Richard Arms that constantly moves above and below the zero line. It is intended to measure the "ease" of price movement, as suggested by the name. Arms developed Equivolume charts in order to visually display price ranges and volume. Ease of Movement expands upon Equivolume by quantifying the price/volume relationship and displaying the results in the form of an oscillator. Generally, when the oscillator is in a positive area, prices are advancing with relative ease. On the other hand, when the oscillator is in negative territory, prices are falling with relative ease.
+### Beschreibung
+Der Ease of Movement (EOM) ist ein interessanter Indikator, der von Richard W. Arms entworfen wurde. Der EOM versucht die Bewegung des Preises, in ein Verhältnis zum aufgewendeten Volumen zu setzen. Je stärker der Indikator ausschlägt, desto größer war der Kursfortschritt mit hohem Volumen. Der EOM ist ein sensibler Seismograph von Angebot und Nachfrage.
+Arms glättet den EOM mit einem 13-tägigen SMA. Man kann ihn aber auch völlig ungeglättet benutzen. (Quelle: http://www.volumen-analyse.de)
 
 ### Interpretation
-When the EOM is moving away from the zero line (marker) then an impulse has begun in that direction. During a breakout onto the opposite side of the zero line, it is recommended to enter with the trend direction.
+Die Nulllinie ist praktisch die Stelle, wo eine gewisse Entspannung zwischen Angebot und Nachfrage eingetreten ist. Wenn sich der EOM von der Nulllinie wegbewegt, dann ist ein Impuls in dieser Richtung entstanden. Den EOM kann man sich als Tischtennisspiel vorstellen, wo die Spieler “Angebot” und “Nachfrage” heißen. Die Nulllinie ist das Tischtennisnetz. Auf jeden Schlag kommt eine Gegenreaktion. Die Kraft des Schlages ist definiert durch das Volumen.
+Wenn man nun den EOM in ein Handelssystem einbauen möchte, dann muss man den EOM auf unterschiedliche Art und Weise benutzen.
+In einem Trend ist das entgegengesetzte Kreuzen der Nulllinie ein Einstiegssignal in Trendrichtung.
+Bei einem Ausbruch muss der EOM einen heftigen Ausschlag zeigen. Jede nicht entschlossene Bewegung des EOM deutet auf einen Fehlausbruch hin.
+Die Beobachtung von neues Hochs bzw. neuen Tiefs im EOM zeigt die vorzeitige Umkehr von Angebots- und Nachfragemenge.
 
-### Further information
+### Weitere Informationen
 <http://www.volumen-analyse.de>
 
-### Usage
+### Verwendung
 ```cs
 EaseOfMovement(int smoothing, int volDivisor)
 EaseOfMovement(IDataSeries input, int smoothing, int volDivisor)
@@ -1198,52 +1307,53 @@ EaseOfMovement(int smoothing, int volDivisor)[int barsAgo]
 EaseOfMovement(IDataSeries input, int smoothing, int volDivisor)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **EaseOfMovement**(14, 10000)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **EaseOfMovement**(14, 10000)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-smoothing Smoothing settings
+smoothing	Einstellung zur Glättung
 
-volDivisor For calculation of the box ratio (see “Calculation” below)
+volDivisor	Zur Berechnung der Box Ratio (s. unten Berechnung)
 
-### Visualization
+### Darstellung
 ![Ease of Movement (EOM)](./media/image28.png)
 
-### Calculation
+### Berechnung
 Midpoint = (High + Low) / 2
 MidpointMove = Midpoint \[today\] – Midpoint \[yesterday\]
 BoxRatio = Volume / (High – Low)
 Ease = MidpointMove / Box Ratio
 
-### Example
+### Beispiel
 ```cs
-//Output for the values of the EOM line
+//Ausgabe der Werte für den EaseOfMovement;
 Print("The value for the Ease of Movement is: " + EaseOfMovement(14, 10000)[0]);
 ```
 
 ##Fisher Transform
-### Description
-The physicist John Ehlers created the Fisher Transform in 2002. The intention of the indicator is to show where there are turning points, which can be achieved with the help of the Inverse Fisher Transform. This changes indicators in such a way that the movements are less random, and the signal quality is clearer. The Fisher Transform either stretches or compresses the input values of the function so that the output is very likely to be between -1 and 1. This gives us a clearly identifiable pattern where even indicators such as the RSI become better defined and more precise.
+### Beschreibung
+Der Indikator FisherTransform wurde im November 2002 vom Physiker John Ehlers in einem Artikel im "Stocks and Commodities Magazine" veröffentlicht. Der Indikator soll große Wendepunkte signalisieren.
+Viele Indikatoren reagieren in seitwärts gerichteten Marktphasen mit chaotischen Bewegungsmustern, die entweder gar nicht oder nur mir vielen Fehlsignalen versetzt, verwendet werden können. Mit Hilfe der „Inverse Fisher Transformation“ können diese Indikatoren derart verändert werden, dass die Bewegungen weniger zufällig und die Signalqualität dadurch verbessert wird. Die Transformation komprimiert, streckt oder staucht die Eingangswerte der Funktion derart, dass diese mit großer Wahrscheinlichkeit zwischen -1 und 1 ausgegeben werden. Daraus resultier ein nahezu eindeutiges Bewegungsmuster, selbst bei Indikatoren wie dem RSI, der normalerweise sehr unruhige und chaotische Bewegungen vollzieht. (Quelle: tradesignalonline.com)
 
 ### Interpretation
-A system using the Fisher Transform can be found here:
-<https://www.prorealtime.com/de/pdf/probacktest.pdf>
+Ein System unter Verwendung des Indikators FisherTransform wird z.B. unter
+<https://www.prorealtime.com/de/pdf/probacktest.pdf> beschrieben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **FisherTransform**(10)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **FisherTransform**(10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-### Usage
+### Verwendung
 ```cs
 FisherTransform(int period)
 FisherTransform(IDataSeries input, int period)
@@ -1251,35 +1361,38 @@ FisherTransform(int period)[int barsAgo]
 FisherTransform(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Visualization
+### Darstellung
 ![Fisher Transform](./media/image29.png)
 
-### Example
+### Beispiel
 ```cs
-//Output values for the Fisher Transform
+//Ausgabe des Wertes für FisherTransform
 Print("The current value for the Fisher Transform is: " + FisherTransform(10)[0]);
 ```
 
 ##Forecast Oscillator (FOSC)
-### Description
-The FOSC makes a comparison of the current price against the value returned by the Time Series Forecast study. It is calculated as a percentage ratio of the difference between the close price and the Time Series Forecast value for the previous bar.
+### Beschreibung
+Der Forecast Oscillator (FOSC) vergleicht den aktuellen Kurs mit dem Ergebnis des Time-Series-Forecast (TSF). Angegeben wird das prozentuale Verhältnis der Differenz zwischen dem Schlusskurs und dem Wert des Time Series Forecast für den vorhergegangenen Bar.
 
-When this oscillator displays positive values, it hints that the Time Series Forecast has underestimated the price, whereas negative values suggest that the TSF has overestimated the price. Usually, an SMA also accompanies the Forecast Oscillator line in the search for oscillator reversals.
+### Interpretation
+Der Oszillator eignet sich gut als moderne Alternative zum bekannten Momentum-Oszillator bzw. zum MACD.
+Positive Werte des Oszillators deuten darauf hin, dass die tatsächliche Höhe des Kurses vom Time Series Forecast nicht korrekt (zu niedrig) eingeschätz wurde und negative Werte bedeuten, dass die Kurse tatsächlich niedriger sind, als die vom TSF vorausgesagten.
+Meist wird zusätzlich zur Linie des FOSC eine SMA-Linie eingezeichnet, um Reversals des Oszillators leichter erkennen zu können.
 
-### Further information
+### Weitere Informationen
 FMLabs: <http://www.fmlabs.com/reference/default.htm?url=ForecastOscillator.htm>
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **FOSC**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index (z.B. **FOSC**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-### Usage
+### Verwendung
 ```cs
 FOSC(int period)
 FOSC(IDataSeries input, int period)
@@ -1287,97 +1400,109 @@ FOSC(int period)[int barsAgo]
 FOSC(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Visualization
+### Darstellung
 ![Forecast Oscillator (FOSC)](./media/image30.png)
 
-### Examples
+### Beispiele
 ```cs
-//Output for the Forecast Oscillator
+//Ausgabe des Wertes für den Forecast Oscillator (FOSC) 
 Print("The current value for the Forecast Oscillator is: " + FOSC(14)[0]);
 
-//Determining the future market direction
+//Bestimmung der zukünftigen Marktrichtung mit dem FOSC
 if (FOSC(14)[0] > 0)
 Print("The FOSC is bigger than zero, which indicates rising price movements.");
 ```
 
 ##HighestHighIndex()
-### Description
-The Highest High Index prints the index for the bars with the highest high within a specified number of periods. It is slightly different from the GetSerieHighestValue() function in that it can be visualized within the chart.
+### Beschreibung
+HighestHighIndex liefert den Index des Bars mit dem höchsten Hoch, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
+Im Unterschied zu HighestBar() ist dies ein Indikator, der im Chart dargestellt werden kann.
 
-See [*HighestHighPrice()*](#highesthighprice), [*LowestLowPrice()*](#lowestlowprice), [*LowestLowIndex*](#lowestlowindex), [*GetSerieHighestValue()*](#getseriehighestvalue), [*GetSerieLowestValue()*](#getserielowestvalue).
+Siehe auch [*HighestHighPrice()*](#highesthighprice), [*LowestLowPrice()*](#lowestlowprice), [*LowestLowIndex*](#lowestlowindex), [*GetSerieHighestValue()*](#getseriehighestvalue), [*GetSerieLowestValue()*](#getserielowestvalue).
 
-### Usage
+### Verwendung
 ```cs
 HighestHighIndex(int BarsBack)
 HighestHighIndex(int BarsBack)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **HighestHighIndex**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **HighestHighIndex**(14)\[**int** barsAgo\] ) wird der Wert für den referenzierten Bar ausgegeben.
 
 ### **Parameter**
-BarsBack Number of periods in which the highest high will be searched for
+BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wird
 
-### Visualization
+### Darstellung
 ![HighestHighIndex()](./media/image31.png)
 
-### Example
+### Beispiel
 ```cs
-// How many bars back is the bar with the highest high of the last 14 bars located?
+// Wieviel Bars zurück liegt der Bar mit dem höchsten Hoch der letzten 14 Bars?
 Print("The highest high in the last 14 bars was " + HighestHighIndex(14)[0] + " bars ago.");
 ```
 
 ##HighestHighPrice()
-### Description
-Highest High Price shows the highest high achieved within a predefined number of periods.
+### Beschreibung
+HighestHighPrice liefert das höchste Hoch, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
-Unlike the GetSerieHighestValue(), this indicator can be displayed within the chart.
+Im Unterschied zu  GetSerieHighestValue(),ist dies ein Indikator, der im Chart dargestellt werden kann.
 
-See [*HighestHighIndex()*](#highesthighindex), [*LowestLowPrice()*](#lowestlowprice), [*LowestLowIndex*](#lowestlowindex), [*GetSerieHighestValue()*](#getseriehighestvalue), [*GetSerieLowestValue()*](#getserielowestvalue).
+Siehe auch  [*HighestHighIndex()*](#highesthighindex), [*LowestLowPrice()*](#lowestlowprice), [*LowestLowIndex*](#lowestlowindex), [*GetSerieHighestValue()*](#getseriehighestvalue), [*GetSerieLowestValue()*](#getserielowestvalue).
 
-### Usage
+### Verwendung
 ```cs
 HighestHighPrice(int BarsBack)
 HighestHighPrice(int BarsBack)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **HighestHighPrice**(14)\[**int** barsAgo\] ), the value of the indicator will be outputted for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **HighestHighPrice**(14)\[**int** barsAgo\] )  wird der Wert für den referenzierten Bar ausgegeben.
 
 ### Parameter
-BarsBack Number of periods in which the highest high will be searched for
+BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wird
 
-### Visualization
+### Darstellung
 ![HighestHighPrice()](./media/image32.png)
 
-### Example
+### Beispiel
 ```cs
-// What was the value of the highest high in the last 14 periods?
+// Welchen Wert hatte das höchste Hoch der letzten 14 Bars?
 Print("The highest high for the last 14 bars is " + HighestHighPrice(14)[0]);
 ```
 
 ##IchimokuCloud
-### Description
-The Ichimoku Cloud, also called Ichimoku Kinko Hyo, is a very adaptable indicator that defines support and resistance, gauges momentum, identifies trend direction and provides trading signals. Ichimoku Kinko Hyo literally means "one look equilibrium chart". With just one look, traders can identify the trend and search for possible signals in that trend. The indicator was developed by the journalist Goichi Hosoda, and published in his 1969 book. Although the Ichimoku Cloud may appear complicated when looked at on the price chart, it is in fact a simple indicator that can be implemented very well – a tribute to the fact that its inventor was a journalist! What is more, the concepts are easily understandable and the signals well-defined.
+### Beschreibung
+Der Ichimoku-Indikator wurde in den 30er Jahren entwickelt und erst 1968 von dem japanischen Journalist Goichi Hosada, der sich „Ichimoku Sanjin“ nannte, vorgestellt.
+Der Indikator besteht aus fünf Linien:
+**1. Tenkan Sen - die drehende Linie**
+Sie ist der Mittelwert vom höchsten und niedrigsten Kurs der letzten neun Stunden und man errechnet sie aus dem höchsten Hoch und aus dem tiefsten Tief geteilt durch zwei. Zur Berechnung werden also die letzten 9 Perioden verwendet.
+**2. Kinjun Sen - die Standard Linie**
+Sie ist der Mittelwert vom höchsten und vom niedrigsten Kurs der letzten 26 Perioden. Diese Linie wird genauso berechnet wie die drehende Linie nur, dass keine 9 Perioden zur Berechnung verwendet werden, sondern 26 Perioden. Das bedeutet, sie ist wesentlich langsamer, was die Marktveränderungen betrifft, als die drehende Linie.
+**3. Chikou Span - die verzögerte Linie**
+Sie stellt eine Rückwärtsprojektion des aktuellen Kurses um 26 Perioden dar. Sie endet also auch bei 26 Zeiteinheiten in der Vergangenheit. Das ist der ganz normale Kurverlauf nur 26 Perioden nach hinten versetzt.
+**4. Senkou Span A  - die erste vorauseilende Linie**
+Die erste vorauseilende Linie (1st preceeding Line) ist der Mittelwert aus Standard Linie und drehender Linie, der 26 Perioden in die Zukunft projiziert wird.
+**5. Senkou Span B - die zweite vorauseilende Linie**
+Die zweite vorauseilende Linie (2nd preceeding Line) ist der Mittelwert aus höchstem und tiefstem Kurs der letzten 52 Perioden, der ebenfalls 26 Perioden in die Zukunft projiziert wird.
+**Kumo - Wolke **
+Die Wolke (Cloud) ist der Bereich zwischen Senkou Span A und Senkou Span B.
+Der Bereich wird i.d.R. farblich hervorgehoben und hat so die Form einer Wolke.
 
-**1. Tenkan Sen** – conversion line This is the median value of the 9-period high and the 9-period low.
-**2. Kinjun Sen** – the baseline This is the midpoint of the 26-period high and low.
-**3. Chikou Span** – lagging span This is the closing price plotted 26 days in the past.
-**4. Senkou Span A** – the first leading line This is the midpoint between the conversion line and the baseline. The leading Span A forms one of the two cloud boundaries. It is referred to as leading because it is plotted 26 periods in the future and thus builds the faster cloud boundary.
-**5. Senkou Span B** – the second leading line This is the midpoint of the 52-day high-low range projected 26 periods into the future, forming the slower cloud boundary.
-Kumo – cloud The cloud (Kumo) is the area between Senkou Span A and Senkou Span B. This area is highlighted in color, forming a cloud shape.
+Die Linien und die Wolke können jeweils einzeln zu- bzw. abgeschaltet werden.
 
-**Caution:**
-Because the cloud is drawn “into the future”, it is necessary to shift the time axis to the left in order to view it.
+**Wichtiger Hinweis:**
+Die Wolke wird z.T. "in die Zukunft" gezeichnet, d.h. über den letzten Bar rechts im Chart hinaus.
+Um diesen Teil der Wolke im Chart zu sehen, muß der Chart mit der Maus auf der Zeitachse nach links verschoben werden.
+
 
 ### Interpretation
-Similarly to the smoothing averages, the Ichimoku indicator will create a bullish signal when the Tenkan Sen crosses over the Kinjun Sen from below.
+Similarly to the smoothing averages, the Ichimoku indicator will create a bullish signal when the Tenkan Sen crosses over the Kinjun Sen from below. Ein bärisches Signal entsteht, wenn der Tenkan Sen den Kinjun Sen von oben kreuzt.
 
-### Further information
+### Weitere Informationen
 <http://de.wikipedia.org/wiki/Ichimoku>
 
 <http://www.forexabode.com/technical-analysis/ichimoku-cloud>
@@ -1388,7 +1513,7 @@ Similarly to the smoothing averages, the Ichimoku indicator will create a bullis
 
 <http://www.forexonlinegeheimnisse.com/ichimoku-kinko-hyo-teil-ii-das-perfekte-kauf-oder-verkaufssignal\#top> (Part 2, German)
 
-### Usage
+### Verwendung
 ```cs
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow)
 IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow)
@@ -1414,35 +1539,37 @@ IchimokuCloud(int periodFast, int periodMedium, int periodSlow).SenkouSpanB[int 
 IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).SenkouSpanB[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **IchimokuCloud**(9,26,52)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **IchimokuCloud**(9,26,52)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-periodFast Period setting for the Tenkan line. Default: 9
+periodFast		Anzahl der Perioden zur Berechnung der Tenkan Linie, (default: 9)
 
-periodMedium Period setting for the Kijun line. Default: 29
+periodMedium		Anzahl der Perioden zur Berechnung der Kijun Linie, (default: 26)
 
-periodSlow Number of periods used for the calculation of the Chikou line. Default: 52
+periodSlow		Anzahl der Perioden zur Berechnung von Chikou Linie, (default: 52)
 
-### Visualization
+### Darstellung
 ![IchimokuCloud](./media/image33.png)
 
 ##InsideBarsMT
-**The installation of the Technical Analysis Package is required in order to access this indicator.**
+**Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.**
 
-### Description
-InsideBarsMT displays inside bars as defined by Michael Voigt in his book.
-The settings can be modified, and additional adjustments are also possible. Furthermore, there are several data series used in stop calculations for self-developed indicators and strategies.
+### Beschreibung
+Der Indikator InsideBarsMT stellt markttechnische Innenstäbe in einem Chart graphisch dar.
+Innenstäbe werden hier exakt so definiert, wie sie von Michael Voigt in seinem Buch ("Das große Buch der Markttechnik")  vorgestellt wurden.
+Die Darstellung ist änderbar und es sind zusätzliche Anpassungen möglich.
+Zudem gibt es einige Datenreihen zur Verwendung in Stopp-Berechnungen für selbsterstellte Indikatoren bzw. Strategien.
 
 ### Interpretation
-Inside bars are bars whose body (open-close) are located within the high-low span of the previous bar. The previous bar is generally called an outside bar.
-Inside bars will sometimes reflect sideways phases, and will also display trend corrections of lower timeframes. When trading inside bars, the stop is placed at the high or low of the previous period. If the high or low of the previous candle is unsuitable, then the high or low of an older candle is used.
+Als Innenstab (InsideBar) wird ein Bar bezeichnet, dessen Körper (die Spanne zwischen Open und Close) innerhalb der Hoch-Tief-Spanne eines vorausgegangenen Bars liegt. Dieser vorausgegangene Bar wird als Außenstab (OutsideBar) bezeichnet .
+Innenstäbe ähneln zumeist einer Seitwärtsphase und bilden Trendkorrekturen tieferliegender Zeiteinheiten ab. Beim "Handel der Bewegung" wird der Stop nach dem Auftreten von Innenstäben an das Hoch bzw. Tief der Vorperiode gelegt. Ist das Hoch bzw. Tief der Vorperiode für eine Stoppversetzung ungeeignet (zu dicht), wird das Hoch bzw. Tief einer älteren Kerze für die Stopversetzung herangezogen.
 
-### Usage
+### Verwendung
 ```cs
 InsideBarsMT().isInsideBar[int barsAgo]
 InsideBarsMT().isOutsideBar[int barsAgo]
@@ -1450,71 +1577,89 @@ InsideBarsMT().HighBeforeOutsideBar[int barsAgo]
 InsideBarsMT().LowBeforeOutsideBar[int barsAgo]
 ```
 
-### Settings
+### Parameter
+input		Eingangsdatenreihe für den Indikator
+
+unit		Mögliche Werte sind:
+		InsideBarsMTToleranceUnit.Ticks
+		InsideBarsMTToleranceUnit.Points
+		InsideBarsMTToleranceUnit.Percent
+		InsideBarsMTToleranceUnit.ATR
+    
+value		ein Wert vom Typ double.  (z.B. 5 Ticks,  0,1 ATR,  0,3 Percent ... )
+
+**Hinweis:**
+1. Im Modus "InsideBarsMTToleranceUnit.Percent" wird der Prozentwert immer vom Schlusskurs der Kerze (Close) berechnet.
+2. Wenn kein Parameter angegeben wird, ist die Toleranz = 0.
+
+### Eigenschaften
 -   **InsideBarsMT**().isInsideBar\[**int** barsAgo\]
 
-Will return “true” if the referenced bar is an inside bar, otherwise “false”
+liefert den Wert 1 (double-Wert), wenn der referenzierte Bar ein Innenstab ist, sonst 0.
 
 -   **InsideBarsMT**().isOutsideBar\[**int** barsAgo\]
 
-Will return “true” if the previous bar is an outside bar
+liefert den Wert 1 (double-Wert) , wenn der referenzierte  Bar ( Index [1] oder größer) ein Außenstab ist, sonst 0.
+(Für den aktuellen Bar (Index [0]) ist eine Entscheidung darüber, ob er ein Aussenstab ist, erst nach dem folgenden Bar möglich.
+Der Wert für den aktuellen Bar ist daher immer 0.)
 
 -   **InsideBarsMT**().HighBeforeOutsideBar\[**int** barsAgo\]
 
-Will output the high of the bar preceding the outside bar
+liefert für einen Innenstab das Hoch (double-Wert) des Bars vor dem zugehörigen Außenstab oder ein noch weiter zurückliegendes "sinnvolles" Hoch. Ist der aktuelle Bar kein Innenstab, enthält dieser Wert 0.
 
 -   **InsideBarsMT**().LowBeforeOutsideBar\[**int** barsAgo\]
 
-Will return the low of the bar preceding the outside bar
+liefert für einen Innenstab das Tief (double-Wert) des Bars vor dem zugehörigen Außenstaboder ein noch weiter zurückliegendes "sinnvolles" Tief. Ist der aktuelle Bar kein Innenstab, enthält dieser Wert 0.
 
-### Visualization
+
+### Darstellung
 ![InsideBarsMT](./media/image34.png)
 
-### Tolerance parameter
-In the image below you will see a longer “phase” where the market is within an inside bar. The bar marked with the arrow opens the low of the outside bar. If the open of the green candle had been a tick lower, then the marked bar would not be an inside bar and the red bar would clearly not be an outside bar.
-The tolerance parameter defines the number of ticks by which the inside bars may “breach” the high-low span of the outside bar and still be recognized as an inside bar.
+### Die Parameter "ToleranceUnit" und "ToleranceValue"
+Im Bild ist eine längere Phase zu erkennen, in der sich der Markt in Innenstäben befindet.
+Der mit dem Pfeil markierte Bar öffnet genau am Tief des roten Außenstabes.
+Würde das Open der grünen Kerze nur einen Tick tiefer liegen, wäre der markierte Bar kein Innenstab und damit der rote Bar auch kein Außenstab.
+Die Parameter "ToleranceUnit" und "ToleranceValue" legen einen Wert fest, um den die Innenstäbe die Hoch/Tief-Spanne ihres Außenstabes noch über- bzw. unterschreiten dürfen, um dennoch als Innenstäbe zu gelten.
+Diese Toleranz kann in Ticks, Punkten, Prozent oder einem ATR-Vielfachen angegeben werden.
 
-Tolerance default setting = 0.
+In der Defaulteinstellung ist der Parametzer "Tolerance" =  0. 
 
 ![InsideBarsMT](./media/image35.png)
 
-### Example
+### Beispiel
 ```cs
 double StopPrice;
 protected override void OnCalculate()
 {
-// Open position when SMAs cross
+// Position beim Kreuzen der GD's öffnen
 if (CrossAbove(SMA(10),SMA(20),1) && Position.PositionType == PositionType.Flat)
 OpenLong();
-// If the current bar is an inside bar, modify the stop
+// Wenn der aktuelle Bar ein Innenstab ist, Stop zurückversetzen
 if (InsideBarsMT().isInsideBar[0])
 StopPrice = InsideBarsMT().LowBeforeOutsideBar[0];
 else
-// Use different stop method
+// andere Stopmethode anwenden
 }
 ```
 
 ##Keltner Channel
-### Description
-Keltner Channels are volatility-based envelopes placed above and below an EMA. This indicator shares similarities with Bollinger Bands, where the bands are set using the standard deviation. Here, instead of using the standard deviation, Keltner Channels use the Average True Range (ATR) to set the channel distance. Typically, the channels are set two Average True Range values above and two ATRs below the 20-day EMA. The EMA determines the direction and the Average True Range dictates the channel width. Keltner Channels form a trend-following indicator that is applied with the aim of identifying reversals with channel breakouts and channel direction. The channels can also be used to spot overbought and oversold levels when the trend is flat.
-In his 1960 book, *How to Make Money in Commodities,* Chester Keltner featured the "Ten-Day Moving Average Trading Rule," credited as the original version of Keltner Channels. This version started off with a 10-day SMA of the typical price {(H+L+C)/3)} as the center line. The 10-day SMA of the high-low range was added and subtracted to set the upper and lower channel lines respectively. Linda Bradford Raschke then brought in the more recent version of Keltner Channels in the 1980s. Similarly to Bollinger Bands, this new version made use of a volatility-based indicator, Average True Range (ATR), to set channel width.
-Middle line = 20-day exponential moving average
-Upper channel line: 20-day EMA + (2x ATR(10))
-Lower channel line: 20-day EMA – (2xATR(10))
+### Beschreibung
+Im Jahr 1960 veröffentliche Chester W. Keltner sein Buch „How to Make Money in Commodities“ und präsentierte seine Keltner-Channels.
+Kanäle oder Bänder bestehen aus zwei Komponenten: einem gleitenden Durchschnitt (GD) als Trendfolger, wobei der GD mit unterschiedlichen Methoden berechnet werden kann und eine diesen GD umhüllende Komponente. Komponente Eins gibt die Trendrichtung und die Trendstärke an, Komponente Zwei definiert Unterstützungs- und Widerstandszonen und zeigt Extrembewegungen des Kurses an.
+Es lässt sich die Aussagekraft eines einzelnen gleitenden Durchschnitts erhöhen, indem man ihn mit Prozentbändern oder Kanälen umgibt. Die Prozentbänder werden mit einem festen Prozentsatz über und unter einem gleitenden Durchschnitt (GD) platziert. Wenn der Kurs vom GD zu weit abweicht, werden extreme Marktsituationen angezeigt. Bei kurzfristig orientierten Anlegern werden oft 3% Bänder um die 21-Tage Linien verwendet. Für langfristige Analysen werden 5% Bänder und der 10-Wochen Durchschnitt, oder 10% Bänder und der 40-Wochen Durchschnitt verwendet. Nachteile der Prozentbänder sind, dass sie gemäß ihrer Berechnung immer einen festen Abstand zu ihrem GD haben - ohne Berücksichtigung der Handelsspanne oder Volatilität.
+Keltner hat durch die Berücksichtigung der täglichen Handelsspanne die Volatilität in seiner Channel-Konstuktion mit eingebaut. (Quelle: VTAD)
 
 
 
 ### Interpretation
-Indicators based on channels, bands and envelopes are designed to encompass most price action. Therefore, moves above or below the channel lines warrant attention because they are relatively rare. Trends often start with strong moves in one direction or another. A surge above the upper channel line shows extraordinary strength, while a plunge below the lower channel line shows extraordinary weakness. Such strong moves can signal the end of one trend and the beginning of another.
+Der Keltner Channel wird als klassisches Trendfolgesystem verwendet:
+Bricht der Kurs aus dem oberen Band aus, so wird das als Kaufsignal gewertet.
+Bricht der Kurs aus dem unteren Band aus, so wird das als Verkaufssignal gewertet.
 
-With an exponential *moving average*, *average* as their foundation, the Keltner Channels are a trend-following indicator. As with moving averages and trend-following indicators, Keltner Channels lag price action. The direction of the moving average dictates the direction of the channel. In general, a downtrend is present when the channel moves lower, while an uptrend exists when the channel moves higher. The trend is flat when the channel moves sideways.
-
-A channel upturn and break above the upper trend line can signal the start of an uptrend. A channel downturn and break below the lower trend line can signal the start a downtrend. Sometimes a strong trend does not take hold after a channel breakout and prices oscillate between the channel lines. Such trading ranges are marked by a relatively flat moving average. The channel boundaries can then be used to identify overbought and oversold levels for trading purposes.
-
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Keltner\_Channel>
 
-### Usage
+### Verwendung
 ```cs
 KeltnerChannel(double offsetMutiplier, int period)
 KeltnerChannel(IDataSeries input, double offsetMutiplier, int period)
@@ -1535,19 +1680,19 @@ KeltnerChannel(IDataSeries input, double offsetMutiplier, int period).Lower[int 
 ### Return value
 **double**
 
-When using this method with an index (e.g. **KeltnerChannel**(1.5, 15)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **KeltnerChannel**(1.5, 15)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-offsetMultiplier Multiplier for the SMA
+offsetMultiplier		Multiplikator für den SMA (siehe Berechnung)
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Keltner Channel](./media/image36.png)
 
-### Calculation
+### Berechnung
 diff.**Set**(High\[0\] - Low\[0\]);
 
 **double** middle = **SMA**(Typical, Period)\[0\];
@@ -1558,34 +1703,34 @@ diff.**Set**(High\[0\] - Low\[0\]);
 
 **double** lower = middle - offset;
 
-### Example
+### Beispiel
 ```cs
-//Current value for the Keltner Channel based on 15 periods
+//Die aktuellen Werte für den KelterChannel berechnet auf 15 Perioden
 Print("Current value of the upper Keltner Channel band: " + KeltnerChannel(1.5, 15).Upper[0]);
 Print("Current value of the middle Keltner Channel band: " + KeltnerChannel(1.5, 15)[0]);
 Print("Current value of the lower Keltner Channel band: " + KeltnerChannel(1.5, 15).Lower[0]);
 ```
 
 ##KeyReversalUp
-### Description
-The KeyReversalUp indicator searches within a predefined number of periods to find turning points with the following characteristics:
-1	The current close is higher than the previous close
-2	The current low is smaller than or equal to the last low of the last n bars
+### Beschreibung
+KeyReversalUp sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
+1.  Das aktuelle Close ist höher als das vorhergegangene Close
+2.  Das aktuelle Tief ist kleiner oder gleich dem tiefsten Tief der letzten n Bars.
 
-See [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
+Siehe auch  [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
 
 
-### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
+### Parameter
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Return value
+### Rückgabewert
 **double**
 
-0 – No reversal information available
-1 – Reversal information available
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-### Usage
+### Verwendung
 ```cs
 KeyReversalUp(int period)
 KeyReversalUp(IDataSeries input, int period)
@@ -1593,34 +1738,34 @@ KeyReversalUp(int period)[int barsAgo]
 KeyReversalUp(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Search for an entry opportunity (longs)
+// Suche nach Möglichkeiten für einen Long-Einstieg
 if (KeyReversalUp(10)[0] == 1)
-Print("A long reversal formation has occurred.");
+Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
 ##KeyReversalDown
-### Description
-KeyReversalDown searches within a predefined number of periods to find turning points with the following characteristics:
+### Beschreibung
+KeyReversalDown sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
-1	The current close is lower than the previous close
-2	The current high is higher than or equal to the highest high of the last n bars
+1.  Das aktuelle Close ist tiefer als das vorhergegangene Close
+2.  Das aktuelle Hoch ist größer oder gleich dem höchsten Hoch der letzten n Bars.
 
-See [*KeyReversalUp*](#keyreversalup), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
+Siehe auch [*KeyReversalUp*](#keyreversalup), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
 
 
 ### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Return value
+### Rückgabewert
 **double**
 
-0 – No reversal information available
-1 – Reversal information available
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-### Usage
+### Verwendung
 ```cs
 KeyReversalDown(int period)
 KeyReversalDown(IDataSeries input, int period)
@@ -1628,36 +1773,36 @@ KeyReversalDown(int period)[int barsAgo]
 KeyReversalDown(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Look for a short entry
+// Suche nach Möglichkeiten für einen Short-Einstieg
 if (KeyReversalDown(10)[0] == 1)
-Print("A short reversal formation has occurred.");
+Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
 ##KeyReversalUpAtSMA
-### Description
-KeyReversalUpAtSMA searches within a predefined number of periods to find turning points with the following characteristics:
+### Beschreibung
+KeyReversalUpAtSMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
-1	The current close is higher than the previous close
-2	The current low is smaller than or equal to the lowest low within n bars
-3	The current low has touched or breached an SMA
+1.  Das aktuelle Close ist höher als das vorhergegangene Close
+2.  Das aktuelle Tief ist kleiner oder gleich dem tiefsten Tief der letzten n Bars
+3.  Das aktuelle Tief hat einen SMA berührt bzw. unterschritten.
 
-See [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
+Siehe auch [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
 
 
 ### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
-SMAperiod Number of periods included in the calculation of the SMA
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+SMAperiod	Anzahl der Perioden zur Berechnung des SMA
 
-### Return value
+### Rückgabewert
 **double**
 
-0 – No reversal information
-1 – Reversal information found
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-### Usage
+### Verwendung
 ```cs
 KeyReversalUpAtSMA(int period, int SMAperiod)
 KeyReversalUpAtSMA(IDataSeries input, int period, int SMAperiod)
@@ -1665,36 +1810,36 @@ KeyReversalUpAtSMA(int period, int SMAperiod)[int barsAgo]
 KeyReversalUpAtSMA(IDataSeries input, int period, int SMAperiod)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Look for a long entry
+// Suche nach Möglichkeiten für einen Long-Einstieg
 if (KeyReversalUpAtSMA(10)[0] == 1)
-Print("A long reversal formation has occurred.");
+Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
 ##KeyReversalDownAtSMA
-### Description
-KeyReversalDownAtSMA searches within a predefined number of periods to find a turning point with the following characteristics:
+### Beschreibung
+KeyReversalDownAtSMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
-1	The current close is lower than the previous close
-2	The current high is higher than or equal to the highest high within the last n periods
-3	The current high has touched or breached an SMA
+1.  Das aktuelle Close ist tiefer als das vorhergegangene Close
+2.  Das aktuelle Hoch ist größer oder gleich dem höchsten Hoch der letzten n Bars
+3.  Das aktuelle Hoch hat einen SMA berührt bzw. überschritten.
 
-See [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
+Siehe auch  [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
 
 
 ### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
-SMAperiod Number of periods included in the SMA calculation
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+SMAperiod	Anzahl der Perioden zur Berechnung des SMA
 
 ### Return value
 **double**
 
-0 – No reversal formation found
-1 – Reversal formation present
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-### Usage
+### Verwendung
 ```cs
 KeyReversalDownAtSMA(int period, int SMAperiod)
 KeyReversalDownAtSMA(IDataSeries input, int period, int SMAperiod)
@@ -1702,35 +1847,35 @@ KeyReversalDownAtSMA(int period, int SMAperiod)[int barsAgo]
 KeyReversalDownAtSMA(IDataSeries input, int period, int SMAperiod)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Search for a short entry
+// Suche nach Möglichkeiten für einen Short-Einstieg
 if (KeyReversalDownAtSMA(10)[0] == 1)
-Print("A short reversal formation has occurred.");
+Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
 ##KeyReversalUpAtEMA
-### Description
-KeyReversalUpAtEMA searches within a predefined number of periods to find a reversal formation with the following characteristics:
+### Beschreibung
+KeyReversalUpAtEMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
-1	The current close is higher than the previous close
-2	The current low is smaller than or equal to the lowest low within the last n bars
-3	The current low has touched or breached an EMA
+1.  Das aktuelle Close ist höher als das vorhergegangene Close
+2.  Das aktuelle Tief ist kleiner oder gleich dem tiefsten Tief der letzten n Bars
+3.  Das aktuelle Tief hat einen EMA berührt bzw. unterschritten.
 
-See [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
+Siehe auch [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalDownAtEMA*](#keyreversaldownatema).
 
 ### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
-EMAperiod Number of periods included in the EMA calculation
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+EMAperiod	Anzahl der Perioden zur Berechnung des EMA
 
-### Return value
+### Rückgabewert
 **double**
 
-0 – No reversal information found
-1 – Reversal information found
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-### Usage
+### Verwendung
 ```cs
 KeyReversalUpAtEMA(int period, int EMAperiod)
 KeyReversalUpAtEMA(IDataSeries input, int period, int EMAperiod)
@@ -1738,36 +1883,35 @@ KeyReversalUpAtEMA(int period, int EMAperiod)[int barsAgo]
 KeyReversalUpAtEMA(IDataSeries input, int period, int EMAperiod)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Search for a long entry
+// Suche nach Möglichkeiten für einen Long-Einstieg
 if (KeyReversalUpAtEMA(10)[0] == 1)
-Print("A long reversal formation has occurred.");
+Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
 ##KeyReversalDownAtEMA
-### Description
-KeyReversalDownAtEMA searches within a predefined number of periods to find a reversal formation with the following characteristics:
+### Beschreibung
+KeyReversalDownAtEMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
-1	The current close is lower than the previous close
-2	The current high is larger than or equal to the highest high of the last n bars
-3	The current high has touched or breached an EMA
+1.  Das aktuelle Close ist tiefer als das vorhergegangene Close
+2.  Das aktuelle Hoch ist größer oder gleich dem höchsten Hoch der letzten n Bars
+3.  Das aktuelle Hoch hat einen EMA berührt bzw. überschritten.
 
-See [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema).
+Siehe auch [*KeyReversalUp*](#keyreversalup), [*KeyReversalDown*](#keyreversaldown), [*KeyReversalUpAtSMA*](#keyreversalupatsma), [*KeyReversalDownAtSMA*](#keyreversaldownatsma), [*KeyReversalUpAtEMA*](#keyreversalupatema).
 
 ### Parameters
-input Input data series for the indicator
-period Number of bars included in the calculations
-EMAperiod Number of periods used to calculate the EMA
+input		Eingangsdatenreihe für den Indikator
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+EMAperiod	Anzahl der Perioden zur Berechnung des EMA
 
 ### Return value
 **double**
 
-0 – No reversal formation found
+0 - keine Umkehrformation vorhanden
+1 - Umkehrformation vorhanden
 
-1 – Reversal formation found
-
-### Usage
+### Verwendung
 ```cs
 KeyReversalDownAtEMA(int period, int EMAperiod)
 KeyReversalDownAtEMA(IDataSeries input, int period, int EMAperiod)
@@ -1775,26 +1919,27 @@ KeyReversalDownAtEMA(int period, int EMAperiod)[int barsAgo]
 KeyReversalDownAtEMA(IDataSeries input, int period, int EMAperiod)[int barsAgo]
 ```
 
-### Example
+### Beispiel
 ```cs
-// Search for a short entry
+// Suche nach Möglichkeiten für einen Short-Einstieg
 if (KeyReversalDownAtEMA(10)[0] == 1)
-Print("A short reversal formation has occurred.");
+Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
 ##Linear Regression
-### Description
-Linear Regression is used to determine trends. Here, the prices are set as dependent variables, and time is set as an independent variable. Using the method for determination of the smallest square, a straight line is placed through the price movements in such a way that the distance between the prices and the line deviates as little as possible. Using this method also establishes a trend between two points in time. The regression line can be found in the middle of the price channel, and the indicator provides the end values of multiple linear regression trend lines. Each point along this indicator is therefore an end value of a linear regression trend line. What results is quite similar to a smoothing average, with the difference that the regression line exhibits less lag.
+### Beschreibung
+Die Lineare Regression wird zur Trendbestimmung eingesetzt. Dabei werden die Kurse als abhängige und die Zeit als unabhängige Variablen verwendet. Mit Hilfe der Methode des kleinsten Quadrats wird eine gerade Linie so durch den Kursverlauf gelegt, dass der Abstand der Kurse zur Linie minimal ist. Mit dieser Methode lässt sich ein Trend zwischen zwei Zeitpunkten quantitativ darstellen. Die Regressionsgerade befindet sich nach der Berechnung in der Mitte des Kursverlaufs.
+Der Indikator Linear Regression stellt die Endwerte multipler linearer Regressionstrendlinien dar. Jeder Punkt entlang des Indikators ist ein Endwert einer linearen Regressionstrendline. Das Ergebnis erinnert so an einen gleitenden Durchschnitt. Im Gegensatz zu einem gleitenden Durchschnitt, weist die resultierende Linie des Lineare Regression Indikators jedoch weniger Verzögerung auf.
 
-See [*R-Squared*](#r-squared), [*LinRegSlope*](#linregslope), [*LinRegIntercept*](#linregintercept).
+Siehe auch [*R-Squared*](#r-squared), [*LinRegSlope*](#linregslope), [*LinRegIntercept*](#linregintercept).
 
-### Further information
+### Weitere Informationen
 <http://www.vtad.de/sites/files/forschung/vtad\_Award\_2011\_Joachim\_Lenz\_Veroeffentlichung.pdf>
 
 ### Interpretation
-The linear regression indicator is used as a prognosis tool for the future developments of the instrument. If the prices are rising or falling steadily, then it can be expected that they will return to a more realistic/reasonable level. In other words: the indicator shows where the price should be, a deviation from the regression is assumed to be short-lived and to be corrected soon.
+Der Lineare Regression Indikator versteht sich als eine Prognose des zukünftigen Kurses, der heute bereits abgebildet wird. Wenn die Preise anhaltend höher oder niedriger als die prognostizierten Kurse sind, ist zu erwarten, dass sie schnell wieder auf ein realistischeres Niveau zurückzukehren. Mit anderen Worten: Der Indikator zeigt an, wo die Preise (nach statistischem Verständnis) sein sollten.Eine übermäßige Abweichung von der Regression ist wahrscheinlich kurzlebig und wird in naher Zukunft korrigiert.
 
-### Usage
+### Verwendung
 ```cs
 LinReg(int period)
 LinReg(IDataSeries input, int period)
@@ -1802,37 +1947,37 @@ LinReg(int period)[int barsAgo]
 LinReg(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **LinReg**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **LinReg**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Linear Regression](./media/image37.png)
 
-### Example
+### Beispiel
 ```cs
-//Show the current values of the regression line
-Print("The current value for the linear regression is: " + LinReg(14)[0]);
+//Anzeige des aktuellen Wertes für die lineare Regression berechnet auf 14 Perioden
+Print("Der aktuelle Wert der linearen Regression ist: " + LinReg(14)[0]);
 ```
 
 ##LinRegIntercept
-### Description
-The Linear Regression Intercept outputs the value of the regression constant, i.e. the mathematical intersection of where the regression line meets the price axis.
+### Beschreibung
+Linear Regression Intercept (LinRegIntercept) liefert den Wert der Regressionskonstante, d.h. aus mathematischer Sicht den jeweiligen Schnittpunkt der Regressionsgeraden mit der Preisachse.
 
-A straight line can be accurately determined with the help of the slope and intercept values.
+Mit den beiden Werten Slope und Intercept ist eine Gerade eindeutig festgelegt.
 
-See [*Linear Regression*](#linearregression), [*R-Squared*](#r-squared) [*LinRegSlope*](#linregslope).
+Siehe auch [*Linear Regression*](#linearregression), [*R-Squared*](#r-squared) [*LinRegSlope*](#linregslope).
 
 ### Interpretation
-The indicator is not used by itself, but is simply a component of trading systems that analyze trade trends with the help of the linear regression.
+Der Indikator wird nicht eigenständig verwendet, sondern ist ein Bestandteil von Handelssystemen, die ihre Trenderkennung mit Mitteln der Linearen Regression vornehmen.
 
-### Usage
+### Verwendung
 ```cs
 LinRegIntercept(int period)
 LinRegIntercept(IDataSeries input, int period)
@@ -1843,33 +1988,33 @@ LinRegIntercept(IDataSeries input, int period)[int barsAgo]
 ### Return value
 **double**
 
-When using this method with an index (e.g. **LinRegIntercept**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **LinRegIntercept**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![LinRegIntercept](./media/image38.png)
 
-### Example
+### Beispiel
 ```cs
-//Show current value
-Print("The current value of the regression constant is: " + LinRegIntercept(14)[0]);
+//Anzeige des aktuellen Wertes für die Regressionskonstante berechnet auf 14 Perioden
+Print("Der aktuelle Wert der Regressionskonstante ist: " + LinRegIntercept(14)[0]);
 ```
 
 ##LinRegSlope
-### Description
-The Linear Regression Slope outputs the slope of the linear regression line, and is a measurement of the regression line’s “elevation”.
+### Beschreibung
+Linear Regression Slope (LinRegSlope) liefert den Anstieg (Slope = Neigung) der linearen Regressionsgeraden. Er misst sozusagen die "Steilheit" der Regressionsgeraden.
 
-See [*Linear Regression*](#linearregression), [*R-Squared*](#r-squared), [*LinRegIntercept*](#linregintercept).
+Siehe auch[*Linear Regression*](#linearregression), [*R-Squared*](#r-squared), [*LinRegIntercept*](#linregintercept).
 
 ### Interpretation
-Simply put: in an uptrend, the elevation is positive and facing upwards. The opposite applies to downtrends.
-This indicator is not very useful for determining overbought or oversold areas, but can be used to measure the strength of a trend. It should be used in combination with other indicators to identify potential entries.
+Mit einfachen Worten gesagt, verhält es sich so: In einem Aufwärtstrend ist der Anstieg positiv und nach oben gerichtet, während er in einem Abwärtstrend negativ bzw. nach unten gerichtet ist.
+Der Indikator ist nicht gut geeignet um überkauft/überverkauft Bereiche anzuzeigen, kann aber die Richtung und Stärke eines Trends messen. Er kann auch in Kombination mit anderen Indikatoren verwendet werden, um potenzielle Einstiegspunkte zu identifizieren.
 
-### Usage
+### Verwendung
 ```cs
 LinRegSlope(int period)
 LinRegSlope(IDataSeries input, int period)
@@ -1877,122 +2022,127 @@ LinRegSlope(int period)[int barsAgo]
 LinRegSlope(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **LinRegSlope**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **LinRegSlope**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![LinRegSlope](./media/image39.png)
 
-### Example
+### Beispiel
 ```cs
-//Current value for the slope:
-Print("The current value for the inclination of the linear regression line is: " + LinRegSlope(14)[0]);
+//Anzeige des aktuellen Wertes für den Anstieg der linearen Regressionsgeraden berechnet auf 14 Perioden
+Print("Der aktuelle Wert des Anstiegs der linearen Regressionsgeraden ist:  " + LinRegSlope(14)[0]);
 ```
 
 ##LowestLowIndex()
-### Description
-LowestLowIndex delivers the index of the bar with the lowest low within a predefined number of periods.
+### Beschreibung
+LowestLowPrice liefert das tiefste Tief, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
-Differently to GetSerieLowestValue(), one can display this indicator within a chart.
+Im Unterschied zu  GetSerieLowestValue() ist dies ein Indikator, der im Chart dargestellt werden kann.
 
-See [*HighestHighPrice()*](#highesthighprice), [*HighestHighIndex()*](#highesthighindex), [*LowestLowPrice()*](#lowestlowprice),
+Siehe auch [*HighestHighPrice()*](#highesthighprice), [*HighestHighIndex()*](#highesthighindex), [*LowestLowPrice()*](#lowestlowprice),
 *GetSerieHighestValue()*, *GetSerieLowestValue()*.
 
-### Usage
+### Verwendung
 ```cs
 LowestLowIndex(int BarsBack)
 LowestLowIndex(int BarsBack)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **LowestLowIndex**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **LowestLowIndex**(14)\[**int** barsAgo\] ) wird der Wert für den referenzierten Bar ausgegeben.
 
 **Parameter**
 
-BarsBack Number of periods within which the highest high shall be searched for
+BarsBack	Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
 
-### Visualization
+### Darstellung
 ![LowestLowIndex()](./media/image40.png)
 
-### Example
+### Beispiel
 ```cs
-// How many bars back is the lowest low of the last 14 bars located?
-Print("The lowest low of the last 14 bars was " + LowestLowIndex(14)[0] + " bars ago.");
+// Wieviel Bars zurück liegt der Bar mit dem tiefsten Tief der letzten 14 Bars?
+Print("Das tiefste Tief der letzten 14 Bars liegt" + LowestLowIndex(14)[0] + " Bars zurück");
 ```
 
 ##LowestLowPrice()
-### Description
-LowestLowPrice delivers the value of the lowest low within a predefined number of periods.
+### Beschreibung
+LowestLowPrice liefert das tiefste Tief, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
-Unlike the GetSerieLowestValue(), this indicator can be viewed within the chart.
+Im Unterschied zu GetSerieLowestValue() ist dies ein Indikator, der im Chart dargestellt werden kann.
 
-See [*HighestHighPrice()*](#highesthighprice), [*HighestHighIndex()*](#highesthighindex), *[LowestLowIndex]()*,
+Siehe auch  [*HighestHighPrice()*](#highesthighprice), [*HighestHighIndex()*](#highesthighindex), *[LowestLowIndex]()*,
 *GetSerieHighestValue()*, *GetSerieLowestValue()*.
 
-### Usage
+### Verwendung
 ```cs
 LowestLowPrice(int BarsBack)
 LowestLowPrice(int BarsBack)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **LowestLowPrice**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **LowestLowPrice**(14)\[**int** barsAgo\] ) wird der Wert für den referenzierten Bar ausgegeben.
 
 ### Parameter
-BarsBack Number of periods within which the low will be searched for
+BarsBack	Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
 
-### Visualization
+### Darstellung
 ![LowestLowPrice()](./media/image41.png)
 
-### Example
+### Beispiel
 ```cs
-// What value did the lowest low of the last 14 periods have?
-Print("The lowest low of the last 14 bars is " + LowestLowPrice(14)[0]);
+// Welchen Wert hatte das tiefste Tief der letzten 14 Bars?
+Print("Das tiefste Tief der letzten 14 Bars ist " + LowestLowPrice(14)[0]);
 ```
 
 ##MACD
-### Description
-The Moving Average Convergence-Divergence (MACD) indicator, developed by Gerald Appel in the late 70s, is one of the simplest, most effective momentum indicators out there. The MACD makes two trend-following indicators, moving averages, average, become a momentum oscillator by subtracting the longer moving average from the shorter moving average. As a result of this, the MACD offers great advantages: trend following and momentum. The MACD moves above and below the zero line as the moving averages converge, cross and diverge again. Signal line crossovers, centerline crossovers and divergences are things that traders can keep an eye out for to generate signals. Since the MACD is unbounded, it is not especially useful for identifying overbought or oversold levels. The MACD line is the 12-day Exponential Moving Average (EMA) minus the 26-day EMA, and closing prices are used for these moving averages. A 9-day EMA of the MACD line is plotted with the indicator acting as a signal line and identifying turns. The MACD histogram shows the difference between the MACD and its 9-day EMA, i.e. the signal line. When the MACD line is above its signal line, the histogram is positive, and vice versa when the MACD line is below its signal line.
+### Beschreibung
+Der Moving Average Convergence/Divergence (MACD) wurde Ende der siebziger Jahre (des vergangenen Jahrhunderts) von Gerald Appel erfunden und ist einer der beliebtesten Instrumente der technischen Analyse geworden. 
+Laut Gerald Appel ist „der MACD ein Indikator für alle Zeitebenen. Mit Monatsdaten kann er zur Analyse längerfristiger Börsentrends herangezogen werden, mit Wochen- oder Tagesdaten für mittel- und kürzerfristige Trends und mit Intraday-Daten sogar für stündlichen oder minütliche Marktentwicklungen. Damit ist er auch für den kurzfristigen Tageshandel geeignet. Der Indikator ist häufig in der Lage, genaue Signale für den Marktein- und ausstieg zu geben. Eine seiner stärksten Eigenschaften ist seine Fähigkeit, das nahende Ende größerer mittelfristiger Kursrückgänge festzustellen, die zugleich auch günstige Zeitpunkte für den Markteintritt darstellen.“
 
-The typical settings used with the MACD are the values 12, 26 and 9. However, other values can also be used depending on the trading style and goals in mind.
-
+Die Unterscheidung zum Price Oscillator liegt im Verfahren der Durchschnittsberechnung und der Art der Signalerzeugung, sonst gelten dieselben Regeln. Statt arithmetischer Durchschnitte werden beim MACD exponentielle Durchschnitte (EMA) verwendet. (Quelle: VTAD)
 
 
 ### Interpretation
-As its name implies, the MACD is all about the convergence and divergence of the two moving averages. Convergence occurs when the moving averages move towards each other. Divergence occurs when the moving averages move away from each other. The shorter moving average (12-day) is faster and responsible for most MACD movements. The longer moving average (26-day) is slower and less reactive to price changes in the underlying security.
+Der MACD liefert klare Signale hinsichtlich der Trendrichtung und der Trendstärke mit Überkauft-/Überverkauft-Zonen, er generiert Kauf- und Verkaufssignale und er liefert Signale für einen möglicherweise bevorstehenden Trendwechsel. 
+Trendrichtung:
+Ein steigender MACD zeigt einen Aufwärtstrend an, ein fallender MACD zeigt einen Abwärtstrend an.
+Trendstärke:
+Der Abstand des MACD von der Mittellinie gibt Hinweise auf die Stärke des Trends. Die Trendstärke erhöht sich, je weiter sich der MACD von seiner Mittellinie entfernt. Nähert sich der MACD der Mittellinie an, wird der Trend schwächer. Ein sehr großer Abstand weist auf Überkauft-/Überverkauft-Phasen hin. Da der MACD nicht in einer festen Skala von z.B. 0-100 wie der RSI oder die Stochastik angezeigt wird, muss der Begriff „sehr großer Abstand“ über den historischen Kursverlauf definiert werden. 
+Ein Kaufsignal wird generiert, wenn die MACD-Linie die Richtung von abwärts gerichtet nach aufwärts gerichtet ändert.
+Ein Verkaufssignal wird generiert, wenn die MACD-Linie die Richtung von aufwärts gerichtet nach abwärts gerichtet ändert. 
+Die Bestätigung des Kauf- bzw. Verkaufsignals erfolgt, wenn die MACD-Linie die Signallinie kreuzt. 
+Die generelle Regel lautet: Kreuzt die MACD-Linie die Signallinie von unten nach oben, wird das Kaufsignal bestätigt.
+Kreuzt die MACD-Linie die Signallinie von oben nach unten, wird das Verkaufsignal bestätigt.
 
-The MACD line oscillates above and below the zero line, which is also known as the centerline. These crossovers signal that the 12-day EMA has crossed the 26-day EMA. The direction, of course, depends on the direction of the moving average cross. Positive MACD indicates that the 12-day EMA is above the 26-day EMA. Positive values increase as the shorter EMA diverges further from the longer EMA. This means upside momentum is increasing. Negative MACD values indicate that the 12-day EMA is below the 26-day EMA. Negative values increase as the shorter EMA diverges further below the longer EMA. This means downside [momentum](#momentum) is increasing. Signal line crossovers are the most common MACD signals. The signal line is a 9-day EMA of the MACD line. As a moving average of the indicator, it trails the MACD and makes it easier to spot MACD turns. A bullish crossover occurs when the MACD turns up and crosses above the signal line. A bearish crossover occurs when the MACD turns down and crosses below the signal line. Crossovers can last a few days or a few weeks, it all depends on the strength of the move.
-
-Due diligence is required before relying on these common signals. Signal line crossovers at positive or negative extremes should be viewed with caution. Even though the MACD does not have upper and lower limits, chartists can estimate historical extremes with a simple visual assessment. It takes a strong move in the underlying security to push momentum to an extreme. Even though the move may continue, momentum is likely to slow and this will usually produce a signal line crossover at the extremities. Volatility in the underlying security can also increase the number of crossovers.
-
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/MACD>
 
-### Usage
+### Verwendung
 ```cs
 MACD(int fast, int slow, int smooth)
 MACD(IDataSeries input, int fast, int slow, int smooth)
 
-//For the value of the MACD line
+//Für den Wert der MACD-Linie
 MACD(int fast, int slow, int smooth)[int barsAgo]
 MACD(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
 
-//For the value of the signal line
+//Für den Wert der Signal-Linie
 MACD(int fast, int slow, int smooth).Avg[int barsAgo]
 MACD(IDataSeries input, int fast, int slow, int smooth).Avg[int barsAgo]
 
-//For the difference between the MACD and the signal line
+//Für die Differenz zwischen MACD- und Signal-Linie
 MACD(int fast, int slow, int smooth).Diff[int barsAgo]
 MACD(IDataSeries input, int fast, int slow, int smooth).Diff[int barsAgo]
 ```
@@ -2000,70 +2150,74 @@ MACD(IDataSeries input, int fast, int slow, int smooth).Diff[int barsAgo]
 ### Return value
 **double**
 
-When using this method with an index (e.g. **MACD**(12,26,9)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **MACD**(12,26,9)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-fast Number of periods for the fast EMA calculation
+fast		Anzahl der Perioden zur Berechnung des fast-EMA
 
-slow Number of periods for the slow EMA calculation
+slow		Anzahl der Perioden zur Berechnung des slow-EMA
 
-smooth Number of periods for the EMA calculation of the signal line
+smooth	Anzahl der Perioden zur Berechnung des EMA für die Signallinie
 
-### Visualization
+### Darstellung
 ![MACD](./media/image42.png)
 
-### Example
+### Beispiel
 ```cs
-//Show the current values for the MACD
-Print("The current value for the MACD line is: " + MACD(12,26,9)[0]);
-Print("The current value for the signal line is: " + MACD(12,26,9).Avg[0]);
-Print("The difference between the MACD and the signal line is: " + MACD(12,26,9).Diff[0]);
+//Anzeige der aktuellen Wertes des MACD in der Standardeinstellung
+Print("Der aktuelle Wert der MACD-Linie ist: " + MACD(12,26,9)[0]);
+Print("Der aktuelle Wert der Signal-Linie ist: " + MACD(12,26,9).Avg[0]);
+Print("Die Differenz zw. MACD und Signallinie beträgt:" + MACD(12,26,9).Diff[0]);
 ```
 
 ##MAEnvelopes
-### Description
-These Moving Average Envelopes are percentage-based envelopes placed above and below a moving average. The moving average forms the base for this indicator, and can be a either simple or exponential moving average. Each MA envelope is set the same percentage above or below the moving average, thereby creating parallel bands that follow price action. Moving Average Envelopes can be used as a trend-following indicator with a moving average as the base. But this indicator is not limited to just trend following: the envelopes can also be used for spotting overbought and oversold levels when the trend is relatively flat.
+### Beschreibung
+Im Indikator MAEnvelopes werden durch einen passenden Gleitendern Durchschnitt Bänder (Envelop = Umschlag) gebildet, die, angemessen um einen bestimmte Prozentsatz nach oben und unten verschoben, die Kursentwicklung einhüllen. Dadurch sollen die wahrscheinlichen Kursschwankungen eingegrenzt werden. Envelopes markieren die obere und untere Bewegungsgrenze der Kurse. Dadurch entsteht eine Handelszone, die in Form zweier Bänder einen variablen Kanal nachbildet. Dieser Indikator ist gut in Seitwärtsbewegungen einzusetzen.
 
-Indicators based on channels, bands and envelopes are intended to encompass most price action, which is why moves above or below the envelopes deserve attention. Trends often start with sharp moves in one direction – a surge above the upper envelope shows extraordinary strength, while a dive below the lower envelope exhibits extraordinary weakness. Strong moves such as these can signal the end of one trend and the start of another.
+### Interpretation
+Handeslsignale entstehen, wenn die obere bzw. untere Grenze des Bandes berührt, oder das Band verlassen wird. Hierbei sind zwei Varianten zu unterscheiden:
+1. Handelssignal innerhalb der Envelopes
+- Kauf = Bestätigung des unteren Bandes
+	- Verkauf = Bestätigung des oberen Bandes (jedoch kein Verkauf bei gleichzeitig steigendem Gleitenden Durchschnitt) 
+2. Handelssignal außerhalb der Envelopes
+- Kauf = Ausbruch durch das obere Band (Verkauf dieser Position bei Durchbruch durch den Gleitenden Durchschnitt nach unten)
+	- Verkauf = Ausbruch durch das untere Band (Rückkauf dieser Position bei Durchbruch durch den Gleitenden Durchschnitt nach oben)
+(Quelle: www.chartundrat.de)
 
-With a *moving average* as the foundation, Moving Average Envelopes are a trend-following indicator. As with moving averages, the envelopes lag price action. The direction of the moving average dictates the direction of the channel, so generally, when the channel moves lower, a downtrend exists, and when the channel goes higher, an uptrend is present. When the channel moves sideways, this signifies that the trend is flat.
 
-Occasionally, it happens that a strong trend does not establish itself after an envelope break, and prices move into a trading range. Trading ranges such as these are characterized by a relatively flat moving average. These envelopes can then be used to spot overbought and oversold levels. A move above the upper envelope shows an overbought situation; a move below the lower envelope signals an oversold situation.
-
-
-### Usage
+### Verwendung
 ```cs
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period)
 MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period)
 
-//For the upper band
+//Für das obere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Upper[int barsAgo]
 MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Upper[int barsAgo]
 
-//For the middle band
+//Für das mittlere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Middle[int barsAgo]
 MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Middle[int barsAgo]
 
-//For the lower band
+//Für das untere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Lower[int barsAgo]
 MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **MAEnvelopes**(14,SMA,1.5)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **MAEnvelopes**(14,SMA,1.5)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-envelopePercentage Distance of the upper and lower bands from the middle line in percent
+envelopePercentage	Abstand des oberen und unteren Bandes vom mittleren Band in Prozent
 
-maType Type of moving average used, possible choices are:
+maType		verwendete Art des gleitenden Durchschnitts (MA=Moving Average) mögliche Werte sind
 -   EMA
 -   HMA
 -   SMA (default)
@@ -2071,19 +2225,19 @@ maType Type of moving average used, possible choices are:
 -   TEMA
 -   WMA
 
-### Visualization
+### Darstellung
 ![MAEnvelopes](./media/image43.png)
 
-### Usage
+### Beispiel
 ```cs
-//Value output for the upper band
-Print("Upper band of the MA Envelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Upper[0]);
+//Ausgabe des Wertes für das obere Band des MAEnvelope (Berechnung mit SMA)
+Print("obere Band des MAEnvelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Upper[0]);
 
-//Value output for the middle band
-Print("Middle band of the MA Envelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Middle[0]);
+//Ausgabe des Wertes für das mittlere Band des MAEnvelope (Berechnung mit SMA)
+Print("mittlere Band des MAEnvelope:" + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Middle[0]);
 
-//Value output for the lower band
-Print("Lower band of the MA Envelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Lower[0]);
+//Ausgabe des Wertes für das untere Band des MAEnvelope (Berechnung mit SMA)
+Print("untere Band des MAEnvelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Lower[0]);
 ```
 
 ##MarketPhases
@@ -2168,19 +2322,20 @@ You can use the indicator as a filter by using the signals of other indicators w
 ![Condition Escort](./media/image50.png)
 
 ##Momentum (MOM)
-### Description
-Momentum is one of the most popular indicators available, the first choice of many traders. This relatively simple indicator is so popular because it measures the attenuation of the motion without the need for complex formulas. The momentum indicator represents a whole family of indicators that measure a movement’s strength. Other representatives in this case are the RSI or CCI, and so on. In the illustration below, the indicator is a graph that oscillates around a zero point. There is no fixed scale in percentage terms, and the value can be quite far removed from the zero point; this usually happens when the price makes an exceptionally strong leap, which is why the indicator predominantly shows the direction in which the current prices are moving towards.
-
+### Beschreibung
+Das Momentum (MOM) ist einer der beliebtesten Indikatoren, der schon seit langer Zeit verwendet wird. Viele Trader schwören auf diesen simplen Indikator, weil er die Abschwächung der Bewegung misst, ohne mit einer zu komplizierten Formel das Letzte aus der Vorhersagbarkeit der Märkte herausholen zu wollen. Er ist ein einfaches Werkzeug und kann trotzdem gute Dienste leisten.
+Der Momentum-Indikator ist ein Vertreter einer ganzen Familie von Indikatoren, die die Stärke einer Bewegung messen. Weitere Vertreter sind zum Beispiel der RSI und der CCI.
+In der Darstellung zeigt der Indikator eine Kurve, die um einen Nullpunkt pendelt. Dabei hat sie keine feste Skala in Prozent. Der Wert kann sich also durchaus ungewöhnlich weit vom Nullpunkt entfernen. Dies geschieht immer dann, wenn der Kurs einen ungewöhnlich starken Sprung macht. Damit zeigt der Indikator in erster Linie die Richtung an, in die der aktuelle Kurs läuft.
 
 ### Interpretation
-Entry signals are generated when the indicator crosses the zero line.
+Einstiegssignale werden traditionell dann generiert, wenn der Indikator die Nulllinie durchkreuzt.
 
-See [*ROC*](#rate-of-change-roc).
+Siehe auch[*ROC*](#rate-of-change-roc).
 
-### Further information
-[http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29](http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29)
+### Weitere Informationen
+Wikipedia: [http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29](http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29)
 
-### Usage
+### Verwendung
 ```cs
 Momentum(int period)
 Momentum (IDataSeries input, int period)
@@ -2188,37 +2343,38 @@ Momentum (int period)[int barsAgo]
 Momentum (IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+###Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Momentum**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **Momentum**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Momentum (MOM)](./media/image51.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the values for the momentum indicator.
-Print("The current value for the momentum is " + Momentum(14)[0]);
+//Ausgabe des Wertes für den Momentum-Indikator
+Print("Der aktuelle Wert für das Momentum ist " + Momentum(14)[0]);
 ```
 
 ##Money Flow Index (MFI)
-### Description
-The MFI is an oscillator that makes use of both volume and price to measure buying and selling pressure. MFI, which was developed by Gene Quong and Avrum Soudack, is also known as volume-weighted [*RSI*](#relative-strength-index-rsi). MFI starts with the typical price for each period. Money flow is then positive when this aforementioned typical price increases (buying pressure) and negative when it decreases (selling pressure). A ratio of positive-negative money flow is then inserted into an RSI formula to come up with an oscillator that fluctuates between 0 and 100. The MFI, which is a momentum oscillator linked to volume, is best used for identifying reversals and price extremes with a variety of different signals.
+### Beschreibung
+Der Money Flow Index (MFI) wurde von Gene Quong und Avrum Soudack veröffentlicht. Um den Relative Strength Index (RSI) zu verbessern wird eine Volumenkomponente eingebaut. Mit Hilfe des MFI soll die Stärke des in den Markt einfließenden Geldes messbar gemacht werden.
+Der MFI wird wie der RSI errechnet, mit dem Unterschied, dass zuvor die Kurse mit dem Volumen multipliziert werden. Es werden wie beim RSI 14 Tage als Einstellung empfohlen. (Quelle: VTAD)
 
 
 ### Interpretation
-The MFI is interpreted similarly to the RSI indicator. The MFI’s decisive factor is much stronger than the RSI’s when it comes to trend direction, due to the fact that volume is included in the calculation.
+Der MFI wird wie der RSI interpretiert. Der Ausschlag des MFI ist durch die Hinzuziehung des Volumens stärker als beim RSI, bei einem Verlauf in Trendrichtung.
 
-### Further information
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Money_Flow_Index](http://vtadwiki.vtad.de/index.php/Money_Flow_Index)
 
-### Usage
+### Verwendung
 ```cs
 MFI(int period)
 MFI(IDataSeries input, int period)
@@ -2226,27 +2382,27 @@ MFI(int period)[int barsAgo]
 MFI(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **MFI**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **MFI**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Money Flow Index (MFI)](./media/image52.png)
 
-### Example
+### Beispiel
 ```cs
-//Current MFI value
-Print("The current value for the MFI is: " + MFI(14)[0]);
+//Anzeige des aktuellen MFI-Wertes
+Print("Der aktuelle Wert des MFI ist: " + MFI(14)[0]);
 ```
 
 ##Moving Averages
-### Variants
+### Varianten
 [*DEMA*](#dema-double-exponential-moving-average) - Double Exponential Moving Average
 
 [*EMA*](#ema-exponential-moving-average) - Exponential Moving Average
@@ -2275,34 +2431,34 @@ Print("The current value for the MFI is: " + MFI(14)[0]);
 
 [*ZLEMA*](#zlema-zero-lag-exponential-moving-average) - Zero Lag Exponential Moving Average
 
-### Interpretation
-The arithmetic average, also known as the moving average or simple moving average, smoothes the progression of the price for better trend detection. Moving averages are trend-following indicators; they follow the course and do not lead. IsSerieRising averages show uptrends, whereas falling averages display downtrends.
-By varying the period input, the time delay of the average can be changed. The smaller the period interval, the quicker the reaction time will be, but as a consequence, the smoothing effect will also be diminished. The opposite is true when increasing the period selection. The most popular choices are: 38, 50, 100 and 200 days. The 200-day moving average in particular has a significant importance for institutional traders, since it displays the long-term trend. 200 trading days are equal to a trading year. When the 200 MA is broken, then buy/sell signals are generated.
+### Bedeutung
+Der arithmetische Durchschnitt, der auch als einfacher Durchschnitt (Englisch: Simple Moving Average - SMA) oder Gleitender Durchschnitt (GD) bezeichnet wird (Englisch: Moving Average - MA), glättet den Kursverlauf für eine bessere Trenderkennung. Gleitende Durchschnitte sind Trendfolgeindikatoren, sie folgen dem Kurs und laufen nicht voraus. Steigende GD's zeigen Aufwärtstrends an, fallende GD's zeigen fallende Trends an.
+Durch das Variieren der Berechnungsdauer, wird die zeitliche Verzögerung des gleitenden Durchschnitts verändert. Je kleiner der Berechnungszeitraum ist, desto kürzer wird die Reaktionsverzögerung, aber auch die glättende Wirkung wird geringer. Wird der Berechnungszeitraum vergrößert, ist der Verlauf genau umgekehrt. Die häufigsten Einstellungen, für gleitende Durchschnitte sind 38, 50, 100 und 200 Tage. Insbesondere der 200 Tage Durchschnitt hat bei institutionellen Anlegern große Bedeutung, da er den langfristigen Trend anzeigt. 200 (Handels-)Tage entsprechen ungefähr einem Jahr. Wird der 200 Tage Durchschnitt nachhaltig gebrochen, werden Kaufsignale (Kurs steigt über den 200 GD) bzw. Verkaufssignale (Kurs fällt unter 200 GD) generiert.
 
-### Applications
-**Crossing of two averages**
+### Einsatzmöglichkeiten
+**Kreuzung zweier gleitender Durchschnitte**
 
-The integration of multiple moving averages is used to identify trend sequences and minimize the number of false signals. When two arithmetic averages are used, whereby one is a short-term and the other a long-term, more interesting signals can be generated. One such application can be seen with Richard Donchian’s methodologies, such as using the 5 and 20-day averages.
-The Double Crossover Method generates signals in the following way:
+Die Integration von mehreren gleitenden Durchschnitten wird eingesetzt, um Trendfolgen besser zu erkennen und die Anzahl von Fehlsignalen zu minimieren. Bei der Benutzung von zwei arithmetischen Durchschnitten werden ein kurzfristiger und ein langfristiger Durchschnitt verwendet, z.B. benutzt Richard Donchian hier 5 und 20 Tage.
+Bei der Double Cross Over Methode werden die Signale folgendermaßen generiert:
 
-If the short-term average crosses the long-term average from below, this is called a Golden Cross, and a buy signal is generated. Higher trading volume reinforces the quality of the signal. The long-term average works as a support line in an uptrend.
+Kreuzt der kurze Durchschnitt den langen Durchschnitt von unten nach oben, wird diese Kreuzung Golden Cross genannt. Es wird ein Kaufsignal generiert. Hohes Handelsvolumen verstärkt das Signal. Der lange gleitende Durchschnitt fungiert im Aufwärtstrend als Unterstützungslinie.
 
-If the short-term average crosses the long-term average from above, this is called a Death Cross. It generates a sell signal. Higher trading volume reinforces the signal quality. In a downtrend, the long-term average functions as a resistance line.
+Kreuzt der kurze Durchschnitt den langen Durchschnitt von oben nach unten, wird diese Kreuzung Death Cross genannt. Es wird ein Verkaufssignal generiert. Hohes Handelsvolumen verstärkt das Signal. Der lange gleitende Durchschnitt fungiert im Abwärtstrend als Widerstandslinie.
 
-**Crossing of three moving averages**
+**Kreuzung dreier gleitender Durchschnitte**
 
-Another method is to use three moving averages (Triple Crossover Method). This method was presented by R.C Allen, who used the 4, 9, and 18-day averages and suggested that a trend change is hinted at when the 4MA crosses the 9MA from bottom to top. An entry is only recommended when all lines are above the 18-day period. An exit is initiated when the 4-day MA moves below the 9-day MA.
-(Source: VTAD)
+Eine Erweiterung bietet die Benutzung von drei gleitenden Durchschnitten (= Triple Crossover Method). R.C. Allen verwendet den 4, 9 und 18 Tage Durchschnitt. Hierbei wird ein Trendwechsel angedeutet, wenn der 4-Tage-Durchschnitt den 9-Tage-Durchschnitt von unten nach oben schneidet. Jedoch erfolgt der Einstieg in eine Long-Position, wenn beide Durschnitte über dem 18-Tage-Durchschnitt liegen. Ein Ausstieg erfolgt wenn der 4-Tage-Durchschnitt unter den 9-Tage-Durchschnitt fällt. Genau Spiegelbildlich verhält es sich beim Ein- und Ausstieg in/aus eine(r) Short-Position.
+(Quelle: VTAD)
 
 ##DEMA - Double Exponential Moving Average
-### Description
-The Double Exponential Moving Average is a technical indicator created by Patrick Mulloy. The calculation hereof is done using a simple as well as a double exponential moving average.
+### Beschreibung
+Der DEMA ist ein technischer Indikator, der von Patrick Mulloy entwickelt wurde. Er erschien erstmals 1994 in der Februarausgabe der "Technical Analysis of Stocks & Commodities". Die Berechnung basiert sowohl auf einem einfachen als auch auf einem doppelten exponentiell gleitenden Durchschnitt (EMA).
 
 ### Interpretation
-The DEMA is a fast-working moving average that reacts quicker to market changes. The DEMA may be used as a stand-alone indicator or in tandem with other indicators.
-The general interpretations are the same as for regular moving averages.
+Der DEMA ist ein schnell arbeitender gleitenden Durchschnitt, der besser auf Marktveränderungen reagiert, als eine herkömmlicher gleitender Durchschnitt. Der DEMA kann als Standalone-Indikator oder in anderen Indikatoren bzw. Bedingungen (Conditions) verwendet werden, deren Logik auf gleitenden Durchschnitten beruht.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter Moving Averages.
 
-### Usage
+### Verwendung
 ```cs
 DEMA(int period)
 DEMA(IDataSeries input, int period)
@@ -2310,41 +2466,40 @@ DEMA(int period)[int barsAgo]
 DEMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DEMA**(20)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **DEMA**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![DEMA - Double Exponential Moving Average](./media/image53.png)
 
-### Calculation
+### Berechnung
 ```cs
 Value.Set(2 * EMA(Inputs[0], Period)[0] - EMA(EMA(Inputs[0], Period), Period)[0]);
 ```
 
-### Example
+### Beispiel
 ```cs
-//Output the values for the DEMA
-Print("The current DEMA value is " + DEMA(20)[0]);
+//Ausgabe des Wertes für den Double Exponential Moving Average (DEMA)
+Print("Der aktuelle Wert für DEMA ist " + DEMA(20)[0]);
 ```
 
 ##EMA - Exponential Moving Average
-### Description
-Exponential moving averages work to reduce lag by weighting recent prices more heavily. The weighting given to the most recent price depends on the number of periods in the moving average. Calculating an exponential moving average involves three steps. 1. Calculate the simple moving average. An exponential moving average (EMA) must start somewhere, therefore a simple moving average is used as the previous period's EMA in the beginning calculation. 2. Calculate the weighting multiplier. 3. Calculate the EMA.
+### Beschreibung
+Der Exponential Moving Average (EMA) ist einem einfachen gleitenden Durchschnitt, wie z.B. dem SMA oder dem MACD sehr ähnlich. Im Unterschied zu den einfachen gleitenden Durchschnitten wird in der Berechnung den aktuelleren Kursdaten eine hohere Bedeutung beigemessen.
 
 ### Interpretation
-The EMA is used by many traders in the most varying of timeframes. It is especially meaningful within the 15, 60 and 240-minute charts. The EMA 200 line is also especially popular with traders.
+Der EMA wird von vielen Trader in den unterschiedlichsten Zeiteinheiten benutzt. Bedeutung erhält der EMA insbesondere in 15, 60 und 240-Minuten-Charts. Sehr beliebt ist auch die EMA-200-Linie.
+Steigt der Kurs eines Wertes stark an und entfernt sich deutlich von der jeweilig zuzuordnenden EMA-Linie, so ist es möglich, mit einer der Marktrichtung entgegengesetzten Position (im Bsp. einer Shortposition) von der wahrscheinlichen Rückkehr des Kurse an seinen Durchschnitt zu profitieren. 
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter Moving Averages.
 
-If the price rises sharply and moves away quickly from the respective EMA line, it is possible to enter countertrend positions in order to profit from the potential return to the moving average.
-General interpretations of the moving averages also apply to the EMA.
-
-### Usage
+### Verwendung
 ```cs
 EMA(int period)
 EMA(IDataSeries input, int period)
@@ -2352,53 +2507,57 @@ EMA(int period)[int barsAgo]
 EMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+###  Rückgabewert
 **double**
 
-When using this method with an index (e.g. **EMA**(20)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **EMA**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![EMA - Exponential Moving Average](./media/image54.png)
 
-### Calculation
+### Berechnung
 ```cs
 Value.Set(ProcessingBarIndex == 0 ? InSeries[0] : InSeries[0] * (2.0 / (1 + Period)) + (1 - (2.0 / (1 + Period))) * Value[1]);
 ```
 
-### Example
+### Beispiel
 ```cs
-//Output the value for the EMA
-Print("The current EMA value is " + EMA(20)[0]);
+//Ausgabe des Wertes für den Exponential Moving Average (EMA)
+Print("Der aktuelle Wert für EMA ist " + EMA(20)[0]);
 ```
 
 ##EMA MTF (MultiTimeFrame)
-### Description
-The EMA MTF indicator is a multi-timeframe version of the standard EMA indicator.
-This indicator basically allows you to make calculationgs in a different timeframe than that of the current chart.
+### Beschreibung
+Der Indikator EmaMTF ist die Multi TimeFrame-Variante des Exponential Moving Average (EMA).
+Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
+Multi TimeFrame bedeutet, dass der Indikator in einer anderen Zeiteinheit berechnet werden kann, als der Kurs im Chart angezeigt wird. Möchte man z.B. in einem 5-Minuten Chart den EMA des Stundencharts angezeigt bekommen, ist das mit dem Indikator EMA nicht möglich. Hier ist EmaMTF zu verwenden.
+Im Indikator EmaMTF kommt ein weiterer Parameter (MTFMinutes) hinzu, der die Zeiteinheit angibt, auf der die Berechnung des EMA vorgenommen werden soll.
+EmaMTF dienst nur zur Anzeige in einem Chart und kann nicht in AgenaScript verwendet werden.
+Für die Programmierung mit Datenreihen aus mehreren Zeiteinheiten siehe unter Multibars.
+Für alle weiteren Informationen bzgl. Anwendung und Interpretation des EMA siehe unter  [*EMA*](#ema-exponential-moving-average).
 
-For more information, see [*EMA*](#ema-exponential-moving-average).
-
-Also see [*BollingerMTF*](#bollingermtf), [*SmaMTF*](#smamtf).
+Siehe auch [*BollingerMTF*](#bollingermtf), [*SmaMTF*](#smamtf).
 
 
-### Visualization
-A 5-minute chart with an EMA(20) calculated with hourly bars as the underlying input:
+### Darstellung
+Die Abbildung zeigt einen 5 Min.-Chart mit einem EMA(20) berechnet auf 1-Stunden-Bars.
 
 ![EMA MTF (MultiTimeFrame)](./media/image55.png)
 
 ##HMA - Hull Moving Average
-### Description
-The Hull Moving Average, invented by Alan Hull, is a fast-working moving average that gets rid of almost all delays/lags (zero lag). The calculation is carried out using several weighted moving averages, thereby partially reducing the smoothing effect. Hull’s methodology uses square roots of the period instead of the actual period itself.
+### Beschreibung
+Der Hull Moving Average wurde vom Trader Alan Hull entwickelt und ist ein sehr schnell arbeitender gleitender Durchschnitt, der Verzögerungen nahezu gänzlich eleminiert (Zero Lag). Für die Berechnung werden gewichtete gleitende Durchschnitte genutzt, weshalb die glättende Wirkung (und die daraus resultierende Verzögerung) herkömmlicher gleitender Durchschnitte abgemildert werden kann. Hull erreicht diese Verbesserung, indem er statt der Periode selbst, die Quadratwurzel aus der Zeit verwendet.
 
 ### Interpretation
-The same interpretations as for the moving averages apply to the HMA, the only major distinction being the reduced lag. See [*Moving Averages*](#moving-averages).
+Falls in einem Handelssystem zur Trendbestimmung ein gleitender Durchschnitt eingesetzt werden soll, muss die Verzögerung möglichst gering sein. Hier zeigt der Hull Moving Average seine Stärken. Die Durchschnittsberechnung ist deutlich weniger verzögert, als bei einem einfachen gleitenden Durchschnitt. Der Hull Moving Average bietet in Kombination z.B. mit einem SMA einen guten kurzfristiger Trendfilter.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-### Usage
+### Verwendung
 ```cs
 HMA(int period)
 HMA(IDataSeries InSeries, int period)
@@ -2406,20 +2565,20 @@ HMA(int period)[int barsAgo]
 HMA(IDataSeries InSeries, int period)[int barsAgo]
 ```
 
-### Return value
+###Rückgabewert
 **double**
 
-When using this method with an index (e.g. **HMA**(21)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **HMA**(21)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![HMA - Hull Moving Average](./media/image56.png)
 
-### Calculation
+### Berechnung
 ```cs
 double value1 = 2 * WMA(Inputs[0], (int)(Period / 2))[0];
 double value2 = WMA(Inputs[0], Period)[0];
@@ -2427,26 +2586,26 @@ diffSeries.Set(value1 - value2);
 Value.Set(WMA(diffSeries, (int) Math.Sqrt(Period))[0]);
 ```
 
-### Example
+### Beispiel
 ```cs
-//Output the value for the HMA
-Print("The current HMA value is " + HMA(21)[0]);
+//Ausgabe des Wertes für den Hull Moving Average (HMA)
+Print("Der aktuelle Wert für HMA ist " + HMA(21)[0]);
 ```
 
 ##KAMA - Kaufman's Adaptive Moving Average
-### Description
-The KAMA is based on an EMA in which a trend efficiency ratio controls the weight of future price changes. This efficiency ratio (the squared efficiency factor) is a measure that can also be used by itself. The trend efficiency is the ratio of the absolute price change from the start to the end of the period, and the total of the absolute daily price changes. At higher trending efficiencies (i.e. straight price movements) without too much variation, the extra price carries a higher weighting, according to a shorter day period setting. Lower trending frequencies carry a smaller weighting.
+### Beschreibung
+Der von Perry Kaufman entwickelte Kaufmann's Adaptive Moving Average (KAMA) stellt einen adaptiven Gleitenden Durchschnitt dar, der als Trendfolgeinstrument konstruiert wurde.
+Der KAMA beruht auf einem exponentiellen Durchschnitt (EMA), bei dem die Gewichtung des hinzukommenden Kurses über eine Trendeffizienz-Kennzahl, der Efficiency Ratio, gesteuert wird. Die Efficiency Ratio (der sog. quadrierte Effizienz-Faktor) ist eine Kennzahl, die auch eigenständig gute Dienste leisten kann. Die Trendeffizienz ist definiert als das Verhältnis der absoluten Kursänderung, von Anfang bis zum Ende des Betrachtungszeitraums, und der Summe der absoluten täglichen Kursänderungen. Bei hoher Trendeffizienz, also bei einer geradlinigen Bewegungen ohne starke Schwankungen, wird dem hinzukommenden Kurs ein hohes Gewicht eingeräumt, was einer kurzen Einstellung in Tagen entspricht. Bei geringer Trendeffizienz, also bei einer stark schwankenden Bewegung, wird dem hinzukommenden Kurs ein geringes Gewicht eingeräumt, dies entspricht einer langen Einstellung in Tagen. (Quelle: investor-verlag)
 
 ### Interpretation
-Kaufman mentions that a rising KAMA value can be interpreted as a buying signal, whilst falling KAMA values assume the prices to be falling.
-Kaufman also defines a maximum and minimum value for the calculation of the smoothing components. The efficiency ratio is converted using specified maximum and minimum values, which are applied to newly incoming price changes. Kaufman uses 2 (short period) as a minimum value and 30 (long period) as a maximum value. The number of days for the determination of the efficiency ratio is one of the more important parameters for the KAMA.
+Perry Kaufman sieht ein grundlegendes Signal für steigende Kurse, wenn der KAMA nach oben dreht und ein grundlegendes Signal für fallende Kurse, wenn der KAMA nach unten dreht.
+Kaufman definiert noch einen Maximal- und einen Minimalwert für die Berechnung der jeweiligen Glättungskomponente. Die Efficiency Ratio wird mit Hilfe des definierten Maximal- und Minimalwerts in den Faktor umgerechnet, mit dem ein neu zum exponentiellen Durchschnitt hinzugefügter Kurs gewichtet wird. Als Minimalwert (fast) werden 2 und als Maximalwert (slow) 30 Tage von Perry Kaufman verwendet. Die Tageanzahl für die Ermittlung der Efficiency Ratio ist der wichtigste Parameter beim KAMA. Für kurzfristige Strategien hält Perry Kaufman einen Wert um die 10 Tage für empfehlenswert. Ein Wert von kleiner 5 sorgt dafür, das die Efficiency Ratio zu schnell zwischen 0 und 1 hin und her springt. Für langfristiges Positionstrading kann auch ein viel längerer Zeitraum attraktiv sein, da dies zu stabilerem Verhalten bei Nebengeräuschen im Trend führt.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-For a more general interpretation of moving averages, please see the following chapter: [*Moving Averages*](#moving-averages).
-
-### Further information
+### Weitere Informationen
 <http://www.investor-verlag.de/boersenwissen/kama/>
 
-### Usage
+### Verwendung
 ```cs
 KAMA(int fast, int period, int slow)
 KAMA(IDataSeries input, int fast, int period, int slow)
@@ -2454,92 +2613,96 @@ KAMA(int fast, int period, int slow)[int barsAgo]
 KAMA(IDataSeries input, int fast, int period, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **KAMA**(2,10,30)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **KAMA**(2,10,30)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-fast Short period
+fast		kurze Periode (s. Interpretation)
 
-slow Long period
+slow		lange Periode (s. Interpretation)
 
-### Visualization
+### Darstellung
 ![KAMA - Kaufman](./media/image57.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the Kaufman Moving Average(KAMA)
-Print("The current value of the KAMA is " + KAMA(2,10,30)[0]);
+//Ausgabe des Wertes für den Kaufman Moving Average (KAMA)
+Print("Der aktuelle Wert für KAMA ist " + KAMA(2,10,30)[0]);
 ```
 
 ##MAMA - Mesa Adaptive Moving Average
-### Description
-This automatically adapting moving average has a period length that is determined by means of various complex calculations. This complex indicator has its origins in publications by John Ehlers. Ehlers calculates cycles for the price movements to determine the length and intensity of single trend phases. Working with the length of the cycles, the weighting factor for the moving average can be established in several different ways.
+### Beschreibung
+Der MAMA (Mesa Adaptive Moving Average) ist ein auto adaptiver gleitender Durchschnitt, dessen Periodenlänge über komplexe Berechnungen bestimmt wird. Er basiert auf einem exponentiellen Moving Average, dessen Alpha - Glättungsparameter in verschiedenen Marktphasen verändert wird.
+Dieser Indikator stammt aus Publikationen von John Ehlers und ist vor allem hinsichtlich der Berechnungen schwer zu verstehen. John Ehlers berechnet Zyklen in den Kursbewegungen, um Länge und Intensität einzelner Trendphasen zu ermitteln. An Hand der Länge der ermittelten Zyklen, kann dann der Gewichtungsfaktor des gleitenden Durchschnitts variabel gestaltet werden. Somit wird erreicht, dass der Indikator in Trendphasen möglichst lange mitläuft, ohne durch kleinen Gegenbewegungen zu sehr aus der Bahn geworfen zu werden. Somit steuert der Markt selbst die Agilität des gleitenden Durchschnitts.
 
 **FAMA**
-This indicator is a second line – the name FAMA can be found in various publications. This line is similar to the underlying exponential moving average and can be used as a trigger line.
+Der Indikator stellt neben dem eigentlichen MAMA, eine zweite Linie dar, die in den Publikationen als FAMA bezeichnet wird. Diese Linie dient als Triggerlinie und ist dem zu Grunde liegenden exponentiellen gleitenden Durchschnitt sehr ähnlich. (Quelle: tradesignalonline.com)
 
 ### Interpretation
-For more concise information, we recommend that you read Ehler’s paper.
-
-General information about moving averages can be found here: [*Moving Averages*](#moving-averages).
+Ehlers behauptet in seinen Publikationen, dass die von ihm entwickelten Indikatoren Handelssysteme ermöglichen, die wesentlich weniger Fehler produzieren, als herkömmliche Systeme. Die hier vorgestellten auto adaptivem Durchschnitte MAMA und FAMA, sollen weniger Fehlsignale produzieren, da sie sich an die vorherrschende Zyklenlänge und die Marktvolatilität anpassen. Im Grunde werden beide Linien als banales Cross Over System verwendet. Überkreuzt der langsamere MAMA den schnelleren FAMA, ist das ein Kaufsignale, umgekehrt ein Verkaufs- oder Leerverkaufssignal.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter  [*Moving Averages*](#moving-averages).
 
 ### Further information
 <http://www.tradesignalonline.com/de/lexicon/view.aspx?id=MAMA+adaptive+Moving+Average>
 
-### Usage
+### Verwendung
 ```cs
 MAMA(double fastLimit, double slowLimit)
 MAMA(IDataSeries input, double fastLimit, double slowLimit)
 MAMA(double fastLimit, double slowLimit)[int barsAgo]
 MAMA(IDataSeries input, double fastLimit, double slowLimit)[int barsAgo]
 
-//Value of the Following Adaptive Moving Average (FAMA)
+Für den Wert des Following Adaptive Moving Average (FAMA)
 MAMA(double fastLimit, double slowLimit).Fama[int barsAgo]
 MAMA(IDataSeries input, double fastLimit, double slowLimit).Fama[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **MAMA**(0.5,0.05)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **MAMA**(0.5,0.05)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-fastLimit Upper limit for the alpha value
+fastLimit	Oberes Limit für den Alpha-Wert
 
-slowLimit Lower limit for the alpha value
+slowLimit	Unteres Limit für den Alpha-Wert
 
-### Visualization
+### Darstellung
 ![MAMA - Mesa Adaptive Moving Average](./media/image58.png)
 
-### Example
+### Beispiel
 ```cs
-//Output values for (MAMA)
-Print("The current value for the MAMA is " + MAMA(0.5, 0.05)[0]);
-//Output values for (FAMA)
-Print("The current value for the FAMA is " + MAMA(0.5, 0.05).Fama[0]);
+//Ausgabe des Wertes für den MESA Adaptive Moving Average (MAMA)
+Print("Der aktuelle Wert für MAMA ist " + MAMA(0.5, 0.05)[0]);
+//Ausgabe des Wertes für den Following Adaptive Moving Average (FAMA)
+Print("Der aktuelle Wert für MAMA ist " + MAMA(0.5, 0.05).Fama[0]);
 ```
 
 ##SMA - Simple Moving Average
-### Description
-The SMA is the most well-known average, representing the simplest method of displaying the trend direction in a chart. In mathematical terms, this is the arithmetic mean of a number of individual lengths. It is called “moving” because to establish an average, the oldest value is always sacrificed to make space for the new incoming price change. Fundamentally speaking, the period length influences the intensity of the smoothing. Shorter periods (such as 10 days) will mean that the indicator follows the price changes quite closely.
-The SMA has a few disadvantages, which is why several adaptations of this indicator have been developed in the last few years. One of the biggest disadvantages is the fact that the indicator tends to lag, and the equal weighting for all data inputs across time intervals.
-You can find more general interpretations and meanings here: [*Moving Averages*](#moving-averages).
+### Beschreibung
+Der SMA ist die "Mutter aller gleitenden Durchschnitte" und stellt die einfachste Möglichkeit dar, einem Chartbild Informationen zum bereinigten Trendverlauf zu entnehmen. Von der mathematischen Seite her betrachtet handelt es sich um das arithmetische Mittel einer Zahlenreihe individueller Länge. 
+Der Begriff “gleitend” leitet sich von der Tatsache ab, dass bei dieser Form der Durchschnittsbildung immer der älteste Kurs dem aktuell hinzugekommenen “geopfert” wird. Grundsätzlich festzustellen ist dass, die Länge der Periodenangabe die Intensität der Glättung beeinflusst. Kürzere Betrachtungszeiträume (beispielsweise 10 Tage) führen dazu, dass der Indikator dem Kursverlauf relativ eng folgt, die berühmte 200-Tage-Linie (also SMA mit Periodenangabe 200 Tage) weist hingegen eine sehr große Trägheit auf.
+Der Simple Moving Avergage weist gewisse Nachteile auf weshalb auch diverse Abwandlungen des Orginalkonzeptes im Laufe der Jahre entstanden. An erster Stelle zu nennen ist die Trägheit des SMA (oft auch als “lag” bezeichnet) und die gleiche Gewichtung aller Datensätze im Betrachtungszeitraum. So hat der letzte Kurs bei einer 14-Tages-Linie die gleiche Wertigkeit für den Indikatorverlauf wie der erste Wert. (Quelle: forex-trading-online.de)
+
+### Interpretation
+Trotz der - im Vegleich zu anderen hochkomplexen Indikatorensystemen - simplen Herleitung ist die einfachste Form der Durchschnittsbildung nach wie vor von großer Praxisbedeutung, die wichtigsten Anwendungsbereiche sind die klassische Trendbestimmung, die Integration in automatische Handelssysteme sowie die Verwendung als Signallinie in Kombination mit anderen Indikatoren.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter : [*Moving Averages*](#moving-averages).
 
 
-### Further information
+### Weitere Informationen
 <http://www.forex-trading-online.de/indikatoren/simple-moving-average-sma>
 
 <http://vtadwiki.vtad.de/index.php/SMA\#Average-Off-Berechnungsverfahren\_.28MMA.29>
 
-### Usage
+### Verwendung
 ```cs
 SMA(int period)
 SMA(IDataSeries InSeries, int period)
@@ -2547,52 +2710,64 @@ SMA(int period)[int barsAgo]
 SMA(IDataSeries InSeries, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **SMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **SMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![SMA - Simple Moving Average](./media/image59.png)
 
-### Calculation
+### Berechnung
 Value.**Set**((last + InSeries\[0\] - InSeries\[Period\]) / Math.**Min**(ProcessingBarIndex, Period));
 
-### Example
+### Beispiel
 ```cs
 //Output of the SMA value
 Print("The current SMA value is " + SMA(14)[0]);
 ```
 
 ##SMA MTF (MultiTimeFrame)
-### Description
-The SMA MTF – as is true for the other multi-timeframe indicator variations – allows traders to display the SMA of a specific timeframe on a chart of a different timeframe.
+### Beschreibung
+Der Indikator SmaMTF ist die Multi TimeFrame-Variante des Simple Moving Average (SMA).
+Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
+Multi TimeFrame bedeutet, dass der Indikator in einer anderen Zeiteinheit berechnet werden kann, als der Kurs im Chart angezeigt wird. Möchte man z.B. in einem 5-Minuten Chart den SMA des Stundencharts angezeigt bekommen, ist das mit dem Indikator SMA nicht möglich. Hier ist SmaMTF zu verwenden.
+Im Indikator SmaMTF kommt ein weiterer Parameter (MTFMinutes) hinzu, der die Zeiteinheit angibt, auf der die Berechnung des SMA vorgenommen werden soll.
+SmaMTF dienst nur zur Anzeige in einem Chart und kann nicht in AgenaScript verwendet werden.
+Für die Programmierung mit Datenreihen aus mehreren Zeiteinheiten siehe unter Multibars.
 
-See [*BollingerMTF*](#bollingermtf), [*EmaMTF*](#ema-mtf-multitimeframe).
+Für alle weiteren Informationen bzgl. Anwendung und Interpretation des SMA siehe unter SMA.
 
-### Visualization
-The image shows a 5-minute chart with an SMA (14) calculated on 4-hour bars
+Siehe auch [*BollingerMTF*](#bollingermtf), [*EmaMTF*](#ema-mtf-multitimeframe).
+
+### Darstellung
+Die Abbildung zeigt einen 5 Min.-Chart mit einem SMA(14) berechnet auf 4-Stunden-Bars.
 
 ![SMA MTF (MultiTimeFrame)](./media/image60.png)
 
 ##SMMA - Smoothed Moving Average
-### Description
-The Smoothed Moving Average is combined from both Simple Moving Average and the Exponential Moving Average. Generally speaking, it is only used for higher period amounts/inputs. It normally has roughly half of the value of an EMA, meaning that an SMMA(20) is closer to an EMA(40).
+### Beschreibung
+Der Smoothed Moving Average (SMMA) ist eine Art Mischung aus Simple Moving Average (SMA) und Exponential Moving Average (EMA).
+Er wird i.d.R. nur für eine größere Periodenanzahl verwendet.
+Als Richtwert kann die Hälfte der EMA-Perioden herangezogen werden.
+Ein SMMA(20) entspricht annährend einem EMA(40).
 
 ### Interpretation
-For more general information about moving averages, please see [*Moving Averages*](#moving-averages).
+Der wichtigste Anwendungsbereich von gleitenden Durchschnitten generell ist die klassische Trendbestimmung. Gleitende Durchschnitte werden häufig in automatische Handelssysteme integriert oder als Signallinie in Kombination mit anderen Indikatoren verwendet.
 
-The SMMA is often used with the [*SuperTrend*](#supertrend) indicator.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter[*Moving Averages*](#moving-averages).
 
-### Further information
+Der SMMA wird zudem häufig im Zusammenhang mit dem [*SuperTrend*](#supertrend)-Indikator verwendet.
+
+### Weitere Informationen
 <http://www2.wealth-lab.com/wiki/SMMA.ashx>
 
-### Usage
+### Verwendung
 ```cs
 SMMA(int period)
 SMMA(IDataSeries input, int period)
@@ -2600,32 +2775,36 @@ SMMA(int period)[int barsAgo]
 SMMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **SMMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **SMMA**(14)\[**int** barsAgo\] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![SMMA - Smoothed Moving Average](./media/image61.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the SMMA
-Print("The current SMMA value is " + SMMA(14)[0]);
+//Ausgabe des Wertes für den Smoothed Moving Average (SMMA)
+Print("Der aktuelle Wert für SMMA ist" + SMMA(14)[0]);
 ```
 
 ##TEMA - Triple Exponential Moving Average
-### Description
-The TEMA is combined from a single, a double and a triple EMA. This combo improves the delay between the indicator and price movements. The Triple Exponential Moving Average is quite efficient at smoothing price changes.
+### Beschreibung
+Der Triple Exponential Moving Average (TEMA) ist die Kombination aus einem einzelnen exponentiellen gleitenden Durchschnitt (EMA), einem doppelten EMA und einem dreifachen EMA. Die Kombination der Indikatoren hilft, Verzögerungen zwischen den Indikatoren und der Preisbewegung zu eliminieren. TEMA ist ein sehr effektiver Glättungsindikator.
 
-You can find more information about moving averages here: [*Moving Averages*](#moving-averages).
+### Interpretation
+Der Indikator ist schneller und glatter als ein herkömmlicher gleitender Durchschnitt. Der TEMA wird häufig in Kombination mit anderen Indikatoren (z.B. MACD oder CCI) genutzt.
+Ein starkes Kaufsignal würde auftreten, wenn der CCI nach oben durch 0 kreuzt, der TEMA Indikator nach oben tendiert und der Preis zurückkehrt zum TEMA.
+Für ein Verkaufssignal sollte der TEMA unterhalb der Kurse verlaufen, wenn der CCI die 0 Ebene nach unten kreuzt, und der Preis zurück zum TEMA kehrt.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-### Usage
+### Verwendung
 ```cs
 TEMA(int period)
 TEMA(IDataSeries input, int period)
@@ -2633,30 +2812,35 @@ TEMA(int period)[int barsAgo]
 TEMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **TEMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **TEMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
-### Visualization
+### Darstellung
 ![TEMA - Triple Exponential Moving Average](./media/image62.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the Triple Exponential Moving Average
-Print("The current TEMA value is " + TEMA(14)[0]);
+//Ausgabe des Wertes für den Triple Exponential Moving Average (TEMA) 
+Print("Der aktuelle Wert für TEMA ist" + TEMA(14)[0]);
 ```
 
 ##TMA - Triangular Moving Average
-### Description
-This specifically weighted average has an extra smoothing component. The weightings are not linear, but instead take on a triangular pattern. To demonstrate, the weighting for a 7-period average would be 1,2,3,4,3,2,1. More weight is given to the median value of the time series, and the newest and oldest data is given less weight.
+### Beschreibung
+Der Triangular Moving Average (TMA) ist ein speziell gewichteter gleitender Durchschnitt mit einer besonderen Glättung. Die Gewichte sind nicht wie bei anderen gewichteten Durschnitten linear, sondern nach einem dreieckigen Muster zugeordnet. Die Gewichte für einen 7 Perioden unfassenden Zeitraum sind beispielsweise 1, 2, 3, 4, 3, 2, 1. Die Mitte der Zeitreihe wird hierdurch höher, die neuesten resp. ältesten Daten entsprechend geringer gewichtet.
 
-### Usage
+### Interpretation
+Die Interpretation des Triangular Moving Average folgt im Wesentlichen der Interpretation anderer gleitender Durchnitte, wie dem SMA oder dem EMA. Es gibt hierbei keine weiteren Besonderheiten zu beachten.
+
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
+
+### Verwendung
 ```cs
 TMA(int period)
 TMA(IDataSeries input, int period)
@@ -2664,74 +2848,83 @@ TMA(int period)[int barsAgo]
 TMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **TMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **TMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
-### Visualization
+### Darstellung
 ![TMA - Triangular Moving Average](./media/image63.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the TMA
-Print("The current value for the TMA is " + TMA(14)[0]);
+//Ausgabe des Wertes für den Triangular Moving Average (TMA) 
+Print("Der aktuelle Wert für TMA ist" + TMA(14)[0]);
 ```
 
 ##TRIX - Triple Exponential Moving Average
-### Description
-Jack Hutson developed this TRIX indicator, which is a 1-day rate-of-change indicator. What this means is that day 2 is divided by day 1, day 3 by day 2 and so on and so forth, and this is then applied to a triple exponential moving average of the closing prices. This results in a zero line fluctuating oscillator which is used as trend indicator thanks to its stability.
+### Beschreibung
+Der TRIX - Indikator wurde von Jack Hutson präsentiert. Es handelt sich dabei um einen 1-Tages-Rate of Change-Indikator (ROC), d.h. Tag 2 dividiert durch Tag 1, Tag 3 durch Tag 2 usw., eines dreifach exponentiell geglätteten gleitenden Durchschnittes der Schlusskurse eines Wertes. Das Ergebnis ist ein um seine Null-Linie schwankender Oszillator, der aufgrund seiner Stabilität als Trendindikator verwendet wird.
 
 
 ### Interpretation
-A buy signal is created when the TRIX indicator crosses the zero line from bottom to top. A sell signal is generated when the zero line is broken in a downwards direction.
+Es entsteht ein Kaufsignal, wenn der TRIX-Indikator seine Null-Linie von unten nach oben schneidet. Ein Verkaufssignal wird generiert, wenn er die Null-Linie nach unten durchbricht. Divergenzen deuten auf einen Trendwechsel hin.
 
-### Usage
+### Verwendung
 ```cs
 TRIX(int period, int signalPeriod)
 TRIX(IDataSeries input, int period, int signalPeriod)
 TRIX(int period, int signalPeriod)[int barsAgo]
 TRIX(IDataSeries input, int period, int signalPeriod)[int barsAgo]
 
-//For the signal line
+Für die Signal-Linie
 TRIX(int period, int signalPeriod).Signal[int barsAgo]
 TRIX(IDataSeries input, int period, int signalPeriod).Signal[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **TRIX**(14, 3)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **TRIX**(14, 3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-signal period Number of bars included in the signal line calculation
+signal period	Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
 
-### Visualization
+### Darstellung
 ![TRIX - Triple Exponential Moving Average](./media/image64.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the TRIX EMA
-Print("The current TRIX value is " + TRIX(14, 3)[0]);
+//Ausgabe des Wertes für den Triple Exponential Moving Average (TRIX) 
+Print("Der aktuelle Wert für TRIX ist" + TRIX(14, 3)[0]);
 
-//Output for the TRIX signal line
-Print("The current TRIX value is " + TRIX(14, 3).Signal[0]);
+//Ausgabe des Wertes für die TRIX-Signallinie 
+Print("Der aktuelle Wert für TRIX ist" + TRIX(14, 3).Signal[0]);
 ```
 
 ##T3 - Triple Exponential Moving Average
-### Description
-The Triple Exponential Moving Average T3 indicator (also dubbed the T3MA) is calculated by taking the weighted sums of a simple, a double, and a triple EMA. This produces a smooth, soft indicator line. The parameter tCount allows the trader to set the number of reiterations. The calculation is the same as the calculation for the DEMA, with the slight difference that here, a volume factor is also added. It accepts values between 0 and 1 (default: 0.7).
+### Beschreibung
+Der Triple Exponential Moving Average T3 (oder auch T3MA) ist ein Vertreter der extrem geglätteten Gleitenden Durchschnitte. Zur Berechnung wird eine gewichtete Summe eines einfachen EMA, eines doppelten EMA und eines dreifachen EMA verwendet. Dies ergibt einen sehr glatten und "weichen" Verlauf der Indikatorlinie.
+Die Anzahl der Iterationen ist bei der vorliegenden T3-Implementation mit dem Parameter tCount einstellbar. Die Standardeinstellung ist 3.
+Die Berechnung gleicht dem DEMA, wobei hier zusätzlich ein Volumen-Faktor (VFactor) hinzukommt. Er nimmt Werte zwischen 0 und 1 an (default =0,7).
+Ist der VFactor = 0, entspricht der Verlauf einem EMA (mit TCount =1).
+Ist der VFactor = 1, entspricht der Verlauf dem DEMA.
 
-### Usage
+### Interpretation
+
+Die Interpretation des T3 gleicht der Interpretation anderer gleitender Durchnitte. Es gibt hierbei keine weiteren Besonderheiten zu beachten.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
+
+### Verwendung
 ```cs
 T3(int period, int tCount, double vFactor)
 T3(IDataSeries input, int period, int tCount, double vFactor)
@@ -2739,39 +2932,42 @@ T3(int period, int tCount, double vFactor)[int barsAgo]
 T3(IDataSeries input, int period, int tCount, double vFactor)[int barsAgo]
 ```
 
-### Return value
+###  Rückgabewert
 **double**
 
-When using this method with an index (e.g. **T3**(14,3,0.7)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **T3**(14,3,0.7)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-tCount Number of iterations for the smoothing
+tCount		Anzahl der Iterationen für die Glättung (default: 3)
 
-vFactor Volume factor (multiplier)
+vFactor	Volumen Factor (Multiplicator) (default: 0,7)
 
-### Visualization
+### Darstellung
 ![T3 - Triple Exponential Moving Average](./media/image65.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the T3 indicator
-Print("The current T3 value is " + T3(14, 3, 0.7)[0]);
+//Ausgabe des Wertes für den T3 Moving Average (T3) 
+Print("TDer aktuelle Wert für T3 ist" + T3(14, 3, 0.7)[0]);
 ```
 
 ##VMA - Variable Moving Average
-### Description
-This variation of an EMA automatically smoothes any fluctuations in the market, and its sensitivity grows as more weight is placed on more recent data.
+### Beschreibung
+Der Variable Moving Average (VMA) ist ein EMA, der in der Lage ist, seine Glättung automatisch auf die Schwankungen im Markt einstellen kann. Die Empfindlichkeit wächst, indem mehr Gewicht auf die jüngeren Daten gelegt wird.
+Durch die automatische Regulierung der Glättungskonstante wird versucht, den bekannten Nachteilen von gleitenden Durchschnitten zu begegnen. Der VMA soll auf diese Weise unter allen Marktbedingungen besser funktionieren.
 
-The VMA attempts to get rid of the disadvantages of other moving averages by automatically regulating the smoothing constant. This is why the VMA can be implemented for most of the market conditions, and is in a few cases actually better than other averages.
+**Verwechselungsgefahr!**
+Die Abkürzung VMA wird in der Literatur bzw. in anderer Handelssoftware auch für Volume Moving Average (VolMA) verwendet.
 
-**Caution**
-The VMA is not to be confused with the Volume Moving Average (VolMA)!
+### Interpretation
+Der Indikator wird auf die übliche Art zur Identifizierung von Trends angewandt. Es gibt bei der Verwendung keine Besonderheiten zu beachten.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-### Usage
+### Verwendung
 ```cs
 VMA(int period, int volatilityPeriod)
 VMA(IDataSeries input, int period, int volatilityPeriod)
@@ -2779,32 +2975,36 @@ VMA(int period, int volatilityPeriod)[int barsAgo]
 VMA(IDataSeries input, int period, int volatilityPeriod)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VMA**(9,9)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **VMA**(9,9)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-volatility period Number of bars included in the calculation for the signal line
+volatility period		Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
 
-### Visualization
+### Darstellung
 ![VMA - Variable Moving Average](./media/image66.png)
 
-### Example
+### Beispiel
 ```cs
-//Output the VMA value
-Print("The current VMA value is " + VMA(9, 9)[0]);
+//Ausgabe des Wertes für den Variable Moving Average (VMA) 
+Print("Der aktuelle Wert für VMA ist  " + VMA(9, 9)[0]);
 ```
 
 ##VWMA - Volume Weighted Moving Average
-### Description
-VWMA is a non-cumulated smoothed average that is weighted based on the various volumes for the periods.
+### Beschreibung
+Der Volume Weighted Moving Average (VWMA) ist ein gewichteter gleitender Durchschnitt, der zur Gewichtung der Perioden das entspr. Volumen verwendet, d.h. Tage (Perioden) mit höherem Volumen bekommen mehr Gewicht. VWMA ist ein nicht-kumulativer gleitenden Durchschnitt.
+### Interpretation
+VWAP wird v.a. verwendet, um die Liquidität zu identifizieren. Als volumengewichteter Indikator spiegelt er bestimmte Preisniveaus anhand ihres jeweiligen Volumens wider. Dies kann Institutionen mit großen Aufträgen helfen. Die Idee ist, den Markt beim Betreten mit großen Kauf-bzw. Verkaufsaufträgen nicht zu stören. VWAP hilft liquide und illiquide Preispunkte zu bestimmen
+Intraday dient VWAP hauptsächlich zur Bestimmung des Trendes. VWAP hinkt dem Preis hinterher. Diese Verzögerung wird mit fortschreitender Handelszeit über den Tag hinweg größer.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-### Usage
+### Verwendung
 ```cs
 VWMA(int period)
 VWMA(IDataSeries input, int period)
@@ -2812,33 +3012,39 @@ VWMA(int period)[int barsAgo]
 VWMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VWMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **VWMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input			Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![VWMA - Volume Weighted Moving Average](./media/image67.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the VWMA
-Print("The current VWMA value is " + VWMA(14)[0]);
+//Ausgabe des Wertes für den Volume Weighted Moving Average (VWMA)
+Print("Der aktuelle Wert für VWMA ist " + VWMA(14)[0]);
 ```
 
 ##WMA - Weighted Moving Average
-### Description
-The Weighted Moving Average is the most well-known of the weighted averages, and is implemented to identify and quickly react to price changes. Current prices are given higher weighting than older ones. In addition, bad signals in sideways markets are minimized. The WMA smoothes the price changes and makes more efficient trade identification possible.
+### Beschreibung
+Der Weighted Moving Average (WMA) ist der bekannteste Vertreter der gewichteten gleitenden Durchschnitte.
+Gewichtete Durchschnitte werden verwendet um eine schnellere Reaktion auf die Kursverläufe zu erreichen. Dazu erhalten die aktuellen Kurse eine höhere Bewertung als ältere Werte. Ein weiterer Vorteil ist, daß Fehlsignale bei seitwärts gerichtetem Verlauf der Märkte minimiert werden. Der WMA glättet die Preiskurve und ermöglicht so eine bessere Trendidentifizierung.
+### Interpretation
+Der WMA liegt enger am Kurs als ein einfacher arithmetischer Durchschnitt. Die Verzögerung der Bewegungsmuster wird also auch geringer sein als beim arithmetischen Durchschnitt. Als Anwendungsgebiet erschließt sich deshalb der Einsatz als Signalgeber in einem System aus mehreren Durchschnitten oder als Signallinie eines Indikators. Der WMA stellt einen guten Kompromiss zwischen Glättung und Reagibilität dar. Er vollzieht Richtungswechsel in den Basisdaten schneller nach als ein SMA, weist aber trotzdem ein weiches Verlaufsmuster auf, was wichtig im Hinblick auf die Anzahl von Fehlsignalen ist.
+Besonders bei Indikatoren mit weichem Verlauf ist der WMA als Signallinie zu empfehlen. Er folgt dem Indikator sehr eng, was bedeutet, dass er auf Richtungswechsel schnell reagiert.
+Für Indikatoren mit sehr unruhigem Verlauf ist der WMA als Signallinie dagegen nicht geeignet, er würde mehr Fehlsignale produzieren als eine trägere Signallinie. (Quelle: tradesignalonline.com)
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
 
-### Further information
+### Weitere Informationen
 <http://www.tradesignalonline.com/de/lexicon/view.aspx?id=Moving+Average+Weighted+%28WMA%29>
 
-### Usage
+### Verwendung
 ```cs
 WMA(int period)
 WMA(IDataSeries input, int period)
@@ -2846,33 +3052,37 @@ WMA(int period)[int barsAgo]
 WMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **WMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **WMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![WMA - Weighted Moving Average](./media/image68.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the WMA
-Print("The current value of the WMA is " + WMA(14)[0]);
+//Ausgabe des Wertes für den Weighted Moving Average (WMA)
+Print("Der aktuelle Wert für WMA ist " + WMA(14)[0]);
 ```
 
 ##ZLEMA - Zero Lag Exponential Moving Average
-### Description
-The Zero Lag Exponential Moving Average is another variation of the EMA. Zero lag in this context signifies no delay, which means that the indicator adapts to the price changes more closely. The indicator does so by removing older price data and decreasing the cumulative effect in order to minimize the lag.
+### Beschreibung
+Der Zero-Lag Exponential Moving Average (ZLEMA) ist eine Variante des Exponential Moving Average (EMA). Zero-Lag bedeutet soviel wie "keine Verzögerung". D.h., der Indikator passt sich im Gegensatz zu den herkömmlichen gleitenden Durchschnitte (z.B. dem SMA) den Kursen sehr eng an. Der Effekt kommt von der stärkeren Gewichtung aktueller Werte. Es wird versucht, durch das Herausnehmen älterer Kursdaten die Verzögerung (durch den kummulativen Effekt) zu minimieren.
 
-### Further information
+### Interpretation
+Die Verwendung zur Identifizierung der Trendrichtung entspricht im Wesentlichen der des EMA-Indikators. Bei der Verwendung sind keine Besonderheiten zu beachten.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter [*Moving Averages*](#moving-averages).
+
+### Weitere Informationen
 FMLabs: <http://www.fmlabs.com/reference/default.htm?url=ZeroLagExpMA.htm>
 
-### Usage
+### Verwendung
 ```cs
 ZLEMA(int period)
 ZLEMA(IDataSeries input, int period)
@@ -2880,34 +3090,34 @@ ZLEMA(int period)[int barsAgo]
 ZLEMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ZLEMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **ZLEMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![ZLEMA - Zero Lag Exponential Moving Average](./media/image69.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the Zero Lag Exponential Moving Average
-Print("The current ZLEMA value is " + ZLEMA(14)[0]);
+//Ausgabe des Wertes für den Zero-Lag Exponential Moving Average (ZLEMA)
+Print("Der aktuelle Wert für ZLEMA ist " + ZLEMA(14)[0]);
 ```
 
 ##nBarsUp
-### Description
-The nBarsUp indicator looks for a specified number of rising closing prices. Other conditions can also be added to the search, for example:
-Constantly rising bars, i.e. close < open (red candles)
-Constantly rising highs
-Constantly rising lows
+### Beschreibung
+Mit dem Indikator NBarsUp kann nach einer bestimmten Anzahl steigender Schlusskurse gesucht werden.
+Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
+- stetig steigende Bars, d.h. Close < Open (rote Candles)
+- stetig steigende Hochs
+- stetig steigende Tiefs
 
-
-### Usage
+### Verwendung
 ```cs
 NBarsUp(int barCount, bool BarUp, bool higherHigh, bool higherLow)
 NBarsUp(IDataSeries input, int barCount, bool BarUp, bool higherHigh, bool higherLow)
@@ -2915,45 +3125,44 @@ NBarsUp(int barCount, int barCount, bool BarUp, bool higherHigh, bool higherLow)
 NBarsUp(IDataSeries input, int barCount, bool BarUp, bool higherHigh, bool higherLow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **NBarsUp**(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **NBarsUp**(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-1 – The condition applies
-0 – The condition does not apply
+1 - Die Bedingung trifft zu
+0 - Die Bedingung trifft nicht zu
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-barCount Number of successively rising closing prices
+barCount	geforderte Anzahl der hintereinander höher liegenden Schlusskurse
 
-barUp Additional condition (true): each close must be higher than the open (green bar)
+BarUp		Zusatzbedingung, (true): Jedes Close muß größer sein als Open (grüner Bar)
 
-higherHigh Additional condition (true): continuously rising highs
+higherHigh	Zusatzbedingung (true): stetig steigende Hochs
 
-higherLow Additional condition (true): continuously rising lows
+higherLow	Zusatzbedingung (true); stetig steigende Tiefs
 
-### Visualization
+### Darstellung
 ![nBarsUp](./media/image70.png)
 
-### Example
+### Beispiel
 ```cs
-// Look for 3 successively rising closing prices
+// Suche nach 3 stetig steigenden Schlusskursen
 if (NBarsUp(3, true, true, true)[0] == 1)
-Print("3 successively higher closing prices have occurred.");
+Print("Es sind 3 nacheinander höher liegende Schlusskurse aufgetreten.");
 ```
 
 ##nBarsDown
-### Description
-The nBarsDown indicator looks for a specified number of falling closing prices.
+### Beschreibung
+Mit dem Indikator NBarsDown kann nach einer bestimmten Anzahl fallender Schlusskurse gesucht werden.
+Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
+- stetig fallende Bars, d.h. Close < Open (rote Candles)
+- stetig fallende Hochs
+- stetig fallende Tiefs
 
-The following conditions can also be included in the search:
--   Constantly falling bars
--   Constantly falling highs
--   Constantly falling lows
-
-### Usage
+### Verwendung
 ```cs
 NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
 NBarsDown(IDataSeries input, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
@@ -2961,29 +3170,29 @@ NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)[int barsAgo
 NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **NBarsDown**(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **NBarsDown**(...)\[**int** barsAgo\] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-1 – The condition applies
-0 – The condition does not apply
+1 - Die Bedingung trifft zu
+0 - Die Bedingung trifft nicht zu
 
-### Parameters
-input Input data series for the indicator
+### Parameter
+input		Eingangsdatenreihe für den Indikator
 
-barCount Required number of successively lower closing prices
+barCount	geforderte Anzahl der hintereinander tiefer liegenden Schlusskurse
 
-barDown Additional condition (true): each close must be lower than the open
+BarDown	Zusatzbedingung, (true): Jedes Close muß kleiner sein als Open (roter Bar)
 
-lowerHigh Additional condition (true): continuously falling highs
+lowerHigh	Zusatzbedingung (true): stetig fallende Hochs
 
-lowerLow Additional condition (true); continuously falling lows
+lowerLow	Zusatzbedingung (true); stetig fallende Tiefs
 
-### Visualization
+### Darstellung
 ![nBarsDown](./media/image71.png)
 
-### Example
+### Beispiel
 ```cs
 NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
 NBarsDown(IDataSeries input, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
@@ -2992,15 +3201,17 @@ NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lo
 ```
 
 ##OnBalanceVolume (OBV)
-### Description
-This indicator displays the buy or sell pressure. For each day with a positive close, the volume is added cumulatively, and it is subtracted for days with a close that is smaller than the open.
+### Beschreibung
+TDer On Balance Volume Indikator (OBV) stellt den Kauf- bzw. Verkaufsdruck dar. Kumulativ wird das Volumen eines aufwärts gerichtetenTages (d. h. Open < Close, grüne Kerze) addiert und das Volumen aus abwärts gerichteten Tagen (rote Kerze) subtrahiert.
+OBV wurde von Joe Granville entwickelt und 1963 in seinem Buch "Key to Stock Market Profits" vorgestellt. Es war einer der ersten Indikatoren für positive und negative Volumenstrommessungen
 
 ### Interpretation
-Granville theorized that volume precedes price. OBV rises when volume on up days outpaces volume on down days. OBV falls when volume on down days is stronger. A rising OBV reflects positive volume pressure that can lead to higher prices. Conversely, falling OBV reflects negative volume pressure that can foreshadow lower prices. Granville noted in his research that OBV would often move before price. Expect prices to move higher if OBV is rising while prices are either flat or moving down. Expect prices to move lower if OBV is falling while prices are either flat or moving up.
+OBV steigt, wenn das Volumen steigender Tage das Volumen fallender Tage übertrifft. Das OBV fällt, wenn das Volumen an Tagen mit fallenden Kursen überwiegt. Ein steigendes OBV spiegelt positiven Volumen Druck wider, der zu höheren Preisen führen kann. Umgekehrt deutet ein fallendes OBV auf tiefere Kurse hin. Granville stellte in seinen Forschungen fest, dass das OBV sich oft noch vor dem Kurs zu bewegen beginnt. Insofern handelt es sich um einen sog. vorauslaufenden Indikator.
 
-The absolute value of OBV is not important. Chartists should instead focus on the characteristics of the OBV line. First define the trend for OBV. Second, determine if the current trend matches the trend for the underlying security. Third, look for potential support or resistance levels. Once broken, the trend for OBV will change and these breaks can be used to generate signals. Also notice that OBV is based on closing prices. Therefore, closing prices should be considered when looking for divergences or support/resistance breaks. And finally, volume spikes can sometimes throw off the indicator by causing a sharp move that will require a settling period. (Source: Stockcharts.com)
+Der absolute Wert des OBV ist unwichtig. Man sollte sich stattdessen auf die Eigenschaften der OBV-Linie konzentrieren. Zunächst definieren diese den Trend für das OBV. Anschließend ist zu bestimmen, ob der aktuelle Trend des OBV dem Trend des zugrunde liegenden Handelsinstrumentes entspricht. Drittens kann man nach potenziellen Unterstützungs bzw. Widerstandszonen suchen. Sobald der Trend des OBV einmal gebrochen ist, wird er sich wahrscheinlich ändern. Hieraus lassen sich Signale generieren.
+Schließlich müssen auch Volumenspitzen bei der Suche nach einer bevorstehenden Trendwende Beachtung finden.
 
-### Usage
+### Verwendung
 ```cs
 OBV()
 OBV(IDataSeries input)
@@ -3008,26 +3219,26 @@ OBV()[int barsAgo]
 OBV(IDataSeries input)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **OBV**()\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **OBV**()\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![OnBalanceVolume (OBV)](./media/image72.png)
 
-### Example
+### Beispiel
 ```cs
-//Output the value for the On Balance Volume (OBV)
+//Ausgabe des Wertes für den On Balance Volume (OBV)
 Print("The current value for the OBV is " + OBV()[0]);
 ```
 
 ##OutsideBars
-### Description
-The Outside Bars indicator is in fact an outdated version of the [*InsideBarsMT*](#insidebarsmt).
+### Beschreibung
+Der Indikator OutsideBars ist eine veraltete Version von [*InsideBarsMT*](#insidebarsmt).
 
 ##P123
 **The installation of the Technical Analysis Package is required in order to access this indicator.**
@@ -3152,21 +3363,24 @@ The name has an underscore ("\_") suffix in order to differentiate it.
 The parameters “trendSize” and “occurrence” can be found within the Condition Escort.
 
 ##Parabolic SAR
-### Description
-Welles Wilder came up with the Parabolic SAR, which denotes a price and time-based trading system. Wilder named this the "Parabolic Time/Price System." SAR signifies "stop and reverse," which is the name of the actual indicator used in his system, where **SAR trails price as the trend extends over time**. When prices are rising, the indicator is below them, and when prices are falling, it is above them. Therefore the indicator stops and reverses when the price trend reverses and breaks either above or below the indicator.
+### Beschreibung
+Das Parabolic Time/Price System wurde 1978 von Welles Wilder jr. in seinem Buch „New Concepts in Technical Trading Systems“ vorgestellt. Der Name Parabolic SAR ergibt sich aus der parabolischen Form der Kurve. SAR steht für „Stop and Reverse“, was bedeutet, dass nach Erreichen des Stopps die Position gedreht wird. Das System ist also immer investiert.
+Der Stopp ist nicht nur in Relation zum Preis zu sehen, sondern auch in Relation zur Zeit. Je weiter der Trend voranschreitet, desto dichter wird der Stopp an den Preis herangezogen – was eine parabolische Kurve ergibt.
+Wilders Parabolic SAR ist ein trendfolgender Indikator, der
+- die Trendrichtung anzeigt
+- Einstiegssignale generiert (long oder short)
+- und Stopps erzeugt.
+Damit werden prinzipiell die Bedingungen für ein Handelssystem erfüllt. (Quelle: VTAD)
 
-Wilder used his new book, New Concepts in Technical Trading Systems, to introduce the Parabolic Time/Price System in 1978. The book also discusses RSI, Average True Range, and the Directional Movement Concept (ADX). Although they were created before the computer age, Wilder's indicators function equally well today and have a high reputation.
+### Interpretation
+In einem Aufwärtstrend verläuft der Indikator unterhalb, in einem Abwärtstrend oberhalb des aktuellen Kurses. Zu Beginn des Signals läuft der SAR relativ weit weg vom Kurs. Je weiter der Trend voranschreitet, desto näher rückt der SAR an den Kurs heran. Kreuzt die Kurslinie den SAR, wird die Position ausgestoppt und in die Gegenposition gedreht. Der SAR ist wieder relativ weit weg und wird nachgezogen. Solange sich der Markt in einem ausgeprägten Trend befindet, liefert der Parabolic SAR gute Ergebnisse. In einem Seitwärtsmarkt ist er jedoch überfordert, erzeugt viele Fehlsignale und ist nicht profitabel.
 
-SAR follows the price, and can be considered a trend-following indicator. If a downtrend reverses and starts up, SAR follows the prices just like a trailing stop. This stop continues to rise so long as the uptrend remains intact, which means that the SAR never decreases in an uptrend and is always protecting profits as prices move forwards. Once the price stops rising and reverses below SAR, a downtrend starts and SAR is above the price. SAR follows prices lower like a trailing stop, as mentioned before. The stop continuously falls as long as the downtrend continues to exist. Due to the fact that SAR never rises in a downtrend, it always protects profits on short positions.
-
-
-
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Parabolic\_SAR>
 
 Wikipedia: <http://en.wikipedia.org/wiki/Parabolic\_SAR>
 
-### Usage
+### Verwendung
 ```cs
 ParabolicSAR(double acceleration, double accelerationStep, double accelerationMax)
 ParabolicSAR(IDataSeries input, double acceleration, double accelerationStep, double accelerationMax)
@@ -3174,135 +3388,144 @@ ParabolicSAR(double acceleration, double accelerationStep, double accelerationMa
 ParabolicSAR(IDataSeries input, double acceleration, double accelerationStep, double accelerationMax)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ParabolicSAR**(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **ParabolicSAR**(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
 |                  |                                     |
 |------------------|-------------------------------------|
-| acceleration     | Acceleration                        |
-| accelerationStep | Increment of the acceleration       |
-| accelerationMax  | Maximum acceleration                |
-| InSeries         | Input data series for the indicator |
+| acceleration     | Beschleunigung                      |
+| accelerationStep | Inkrement der Beschleunigung        |
+| accelerationMax  | Maximale Beschleunigung             |
+| InSeries         | Eingangsdatenreihe für den Indikator|
 
-### Visualization
+### Darstellung
 ![Parabolic SAR](./media/image75.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the PSAR
-Print("The current value for the Parabolic SAR is " + ParabolicSAR(0.02, 0.2, 0.02)[0]);
+//Ausgabe des Wertes für den Parabolic SAR
+Print("Der aktuelle Wert des Parabolic SAR ist " + ParabolicSAR(0.02, 0.2, 0.02)[0]);
 ```
 
 ##Percentage Price Oscillator (PPO)
-### Description
-The Percentage Price Oscillator displays the percentage difference between two moving averages. It is classed as a momentum indicator and is similar to the MACD in its construction.
+### Beschreibung
+Der Percentage Price Oscillator (PPO) stellt die prozentuale Differenz zwischen 2 Exponential Moving Averages (EMA's) dar.
+Der PPO gehört in die Klasse der Momentum-Indikatoren. Von der Konstruktion her ähnelt er sehr dem MACD. 
 
 ### Interpretation
-The PPO can be used for divergence analysis. The divergences have the advantage of having a higher percentual hit rate. On the downside, they often appear too early and thus are hard for newer traders to assess properly.
+Der PPO kann sehr gut für die Divergenzanalyse eingesetzt werden. Divergenzen haben einerseits den Vorteil, eine hohe Trefferquote zu haben, andererseits kommen sie häufig so früh, dass es für den unerfahrenen Akteur schwer einzuschätzen ist, wann er in den Markt eintreten bzw. diesen verlassen sollte.
 
-### Usage
+### Verwendung
 ```cs
 PPO(int fast, int slow, int smooth)
 PPO(IDataSeries input, int fast, int slow, int smooth)
 PPO(int fast, int slow, int smooth)[int barsAgo]
 PPO(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
 
-//For the smoothed value
+Für den geglätteten Wert -Smoothed value
 PPO(int fast, int slow, int smooth).Smoothed[int barsAgo]
 PPO(IDataSeries input, int fast, int slow, int smooth).Smoothed[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **PPO**(12,26,9)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **PPO**(12,26,9)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-fast Number of bars for the calculation of the fast EMA
+fast		Anzahl der Bars, für die Berechnung des fast EMA
 
-slow Number of bars for the calculation of the slow EMA
+slow		Anzahl der Bars, für die Berechnung des slow EMA
 
-smooth Number of bars for the calculation of the EMA signal line
+smooth	Anzahl der Bars, für die Berechnung der EMA Signal-Linie
 
-### Visualization
+### Darstellung
 ![Percentage Price Oscillator (PPO)](./media/image76.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the PPO
-Print("The current value for the PPO is " + PPO(12, 26, 9)[0]);
+//Ausgabe des Wertes für den Percentage Price Oscillator (PPO)
+Print("Der aktuelle Wert für PPO ist" + PPO(12, 26, 9)[0]);
 
-//Output for the value of the PPO smoothed
-Print("The current value for the PPO is " + PPO(12, 26, 9).Smoothed[0]);
+//Ausgabe des Wertes für den Percentage Price Oscillator (PPO)
+Print("Der aktuelle Wert für PPO ist " + PPO(12, 26, 9).Smoothed[0]);
 ```
 
 ##PercentEnvelopes
-### Description
-The Percent Envelopes indicator draws an upper and a lower band around a predefined value with a distance of a specified percentage value. The trader can specify which data series the entry value should be (highs, lows, closing price, another indicator etc.).
-
-It is possible to use an SMA as the entry value. In this case, the upper and lower bands will be displayed with a distance of 1.5%.
+### Beschreibung
+Der Indikator PercentEnvelopes zeichnet um einen vorgegebenen Wert im Abstand von einem Prozentwert ein oberes Band (Upper Band) und ein unteres Band (Lower Band).
+Der Eingangswert kann dabei eine beliebige Datenserie sein, z.B. die Hochs, Tiefs, die Schlusskurse oder auch ein anderer Indikator.
+Es ist z.B. möglich, als Eingangswert einen Simple Moving Average (SMA) zu verwenden. Um diesen lassen sich dann jeweils ein oberes und unteres Band im Abstand von 1.5 % zeichnen.
 
 ### Interpretation
-Similarly to the Bollinger Bands, the Percent Envelope indicator can be used to make buy or sell decisions and to determine whether the price is under- or overvalued.
+Ähnlich den Bollinger Bändern kann auch der PercentEnvelope-Indikator unterstützend dazu verwendet werden, Kauf- bzw. Verkaufsentscheidungen zu treffen bzw. festzustellen, ob ein Kurs über- oder unterbewertet ist.
+PercentEnvelope sollte nie als alleiniger Indikator für Handelsentscheidungen verantwortlich sein, sondern immer in Kombination mit weiteren Indikatoren verwendet werden.
 
-The Percent Envelope should never be used to make decisions based solely on the output, but should be used in conjunction with other indicators to confirm signals.
-
-### Usage
+### Verwendung
 ```cs
 PercentEnvelopes(double percent)
 PercentEnvelopes(IDataSeries input, double percent)
 
-//For the upper band
+//Für das obere Band
 PercentEnvelopes(double percent).UpperPercentBand[int barsAgo]
 PercentEnvelopes(IDataSeries input, double percent).UpperPercentBand[int barsAgo]
 
-//For the lower band
+//Für das untere Band
 PercentEnvelopes(double percent).LowerPercentBand[int barsAgo]
 PercentEnvelopes(IDataSeries input, double percent).LowerPercentBand[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **PercentEnvelopes**(2)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.**PercentEnvelopes**(2)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-percent Difference in % for the bands (from the input value)
+percent	Abstend der Bänder in Prozent (%) vom Eingangswert
 
-### Visualization
+### Darstellung
 ![PercentEnvelopes](./media/image77.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the upper band
-Print("Value of the upper percent band is: " + PercentEnvelopes(3).UpperPercentBand[0]);
+//Ausgabe des Wertes des oberen Prozent Bandes
+Print("Der Wert des oberen Prozent Bandes ist:  " + PercentEnvelopes(3).UpperPercentBand[0]);
 
-//Output for the lower band
-Print("Value of the lower percent band is: " + PercentEnvelopes(3).LowerPercentBand[0]);
+//Ausgabe des Wertes des unteren Prozent Bandes
+Print("Der Wert des unteren Prozent Bandes ist: " + PercentEnvelopes(3).LowerPercentBand[0]);
 ```
 
 ##Pivot Points
-### Description
-This indicator, based on the price zone approach invented by Dr. Bruce Gould, has been honed over the years. In the beginning, the price zones were calculated using the price developments of the last 2-3 years. Nowadays, however, the practical concept of pivot points is taken from the calculation of price zones in the daily chart, using the previous day’s periods as the basis. The goal hereby is to determine price levels that one could use as potential resistance zones (R1..R3) or support zones (S1..S3). The following methods can be used to calculate the indicator: Classic, Floor, Woodie, Camarilla, Fibonacci. The Classic and Floor methods are often wrongly named within literature, which is why in AgenaTrader you will find that the Classic method is labeled as “Floor” and vice versa. The indicator displays the pivot points for intraday charts, and the parameter “ShowPrices” allows you to display the price on the levels. The parameter “DaysBack” allows you to set the number of periods in the past that should be used for the calculation. The line coloring can be defined manually
+### Beschreibung
+Futures-Händler kennen sie längst - die so genannten Pivot-Punkte (Pivot Points). Ursprünglich fanden sie Anwendung an den Commodity-Märkten, mittlerweile erobern sie sich aber mehr und mehr ihren festen Platz bei den Financial Futures.
+Pivot Punkte basieren auf einem Preiszonenansatz, der von Dr. Bruce Gould entwickelt und im Laufe zunehmend verfeinert wurde. Während die Preiszonen ursprünglich auf die Kursverläufe der letzten zwei bis drei Jahre berechnet wurden, basiert das praktische Konzept der Pivot-Punkte auf der Errechnung von Preiszonen im Tageschart auf der Grundlage der Vortageskurse. Ziel ist es hierbei, Kursniveaus zu definieren, die intraday als potenzielle Widerstandsbereiche (Resistance: R1, R2 usw.) genutzt werden können, sowie Kursniveaus als Unterstützungsbereiche (Support: S1, S2 usw.) zu bestimmen. (Quelle: finanznachrichten.de)
+Der Indikator kann nach folgenden Methoden berechnet werden:
+Classic, Floor, Woodie, Camarilla und Fibonacci. Die Berechnungsvorschriften sind unten angegeben.
+Die Methoden Classic und Floor weden in der Literatur gelegentlich vertauscht verwendet, d.h. die Methode Classic im AgenaTrader wird als Floor bezeichnet und umgekehrt.
+Der Indikator zeigt auf intraday-Charts den Pivotpunkt und die Unterstützungs- und Widerstandszonen an.
+In den Indikator-Einstellungen kann mit dem Parameter "ShowPrices" die Anzeige des Kurses neben den Linien erreicht werden.
+Mit dem Parameter "DaysBack" werden die Pivotpunkte auch für die entsprechende Anzahl von Tagen in der Vergangenheit angezeigt.
+Die Linienfarbe ist für den Pivotpunkt, die Wiederstands- und Unterstützungspunkte getrennt einstellbar.
 
 ### Interpretation
-Traders prefer to sell above the resistance lines 1 & 2 (e.g. to build up short positions), and to start building up tactical long positions at the support lines.
+Klassischerweise bevorzugen Trader Kurse oberhalb der Widerstände 1 und 2 zu verkaufen (z.B. dem Aufbau von Short-Positionen), bzw. bei Unterschreiten der Unterstützungen 1 und 2 taktisch long zu gehen.
+Ferner kann überlegt werden, die Widerstände bzw. Unterstützungen als Zielzonen zu verwenden und dort eine (Teil-) Positionsschließung vorzunehmen.
 
-### Further information
+### Weitere Informationen
 <http://www.finanznachrichten.de/nachrichten-2008-01/9833653-was-sind-pivot-punkte-und-wie-kann-ich-sie-handeln-005.htm>
 
 <http://www.aktienboard.com/forum/f38/7-kapitel-pivot-points-t36428/>
 
 <http://www.forexschule.com/schule/wie-man-mit-hilfe-von-pivot-punkten-handelt-50>
 
-### Usage
+### Verwendung
 ```cs
 PivotPoints()
 PivotPoints(PivotPointsMode mode)
@@ -3314,22 +3537,22 @@ PivotPoints(PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, 
 PivotPoints(IDataSeries input, PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)[barsAgo]
 ```
 
-### Return value
-This class has the following public methods (as data series), which all return double values:
+### Rückgabewert
+Die Klasse besitzt die folgenden public Methoden (als DataSeries), die jeweils einen double-Wert zurückgeben:
 
 **PP, S1, S2, S3, R1, R2 ,R3**
 
-### Example:
+### Beispiel:
 ```cs
 PivotPoints().PP[int barsAgo]
 PivotPoints(PivotPointsMode.Classic).S3[int barsAgo]
 ```
 
-### Parameters
+### Parameter
 |                 |                                                                                   |
 |-----------------|-----------------------------------------------------------------------------------|
-| InSeries        | Input data series for the indicator                                               |
-| PivotPointsMode | Calculatory method
+| InSeries        | Eingangsdatenreihe für den Indikator                                              |
+| PivotPointsMode | Berechnungsmodus  Mögliche Werte sind:
 PivotPointsMode.Classic
 PivotPointsMode.Floor
 PivotPointsMode.Woodie
@@ -3345,20 +3568,19 @@ Default: false                                                                  
 | PPColor         | Pivot line color                                                                  |
 | SColor          | Support line color                                                                |
 
-### Visualization
+### Darstellung
 ![Pivot Points](./media/image78.png)
 
-### Example
+### Beispiel
 ```cs
-//Output current pivot point
-Print("The floor pivot point is located at: " + PivotPoints()[0]);
-//Output first support (S1)
-Print("The first pivot support (S1) is at: " + PivotPoints().S1[0]);
+//Ausgabe des aktuellen Pivot-Punktes
+Print("Der Floor-Pivotpunkt befindet sich bei:" + PivotPoints()[0]);
+//Ausgabe der 1. Unterstützung (S1)
+Print("Die erste Pivot-Unterstützung (S1) befindet sich bei:  " + PivotPoints().S1[0]);
 ```
 
-### Calculation
-H=yesterday’s high, L=yesterday’s low, O=yesterday’s open, C=yesterday’s close
-
+### Berechnung
+H=Vortageshoch, L=Vortagestief, O=Vortagesopen, C=Vortagesclose
 Range = H-L
 
 **Classic**
@@ -3442,13 +3664,13 @@ r3 = pp + 0.764 \* Range
 s3 = pp - 0.764 \* Range
 
 ##Polarized Fractal Efficiency (PFE)
-### Description
-Hans Hannula developed the PFE, which is categorized as a momentum indicator. It uses the methods of fractal geometry and chaos theory to determine the price efficiency of the movements.
+### Beschreibung
+Der Polarized Fractal Efficiency (PFE) wurde von Hans Hannula entwickelt. Er gehört in die Klasse der Momentum-Indikatoren und verwendet Methoden der fraktalen Geometrie sowie der Chaostheorie, um zu bestimmen, mit welcher Effizienz der Preis sich bewegt.
 
 ### Interpretation
-When the PFE zigzags around the zero line, no trend is present. If the PFE is equally formed and running above the zero line, the market is in an uptrend. The higher the value, the stronger the uptrend.
+Wenn der PFE sich im Zickzack um die Null-Linie bewegt, dann liegt kein deutlicher Trend vor. Wenn der PFE gleichmäßig läuft und sich über bzw. unter der Null-Linie bewegt, befindet sich der Markt in einem Aufwärts bzw. Abwärtstrend. Je höher bzw. niedriger der PFE-Wert dabei ist, desto stärker ist der Trend (desto höher ist die Effizienz).
 
-### Usage
+### Verwendung
 ```cs
 PFE(int period)
 PFE(IDataSeries input, int period)
@@ -3456,30 +3678,33 @@ PFE(int period)[int barsAgo]
 PFE(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **PFE**(20)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **PFE**(20)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
-### Visualization
+### Darstellung
 ![Polarized Fractal Efficiency (PFE)](./media/image79.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the Polarized Fractal Efficiency (PFE)
-Print("The current value for the PFE is: " + PFE(20)[0]);
+//Ausgabe des Wertes für den Polarized Fractal Efficiency (PFE)
+Print("Der aktuelle Wert für den PFE ist: " + PFE(20)[0]);
 ```
 
 ## Price Oscillator
-### Description
-This indicator is based on the difference between two moving averages. The difference is measured in absolute values, not in percentages.
+### Beschreibung
+Der PriceOscillator ist ein Indikator, der auf der Differenz zwischen zwei gleitenden Durchschnitten beruht. Die Differenz wird im Gegensatz zum Percent Price Oscillator (PPO) in absoluten Werten angegeben.
 
-### Usage
+### Interpretation
+Der Price Oscillator wird analog zum PPO bzw. zum MACD verwendet. 
+
+### Verwendung
 ```cs
 PriceOscillator(int fast, int slow, int smooth)
 PriceOscillator(IDataSeries input, int fast, int slow, int smooth)
@@ -3487,29 +3712,29 @@ PriceOscillator(int fast, int slow, int smooth)[int barsAgo]
 PriceOscillator(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **PriceOscillator**(12,26,9)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **PriceOscillator**(12,26,9)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-fast Number of bars used for the calculation of the fast EMA
+fast		Anzahl der Bars, für die Berechnung des fast EMA
 
-slow Number of bars used for the calculation of the slow EMA
+slow		Anzahl der Bars, für die Berechnung des slow EMA
 
-smooth Number of bars used for the calculation of the EMA signal line
+smooth	Anzahl der Bars, für die Berechnung der EMA Signal-Linie
 
-### Visualization
+### Darstellung
 ![Price Oscillator](./media/image80.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the price oscillator
-Print("The current value for the PPO is " + PriceOscillator(12, 26, 9)[0]);
-//Output for the value of the smooth price oscillator
-Print("The current value for the smooth is " + PriceOscillator(12, 26, 9).Smoothed[0]);
+//Ausgabe des Wertes für den PriceOscillator
+Print("Der aktuelle Wert für PPO ist " + PriceOscillator(12, 26, 9)[0]);
+//Ausgabe des Wertes für Smooth des PriceOscillators
+Print("Der aktuelle Wert für Smooth ist" + PriceOscillator(12, 26, 9).Smoothed[0]);
 ```
 ## Rainbow
 ### Description
@@ -3540,10 +3765,10 @@ Pink ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 19
 
 
 ##Range
-### Description
-Range delivers the span/difference between the high and low in ticks for each bar. The range is always greater than or equal to 0.
+### Beschreibung
+Range liefert ist für jeden Bar die Spanne zwischen Hoch und Tief in Ticks. Range ist damit immer größer oder gleich 0.
 
-### Usage
+### Verwendung
 ```cs
 Range()
 Range(IDataSeries input)
@@ -3551,37 +3776,38 @@ Range()[int barsAgo]
 Range(IDataSeries input)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Range**()\[**int** barsAgo\] ), the range value for the referenced bar will be outputted.
+Bei Verwendung der Methode mit einem Index ( z.B. **Range**()\[**int** barsAgo\] ) wird der Range-Wert für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![Range](./media/image81.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of the range
-Print("The current bar has a range of: " + Range()[0]);
+//Ausgabe des Wertes für Range
+Print("Der aktuelle Bar hat eine Range von: " + Range()[0]);
 
-//Identical output
-Print("The current bar has a range of: " + High[0] - Low[0]);
+//identische Ausgabe
+Print("Der aktuelle Bar hat eine Range von: " + High[0] - Low[0]);
 ```
 
 ##Range Indicator (RIND)
-### Description
-Jack Weinberg created the Range Indicator (RIND), which was first published in 1954. The RIND compares the intraday span (range) between the high and low to the span (range) between the current closing price and the closing price from the day before.
+### Beschreibung
+Der Range Indicator (RIND) wurde von Jack Weinberg entwickelt. Veröffentlicht wurde er erstmals 1954 in einem Artikel der Juni-Ausgabe des Magazins "Technical Analysis of Stocks & Commodities".
+Der Indikator vergleicht die Spanne (Range) zwischen dem Hoch und Tief auf Intraday-Basis mit der Spanne zwischen dem aktuellen Schlusskurs und dem Vortages-Schlusskurs.
 
 ### Interpretation
-When the span between the current close and the previous days close is bigger than the intraday span between high and low, the indicator will display a high value. This signals a potential trend change...
+Wenn die Spanne zwischen dem aktuellen Close und dem Vortages Close größer ist, als die Intradayspanne zwischen Hoch und Tief, zeigt der indikator einen hohen Wert an. Dies signalisiert ein mögliches Trendende. Wenn der Range Indicator im Gegensatz dazu auf einem niedrigen Niveau notiert, ist dies ein Hinweis auf den Beginn eines neuen Trends.
 
-### Further information
+### Weitere Informationen
 <http://www.fmlabs.com/reference/default.htm?url=RangeIndicator.htm>
 
-### Usage
+### Verwendung
 ```cs
 RIND(int periodQ, int smooth)
 RIND(IDataSeries input, int periodQ, int smooth)
@@ -3589,41 +3815,41 @@ RIND(int periodQ, int smooth)[int barsAgo]
 RIND(IDataSeries input, int periodQ, int smooth)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RIND**(3,10)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **RIND**(3,10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-periodQ Number of bars used for the short-term stochastic
+periodQ	Anzahl der Bars, für die Berechnung der kurzfristigen Stochastik
 
-smooth Number of bars used for smoothing the indicator (using an EMA)
+smooth	Anzahl der Bars für die Glättung des Indikators mit einem EMA
 
-### Visualization
+### Darstellung
 ![Range Indicator (RIND)](./media/image82.png)
 
-### Example
+### Beispiel
 ```cs
-//Output
-Print("The current value for the PFE is: " + RIND(3, 10)[0]);
+//Ausgabe des Wertes für den Range Indikator (RIND)
+Print("Der aktuelle Wert für den PFE ist: " + RIND(3, 10)[0]);
 ```
 
 ##Rate of Change (ROC)
-### Description
-The Rate of Change Indicator is a simple yet effective momentum oscillator. It measures the relative percentage change of the prices from one period to the next.
-The calculation looks at the current price and compares it to the price of n periods ago.
+### Beschreibung
+Der Rate of Change Indikator (ROC, Rate of Change = Änderungsrate) ist ein ebenso einfacher wie effektiver Momentum-Oszillator, der die relative prozentuale Veränderung des Kurses von einer Periode zur nächsten Periode bzw. zu einer frei angegebenen Periode in der Vergangenheit misst. Der Indikator oszilliert um die Null-Linie.
+Die Berechnung vergleicht hierfür den aktuellen Kurs mit dem Kurs von vor n Perioden.
 
 ### Interpretation
-As long as the ROC is above 0, the uptrend is intact.
-As long as the ROC is below 0, the downtrend is intact.
-Divergences between the indicator and the price development can hint to a trend change.
+Solange der ROC über 0 bleibt ist der Aufwärtstrend intakt.
+Solange der ROC unter 0 bleibt ist der Abwärtstrend intakt.
+Divergenzen zwischen dem Indikator- und dem Kursverlauf lassen auf eine Trendänderung schließen.
 
-### Further information
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/RoC](http://vtadwiki.vtad.de/index.php/RoC)
 
-### Usage
+### Verwendung
 ```cs
 ROC(int period)
 ROC(IDataSeries input, int period)
@@ -3631,41 +3857,41 @@ ROC(int period)[int barsAgo]
 ROC(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ROC**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **ROC**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Rate of Change (ROC)](./media/image83.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the value for the ROC indicator
-Print("The current ROC value is: " + ROC(14)[0]);
+//Ausgabe des Wertes für den Rate of Change Indikator (ROC)
+Print("Der aktuelle Wert für den ROC ist: " + ROC(14)[0]);
 ```
 
 ##Relative Spread Strength (RSS)
-### Description
-The Relative Spread Strength Indicator was developed in 2006. It uses the difference of two SMAs to calculates the value of the RSI.
+### Beschreibung
+Der Relative Spread Strength (RSS) Indikator wurde 2006 von Ian Copsey in einem Artikel der Oktoberausgabe des "Stocks & Commodities" Magazins vorgestellt.
+Der RSS berechnet den Wert des RSI von der Differenz zwischen zwei SMA's.
 
 ### Interpretation
-Values above 70 and below 30 mean that the price has the potential of turning. Trades should not be entered into at these points. When it comes to extreme values, you might want to check smaller timeframes for clearer trading signals.
+Bei Werten über 70 und unter 30 besitzt der Kurs das Potential, sich zu drehen. Hier sollte kein Trade eingegangen werden. Bei einem Extremwert sollte in einer kleineren Zeiteinheit nach Handelssignalen (Trendlinienbrüche, Reversals usw.) gesucht werden.
 
-In the long-term analysis, the following methodology should be applied:
+In der langfristigen Anwendung verhält es sich anders:
 
--   below 30: long entry
--   above 70: for more than 5 days: exit long
+- unter 30:	Long Einstieg
+- über 70	für mehr als 5 Tage: Ausstieg Long
+- über 95:	Short Einstieg
+- unter 30:	für mehr als 5 Tage: Short Ausstieg
 
--   above 95: short entry
--   below 30: for more than 5 days: exit short
-
-### Usage
+### Verwendung
 ```cs
 RSS(int eMA1, int eMA2, int length)
 RSS(IDataSeries input, int eMA1, int eMA2, int length)
@@ -3673,83 +3899,86 @@ RSS(int eMA1, int eMA2, int length)[int barsAgo]
 RSS(IDataSeries input, int eMA1, int eMA2, int length)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RSS**(10,40,5)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **RSS**(10,40,5)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-length Number of bars used in the calculation
+length	Anzahl der Bars, die in der Berechnung verwendet werden
 
-eMA1 Number of periods for the first EMA
+eMA1	Periodenanzahl für den ersten EMA
 
-eMA2 Number of periods for the second EMA
+eMA2	Periodenanzahl für den zweiten EMA
 
-### Visualization
+### Darstellung
 ![Relative Spread Strength (RSS)](./media/image84.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the RSS
-Print("The current RSS is " + RSS (10, 40, 5)[0]);
+//Ausgabe des Wertes für den Relative Spread Strength (RSS)
+Print("Der aktuelle Wert des RSS ist " + RSS (10, 40, 5)[0]);
 ```
 
 ##Relative Strength Index (RSI)
-### Description
-J. Welles Wilder, the creator of several indicators, also developed the RSI, which is one of the most popular, useful momentum oscillators. It compares the size of the most recent profits with the size of the most recent losses, which means that it assesses the relationships between the up and down closing prices. The values are shown between 0 and 100.
+### Beschreibung
+Der Relative Strength Index (RSI) wurde von J. Welles Wilder entwickelt und in seinem 1978 erschienenen Buch "New Concepts in Technical Trading Systems" erstmals vorgestellt. Der RSI ist ein äußerst nützlicher und beliebter Momentum-Oszillator. Er vergleicht die Größe der jüngsten Gewinne mit der Größe der jüngsten Verluste, bewertet also das Verhältnis der Aufwärts- zu den Abwärts-Schlusskursen innerhalb des Betrachtungszeitraums. Die Informationen werden in einer Zahl zwischen 0 und 100 abgebildet.
 
 ### Interpretation
-Traditionally, and according to Wilder, RSI is considered overbought when above 70 and oversold when below 30. Signals can also be generated by searching for divergences, failure swings and centerline crossovers. RSI can also be used to identify the general trend. These traditional levels can also be adjusted to better fit the security or analytical requirements. Raising overbought to 80 or lowering oversold to 20 will reduce the number of overbought/oversold readings. Short-term traders sometimes use 2-period RSI to look for overbought readings above 80 and oversold readings below 20.
+Der RSI ist einfach zu interpretieren und er ist einer der am häufigsten verwendeten Indikatoren. Wertpapiere tendieren dazu, länger anhaltende aufwärts- oder abwärtsbewegungen zu vollziehen. Wenn in einem Zeitraum die Kursbewegung zu stark in eine Richtung verläuft, so wird häufig von einer Kursübertreibung gesprochen. Der RSI ist ein Hilsmittel, der darauf abzielt, diese Übertreibung zu messen und quantitativ in einer Skala zwischen 0 und 100 festzuhalten. 
+Dabei gilt, dass ein Wertpapier überverkauft ist, wenn der Indikator sich unter 30 befindet, und überkauft, wenn der Wert mehr als 70 beträgt. Die Erfahrung zeigt, dass der Vorstoß in diese Grenzbereiche ein Warnsignal darstellt. Aber erst der Wendepunkt innerhalb der Gefahrenzonen warnt vor einer Trendwende. 
 
-### Further information
+### Weitere Informationen
 <http://technische-analyse.eu/index.php?title=RSI>
 
-### Usage
+### Verwendung
 ```cs
 RSI(int period, int smooth)
 RSI(IDataSeries input, int period, int smooth)
 RSI(int period, int smooth)[int barsAgo]
 RSI(IDataSeries input, int period, int smooth)[int barsAgo]
 
-//For the average value
+//Für den Avg-Wert
 RSI(int period, int smooth).Avg[int barsAgo]
 RSI(IDataSeries input, int period, int smooth).Avg[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RSI**(14,3)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **RSI**(14,3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
-smooth Number of periods for the smoothing
+smooth	Anzahl der Perioden für die Glättung
 
-### Visualization
+### Darstellung
 ![Relative Strength Index (RSI)](./media/image85.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the RSI
-Print("The current value for the RSI is: " + RSI(14, 3)[0]);
+//Ausgabe des Wertes für den Relative Strength Index (RSI)
+Print("Der aktuelle Wert für den RSI ist: " + RSI(14, 3)[0]);
 
-//Output for the average line
-Print("The current value for the AVG line is: " + RSI(14, 3).Avg[0]);
+//Ausgabe des Wertes für die Avg-Linie
+Print("Der aktuelle Wert der Avg-Linie ist: " + RSI(14, 3).Avg[0]);
 ```
 
 ##Relative Strength Levy (RSL)
-### Description
-The concept of the Relative Strength according to R.A. Levy is that the past developments play a very important role in the strength that will be seen in the future. The current performance is compared to the past performance.
+### Beschreibung
+Dem Konzept der Relativen Stärke nach Levy, Relative Strength Levy (RSL) liegt die Annahme zugrunde, daß Titel, die in der Vergangenheit eine große relative Stärke aufwiesen, sich auch in Zukunft relativ stark entwickeln werden und umgekehrt. Man berechnet hier also nicht die Relative Stärke mehrerer Titel zueinander, sondern vergleicht die Performance der Vergangenheit mit der Performance von heute.
+Zur Berechnung wird der Wochenschlußkurs (oder Tagesschluss) des Basistitels durch das arithmetische Mittel der Schlußkurse im Betrachtungszeitraum dividiert. Das Ergebnis wird um die Marke 1,0 herum aufgetragen. Anschließend wird eine sortierte Liste erstellt, deren erster Platz vom Titel mit der höchsten RSL belegt wird.
 
-The calculation involves taking the weekly closes (or daily closes) and dividing them by the arithmetic mean of the closing prices for the examined period. The result is then balanced around the 10 marker, and an ordered list is created where the value of the highest RSL fills the first place.
+### Interpretation
+Besitzt ein Titel eine RSL größer 1, so zeigt er heute eine größere Kursstärke als in der Vergangenheit, besitzt er eine kleinere RSL, so tendiert der Titel schwächer, als in der Vergangenheit. Einer Interpretation nach Levy folgend, werden nur die beiden ersten Titel der oben beschriebenen Ranking-Liste, gekauft, alle anderen gelten als Verkaufspositionen.
+Einer zweiten Interpretation Levys folgend, sind zunächst die Standardabweichungen der letzten 27 Wochenschlußkurse durch das arithmetische Mittel der letzten 27 Wochenschlußkurse zu dividieren. Mit diesem Verfahren soll die Volatilität der beobachteten Aktien ermittelt werden. Aus dem Ergebnis dieser Operation ist nun wieder eine Ranking-Liste aufzustellen. Als Kauf bewertete Levy die Titel der Schnittmenge aus den ersten 5% der RSL-Rangfolge und den ersten 12,5% der Volatilitätsrangfolge. Die Titel, die zu den letzten 30% der RSL-Liste gehören, sind zum Verkauf zu stellen. Ebenso wie die Relative Stärke sollte man die RSL als Filter benutzen, um die gefundenen Titel mit anderen technischen Indikatoren näher zu untersuchen.
 
-
-### Usage
+### Verwendung
 ```cs
 RSL(int period)
 RSLDataSeries input, int period)
@@ -3757,23 +3986,23 @@ RSLnt period)[int barsAgo]
 RSL(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RSL**(27)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **RSL**(27)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Relative Strength Levy (RSL)](./media/image86.png)
 
-### Example
+### Beispiel
 ```cs
-//RSL value output
-Print("The Relative Strength as calculated by Levy is " + RSL(27)[0]);
+//Ausgabe des aktuellen Wertes füt die RSL
+Print("Die Relative Stärke nach Levy beträgt" + RSL(27)[0]);
 ```
 
 ##Relative Volatility Index (RVI)
