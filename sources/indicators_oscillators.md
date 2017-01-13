@@ -4006,16 +4006,22 @@ Print("Die Relative Stärke nach Levy beträgt" + RSL(27)[0]);
 ```
 
 ##Relative Volatility Index (RVI)
-### Description
-The Relative Volatility Index (RVI) has many similarities to the RSI indicator. Donald Dorsey developed the RVI, which uses the standard deviation instead of the daily price span. To determine the underlying volatility of the instrument, the RVI uses the standard deviation over a period of 10. The RSI indicator is then used on the results, which normalizes them. What comes from this is displayed on a scale of 1 to 100.
+### Beschreibung
+Der Relative Volatility Index (RVI) wurde von Donald Dorsey entwickelt. Es gleicht dem RSI, wobei anstelle der täglichen Preisspanne die Standardabweichung über den Indikator Zeitraumverwendet wird.
+Um die grundlegende Volatilität eines Wertpapiers zu ermitteln eines Wertpapiers zu ermitteln, verwendet Donald Dorsey bei seinem Relative Volatility Index (RVI) die Standardabweichung über einen Zeitraum von zehn Tagen. Für die Berechnung der Dynamik der Volatilitätsentwicklung wendet er den Relative Strength Index (RSI) auf das Ergebnis der Volatilitätsberechnung an. Zur Berechnung der RSI verwendet er die üblichen 14 Tage.
+Der Relative Volatility Index (RVI) misst die Richtung der Volatilitätsentwicklung auf einer Skala von 1 bis 100. Indem der RSI auf die Volatilität angewendet wird, werden die Schwankungen auf den Wertebereich zwischen 0 und 100 normiert und sind dadurch sowohl historisch als auch mit anderen Wertpapieren vergleichbar. (Quelle: VTAD)
 
 ### Interpretation
-Values above 50 assume an increase in volatility. Values below 50 imply a drop in volatility. Dorsey recommends using the indicator as a filter for other indicators.
+Beim RVI bedeuten Werte über 50 eine Zunahme der Volatilität. Werte unter 50 deuten auf eine nachlassende Volatilität hin.
+Donald Dorsey bezeichnet die Verwendung als Filter für andere Indikatoren als Hauptaufgabe des RVI. Der RVI muss Signale eines Indikators bestätigen, damit sie als gültig gelten. 
+Z.B. kann das Überkreuzen eines 10- und eines 20-Tage-Durchschnitts als signalgebender Indikator verwendet werden. Signale für steigende Kurse werden dann ausschließlich ausgeführt, wenn gilt: RVI > 50. Signale für fallende Kurse werden nur berücksichtigt, wenn gilt: RVI < 50.
+Der Ausstieg aus einer Long-Position erfolgt, wenn gilt: RVI < 40. Der Ausstieg aus einer Short-Position erfolgt, wenn gilt: RVI > 60.
+Ein ignoriertes Signal auf steigende Kurse wird nachgeholt, wenn gilt: RVI > 60. Ein ignoriertes Signal auf fallende Kurse wird nachgeholt, wenn gilt: RVI < 40.
 
-### Further information
+### Weitere Informationen
 <http://vtadwiki.vtad.de/index.php/Relative\_Volatility\_Index\_%28RVI%29>
 
-### Usage
+### Verwendung
 ```cs
 RVI(int period)
 RVI(IDataSeries input, int period)
@@ -4023,36 +4029,37 @@ RVI(int period)[int barsAgo]
 RVI(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RVI**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **RVI**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Relative Volatility Index (RVI)](./media/image87.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the RVI value
-Print("The current value for the RVI is: " + RVI(14)[0]);
+//Ausgabe des Wertes für den Relative Volatility Index (RVI)
+Print("Der aktuelle Wert für den RVI ist:" + RVI(14)[0]);
 ```
 
 ##ReversalBars
-**The installation of the Technical Analysis Package is required in order to access this indicator.**
+**Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.**
 
-### Description
-The Reversal Bars indicator helps the trader find reversal bars within a chart.
-The indicator has a plot, and outputs the value 1 for long reversal bars, -1 for short reversal bars and 0 when there are none present. Traders can make several adjustments such as colors, arrows that are shown, etc.
+### Beschreibung
+Der Indikator ReversalBars dient der Erkennung und Markierung von Umkehrstäben im Chart. Die Umkehrstäbe konnen im Chart mit einer frei wählbaren Farbe eingefärbt werden. Zusätzlich könnnen auch Pfeile über bzw. unter einem Umkehrstab angezeigt werden.
+Der Indikator besitzt einen Plot, und liefert für einen LOng-Umkehrstab den Wert 1, für einen Short-Umkehstab den Wert -1 und ansonsten den Wert 0. Somit kann der Indikator auch in einem Subchart unter dem Hauptchart dargestellt werden. (Die Farbe des Plots ist auf Transparent gesetzt und muß geändert werden.)
+Die Rückgabewerte des Indikators erlauben eine Verwendung in anderen Indikatioren bzw. Strategien.
 
 ### Interpretation
-The interpretation of reversal bars is described in M. Voight’s book.
+Zur Interpretation von Umkehrstäben wird auf die ausführliche Beschreibung in "Das große Buch der Markttechnik") v. M. Voigt verwiesen.
 
-### Usage
+### Verwendung
 ```cs
 Reversalbars()
 Reversalbars(IDataSeries input)
@@ -4064,54 +4071,55 @@ Reversalbars(int tolerance)[int barsAgo]
 Reversalbars(IDataSeries input, int tolerance)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-1 = long reversal bar
+ 1 = Long-Umkehrstab
+ 
+-1 = Short-Umkehrstab
 
--1 = short reversal bar
+ 0 = kein Umkehrstab
 
-0 = no reversal bar
 
-When using this method with an index (e.g. **Reversalbars**()\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **Reversalbars**()\[**int** barsAgo\] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
+tolerance  s. nachfolgende Beschreibung
 
-tolerance See the following description below
-
-### Visualization
+### Darstellung
 ![ReversalBars](./media/image88.png)
 
-### The tolerance parameter
-The reversal bars must exceed their previous bars by at least 1 tick. The tolerance parameter allows you to define/add a certain number of ticks; the parameter is set to 0 by default, but in a sideways market this will lead to a relatively large number of reversal bars being marked.
+### Der Parameter Tolerance
+Umkehrstäbe müssen nach Definition ihren vorhergehenden Bar mindestens um 1 Tick übersteigen (Long-Umkehrstab) bzw. unterschreiten (Short-Umkehrstab). Mit dem Parameter Toleranz kann eine zusätzliche Anzahl Ticks angegeben werden, die - im Falle eines Long-Umkehrstabes - das Hoch des Umkehrstabes das Hoch des vorhergehenden Bars mindestens überschreiten muss.
+Der Parameter per default auf 0 gesetzt, was in einem seitwärs verlaufenden Markt dazu führen kann, dass sehr viele nicht relevante Umkehrstäbe markiert werden.  
 
 ![The tolerance parameter](./media/image89.png)
 
-### Example
+### Beispiel
 ```cs
-// Set CalculateOnClosedBar = true !!
+// set CalculateOnBarClose = true !!
 if (Reversalbars()[0] == 1.0)
-Print("The last bar is a long reversal bar.");
+Print("Der letzte Bar ist ein Long-Umkehrstab.");
 ```
 
 ##R-Squared
-### Description
-This indicator belongs to the linear regression series. R-Squared is the correlation coefficient that specifies the quality of the linear regression line.
+### Beschreibung
+Der Indikator R-Squared gehört zu den Indikatoren aus dem Bereich der linearen Regression. R-Squared ist der sog. Korrelationskoeffizient. Er beschreibt die Qualität der linearen Regressionsgerade.
 
-It is the calculation that gives R-Squared its name – the value is the square of the correlation coefficient, which in mathematics is prefixed with the Greek letter Rho (P).
+R-Squared hat seinen Namen von der Berechnung. Der Wert ist das Quadrat des Korrelationskoeffizienten, der in der Mathematik mit dem grichischen Buchstaben Rho (P) bezeichnet wird.
 
-See [*Linear Regression*](#linearregression), [*LinRegSlope*](#linregslope), [*LinRegIntercept*](#linregintercept).
+Siehe auch  [*Linear Regression*](#linearregression), [*LinRegSlope*](#linregslope), [*LinRegIntercept*](#linregintercept).
 
 ### Interpretation
-The value of the oscillator fluctuates between 0 and 1. By default, the upper boundary line is located at 0.75, and the lower border is at 0.2.
-If the prices are in a sideways movement, the data is scattered around the regression line. R-Squared will have a value of 0 in the aforementioned situation.
-In a strong trend phase, the prices will remain within a tight range for an extended period of time; if these are located close to the regression line then the R-Squared indicator will have a value of 1. Stanley Kroll and Tuchar Chande used the correlation coefficient as a trend filter in their book “*The new technical trader*”.
+Die Werte des Oszillators schwanken zwischen 0 und 1. Es wird standardmäßig eine obere Begrenzungslinie bei 0,75 und eine untere Begrenzungslinie bei 0,2 verwendet.
+Verlaufen die Kurse in einer Seitwärtsbewegung, sind die Daten um ihre Regressionsgerade herum weit gestreut. R-Squared weist in diesem Fall einen Wert nahe Null auf.
+In einer starken Trendphase, in der die Kurse längere Zeit in einem engen Schwankungsraum laufen, liegen diese sehr nahe an ihrer Regressionsgeraden. Der R-Squared Indikator weist dann einen Wert nahe 1 auf. Stanley Kroll und Tuchar Chande haben in ihrem Buch „The new technical Trader“ sowohl die Steigung der Regressionsgeraden, als auch den Korrelationskoeffizienten als Trendfilter verwendet, und zur Trendgütebestimmung vorgestellt. (Quelle tradesignalonline)
 
-### Further information
+### Weitere Informationen
 <http://www.blastchart.com/Community/IndicatorGuide/Indicators/LinearRegressionRSquared.aspx>
 
-### Usage
+### Verwendung
 ```cs
 RSquared(int period)
 RSquared(IDataSeries input, int period)
@@ -4119,33 +4127,33 @@ RSquared(int period)[int barsAgo]
 RSquared(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **RSquared**(8)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **RSquared**(8)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![R-Squared](./media/image90.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the value of R-Squared
-Print("The current value of R-Squared is: " + RSquared(8)[0]);
+//Ausgabe des Wertes für den Relative Volatility Index (RVI)
+Print("Der aktuelle Wert für R-Squared ist:  " + RSquared(8)[0]);
 ```
 
 ##StandardDeviation(StdDev)
-### Description
-The Standard Deviation  (StdDev) is a tool used in statistics and probability calculation. It measures the dispersion of the values of a random variable around its median value. The Standard Deviation is used for the calculation of many indicators, such as, for example, the Bollinger Bands.
+### Beschreibung
+Die Standardabweichung (StdDev) ist ein Begriff der Statistik und der Wahrscheinlichkeitsrechnung und ein Maß für die Streuung der Werte einer Zufallsvariablen um ihren Mittelwert. Die Standardabweichung der letzten n Tage findet z.B. auch bei der Berechnung der Bollinger Bänder Verwendung.
 
 ### Interpretation
-A lower standard deviation implies that the data points are located very close to their median value. The trading application assumes that prices will return to their median value.
+Eine niedrige Standardabweichung zeigt, dass die Datenpunkte sehr nahe an ihrem Mittelwert notieren. Eine hohe Standardabweichung zeigt an, dass die Daten über einen großen Bereich von Werten "ausgebreitet" notieren. Der Tradingansatz geht dann davon aus, dass die Kurse sich wieder ihrem Mittelwert annähern.
 
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Standard\_Abweichung>
 
 ### Usage
@@ -4156,197 +4164,201 @@ StdDev (int period)[int barsAgo]
 StdDev (IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **StdDev**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.**StdDev**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![StandardDeviation(StdDev)](./media/image92.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the StdDev
-Print("The current value for the standard deviation is: " + StdDev(14)[0]);
+//Ausgabe des Wertes für die Standardabweichung (StdDev)
+Print("Der aktuelle Wert für die Standardabweichung ist:  " + StdDev(14)[0]);
 ```
 
 ##Standard Error (StdError)
-### Description
-Jon Anderson came up with the Standard Error Bands, which are similar to the Bollinger Bands, but with a different calculation. An upper and a lower boundary around a middle line create the bands – this is also known as the linear regression. The lower standard error band results from the subtraction of two standard errors from the final value of the regression line. Because individual closing prices can have a huge influence on the values of the bands, it is necessary to use a Simple Moving Average to smooth the data.
+### Beschreibung
+Die Standard Error Bänder (StdError) wurden von Jon Anderson entwickelt. Ihr Aussehen ähnelt stark den Bollinger Bändern, obwohl die Berechnung unterschiedlich ist. Die Bänder entstehen durch eine obere und eine untere Begrenzung um eine Mittellinie, der Linearen Regression.
+Die Empfehlungen von Andersen sind folgende Werte: die Anzahl der Perioden ist 21, die Glättung erfolgt mit einem einfachen gleitenden Durchschnitt (SMA) über 3-Perioden.
+Die Subtraktion von zwei Standard-Fehlern von dem Endwert der Regressionsgeraden entspricht dem niedrigeren Standard Fehler, also des unteren Bandes. Einzelne Schlusskurse können einen großen Einfluss auf die Werte der Bänder haben und diese sehr stark schwanken lassen. Daher ist es notwendig, den Verlauf mit einem einfache gleitenden Durchschnitt (SMA) über die Endwerte der Linearen Regression und über die Standardfehler zu glätten.
 
 ### Interpretation
-One of the applications of the standard error bands is the tightening of the bands when prices rise/fall. If the bands tighten, it signifies that a trend is currently in place. A strong trend will continue to tighten the bands.
+Die Standard Error Bänder haben viel gemeinsam mit den Bollinger Bändern, obwohl sich ihre Interpretation unterscheidet.
+Eine der Anwendungsmöglichkeiten von Standard Error Bändern ist, die Verengung der Bänder während eines Kursanstiegs bzw. -verfalls zu beobachten. Ziehen sich die Bänder enger zusammen, liegt ein einfacher Trend vor. Ein starker Trend hält die Bänder eng zusammen Die Lineare Regression (Mittellinie) folgt der steigenden bzw. fallenden Kursbewegung
 
-### Further information
+### Weitere Informationen
 <http://www.forexrealm.com/technical-analysis/technical-indicators/standard-error-bands.html>
 
-### Usage
+### Verwendung
 ```cs
 StdError(int period)
 StdError(IDataSeries input, int period)
 StdError(int period)[int barsAgo]
 StdError(IDataSeries input, int period)[int barsAgo]
 
-//Upper band
+//Für das obere Band
 StdError(int period).Upper[int barsAgo]
 StdError(IDataSeries input, int period).Upper[int barsAgo]
 
-//Lower band
+//Für das untere Band
 StdError(int period).Lower[int barsAgo]
 StdError(IDataSeries input, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **StdError**(21)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **StdError**(21)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Standard Error (StdError)](./media/image93.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the values of the middle line
-Print("The middle line is currently at: " + StdError(21)[0]);
+//Ausgabe des Wertes für die Mittellinie. Dieser Wert entspricht der Linearen Regression
+Print("Die Mittellinie verläuft aktuell bei: " + StdError(21)[0]);
 
-//Output for the lower band
-Print("The lower band of the standard error is currently at: " + StdError(21).Lower[0]);
+//Ausgabe des Wertes für das untere Band 
+Print("Das untere Band des Standardfehlers verläuft aktuell bei: " + StdError(21).Lower[0]);
 
-//output for the upper band
-Print("The upper band of the standard error is currently at: " + StdError(21).Upper[0]);
+//Ausgabe des Wertes für das obere Band 
+Print("Das obere Band des Standardfehlers verläuft aktuell bei:" + StdError(21).Upper[0]);
 ```
 
 ##Stochastics
-### Description
-The stochastic indicator was developed by George C. Lane in the 1950s. It belongs to the class “momentum indicators” (oscillators) and represents the current closing price in relation to a high or low area over a defined number of periods.
-The stochastic indicator is based on the observation that in an uptrend, the closing price is close to the daily high, while in a downtrend, the closing price is closer to the daily low.
-The stochastic indicator consists of two exponential Average Lines (%K and %D), both of which range between 0 and 100.
-There are two types of stochastic: the classic slow stochastic and the fast stochastic.
+### Beschreibung
+Der Stochastik-Indikator wurde von George C. Lane in den späten 1950er Jahren entwickelt. Er gehört zu der Klasse der Momentum-Indicatoren (Oszillatoren). Dargestellt wird der aktuelle Schlusskurs relative zu einem High- bzw. Low-Bereich über eine vorgegebene Anzahl von Perioden.
+Der Stochastik-Indikator basiert auf der Beobachtung, dass in Aufwärtsbewegungen der Schlußkurs nahe dem Tageshochkurs liegt, während in Abwärtsbewegungen der Schlußkurs nahe dem Tagestiefstkurs liegt.
+Der Stochastik-Indikator setzt sich aus zwei exponentiellen Durchschnittslinien ( %K und %D) zusammen. Beide Linien schwanken zwischen 0 und 100.
+Es wird zwischen der "klassischen" (Slow)-Stochastik (dieser Indikator) und der Fast Stochastik unterschieden.
 
-**Fast stochastic:**
-The %D line is the smoothing average of the %K line
+**Fast Stochastik:**
+Die %D-Linie ist ein GD der %K-Linie.
 
-**Slow stochastic:**
-The %D is the basis on which the smoothing average is calculated. The slow stochastic smoothes the fast stochastic, thus stabilizing the oscillator.
+**Slow Stochastik:**
+Die %D-Linie bildet die Basis, auf der wiederum ein GD berechnet wird. Die Slow -Stochastik glättet die Fast-Stochastik und bringt so etwas mehr Ruhe in den Oszillator.
 
 ### Interpretation
-The closing prices found in the upper area imply an accumulation (buying pressure); the lower area represents selling pressure.
-The stochastic indicator is a classic oscillator, and is primarily used in sideways markets in order to determine the reversal points. Days with a stable trend will not provide the indicator with any relevant or valuable results/information.
+Schlusskurse, die sich dauerhaft im oberen Bereich befinden, deuten auf Akkumulation (d.h. Kaufdruck) hin, während die Distribution (d.h. Verkaufsdruck) durch einen Indikatorwert im unteren Bereich angezeigt wird.
+Der Stochastik-Indikator als klassischer Oszillator wird hauptsächlich in Seitwärtsbewegungen eingesetzt, um Umkehrpunkte herauszufinden. In Zeiten mit stabilen Trends liefert der Stochastik-Indikator keine besonders überzeugenden Ergebnisse.
 
-### Further information
+### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Stochastik>
 
-### Usage
+### Verwendung
 ```cs
 Stochastics(int periodD, int periodK, int smooth)
 Stochastics(IDataSeries input, int periodD, int periodK, int smooth)
 
-//For the %D line
+//Für die %D Linie
 Stochastics(int periodD, int periodK, int smooth).D[int barsAgo]
 Stochastics(IDataSeries input, int periodD, int periodK, int smooth).D[int barsAgo]
 
-//For the %K line
+//Für die %K Linie
 Stochastics(int periodD, int periodK, int smooth).K[int barsAgo]
 Stochastics(IDataSeries input, int periodD, int periodK, int smooth).K[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Stochastics**(7,14,3)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **Stochastics**(7,14,3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-periodD Number of periods to be used for the %K smoothing
+periodD	Anzahl der Perioden für die Glättung von %K
 
-periodK Number of bars included in the %K calculation
+periodK	Anzahl der Bars, die in die Berechnung für %K einbezogen werden
 
-smooth Number of periods for the smoothing of %D
+smooth	Anzahl der Perioden für die Glättung von %D
 
-### Visualization
+### Darstellung
 ![Stochastics](./media/image94.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the %K line
-Print("The stochastic line %K is currently at: " + Stochastics(3, 14, 7).K[0]);
+//Ausgabe des Wertes für die %K-Linie.
+Print("Die Stochastik Linie %K verläuft aktuell bei: " + Stochastics(3, 14, 7).K[0]);
 
-//Output for the %D line
-Print("The stochastic line %D is currently at: " + Stochastics(3, 14, 7).D[0]);
+//Ausgabe des Wertes für die %D-Linie.
+Print("Die Stochastik Linie %D verläuft aktuell bei: " + Stochastics(3, 14, 7).D[0]);
 ```
 
 ##Stochastics Fast
-### Description
-See [*stochastics*](#stochastics).
+### Beschreibung
+Seihe [*stochastics*](#stochastics).
 
 ### Interpretation
-Closing prices that are constantly in the upper area indicate accumulation (i.e. buying pressure), whilst the distribution (i.e. selling pressure) is shown by an indicator value in the lower area.
+Schlusskurse, die sich dauerhaft im oberen Bereich befinden, deuten auf Akkumulation (d.h. Kaufdruck) hin, während die Distribution (d.h. Verkaufsdruck) durch einen Indikatorwert im unteren Bereich angezeigt wird.
+Der Stochastik-Indikator als klassischer Oszillator wird hauptsächlich in Seitwärtsbewegungen eingesetzt, um Umkehrpunkte herauszufinden. In Zeiten mit stabilen Trends liefert der Stochastik-Indikator keine besonders überzeugenden Ergebnisse.
 
-### Further information
+### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Stochastik](http://vtadwiki.vtad.de/index.php/Stochastik)
 
 Charttec: [http://www.charttec.de/html/indikator_stochastics.php](http://www.charttec.de/html/indikator_stochastics.php)
 
-### Usage
+### Verwendung
 ```cs
 StochasticsFast(int periodD, int periodK)
 StochasticsFast(IDataSeries input, int periodD, int periodK)
 
-//For the %D line
+//Für die %D Linie
 StochasticsFast(int periodD, int periodK).D[int barsAgo]
 StochasticsFast(IDataSeries input, int periodD, int periodK).D[int barsAgo]
 
-//For the %K line
+//Für die %K Linie
 StochasticsFast(int periodD, int periodK).K[int barsAgo]
 StochasticsFast(IDataSeries input, int periodD, int periodK).K[int barsAgo]
 ```
 
-### Return value
+###Rückgabewert
 **double**
 
-When using this method with an index (e.g. **StochasticsFast**(7,14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **StochasticsFast**(7,14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-periodD Number of periods for the smoothing of %K
+periodD	Anzahl der Perioden für die Glättung von %K
 
-periodK Number of periods included in the calculation of %K
+periodK	Anzahl der Bars, die in die Berechnung für %K einbezogen werden
 
-### Visualization
+### Darstellung
 ![Stochastics Fast](./media/image95.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the %K line of the fast stochastic
-Print("The stochastic line %K is currently at: " + StochasticsFast(3, 14).K[0]);
+//Ausgabe des Wertes für die %K-Linie der Fast Stochastik.
+Print("Die Stochastik Linie %K verläuft aktuell bei:" + StochasticsFast(3, 14).K[0]);
 
-//Output %D line
-Print("The stochastic line %D is currently at: " + StochasticsFast(3, 14).D[0]);
+//Ausgabe des Wertes für die %D-Linie der Fast Stochastik.
+Print("Die Stochastik Linie %D verläuft aktuell bei: " + StochasticsFast(3, 14).D[0]);
 ```
 
 ##Stochastics RSI (StochRSI)
-### Description
-Stochastics RSI is a calculation of the stochastic based on the RSI indicator.
+### Beschreibung
+Bei der Stochastics RSI (StochRSI) handelt es sich um die Berechnung einer Stochastik auf den Relative Strength Index (RSI). Vorgestellt wurde diese Kombination von T. Chande und S. Kroll.
 
 ### Interpretation
-The indicator provides fast and precise extreme values/points in the price movements. The StochRSI can be used as a trend filter in higher timeframes as well as a tool for better entry timing.
+Gute Ergebnisse liefert StochRSI als überkauft / überverkauft - Oszillator. Es wird sehr präzise (fast) jeder Extremzustand angezeigt. Der StochRSI kann sowohl als Trendfilter in höheren Zeiteinheiten, sowie für das Timing beim Einstieg in kleineren Zeiteeinheiten eingesetzt werden.
 
-### Further information
+### Weitere Informationen
 [http://www.investopedia.com/terms/s/stochrsi.asp#axzz263tizhIG](http://www.investopedia.com/terms/s/stochrsi.asp#axzz263tizhIG)
 
-### Usage
+### Verwendung
 ```cs
 StochRSI(int period)
 StochRSI(IDataSeries input, int period)
@@ -4354,30 +4366,30 @@ StochRSI(int period)[int barsAgo]
 StochRSI(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **StochRSI**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **StochRSI**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Stochastics RSI (StochRSI)](./media/image96.png)
 
-### Example
+### Beispiel
 ```cs
-//Output for the StochRSI
-Print("The current value for the StochRSI is: " + StochRSI(14)[0]);
+//Ausgabe des Wertes für den Stochastics RSI (StochRSI)
+Print("Der aktuelle Wert für den StochRSIist: " + StochRSI(14)[0]);
 ```
 
 ##Summation (SUM)
-### Description
-Summation is the sum over a predefined number of periods.
+### Beschreibung
+Summation (SUM) liefert die Summe über eine bestimte Anzahl von Perioden.
 
-### Usage
+### Verwendung
 ```cs
 SUM(int period)
 SUM(IDataSeries input, int period)
@@ -4385,34 +4397,33 @@ SUM(int period)[int barsAgo]
 SUM(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **SUM**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **SUM**(14)\[**int** barsAgo\] ) wird der Wert für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Summation (SUM)](./media/image97.png)
 
-### Example
+### Beispiel
 ```cs
-// Sum of the volume for the last 10 trading days
+// Summe des Volumens der letzten 10 Handelstage
 Print(SUM(Volume,10)[0]);
 ```
 
 ##SuperTrend
-### Description
-The SuperTrend indicator was invented by a French trader. SuperTrend is similar to the Parabolic Stop and Reverse System (Parabolic SAR), and is based on the median values of the candles. It measures volatility as a span between high and low, not taking potential price gaps into account. The indicator, which originates from a starting value, continues to proceed in one direction until the market changes direction, combined with rising volatility. This causes the indicator to adjust its starting value to match that of the counter-direction. The indicator is programmed in such a way that nothing but the trend direction can bring about a change. Dropping volatility combined with movements against the trend direction cause the indicator to move horizontally.
-
+### Beschreibung
+Der SuperTrend-Indikator wurde von einem französchischen Trader entwickelt und ist ähnlich dem Parabolic Stop And Reverse System (Parabolic SAR), dass in den 1970er Jahren vorgestellt wurde. Er basiert auf dem Mittelwert der Stäbe und misst die Volatilität als Spanne zwischen Hoch und Tief, unter Berücksichtigung evtl. Kurslücken. Ausgehend von einem Startwert verläuft der Indikator solange in die eingeschlagene Richtung, bis der Markt bei steigender Volatilität eine starke Bewegung in die Gegenrichtung ausführt. Dann springt der Indikator auf den Startwert der Gegenrichtung. Der Indikator ist so programmiert, dass er sich nur in Trendrichtung verändern kann. Nachlassende Volatilität oder Bewegungen gegen die Trendrichtung führen nur dazu, dass er waagerecht weitergezeichnet wird. (Quelle: tradeSignalOnline)
 
 ### Interpretation
-There are multiple interpretations and applications for the SuperTrend. Forex traders prefer to trade the crosses directly. This way, the system will continuously be inside the market and only needs to be complemented by a stop and further trading logic settings.
-Analytically speaking, the SuperTrend indicator is only able to provide information about the current trend. If the market is above the indicator, then an uptrend exists, otherwise a downtrend is in force.
-The indicator can be used as an exit for additional trading systems, meaning that an open position can be closed if a trend change occurs.
+Es gibt viele verschiedene Anwendungsmethoden für SuperTrend. Unter Forex Händlern ist es verbreitet, die Überkreuzungen direkt zu handeln. Das System ist dann immer im Markt und wird lediglich durch einen Stopp und weitere Regeln zur Gewinnsicherung ergänzt.
+Für analytische Zwecke kann der SuperTrend-Indikator einfach nur eine Information über den vorherrschenden Kurstrend liefern. Liegt der Markt über dem Indikator herrscht ein Aufwärtstrend vor, sonst ein Abwärtstrend.
+Der Indikator kann auch als Exit für ein weiteres Handelssystem dienen. Das heißt, offene Positionen werden beim Trendwechsel des Indikators geschlossen. Hier ist allerdings zu beachten, dass die Positionseröffnungen an den Indikator angepasst werden, oder dass es für die Situationen, in denen Indikator und Position seit der Eröffnung nicht trendgleich verlaufen, eine Sonderbehandlung geben muss.
 
 ### Usage
 ```cs
@@ -4421,25 +4432,26 @@ SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multipli
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)[int barsAgo]
 SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)[int barsAgo]
 
-//For the values of the uptrend:
+//Für den Wert von UpTrend:
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).UpTrend[int barsAgo]
 SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).UpTrend[int barsAgo]
 
-//For the values of the downtrend:
+//Für den Wert von DownTrend:
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).DownTrend[int barsAgo]
 SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).DownTrend[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **SuperTrend**(...).UpTrend\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **SuperTrend**(...).UpTrend\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
 |            |                                                                                                                                                                        |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| InSeries   | Input data series for the indicator                                                                                                                                    |
-| maType     | For the calculation of the MA, the following methods can be used:
+| InSeries   | Eingangsdatenreihe für den Indikator                                                                                                                                    |
+| maType     | Der zur Berechnung zu verwendende Gleitende Durchschnitt
+Mögliche Werte sind:
 SuperTrendMAType.HMA
 SuperTrendMAType.SMA
 SuperTrendMAType.SMMA
@@ -4449,124 +4461,126 @@ SuperTrendMAType.VMA
 SuperTrendMAType.VWMA
 SuperTrendMAType.WMA
 
-Also see: [*HMA*](#hma-hull-moving-average), [*SMA*](#sma-simple-moving-average), [*SMMA*](#smma-smoothed-moving-average), [*TEMA*](#tema-triple-exponential-moving-average), [*TMA*](#tma-triangular-moving-average), [*VMA*](#vma-variable-moving-average), [*VWMA*](#vwma-volume-weighted-moving-average), [*WMA*](#wma-weighted-moving-average).
+siehe: [*HMA*](#hma-hull-moving-average), [*SMA*](#sma-simple-moving-average), [*SMMA*](#smma-smoothed-moving-average), [*TEMA*](#tema-triple-exponential-moving-average), [*TMA*](#tma-triangular-moving-average), [*VMA*](#vma-variable-moving-average), [*VWMA*](#vwma-volume-weighted-moving-average), [*WMA*](#wma-weighted-moving-average).
 Default:
               HMA  |
-| multiplier | This is a multiplier for the internal calculation of the offset. This is only used when the method is set to ATR and DualThrust.
-(In the adaptive mode, the multiplier uses the Homodyne Discriminator)
-Default: 2.618      |
-| Period     | Number of bars used for the calculation of the moving average
+| multiplier |Ein Multiplikator zur internen Berechnung des Offset. Wird nur im Modus "ATR" und "DualThrust" verwendet
+(Im Modus "Adaptiv" kommt als Multiplikator der sog. Homodyne Discriminator zum Einsatz.) Default: 2,618      |
+| Period     | Anzahl der Bars zur Berechnung des gleitenden Durchschnittes
 Default: 14    |
-| smooth     | Values for additional smoothing
-If no smoothing is necessary, this value can be set to 1
+| smooth     | Wert für eine zusätzliche Glättung.
+Wird keine Glättung benötigt, ist dieser wert auf 1 zu setzen.
 Default: 14     |
-| stMode     | The following methods can be chosen:
+| stMode     | Mögliche Werte sind::
 SuperTrendMode.ATR, SuperTrendMode.DualThrust,  SuperTrendMode.Adaptive
-The Period Parameter will have a huge influence when the DualThrustMode is selected. The smaller the period, the tighter the indicator will follow price developments.
+Im DualThrust-Modus hat der Parameter Period einen sehr großen Einfluss. Je kleiner Period ist, desto enger folgt der Indikator dem Markt und wird dementsprechend auch mehr Fehlsignale liefern.
 Default: SuperTrendMode.ATR     |
 
-### Visualization
+### Darstellung
 ![SuperTrend](./media/image98.png)
 
-### Example
+### Beispiel
 ```cs
 if (Close[0] > SuperTrend(SuperTrendMode.ATR, 14, 2.618, MovingAverageType.HMA, 14).UpTrend[0])
-  Print("The market is in an uptrend.");
+  Print("Markt befindet sich in einem Aufwärtstrend.");
 if (Close[0] < SuperTrend(SuperTrendMode.ATR, 14, 2.618, MovingAverageType.HMA, 14).DownTrend[0])
-  Print("The market is in a downtrend.");
+  Print("Markt befindet sich in einem Abwärtstrend.");
 ```
 
 ##SupportResistanceAreas
-### Description
-This indicator draws support and resistance areas in the chart. There are 4 different types of possible supports and resistances, which are differentiated by various colors.
+### Beschreibung
+Der Indikator SupportResistanceAreas zeichnet Unterstützungs- und Widerstandsbereiche in den Chart. Es werden insgesamt 4 Arten von Unterstützungen bzw. Widerständen (farblich) unterschieden.
 
-Support due to a lower high (ColorLowerHigh)
+Support durch einen zurückliegenden lokalen Hochpunkt 	(ColorLowerHigh)
 
-Support due to a lower low (ColorLowerLow)
+Support durch einen zurückliegenden lokalen Tiefpunkt	(ColorLowerLow)
 
-Resistance due to a higher high (ColorHigherHigh)
+Widerstand durch einen zurückliegenden lokalen Hochpunkt   (ColorHigherHigh)
 
-Resistance due to a higher low (ColorHigherLow)
+Widerstand durch einen zurückliegenden lokalen Tiefpunkt   (ColorHigherLow)
+
 
 ### Interpretation
-S/R zones play an important role in technical analysis. Clearly defined and identifiable support areas provide favorable entry opportunities, while resistance areas provide target zones to exit those trades.
-Once broken, these areas tend to reverse their function, meaning that a broken support zone becomes a resistance zone.
+In der Analyse von Charts spielen Unterstützungs- und Widerstandsbereiche eine herausragende Rolle.
+An deutlich erkennbaren Unterstützungen bieten sich Einstiegsgelegenheiten, an Widerständen entsprechend Zielpunkte.
+Einmal gebrochene Widerstände erweisen sich im weiteren Handel oftmals als Unterstützungen und umgekehrt.
 
 <http://finanzportal.wiwi.uni-saarland.de/tech/Kapitel5\_4.htm>
 
 ### Parameters
 |                   |                                                                                                  |
 |-------------------|--------------------------------------------------------------------------------------------------|
-| ATRRangeFactor    | Settings for the width of the support/resistance area as calculated by the ATR.                  
-                     The smallest configurable value is 0.1; default is 0.3                                            |
-| Levels            | This setting defines how many S/R zones of the same type are displayed. The default is 3         |
-| Opacity           | Transparency of the bars to be drawn into the chart; 0 (transparent) – 255 (completely visible).
-                     Default is 70                                                                                     |
-| SensibilityFactor | Defines the sensitivity of the S/R search.                                                       
-                     The smallest setting is 1; the default is 5                                                       |
+| ATRRangeFactor    | Einstellung für die Breite eines Unterstützungs- bzw. Widerstandsbereiches gemessen in ATR.
+Der kleinste einstellbarer Wert ist 0,1 default ist 0.3                                            |
+| Levels            | Die Einstellung gibt an, wieviele Unterstützungs- bzw. Widerstandsbereiche von der gleichen Art (s. oben: 4 Arten) angezeigt werden sollen. Default ist 3.         |
+| Opacity           | Transparenz der in den Chart gezeichneten Balken. Einstellungen sind von 0 (durchsichtig) bis 255 (deckend) möglich. Default ist 70                        |
+| SensibilityFactor | Legt die "Empfindlichkeit" der Suche nach Widerstands bzw. Unterstützungsbereichen fest.
+Die kleinste mögliche Einstellung ist 1. Default ist 5.                                                       |
 
-### Visualization
+### Darstellung
 ![SupportResistanceAreas](./media/image99.png)
 
 ##Swing
-### Description
-Based on the strength of the swing highs or the swing lows, the swing indicator draws a line at these points. The number of bars to the left and right of the extreme point is the determining factor for the strength. Methods for these indicators can also be implemented for other scripts.
+### Beschreibung
+Der Swing Indikator zeichnet Linien an den Swing-Hochs bzw. Swing-Tiefs basierend auf der "Stärke" dieser Punkte. Die Stärke ergibt sich dabei aus der Anzahl der Bars links und rechts neben diesem Extrempunkt.
+Methoden dieses Indikators können in anderen Scripten verwendet werden um z.B. den letzten zurückliegenden Extrempunkt und den entsprechenden Kurswert zu erhalten.
 
 ### Interpretation
-The methods for these indicators can be used in scripts to determine the last extreme point and its corresponding price value. The highs and lows of these points may then be used as entry, stop or target markers.
+Methoden dieses Indikators können in anderen Scripten verwendet werden um z.B. den letzten zurückliegenden Extrempunkt und den entsprechenden Kurswert zu erhalten. Diese Hoch- bzw. Tiefpunkte können dann als Einstiegs-, Stopp- oder Targetmarken verwendet werden.
 
-### Usage
+### Verwendung
 ```cs
-//For a high
+//Für einen Hochpunkt
 Swing(int strength).SwingHighBar(int barsAgo, int instance, int lookBackPeriod)
 Swing(IDataSeries input, int strength).SwingHighBar(int barsAgo, int instance, int lookBackPeriod)
 
-//For a low
+//Für einen Tiefpunkt
 Swing(int strength).SwingLowBar(int barsAgo, int instance, int lookBackPeriod)
 Swing(IDataSeries input, int strength).SwingLowBar(int barsAgo, int instance, int lookBackPeriod)
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **Swing**(5)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **Swing**(5)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-**When the current bar is smaller than the parameter strength, or if no swing high/low has been found, the return value is -1.**
+**Wenn CurrentBar kleiner ist als der Parameter "strength" oder wenn noch kein SwingHigh bzw SwingLow gefunden wurde, ist der Rückgabewert -1.**
 
 ### Parameters
 |                |                                                                                                              |
 |----------------|--------------------------------------------------------------------------------------------------------------|
-| barsAgo        | Starting point for the search                                                                                |
-| InSeries       | Input data series for the indicator                                                                          |
-| instance       | The number of occurrences of extreme points (1 is the last occurrence, 2 is the second last occurrence etc.) |
-| length         | Number of bars included in the calculation                                                                   |
-| lookBackPeriod | Number of bars in the past in which swing points will be searched for (search area)                          |
-| strength       | Number of bars to the left and right of the extreme points                                                   |
+| barsAgo        | Startpunkt der Suche in der Vergangenheit                                                                    |
+| InSeries       | Eingangsdatenreihe für den Indikator                                                                         |
+| instance       | Die Anzahl des Auftretens von Extrempunkten (1 ist das letzte Vorkommen, 2 das vorletzte Vorkommen usw.)     |
+| length         | Anzahl der Bars, die in der Berechnung verwendet werden                                                      |
+| lookBackPeriod | Anzahl der Bars, innerhalb derer nach Swing-Punkten gesucht werden soll (Suchbereich)                        |
+| strength       | Anzahl der Bars links und rechts von einem Extrempunkt                                                       |
 
-### Visualization
+### Darstellung
 ![Swing](./media/image100.png)
 
-### Example
+### Beispiel
 ```cs
-// Position and price of the last swing high
+// Position und Kurs des letzten SwingHigh
 int barsAgo = Swing(5).SwingHighBar(0, 1, 10);
 Print("The last swing high was " + barsAgo + " bars ago.");
 Print("The last swing high was at " + High[barsAgo]);
 ```
 
 ##Time-Series-Forecast (TSF)
-### Description
-The Time-Series-Forecast is quite similar to a moving average. Here, the trend is established based on a regression equation that uses the smallest square formula. The goal of the TSF is to anticipate future price movements with the help of currently existing data.
+### Beschreibung
+Der Time-Series-Forecast (TSF) ähnelt einem gleitenden Durchschnitt. Der Trend wird mit einer Regressionsgleichung nach der Methode der kleinsten Quadrate ermittelt. Ziel ist es, den Kurs anhand des bestehenden Trends in die Zukunft zu extrapolieren.
 
 ### Interpretation
-The TSF reacts faster than the moving averages. These always have time delays when depicting the pre-existing trends. The TSF formula never allows the distance to the current price to become too large, thus permitting sharper trade reversal recognition.
+TSF reagiert schneller als gleitende Durchschnitte. Diese bilden immer mit Zeitverzögerung den vorherrschenden Trend ab. Die TSF-Formel lässt den Abstand zum aktuellen Kurs jedoch nie zu groß werden. Dadurch gelingt es dem Indikator in vielen Fällen, schneller auf Trendwenden zu reagieren.
+Ein Einstieg erfolgt dann, wenn der Kurs die TSF-Linie von unten nach oben durchbricht. Zum Ausstieg kommt es im umgedrehten Fall.
+Diese Vorgehensweise ist aber nicht immer empfehlenswert. In einer Seitwärtsbewegung des Marktes gibt es zu viele Fehlsignale.
+Die Anzahl von Fehlsignalen läßt sich verringern, wenn der Einstieg nur dann erfolgt, wenn der Indikator seine Richtung wechselt. Ein Kaufsignal ergibt sich, wenn der Indikator steigt, nachdem er zuvor gefallen war. Beim Richtungswechsel von steigend auf fallend dagegen wird verkauft. (Quelle: faz.net)
 
-An entry is placed when the price breaks the TSF line from bottom to top.
-
-### Further information
+### Weitere Informationen
 <http://en.wikipedia.org/wiki/Time\_series>
 
-### Usage
+### Verwendung
 ```cs
 TSF(int forecast, int period)
 TSF(IDataSeries input, int forecast, int period)
@@ -4574,33 +4588,33 @@ TSF(int forecast, int period)[int barsAgo]
 TSF(IDataSeries input, int forecast, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **TSF**(3,14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **TSF**(3,14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-forecast Number of bars used for the forecast
+forecast Anzahl der Bars für Forecast
 
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Time-Series-Forecast (TSF)](./media/image101.png)
 
-### Example
+### Beispiel
 ```cs
-//Output the TSF values
-Print("The current value for the TSF is: " + TSF(3, 14)[0]);
+//Ausgabe des Wertes für den Time-Series-Forecast (TSF) 
+Print("Der aktuelle Wert für TSF ist: " + TSF(3, 14)[0]);
 ```
 
 ##Tools
 ##Constant Lines
-### Description
-The Constant Lines tool can draw a maximum of four freely configurable horizontal lines within a chart. In general, it is used to label certain price levels in order to keep an eye on them.
+### Beschreibung
+Der Indikator ConstantLines zeichnet bis zu vier frei konfigurierbare horizontale Linien in den Chart. Er kann dazu verwendet werden, bestimmte Preisniveaus (charttechnisch interessante Punkte) zu markieren um sie nicht aus dem Blick zu verlieren.
 
-### Usage
+### Verwendung
 ```cs
 ConstantLines(double line1Value, double line2Value, double line3Value, double line4Value)
 ConstantLines(double line1Value, double line2Value, double line3Value, double line4Value)[barsAgo]
@@ -4610,76 +4624,75 @@ ConstantLines(double line1Value, double line2Value, double line3Value, double li
 ConstantLines(double line1Value, double line2Value, double line3Value, double line4Value).Line4[barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ConstantLines**(1,2,3,4)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **ConstantLines**(1,2,3,4)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-### Visualization
+### Darstellung
 ![Constant Lines](./media/image102.png)
 
 ##CurrentDayOHL
-### Description
-This function delivers the values for the open, high and low of the current day i.e. session.
+### Beschreibung
+Die Funktion CurrentDayOHL liefert für den aktuellen Tag (die aktuelle Session) die Werte für Open, High und Low.
+CurrentDayOHL ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.
 
-CurrentDayOHL is intended for use with intraday data series.
-
-See [*PriorDayOHLC*](#priordayohlc), [*DayLines*](#daylines).
+Siehe auch [*PriorDayOHLC*](#priordayohlc), [*DayLines*](#daylines).
 
 ### Parameter
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **CurrentDayOHL**.CurrentOpen(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **CurrentDayOHL**.CurrentOpen(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-### Usage
+### Verwendung
 ```cs
 CurrentDayOHL()
 CurrentDayOHL(IDataSeries input)
 
-//For the open value
+//Für den Wert von Open
 CurrentDayOHL().CurrentOpen[int barsAgo]
 CurrentDayOHL(IDataSeries input).CurrentOpen[int barsAgo]
 
-//For the high value
+//Für den Wert von High
 CurrentDayOHL().CurrentHigh[int barsAgo]
 CurrentDayOHL(IDataSeries input).CurrentHigh[int barsAgo]
 
-//For the low value
+//Für den Wert von Low
 CurrentDayOHL().CurrentLow[int barsAgo]
 CurrentDayOHL(IDataSeries input).CurrentLow[int barsAgo]
 ```
 
-### Visualization
+### Darstellung
 ![CurrentDayOHL](./media/image103.png)
 
-### Example
+### Beispiel
 ```cs
-Print("The low of the current session is at " + CurrentDayOHL().CurrentLow[0]);
+Print("Das Tief der aktuellen Session liegt bei " + CurrentDayOHL().CurrentLow[0]);
 ```
 
 ##Daily Performance
-### Description
-This indicator delivers information concerning the changes in the price movements based on either a past close or a current-day open in comparison to the current price level.
+### Beschreibung
+Der Indikator DailyPerformance liefert Angaben über die Veränderung des Kurses ausgehend entweder von einem Close in der Vergangenheit oder vom Open des aktuellen Tages zum aktuellen Kurs.
 
-The Daily Performance can be displayed in points, ticks, percent, or a currency value.
+Die Performance kann in Punkten, Ticks, Prozent oder einem Währungsbetrag angegene werden.
 
-Colors and other settings can be freely adjusted.
+Für die Darstellung im Chart sind die Schriftart und die Farbe frei wählbar.
 
-See [*Momentum*](#momentum), [*ROC*](#rate-of-change-roc).
+siehe auch [*Momentum*](#momentum), [*ROC*](#rate-of-change-roc).
 
-**Regarding usage with a scanner:**
-To get a list of your favorite stocks and their daily percentual changes, please set CalculateOnClosedBar to “False”, TimeFrame to “1 Day”, Calculation mode to “Percent” and Days ago to “0”.
+**Hinweis zur Verwendung im Scanner:**
+Um z.B. die bekannte Liste von Aktien mit ihrer täglichen prozentualen Veränderung zu erhalten, stellen sie bitte CalculateOnBarClose auf "false", TimeFrame auf "1 Day", Calculation mode auf "Percent" und Days ago auf "0". 
 
 ![settings](./media/image104.png)
 
-The result will look similar to this:
+Das Ergebnis ist dann folgende Liste:
 
 ![scanner](./media/image105.png)
 
-### Usage
+### Verwendung
 ```cs
 DailyPerformance(DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)
 DailyPerformance(IDataSeries input,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)
@@ -4687,44 +4700,45 @@ DailyPerformance(DailyPerformanceReference reference, DailyPerformanceCalculatio
 DailyPerformance(IDataSeries input,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **DailyPerformance**(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **DailyPerformance**(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input		Eingangsdatenreihe für den Indikator
 
-reference Possible values are:
--   DailyPerformanceReference.Open
--   DailyPerformanceReference.PreviousClose
+reference	mögliche Werte sind:
+		- DailyPerformanceReference.Open
+		- DailyPerformanceReference.PreviousClose
+		
+mode		mögliche Werte sind:
+		- DailyPerformanceCalculationMode.Points
+		- DailyPerformanceCalculationMode.Ticks
+		- DailyPerformanceCalculationMode.Percent
+		- DailyPerformanceCalculationMode.Currency
+		
+daysAgo	        Anzahl der Tage in der Vergangenheit
 
-mode Possible values are:
--   DailyPerformanceCalculationMode.Points
--   DailyPerformanceCalculationMode.Ticks
--   DailyPerformanceCalculationMode.Percent
--   DailyPerformanceCalculationMode.Currency
-
-daysAgo Number of days in the past
-
-### Visualization
+### Darstellung
 ![DailyPerformance](./media/image106.png)
 
-### Example
+### Beispiel
 ```cs
-//How many ticks are between today’s open and the current price?
+//Wieviel Ticks liegen zwischen dem heutigen Open und dem aktuellen Kurs?
 DailyPerformance(DailyPerformanceReference.Open, DailyPerformanceCalculationMode.Ticks, 1)[0]
 
-//By how much percent did the stock rise/fall since the last closing price?
+//Wieviel Prozent ist die Aktie seit dem gestrigen Schlusskurs gestiegen/gefallen?
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Percent, 1)[0]
 
-//By how many points/ticks did the future deviate from the start of the trading week to the current value?
+//Wieviel Punkte/Ticks hat der Future vom Beginn der Handelswoche bis zum aktuellen Kurs zurückgelegt.
+//(Wenn heute Donnerstag ist, war Montag vor 3 Tagen)
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Points, 3)[0]
 
-//How many EURO/USD does the performance equal?
+//Wieviel Euro bzw. USD entspricht diese Performance?
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Currency, 3)[0]
 
-//How big is the overnight gap in comparison to the opening price?
+//Wie groß ist das Overnight-Gap zum heutigen Handelsstart?
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Points, 1)[0]
 ```
 
