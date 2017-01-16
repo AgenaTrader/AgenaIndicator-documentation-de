@@ -4743,77 +4743,86 @@ DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalcul
 ```
 
 ##DayLines
-### Description
-The DayLines indicator draws lines for the previous day’s high, low, and close. It also draws a line for the current day’s open. These lines often show a reaction to the market.
-Each line can be turned on or off, and the colors and line strengths can be freely set.
+### Beschreibung
+Der DayLines-Indikator zeichnet im Chart  Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
+An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.
+Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind frei konfigurierbar.
 
-See [*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
+Siehe auch [*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
 
-### Visualization
+### Darstellung
 ![DayLines](./media/image107.png)
 
 ##DayLinesAdv
-### Description
-DayLinesAdv draws horizontal lines for the previous day’s high, low, and close, as well as the current day’s open.
+### Beschreibung
+Der Indikator DayLinesAdv zeichnet im Chart  horizontale Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
+An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.
 
-[*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
+Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind frei konfigurierbar.
 
-**DaysBack parameter**
+Siehe auch[*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
 
-The DaysBack parameter sets the number of days in the past for which the lines are to be placed onto the chart.
+**Parameter DaysBack**
 
-**Include Weekends parameter**
-This parameter manages the interaction with weekend price data. If IncludeWeekends = true, the price data for a trading session resulting from the weekend data is added to the last trading session.
+Mit dem Parameter DaysBack kann festgelegt werden, für wieviel rückwärtige Tage die Tageslinien in den Chart gelegt werden sollen.
 
-This is generally applicable to traders in different time zones. For example, a trader located in Germany will receive EURUSD data that beginning on Sunday evenings in America.
-To add the couple of hours that are transcribed on Sunday to the previous Friday’s session, you simply need to set IncludeWeekends = true.
-The first picture shows IncludeWeekends = false:
+**Parameter Include Weekends**
+Der Parameter regelt die Behandlung von Kursdaten von Wochenenden.
+Ist IncludeWeekends = true, werden die Kursdaten, die aus einer Handelssession an einem Wochenende entstehen, der letzten Handelssession zugerechnet.
+Beispiel: Ein Händler in der deutschen Zeitzone bekommt im EURUSD einen Bar für die Session, die am Sonntag abend in Amerika beginnt.
+Die Tageslinien für den Montag werden (bei IncludeWeekend = false) auf der letzten Session (der Sonntags-Session) berechnet.
+Bei IncludeWeekends = true werden die wenigen Stunden aus dem Handel am Sonntag so behandelt, als gehörten sie zur Session vom Freitag. Damit ergeben sich am Montag deutlich relevantere Tageslinien. 
+Im ersten Bild ist IncludeWeekends = false.
+Hoch und Tief des Vortages werden anhand der kleinen grünen Kerze vom Sonntag berechnet.
 
 ![IncludeWeekends = false](./media/image108.png)
 
-The second picture shows IncludeWeekends = true:
+Im zweiten Bild ist IncludeWeekends = true. Die Linien besitzen nun eine deutlich höhere Aussagekraft.
 
 ![IncludeWeekends = true](./media/image109.png)
 
-**Show Prices parameter**
-If set to “true”, prices are displayed in addition to the line itself.
+**Parameter Show Prices**
+Wenn true, wird rechts von der Bezeichnung der Linie zusätzlich der Kurswert angegeben.
 
 ![prices are displayed](./media/image110.png)
 
-**Extend high lines and Extend low lines parameters.**
-If set to “true”, the highs and lows that have not yet been „breached“ by the price will be extended onto the right-hand side of the chart using dotted lines.
-
+**Parameter Extend high lines und Extend low lines**
+Wenn true, werden Hochs bzw. Tiefs, die noch nicht vom Kurs "gebrochen" wurden, mit gepunkteten Linien bis an den rechten Chartrand verlängert.
+Hinweis: Um Widerstands- und Unterstützungszonen anzuzeigen, kann der darauf spezialisierte Indikator SupportResistanceAreas verwendet werden.
 ![highs and lows](./media/image111.png)
 
 ##GetDayBar
-### Description
-The function GetDayBar() outputs all values (open, high, low, close, time, median, typical, volume, and weighted) for a specified past or current day i.e. session. GetDayBar() is not intended to be used inside the chart. For this purpose, DayLinesAdv should be used instead. GetDayBar is mainly used as a high-performance replacement for [*PriorDayOHLC*](#priordayohlc).
+### Beschreibung
+Die Funktion GetDayBar() liefert alle Werte (Open, High, Low, Close, Time, Median, Typical, Volume und Weighted) eines bestimmten Tages (Session) in der Vergangenheit oder des aktuellen Tages (Besonderheiten s. unter Rückgabewert). GetDayBar() ist nicht zur Anzeige im Chart gedacht. Hierfür ist der Indikator DayLinesAdv zu verwenden.
+GetDayBar ist in erster Linie ein sehr performanter Ersatz für [*PriorDayOHLC*](#priordayohlc).
 
-Several data feed providers also offer historical data, in which case we recommend that you use GetDayBar. If it is intraday data that is offered, it still works adequately to use [*PriorDayOHLC*](#priordayohlc).
+Einige Anbieter von Datenfeeds liefern neben Intraday-Daten (Realtime oder verzögerten Daten) auch separate Kurse auf Tagesbasis. Wenn Tageskurse vorhanden sind, werden diese von GetDayBar() direkt verwendet.  
 
-If the outputted data varies, the main cause is normally assumed to be the difference between Session Begin and Session End.
+Dies ist der Unterschied zum Indikator [*PriorDayOHLC*](#priordayohlc), bei dem die Werte immer aus den Intraday-Kursen gebildet werden.
+
+Wenn sich Unterschiede zwischen den Werten beider Funktionen zeigen, ist die Ursache meist in der abweichenden Definition von Session-Beginn und Session-Ende zu suchen (Zeitzonen-Unterschiede) oder die Daten werden vom Datenanbieter bereits mit diesen Unterschieden geliefert. 
 
 
 
 ### Parameters
-daysAgo Number of days in the past
-(0 for the current value)
+daysAgo	Anzahl der Tage in der Vergangenheit
+(0 für den aktuellen Tag)
 
-### Return value
-DateTime for time
-double for all other values
+### Rückgabewert
+DateTime 	für Time
+double 		für alle anderen Werte
 
-For **daysAgo = 0,** the following applies:
-Close = current price (for CalculateOnClosedBar = false)
-Time = time of the current day’s open
-All other values are calculated using intraday data.
+Für **daysAgo = 0** gilt:
+Close = aktueller Kurs (für CalculateOnBarClose=false) bzw. Schlusskurs der letzten Kerze (für CalculateOnBarClose=true).
+Time ist der Zeitpunkt für das heutige Open.
+Alle anderen Werte werden mit den aktuellen Intraday-Daten berechnet.
 
-### Usage
+### Verwendung
 ```cs
 GetDayBar (int daysAgo)
 ```
 
-### Example
+### Beispiel
 ```cs
 [TimeFrameRequirements("1 day")]
 public class xy : UserIndicator
@@ -4828,21 +4837,23 @@ protected override void OnStart()
 }
 ```
 
-**Important:**
-The attribute *TimeFrameRequirements* must also always be used for the class doing the calling up (in the above example, class xy) if the indicator uses *Multibars*.
+**Wichtig:**
+Das Attribut *TimeFrameRequirements* muß immer auch für die aufrufende Klasse (hier class xy) angegeben werden, wenn der aufgerufene Indikator *Multibars* verwendet.
 
 ##Info
-### Description
-Info is not an indicator in the classic sense of the word, but is actually more similar to a tool. Depending on the underlying instrument, the background of the chart may show additional information.
+### Beschreibung
+Info ist kein Indikator im klassischen Sinn, sondern ein Tool.
+Im Hintergrund des Charts werden - abhängig vom dargestellten Handelsinstrument (Aktie, Future, Währung usw.) -  einige nützliche Zusatzinformationen angezeigt.
+Die Textfarbe ist frei wählbar.
 
-### Visualization
+### Darstellung
 ![GetDayBar](./media/image112.png)
 
 ##Maximum (MAX)
-### Description
-Max (MAX) delivers the highest value for a predefined number of periods.
+### Beschreibung
+Maximum (MAX) liefert den höchsten Wert aus einer bestimmten Anzahl von Perioden.
 
-### Usage
+### Verwendung
 ```cs
 MAX(int period)
 MAX (IDataSeries input, int period)
@@ -4850,31 +4861,32 @@ MAX (int period)[int barsAgo]
 MAX (IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **MAX**(Close, 10)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **MAX**(Close, 10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Maximum (MAX)](./media/image113.png)
 
-### Example
+### Beispiel
 ```cs
-// Output of the highest value of the last 20 periods
-// The output is identical to high [GetSerieHighestValue(High,20)]
-Print("The highest value of the last 20 periods is " + MAX(High, 20)[0]);
+// Ausgabe des höchsten Wertes der letzten 20 Perioden
+// Das Ergebnis ist identisch mit
+// High[HighestBar(High, 20)] oder auch HighestHighPrice(High, 20)[0]
+Print("Der höchste Wert der letzten 20 Perioden ist" + MAX(High, 20)[0]);
 ```
 
 ##Minimum (MIN)
-### Description
-Minimum (MIN) outputs the lowest value for a predefined number of periods.
+### Beschreibung
+Minimum (MIN) liefert den kleinsten Wert aus einer bestimmten Anzahl von Perioden.
 
-### Usage
+### Verwendung
 ```cs
 MIN (int period)
 MIN (IDataSeries input, int period)
@@ -4882,138 +4894,161 @@ MIN (int period)[int barsAgo]
 MIN (IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **MIN**(Close, 10)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **MIN**(Close, 10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-period Number of bars included in the calculations
-
-### Visualization
+### Darstellung
 ![Minimum (MIN)](./media/image114.png)
 
-### Example
+### Beispiel
 ```cs
-// Outputs the lowest value for the last 20 periods
-Print("The lowest value of the last 20 periods is " + MIN(Low, 20)[0]);
+// Ausgabe des tiefsten Wertes der letzten 20 Perioden
+// Das Ergebnis ist identisch mit
+// Low[LowestBar(Low, 20)] oder auch LowestLowPrice(Low, 20)[0]
+Print("Der tiefste Wert der letzten 20 Perioden ist " + MIN(Low, 20)[0]);
 ```
 
 ##MTFBoxes
-### Description
-What MTFBoxes does is to draw a colored area behind the bars that signify a candle from a higher timeframe. This therefore makes it possible to depict an hourly candle inside a 5-minute chart. The area would contain all 5-minute bars that are located within said hourly candle.
+### Beschreibung
+Der Indikator MTFBoxes zeichnet hinter die Kerzen in einem Chart eine farbige Fläche, die einer Kerze einer höheren Zeiteinheit entspricht.
 
-The area turns greener if the candle of the higher timeframe is rising. A Doji would be shown in grey.
+So kann beispielsweise in einem 5-Minuten-Candle-Chart eine Fläche gezeichnet werden, die einer Kerze auf 60 Minuten entspricht. Die Fläche beinhaltet alle Kerzen, die in der 60-Minuten Kerze enthalten sind.
+
+Sollte die "virtuelle" Kerze der höheren Zeiteinheit eine steigende Kerze sein (Close größer Open), so wird die Fläche in grüner, sonst in roter Farbe dargestellt. Bei einem Doji wird eine graue Farbe verwendet.
+
+Mit dem Parameter "Mark candles body" kann der Kerzenkörper der höheren Zeiteinheit sichtbar gemacht werden.
+Die Farben der Boxen und der Grad der Transparenz ist einstellbar (0 ist volle Transparenz, 255 ist voll deckend).
 
 ### Parameters
-TimeFrame Timeframe of the “virtual” candle (second, minute, hour, day, week, month)
-TimeFrameValue Value of the timeframe (number)
+TimeFrame  Zeiteinheit der "virtuellen" Kerze (Sekunde, Minute, Stunde, Tag, Woche, Monat)
+TimeFrame Value	 Wert für die Zeiteinheit (Zahl)
+Mark candles body  Färbt den Kerzenkörper (Bereich zwischen Open und Close) mit etwas dunklerer Farbe ein.
 
-### Visualization
+
+### Darstellung
 ![MTFBoxes](./media/image115.png)
 
 ##PriceLine
-### Description
-PriceLine is not so much an indicator, but more of a tool.
-It places a horizontal line on top of the current market price within the chart.
-The colors and line widths are freely configurable.
+### Beschreibung
+PriceLine ist kein Indikator im klassischen Sinn, sondern ein Tool.
+Es wird am aktuellen Kurs im Chart eine horizontale Linie angezeigt.
+Die Farbe der Linie und die Linienstärke sind frei wählbar.
 
-### Visualization
+### Darstellung
 ![PriceLine](./media/image116.png)
 
 ##PriorDayOHLC
-### Description
-PriorDayOHLC shows the values for yesterday’s (i.e. the previous session’s) open, high, low, and close. PriorDayOHLC works best when used together with the intraday data series.
+### Darstellung
+Die Funktion PriorDayOHLC liefert für den gestrigen Tag (bzw. die vorangegangene Session) die Werte für Open, High Low und Close.
+PriorDayOHLC ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.
+Hinweis:
+Auf Tagesdaten sind die Werte des vergangenen Tages mit Open[1], High[1], Low[1] und Close[1] abrufbar.
 
 **PriorDayOHLCext**
-PriorDayOHLCext For people in different time zones, PriorDayOHLCext makes it possible to set the IncludeWeekend parameter to “true”, which is helpful because all data originating from a Saturday or Sunday is treated as if it comes from the previous Friday’s session.
+deutschen Zeitzone bereits am Sonntag Abend. Diese "Sonntags-Session" wird als eigene Session angesehen, was dazu führt, dass montags die Werte für PriorOpen, PriorHigh, PriorLow und PriorClose auf dieser relativ unbedeutenden "Sonntags-Session" basieren.
+Um die wesentlich relevanteren Daten der vergangenen "Freitags-Session" zu erhalten, gibt es den Indikator **PriorDayOHLCext** mit erweiterter Funktion. Wird der zusätzliche Parameter "Include Weekend" auf "true" gestellt, werden alle Kursdaten von einem Samstag oder Sonntag so behandelt, als ob sie zur letzten "Freitags-Session" gehören.
 
-See [*CurrentDayOHL*](#currentdayohl), [*DayLines*](#daylines).
+Siehe auch [*CurrentDayOHL*](#currentdayohl), [*DayLines*](#daylines).
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **PriorDayOHLC**().PriorHigh\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **PriorDayOHLC**().PriorHigh\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-### Usage
+### Verwendung
 ```cs
 PriorDayOHLC()
 PriorDayOHLC(IDataSeries input)
 
-//For the value of open
+//Für den Wert von Open
 PriorDayOHLC().PriorOpen[int barsAgo]
 PriorDayOHLC(IDataSeries input).PriorOpen[int barsAgo]
 
-//For the value of high
+//Für den Wert von High
 PriorDayOHLC().PriorHigh[int barsAgo]
 PriorDayOHLC(IDataSeries input).PriorHigh[int barsAgo]
 
-//For the value of low
+//Für den Wert von Low
 PriorDayOHLC().PriorLow[int barsAgo]
 PriorDayOHLC(IDataSeries input).PriorLow[int barsAgo]
 
-//For the value of close
+//Für den Wert von Close
 PriorDayOHLC().PriorClose[int barsAgo]
 PriorDayOHLC(IDataSeries input).PriorClose[int barsAgo]
 ```
 
-### Visualization
+### Darstellung
 ![PriorDayOHLC](./media/image117.png)
 
-### Example
+### Beispiel
 ```cs
-// Value from the previous trading day
-Print("Yesterday’s open was " + PriorDayOHLC().PriorOpen[0]);
-Print("Yesterday’s high was " + PriorDayOHLC().PriorHigh[0]);
-Print("Yesterday’s low was " + PriorDayOHLC().PriorLow[0]);
-Print("Yesterday’s close was " + PriorDayOHLC().PriorClose[0]);
+// Werte des vergangenen Handelstages ausgeben
+Print("das Vortages-Open liegt bei" + PriorDayOHLC().PriorOpen[0]);
+Print("das Vortages-Hoch liegt bei" + PriorDayOHLC().PriorHigh[0]);
+Print("das Vortages-Tief liegt bei" + PriorDayOHLC().PriorLow[0]);
+Print("das Vortages-Close liegt bei " + PriorDayOHLC().PriorClose[0]);
 ```
 
 ##PriorDayOHLCext
-See [*PriorDayOHLC*](#priordayohlc).
+siehe [*PriorDayOHLC*](#priordayohlc).
 
 ##SessionBreakLines
-### Description
-The indicator SessionBreakLines draws a vertical line at the first candle of a new trading session.
-What is special about this indicator is that you can manually set how the so-called “weekend sessions” should be handled. If the parameter IncludeWeekends is set to “true”, then the Sunday sessions will be added to the Friday’s session.
-See [*PriorDayOHLC*](#priordayohlc).
+### Beschreibung
+Der Indikator SessionBreakLines zeichnet an der ersten Kerze einer neuen Handelssession eine vertikale Linie.
+Die Besonderheit ist, dass eingestellt werden kann, wie die sog. "Wochenend-Sessions" behandelt werden sollen.  Ist der Parameter "IncludeWeekends" auf "true" gesetzt, werden die kurzen Sessions am Sonntag der Freitags-Session zugerechnet (Beschreibung aus Sicht der deutschen Zeitzone). 
+Die Linienfarbe, die Linienstärke und die Linienart sind frei wählbar.
 
-### Visualization
+siehe auch [*PriorDayOHLC*](#priordayohlc).
+
+### Darstellung
 ![PriorDayOHLCext](./media/image118.png)
 
 ##ShowBidAsk
-### Description
-The ShowBidAsk indicator displays the current bid and ask prices as well as the corresponding volume within the lower part of the chart. It also shows changes in volume even if a trade has not occurred.
+### Beschreibung
+Der Indikator ShowBidAsk zeigt am unteren Chart-Rand den aktuellen Bid- und Ask-Kurs jeweils mit dem entsprechenden Volumen an. Änderungen am Volumen werden auch dann angegeben, wenn es nicht tatsächlich zu einem Umsatz (Tick) kam.
+Schriftart und -farbe sind frei konfigurierbar.
+Voraussetzung für die Nutzung ist die Verbindung mit einem Realtime-Datenfeed.
 
-### Visualization
+### Darstellung
 ![ShowBidAsk](./media/image119.png)
 
 ##TickCounter
-### Description
-TickCounter provides information regarding the current number of ticks that are contained within the bar. The indicator can not only count starting from 0, but can also be set to count from a specified number down to 0. TickCounter can display the value either as absolute or as a percentage. It only works with candle charts in which the bars are established based on a fixed number of ticks.
+### Beschreibung
+Der Indikator TickCounter schreibt in den Chart eine Information über die im aktuell laufenden Bar enthaltene Anzahl von Ticks.
+TickCounter kann die Anzahl der Ticks sowohl von 0 hochzählen, als auch von der eingestellten max. Anzahl der Ticks in einem Bar herunterzählen auf 0.
 
-When programming your own scripts, please use Bars, TicksCountForLastBar or Bars, LastBarCompleteness.
+Der Wert kann jeweils als absolute Anzahl von Ticks oder als Prozentwert ausgegeben werden.
+Farbe und Schriftart der Ausgabe sind frei wählbar.
 
-### Visualization
+Der Indikator funktioniert nur in Candle-Charts, in dem die Bars aus einer festen Anzahl Ticks gebildet werden.In Minuten-, Stunden- oder Tagescharts wird eine entsprechende Hinweismeldung ausgegeben. 
+
+**Hinweis:**
+Für die Programmierung in eigenen Scripts verwenden sie bitte Bars.TickCount bzw. Bars.PercentComplete.
+
+### Darstellung
 ![TickCounter](./media/image120.png)
 
 ##True Strength Index (TSI)
-### Description
-The True Strength Index (TSI) is a momentum indicator. It is used as an indicator for trend direction and for displaying overbought or oversold conditions.
-As a rule, momentum oscillators preemptively indicate price changes, whereas moving averages generally lag behind the price. The TSI brings together the advantages of these two indicator groups.
+### Beschreibung
+Der True Strength Index (TSI) wurde erstmals im Jahre 1991 von William Blau veröffentlicht. Er gehört zu der Gruppe der Momentum-Indikatoren und ist einerseits geeignet als Indikator für die Trendrichtung und andererseits zur Anzeige von überkauft- / überverkauft-Situationen
+Typischerweise gelten Momentum-Oszillatoren als Frühindikatoren der Preisbewegung, und gleitende Durchschnitte sind charakteristisch dafür, dem Kurs nachzulaufen. Der TSI kombiniert die Vorteile beider Indikator-Gruppen.
 
 ### Interpretation
-The TSI line moves between 100 and -100. Most values are between +25 and -25. These trigger lines can be used to anticipate overbought or oversold situations. A rising TSI signals an uptrend, while falling TSI suggests a downtrend.
+Die Linie des TSI bewegt sich zwischen +100 und -100. Die meisten Werte liegen jedoch zwischen +25 und -25. W. Blau schlägt diese Werte vor, um im Markt überkaufte bzw überverkaufte Situationen zu finden. An diesem Triggerlinien kann ein Trader den Markt antizipieren. Durch die Steigung des TSI wird die Trendrichtung angegeben; Ein steigende TSI signalisiert einen Aufwärtstrend und ein fallender TSI einen Abwärtstrend.
 
-### Further information
+### Weitere Informationen
 [http://en.wikipedia.org/wiki/True_strength_index](http://en.wikipedia.org/wiki/True_strength_index)
 
-### Usage
+### Verwendung
 ```cs
 TSI(int fast, int slow)
 TSI(IDataSeries input, int fast, int slow)
@@ -5021,46 +5056,49 @@ TSI(int fast, int slow)[int barsAgo]
 TSI(IDataSeries input, int fast, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **TSI**(3,14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **TSI**(3,14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-fast Number of bars included in the calculation of the fast EMA
+fast	Anzahl der Bars, für die Berechnung des Fast EMA
 
-slow Number of bars included in the calculation of the slow EMA
+slow	Anzahl der Bars, für die Berechnung des Slow EMA
 
-### Visualization
+### Darstellung
 ![True Strength Index (TSI)](./media/image121.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value for the True Strength Index (TSI)
-Print("The current value for the TSI is " + TSI(3, 14)[0]);
+//Ausgabe des aktuellen Wertes für den True Strength Index (TSI)
+Print("Der aktuelle Wert für den TSI ist " + TSI(3, 14)[0]);
 ```
 
 ##Ultimate Oscillator
-### Description
-Larry Williams developed the Ultimate Oscillator, which was first published in 1985. The Ultimate Oscillator is calculated by means of taking the weighted sum of three oscillators in different timeframes. These three timeframes are the short-term, middle and long-term market cycles. The typical period lengths used are 7, 14 and 28, and the value of the indicator moves between 0 and 100. Values above 70 signify an overbought situation, and values below 30 show that it is oversold.
+### Beschreibung
+Der Ultimate Oscillator wurde 1985 von Larry Williams entwickelt und in der Aprilausgabe des Magazins "Technical Analysis of Stocks and Commodities" vorgestellt.
+
+Der Indikator berechnet eine gewichtete Summe aus drei Oszillatoren unterschiedlicher Zeitebenen. Die drei Zeitebenen stehen für einen kurzfristigen, einen mittelfristigen und einen langfristigen Marktzyklus. Die typischen Periodenlängen sind 7, 14 und 28. Der Wer des Indikators schwankt zwischen 0 und 100. Werte über 70 werden als überkauft und Werte unter 30 als überverkauft angesehen.
 
 ### Interpretation
-Williams defined the following criteria for a buy signal:
+Williams hat folgende Kriterien für ein Kaufsignal festgelegt:
 
-A bullish divergence between price and oscillator can be observed, meaning that the market makes a new low but the oscillator remains unchanged.
+- Es kann eine Bullische Divergenz zwischen Kurs und Oszillator beobachtet werden, d.h. der Kurs bildet neue Tiefs aus, der Oszillator jedoch nicht.
 
-While this divergence is forming, the oscillator falls below 30.
+- Während der Ausbildung dieser Divergenz fällt der Oszillator unter 30.
 
-The oscillator will then resume its upward move towards the high at which it peaked before the divergence began forming.
+- Der Oszillator steigt anschließend wieder über das Hoch, welches er vor der Ausbildung der Divergenz erreichte.
 
-The buy signal is created when the price breaches that last high.
+- Das Kaufsignal entsteht mit dem Überschreiten dieses letzten Hochs.
 
-The long position is closed if the oscillator rises above 70 or if the oscillator rises above 50 and then falls back below 45.
-A sell signal consists of bearish divergences forming above 70. These positions are closed once the 30 level marker is breached.
+Die Long Position wird geschlossen, wenn der Oszillator über 70 steigt oder auch, wenn der Oszillator über 50 gestiegen ist und wieder unter 45 zurückfällt.
 
-### Usage
+Ein Verkaufssignal wird gegeben, wenn sich bei Werten oberhalb von 70 eine bearische Divergenz ausbildet. Diese Position wird mit dem Unterschreiten von 30 geschlossen.
+
+### Verwendung
 ```cs
 UltimateOscillator(int fast, int intermediate, int slow)
 UltimateOscillator(IDataSeries input, int fast, int intermediate, int slow)
@@ -5068,37 +5106,41 @@ UltimateOscillator(int fast, int intermediate, int slow)[int barsAgo]
 UltimateOscillator(IDataSeries input, int fast, int intermediate, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **UltimateOscillator** (5)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **UltimateOscillator** (5)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
 |              |                                                                   |
 |--------------|-------------------------------------------------------------------|
-| input        | Input data series for the indicator                               |
-| fast         | Number of bars for the calculation of the short-term oscillator   |
-| intermediate | Number of bars for the calculation of the intermediate oscillator |
-| slow         | Number of bars for the calculation of the slow indicator          |
+| input        | Eingangsdatenreihe für den Indikator                              |
+| fast         | Anzahl der Bars zur Berechnung des kurzfristigen Oszillators      |
+| intermediate | Anzahl der Bars zur Berechnung des mittelfristigen Oszillators    |
+| slow         | Anzahl der Bars zur Berechnung des langfristigen Oszillators      |
 
-### Visualization
+### Darstellung
 ![Ultimate Oscillator](./media/image122.png)
 
-### Example
+### Beispiel
 ```cs
-// Output of the values for the UltimateOscillator with settings of 7,14,28
-Print("The current value for the Ultimate Oscillator is " + UltimateOscillator(7, 14, 28)[0]);
+// Ausgabe des Wertes für den UltimateOscillator mit der Einstellung 7, 14, 28
+Print("Der aktuelle Wert des Ultimate-Oscillators ist " + UltimateOscillator(7, 14, 28)[0]);
 ```
 
 ##Volume (VOL)
-### Description
-This is the volume for the shares, futures, ETFs and so on that are traded within a specified time period.
+### Beschreibung
+Das Volumen (VOL) ist die Anzahl der gehandelten Aktien, Futures, ETF's usw. in einer bestimmten Zeiteinheit. D.h. es ist der Umsatz in dem zugrundeliegenden Wert. Die Analyse des Volumens ist eine einfaches, aber sehr wichtiges Element der technischen Analyse. Volume bietet Hinweise auf die Intensität einer Kursbewegung.
 
+### Interpretation
+In einem gesunden Aufwärtstrend steigt sowohl der Kurs, als auch das Volumen an. In einem Abwärtstrend fallen die Kurse unter steigendem Volumen. Die Korrekturphasen weisen in beiden Fällen ein vermindertes Volumen auf.
+Steigendes Volumen in Verbindung mit einem seitwärts verlaufenden Kursverlaufdeutet auf ein distributives Verhalten des Marktes hin. Eine mögliche Kursumkehr wird vorbereitet.
+Bei einem schwachen Volumen und einem nur mäßigem Kursfortschritt trifft ein geringes Angebot auf eine geringe Nachfrage. Der Markt ist gekennzeichnet durch technische Fehlsignale und schnelle unbedeutende Umkehrmuster.
 
-### Further information
+### Weitere Informationen
 [http://de.wikipedia.org/wiki/Volumenanalyse](http://de.wikipedia.org/wiki/Volumenanalyse)
 
-### Usage
+### Verwendung
 ```cs
 VOL()
 VOL(IDataSeries input)
@@ -5106,47 +5148,47 @@ VOL()[int barsAgo]
 VOL(IDataSeries input)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VOL**()\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **VOL**()\[**int** barsAgo\] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![Volume (VOL)](./media/image123.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current volume
-Print("The current volume is " + VOL()[0]);
+//Ausgabe des aktuellen Volumens (VOL)
+Print("Der aktuelle Umsatz beträgt " + VOL()[0]);
 ```
 
 ##Volume Moving Average (VOLMA)
-### Description
-The VOLMA calculation is carried out by applying an exponential moving average to the respective volume of each period, that is to say its EMA (volume).
+### Beschreibung
+Der Volume Moving Average (VOLMA) errechnet sich durch die Anwendung eines Exponential Moving Average (EMA) auf das jeder einzelnen Perioden zugehörige Volumen, also EMA(Volumen).
 
-**Caution:**
-In trading literature, the Volume Moving Average is often confused with the abbreviation for the Variable Moving Average (VMA).
+**Verwechselungsgefahr!**
+Gelegentlich wird in der Literatur und in anderer Handelssoftware für den Volumen Moving Average auch die Abkürzung VMA verwendet. In AgenaTrader steht VMA für den Indikator Variable Moving Average (siehe VMA).
 
 ### Interpretation
-The VOLMA indicator helps you to find and assess the relative volume of a period.
+Der VOLMA-Indikator hilft, das relative Volumen in einer Periode zu bewerten.
 
-Some simple guidelines should be followed:
+Bei der Anwendung gibt es einige Richtlinien zu beachten:
 
-The volume should be above the VOLMA at a break
+- Bei einem Break sollte das Volumen über dem VOLMA sein.
 
-After a volume spike (high), an exhaustion phase will kick in. The exhaustion can lead to a complete reversal of the price movement. Generally speaking, however, this is simply a resting phase
+- Nach einer Volumenspitze des VOLMA tritt eine Erschöpfung ein. Die Erschöpfung kann zur kompletten Umkehr einer Bewegung führen. Meist ist sie jedoch nur eine Verschnaufpause für eine weitere Bewegung in die Ursprungsrichtung.
 
-After three successive volume spikes, it becomes much less likely that the situation will continue in the same direction
+- Nach 3 nacheinander folgenden Volumenspitzen wird es kritisch für weitere Bewegung in die gleiche Richtung. Eine komplette Umkehr wird jetzt immer wahrscheinlicher. (Quelle: volumen-analyse.de)
 
-Here, you can find more general information about *Moving Averages*.
+Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter *Moving Averages*.
 
-### Further information
+### Weitere Informationen
 Volumen-Analyse.de: [http://www.volumen-analyse.de](http://www.volumen-analyse.de)
 
-### Usage
+### Verwendung
 ```cs
 VOLMA(int period)
 VOLMA(IDataSeries input, int period)
@@ -5154,34 +5196,34 @@ VOLMA(int period)[int barsAgo]
 VOLMA(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VOLMA**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **VOLMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Volume Moving Average (VOLMA)](./media/image124.png)
 
-### Example
+### Darstellung
 ```cs
-//Output for the value of the Volume Moving Average (VOLMA)
-Print("The current VOLMA value is " + VOLMA(14)[0]);
+//Ausgabe des Wertes für den Volume Moving Average (VOLMA)
+Print("Der aktuelle Wert für VOLMA ist " + VOLMA(14)[0]);
 ```
 
 ##Volume Oscillator
-### Description
-The Volume Oscillator makes use of the difference between the moving averages based on the trading volume, with a similar result to the MACD or to any other oscillator in which moving averages are used for calculation.
+### Beschreibung
+Der Volume Oscillator nutzt die Differenz zwischen zwei gleitenden Durchschnitten des Handelsvolumens. Das Ergebnis erinnert an den MACD bzw. an jeden anderen Oszillator, dem gleitende Durchschnitte zu Grunde liegen.
 
 ### Interpretation
-The Volume Oscillator is used to determine the trend strength. If developments in the price of the share are accompanied by disproportionate volume oscillator values, this should be regarded as highly relevant. In this way, the indicator can be used to filter out false signals.
-Values above zero mean that the shortest moving average of the volume is above the long-term moving average. IsSerieRising prices with a higher short-term volume indicate a bullish scenario.
+Der VolumeOszillator wird verwendet, um die Trendstärke zu bestimmen. Werden Entwicklungen im Kurs der Aktie von überproportionalen Volume Oscillator Werten begleitet, ist ihnen eine hohe Relevanz zuzuschreiben. Auf diese Weise kann der VolumeOszillator als Filter gegen Fehlsignale eingesetzt werden.
+Ein Wert über Null bedeutet, dass der kürzere GD des Volumens über dem längerfristigen GD liegt. Steigende Kurse mit erhöhtem kurzfristigen Volumen zeigen eine bullishe Situation an, genau wie fallende Kurse mit vermindertem Volumen eine Marktschwäche anzeigt.
 
-### Usage
+### Verwendung
 ```cs
 VolumeOscillator(int fast, int slow)
 VolumeOscillator(IDataSeries input, int fast, int slow)
@@ -5189,49 +5231,72 @@ VolumeOscillator(int fast, int slow)[int barsAgo]
 VolumeOscillator(IDataSeries input, int fast, int slow)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VolumeOszillator**(12,26)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **VolumeOszillator**(12,26)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-fast Number of bars for the calculation of the fast moving average
+fast	Anzahl der Bars für die Berechnung des kurzfristigen GD's
 
-slow Number of bars for the calculation of the slow moving average
+slow	Anzahl der Bars für die Berechnung des langfristigen GD's
 
-### Visualization
+### Darstellung
 ![Volume Oscillator](./media/image125.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value for the Volume Oscillator
-Print("The current value for the Volume Oscillator is: " + VolumeOszillator(12,26)[0]);
+//Ausgabe des aktuellen Wertes für den VolumeOszillator
+Print("Der aktuelle Wertes für den VolumeOszillator ist:  " + VolumeOszillator(12,26)[0]);
 ```
 
 ##Volume Profile
-### Description
-The VolumeProfile indicator displays the real-time volume profile as a vertical histogram on the chart. In this histogram, every bar depicts the cumulative traded volume for a certain price level. The starting bar for the calculations is labeled with a “#”.
-These bars inside the histogram have various colors: green indicates executions at or above the ask, which are interpreted as buys. Red means trades at or below the bid, which are interpreted as sells. Grey signifies neutral executions.
-It is important to note that the Volume Profile indicator only works together with a real-time data feed. After changes have been made in the properties window, the indicator is restarted and all values that have been calculated up to this point are lost.
+### Beschreibung
+Der VolumeProfile Indikator zeichnet ein Realtime-Volume Profil in Form eines vertikalen Histogramms in den Chart. Jeder Balken des Histogramms steht für das aufaddierte gehandelte Volumen an einem bestimmten Kurs. Der Bar, an dem die Berechnungen begonnen haben, wird mit wird einer kleinen Raute markiert.
 
-See: [*VolumeZones*](#volumezones)
+Die Balken des Histogramms sind farblich unterschiedlich. Umsätze am Ask (oder darüber) werden als Kauf betrachtet und grün eingefärbt. Umsätze am bzw. unter dem Bid werden als Verkäufe rot dargestellt und Umsätze "in the market" (last) werden als neutral in grauer Farbe dargestellt.
+
+Der Indikator funktioniert nur, wenn AgenaTrader mit einem Realtime-Datenfeed verbunden ist.
+
+Nachdem Veränderungen im Eigenschaftsfenster des Indikators vorgenommen wurden, wird der Indikator neu gestartet. Evtl. bis zu diesem Zeitpunkt bereits berechnete Werte gehen hierdurch verloren.
+
+siehe auch: [*VolumeZones*](#volumezones)
 
 ### Interpretation
-Prices with especially high trading volume will have a more satiated accumulation and distribution at their respective levels. This leads to price resistance/support zones being formed.
+An Kursen mit besonders hohem Handelsvolumen findet i.d.R. eine ausgeprägte Akkumulation bzw. Distribution statt. In der Folge bilden sich an diesen Kursniveaus Widerstands- bzw. Unterstützungszonen aus, die im laufenden Handel berücksichtigt werden können.
 
-### Visualization
+### Darstellung
 ![Volume Profile](./media/image126.png)
 
-##Volume Rate of Change (VROC)
-### Description
-The Volume Rate of Change (VROC) is almost exactly the same as the ROC indicator, with the exception that instead of price data, volume data (VOL) is used. A smoothing component is also applied.
+### Parameter
+Buy color:	Farbe der Balken für das Volumen bei Umsätzen am Ask.
+Neutral color:	Farbe der Balken für das Volumen bei Umsätzen "inside market".
+Sell color:	Farbe der Balken für das Volumen bei Umsätzen am Bid.
+Bar spacing:	Zwischenraum zwischen den Volumenzonen. Einstellbar von 0 bis 5.
+Draw lines:	Zeichnet Trennlinien zwischen den Volumenzonen.
+Line color:	Farbe der Trennlinien
+Opacity:	Durchsichtigkeit der Balken. 0 = nicht sichtbar    255 = hohe Sichtbarkeit.
 
-### Further information
+### Verwendung in AgenaScript
+Der Indikator ist lediglich für die Darstellung im Chart vorgesehen.
+Er besitzt keine Datenreihe zur Auswertung in anderen Scripts. Damit ist er nicht in AgenaScript und auch nicht im Condition Escort für weitere Auswertungen einsetzbar.
+
+##Volume Rate of Change (VROC)
+### Beschreibung
+Der Volume Rate of Change (ROC, Rate of Change = Änderungsrate) ist identisch mit dem Indikator Rate Of Change (ROC) mit dem Unterschied, dass anstelle der Kursdaten die Volumendaten (VOL) in die Berechnung einfließen.
+
+Der VROC beschreibt die relative Änderung des Umsatzes in Prozent. Es ergeben sich daher Schwankungen um Null herum. Im Gegensatz zum ROC erfolgt noch eine Glättung durch einen gleitenden Durchschnitt, um zu starke Schwankungen zu vermeiden.
+
+### Interpretation
+Bei steigenden Kursen sollte auch der VROC steigen bzw. im positiven Bereich bleiben.
+Ein rückläufiger VROC bei steigenden Kursen deutet auf eine Trendwende hin, d.h. der Umsatz (das Volumen) geht zurück.
+
+### Weitere Informationen
 [http://www.shareholder24.de/boersensoftware-wiki/pages/viewpage.action?pageId=9207904](http://www.shareholder24.de/boersensoftware-wiki/pages/viewpage.action?pageId=9207904)
 
-### Usage
+### Verwendung
 ```cs
 VROC(int period, int smooth)
 VROC(IDataSeries input, int period, int smooth)
@@ -5239,32 +5304,35 @@ VROC(int period, int smooth)[int barsAgo]
 VROC(IDataSeries input, int period, int smooth)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VROC**(14,3)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.  **VROC**(14,3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-smooth Number of Bars included in the calculation for the smoothing
+smooth	Anzahl der Bars für die Berechnung des GD's für die Glättung
 
-### Visualization
+### Darstellung
 ![Volume Rate of Change (VROC)](./media/image127.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current value for the Volume ROC
-Print("The current value for the Volume ROC is: " + VROC(14, 3)[0]);
+//Ausgabe des aktuellen Wertes für den Volume ROC
+Print("Der aktuelle Wert für den Volume ROC ist:  " + VROC(14, 3)[0]);
 ```
 
 ##VolumeUpDown
-### Description
-This indicator is a variation of the volume indicator, with the slight difference that the volume bars are shown in different colors depending on whether the price movement forms an up or down bar. An up (rising) bar shows the volume in green, while a down (falling) bar shows the volume in red. A Doji, where open = close, shows the volume in blue.
+### Beschreibung
+Der Indikator VolumeUpDown ist eine Variante des Volumen-Indikators (VOL). Der einzige Unterschied ist, dass die Volumenbars in Abhängig davon eingefärbt werden, ob es sich im Preischart um einen Aufwärtsbar oder Abwärtsbar handelt.
+Bei einem steigenden Bar wird das Volumen in grün dargestellt.
+Bei einem fallenden Bar wird das Volumen in rot dargestellt.
+Bei einem Diji (Open = Close)  wird das Volumen in blau dargestellt.
 
-### Usage
+### Verwendung
 ```cs
 VolumeUpDown()
 VolumeUpDown(IDataSeries input)
@@ -5272,44 +5340,51 @@ VolumeUpDown()[int barsAgo]
 VolumeUpDown(IDataSeries input)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **VolumeUpDown**()\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **VolumeUpDown**()\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameter
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-### Visualization
+### Darstellung
 ![Volume Rate of Change (VROC)](./media/image128.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the current volume
-Print("The current volume is " + VolumeUpDown()[0]);
+//Ausgabe des aktuellen Volumens
+Print("Der aktuelle Umsatz beträgt " + VolumeUpDown()[0]);
 ```
 
 ##Volume Zones
-### Description
-This indicator draws a histogram on the left side of the chart. This histogram contains the historical volume, and inside the histogram, the length of the bars shows the cumulative volume. Traders can configure the price series (open, high, low etc.) with the help of the properties dialog box.
-An up bar (where the close is above the open) shows the bar in green, and falling bars are displayed in red. The indicator is only designed to be used with historical data. In order to view volume changes in real-time, it is wise to consider using the VolumeProfile.
+### Beschreibung
+Der VolumeZones Indikator zeichnet an der linken Seite des Charts ein Histogramm für das historische Volumen.
+
+Die Länge der Balken entspricht dem addierten Volumen. Herangezogen wird standardmäßig der Schlusskurs der Perioden. Die zu verwendende Kursreihe (Open, High, Low usw.) ist über den Eigenschaftendialog konfigurierbar.
+
+Wenn es sich um einen steigenden Bar handelt (Close über Open) wird das Volumen des Bars in grün dargestellt. Bei fallenden Bars (Close unter Open) wird das Volumen in rot dargestellt.
+
+Der Indikator ist nur zur Verwendung mit historischen Daten vorgesehen. Für die Darstellung von Volumenänderungen in Realtime verwenden Sie bitte den Indikator VolumeProfile.
 
 
 ##Williams %R
-### Description
-Larry Williams developed the Williams %R. It is a momentum indicator, and is the inverse of the Fast Stochastic Oscillator. Williams %R, which is also called simply %R, reflects the level of the close relative to the highest high for the look-back period. The Stochastic Oscillator, on the other hand, reflects the level of the close relative to the lowest low. %R multiplies the raw value by -100 as a means of correcting for the inversion. This means that the Fast Stochastic Oscillator and Williams %R actually produce the exact same lines, with different scaling. The Williams %R fluctuates between 0 and -100. Values between 0 to -20 are deemed overbought, and values from -80 to -100 are seen as oversold. Naturally, signals taken from the Stochastic Oscillator can also be applied to Williams %R.
+### Beschreibung
+Situationen. Entwickelt wurde er bereits 1966 von Larry Williams. Der Indikator kann in allen Märkten und in allen Zeiteinheiten verwendet werden, wird jedoch meist intraday genutzt. Vom Aussehen her erinnert der Indikator aus der Klasse der Momentum-Oszillatoren am ehesten an die Stochastik.
 
 ### Interpretation
-As with the Stochastic Oscillator, Williams %R reflects the level of the close relative to the high-low range over a given period of time. Assume that the highest high equals 110, the lowest low equals 100 and the close equals 108. The high-low range is 10 (110 - 100), which is the denominator in the %R formula. The highest high less the close equals 2 (110 - 108), which is the numerator. 2 divided by 10 equals 0.20. Multiply this number by -100 to get -20 for %R. Williams %R would equal -30 if the close was 103 (0.30 x -100).
+Die Werte schwanken zwischen 0 und 100. Der Indikator ist darauf ausgerichtet, die Differenz zwischen dem Periodenhoch und dem heutigen Schlußkurs mit der Handelsspanne des Beobachtungszeitraumes in Bezug zu setzen und ist speziell in Seitwärtsbewegungen und leichten Trendphasen geeignet. In Zeiten mit ausgeprägten Trends ist er nicht sinnvoll anzuwenden. Bei einem Trend kommen die Kauf- bzw. Verkaufssignale zu früh. 
 
-The centerline, -50, is an important level to watch. Williams %R moves between 0 and -100, which makes -50 the midpoint. Think of it as the 50 yard line in football. The offense has a higher chance of scoring when it crosses the 50 yard line. The defense has an edge as long as it prevents the offense from crossing the 50 yard line. A Williams %R cross above -50 signals that prices are trading in the upper half of their high-low range for the given look-back period. This suggests that the cup is half full. Conversely, a cross below -50 means prices are trading in the bottom half of the given look-back period. This suggests that the cup is half empty.
+Der Indikator sollte nur in Verbindung mit trendfolgenden bzw. trendbestätigenden Indikatoren verwendet werden.
+Werte des Indikators über -10 zeigen eine überkaufte Situtation an. Ein Verkaufssignal entsteht bei der Wende des Indikators nach unten.
+Werte des Indikators unter -90 zeigen eine überverkaufte Situation an. Ein Kaufsignal entsteht bei der Wende des Indikators nach oben.
 
-Low readings (below -80) indicate that the price is near its low for the given time period. High readings (above -20) indicate that the price is near its high for the given time period.
+Divergenzen zwischen Indikator und zugrundeliegendem Wert deuten auf eine Trendwende hin.
 
-### Further information
+### Weitere Informationen
 <http://www.broker-test.de/finanzwissen/technische-analyse/williams-percent-r/>
 
-### Usage
+### Verwendung
 ```cs
 WilliamsR(int period)
 WilliamsR(IDataSeries input, int period)
@@ -5317,20 +5392,20 @@ WilliamsR(int period)[int barsAgo]
 WilliamsR(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **WilliamsR**(14)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B. **WilliamsR**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input Input data series for the indicator
+input	Eingangsdatenreihe für den Indikator
 
-period Number of bars included in the calculations
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
-### Visualization
+### Darstellung
 ![Williams %R](./media/image129.png)
 
-### Example
+### Beispiel
 ```cs
 WilliamsR(int period)
 WilliamsR(IDataSeries input, int period)
@@ -5339,52 +5414,52 @@ WilliamsR(IDataSeries input, int period)[int barsAgo]
 ```
 
 ##ZigZag
-### Description
-The ZigZag indicator searched for extreme points in different timeframes. It finds the extreme points by using threshold values that traders themselves define. These specified threshold values determine the extent to which the market direction needs to change before the ZigZag line alters its orientation and forms a further extreme point.
+### Beschreibung
+Der ZigZag-Indikator findet Extrempunkte in verschiedenen Zeiteinheiten. Es werden so anhand eines frei bestimmbaren Schwellwertes bestehende Trends markiert. Der Schwellwert gibt an, um wieviel sich der Kurs verändern muss, bevor die Zig-Zag-Linie ihre Richtung ändert und einen Extrempunkt hinterläßt.
 
 ### Interpretation
-The previous extreme values (local highs or lows) are ideally suited for either entries or stop targets.
+Die zurückliegenden Extremwerte (lokale Hochs bzw. Tiefs) eignen sich klassisch zum Einstieg oder zur Stoppversetzung.
 
-**Caution:** The ZigZag is not an indicator in the common sense. Position and direction of the zigzag can change retrospectively (repainting indicator).
+**Achtung:** Der ZigZag ist kein Indikator im herkömmlichen Sinn. Position und Richtung des ZigZag können sich nachträglich ändern.
 
-### Further information
+### Weitere Informationen
 <http://www.robotrading.de/indikatoren/zig-zag-indikator-zeigt-hoch-und-tief-punkte-im-forex-markt>
 
-### Usage
+### Verwendung
 ```cs
-//For the upper extreme value
+//Für den oberen Extrempunkt
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
 ZigZag(IDataSeries input, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
 
-//For the lower extreme value
+//Für den unteren Extrempunkt 
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
 ZigZag(IDataSeries input, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
-When using this method with an index (e.g. **ZigZag**(...)\[**int** barsAgo\] ), the value of the indicator will be issued for the referenced bar.
+Bei Verwendung der Methode mit einem Index ( z.B.**ZigZag**(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
-A return value of 0 indicates that no high or low point has been found yet.
+Der Rückgabewert 0 (Null) zeigt an, dass noch kein Hoch- bzw. Tiefpunkt gefunden werden konnte.
 
 ### Parameters
 |                |                                                                                                                    |
 |----------------|--------------------------------------------------------------------------------------------------------------------|
-| input          | Input data series for the indicator                                                                                |
-| deviationType  | The change in points or percent
-DeviationType.Points and DeviationType.Percent       |
-| deviationValue | Value of the deviation                                                                                             |
-| useHighLow     | Defines whether the high/low of a bar will be used for extreme values or if you want to use closing prices instead |
+| input          | Eingangsdatenreihe für den Indikator                                                                               |
+| deviationType  | Angabe der Änderung in Punkten bzw. in Prozent.
+DeviationType.Points und DeviationType.Percent       |
+| deviationValue | Wert der Abweichung                                                                                             |
+| useHighLow     | legt fest, ob des Hoch/Tief eines Bars für die Suche von Extremwerten verwendet wird oder der Schlusskurs der Kerze |
 
-### Visualization
+### Darstellung
 ![ZigZag](./media/image130.png)
 
-### Example
+### Beispiel
 ```cs
-//Output of the market value for the last high point
-Print("The last high of the ZigZag indicator was at " + ZigZag(DeviationType.Percent, 1, true).ZigZagHigh[0]);
+//Ausgabe des Kurswertes des letzten Hochpunktes
+Print("Der letzte Hochpunkt des ZigZag-Indikators liegt bei " + ZigZag(DeviationType.Percent, 1, true).ZigZagHigh[0]);
 
-// Output of the market value for the last low point
-Print("The last low of the ZigZag indicator was at " + ZigZag(DeviationType.Percent, 1, true).ZigZagLow[0]);
+//Ausgabe des Kurswertes des letzten Tiefpunktes
+Print("Der letzte Tiefpunkt des ZigZag-Indikators liegt bei " + ZigZag(DeviationType.Percent, 1, true).ZigZagLow[0]);
 ```
