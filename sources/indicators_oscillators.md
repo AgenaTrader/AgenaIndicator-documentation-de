@@ -102,7 +102,7 @@ Print("Value for the lower APZ band: " + APZ(2, 20).Lower[0]);
 ```
 
 ##Aroon
-### Description
+### Beschreibung
 Der Aroon, 1995 von Tushar Chande entwickelt, ist ein Indikator der technischen Analyse und dient der Trendbestimmung eines Kurses.
 Der AROON besteht aus zwei Indikatorlinien - dem AROON-UP und dem AROON-DOWN. 
 Die AROON-UP Linie misst die Tage, die seit dem letzten Kurshoch vergangen sind, die AROON-DOWN Linie misst die Tage, die seit dem letzten Kurstief vergangen sind. Die Linien oszillieren in einer Skala zwischen 0 und 100. 
@@ -343,7 +343,7 @@ Print("The Balance of Power value is: " + BOP(5));
 ```
 
 ##Bollinger Bands
-### Description & Interpretation
+### Beschreibung & Interpretation
 Die Bollinger Bands (BB) wurden von John Bollinger 1983 entwickelt. Bollinger Bänder sind Kanallinien, die in und um die Preisstruktur in einem Chart gezeichnet werden. Der Unterschied zwischen Prozentbändern (Envelopes) und Bollinger Bändern liegt in der Volatilität. Prozentbänder verlaufen in einem konstanten Abstand zum Preis. Bollinger Bänder hingegen berücksichtigen die 20-Tage-Volatilität (in der Standardeinstellung). In Phasen geringer Volatilität liegen die Bänder eng am Preis, steigt die Volatilität an, weiten sich die beiden Bänder aus.
 
 Die Basis der Bollinger Bänder ist ein gleitender Durchschnitt (GD, SMA), der den mittelfristigen Trend anzeigt. Dieser wird als mittleres Band bezeichnet und in der Standardeinstellung mit 20 Tagen berechnet. Die Breite des Kanals wird vom Ausmaß der Volatilität, der statistischen Methode der Standardabweichung, bestimmt. Das obere Band ergibt sich aus dem mittleren Band + 2 Standardabweichungen, das untere Band aus dem mittleren Band - 2 Standardabweichungen.
@@ -1985,7 +1985,7 @@ LinRegIntercept(int period)[int barsAgo]
 LinRegIntercept(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B.  **LinRegIntercept**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -2062,8 +2062,7 @@ LowestLowIndex(int BarsBack)[int barsAgo]
 Bei Verwendung der Methode mit einem Index ( z.B. **LowestLowIndex**(14)\[**int** barsAgo\] ) wird der Wert für den referenzierten Bar ausgegeben.
 
 **Parameter**
-
-BarsBack	Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
+BarsBack  Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
 
 ### Darstellung
 ![LowestLowIndex()](./media/image40.png)
@@ -2147,7 +2146,7 @@ MACD(int fast, int slow, int smooth).Diff[int barsAgo]
 MACD(IDataSeries input, int fast, int slow, int smooth).Diff[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B. **MACD**(12,26,9)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -2565,7 +2564,7 @@ HMA(int period)[int barsAgo]
 HMA(IDataSeries InSeries, int period)[int barsAgo]
 ```
 
-###Rückgabewert
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B. **HMA**(21)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -2728,8 +2727,8 @@ Value.**Set**((last + InSeries\[0\] - InSeries\[Period\]) / Math.**Min**(Process
 
 ### Beispiel
 ```cs
-//Output of the SMA value
-Print("The current SMA value is " + SMA(14)[0]);
+//Ausgabe des Wertes für den Simple Moving Average (SMA)
+Print("Der aktuelle Wert für SMA ist " + SMA(14)[0]);
 ```
 
 ##SMA MTF (MultiTimeFrame)
@@ -2985,7 +2984,7 @@ input			Eingangsdatenreihe für den Indikator
 
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
-volatility period		Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
+volatility period	Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
 
 ### Darstellung
 ![VMA - Variable Moving Average](./media/image66.png)
@@ -3486,9 +3485,9 @@ PercentEnvelopes(IDataSeries input, double percent).LowerPercentBand[int barsAgo
 Bei Verwendung der Methode mit einem Index ( z.B.**PercentEnvelopes**(2)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input		Eingangsdatenreihe für den Indikator
+input	Eingangsdatenreihe für den Indikator
 
-percent	Abstend der Bänder in Prozent (%) vom Eingangswert
+percent	 Abstend der Bänder in Prozent (%) vom Eingangswert
 
 ### Darstellung
 ![PercentEnvelopes](./media/image77.png)
@@ -3560,13 +3559,13 @@ PivotPointsMode.Camarilla
 PivotPointsMode.Fibonacci
 Default: floor                                                                     |
 | LineWidth       | Default: 1                                                                        |
-| ShowPrices      | Shows prices next to the lines
+| ShowPrices      | Zeigt die Preise neben den Linien
 Default: false                                                                     |
-| DaysBack        | The number of historical periods to be included in the display of the pivot lines
+| DaysBack        | Die Anzahl der historischen Perioden, die in die Anzeige der Pivot Linien einbezogen werden sollen
                    Default: 0                                                                         |
-| RColor          | Resistance line color                                                             |
-| PPColor         | Pivot line color                                                                  |
-| SColor          | Support line color                                                                |
+| RColor          | Widerstandslinie Farbe                                                            |
+| PPColor         | Farbe der Pivot-Linie                                                                  |
+| SColor          | Unterstützung Linienfarbe                                                               |
 
 ### Darstellung
 ![Pivot Points](./media/image78.png)
@@ -3821,7 +3820,7 @@ RIND(IDataSeries input, int periodQ, int smooth)[int barsAgo]
 Bei Verwendung der Methode mit einem Index ( z.B.  **RIND**(3,10)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input		Eingangsdatenreihe für den Indikator
+input Eingangsdatenreihe für den Indikator
 
 periodQ	Anzahl der Bars, für die Berechnung der kurzfristigen Stochastik
 
@@ -3951,9 +3950,9 @@ RSI(IDataSeries input, int period, int smooth).Avg[int barsAgo]
 Bei Verwendung der Methode mit einem Index ( z.B. **RSI**(14,3)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input		Eingangsdatenreihe für den Indikator
+input	Eingangsdatenreihe für den Indikator
 
-period		Anzahl der Bars, die in die Berechnung einbezogen werden
+period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 smooth	Anzahl der Perioden für die Glättung
 
@@ -3992,7 +3991,7 @@ RSL(IDataSeries input, int period)[int barsAgo]
 Bei Verwendung der Methode mit einem Index ( z.B. **RSL**(27)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
-input	Eingangsdatenreihe für den Indikator
+input  Eingangsdatenreihe für den Indikator
 
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
