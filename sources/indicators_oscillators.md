@@ -3354,12 +3354,94 @@ private void PrintOutTrendProperties(int trendSize)
   Print("trend direction: " + P123(trendSize).TrendDirection);
 }
 ```
-
 ### Utilization within the Condition Escort
 All public variables are available to you inside the Condition Escort as data series; they can be found under „Series & Output Values“.
 The name has an underscore ("\_") suffix in order to differentiate it.
 
 The parameters “trendSize” and “occurrence” can be found within the Condition Escort.
+
+### P123Pro
+Unter den Parametereinstellungen (s. Abb.) findet sich der Parameter TrendSize.
+Dieser ist nur für die Verwendung im Condition Escort vorgesehen. Für die Darstellung im Chart ist dieser Paramenet nicht relevant.
+Die Darstellung wird ausschließlich mit den Einstellungen unter "Display 123" und "Display Lines" gesteuert.
+
+![parameter settings](./media/P123Pro.png)
+
+Inwieweit die jeweiligen Parameter Einfluss auf den Chart bzw. ConditionEscort und AgenaScript haben können Sie dem jeweiligen Beschreibungfeld für jeden Parameter entnehmen.
+
+### Verwendung in AgenaScript
+Zur Verwendung in AgenaScript sind mehrere Datenserien vom Type double vorhanden.
+Es kann für jede dieser Datenserien die übliche Notation mit ...[barsAgo]  verwendet werden.
+
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| TrendDirection | 1 = Uptrend      -1 = Downtrend       0 = kein markttechnisch definierter Trend         |
+| IsP21          | Wenn eine Kerze ein alter Punkt 2 und gleichzeitig ein neuer Punkt 1 ist, wird sie im Chart mit "(2) 1" beschriftet. Der Wert  für diese Kerze (und alle Folgekerzen bis zum nächsten Punkt 2) wird 1, sonst 0.                 |
+| IsTrendValid   | 1 = es handelt sich um einen bestätigten Trend, also mindesten eine Punktfolge 1 - 2 - 3 - 2. 0 = es liegt noch kein bestätigter Trend vor. (markttechnische Phase 1 und 2)                                                     |
+| LastPoint      | liefert den letzten Punkt des Trends, also eine 1, 2, oder 3                            |
+| LastPointPrice | liefert den zum letzen markttechnischen Punkt gehörenden Kurswert                       |
+| LastPointDateTime | liefert die zum letzen markttechnischen Punkt gehörende Datums- und Zeitangabe       |
+| LastPointExtInfo | liefert das zum letzten markttechnischen Punkt gehörende Labeling. Das Labeling muss zusätzlich im Parameter definiert werden.Die Winkelbestimmung (Slope) ist ein ChartOnly-Feature und steht weder für Conditions, noch in AgenaScript zur Verfügung.                                                                                                 |
+| P1Price        | liefert den Kurswert des letzten Punkt 1                                                |
+| P1DateTime     | liefert die Datums- und Zeitangabe des letzten Punkt 2                                  |
+| PriorP2Price   | efert die Datums- und Zeitangabe des vorletzten Punkt 2                                 |
+| TempP3Price    | liefert den Kurswert des letzten vorläufigen Punkt 3. Dieser Punkt wird im Chart mit "3?" dargestellt und kann sich im weiteren Marktverlauf noch verändern                                                                    |
+| TempP3DateTime | liefert die Datums- und Zeitangabe des letzten vorläufigen Punkt 3                      |
+| ValidP3Price    | liefert den Kurswert des letzten gültigen Punkt 3. Dieser Kurswert wird in der Markttechnik zur Stopversetzung genutzt. Bei Durchschreiten dieses Punktes liegt aus markttechnischer Sicht ein Trendbruch vor.            |
+| ValidP3DateTime| liefert die Datums- und Zeitangabe des letzten gültigen Punkt 3                         |
+
+### Parameters
+|                |                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------|
+| trendsize      | TrendGröße von 0 .. 3                                                                   |
+| breakageP2     | Zeigt im Chart einen Pfeil, wenn ein Bruch des P2 ansteht bzw. ausgeführt wurde. Die Angabe erfolgt in Prozent zwischen -100 und +100. -20 warnt z. B. 20% vor erreichen des P2                                           |
+| extInfo        | Wahl des Labelings                                                                      |
+| p2Distance     | **Unschärfe:** Das ist der Faktor (zwischen 0 und 1), der definiert, wie weit der neue P2 vom "alten" validen P2 entfernt sein muss um gültig zu sein. Ausschlaggebend ist die vorhergehende Bewegung.                      |
+| p3Distance     | **Unschärfe:** Das ist der Faktor (zwischen 0 und 1), der definiert, wie weit der neue P3 vom "alten" validen P2 entfernt sein muss um gültig zu sein. Ausschlaggebend ist die vorhergehende Bewegung.                      |
+| p3BreakageDistance | **Unschärfe:**Das ist der Faktor (zwischen 0 und 1), der definiert, wann ein Trendbruch gültig ist. Ausschlaggebend ist die vorhergehende Bewegung. Auf diese Weise ist beispielsweise ein Durchbruch des letzten P3 (mit nur einem Tick) kein Durchbruch mehr.                                  |
+
+### Beispiel
+```cs
+private void PrintOutTrendProperties(int trendSize)
+private void PrintOutTrendProperties(int trendSize)
+{
+	// revers order of prints fills output window in correct order
+	Print("");
+	Print("IsP21: " +  P123Pro(trendSize).IsP21[0]);
+	Print("valid P3 date: " +  P123Pro(trendSize).ValidP3DateTime[0]);
+	Print("valid P3 price: " +  P123Pro(trendSize).ValidP3Price[0]);
+	Print("temp P3 date: " +  P123Pro(trendSize).TempP3DateTime[0]);
+	Print("temp P3 price: " +  P123Pro(trendSize).TempP3Price[0]);
+	Print("P2 date: " +  P123Pro(trendSize).P2DateTime[0]);
+	Print("P2 price: " +  P123Pro(trendSize).P2Price[0]);
+	Print("P1 date: " +  P123Pro(trendSize).P1DateTime[0]);
+	Print("P1 price: " +  P123Pro(trendSize).P1Price[0]);
+	Print("last point date: " +  P123Pro(trendSize).LastPointDateTime[0]);
+	Print("last point price: " +  P123Pro(trendSize).LastPointPrice[0]);
+	Print("last point: " +  P123Pro(trendSize).LastPoint[0]);
+	Print("Is trend valid: " +  P123Pro(trendSize).IsTrendValid[0]);
+	Print("Trend direction: " +  P123Pro(trendSize).TrendDirection[0]);
+	Print("P2Breakout: " +  P123Pro(trendSize).P2Breakout[0]);
+	Print("Extended Information: " +  P123Pro(trendSize).LastPointExtInfo[0]);
+}
+```
+### Verwendung im Condition Escort
+Alle Datenserien (mit Ausnahme der DateTime Serien) stehen im Condition Escort unter "Series & Output Values" zur Verfügung.
+
+Logische Variablen (true und false) werden durch die Zahlen 1 und 0 ersetzt.
+Im Condition Escort steht ebenfalls der Parameter "TrendSize" zur Verfügung. Beschreibung s. oben.
+
+### Beispiele
+Abfrage, ob der aktuell laufende mittlere Trend im Chart ein Aufwärstrend ist:
+P123Pro(Close, 1).TrendDirection[0] - Inh. TimeFrame   ==   1
+
+Abfrage, ob im aktuell laufenden kleinsten Trend im Chart der letzte Punkt ein Punkt2 ist:
+P123Pro(Close, 3).LastPoint[0] - Inh. TimeFrame   ==   2
+
+Abfrage, ob der letzte Bar unter einem gültigen Punkt 3 (also nicht 3?) eines kleinen Trends geschlossen hat:
+P123Pro(Close, 2).isTrendValid[0] - Inh. TimeFrame   ==   1 
+UND (also neue Zeile)
+Close[0] - Inh. TimeFrame   <   P123Pro(Close, 2).ValidP3Price[0] - Inh. TimeFrame 
 
 ##Parabolic SAR
 ### Beschreibung
