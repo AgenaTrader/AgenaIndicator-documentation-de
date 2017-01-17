@@ -2320,6 +2320,14 @@ You can use the indicator as a filter by using the signals of other indicators w
 
 ![Condition Escort](./media/image50.png)
 
+### MarketPhases Pro Beschreibung
+
+**Phase5Level**
+Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
+
+**Phase4Level**
+Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
+
 ##Momentum (MOM)
 ### Beschreibung
 Das Momentum (MOM) ist einer der beliebtesten Indikatoren, der schon seit langer Zeit verwendet wird. Viele Trader schwören auf diesen simplen Indikator, weil er die Abschwächung der Bewegung misst, ohne mit einer zu komplizierten Formel das Letzte aus der Vorhersagbarkeit der Märkte herausholen zu wollen. Er ist ein einfaches Werkzeug und kann trotzdem gute Dienste leisten.
