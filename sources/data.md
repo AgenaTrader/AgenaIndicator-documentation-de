@@ -27,7 +27,7 @@ If you want the values of the currently running and unfinished candles, you will
 Close\[0\] will provide you with the most recent price transmitted by the data provider. All values of the bars High\[0\]…Low\[0\]… etc. are subject to change until the bar has been finalized and a new bar has begun. The only value that will definitely not change is Open\[0\].
 
 ## Data Series
-### Description
+### Beschreibung
 Datenserien werden in AgenaTrader zum einen unterschieden in die frei für die eigene Programmierung verwendbaren Datenserien zum Speichern von Werten unterschiedlicher Datentypen und zum anderen in die in AgenaTrader fest integrierten Datenserien, die die Kursdaten der einzelnen Bars enthalten. Die letzteren werden hier vorgestellt.
 Das Konzept von Datenserien wird sehr konsequent und durchgängig verfolgt. Alle Kursdaten der einzelnen Bars sind in Datenserien organisiert.
 
