@@ -1,7 +1,7 @@
 ---
-title: AgenaIndicator Documentation
+title: AgenaIndicator Dokumentation
 author: INCLUDE Information Technologies GmbH
 rights:  MIT License
-language: en-US
+language: de-DE
 date: Di 18 Okt 2016 11:26:48 CEST
 ...
