@@ -1,9 +1,9 @@
 ![AgenaTrader](./images/logo_100.png)
 
-**The following API documentation requires AgenaTrader in version 1.9.0.563**
+**Die folgende API-Dokumentation benötigt AgenaTrader in der Version 1.9.0.563**
 
-#Welcome to the official AgenaIndicator repository!
-Want to learn more about the AgenaTrader indicators? We've got the resources to help you get started.
+#Willkommen im offiziellen AgenaIndicator Repository!
+Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Ressourcen, um Ihnen den Einstieg zu erleichtern.
 
 -   [Data](./data.md)
 -   [Bars (Candles)](./data.md#bars-candles)
