@@ -878,15 +878,15 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The current value for the Chande Momentum Oscillator is: " + CMO(14)[0]);
 ```
 ##Climactic Distance
-### Description
-The Climactic Distance indicator was invented and developed by Gilbert Kreuzthaler, CEO of Include IT GmbH and founder of AgenaTrader.com. This indicator is used in the Location Point Trading system. It calculates the median course of the current and historical candle at a distance to the simple moving average (SMA) of the last 20 periods. Additionally, it also measures the average course deviation within the last 80 periods. If the median course exceeds the top or bottom course deviation, the market is deemed climactic, and this influences the trading decisions made in Location Point Trading.
+### Beschreibung
+Der Climactic Distance-Indikator wurde von Gilbert Kreuzthaler, Geschäftsführer von Include IT GmbH und Gründer von AgenaTrader.com, erfunden und entwickelt. Dieser Indikator wird im Location Point Trading-System eingesetzt. Er berechnet den durchschnittlichen (Median-) Kurs der aktuellen und historischen Kerze mit einem Abstand zum einfachen gleitenden Durchschnitt (SMA) der letzten 20 Perioden. Zusätzlich misst er auch die durchschnittliche Kursabweichung innerhalb der letzten 80 Perioden. Wenn der durchschnittliche (Median-) Kurs die oberste oder unterste Kursabweichung übertrifft, gilt der Markt als climactic (kulminierend), und dies beeinflusst die Handelsentscheidungen, die im Location Point Trading gemacht werden.
 
-### Calcualtion
-Black line in the middle: SMA 20
-Green moving line: Median Kurs
-Red upper and lower line: Average course deviation oft he last 80 periods.
+### Berechnung
+Mittlere schwarze Linie: SMA 20
+Bewegte grüne Linie: Durchschnittlicher (Median-) Kurs
+Rote obere und untere Linie: Durchschnittliche Kursabweichung der letzten 80 Perioden.
 
-### More information
+### Weitere Informationen
 [https://www.facebook.com/Location-Point-Trading-344217482287592/?fref=ts](https://www.facebook.com/Location-Point-Trading-344217482287592/?fref=ts)
 
 ### Usage
@@ -895,29 +895,29 @@ ClimacticDistance(int sMAPeriod, int thresholdPercent)
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent)
 ClimacticDistance(int period, int tresholdPercent, Color climacticColor)
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Color climacticColor)
-//Upper band
+//Obere  band
 ClimacticDistance(int sMAPeriod, int thresholdPercent).Upper[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent).Upper[int barsAgo]
 ClimacticDistance(int period, int tresholdPercent, Color climacticColor).Upper[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Color climacticColor).Upper[int barsAgo]
-//Lower band
+//Untere band
 ClimacticDistance(int sMAPeriod, int thresholdPercent).Lower[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent).Lower[int barsAgo]
 ClimacticDistance(int period, int tresholdPercent, Color climacticColor).Lower[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Color climacticColor).Lower[int barsAgo]
 
-//MovingAverage
+//Gleitender Durchschnitt
 ClimacticDistance(int sMAPeriod, int thresholdPercent).MovingAverage[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent).MovingAverage[int barsAgo]
 ClimacticDistance(int period, int tresholdPercent, Color climacticColor).MovingAverage[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Color climacticColor).MovingAverage[int barsAgo]
-//Distance
+//Distanz
 ClimacticDistance(int sMAPeriod, int thresholdPercent).Distance[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent).Distance[int barsAgo]
 ClimacticDistance(int period, int tresholdPercent, Color climacticColor).Distance[int barsAgo]
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Color climacticColor).Distance[int barsAgo]
 ```
-### Return value
+### Rückgabewert
 **double**
 
 ### Parameters
@@ -926,7 +926,7 @@ Image
 ### Visualization
 Image
 
-### Example
+### Beispiel
 ```cs
 //Output of the value for the Upper climactic distance line
 Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).Upper[0]);
@@ -943,11 +943,12 @@ Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).MovingAverage
 Der Commodity Channel Index (CCI) wurde 1980 von Donald Lambert entwickelt und fand seine erste Verwendung am Warenterminmarkt. Der CCI ist ein recht komplexer, trendfolgend ausgerichteter Indikator. Er funktioniert besonders gut in Seitwärtsbewegungen mit einem deutlichen Seitwärtstrendkanal. Er wird verwendet, um Beginn und Ende von Kurstrends, von saisonalen Trends und Zyklen zu erkennen. (Quelle: VTAD)
 
 ### Interpretation
-CCI measures the difference between a securitys price change and its average price change. High positive readings indicate that prices are well above their average, which is a show of strength. Low negative readings indicate that prices are well below their average, which is a show of weakness.
+Der CCI misst den Unterschied zwischen einer Preisänderung eines Wertpapieres und seiner durchschnittlichen Preisänderung. Hohe positive Messungen deuten darauf hin, dass Preise hoch über ihrem Durchschnitt liegen, was Stärke zeigt. Tiefe negative Messungen deuten darauf hin, dass Preise tief unter ihrem Durchschnitt liegen, was wiederum Schwäche zeigt.
 
-The Commodity Channel Index (CCI) can be used as either a coincident or leading indicator. As a coincident indicator, surges above +100 reflect strong price action that can signal the start of an uptrend. Plunges below -100 reflect weak price action that can signal the start of a downtrend.
+Der Commodity Channel Index (CCI) kann entweder als koinzidenten oder als führenden Indikator verwendet werden. Als koinzidenter Indikator spiegeln Anstiege über +100 starke Preisaktion wider, die den Anfang eines Aufwärtstrends signalisieren kann. Abstürze unter -100 spiegeln schwache Preisaktion wider, die den Anfang eines Abwärtstrends signalisieren kann.
 
-As a *leading indicator*, *momentum oscillators*, chartists can look for overbought or oversold conditions that may foreshadow a mean reversion. Similarly, bullish and bearish divergences can be used to detect early momentum shifts and anticipate trend reversals.
+Als *führender Indikator*, *Momentum-Oszillatoren*, können Chartisten nach überkauften oder überverkauften Conditionen suchen, die einen Rückkehr zum Mittelwert andeuten könnten. Ebenso können bullische und bearische Divergenzen dazu verwendet werden, frühe Momentumwechsel aufzuspüren und Trendumkehrungen vorauszuahnen.
+
 
 ### Weitere Informationen
 VTAD: [http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index](http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index)
@@ -2240,52 +2241,52 @@ Print("untere Band des MAEnvelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 1
 ```
 
 ##MarketPhases
-**The installation of the Technical Analysis Package is required in order to access this indicator.**
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
-### Description
-The Market Phases Indicator is another important component of the Technical Analysis Package, and is based on integrated trend detection for the various relevant trading market phases.
+### Beschreibung
+Der Market Phases-Indikator ist ein weiterer wichtiger Bestandteil des Technical Analysis-Pakets, und beruht auf integrierte Trenderkennung für die unterschiedlichen relevanten Handelsmarktphasen.
 
-The market phases are defined according to the book series “Der Händler” (“The Trader”) by Michael Voigt.
+Die Marktphasen werden nach der Buchserie „Der Händler“ von Michael Voigt definiert.
 
 **Phase 3:**
 
-The market is located far away from the movement; a correction is imminent.
+Der Markt ist von der Bewegung weit entfernt; eine Korrektur steht unmittelbar bevor.
 
 ![MarketPhases Phase 3](./media/image44.png)
 
 **Phase 4:**
 
-The market is in correction mode. The original trend direction has not yet resumed. During the uptrend, further lows may occur, and in a downtrend, further highs may occur.
+Der Markt ist im Korrekturmodus. Die originale Trendrichtung wurde noch nicht wieder aufgenommen. Während des Aufwärtstrends können weitere Tiefs auftreten, und in einem Abwärtstrend können weitere Hochs entstehen.
 
 ![MarketPhases Phase 4](./media/image45.png)
 
 **Phase 5:**
 
-The market is coming out of the correction and will resume its trend direction.
+Der Markt kommt aus der Korrektur heraus und wird seine Trendrichtung wieder aufnehmen.
 
 ![MarketPhases Phase 5](./media/image46.png)
 
 **Phase 5+**
 
-The market is in Phase 5. In addition, the sub-trend is confirming a 1-2-3 pattern.
+Der Markt ist in Phase 5. Dazu bestätigt der Untertrend ein 1-2-3 Muster.
 
 ![MarketPhases Phase 6](./media/image47.png)
 
-**Phase 5+ (Prom Queen)**
+**Phase 5+ (Ballkönigin)**
 
-The term Prom Queen is also taken from the book series “*Der Händler*”. A 5+ trend phase is classified by an uptrend correction move running up to point 2. The correction zone is marked in grey in the following image.
+Der Begriff Ballkönigin ist auch der Buchserie „*Der Händler“ entnommen. Eine 5+ Trendphase wird durch eine Korrekturbewegung eines Aufwärtstrends klassifiziert, die zum Punkt 2 hinaufläuft. Im folgenden Bild wird die Korrekturzone in grau markiert.
 
 ![MarketPhases Phase 5+ (Prom Queen)](./media/image48.png)
 
-Market phases 1, 2, 6, and 9 are not relevant for successful trading.
+Marktphasen 1, 2, 6, und 9 sind für erfolgreiches Handeln nicht relevant.
 
-### Depiction in the chart
-No parameters are required.
+### Darstellung im Chart
+Keine Parameter erforderlich.
 
 ![MarketPhases in chart window](./media/image49.png)
 
-### Usage in AgenaScript
-The indicator provides the following values for the market phases:
+### Verwendung in AgenaScript
+Der Indikator bietet folgende Werte für die Marktphasen:
 
 Phase 3: 3
 
@@ -2295,28 +2296,28 @@ Phase 5: 5
 
 Phase 5+ 55
 
-Prom Queen 66
+Ballkönigin 66
 
-In a downtrend, the values are prefixed with a “-“ sign. If the market phase is not defined, then the value 0 is returned.
+In einem Abwärtstrend wird ein „-„ Zeichen vor den Werten gesetzt. Ist der Marktphase nicht definiert, wird der Wert 0 zurückgegeben.
 ```cs
 MarketPhases(int trendSize)[barsAgo]
 ```
 
 **Parameter**
 
-trendsize: trend size from 0 .. 3
+trendsize: Trendgröße von 0 .. 3
 
-**Caution:**
+**Achtung:**
 
-For a comparison of double values such as: **if** (**MarketPhases**(1)\[0\] == 55) ...we recommend that you use the following instead:
+Für einen Vergleich von Doppelwerten wie z.B.: **if** (**MarketPhases**(1)\[0\] == 55) ...empfehlen wir, stattdessen folgendes zu verwenden:
 ```cs
 bool goLong = Math.Abs(MarketPhases(1)[0] - 55) <= Double.Epsilon;
 ```
 
-### Usage within the Condition Escort
-When using market phases within AgenaScript, the indicator provides a data series that has the aforementioned values of +/-3, 4, 5, 55, 66.
+### Verwendung innerhalb des Condition Escorts
+Bei der Verwendung von Marktphasen innerhalb von AgenaScript bietet der Indikator eine Datenserie an, die die oben genannten Werte von +/-3, 4, 5, 55, 66 hat.
 
-You can use the indicator as a filter by using the signals of other indicators when they are inside the market phases 55 or 66 (long):
+Sie können den Indikator als Filter verwenden, indem Sie die Signale von anderen Indikatoren hernehmen, wenn diese innerhalb den Marktphasen 55 oder 66 (long) sind:
 
 ![Condition Escort](./media/image50.png)
 
@@ -3248,104 +3249,104 @@ Print("The current value for the OBV is " + OBV()[0]);
 Der Indikator OutsideBars ist eine veraltete Version von [*InsideBarsMT*](#insidebarsmt).
 
 ##P123
-**The installation of the Technical Analysis Package is required in order to access this indicator.**
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
-### Description
-The goal of the P123 indicator is to automatically detect a 1-2-3 pattern.
+### Beschreibung
+Ziel des P123-Indikators ist es, ein 1-2-3 Muster automatisch zu erkennen.
 
-**The following features make it stand out:**
+**Er zeichnet sich durch folgenden Features aus:**
 
-Innovative recognition of 4 different trend sizes
+Innovative Erkennung von 4 verschiedenen Trendgrößen
 
-It recognizes points 1, 2, and 3 at the bar
+Er erkennt Punkte 1, 2, und 3 am Balken
 
-Recognition of a trend continuation in the same direction as a trend break
+Erkennung einer Trendfortsetzung in gleicher Richtung wie ein Trendbruch
 
-Completely automatic adjustment of the search algorithm for all possible market conditions (no additional settings/inputs required)
+Komplett automatische Anpassung des Suchalgorithmus für alle möglichen Marktkonditionen (keine zusätzlichen Einstellungen/Eingaben nötig)
 
-Adaptive workflow, adjusting to any volatility fluctuations
+Adaptiver Arbeitsablauf, passt sich auf alle Volatilitätsschwankungen an
 
-Clear overview while simultaneously displaying the various trend sizes
+Klare Übersicht mit gleichzeitiger Anzeige der verschiedenen Trendgrößen
 
-Can be implemented within the Condition Escort and AgenaScript
+Kann innerhalb vom Condition Escort und AgenaScript eingesetzt werden
 
-The trend sizes are defined as follows:
+Die Trendgrößen werden wie folgt definiert:
 
-T0 = large trend
+T0 = großer trend
 
-T1 = medium-sized trend
+T1 = mittelgroßer trend
 
-T2 = small trend
+T2 = kleiner trend
 
-T3 = smallest trend size
+T3 = kleinste trend size
 
-The smallest trend size (T3) cannot be detected on all trading instruments. Point 2 is often situated at the high of a bar, and point 3 at the low of the same bar. Depending on the timeframe and fluctuation range, T0 and T1 can be fused into one.
+Die kleinste Trendgröße (T3) kann nicht auf allen Handelsinstrumenten festgestellt werden. Punkt 2 liegt oft am Hoch eines Balkens, und Punkt 3 am Tief des gleichen Balkens. Je nach Zeiteinheit und Schwankungsbereich können T0 und T1 zu einem vereinigt werden.
 
-The indicator determines the selected timeframe of the chart, and then labels all trends and trend sizes accordingly. When there is low volatility, trend recognition is more sensitive, and the vice versa for higher volatility. The P123’s adaptive methods make for a balanced recognition of trend sizes.
+Der Indikator bestimmt die ausgewählte Zeiteinheit des Charts und kennzeichnet dann alle Trends und Trendgrößen dementsprechend. Wenn niedrige Volatilität vorhanden ist, ist die Trenderkennung sensibler, und umgekehrt für höhere Volatilität. Die adaptiven Methoden des P123 schaffen eine ausgeglichene Erkennung von Trendgrößen.
 
-**Important tip:**
+**Wichtiger Tipp:**
 
-In some cases, the large trend (T0) cannot be seen with the naked eye, which may be due to the fact that not enough candles are visible within the chart. A minimum of 500 candles should be loaded to ensure this is not the case.
+In manchen Fällen kann der große Trend (T0) nicht mit bloßem Auge erkannt werden, was vielleicht daran liegt, dass nicht genug Kerzen im Chart sichtbar sind. Ein Minimum von 500 Kerzen sollte geladen werden, um sicherzugehen, dass dies nicht der Fall ist.
 
 
 ### Interpretation
-Trading signals often form at points 2 & 3: at point 3 as entry signals into a correction phase within a confirmed trend, and at point 2 as a sub-trend in the trend direction of the superior trade. The definition of a trend at points 1 to 3 can be read in "*Das große Buch der Markttechnik*" by Michael Voigt (German only).
+Handelssignale bilden sich oft an den Punkten 2 & 3: am Punkt 3 als Einstiegssignale in eine Korrekturphase innerhalb eines bestätigten Trends, und am Punkt 2 als Untertrend in Trendrichtung des übergeordneten Trades. Die Definition eines Trends am Punkt 1 bis 3 kann man in „* "*Das große Buch der Markttechnik*" von Michael Voigt nachlesen.
 
-### Visualization in the chart
-The parameter input settings define which trend sizes are shown in the chart and whether or not they are connected by a line.
+### Visualisierung im Chart
+Die Einstellungen für die Parametereingaben bestimmen, welche Trendgrößen im Chart angezeigt werden und ob sie durch eine Linie verbunden sind.
 
-For the default settings, the trend T2 is enabled by default.
+Für die Standardeinstellungen ist der Trend T2 standardmäßig aktiviert.
 
-The depiction in the chart may change with the changing market movements. If the market moves below the last point 3 and breaks the uptrend, the point is marked with a “3?”. The newly created low becomes the new point 2 and the last point 2 becomes point 1.
+Die Darstellung im Chart kann sich mit den wechselnden Marktbewegungen verändern. Wenn der Markt sich unter dem letzten Punkt 3 bewegt und den Aufwärtstrend bricht, wird dieser Punkt mit einem „3?“ markiert. Der neu gebildete Tief wird zum neuen Punkt 2, und der letzte Punkt 2 wird zum Punkt 1.
 
 ![Visualization in the chart](./media/image73.png)
 
-The parameter settings are not relevant for the display in the chart and are primarily used for the Condition Escort.
+Die Parametereinstellungen sind für die Anzeige im Chart nicht relevant, und werden hauptsächlich für den Condition Escort verwendet.
 
-The depiction in the chart is primarily influenced by the settings “Display 123” and “Display Lines”.
+Die Darstellung im Chart wird hauptsächlich von den Einstellungen „Display 123“ und „Display Lines“ beeinflusst.
 
 ![parameter settings](./media/image74.png)
 
-The settings highlighted in yellow have no influence on the chart. No changes need to be made.
+Die gelb markierten Einstellungen haben keinen Einfluss auf den Chart. Es müssen keine Änderungen gemacht werden.
 
-### Usage in AgenaScript
-When using P123 in AgenaScript, multiple public variables are available.
+### Verwendung in AgenaScript
+Bei der Verwendung von P123 in AgenaScript sind mehrere öffentliche Variablen verfügbar.
 
-A notation such as \[barsAgo\] is not available for this. Parameter occurrences are used in the following manner:
+Ein Vermerk wie z. B.\[barsAgo\] ist hierfür nicht verfügbar. Parametervorkommnisse werden wie folgt verwendet:
 
-**P123**(**int** trendSize). ... &lt;&lt;a public variable, see below&gt;&gt;
+**P123**(**int** trendSize). ...&lt;&lt;eine öffentliche Variabel; siehe unten&gt;&gt;
 
 **P123**(**int** trendSize, **int** occurrence). ...
 
 |                   |                                                                                                                                   |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Trend Direction   | 1 = uptrend -1 = downtrend 0 = no trend                                                                                           |
-| IsTrendValid      | true = confirmed trend with a point sequence of at least 1 - 2 - 3 - 2
-                      false = no confirmed trend (phases 1 and 2)                                                                                        |
-| LastPoint         | last point of a trend, 1, 2 or 3                                                                                                  |
-| LastPointPrice    | outputs the price value of the last market point                                                                                  |
-| LastPointDateTime | outputs the date and time of the last market point                                                                                |
-| P1Price           | outputs the value of the last point 1                                                                                             |
-| P1DateTime        | outputs the value and date/time of the last point 1                                                                               |
-| P2Price           | outputs the value of the last point 2                                                                                             |
-| P2DateTime        | outputs the time and date of point 2                                                                                              |
-| TempP3Price       | putputs the value of the temporary point “3?”                                                                                     |
-| TempP3DateTime    | outputs the time and date of the temporary point “3?”                                                                             |
-| ValidP3Price      | outputs the value of the last point 3. This is used as a stop placement. When this point is breached, a trend change is confirmed |
-| ValidP3DateTime   | outputs the date and time for the last valid point 3                                                                              |
+| Trend Direction   | 1 = Aufwärtstrend -1 = Abwärtstrend  0 = kein Tren                                                              |
+| IsTrendValid      | true = bestätigter Trend mit einer Punktfolge von mindestens 1 - 2 - 3 - 2
+                      false = kein bestätigter Trend (Phasen 1 und 2)                                                             |
+| LastPoint         | Letzter Punkt eines Trends 1, 2 oder 3                                                                                                 |
+| LastPointPrice    | Gibt den Preiswert des letzten Marktpunkts aus                                                                                  |
+| LastPointDateTime | Gibt das Datum und die Zeit des letzten Marktpunkts aus                                                                                |
+| P1Price           | Gibt den Wert des letzten Punkt 1 aus                                                                                             |
+| P1DateTime        | Gibt den Wert und Datum/Zeit des letzten Punkt 1 aus                                                                               |
+| P2Price           | Gibt den Wert des letzten Punkt 2 aus                                                                                              |
+| P2DateTime        | Gibt das Datum und die Zeit des letzten Punkt 2 aus                                                                                              |
+| TempP3Price       | Gibt den Wert des provisorischen Punkt “3?” aus                                                                                     |
+| TempP3DateTime    |Gibt das Datum und die Zeit des provisorischen Punkt “3?” aus                                                                              |
+| ValidP3Price      | Gibt den Wert des letzten Punkt 3 aus. Dies wird als Stoppsetzung verwendet. Wenn dieser Punkt durchbrochen wird, ist eine Trendwende bestätigt |
+| ValidP3DateTime   | Gibt das Datum und die Zeit für den letzten gültigen Punkt 3 aus                                                                               |
 
 **Parameters**
 
-trendsize: trend size from 0 .. 3
+trendsize: Trendgröße von  0 .. 3
 
-occurrence the occurrences of the youngest to the oldest point
+occurrence: Die Vorkommnisse des jüngsten bis ältesten Punktes
 
-**Example**
+**Beispiel**
 
 ```cs
 private void PrintOutTrendProperties(int trendSize)
 {
-  // Reverse order of prints fills output window in correct order
+  // Umgekehrte Reihenfolge von Zeilen füllt Ausgabefenster in richtiger Reihenfolge
   Print("");
   Print("valid P3 date: " + P123(trendSize).ValidP3DateTime);
   Print("valid P3 price: " + P123(trendSize).ValidP3Price);
@@ -3362,11 +3363,11 @@ private void PrintOutTrendProperties(int trendSize)
   Print("trend direction: " + P123(trendSize).TrendDirection);
 }
 ```
-### Utilization within the Condition Escort
-All public variables are available to you inside the Condition Escort as data series; they can be found under „Series & Output Values“.
-The name has an underscore ("\_") suffix in order to differentiate it.
+### Verwendung im Condition Escort
+Alle öffentlichen Variablen stehen Ihnen im Condition Escort als Datenserien zur Verfügung, diese finden Sie unter „Series & Output Values“. Der Name hat einen Unterstrich („\_“) am Ende, damit Sie diesen unterscheiden können.
 
-The parameters “trendSize” and “occurrence” can be found within the Condition Escort.
+Die Parameter “trendSize” und “occurrence” finden Sie im Condition Escort.
+
 
 ### P123Pro
 Unter den Parametereinstellungen (s. Abb.) findet sich der Parameter TrendSize.
@@ -3826,31 +3827,32 @@ Print("Der aktuelle Wert für PPO ist " + PriceOscillator(12, 26, 9)[0]);
 Print("Der aktuelle Wert für Smooth ist" + PriceOscillator(12, 26, 9).Smoothed[0]);
 ```
 ## Rainbow
-### Description
-The rainbow indicator is represented by the set of the moving average indicator lines. Each of these lines is placed closer or further from the chart depending on the time period taken into the account for calculation of moving averages.
+### Beschreibung 
+Der Rainbow-Indikator wird durch die Serie von Linien der Indikatoren des gleitenden Durchschnitts dargestellt. Jede dieser Linien wird näher oder weiter vom Chart entfernt gesetzt, abhängig von der Zeitperiode, die für die Berechnung der gleitenden Durchschnitte berücksichtigt wird.
 
-### Introduction
-The rainbow indicator has some advantages comparing to the single moving average lines because it shows better, where the trend reversal occurs. When divergence in all lines is substantial - this is a signal of a strong up- or downtrend movement.
-By default red lines are the closest to the chart and represent the moving average line with the smallest time period.  Yellow lines indicate short-term trends. Blue display the area for short-term traders’ activity. Green is typify for medium-term trends. Pink lines can be usefull for traders who hold positions for a long period.
+### Einführung
+Der Rainbow-Indikator hat einige Vorteile im Vergleich zu den einzelnen Linien der gleitenden Durchschnitte, weil er besser anzeigt, wo der Trendumkehr stattfindet. Wenn die Divergenz in allen Linien wesentlich ist, ist dies ein Zeichen einer starken Aufwärts- oder Abwärtstrendbewegung.
+Standardmäßig sind rote Linien am nächsten zum Chart und stellen die Linie des gleitenden Durchschnitts mit der kleinsten Zeiteinheit dar. Gelbe Linien weisen auf kurzzeitige Trends hin. Blaue zeigen den Bereich für kurzfristige Aktivitäten der Händler an. Grün ist typisch für mittelfristige Trends. Pinke Linien können für die Händler nützlich sein, die Positionen für einen langen Zeitraum halten.
 
-### Return value
-Colors:
 
-Yellow ЕМА: 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
-Blue ЕМА: 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41;
-Green ЕМА: 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74;
-Red ЕМА: 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122;
-Pink ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200.
+### Rückgabewert
+Farben:
+
+Gelber  ЕМА: 2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15;
+Blauer  ЕМА: 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41;
+Grüner  ЕМА: 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74;
+Roter  ЕМА: 78, 82, 86, 90, 94, 98, 102, 106, 110, 114, 118, 122;
+Pinker  ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200.
 
 ### Parameters
 |                |                                                                                                                    |
 |----------------|--------------------------------------------------------------------------------------------------------------------|
-| MA Type        | Allows to select between the types of the moving average lines that shape a rainbow indicator. Default setting is the EMA (exponential moving average) but it is possible to choose a simple (SMA), hull (HMA) and weighted (WMA) moving average lines  |
-| Low MA Period  |  Shows the smallest amount of time periods for which the moving average will be calculated. For example, the setting “2” for the daily chart indicates the two latest daily closing prices.                                                                |
-| High MA Period | Shows the largest amount of time periods for which the moving average will be calculated.                          |
-| Step           | Defines the amount of moving average lines shown on a chart within the rainbow indicator. The smaller is this number the larger amount of lines will be plotted. In our example, step 2 would mean that the indicator will contain 80 EMA lines: EMA(2), EMA(4), EMA(6) and so on.                                                                                                             |
+| MA Type        | Mit diesem können Sie zwischen den Typen der Linien für die gleitenden Durchschnitten wählen, die den Rainbow-Indikator ausmachen. Standardmäßig ist hier der EMA (exponentieller gleitender Durchschnitt) eingestellt, es ist aber möglich, eine einfache (SMA), Hull- (HMA), und gewichtete (WMA) gleitende Durchschnittslinie zu wählen |
+| Low MA Period  | Zeigt die kleinste Anzahl von Zeitperioden an, für die der gleitende Durchschnitt berechnet wird. Zum Beispiel weist die Einstellung „2“ für den Tageschart auf die zwei neuesten Tagesschlusskursen hin.                                                                                    |
+| High MA Period | Zeigt die größte Anzahl von Zeitperioden an, für die der gleitende Durchschnitt berechnet wird.                    |
+| Step           | Definiert die Anzahl von gleitender Durchschnittslinien, die im Chart innerhalb des Rainbow-Indikators angezeigt werden. Je kleiner diese Nummer, desto größer die Anzahl von Linien, die eingezeichnet werden. In unserem Beispiel würde Step 2 bedeuten, dass der Indikator 80 EMA-Linien enthalten wird: EMA(2), EMA(4), EMA(6) und so weiter.                       |
 
-### Visualisation
+### Visualisierung
 ![Rainbow](./media/rainbow.png)
 
 ##Range
