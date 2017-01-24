@@ -921,7 +921,7 @@ ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Col
 **double**
 
 ### Parameters
-Image
+Int
 
 ### Visualization
 Image
