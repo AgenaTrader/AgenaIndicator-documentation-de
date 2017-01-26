@@ -1,4 +1,4 @@
-#Indicators & Oscillators
+#Indikatoren & Oszillatoren
 
 **Handeln wie die Profis!**
 
