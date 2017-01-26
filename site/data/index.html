@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Data - AgenaIndicator Dokumentation (Deutsch)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data";
+    var mkdocs_page_input_path = "data.md";
+    var mkdocs_page_url = "/data/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74646070-1', 'agenatrader.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> AgenaIndicator Dokumentation (Deutsch)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Lets start</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Data</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#data">Data</a></li>
+                
+                    <li><a class="toctree-l4" href="#bars-candles">Bars (Candles)</a></li>
+                
+                    <li><a class="toctree-l4" href="#data-series">Data Series</a></li>
+                
+                    <li><a class="toctree-l4" href="#open">Open</a></li>
+                
+                    <li><a class="toctree-l4" href="#high">High</a></li>
+                
+                    <li><a class="toctree-l4" href="#low">Low</a></li>
+                
+                    <li><a class="toctree-l4" href="#close">Close</a></li>
+                
+                    <li><a class="toctree-l4" href="#median">Median</a></li>
+                
+                    <li><a class="toctree-l4" href="#typical">Typical</a></li>
+                
+                    <li><a class="toctree-l4" href="#weighted">Weighted</a></li>
+                
+                    <li><a class="toctree-l4" href="#weighteds">Weighteds</a></li>
+                
+                    <li><a class="toctree-l4" href="#time">Time</a></li>
+                
+                    <li><a class="toctree-l4" href="#times">Times</a></li>
+                
+                    <li><a class="toctree-l4" href="#volume">Volume</a></li>
+                
+                    <li><a class="toctree-l4" href="#volumes">Volumes</a></li>
+                
+                    <li><a class="toctree-l4" href="#timeframe">TimeFrame</a></li>
+                
+                    <li><a class="toctree-l4" href="#timeframes">TimeFrames</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../indicators_oscillators/">Indicators & Oscillators</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">AgenaIndicator Dokumentation (Deutsch)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Data</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/AgenaTrader/AgenaIndicator-documentation-de/edit/master/sources/data.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="data">Data</h1>
+<p>In this context, data is understood as information loaded from outside sources as well as data sets originating from internally generated AgenaScripts.</p>
+<h2 id="bars-candles">Bars (Candles)</h2>
+<h3 id="modus-operandi">Modus Operandi</h3>
+<p>A classical indicator will calculate one or multiple values using the available data series.</p>
+<p>Data series in this sense can consist of closing prices, lows, hourly charts or 10-minute periods etc.
+Each period (candle) will be assigned to a specific indicator(s).</p>
+<p>In the following examples and illustrations, we will assume an indicator value generated by something like a simple moving average.</p>
+<p>To calculate a moving average, AgenaTrader needs a data series; for this we will use the closing prices. All closing prices for the bars (candles) within a chart will be saved in a list and numerically ordered.</p>
+<p>The current closing price of the current bar will be displayed on the right edge of the chart and will be assigned the number 0. The bar to the left of it is assigned the number 1 and so on. The oldest displayed bar will have the number 500 (as an example).</p>
+<p>If a new bar is added during the current trading session, then this bar will be assigned the number 0, and the previous bar – which up to that point was bar number 0 – will now be reassigned as bar 1, and the oldest bar to the very left will have the number 501.</p>
+<p>Within a script (self-created program), the “Close" array is the list of all closing prices. The last closing price is thus Close[0] and the preceding closing price (bar to the left of the last bar) is Close[1] and so on, with the oldest candle having the value of Close[501]. The number within the square brackets here clearly denotes the index of the array. The general term used within AgenaTrader is “barsAgo".</p>
+<p>In addition, each bar will not only have a close value, but also a <a href="#high"><em>High</em></a>, <a href="#low"><em>Low</em></a>, <a href="#open"><em>Open</em></a>, <a href="#median"><em>Median</em></a>, <a href="#typical"><em>Typical</em></a>, <a href="#weighted"><em>Weighted</em></a>, <a href="#time"><em>Time</em></a> and <a href="#volume"><em>Volume</em></a>. On a daily period timeframe, the high of the candle that occurred 10 periods ago would be High[10]; the low of the last day would be Low[1].</p>
+<p><strong>Important note:</strong>
+The examples mentioned concern calculations that are performed at the end of a period. The values for the currently running and unfinished candles are not taken into consideration.</p>
+<p>If you want the values of the currently running and unfinished candles, you will need to set CalculateOnBarClose = false. As with the previous example, the currently running bar will receive the number 0 and so on.
+Close[0] will provide you with the most recent price transmitted by the data provider. All values of the bars High[0]…Low[0]… etc. are subject to change until the bar has been finalized and a new bar has begun. The only value that will definitely not change is Open[0].</p>
+<h2 id="data-series">Data Series</h2>
+<h3 id="beschreibung">Beschreibung</h3>
+<p>Datenserien werden in AgenaTrader zum einen unterschieden in die frei für die eigene Programmierung verwendbaren Datenserien zum Speichern von Werten unterschiedlicher Datentypen und zum anderen in die in AgenaTrader fest integrierten Datenserien, die die Kursdaten der einzelnen Bars enthalten. Die letzteren werden hier vorgestellt.
+Das Konzept von Datenserien wird sehr konsequent und durchgängig verfolgt. Alle Kursdaten der einzelnen Bars sind in Datenserien organisiert.</p>
+<p>Folgende Datenserien sind verfügbar:</p>
+<p><a href="#open"><em>Open</em></a></p>
+<p><a href="#high"><em>High</em></a></p>
+<p><a href="#low"><em>Low</em></a></p>
+<p><a href="#close"><em>Close</em></a></p>
+<p><a href="#median"><em>Median</em></a></p>
+<p><a href="#typical"><em>Typical</em></a></p>
+<p><a href="#weighted"><em>Weighted</em></a> <a href="#weighteds"><em>Weighteds</em></a></p>
+<p><a href="#time"><em>Time</em></a> <a href="#times"><em>Times</em></a></p>
+<p><a href="#timeframe"><em>TimeFrame</em></a> <a href="#timeframes"><em>TimeFrames</em></a></p>
+<p><a href="#volume"><em>Volume</em></a> <a href="#volumes"><em>Volumes</em></a></p>
+<h2 id="open">Open</h2>
+<h3 id="beschreibung_1">Beschreibung</h3>
+<p>Open ist eine Datenserie vom Typ Dataseries, in der die historischen Eröffnungskurse gespeichert sind.</p>
+<h3 id="parameter">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung">Verwendung</h3>
+<pre><code class="cs">Open
+Open[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel">Beispiel</h3>
+<pre><code class="cs">// Eröffnungskurs der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Open[0]);
+
+// Eröffnungskurs des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Open[5]);
+
+
+// aktueller Wert für den SMA 14 über die Eröffnungskurse (gerundet)
+Print(&quot;SMA(14) Calculated using the opening prices: &quot; + Instrument.Round2TickSize(SMA(Open, 14)[0]));
+</code></pre>
+
+<h2 id="high">High</h2>
+<h3 id="beschreibung_2">Beschreibung</h3>
+<p>High ist eine Datenserie vom Typ Dataseries, in der die historischen Höchstkurse gespeichert sind.</p>
+<h3 id="parameter_1">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="usage">usage</h3>
+<pre><code class="cs">High
+High[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_1">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft  <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_1">Beispiel</h3>
+<pre><code class="cs">// Höchstkurs der aktuellen Periode
+Print(Time[0] + &quot; &quot; + High[0]);
+
+// Höchstkurs des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + High[5]);
+
+// aktueller Wert für den SMA 14 über die Höchstkurse (gerundet)
+Print(&quot;SMA(14) calculated using the high values: &quot; + Instrument.Round2TickSize(SMA(High, 14)[0]));
+</code></pre>
+
+<h2 id="low">Low</h2>
+<h3 id="beschreibung_3">Beschreibung</h3>
+<p>Low ist eine Datenserie vom Typ Dataseries, in der die historischen Tiefstkurse gespeichert sind.</p>
+<h3 id="parameter_2">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_1">Verwendung</h3>
+<pre><code class="cs">Low
+Low[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_2">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_2">Beispiel</h3>
+<pre><code class="cs">// Tiefstkurs der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Low[0]);
+
+// Tiefstkurs des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Low[5]);
+
+// aktueller Wert für den SMA 14 über die Tiefstkurse (gerundet)
+Print(&quot;SMA(14) calculated using the low prices: &quot; + Instrument.Round2TickSize(SMA(Low, 14)[0]));
+</code></pre>
+
+<h2 id="close">Close</h2>
+<h3 id="beschreibung_4">Beschreibung</h3>
+<p>Close ist eine Datenserie vom Typ Dataseries, in der die historischen Schlusskurse gespeichert sind.</p>
+<h3 id="parameter_3">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_2">Verwendung</h3>
+<pre><code class="cs">Close
+Close[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_3">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<p>Indikatoren werden standardmäßig über die Schlusskurse berechnet. Die Angabe der Input-Serie kann weggelassen werden (siehe Beispiel unten).</p>
+<h3 id="beispiel_3">Beispiel</h3>
+<pre><code class="cs">// Schlusskurs der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Close[0]);
+
+// Schlusskurs des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Close[5]);
+
+// aktueller Wert für den SMA 14 über die Schlusskurse (gerundet)
+Print(&quot;SMA(14) berechnet über die Schlusskurse: &quot; + Instrument.Round2TickSize(SMA(Close, 14)[0]));
+
+// Close kann auch weggelassen werden, da es per Default verwendet wird.
+Print(&quot;SMA(14) berechnet über die Schlusskurse: &quot; + Instrument.Round2TickSize(SMA(14)[0]));
+</code></pre>
+
+<h2 id="median">Median</h2>
+<h3 id="beschreibung_5">Beschreibung</h3>
+<p>Median ist eine Datenserie vom Typ Dataseries, in der die historischen Median-Werte gespeichert sind.</p>
+<p>Der Median-Preis eines Bars ergibt sich aus (High + Low) / 2.</p>
+<p>Siehe auch <a href="#typical"><em>Typical</em></a> and <a href="#weighted"><em>Weighted</em></a>.</p>
+<h3 id="parameter_4">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_3">Verwendung</h3>
+<pre><code class="cs">Median
+Median[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_4">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft  <em>CalculateOnBarClose</em>.</p>
+<p>Informationen zu Median, Typical und Weighted:
+<a href="http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html">http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html</a></p>
+<h3 id="beispiel_4">Beispiel</h3>
+<pre><code class="cs">// Median-Preis der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Median[0]);
+
+// Median-Preis des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Median[5]);
+
+// aktueller Wert für den SMA 14 über die Median-Preise (gerundet)
+Print(&quot;SMA(14) berechnet über die Openkurse: &quot; + Instrument.Round2TickSize(SMA(Median, 14)\[0\]));
+</code></pre>
+
+<h2 id="typical">Typical</h2>
+<h3 id="beschreibung_6">Beschreibung</h3>
+<p>Typical ist eine Datenserie vom Typ Dataseries, in der die historischen Typical-Werte gespeichert sind.</p>
+<p>Der Typical-Preis eines Bars ergibt sich aus (High + Low + Close) / 3.</p>
+<p>Siehe auch <a href="#median"><em>Median</em></a> and <a href="#weighted"><em>Weighted</em></a>.</p>
+<h3 id="parameter_5">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_4">Verwendung</h3>
+<pre><code class="cs">Typical
+Typical[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_5">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft  <em>CalculateOnBarClose</em>.</p>
+<p>Informationen zu Median, Typical und Weighted:
+<a href="http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html">http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html</a></p>
+<h3 id="beispiel_5">Beispiel</h3>
+<pre><code class="cs">// Typical-Preis der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Typical[0]);
+
+// Typical-Preis des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Typical[5]);
+
+// aktueller Wert für den SMA 14 über die Typical-Preise (gerundet)
+Print(&quot;SMA(14) berechnet über die Openkurse:&quot; + Instrument.Round2TickSize(SMA(Typical, 14)[0]));
+</code></pre>
+
+<h2 id="weighted">Weighted</h2>
+<h3 id="beschreibung_7">Beschreibung</h3>
+<p>Weighted ist eine Datenserie vom Typ Dataseries, in der die historischen Weighted-Werte gespeichert sind.</p>
+<p>Der Weighted-Preis eines Bars ergibt sich aus (High + Low + 2*Close) / 4. (gewichtet auf den Schlusskurs)</p>
+<p>Siehe auch <a href="#median"><em>Median</em></a> &amp; <a href="#typical"><em>Typical</em></a>.</p>
+<h3 id="parameter_6">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_5">Verwendung</h3>
+<pre><code class="cs">Weighted
+Weighted[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_6">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft  <em>CalculateOnBarClose</em>.</p>
+<p>Informationen zu Median, Typical und Weighted:
+<a href="http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html">http://blog.nobletrading.com/2009/12/median-price-typical-price-weighted.html</a></p>
+<h3 id="beispiel_6">Beispiel</h3>
+<pre><code class="cs">// Weighted-Preis der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Weighted[0]);
+
+// Weighted-Preis des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Weighted[5]);
+
+// aktueller Wert für den SMA 14 über die Weighted-Preise (gerundet)
+Print(&quot;SMA(14) berechnet über die Openkurse: &quot; + Instrument.Round2TickSize(SMA(Weighted, 14)[0]));
+</code></pre>
+
+<h2 id="weighteds">Weighteds</h2>
+<h3 id="beschreibung_8">Beschreibung</h3>
+<p>Weighteds ist ein Array von  <em>DataSeries</em>[1] welches alle <a href="#weighted"><em>Weighted</em></a>-Datenserien enthält.</p>
+<p>Dieses Array ist nur in Indikatoren bzw. Strategien von Bedeutung, die Daten aus mehreren Zeiteinheiten verarbeiten.</p>
+<p>Ein neuer Eintrag wird dem Array immer dann hinzugefügt, wenn dem Indikator bzw. der Strategie eine neue Zeiteinheit hinzugefügt wird.</p>
+<p>Mit <strong>[TimeFrameRequirements(("1 Day"), ("1 Week"))]</strong>  enthält das Array 3 Einträge.</p>
+<p><em>Weighteds</em>[0] die Weighted-Dataseries der Chart-Zeiteinheit
+<em>Weighteds</em>[1] die Weighted-Dataseries aller Bars auf Tagesbasis
+<em>Weighteds</em>[2] die Weighted-Dataseries aller Bars auf Wochenbasis.</p>
+<p><em>Weighteds</em>[0][0] entspricht <em>Weighteds</em>[0].</p>
+<p>Siehe auch  <a href="#multibars"><em>MultiBars</em></a>.</p>
+<h3 id="parameter_7">Parameter</h3>
+<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries 
+barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten</p>
+<h3 id="verwendung_6">Verwendung</h3>
+<pre><code class="cs">Weighteds[int barSeriesIndex]
+Weighteds[int barSeriesIndex][int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_7">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft  <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_7">Beispiel</h3>
+<p>Siehe Beispiel unter  <a href="#multibars"><em>Multibars</em></a>.</p>
+<h2 id="time">Time</h2>
+<h3 id="beschreibung_9">Beschreibung</h3>
+<p>Time ist eine <a href="#dataseries"><em>DataSeries</em></a> vom Typ <a href="#datetimeseries"><em>DateTimeSeries</em></a>, in der die Zeitstempel der einzelnen Bars gespeichert sind.</p>
+<h3 id="parameter_8">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_7">Verwendung</h3>
+<pre><code class="cs">Time
+Time[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_8">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_8">Beispiel</h3>
+<pre><code class="cs">// Zeitstempel der aktuellen Periode
+Print(Time[0]);
+// Zeitstempel des Bars von vor 5 Perioden
+Print(Time[5]);
+</code></pre>
+
+<h2 id="times">Times</h2>
+<h3 id="beschreibung_10">Beschreibung</h3>
+<p>Times ist ein Array von <em>DataSeries</em> welches alle <a href="#time"><em>Time</em></a>-Datenserien enthält.</p>
+<p>Dieses Array ist nur in Indikatoren bzw. Strategien von Bedeutung, die Daten aus mehreren Zeiteinheiten verarbeiten.</p>
+<p>Ein neuer Eintrag wird dem Array immer dann hinzugefügt, wenn dem Indikator bzw. der Strategie eine neue Zeiteinheit hinzugefügt wird..</p>
+<p>Mit <strong>[TimeFrameRequirements(("1 Day"), ("1 Week"))]</strong> enthält das Array 3 Einträge.</p>
+<p><em>Times</em>[0] die Time-Dataseries der Chart-Zeiteinheit
+<em>Times</em>[1] die Time-Dataseries aller Bars auf Tagesbasis
+<em>Times</em>[2] die Time-Dataseries aller Bars auf Wochenbasis.</p>
+<p><em>Times</em>[0][0]  entspricht <em>Times</em>[0].</p>
+<p>Siehe auch <a href="#multibars"><em>MultiBars</em></a>.</p>
+<h3 id="parameter_9">Parameter</h3>
+<p>barsAgo     Indexwert der einzelnen Bars innerhalb der Dataseries 
+barSeriesIndex  Indexwert der unterschiedlichen Zeiteinheiten</p>
+<h3 id="verwendung_8">Verwendung</h3>
+<pre><code class="cs">Times[int barSeriesIndex]
+Times[int barSeriesIndex][int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_9">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_9">Beispiel</h3>
+<p>Siehe Beispiel unter <a href="#multibars"><em>Multibars</em></a>.</p>
+<h2 id="volume">Volume</h2>
+<h3 id="beschreibung_11">Beschreibung</h3>
+<p>Volume ist eine  <a href="#dataseries"><em>DataSeries</em></a> vom Typ <a href="#dataseries"><em>DataSeries</em></a>, in der die historischen Umsätze gespeichert sind.</p>
+<h3 id="parameter_10">Parameter</h3>
+<p>barsAgo Indexwert (s. <a href="#bars-candles"><em>Bars</em></a>)</p>
+<h3 id="verwendung_9">Verwendung</h3>
+<pre><code class="cs">Volume
+Volume[int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_10">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<p>Der vom Indikator  <a href="#vol"><em>VOL()</em></a> zurückgelieferte Wert ist identisch mit dem hier beschriebenen Volumen.
+Z.B. liefert <em>Vol()</em>[3] den gleichen Wert wie <em>Volume</em>[3].</p>
+<h3 id="beispiel_10">Beispiel</h3>
+<pre><code class="cs">// Volumen der aktuellen Periode
+Print(Time[0] + &quot; &quot; + Volume[0]);
+// Volumen des Bars von vor 5 Perioden
+Print(Time[5] + &quot; &quot; + Volume[5]);
+// aktueller Wert für den SMA 14 über das Volumen (gerundet)
+Print(&quot;SMA(14) berechnet über das Volumen: &quot; + Instrument.Round2TickSize(SMA(Volume, 14)[0]));
+</code></pre>
+
+<h2 id="volumes">Volumes</h2>
+<h3 id="beschreibung_12">Beschreibung</h3>
+<p>Volumes ist ein Array von <em>DataSeries</em> welches alle <a href="#volume"><em>Volume</em></a>- Datenserien enthält.
+Dieses Array ist nur in Indikatoren bzw. Strategien von Bedeutung, die Daten aus mehreren Zeiteinheiten verarbeiten.</p>
+<p>Ein neuer Eintrag wird dem Array immer dann hinzugefügt, wenn dem Indikator bzw. der Strategie eine neue Zeiteinheit hinzugefügt wird.</p>
+<p>Mit <strong>[TimeFrameRequirements(("1 Day"), ("1 Week"))]</strong>enthält das Array 3 Einträge.</p>
+<p>Volumes[0] die Volume-Dataseries der Chart-Zeiteinheit
+Volumes[1] die Volume-Dataseries aller Bars auf Tagesbasis
+Volumes[2] die Volume-Dataseries aller Bars auf Wochenbasis.</p>
+<p>Volumes[0][0] entspricht Volumes[0].</p>
+<p>Siehe auch <a href="#multibars"><em>MultiBars</em></a>.</p>
+<h3 id="parameter_11">Parameter</h3>
+<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries </p>
+<p>barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten</p>
+<h3 id="verwendung_10">Verwendung</h3>
+<pre><code class="cs">Volumes[int barSeriesIndex]
+Volumes[int barSeriesIndex][int barsAgo]
+</code></pre>
+
+<h3 id="weitere-informationen_11">Weitere Informationen</h3>
+<p>Der zurückgegebene Wert ist abhängig von der Eigenschaft <em>CalculateOnBarClose</em>.</p>
+<h3 id="beispiel_11">Beispiel</h3>
+<p>Siehe Beispiel unter  <a href="#multibars"><em>Multibars</em></a>.</p>
+<h2 id="timeframe">TimeFrame</h2>
+<h3 id="beschreibung_13">Beschreibung</h3>
+<p>TimeFrame ist ein Zeitrahmenobjekt.</p>
+<h3 id="verwendung_11">Verwendung</h3>
+<pre><code class="cs">TimeFrame
+</code></pre>
+
+<h2 id="timeframes">TimeFrames</h2>
+<h3 id="beschreibung_14">Beschreibung</h3>
+<p>TimeFrames ist ein Array von TimeFrame-Objekten, welches für jedes Bar-Objekt ein separates TimeFrame-Objekt  enthält.</p>
+<p>Dieses Array ist nur in Indikatoren bzw. Strategien von Bedeutung, die Daten aus mehreren Zeiteinheiten verarbeiten.</p>
+<p>Ein neuer Eintrag wird dem Array immer dann hinzugefügt, wenn dem Indikator bzw. der Strategie eine neue Zeiteinheit hinzugefügt wird.</p>
+<p>Mit <strong>[TimeFrameRequirements(("1 Day"), ("1 Week"))]</strong> enthält das Array 3 Einträge.</p>
+<pre><code class="cs">TimeFrames [0]; //TimeFrame der primären Datenserie (Chart-Zeiteinheit)
+TimeFrames [1];
+Print(TimeFrames[1]); // liefert &quot;1 Day&quot;
+TimeFrames [2];
+Print(TimeFrames[2]); // liefert &quot;1 Week&quot;
+</code></pre>
+
+<p>TimeFrames [0] entspricht <a href="#timeframe"><em>TimeFrame</em></a>.</p>
+<p>Siehe auch  <a href="#multibars"><em>MultiBars</em></a>.</p>
+<h3 id="parameter_12">Parameter</h3>
+<p>barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten</p>
+<h3 id="verwendung_12">Verwendung</h3>
+<pre><code class="cs">TimeFrames [int barSeriesIndex]
+</code></pre>
+
+<h3 id="beispiel_12">Beispiel</h3>
+<pre><code class="cs">if (ProcessingBarSeriesIndex == 0 &amp;&amp; ProcessingBarIndex == 0)
+for (int i = BarsArray.Count-1; i &gt;= 0; i--)
+Print(&quot;The Indicator &quot; + this.Name + &quot; uses Bars of the Timeframe &quot; + TimeFrames[i]);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../indicators_oscillators/" class="btn btn-neutral float-right" title="Indicators & Oscillators">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Lets start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/AgenaTrader/AgenaIndicator-documentation-de" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../indicators_oscillators/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
