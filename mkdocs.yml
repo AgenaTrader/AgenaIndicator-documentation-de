@@ -11,5 +11,5 @@ strict: true
 google_analytics: ['UA-74646070-1', 'agenatrader.github.io']
 pages:
     - 'Lets start': 'index.md'
-    - 'Data': 'data.md'
-    - 'Indicators & Oscillators': 'indicators_oscillators.md'
+    - 'Daten': 'daten.md'
+    - 'Indikatoren & Oszillatoren': 'ndikatoren_und_oszillatoren.md'
