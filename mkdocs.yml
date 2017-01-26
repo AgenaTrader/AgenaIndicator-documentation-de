@@ -12,4 +12,4 @@ google_analytics: ['UA-74646070-1', 'agenatrader.github.io']
 pages:
     - 'Lets start': 'index.md'
     - 'Daten': 'daten.md'
-    - 'Indikatoren & Oszillatoren': 'ndikatoren_und_oszillatoren.md'
+    - 'Indikatoren & Oszillatoren': 'indikatoren_und_oszillatoren.md'
