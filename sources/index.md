@@ -5,7 +5,7 @@
 #Willkommen im offiziellen AgenaIndicator Repository!
 Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Ressourcen, um Ihnen den Einstieg zu erleichtern.
 
--   [Daten](./daten.md)
+-   [Daten](./Daten.md)
 -   [Bars (Candles)](./daten.md#bars-candles)
 -   [Data Series](./daten.md#data-series)
 -   [Open](./daten.md#open)
