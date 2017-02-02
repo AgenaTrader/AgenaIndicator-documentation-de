@@ -889,7 +889,7 @@ Rote obere und untere Linie: Durchschnittliche Kursabweichung der letzten 80 Per
 ### Weitere Informationen
 [https://www.facebook.com/Location-Point-Trading-344217482287592/?fref=ts](https://www.facebook.com/Location-Point-Trading-344217482287592/?fref=ts)
 
-### Usage
+### Verwendung
 ```cs
 ClimacticDistance(int sMAPeriod, int thresholdPercent)
 ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent)
@@ -923,8 +923,8 @@ ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Col
 ### Parameters
 Int
 
-### Visualization
-Image
+### Darstellung
+**IMAGE**
 
 ### Beispiel
 ```cs
@@ -961,7 +961,7 @@ CCI(int period)[int barsAgo]
 CCI(IDataSeries input, int period)[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index  (z.B **CCI**(14)\[**int** barsAgo\] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -1123,7 +1123,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 ### Darstellung
 ![Donchian Channel](./media/image24.png)
 
-### Example
+### Beispiel
 ```cs
 //Ausgabe der Werte für den DDonchianChannel
 Print("The upper band is at: " + DonchianChannel(14).Upper[0]);
@@ -1678,7 +1678,7 @@ KeltnerChannel(double offsetMutiplier, int period).Lower[int barsAgo]
 KeltnerChannel(IDataSeries input, double offsetMutiplier, int period).Lower[int barsAgo]
 ```
 
-### Return value
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B. **KeltnerChannel**(1.5, 15)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -1834,7 +1834,7 @@ input		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 SMAperiod	Anzahl der Perioden zur Berechnung des SMA
 
-### Return value
+### Rückgabewert
 **double**
 
 0 - keine Umkehrformation vorhanden
@@ -1906,7 +1906,7 @@ input		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 EMAperiod	Anzahl der Perioden zur Berechnung des EMA
 
-### Return value
+### Rückgabewert
 **double**
 
 0 - keine Umkehrformation vorhanden
@@ -1926,6 +1926,27 @@ KeyReversalDownAtEMA(IDataSeries input, int period, int EMAperiod)[int barsAgo]
 if (KeyReversalDownAtEMA(10)[0] == 1)
 Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
+
+##KlingerVolumeOscillator
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der KlingerVolumeOszillator ist ein technischer Indikator, der von Stephen Klinger entwickelt wurde, um Langzeit-Trends des Geldflusses zu bestimmen. Gleichzeitig ist der Indikator empfindlich genug, um auch kurzzeitige Fluktuationen festzustellen und gibt dem Trader so die Möglichkeit, auch Kurzfrist-Reversals im Markt aufzuspüren. Der Indikator vergleicht das ein- und ausfließende Volumen eines Instruments mit dessen Preisbewegungen und wird als Oszillator ausgegeben. Eine Signallinie (13-Perioden gleitender Durchschnitt) wird zur Signalgenerierung verwendet. Auch Divergenzen im KlingerVolumeOscillator im Vergleich zur Preisbewegung können für Ein- und Ausstiegsentscheidungen genutzt werden. Ein bullisches Signal entsteht, wenn der KlingerVolumeOscillator beginnt zu steigen, während der Preis weiter fällt, vice versa für ein bearisches Signal. 
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![KlingerVolumeOscillator](./media/KlingerVolumeOscillator.png)
+
+### Beispiel
+angekündigt werden
 
 ##Linear Regression
 ### Beschreibung
@@ -4247,7 +4268,7 @@ Eine niedrige Standardabweichung zeigt, dass die Datenpunkte sehr nahe an ihrem 
 ### Weitere Informationen
 VTAD: <http://vtadwiki.vtad.de/index.php/Standard\_Abweichung>
 
-### Usage
+### Verwendung
 ```cs
 StdDev (int period)
 StdDev (IDataSeries input, int period)
@@ -4516,7 +4537,7 @@ Es gibt viele verschiedene Anwendungsmethoden für SuperTrend. Unter Forex Händ
 Für analytische Zwecke kann der SuperTrend-Indikator einfach nur eine Information über den vorherrschenden Kurstrend liefern. Liegt der Markt über dem Indikator herrscht ein Aufwärtstrend vor, sonst ein Abwärtstrend.
 Der Indikator kann auch als Exit für ein weiteres Handelssystem dienen. Das heißt, offene Positionen werden beim Trendwechsel des Indikators geschlossen. Hier ist allerdings zu beachten, dass die Positionseröffnungen an den Indikator angepasst werden, oder dass es für die Situationen, in denen Indikator und Position seit der Eröffnung nicht trendgleich verlaufen, eine Sonderbehandlung geben muss.
 
-### Usage
+### Verwendung
 ```cs
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)
 SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)
@@ -5416,6 +5437,257 @@ smooth	Anzahl der Bars für die Berechnung des GD's für die Glättung
 Print("Der aktuelle Wert für den Volume ROC ist:  " + VROC(14, 3)[0]);
 ```
 
+##VolumeArea
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Auch mit diesem Indikator können Sie eigene Volumen-Profile anzeigen lassen. Sie können hier nun den Anfangs- und Endzeitpunkt durch klicken auf die bevorzugte Position ganz frei festlegen. Es gibt keine Beschränkungen wo die Berechnung starten und enden soll. Im rechten oberen Eck haben Sie die Einstellungsmöglichkeiten mit denen Sie zwischen den Profil-Typen umschalten können (Beschreibung hierzu siehe unter VolumeSessionPro). Mit einem Klick auf das kleine rote „+“ unter den Profil-Einstellungen können Sie ein weiteres Volumenprofil zu Ihrem Chart hinzufügen, indem Sie erneut den Anfangs- und Endzeitpunkt durch klicken mit der linken Maustaste festlegen. Die Einstellungen und die Anzeige des Indikators enstprechen exakt dem VolumeSessionPro: über ProfileType wählen sie, welche Berechnungsmethode verwendet werden soll, über ValueArea legen Sie den Prozentsatz fest, welcher Anteil des Volumenbereichs mit der höchsten Aktivität eingefärbt werden soll. Die wohl effektivste Arbeitsweise mit dem VolumeArea ist, diesen Indikator in die ActionBar zu legen und einen Hotkey zuzuweisen. Bei Bedarf kann der Indikator so schnell aufgerufen werden und Sie können den gwünschten Volume-Bereich angeben.
+
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeArea](./media/VolumeArea.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeGraph
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator beinhaltet ein übliches Volumen-Histogramm, die Färbung wird hier aber aufgrund von Preistrends vorgenommen. Der VolumeGraph stellt kurz- oder langfristige Preistrends fest, die Sensibilität dafür können Sie über den Paramter „SlopeLength“ einstellen. Ein hoher Wert liefert langfristige Trends, niedrige Werte stellen kurzfristige Preistrends dar. Über die Einstellung „Exponential“ können Sie wählen, ob die Berechnung zur Trendbestimmung auf einem exponentiellen(=True) oder linearen (=False) Algorithmus basieren soll. Dabei handelt es sich um die Feinabstimmung und es sind keine gravierenden Änderungen durch diesen Parameter zu erwarten. Zusätzlich beinhaltet das Volumen-Histogramm noch einen gleitenden Durchschnitt, für den Sie mit dem Parameter „AvgLength“ die Periode eingeben können.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeGraph](./media/VolumeGraph.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeKeltnerChannels
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+The VolumeKeltnerChannels are a great tool to determine very high or very low volume in comparison to past periods. Beginning with an upper Keltner channel line calculated with volume data, this line is shifted ever further upwards or downwards using special multipliers. Volume that is higher than the highest Keltner channel line can be interpreted as extremely high volume that shows that huge numbers of trades have been carried out in the current price period and that an unusually large number of traders are buying or selling positions at the current price level.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeKeltnerChannels](./media/VolumeKeltnerChannels.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeRiseFall
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Beim VolumeRiseFall – Indikator handelt es sich um eine normale Volumenanzeige als Volumenbars, jedoch mit anderer Farbgebung als üblicherweise. Ein Volumenbar wird grün gezeichnet, wenn das Volumen dieses Bars höher ist, als das Volumen des vorangegangenen Bars und somit ansteigendes Volumen gegeben ist. Ein Volumenbar wird grau gezeichnet, wenn das Volumen dieses Bars niedriger ist, als das Volumen des vorangegangenen Bars und zeigt somit fallendes Volumen an. 
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeRiseFall](./media/VolumeRiseFall.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeSentimentLong
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator spürt bullische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis).
+
+Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): 
+
+- SellingClimax (Dunkelgrün) 
+ 6.11..1. Tiefstes Tief seit 50 Perioden 
+ 6.11..2. Bar mit großer Range 
+ 6.11..3. Extrem hohes Volumen 
+
+- DemandComingIn (Limettengrün) 
+ 6.11..1. UpBar (aktueller Close größer vorheriger Close) 
+ 6.11..2. Vorheriger Bar: DownBar (Close kleiner vorheriger Close) 
+ 6.11..3. Vorheriger Bar: Bar mit großer Range 
+ 6.11..4. Vorheriger Bar: Überdurchschnittlich hohes Volumen
+ 
+- BagHolding (Hellgrün) 
+ 6.11..1. Tiefstes Tief seit 50 Perioden 
+ 6.11..2. DownBar 
+ 6.11..3. Bar mit geringer Range 
+ 6.11..4. Überdurchschnittlich hohes Volumen 
+ 6.11..5. Close größer gleich der Mitte des Bars 
+
+
+Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bullisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeSentimentLong](./media/VolumeSentimentLong.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeSentimentShort
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator ist das Gegenstück zum VolumeSentimentLong und spürt bearische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis). 
+
+Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): 
+
+- BuyingClimax (Dunkelrot) 
+ 6.12..1. Höchstes Hoch seit 50 Perioden 
+ 6.12..2. Bar mit großer Range 
+ 6.12..3. Extrem hohes Volumen 
+ 
+- SupplyComingIn (Rot) 
+ 6.12..1. DownBar 
+ 6.12..2. Vorheriger Bar: UpBar 
+ 6.12..3. Vorheriger Bar: Bar mit großer Range 
+ 6.12..4.Vorheriger Bar: Überdurchschnittlich hohes Volumen 
+ 
+- EndOfRisingMarket (Koralle) 
+ 6.12..1. Höchstes Hoch seit 50 Perioden 
+ 6.12..2. UpBar 
+ 6.12..3. Bar mit geringer Range 
+ 6.12..4.Überdurchschnittlich hohes Volumen 
+ 6.12..5.Close kleiner gleich der Mitte des Bars 
+
+Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bearisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeSentimentShort](./media/VolumeSentimentShort.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeSessionPro 
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator entspricht dem bekannten VolumeProfile-Indikator mit Anzeige für einen bestimmten Zeitabschnitt (Session). Sie können die Anfangszeit und die Dauer einer Session beliebig festlegen. Für jede Session wird dann das VolumeProfile angezeigt. Verwenden Sie diesen Indikator nur auf Zeiteinheiten kleiner als 1Tag, je kleiner die Zeiteinheit gewählt ist, desto detaillierter wird das VolumeProfile angezeigt. Der Preis, zu dem in der jeweiligen Session das meiste Volumen gehandelt wurde, wird als roter Balken angezeigt. Der Preisbereich, zu dem z.B. 70% der Trading-Aktivität der jeweiligen Session stattgefunden hat, wird hellblau eingefärbt. Sie können diesen Prozentwert selbst unter dem Parameter „ValueArea“ beliebig festlegen. 
+
+Weiters haben Sie vier verschiedene Optionen um die Volumen-Informationen anzuzeigen: 
+
+**4.1.1. VOC (Volume on close):** Lädt das gesamte Volumen eines Bars auf den Schlusskurs dieses Bars – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 und eine Range von 1,5 Punkten mit einem Schlusskurs bei 1534,25 hat, werden alle 280 Volumeneinheiten auf den Schlusskurs bei 1534,24 gezählt.
+
+** 4.1.2. TPO (Time price opportunity):**Diese Methode beachtet das tatsächlich gehandelte Volumen nicht, sondern zählt eine einzelne Volumen-Einheit zu jedem Preis in der gehandelten Range des Bars – z.B. wenn ein 5-Minuten Bar das Hoch bei 1534 und das Tief bei 1532,5 hat, wird je eine Volumeneinheit zu folgenden Preisen gezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534
+
+**4.1.3. VWTPO (Volume weighted time price opportunity):** Diese Variante verteilt das gehandelte Volumen eines Bars über dessen Preisrange – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 bei einer Range von 1,5 Punkten aufweist, mit dem Hoch bei 1534 und dem Tief bei 1532,5, dann werden 40 Volumeneinheiten (=280/7) zu jedem der sieben Preise in dieser Range zugezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534.
+
+**4.1.4. VTPO (Volume time price opportunity):** Hier wird das gehandelte Volumen zu jedem Preis der Range zugezählt – z.B. wenn ein 5-Minuten Bar hat 280 Volumeneinheiten, eine Range von 1,5 Punkten mit dem Hoch bei 1534 und dem Tief bei 1532,5, dann werden 280 Volumeneinheiten zu jedem der sieben Preise der Range zugerechnet: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534
+
+
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeSessionPro](./media/VolumeSessionPro.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeTickSpeed 
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+**ACHTUNG!** Diesen Indikator können Sie nur im Tickchart verwenden! Der Indikator misst die Anzahl an Ticks, die während einer vom User bestimmten Anzahl an Sekunden gehandelt wird. Die Anzahl an Sekunden können Sie unter dem Parameter „Period“ einstellen. Ein hoher TickSpeed ist also mit hoher Handelsintensität gleichzusetzen, die wiederum oft an Wendepunkten im Markt beobachtet werden kann. Mit dem Parameter „LimitValue“ können Sie angeben, ab welcher Anzahl an Ticks während der gewählten Periode der Hintergrund gefärbt werden soll, um Extremwerte anzuzeigen.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeTickSpeed](./media/VolumeTickSpeed.png)
+
+### Beispiel
+angekündigt werden
+
+##VolumeUDR 
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Das VolumeUpDownRatio ist das Verhältnis zwischen UpVolume und DownVolume, angezeigt als Oszillator. Volumen wird als UpVolume gewertet, wenn der aktuelle Close der Preiskerze über dem Close der vorangegangenen Kerze liegt, vice versa gilt für DownVolume. Werte über 80 sind als bearisches Signal zu werten, Werte unter 20 als bullisches Signal. Außerdem kann ein gleitender Durchschnitt eingeblendet werden, der zusätzlich als Signalgeber dienen kann.
+
+- Über „DrawCandleOutline“ können Sie bei Auftreten von bullischen/bearischen Extremwerten die Umrandung Ihrer Kerzen entsprechend färben lassen.
+
+- PriceWeightChange regelt, ob Sie die gewichtete Veränderung des Marktpreises in die Berechnung des Indikator miteinfließen lassen möchten.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeUDR](./media/VolumeUDR.png)
+
+### Beispiel
+angekündigt werden
+
 ##VolumeUpDown
 ### Beschreibung
 Der Indikator VolumeUpDown ist eine Variante des Volumen-Indikators (VOL). Der einzige Unterschied ist, dass die Volumenbars in Abhängig davon eingefärbt werden, ob es sich im Preischart um einen Aufwärtsbar oder Abwärtsbar handelt.
@@ -5457,6 +5729,28 @@ Die Länge der Balken entspricht dem addierten Volumen. Herangezogen wird standa
 Wenn es sich um einen steigenden Bar handelt (Close über Open) wird das Volumen des Bars in grün dargestellt. Bei fallenden Bars (Close unter Open) wird das Volumen in rot dargestellt.
 
 Der Indikator ist nur zur Verwendung mit historischen Daten vorgesehen. Für die Darstellung von Volumenänderungen in Realtime verwenden Sie bitte den Indikator VolumeProfile.
+
+
+##VolumeZoneOscillator
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der VolumeZoneOscillator unterteilt die Volumenaktivität in UpVolume und DownVolume, ähnlich wie der VolumeUDR. Volumen wird dann als UpVolume gewertet, wenn der aktuelle Schlusskurs über dem vorangegangenen Schlusskurs liegt, vice versa für DownVolume. Der dadurch errechnete Oszillator gibt relative Prozentwerte aus. Ein Instrument befindet sich in einem positiven Trend, wenn der VolumeZoneOscillator über eine Level von 5% steigt und vice versa in einem negativen Trend, wenn er unter -5% fällt. Werte über 40% zeigen überkaufte Situationen an, während Werte über 60% ein Indiz für eine extreme Übertreibung im Markt sind. Auf der anderen Seite sind Werte kleiner -40% als überverkauft anzusehen und Werte kleiner -60% als enorm überverkauft und übertrieben zu werten.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![VolumeZoneOscillator](./media/VolumeZoneOscillator.png)
+
+### Beispiel
+angekündigt werden
 
 
 ##Williams %R
@@ -5503,6 +5797,33 @@ WilliamsR(IDataSeries input, int period)
 WilliamsR(int period)[int barsAgo]
 WilliamsR(IDataSeries input, int period)[int barsAgo]
 ```
+
+##WyckoffWave
+
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der WyckoffWave-Indikator addiert das Volumen für jeden folgenden Bar, bis eine Preiswelle beendet ist. Sie können einstellen, wie sensibel die Preiswellen festgestellt werden sollen. Wenn das Volumen einer Welle auf besonders hohe Werte steigt, ist sehr oft ein Wendepunkt im Chart erreicht. Wenn die Volumenbars rot gefärbt sind, handelt es sich um eine Short-Welle, grüne Volumenbars indizieren eine Long-Welle. 
+
+Über den Parameter „MedianPeriod“ wählen Sie, wie sensibel der Indikator die einzelnen Preiswellen bestimmen soll. Je geringer der Wert, desto größer die Preiswellen, die der Indikator berechnet.
+
+Der Parameter Poles dient zur Feinabstimmung der Anzeige der Volumen-Wellen, Sie können einen Parameter zwischen 1-4 wählen. Die Änderung dieses Wertes verursacht meist nur unmerkbare Änderungen.
+
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![WyckoffWave](./media/WyckoffWave.png)
+
+### Beispiel
+angekündigt werden
 
 ##ZigZag
 ### Beschreibung
