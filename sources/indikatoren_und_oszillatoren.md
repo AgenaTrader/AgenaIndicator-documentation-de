@@ -980,6 +980,331 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The value of the Commodity Channel Index is: " + CCI(14));
 ```
 
+##COTAggregatedIndexPositionDisaggregated
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator hat ebenfalls dieselbe Funktionsweise wie der COTAggregatedndexPositionsLegacy, für die Interpretation und nähere Informationen lesen Sie bitte unter [*COTAggregatedIndexPositionLegacy*](#COTAggregatedIndexPositionLegacy) nach. Der Unterschied besteht wiederum in der Verwendung der detaillierteren Disaggregated-Daten für die Berechnung des Indikators.
+
+Für den COTAggregatedIndexPositionDisaggregated stehen folgende Parameter zur Verfügung:
+
+- AddIndices: 
+  - **DowJones:** wählen Sie [True], wenn die Positionen des DowJones dem Gesamtergebnis zugezählt werden sollen. 
+  - **Nasdaq100:** wählen Sie [True], wenn die Positionen des Nasdaq100 dem Gesamtergebnis zugezählt werden sollen.
+  - **Russell2000:** wählen Sie [True], wenn die Positionen des Russell2000 dem Gesamtergebnis zugezählt werden sollen 
+  - **SP500:** wählen Sie [True], wenn die Positionen des SP500 dem Gesamtergebnis zugezählt werden sollen.
+  
+- Categories: Financial
+  - Sie können hier nur die Kategorien der Financials auswählen, da mit diesem Indikator 4 Financial-Märkte angesprochen werden. Sie können den Indikator aber in Financial- UND Commoditie-Charts laden. 
+  - Wählen Sie [True] für die Kategorien aus, für die die Positionen für die ausgewählten Märkte zusammengezählt und angezeigt werden sollen.
+  
+- Data base:
+  - **ReportType:** siehe [*COTReportLegacy*](#COTReportLegacy) – CotType
+  
+- Display:
+  - **LongPosition:** wählen Sie [True] um die Long-Positionen der gewünschten Marktteilnehmer anzuzeigen
+  - **ShortPosition:** wählen Sie [True] um die Short-Positionen der gewünschten Marktteilnehmer anzuzeigen
+  - **NetPosition:** wählen Sie [True] um die Netto-Positionen der gewünschten Marktteilnehmer anzuzeigen
+
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTAggregatedIndexPositionDisaggregated](./media/COTAggregatedIndexPositionDisaggregated.png)
+
+### Beispiel
+angekündigt werden
+
+
+##COTCommercialIndex
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der CommercialIndex ist ein sehr aussagekräftiger COT-Indikator. Er setzt zwei der wichtigsten COT-Kenngrößen ins Verhältnis – die Nettopositionen der Commercials zum gesamten OpenInterest. Dieser Werte werden normalisiert und danach ausgegeben. Ein hoher Wert des CommercialIndex zeigt starkes Kaufverhalten der Commercials an, vice versa zeigt ein niedriger Wert starken Verkaufsdruck von Seiten der Commercials. 
+
+Die Parameter sind ähnlich wie beim COTReport gestaltet. 
+
+Folgende Parameter stehen beim COTCommercialIndex zur Verfügung:
+
+- **CotType**: siehe [*COTReportLegacy*](#COTReportLegacy) – CotType
+- **ReportType:** siehe [*COTReportLegacy*](#COTReportLegacy) – ReportType
+- **StochasticPeriod:** siehe [*COTReportLegacy*](#COTReportLegacy)  – ComparativePeriod
+- **OpenInterestType:** Hier können Sie zwischen [Native/Stochastic] wählen, ob die absoluten Werte oder die stochastischen Werte der Positionen der Commercials zur Berechnung herangezogen werden. Die Standardeinstellung ist „Native“, verändern Sie diese nicht, um die Aussagekraft des Indikators beizubehalten. 
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTCommercialIndex](./media/COTCommercialIndex.png)
+
+### Example
+to be announced
+
+
+##COTOpenInterestDisaggregated
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator entspricht der Funktionsweise des COTOpenInterestLegacy, jedoch wiederrum mit den feiner aufgespaltenen Daten der Disaggregated-Reports. Für die Funktionsweise und Interpretation des OpenInterest lesen Sie bitte unter 2 [*COTOpenInterestLegacy*](#COTOpenInterestLegacy).
+Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongKontrakt auch einen Marktteilnehmer auf der Short-Seite geben muss, sind zwei Berechnungsmethoden möglich (hier für Commodity-Futures):
+ 
+1) Producer[Long] + SwapDealer[Long] + SwapDealer[Spread] + ManagedMoney[Long] + ManagedMoney[Spread] + OtherReportables[Long] + OtherReportables[Spread] + NonReportable[Long] = OpenInterest
+
+2) Producer[Short] + SwapDealer[Short] + SwapDealer[Spread] + ManagedMoney[Short] + ManagedMoney[Spread] + OtherReportables[Short] + OtherReportables[Spread] + NonReportable[Short] = OpenInterest
+
+Folgende Parameter stehen für den COTOpenInterestDisaggregated zur Verfügung:
+
+- **Categories: Commodity** 
+  - **OpenInterest_Comm:** (=gesamtes OpenInterest für Commodities) 
+      - [Absolute]:  gibt das OpenInterest als absolute Zahl aus
+      - [Stochastic]:  OpenInterest als Oszillator mit Werten zw. 0-100 
+      - [None]: keine Ausgabe des OpenInterests.
+  - **%ofOIProd Long/Short/Spread:** (=Percent of OpenInterest for Producer Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll. Hierbei handelt es sich um den Anteil, den die Positionen der Producer am gesamten OpenInterest haben. Ein Wert von 0,5 bedeutet z.B. dass die Producer Long-Positionen in der Größe von 50% des gesamten OpenInterest aufgebaut haben. 
+  -  **%ofOISwapDealer Long/Short/Spread:** (=Percent of OpenInterest for SwapDealers Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.
+  - **%ofOIManagedMoney Long/Short/Spread**: (=Percent of OpenInterest for ManagedMoney Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.
+  - **%ofOIComOther Long/Short/Spread:** (=Percent of OpenInterest for Other Traders in Commodities Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll. 
+  - **%ofOIComNonreportables Long/Short/Spread**: (=Percent of OpenInterest for NonReportables in Commodites Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.
+- **Categories: Financial**
+  - Alle Parameter funktionieren analog zu den Einstellungen unter„Categories: Commodity“, der einzige Unterschied liegt in der Aufteilung in unterschiedliche Gruppen der Marktteilnehmer
+
+- **Database:** 
+  - **CotType:** siehe [*COTReportLegacy*](#COTReportLegacy) - CotType 
+  - **ReportType:** siehe [*COTReportLegacy*](#COTReportLegacy) - ReportType 
+  - **StochasticPeriod:** siehe [*COTReportLegacy*](#COTReportLegacy) – ComparativePeriod
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTOpenInterestDisaggregated](./media/COTOpenInterestDisaggregated.png)
+
+### Beispiel
+angekündigt werden
+
+##COTOpenInterestLegacy
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Das OpenInterest gibt die Anzahl aller aktuell gehaltenen Kontrakte an, ein hohes OpenInterest zeugt also von großem Interesse der Marktteilnehmer in diesen Markt, vice versa steht ein niedriges OpenInterest für nur wenig gehaltene Kontakte eines Wertes und damit geringe Aktivität der Marktteilnehmer.
+
+Es gibt zwei Möglichkeiten das OpenInterest zu berechnen:
+
+ 1) Commercial[Long] + NonCommercial[Long] + NonCommercial[Spread] + NonReportable[Long] = OpenInterest
+ 2) Commercial[Short] + NonCommercial[Short] + NonCommercial[Spread] + NonReportable[Short] = OpenInterest
+
+Da es zu jedem Long-Kontrakt auch einen Marktteilnehmer auf der Short-Seite gibt, ergeben beide Berechnungsmethoden den exakt gleichen Wert. Zusatzinfo: Bei der CFTC wird nicht das OpenInterest berechnet - die CFTC kann das OpenInterest einsehen, indem alle am Markt offenen Kontrakte registriert und gezählt werden. Mit dadurch bekanntem OpenInterest können die NonReportable-Positionen berechnet werden, da die folgende Gleichung gelten muss: TotalReportable + NonReportable = OpenInterest. TotalReportable und OpenInterest sind bekannt, wodurch die NonReportables berechnet werden können. 
+
+Folgende Parameter sind beim OpenInterestLegacy verfügbar:
+
+- **CotType:** siehe [*COTReportLegacy*](#COTReportLegacy) – CotType
+
+- **ReportType:** siehe [*COTReportLegacy*](#COTReportLegacy) – ReportType
+
+- **StochasticPeriod:** siehe  [*COTReportLegacy*](#COTReportLegacy)– ComparativePeriod 
+
+- **IsNative:** gibt das OpenInterest als absolute Zahl aus, so wie die Daten aus den Reports der CFTC ausgelesen werden.
+
+- **IsStochastic:** das OpenInterest wird als Oszillator mit Werten zwischen 0-100 ausgegeben und berechnet. Mit der StochasticPeriod können Sie einstellen, mit welcher Periode die Stochastik berechnet werden soll.
+
+- **IsCommercialLong/IsCommercialShort:** wählen Sie [True], wenn Sie die Daten der Commercials angezeigt habe möchten. Die ausgegebenen Werte sind Prozentzahlen, wenn Sie z.B. IsCommercialLong=True setzten, wird der Prozentsatz ausgegeben, den die Long-Positionen der Commercials am gesamten OpenInterest haben. Ein Wert von z.B. 0,5 bedeutet, dass das OpenInterest aus 50% Long-Positionen der Commercials besteht, was als sehr große Long-Position der Commercials angesehen werden kann. 
+
+- **IsNonCommercialLong/IsNonCommercialShort:** wenn Sie [True] wählen, wird der Prozentsatz ausgegeben, den die NonCommercial-LongPositionen bzw. NonCommercial-ShortPositionen am gesamten OpenInterest haben.
+
+- **IsNonReportableLong/IsNonReportableShort:** wenn Sie [True] wählen, wird der Prozentsatz ausgegeben, den die NonReportable-LongPositionen bzw. NonReportable-ShortPositionen am gesamten OpenInterest haben
+
+- **IsTotalReportableLong/IsTotalReportableShort:**wenn Sie [True] wählen, wird der Prozentsatz ausgegeben, den die TotalReportable-LongPositionen bzw. TotalReportable-ShortPositionen am gesamten OpenInterest haben. (TotalReportable = Commercials+NonCommercials).
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTOpenInterestLegacy](./media/COTOpenInterestLegacy.png)
+
+### Beispiel
+angekündigt werden
+
+
+##COTReportDisaggregated
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der COTReportDisaggregated greift auf die detaillierteren Disaggregated-Berichteder CFTC zu, die seit 2009 veröffentlicht werden und als Weiterentwicklung derLegacy-Berichte angesehen werden können. Die Notwendigkeit zu Verbesserungenresultierte aus dem sich stark verändernden und weiterentwickelten Marktumfeld seit der Einführung der COT-Berichte 1986.  
+
+Die Marktteilnehmer werden nun feiner unterschieden und sind in 5 Kategorien eingeteilt. Diese 5 Kategorien unterscheiden sich je nachdem, ob es sich um einen Commodity-Future oder einen Financial-Future handelt. 
+
+
+Die **commodity futures** sind in folgende Gruppen aufgeteilt:
+
+- Producer/Merchant/Processor/User 
+- SwapDealers o ManagedMoney 
+- Other Reportables 
+- Nonreportables 
+- Nähere Infos zur Klassifizierung der Commodities finden Sie [HIER](http://www.cftc.gov/idc/groups/public/@commitmentsoftraders/documents/file/disaggregatedcotexplanatorynot.pdf)
+
+Bei den **financial futures** gibt es folgende Gruppen:
+
+- Dealer/Intermediary 
+- AssetManager/Institutional 
+- Leveraged Funds 
+- Other Reportables 
+- Nonreportabes
+- Nähere Infos zur Klassifizierung der Financials finden Sie [HIER](http://www.cftc.gov/idc/groups/public/@commitmentsoftraders/documents/file/tfmexplanatorynotes.pdf)
+
+Folgende Parameter stehen beim COTReportDisaggregated zur Verfügung:
+
+- **Categories Commodity/Categories Financial:**
+  - Wählen Sie [True] für die Gruppen, die Sie im Chart angezeigt bekommen möchten. Wenn Sie einen Commodity-Chart geöffnet haben, werden nur die Einstellungen unter „Categories Commodity“ beachtet, vice versa wenn Sie einen Financial-Chart geöffnet haben.
+
+- **Database:** 
+  - **CotType:** siehe [*COTReportLegacy*](#COTReportLegacy) - CotType 
+  - **IndexType::** siehe [*COTReportLegacy*](#COTReportLegacy) - IndexType 
+  - **ReportType:** siehe [*COTReportLegacy*](#COTReportLegacy) - ReportType 
+  - **StochasticPeriod:** siehe [*COTReportLegacy*](#COTReportLegacy) – ComparativePeriod
+  
+ - **Display:**
+   - **LongPosition**: wählen Sie [True] um die Long-Positionen der gewünschten Marktteilnehmer anzuzeigen
+   - **ShortPosition**: wählen Sie [True] um die Short-Positionen der gewünschten Marktteilnehmer anzuzeigen
+   - **NetPosition**: wählen Sie [True] um die Netto-Positionen der gewünschten Marktteilnehmer anzuzeigen
+
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTReportDisaggregated](./media/COTReportDisaggregated.png)
+
+### Beispiel
+angekündigt werden
+
+##COTReportLegacy
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator ist das Herzstück der COT-Analyse, mit dem direkt die reinen Daten angezeigt werden können, die der Indikator aus den wöchentlich veröffentlichten Berichten der CFTCC (www.cftc.gov/CommitmentsofTraders) ausliest. Die veröffentlichten Reports können von jedem Marktteilnehmer eingesehen werden. Die Legacy-Daten entsprechen den Short-Reports auf der CFTC-Website. Folgende Parameter sind beim COTReportLegacy verfügbar:
+
+- **Comparative Period:** mit dieser Einstellung können Sie eine Vergleichsperiode eingeben, mit der die stochastische Darstellung berechnet wird (=StochasticPeriod). Dieser Parameter wird nur angesteuert, wenn auf „IndexType = Stochastic“ gestellt ist. 
+
+- **CotType:** wählen Sie unter [All/Other/Old] welche Kontrakte zur Anzeige genutzt werden sollen, nähere Infos finden Sie [HIER](http://www.cftc.gov/MarketReports/CommitmentsofTraders/ExplanatoryNotes/index.htm)
+
+- **IndexType:** wählen Sie zwischen [Absolute/Stochastic], wie die Werte ausgegeben werden sollen.
+  - Absolute = die Werte werden in ganzen Zahlen ausgegeben, genauso wie Sie aus den Reports gelesen werden. 
+  - Stochastic =  die Werte werden als Oszillator mit Werten zwischen 0-100 ausgegeben und berechnet. Mit der ComparativePeriod können Sie einstellen, mit welcher Periode die Stochastik berechnet werden soll. 
+ 
+- **ReportType:** : unter diesem Parameter wählen Sie, ob die Daten aus den Reports nur für Futures oder für Futures+Optionen gelesen werden sollen.
+
+- **ReturnType:** 
+  - Netto: gibt die Nettoposition (=LongKontrakte – ShortKontrakte) der gewählten Marktteilnehmer aus
+  - Long/Short: gibt die Anzahl der Long bzw. Short-Kontrakte der gewählten Marktteilnehmer aus
+  - OI: gibt das gesamte OpenInterest dieses Instruments aus, zur genaueren und fortgeschrittenen Anzeige des OpenInterests nutzen Sie bitte den Indikator OpenInterestLegacy
+
+  
+ - **ShowCommercials:** swählen Sie [True], wenn Sie die Daten der Commercials angezeigt habe möchten. Nähere Infos zur Definition, welche Marktteilnehmer als Commercials eingestuft werden lesen Sie [HIER](http://www.cftc.gov/MarketReports/CommitmentsofTraders/ExplanatoryNotes/index.htm)
+ 
+ - **ShowNonCommercials:** wählen Sie [True], wenn Sie die Daten der NonCommercials angezeigt habe möchten. Nähere Infos zur Definition, welche Marktteilnehmer als Commercials eingestuft werden entnehmen Sie bitte dem oben angeführten Link.
+ 
+ - **ShowNonReportables:** wählen Sie [True], wenn Sie die Daten der NonReportables angezeigt habe möchten. Nähere Infos zur Definition, welche Marktteilnehmer als Commercials eingestuft werden entnehmen Sie bitte dem oben angeführten Link.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTReportLegacy](./media/COTReportLegacy.png)
+
+### Beispiel
+angekündigt werden
+
+
+##COTStockDummy
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Dieser Indikator versucht mit einem speziellen Algorithmus, das Verhalten der Commercials in Aktienmärkten zu simulieren. Die Werte können Absolut oder als Stochastik ausgegeben werden. Die Interpretation dieses Indikators erfolgt analog zur Interpretation der Commercial-Daten in den Standard-COT-Indikatoren. Die Ausgabe dieses Indikators sollte mit anderen Indikatoren bestätigt werden. Sie
+müssen sich bewusst sein, dass es sich nicht um echte COT Daten von Marktteilnehmern handelt, sondern um Berechnungen aus den Preisdaten. Um die Aussagekraft des COTStockDummy zu verbessern, bietet sich eine Analyse in Kombination mit dem LargeTraderActivity-Indikator an. Wie bei den COT-Daten ist auch für den COTStockDummy die Analyse im Wochenchart zu empfehlen. 
+
+Folgende Parameter stehen für den COTStockDummy zur Verfügung:
+
+- **ComparativePeriod:** Input-Periode für die Stochastische Berechnung
+- **Stochastic:**  [True] gibt die Werte normalisiert aus (Werte zwischen 0-100)
+- **Period:**  hierbei handelt es sich um eine Periode, die zur Berechnung der Daten notwendig ist. Sofern Sie nicht detaillierte Informationen zur Funktionsweise dieses Indikators besitzen, belassen Sie diese Periode bitte in den Standardeinstellungen.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTStockDummy&large](./media/COTStockDummy&large.png)
+
+### Beispiel
+angekündigt werden
+
+##COTLargeTraderActivity
+
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Beschreibung
+Der COTLargeTraderActivity-Indikator basiert wie auch der COTStockDummy nicht auf echten COT-Daten, sondern auf algorithmisch berechneten Outputs. Dieser Indikator versucht das Verhalten der LargeTrader in Märkten zu simulieren, für die keine COT-Daten vorhanden sind. Die Interpretation erfolgt hier nun analog zur Analyse der NonCommercials in den Standard-COT-Indikatoren. Wie auch beim COTStockDummy weisen wir darauf hin, dass noch weitere Indikatoren zurate gezogen werden sollten, da es sich nicht um echte COT-Daten handelt. Eine Analyse in Kombination mit den Werten des COTStockDummy ist zu empfehlen.
+
+Folgende Parameter stehen für den COTLargeTraderActivity zur Verfügung:
+
+- **Period:**  hierbei handelt es sich um eine Periode, die zur Berechnung der Daten notwendig ist. Sofern Sie nicht detaillierte Informationen zur Funktionsweise dieses Indikators besitzen, belassen Sie diese Periode bitte in den Standardeinstellungen.
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![COTStockDummy&large](./media/COTStockDummy&large.png)
+
+### Beispiel
+angekündigt werden
+
 ## Darvas Boxes
 ### Beschreibung
 Die Darvas Boxes sind ein Teil der Handelsstrategie des ungarischen Tänzers Nicolas Darvas. Im stark steigenden Aktienmarkt 1957/58 generierte Darvas mit seinem System innerhalb von 18 Monaten aus etwa 20.000 US$ mehr als 2.000.000 US$. Vorgestellt wurde das Handelssystem erstmals in seinem Buch "How I made 2.000.000$ in the Stock Market". 
@@ -2349,6 +2674,39 @@ Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
 
 **Phase4Level**
 Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
+
+##MarketValue
+**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+
+### Description
+Dieser Indikator vergleicht den Wert eines Marktes zum aktuellen Preis von Gold oder dem Dollar Index. Es werden also Märkte in Relation zum Goldpreis oder dem Dollar Index gesetzt, wodurch sehr gut Über- bzw. Unterbewertungen in Instrumenten festgestellt werden können. Niedrige Werte des MarketValues bedeuten, dass ein Markt relativ zu Gold bzw. dem DollarIndex günstig ist, vice versa bedeutet ein hoher Wert das der betrachtete Markt relativ teuer ist. 
+
+Grundsätzlich sollten Commodities mit dem Goldpreis verglichen werden und Financials mit dem DollarIndex. Je nach Marktumfeld kann es aber auch sinnvoll sein, von dieser Regel abzuweichen. 
+
+Folgende Parameter stehen für den MarketValue zur Verfügung:
+
+- **CompareTo:** wählen Sie [Gold/Dollar Index], je nachdem zu welchem Markt das aktuelle Symbol in Relation gesetzt werden soll.
+
+- **EMA1:**  hierbei handelt es sich um eine Periode, die zur Berechnung der Daten notwendig ist. Sofern Sie nicht detaillierte Infos zur Funktionsweise dieses Indikators besitzen, belassen Sie diese Periode bitte in den Standardeinstellungen. (Standardwert = 21)
+
+- **EMA2:**  hierbei handelt es sich um eine EMA-Periode, die zur Berechnung der Daten notwendig ist. Sofern Sie nicht detaillierte Infos zur Funktionsweise dieses Indikators besitzen, belassen Sie diese Periode bitte in den Standardeinstellungen. (Standardwert = 3)
+
+Die Verwendung des MarketValue-Indikators im ConditionEscort ist aktuell noch nicht möglich, da darin ein Multi-Instrument-Indikator nicht abgebildet werden kann. Da der MarketValue die Preisdaten vom aktuellen Chart und ebenso von Gold bzw dem DollarIndex benötigt, handelt es sich hierbei um einen Multi-Instrument Indikator, der wie erwähnt aktuell im ConditionEscort nicht verwendet werden kann. 
+
+### Parameters
+angekündigt werden
+
+### Rückgabewert
+angekündigt werden
+
+### Verwendung
+angekündigt werden
+
+### Darstellung
+![MarketValue](./media/MarketValue.png)
+
+### Beispiel
+angekündigt werden
 
 ##Momentum (MOM)
 ### Beschreibung
