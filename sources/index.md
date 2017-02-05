@@ -80,7 +80,7 @@ Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Res
 -   [MACD](./indikatoren_und_oszillatoren.md#macd)
 -   [MAEnvelopes](./indikatoren_und_oszillatoren.md#maenvelopes)
 -   [MarketPhases](./indikatoren_und_oszillatoren.md#marketphases)
--   [MarketValue](./indicators_oscillators.md#MarketValue)
+-   [MarketValue](./indikatoren_und_oszillatoren.md#MarketValue)
 -   [Momentum (MOM)](./indikatoren_und_oszillatoren.md#momentum-mom)
 -   [Money Flow Index (MFI)](./indikatoren_und_oszillatoren.md#money-flow-index-mfi)
 -   [Moving Averages](./indikatoren_und_oszillatoren.md#moving-averages)
