@@ -17,7 +17,7 @@ Innerhalb eines Scripts (selbsterstelltes Programm) ist das „Close“-Array di
 
 Zusätzlich wird jeder Balken nicht nur einen Close-Wert haben, sondern auch einen  [*High*](#high), [*Low*](#low), [*Open*](#open), [*Median*](#median), [*Typical*](#typical), [*Weighted*](#weighted), [*Time*](#time) гnd [*Volume*](#volume). Zeitraum wäre der Hoch der Kerze, die vor 10 Perioden aufgetreten ist, High\[10\], der Tief des letzten Tages wäre Low\[1\].
 
-**Wichtiger Hinweis: **
+**Wichtiger Hinweis:**
 Die oben erwähnten Beispiele betreffen Berechnungen, die am Ende einer Periode ausgeführt werden. Die Werte für die aktuell laufenden und unfertigen Kerzen werden nicht berücksichtigt.
 
 Wenn Sie die Werte der aktuell laufenden und unfertigen Kerzen bekommen möchten, müssen Sie CalculateOnBarClose = falsch einstellen. Wie beim vorigen Beispiel wird der aktuell laufende Balken die Nummer 0 erhalten und so weiter.
@@ -293,7 +293,7 @@ Mit **\[TimeFrameRequirements(("1 Day"), ("1 Week"))\]**  enthält das Array 3 E
 Siehe auch  [*MultiBars*](#multibars).
 
 ### Parameter
-barsAgo	Indexwert der einzelnen Bars innerhalb der Dataseries 
+barsAgo	Indexwert der einzelnen Bars innerhalb der Dataseries
 barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten
 
 ### Verwendung
@@ -351,7 +351,7 @@ Mit **\[TimeFrameRequirements(("1 Day"), ("1 Week"))\]** enthält das Array 3 Ei
 Siehe auch [*MultiBars*](#multibars).
 
 ### Parameter
-barsAgo		Indexwert der einzelnen Bars innerhalb der Dataseries 
+barsAgo		Indexwert der einzelnen Bars innerhalb der Dataseries
 barSeriesIndex	Indexwert der unterschiedlichen Zeiteinheiten
 
 ### Verwendung
@@ -413,7 +413,7 @@ Volumes\[0\]\[0\] entspricht Volumes\[0\].
 Siehe auch [*MultiBars*](#multibars).
 
 ### Parameter
-barsAgo	Indexwert der einzelnen Bars innerhalb der Dataseries 
+barsAgo	Indexwert der einzelnen Bars innerhalb der Dataseries
 
 barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten
 
