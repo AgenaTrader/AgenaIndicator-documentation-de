@@ -2594,6 +2594,10 @@ Der Market Phases-Indikator ist ein weiterer wichtiger Bestandteil des Technical
 
 Die Marktphasen werden nach der Buchserie „Der Händler“ von Michael Voigt definiert.
 
+**Wichtiger Hinweis** 
+Marktphase-Indikatoren sind im Bezug auf die Historien sehr sensibel, für gute Ergebnisse müssen mindestens 2000 Intraday-Candles geladen werden.
+
+
 **Phase 3:**
 
 Der Markt ist von der Bewegung weit entfernt; eine Korrektur steht unmittelbar bevor.
@@ -2667,6 +2671,25 @@ Sie können den Indikator als Filter verwenden, indem Sie die Signale von andere
 
 ![Condition Escort](./media/image50.png)
 
+**Wichtiger Hinweis** 
+Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich::
+
+- Charteinstellung:
+  - Bars count
+  - Time frame
+
+- SpaltenEintellung Scanner:
+  - Bars required
+  - Time frame
+  
+Die ChartEinstellungen und Spalteneinstellungen müssen identlisch sein.
+Hier ein paar Screenshots:
+
+![MarketPhasesChart](./media/MarketPhases_chart.png)
+
+![MarketPhasesScanner](./media/MarketPhases_scanner.png)
+
+
 ### MarketPhases Pro Beschreibung
 
 **Phase5Level**
@@ -2674,6 +2697,7 @@ Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
 
 **Phase4Level**
 Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
+
 
 ##MarketValue
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
