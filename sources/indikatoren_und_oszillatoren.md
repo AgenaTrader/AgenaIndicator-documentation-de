@@ -2587,7 +2587,7 @@ Print("untere Band des MAEnvelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 1
 ```
 
 ##MarketPhases
-**Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
+**Die Installation des Markttechnik Standard und Markttechnik Professional Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
 Der Market Phases-Indikator ist ein weiterer wichtiger Bestandteil des Technical Analysis-Pakets, und beruht auf integrierte Trenderkennung für die unterschiedlichen relevanten Handelsmarktphasen.
