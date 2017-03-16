@@ -1320,6 +1320,25 @@ Wenn der Kurs (in einer Long-Position) durch eine untere Begrenzung fällt, wird
 
 Für Short-Positionen ist der Ablauf analog. 
 
+### Erläuterung
+Das anfängliche Top der Box ist der Hoch vom Tag 1. Zuerst sollten Sie ein neues Hoch finden, das höher als das Hoch vom Tag 1 sein sollte. Es macht nichts, wann das Hoch kommt – auch nach 5 Tagen. Wird allerdings der Boden festgestellt, ist die Box abgeschlossen.
+
+Um den Boden festzustellen, muss der Tief nach dem Tag 2 des letzten Tages sein, an dem das Box-Top festgestellt wurde, und sollte tiefer als der Tief des ursprünglichen Tiefes vom Tag 1 sein.
+
+Der Boden wird üblicherweise als Letzter festgestellt, und ein neues Hoch wird manchmal nicht festgestellt, bis der Boden feststeht. Die Darvas-Box ist abgeschlossen worden.
+
+Bricht der Preis aus dem Boden oder dem Top heraus, wird eine neue Box gestartet. Die untere Stopp-Loss Box wurde als letzter Preisprozentsatz eingezeichnet.
+
+Wir sollten den höchsten Wert des ersten Tages als obersten Rand nehmen. Am nächsten Tag schauen wir ob der Hoch des Tages höher als den vorangegangen Rand-Top ist. In dem Fall, dass der Hoch -> oberster Rand = Hoch. In dem Fall, dass der Top die letzten 3 Schritte nach oben gegangen ist, und der nächste tiefer ist, wird es ein Box-Top werden. Fangen Sie an, nach dem unteren Rand zu suchen. Es ist mit dem Top identisch (Suchen Sie nach einem Trendtief, nach welchem der Tagestief höher als der vorige sein würde. In dem Fall wäre der vorige Tief der Boden der Box). Nun haben wir einen Darvas-Korridor. Wenn einer der höchsten Werte der nächsten Balken höher als die oberste Box oder tiefer als die unterste Box ist -> Box wird geschlossen (eine neue Box wird gestartet, wenn der Preis aus dem Top oder aus dem Boden der Box ausbricht).
+
+
+#### Kaufsignal
+![DarvasBuySignal](./media/DarvasBuySignal.png)
+
+#### Verkaufssignal
+![DarvasSellSignal](./media/DarvasSellSignal.png)
+
+
 ### Weitere Informationen
 Ein Handelssystem basierend auf Darvas Boxes:
 [http://www.eusdoni.de/index.php?option=com_content&view=article&catid=13:eusdoni-version-3&id=42:darvas-boxen](http://www.eusdoni.de/index.php?option=com_content&view=article&catid=13:eusdoni-version-3&id=42:darvas-boxen)
