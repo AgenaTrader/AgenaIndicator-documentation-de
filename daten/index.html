@@ -166,7 +166,7 @@ Wird ein neuer Balken während der aktuellen Handelssession hinzugefügt, wird d
 ste Balken ganz links wird nun die Nummer 501 haben.</p>
 <p>Innerhalb eines Scripts (selbsterstelltes Programm) ist das „Close“-Array die Liste aller Schlusspreise. Der letzte Schlusspreis ist daher Close[0] und der Schlusspreis davor (Balken links vom letzten Balken) ist Close[1] usw., und die älteste Kerze hat dabei den Wert von Close[501]. Hier bezeichnet die Nummer innerhalb der eckigen Klammern den Index des Arrays. Der allgemeine Begriff, der in AgenaTrader verwendet wird, ist „barsAgo“.</p>
 <p>Zusätzlich wird jeder Balken nicht nur einen Close-Wert haben, sondern auch einen  <a href="#high"><em>High</em></a>, <a href="#low"><em>Low</em></a>, <a href="#open"><em>Open</em></a>, <a href="#median"><em>Median</em></a>, <a href="#typical"><em>Typical</em></a>, <a href="#weighted"><em>Weighted</em></a>, <a href="#time"><em>Time</em></a> гnd <a href="#volume"><em>Volume</em></a>. Zeitraum wäre der Hoch der Kerze, die vor 10 Perioden aufgetreten ist, High[10], der Tief des letzten Tages wäre Low[1].</p>
-<p><strong>Wichtiger Hinweis: </strong>
+<p><strong>Wichtiger Hinweis:</strong>
 Die oben erwähnten Beispiele betreffen Berechnungen, die am Ende einer Periode ausgeführt werden. Die Werte für die aktuell laufenden und unfertigen Kerzen werden nicht berücksichtigt.</p>
 <p>Wenn Sie die Werte der aktuell laufenden und unfertigen Kerzen bekommen möchten, müssen Sie CalculateOnBarClose = falsch einstellen. Wie beim vorigen Beispiel wird der aktuell laufende Balken die Nummer 0 erhalten und so weiter.
 Close[0] wird Ihnen den aktuellsten Preis, der vom Datenanbieter geliefert wird, liefern. Für alle Werte der Balken High[0]...Low[0]... etc. sind Änderungen vorbehalten bis der Balken abgeschlossen und ein neuer Balken angefangen wird. Der einzige Wert, der sich auf keinen Fall ändern wird, ist Open[0].</p>
@@ -375,7 +375,7 @@ Print(&quot;SMA(14) berechnet über die Openkurse: &quot; + Instrument.Round2Tic
 <p><em>Weighteds</em>[0][0] entspricht <em>Weighteds</em>[0].</p>
 <p>Siehe auch  <a href="#multibars"><em>MultiBars</em></a>.</p>
 <h3 id="parameter_7">Parameter</h3>
-<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries 
+<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries
 barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten</p>
 <h3 id="verwendung_6">Verwendung</h3>
 <pre><code class="cs">Weighteds[int barSeriesIndex]
@@ -417,7 +417,7 @@ Print(Time[5]);
 <p><em>Times</em>[0][0]  entspricht <em>Times</em>[0].</p>
 <p>Siehe auch <a href="#multibars"><em>MultiBars</em></a>.</p>
 <h3 id="parameter_9">Parameter</h3>
-<p>barsAgo     Indexwert der einzelnen Bars innerhalb der Dataseries 
+<p>barsAgo     Indexwert der einzelnen Bars innerhalb der Dataseries
 barSeriesIndex  Indexwert der unterschiedlichen Zeiteinheiten</p>
 <h3 id="verwendung_8">Verwendung</h3>
 <pre><code class="cs">Times[int barSeriesIndex]
@@ -463,7 +463,7 @@ Volumes[2] die Volume-Dataseries aller Bars auf Wochenbasis.</p>
 <p>Volumes[0][0] entspricht Volumes[0].</p>
 <p>Siehe auch <a href="#multibars"><em>MultiBars</em></a>.</p>
 <h3 id="parameter_11">Parameter</h3>
-<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries </p>
+<p>barsAgo Indexwert der einzelnen Bars innerhalb der Dataseries</p>
 <p>barSeriesIndex Indexwert der unterschiedlichen Zeiteinheiten</p>
 <h3 id="verwendung_10">Verwendung</h3>
 <pre><code class="cs">Volumes[int barSeriesIndex]
