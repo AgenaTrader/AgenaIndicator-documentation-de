@@ -1572,6 +1572,16 @@ Anschließend wird der "Boden" der Box bestimmt, der sich als niedrigster Kurs e
 Sobald der Kurs aus eine dieser Boxen ausbricht, entsteht ein Kauf- bzw. Verkauf-Signal.</p>
 <p>Wenn der Kurs (in einer Long-Position) durch eine untere Begrenzung fällt, wird die Position geschlossen.</p>
 <p>Für Short-Positionen ist der Ablauf analog. </p>
+<h3 id="erlauterung">Erläuterung</h3>
+<p>Das anfängliche Top der Box ist der Hoch vom Tag 1. Zuerst sollten Sie ein neues Hoch finden, das höher als das Hoch vom Tag 1 sein sollte. Es macht nichts, wann das Hoch kommt – auch nach 5 Tagen. Wird allerdings der Boden festgestellt, ist die Box abgeschlossen.</p>
+<p>Um den Boden festzustellen, muss der Tief nach dem Tag 2 des letzten Tages sein, an dem das Box-Top festgestellt wurde, und sollte tiefer als der Tief des ursprünglichen Tiefes vom Tag 1 sein.</p>
+<p>Der Boden wird üblicherweise als Letzter festgestellt, und ein neues Hoch wird manchmal nicht festgestellt, bis der Boden feststeht. Die Darvas-Box ist abgeschlossen worden.</p>
+<p>Bricht der Preis aus dem Boden oder dem Top heraus, wird eine neue Box gestartet. Die untere Stopp-Loss Box wurde als letzter Preisprozentsatz eingezeichnet.</p>
+<p>Wir sollten den höchsten Wert des ersten Tages als obersten Rand nehmen. Am nächsten Tag schauen wir ob der Hoch des Tages höher als den vorangegangen Rand-Top ist. In dem Fall, dass der Hoch -&gt; oberster Rand = Hoch. In dem Fall, dass der Top die letzten 3 Schritte nach oben gegangen ist, und der nächste tiefer ist, wird es ein Box-Top werden. Fangen Sie an, nach dem unteren Rand zu suchen. Es ist mit dem Top identisch (Suchen Sie nach einem Trendtief, nach welchem der Tagestief höher als der vorige sein würde. In dem Fall wäre der vorige Tief der Boden der Box). Nun haben wir einen Darvas-Korridor. Wenn einer der höchsten Werte der nächsten Balken höher als die oberste Box oder tiefer als die unterste Box ist -&gt; Box wird geschlossen (eine neue Box wird gestartet, wenn der Preis aus dem Top oder aus dem Boden der Box ausbricht).</p>
+<h4 id="kaufsignal">Kaufsignal</h4>
+<p><img alt="DarvasBuySignal" src="../media/DarvasBuySignal.png" /></p>
+<h4 id="verkaufssignal">Verkaufssignal</h4>
+<p><img alt="DarvasSellSignal" src="../media/DarvasSellSignal.png" /></p>
 <h3 id="weitere-informationen_13">Weitere Informationen</h3>
 <p>Ein Handelssystem basierend auf Darvas Boxes:
 <a href="http://www.eusdoni.de/index.php?option=com_content&amp;view=article&amp;catid=13:eusdoni-version-3&amp;id=42:darvas-boxen">http://www.eusdoni.de/index.php?option=com_content&amp;view=article&amp;catid=13:eusdoni-version-3&amp;id=42:darvas-boxen</a></p>
@@ -2548,10 +2558,12 @@ Print(&quot;untere Band des MAEnvelope: &quot; + MAEnvelopes(1.5, MAEnvelopesMAT
 </code></pre>
 
 <h2 id="marketphases">MarketPhases</h2>
-<p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
+<p><strong>Die Installation des Markttechnik Standard und Markttechnik Professional Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_55">Beschreibung</h3>
 <p>Der Market Phases-Indikator ist ein weiterer wichtiger Bestandteil des Technical Analysis-Pakets, und beruht auf integrierte Trenderkennung für die unterschiedlichen relevanten Handelsmarktphasen.</p>
 <p>Die Marktphasen werden nach der Buchserie „Der Händler“ von Michael Voigt definiert.</p>
+<p><strong>Wichtiger Hinweis</strong> 
+Marktphase-Indikatoren sind im Bezug auf die Historien sehr sensibel, für gute Ergebnisse müssen mindestens 2000 Intraday-Candles geladen werden.</p>
 <p><strong>Phase 3:</strong></p>
 <p>Der Markt ist von der Bewegung weit entfernt; eine Korrektur steht unmittelbar bevor.</p>
 <p><img alt="MarketPhases Phase 3" src="../media/image44.png" /></p>
@@ -2593,6 +2605,24 @@ Print(&quot;untere Band des MAEnvelope: &quot; + MAEnvelopes(1.5, MAEnvelopesMAT
 <p>Bei der Verwendung von Marktphasen innerhalb von AgenaScript bietet der Indikator eine Datenserie an, die die oben genannten Werte von +/-3, 4, 5, 55, 66 hat.</p>
 <p>Sie können den Indikator als Filter verwenden, indem Sie die Signale von anderen Indikatoren hernehmen, wenn diese innerhalb den Marktphasen 55 oder 66 (long) sind:</p>
 <p><img alt="Condition Escort" src="../media/image50.png" /></p>
+<p><strong>Wichtiger Hinweis</strong> 
+Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich::</p>
+<ul>
+<li>Charteinstellung:</li>
+<li>Bars count</li>
+<li>
+<p>Time frame</p>
+</li>
+<li>
+<p>SpaltenEintellung Scanner:</p>
+</li>
+<li>Bars required</li>
+<li>Time frame</li>
+</ul>
+<p>Die ChartEinstellungen und Spalteneinstellungen müssen identlisch sein.
+Hier ein paar Screenshots:</p>
+<p><img alt="MarketPhasesChart" src="../media/MarketPhases_chart.png" /></p>
+<p><img alt="MarketPhasesScanner" src="../media/MarketPhases_scanner.png" /></p>
 <h3 id="marketphases-pro-beschreibung">MarketPhases Pro Beschreibung</h3>
 <p><strong>Phase5Level</strong>
 Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.</p>
@@ -4556,9 +4586,9 @@ Default: SuperTrendMode.ATR     |</p>
 <h3 id="darstellung_95">Darstellung</h3>
 <p><img alt="SuperTrend" src="../media/image98.png" /></p>
 <h3 id="beispiel_97">Beispiel</h3>
-<pre><code class="cs">if (Close[0] &gt; SuperTrend(SuperTrendMode.ATR, 14, 2.618, MovingAverageType.HMA, 14).UpTrend[0])
+<pre><code class="cs">if (Close[0] &gt; SuperTrend(SuperTrendMAType.HMA, SuperTrendMode.ATR, 14, 2.618,  14).UpTrend[0])
   Print(&quot;Markt befindet sich in einem Aufwärtstrend.&quot;);
-if (Close[0] &lt; SuperTrend(SuperTrendMode.ATR, 14, 2.618, MovingAverageType.HMA, 14).DownTrend[0])
+if (Close[0] &lt; SuperTrend(SuperTrendMAType.HMA, SuperTrendMode.ATR, 14, 2.618,  14).DownTrend[0])
   Print(&quot;Markt befindet sich in einem Abwärtstrend.&quot;);
 </code></pre>
 
