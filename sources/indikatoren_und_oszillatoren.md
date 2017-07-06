@@ -649,7 +649,7 @@ input	Eingangsdatenreihe für den Indikator
 Print("The BuySellVolume is: " + BuySellVolume()[0]);
 ```
 
-##CandleStickPattern
+## CandleStickPattern
 ### Beschreibung
 Der Indikator CandleStickPattern sucht nach bestimmten Candlestick-Formationen.
 
@@ -4277,7 +4277,7 @@ Pinker  ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185,
 ### Visualisierung
 ![Rainbow](./media/rainbow.png)
 
-##Range
+## Range
 ### Beschreibung
 Range liefert ist für jeden Bar die Spanne zwischen Hoch und Tief in Ticks. Range ist damit immer größer oder gleich 0.
 
@@ -4837,7 +4837,7 @@ StochasticsFast(int periodD, int periodK).K[int barsAgo]
 StochasticsFast(IDataSeries input, int periodD, int periodK).K[int barsAgo]
 ```
 
-###Rückgabewert
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B. **StochasticsFast**(7,14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -5297,7 +5297,7 @@ Siehe auch [*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
 ### Darstellung
 ![DayLines](./media/image107.png)
 
-##DayLinesAdv
+## DayLinesAdv
 ### Beschreibung
 Der Indikator DayLinesAdv zeichnet im Chart  horizontale Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
 An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.
@@ -5827,7 +5827,7 @@ Opacity:	Durchsichtigkeit der Balken. 0 = nicht sichtbar    255 = hohe Sichtbark
 Der Indikator ist lediglich für die Darstellung im Chart vorgesehen.
 Er besitzt keine Datenreihe zur Auswertung in anderen Scripts. Damit ist er nicht in AgenaScript und auch nicht im Condition Escort für weitere Auswertungen einsetzbar.
 
-##Volume Rate of Change (VROC)
+## Volume Rate of Change (VROC)
 ### Beschreibung
 Der Volume Rate of Change (ROC, Rate of Change = Änderungsrate) ist identisch mit dem Indikator Rate Of Change (ROC) mit dem Unterschied, dass anstelle der Kursdaten die Volumendaten (VOL) in die Berechnung einfließen.
 
@@ -5912,7 +5912,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeKeltnerChannels
+## VolumeKeltnerChannels
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -6074,7 +6074,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeTickSpeed 
+## VolumeTickSpeed 
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -6163,7 +6163,7 @@ Wenn es sich um einen steigenden Bar handelt (Close über Open) wird das Volumen
 Der Indikator ist nur zur Verwendung mit historischen Daten vorgesehen. Für die Darstellung von Volumenänderungen in Realtime verwenden Sie bitte den Indikator VolumeProfile.
 
 
-##VolumeZoneOscillator
+## VolumeZoneOscillator
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
