@@ -5278,7 +5278,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **DailyQuoteMoves**(...)\[**in
 input Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![DailyPerformance](./media/DailyPerformance.png)
+![DailyQuoteMoves](./media/DailyQuoteMoves.png)
 
 ### Beispiel
 ```cs
