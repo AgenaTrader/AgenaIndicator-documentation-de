@@ -5255,6 +5255,37 @@ DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalcul
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Points, 1)[0]
 ```
 
+##DailyQuoteMoves
+### Beschreibung
+Dieser Indikator zeigt die täglichen Preisbewegungen des laufenden Markts an, täglich beginnend an der Null-Linie. Mit diesem Indikator können Sie sehen, ob der Markt im Augenblick über oder unter dem Einstiegspreis bei Marktstart ist. Ein Beispiel: Der FDAX hat die Eigenschaft, dass – sobald das 100, 200, 400-Level erreicht ist, der Markt das Potential hat, sich zu drehen.
+
+**Klappt nur bei Intraday charts!**
+
+### Verwendung
+```cs
+DailyQuoteMoves()
+DailyQuoteMoves(IDataSeries input)
+DailyQuoteMoves()[int barsAgo]
+DailyQuoteMoves(IDataSeries input) [int barsAgo]
+```
+
+### Rückgabewert
+**double**
+
+Bei Verwendung der Methode mit einem Index ( z.B. **DailyQuoteMoves**(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
+
+### Parameters
+input Eingangsdatenreihe für den Indikator
+
+### Darstellung
+![DailyPerformance](./media/DailyPerformance.png)
+
+### Beispiel
+```cs
+//Wieviel Ticks liegen zwischen dem Schlusskurs vom aktuellen Bar und dem Eröffnungskurs von dem aktuellen Tag? Falls dieser Bar der erste des Tages ist, wird die Differenz Open – Close vom dem Bar ausgegeben.
+DailyQuoteMoves()[0]
+```
+
 ##DayLines
 ### Beschreibung
 Der DayLines-Indikator zeichnet im Chart  Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
