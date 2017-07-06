@@ -1,4 +1,4 @@
-#Indikatoren & Oszillatoren
+# Indikatoren & Oszillatoren
 
 **Handeln wie die Profis!**
 
@@ -13,7 +13,7 @@ Für jeden Indikator finden Sie eine kurze Beschreibung der Funktionsweise, Wiss
 
 ![indicators](./media/image1.png)
 
-##Accumulation/Distribution (ADL)
+## Accumulation/Distribution (ADL)
 ### Beschreibung
 Das Konzept des Indikators Accumulation Distribution Line (ADL) wurde von Marc Chaikin entwickelt. Der ADL ist ein Volumen Indikator. Er zeigt die Geldströme an.
 Der ADL ist eine Weiterentwicklung des On Balance Volume (OBV). Das OBV von Joe Granville war einer der ersten Volumen Indikatoren.
@@ -56,7 +56,7 @@ if (IsSerieRising(ADL())
 Print("The ADL indicator is rising.");
 ```
 
-##Adaptive Price Zone (APZ)
+## Adaptive Price Zone (APZ)
 ### Beschreibung
 Der Adaptive Preis Zone Indikator wurde 2006 in dem S&C Artikel "Trading With An Adpative Price Zone" von Lee Leibfarth beschrieben. Es ist ein auf Unbeständigkeit basierender technischer Indikator, der dazu benutzt werden kann, Punkte zu identifizieren, an denen der Markt seine Richtung umkehren kann. Er ist eine Reihe von Bändern, die auf einem doppelt geglätteten exponentiell gleitenden Durchschnitt basieren. Die Bänder bilden einen Kanal, der den Durchschnittspreis umgibt und die Preisschwankungen verfolgt. Er bewährt sich besonders in volatilen Märkten. Überquert der Preis das obere Band der Zone kann dies eine Gelegenheit anzeigen, in Erwartung einer Umkehr zu verkaufen. Andererseits zeigt eine Überschreitung der unteren Begrenzung eine Gelegenheit an, in Erwartung einer Umkehr zu kaufen.
 
@@ -101,7 +101,7 @@ Print("Value for the upper APZ band : " + APZ(2, 20).Upper[0]);
 Print("Value for the lower APZ band: " + APZ(2, 20).Lower[0]);
 ```
 
-##Aroon
+## Aroon
 ### Beschreibung
 Der Aroon, 1995 von Tushar Chande entwickelt, ist ein Indikator der technischen Analyse und dient der Trendbestimmung eines Kurses.
 Der AROON besteht aus zwei Indikatorlinien - dem AROON-UP und dem AROON-DOWN. 
@@ -184,7 +184,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Value for the oscillator is: " + AroonOscillator(20)[0]);
 ```
 
-##Average Directional Index (ADX)
+## Average Directional Index (ADX)
 ### Beschreibung
 Der Average Directional Movement Index ADX ist ein Indikator der technischen Analyse und dient der Trendstärkebestimmung eines Kurses. Er wurde von Welles Wilder 1978 entwickelt und in seinem Buch „New Concepts in Technical Trading Systems“ veröffentlicht. (Quelle: Wikipedia)
 
@@ -222,7 +222,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Value of the ADX: " + ADX(20)[0]);
 ```
 
-##Average Directional Movement Rating (ADXR)
+## Average Directional Movement Rating (ADXR)
 ### Beschreibung
 Der Indikator Average Directional Movement Rating (ADXR) entspricht dem aktuellen ADX addiert mit dem ADX von vor n Tagen geteilt durch 2.
 ( aktueller ADX + ADX vor n Tagen ) / 2
@@ -260,7 +260,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Value of the ADXR: " + ADXR(10, 14)[0]);
 ```
 
-##Average True Range (ATR)
+## Average True Range (ATR)
 ### Beschreibung & Interpretation
 Die True Range (TR) - und ihre geglättete Variante, die Average True Range (ATR) - wurde von Welles Wilder 1978 in seinem Buch "New Concepts in Technical Trading Systems" vorgestellt. Die ATR wird auch "Wilders Volatility" genannt. Wilder suchte nach einer Möglichkeit, die Volatilität der Rohstoff- und Terminmärkte in einem Indikator darzustellen.
 
@@ -306,7 +306,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The current ATR value is: " + ATR(14)[0]);
 ```
 
-##Balance of Power (BOP)
+## Balance of Power (BOP)
 ### Beschreibung
 Der Balance of Power (BOP) wurde von Igor Livshin im August 2001 in der Ausgabe des "Stocks and Commodities Magazine" beschrieben.
 Der BOP-Indikator gibt die Stärke der Käufer (Bullen) gegenüber den Verkäufern (Bären) an. Er oszilliert zwischen den Werten -100 und 100.
@@ -342,7 +342,7 @@ smooth Einstellung zur Glättung
 Print("The Balance of Power value is: " + BOP(5));
 ```
 
-##Bollinger Bands
+## Bollinger Bands
 ### Beschreibung & Interpretation
 Die Bollinger Bands (BB) wurden von John Bollinger 1983 entwickelt. Bollinger Bänder sind Kanallinien, die in und um die Preisstruktur in einem Chart gezeichnet werden. Der Unterschied zwischen Prozentbändern (Envelopes) und Bollinger Bändern liegt in der Volatilität. Prozentbänder verlaufen in einem konstanten Abstand zum Preis. Bollinger Bänder hingegen berücksichtigen die 20-Tage-Volatilität (in der Standardeinstellung). In Phasen geringer Volatilität liegen die Bänder eng am Preis, steigt die Volatilität an, weiten sich die beiden Bänder aus.
 
@@ -412,7 +412,7 @@ Print("Value of the middle band: " + Bollinger(2, 20)[0]);
 Print("Value of the lower band: " + Bollinger(2, 20).Lower[0]);
 ```
 
-##Bollinger Percent B (%b)
+## Bollinger Percent B (%b)
 ### Beschreibung
 Bänder Indikatoren, wie die Bollinger Bänder haben meist einen direkten Bezug zur Kursentwicklung, wodurch die Beziehung zwischen dem Kurs und den diesen Kurs umschließenden Bändern sehr anschaulich dargestellt werden kann. Aus dieser Beziehung lassen sich weitere Indikatoren (bzw. Oszillatoren) ableiten, die die die relative Position des Kurses in Bezug zu den Bändern darstellen. Diese Art Indikatoren werden unter dem Chart in einem separaten Chartpanel dargestellt. Ein Vertreter dieser Gruppe ist der Bollinger Bands %B (oder auch Bollinger Bands Oszillator - BBO bzw. nur b%)
 
@@ -474,7 +474,7 @@ numStdDev	Standardabweichung
 
 **Print**("Value of the Bollinger Percent B is: " + **BollingerPercentB**(20, 2)\[0\]);
 
-##Bollinger Band Width (BBWidth)
+## Bollinger Band Width (BBWidth)
 ### Beschreibung
 Bollinger Bands Width (BBWidth) ist neben dem Bollinger Percent B (%b) ein weiterer aus den Bollinger Bändern abgeleiteter Indikator.
 Die Bandweite gibt die Breite der Bänder im Verhältnis zum gleitenden Durchschnitt an und ist damit ein Indikator, der die Volatilität anzeigt. Die Bandweite errechnet sich, indem die Differenz aus dem oberen und dem unteren Band durch das mittlere Band (dem Durchschnitt) geteilt wird.
@@ -535,7 +535,7 @@ Print("The value of the Bollinger Band Width is: " + BBWidth(2, 20).BandWidth[0]
 Print("The value of the signal line is: " + BBWidth(2, 20).Threshold[0]);
 ```
 
-##Bollinger MTF (MultiTimeFrame)
+## Bollinger MTF (MultiTimeFrame)
 ### Beschreibung
 Der Indikator BollingerMTF ist die Multi TimeFrame-Variante der Bollinger Bänder (Bollinger Bands).
 Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
@@ -618,7 +618,7 @@ protected override void OnCalculate()
 }
 ```
 
-##BuySellVolume
+## BuySellVolume
 ### Beschreibung
 Der Indikator BuySellVolume zeigt für den aktuellen Bar den Kauf- und den Verkaufsdruck als Umsatzbar ähnlich dem Volumen (Vol) unter dem Chart an. Dazu werden Trades als "Kauf" bzw. als "Verkauf" klassifiziert. Für diese Klassifizierung wird ein "Kauf" immer dann angenommen, wenn die Transaktion am oder über dem Ask ausgeführt wurde. Als "Verkauf" wird ein Umsatz am oder unter dem Bid gewertet. Trades im Inside Market werden ignoriert.
 
@@ -715,7 +715,7 @@ if (CandelStickPattern(ChartPattern.ShootingStar, 5)[0] == 1)
 Print("Pattern ShootingStar found!");
 ```
 
-##ChaikinMoneyFlow (CMF)
+## ChaikinMoneyFlow (CMF)
 ### Beschreibung
 Der Chaikin Money Flow Index (CMF) wurde von Marc Chaikin entwickelt. Es ist ein Volumen-Indikator der versucht, folgende Frage zu beantworten: Wohin fließt das Geld? In die Aktie rein = Akkumulation oder aus der Aktie raus = Distribution. Wobei der CMF nicht nur Anwendung bei Aktien findet. Es können andere Instrumente wie Rohstoffe oder Devisen analysiert werden – sofern Umsätze publiziert werden. Chaikin wollte mit seinem CMF das On Balance Volume (OBV) von Granville erweitern und verbessern. Beim CMF wird die Position der Schlusskurse innerhalb der gehandelten Tagesrange (Handelsspanne) in Relation zum Volumen gestellt. Konkret gesagt geht es um das Handelsvolumen, also die Summe der gehandelten Aktien, multipliziert mit dem jeweiligen Kurs. Denn nur das Handelsvolumen zeigt die Geldmengen an, die in einen Wert geflossen sind oder abgezogen wurden. Der Indikator zeigt an, ob „akkumuliert“ wurde – sprich Kaufdruck aufgebaut wurde, welcher sich in der Regel in steigenden Kurse ausdrückt, oder ob „distributiert“ wurde. In diesem Fall wird Verkaufsdruck aufgebaut und in der Regel fallen die Kurse. (Quelle: VTAD)
 
@@ -762,7 +762,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der ChaikinMoneyFlow Wert ist: " + ChaikinMoneyFlow(21)[0]);
 ```
 
-##Chaikin Oscillator
+## Chaikin Oscillator
 ### Beschreibung
 Der Chaikin Oszillator ist ein Volumenindikator, der anzeigt, ob neue Highs von erhöhten Volumen begleitet werden. Nachdem Larry Williams das OBV-Konzept von Joe Granville weiterentwickelt hatte, machte sich Marc Chaikin daran, das Konzept der Accumulation/ Distribution zu verfeinern.
 Der Chaikin Oszillator ist einfach der Moving Average Convergence Divergence Indicator (MACD) angewendet auf die Accumulation/Distribution Linie. Berechnet wird die Differenz zwischen einem 3-Tage exp. gleitenden Durchschnitt und einem 10-Tage exp. gleitenden Durchschnitt der Accumulation/Distribution Linie.
@@ -800,7 +800,7 @@ slow		Anzahl der Bars, für die Berechnung des Slow EMA
 Print("The Chaikin Oscillator value is: " + ChaikinOscillator(3, 10)[0]);
 ```
 
-##ChaikinVolatility (CVL)
+## ChaikinVolatility (CVL)
 ### Beschreibung
 Der Indikator ChaikinVolatility (CVL) ist einer von mehreren Indikatoren, die das Ziel haben, die Schwankungsbreite von Kursbewegungen zu messen. Andere Vertreter dieser Indikatorengruppe sind z.B. die Bollinger-Bänder, die Standardabweichung (StdDev) oder die Average True Range (ATR).
 In seinem Volatilitätsindikator verwendet Marc Chaikins die tägliche Handelsspanne (Tageshöchstkurs minus Tagestiefstkurs) als grundlegendes Maß für die Volatilität. Damit unterstellt er, dass bei steigender Volatilität die Handelsspanne größer wird und bei nachlassender Volatilität die Handelsspanne kleiner wird. (Quelle: VTAD)
@@ -838,7 +838,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The value of the Chaikin Volatility is: " + ChaikinVolatility(14)[0]);
 ```
 
-##Chande Momentum Oscillator (CMO)
+## Chande Momentum Oscillator (CMO)
 ### Beschreibung
 Der Chande Momentum Oscillator (CMO) wurde von Tushar Chande entwickelt und in dem Buch "The New Technical Trader" (Wiley, 1994) von Chande/Kroll präsentiert. Der CMO ähnelt dem herkömmlichen Momentum und auch dem RSI. Während der RSI mit einem Up-Momentum und einer Glättungskomponente arbeitet, werden beim CMO sowohl auf- als auch abwärtsgerichtete Momentum-Daten berücksichtigt. Da auf eine Glättung verzichtet wird, kommt das kurzfristige Momentum besser zur Geltung. Die Formel kreiert einen Oszillator, dessen Range zwischen +100 und -100 schwankt. (Quelle: http://www.boersenwissen.de)
 
@@ -877,7 +877,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 //Ausgabe des Wertes für den Chande Momentum Oscillator
 Print("The current value for the Chande Momentum Oscillator is: " + CMO(14)[0]);
 ```
-##Climactic Distance
+## Climactic Distance
 ### Beschreibung
 Der Climactic Distance-Indikator wurde von Gilbert Kreuzthaler, Geschäftsführer von Include IT GmbH und Gründer von AgenaTrader.com, erfunden und entwickelt. Dieser Indikator wird im Location Point Trading-System eingesetzt. Er berechnet den durchschnittlichen (Median-) Kurs der aktuellen und historischen Kerze mit einem Abstand zum einfachen gleitenden Durchschnitt (SMA) der letzten 20 Perioden. Zusätzlich misst er auch die durchschnittliche Kursabweichung innerhalb der letzten 80 Perioden. Wenn der durchschnittliche (Median-) Kurs die oberste oder unterste Kursabweichung übertrifft, gilt der Markt als climactic (kulminierend), und dies beeinflusst die Handelsentscheidungen, die im Location Point Trading gemacht werden.
 
@@ -938,7 +938,7 @@ Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).Distance[0]);
 Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).MovingAverage[0]);
 ```
 
-##Commodity Channel Index (CCI)
+## Commodity Channel Index (CCI)
 ### Beschreibung
 Der Commodity Channel Index (CCI) wurde 1980 von Donald Lambert entwickelt und fand seine erste Verwendung am Warenterminmarkt. Der CCI ist ein recht komplexer, trendfolgend ausgerichteter Indikator. Er funktioniert besonders gut in Seitwärtsbewegungen mit einem deutlichen Seitwärtstrendkanal. Er wird verwendet, um Beginn und Ende von Kurstrends, von saisonalen Trends und Zyklen zu erkennen. (Quelle: VTAD)
 
@@ -980,7 +980,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The value of the Commodity Channel Index is: " + CCI(14));
 ```
 
-##COTAggregatedIndexPositionDisaggregated
+## COTAggregatedIndexPositionDisaggregated
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1023,7 +1023,7 @@ angekündigt werden
 angekündigt werden
 
 
-##COTCommercialIndex
+## COTCommercialIndex
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1054,7 +1054,7 @@ angekündigt werden
 to be announced
 
 
-##COTOpenInterestDisaggregated
+## COTOpenInterestDisaggregated
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1100,7 +1100,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##COTOpenInterestLegacy
+## COTOpenInterestLegacy
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1149,7 +1149,7 @@ angekündigt werden
 angekündigt werden
 
 
-##COTReportDisaggregated
+## COTReportDisaggregated
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1207,7 +1207,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##COTReportLegacy
+## COTReportLegacy
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1251,7 +1251,7 @@ angekündigt werden
 angekündigt werden
 
 
-##COTStockDummy
+## COTStockDummy
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -1279,7 +1279,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##COTLargeTraderActivity
+## COTLargeTraderActivity
 
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
@@ -1376,7 +1376,7 @@ Print("The upper boundary for the Darvas box is: " + Darvas().Upper[0]);
 Print("The lower boundary for the Darvas box is: " + Darvas().Lower[0]);
 ```
 
-##Directional Movement (DM)
+## Directional Movement (DM)
 ### Beschreibung
 Der Directional Movement Indikator (DM) ist identisch mit dem ADX Indikator, wobei hier zusätzlich die Werte +DM und -DM berechnet werden. Diese Werte fließen später in die Berechnung des Directional Movement Index (DMI) ein.
 
@@ -1421,7 +1421,7 @@ Print("The current +DM value is: " + DM(14).DiPlus[0]);
 Print("The current –DM value is: " + DM(14).DiMinus[0]);
 ```
 
-##Donchian Channel
+## Donchian Channel
 ### Beschreibung
 Der Donchian Channel ist unter dem Begriff 4-Wochen-Regel bekannt geworden und funktioniert folgendermaßen: Wenn der aktuelle Kurs den Höchstkurs der letzten vier Wochen übersteigt, wird eine Long-Position eröffnet. Besteht zur gleichen Zeit eine Short-Position, wird diese geschlossen. Fällt der Kurs unter den Tiefstkurs der letzten vier Wochen, wird eine Long-Position geschlossen bzw. eine Short-Position aufgebaut. 
 Der Handelsansatz des Donchian Channel ist ein reines Trendfolgesystem und setzt das Prinzip „Bei Stärke kaufen, bei Schwäche verkaufen“ direkt um. Es ist ein Breakout System und wurde von den "Turtles" verwendet. 
@@ -1475,7 +1475,7 @@ Print("The middle band is at: " + DonchianChannel(14)[0]);
 Print("The lower band is at: " + DonchianChannel(14).Lower[0]);
 ```
 
-##Directional Movement Index (DMI)
+## Directional Movement Index (DMI)
 ### Beschreibung
 Das Directional Movement Konzept wurde 1978 von Welles Wilder jr. in seinem Buch „New Concepts in Technical Trading Systems“ vorgestellt. Dieses Konzept beinhaltet folgende Komponenten:
 
@@ -1520,7 +1520,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The current DMI value is: " + DMI(20)[0]);
 ```
 
-##Double Stochastics (DSS)
+## Double Stochastics (DSS)
 ### Beschreibung
 Die Double Smothed Stochastic (DSS) wurde zuerst von W. Blau vorgestellt. Es handelt sich um einen doppelt geglätteten Stochastic-Indikator. Einige Zeit später wurde von W. Bressert eine weitere Variante einer doppelt geglätteten Stochastik vorgestellt. Diese auch als DSS Bressert bekannte Variante konnte die Qualität der Signale gegenüber der Variante von Blau deutlich verbessern.  Der Indikator reagiert sensibler auf kleinere Kursbewegungen und erzeugt mehr Signale als die Version von W. Blau. Die Bressert-Version taucht wesentlich deutlicher in die Extremzonen ein als die Blau-Version.
 
@@ -1587,7 +1587,7 @@ EMA-Period2	Periode für den zweiten EMA in der Berechnung für Variante Blau2. 
 Print("The value of the DSS Bressert %K is: " + DoubleStochastics(10, DoubleStochasticsMode.Bressert, 2)[0]);
 ```
 
-##Dynamic Momentum Index (DMIndex)
+## Dynamic Momentum Index (DMIndex)
 ### Beschreibung
 Hyperlink+Keywords
 Der Dynamic Momentum Index (DMIndex), wurde von Tushar Chande entwickelt. Es handelt sich hierbei um eine spezielle Variante des Relative Strength Index (RSI).
@@ -1629,7 +1629,7 @@ smooth	Einstellung zur Glättung
 Print("The current value for the DMIndex is: " + DMIndex(3)[0]);
 ```
 
-##Ease of Movement (EOM)
+## Ease of Movement (EOM)
 ### Beschreibung
 Der Ease of Movement (EOM) ist ein interessanter Indikator, der von Richard W. Arms entworfen wurde. Der EOM versucht die Bewegung des Preises, in ein Verhältnis zum aufgewendeten Volumen zu setzen. Je stärker der Indikator ausschlägt, desto größer war der Kursfortschritt mit hohem Volumen. Der EOM ist ein sensibler Seismograph von Angebot und Nachfrage.
 Arms glättet den EOM mit einem 13-tägigen SMA. Man kann ihn aber auch völlig ungeglättet benutzen. (Quelle: http://www.volumen-analyse.de)
@@ -1679,7 +1679,7 @@ Ease = MidpointMove / Box Ratio
 Print("The value for the Ease of Movement is: " + EaseOfMovement(14, 10000)[0]);
 ```
 
-##Fisher Transform
+## Fisher Transform
 ### Beschreibung
 Der Indikator FisherTransform wurde im November 2002 vom Physiker John Ehlers in einem Artikel im "Stocks and Commodities Magazine" veröffentlicht. Der Indikator soll große Wendepunkte signalisieren.
 Viele Indikatoren reagieren in seitwärts gerichteten Marktphasen mit chaotischen Bewegungsmustern, die entweder gar nicht oder nur mir vielen Fehlsignalen versetzt, verwendet werden können. Mit Hilfe der „Inverse Fisher Transformation“ können diese Indikatoren derart verändert werden, dass die Bewegungen weniger zufällig und die Signalqualität dadurch verbessert wird. Die Transformation komprimiert, streckt oder staucht die Eingangswerte der Funktion derart, dass diese mit großer Wahrscheinlichkeit zwischen -1 und 1 ausgegeben werden. Daraus resultier ein nahezu eindeutiges Bewegungsmuster, selbst bei Indikatoren wie dem RSI, der normalerweise sehr unruhige und chaotische Bewegungen vollzieht. (Quelle: tradesignalonline.com)
@@ -1715,7 +1715,7 @@ FisherTransform(IDataSeries input, int period)[int barsAgo]
 Print("The current value for the Fisher Transform is: " + FisherTransform(10)[0]);
 ```
 
-##Forecast Oscillator (FOSC)
+## Forecast Oscillator (FOSC)
 ### Beschreibung
 Der Forecast Oscillator (FOSC) vergleicht den aktuellen Kurs mit dem Ergebnis des Time-Series-Forecast (TSF). Angegeben wird das prozentuale Verhältnis der Differenz zwischen dem Schlusskurs und dem Wert des Time Series Forecast für den vorhergegangenen Bar.
 
@@ -1758,7 +1758,7 @@ if (FOSC(14)[0] > 0)
 Print("The FOSC is bigger than zero, which indicates rising price movements.");
 ```
 
-##HighestHighIndex()
+## HighestHighIndex()
 ### Beschreibung
 HighestHighIndex liefert den Index des Bars mit dem höchsten Hoch, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 Im Unterschied zu HighestBar() ist dies ein Indikator, der im Chart dargestellt werden kann.
@@ -1788,7 +1788,7 @@ BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wi
 Print("The highest high in the last 14 bars was " + HighestHighIndex(14)[0] + " bars ago.");
 ```
 
-##HighestHighPrice()
+## HighestHighPrice()
 ### Beschreibung
 HighestHighPrice liefert das höchste Hoch, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
@@ -1819,7 +1819,7 @@ BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wi
 Print("The highest high for the last 14 bars is " + HighestHighPrice(14)[0]);
 ```
 
-##IchimokuCloud
+## IchimokuCloud
 ### Beschreibung
 Der Ichimoku-Indikator wurde in den 30er Jahren entwickelt und erst 1968 von dem japanischen Journalist Goichi Hosada, der sich „Ichimoku Sanjin“ nannte, vorgestellt.
 Der Indikator besteht aus fünf Linien:
@@ -1901,7 +1901,7 @@ periodSlow		Anzahl der Perioden zur Berechnung von Chikou Linie, (default: 52)
 ### Darstellung
 ![IchimokuCloud](./media/image33.png)
 
-##InsideBarsMT
+## InsideBarsMT
 **Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.**
 
 ### Beschreibung
@@ -1987,7 +1987,7 @@ else
 }
 ```
 
-##Keltner Channel
+## Keltner Channel
 ### Beschreibung
 Im Jahr 1960 veröffentliche Chester W. Keltner sein Buch „How to Make Money in Commodities“ und präsentierte seine Keltner-Channels.
 Kanäle oder Bänder bestehen aus zwei Komponenten: einem gleitenden Durchschnitt (GD) als Trendfolger, wobei der GD mit unterschiedlichen Methoden berechnet werden kann und eine diesen GD umhüllende Komponente. Komponente Eins gibt die Trendrichtung und die Trendstärke an, Komponente Zwei definiert Unterstützungs- und Widerstandszonen und zeigt Extrembewegungen des Kurses an.
@@ -2056,7 +2056,7 @@ Print("Current value of the middle Keltner Channel band: " + KeltnerChannel(1.5,
 Print("Current value of the lower Keltner Channel band: " + KeltnerChannel(1.5, 15).Lower[0]);
 ```
 
-##KeyReversalUp
+## KeyReversalUp
 ### Beschreibung
 KeyReversalUp sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 1.  Das aktuelle Close ist höher als das vorhergegangene Close
@@ -2090,7 +2090,7 @@ if (KeyReversalUp(10)[0] == 1)
 Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
-##KeyReversalDown
+## KeyReversalDown
 ### Beschreibung
 KeyReversalDown sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
@@ -2125,7 +2125,7 @@ if (KeyReversalDown(10)[0] == 1)
 Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
-##KeyReversalUpAtSMA
+## KeyReversalUpAtSMA
 ### Beschreibung
 KeyReversalUpAtSMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
@@ -2162,7 +2162,7 @@ if (KeyReversalUpAtSMA(10)[0] == 1)
 Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
-##KeyReversalDownAtSMA
+## KeyReversalDownAtSMA
 ### Beschreibung
 KeyReversalDownAtSMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
@@ -2199,7 +2199,7 @@ if (KeyReversalDownAtSMA(10)[0] == 1)
 Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
-##KeyReversalUpAtEMA
+## KeyReversalUpAtEMA
 ### Beschreibung
 KeyReversalUpAtEMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
@@ -2235,7 +2235,7 @@ if (KeyReversalUpAtEMA(10)[0] == 1)
 Print("Es ist eine Long-Umkehrformation aufgetreten.");
 ```
 
-##KeyReversalDownAtEMA
+## KeyReversalDownAtEMA
 ### Beschreibung
 KeyReversalDownAtEMA sucht in einer vorgegebenen Anzahl von Perioden nach einer wie folgt definierten Umkehrformation:
 
@@ -2271,7 +2271,7 @@ if (KeyReversalDownAtEMA(10)[0] == 1)
 Print("Es ist eine Short-Umkehrformation aufgetreten.");
 ```
 
-##KlingerVolumeOscillator
+## KlingerVolumeOscillator
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -2292,7 +2292,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##Linear Regression
+## Linear Regression
 ### Beschreibung
 Die Lineare Regression wird zur Trendbestimmung eingesetzt. Dabei werden die Kurse als abhängige und die Zeit als unabhängige Variablen verwendet. Mit Hilfe der Methode des kleinsten Quadrats wird eine gerade Linie so durch den Kursverlauf gelegt, dass der Abstand der Kurse zur Linie minimal ist. Mit dieser Methode lässt sich ein Trend zwischen zwei Zeitpunkten quantitativ darstellen. Die Regressionsgerade befindet sich nach der Berechnung in der Mitte des Kursverlaufs.
 Der Indikator Linear Regression stellt die Endwerte multipler linearer Regressionstrendlinien dar. Jeder Punkt entlang des Indikators ist ein Endwert einer linearen Regressionstrendline. Das Ergebnis erinnert so an einen gleitenden Durchschnitt. Im Gegensatz zu einem gleitenden Durchschnitt, weist die resultierende Linie des Lineare Regression Indikators jedoch weniger Verzögerung auf.
@@ -2332,7 +2332,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert der linearen Regression ist: " + LinReg(14)[0]);
 ```
 
-##LinRegIntercept
+## LinRegIntercept
 ### Beschreibung
 Linear Regression Intercept (LinRegIntercept) liefert den Wert der Regressionskonstante, d.h. aus mathematischer Sicht den jeweiligen Schnittpunkt der Regressionsgeraden mit der Preisachse.
 
@@ -2370,7 +2370,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert der Regressionskonstante ist: " + LinRegIntercept(14)[0]);
 ```
 
-##LinRegSlope
+## LinRegSlope
 ### Beschreibung
 Linear Regression Slope (LinRegSlope) liefert den Anstieg (Slope = Neigung) der linearen Regressionsgeraden. Er misst sozusagen die "Steilheit" der Regressionsgeraden.
 
@@ -2407,7 +2407,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert des Anstiegs der linearen Regressionsgeraden ist:  " + LinRegSlope(14)[0]);
 ```
 
-##LowestLowIndex()
+## LowestLowIndex()
 ### Beschreibung
 LowestLowPrice liefert das tiefste Tief, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
@@ -2439,7 +2439,7 @@ BarsBack  Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wi
 Print("Das tiefste Tief der letzten 14 Bars liegt" + LowestLowIndex(14)[0] + " Bars zurück");
 ```
 
-##LowestLowPrice()
+## LowestLowPrice()
 ### Beschreibung
 LowestLowPrice liefert das tiefste Tief, das innerhalb einer bestimten Anzahl Perioden erreicht wurde.
 
@@ -2471,7 +2471,7 @@ BarsBack	Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wir
 Print("Das tiefste Tief der letzten 14 Bars ist " + LowestLowPrice(14)[0]);
 ```
 
-##MACD
+## MACD
 ### Beschreibung
 Der Moving Average Convergence/Divergence (MACD) wurde Ende der siebziger Jahre (des vergangenen Jahrhunderts) von Gerald Appel erfunden und ist einer der beliebtesten Instrumente der technischen Analyse geworden. 
 Laut Gerald Appel ist „der MACD ein Indikator für alle Zeitebenen. Mit Monatsdaten kann er zur Analyse längerfristiger Börsentrends herangezogen werden, mit Wochen- oder Tagesdaten für mittel- und kürzerfristige Trends und mit Intraday-Daten sogar für stündlichen oder minütliche Marktentwicklungen. Damit ist er auch für den kurzfristigen Tageshandel geeignet. Der Indikator ist häufig in der Lage, genaue Signale für den Marktein- und ausstieg zu geben. Eine seiner stärksten Eigenschaften ist seine Fähigkeit, das nahende Ende größerer mittelfristiger Kursrückgänge festzustellen, die zugleich auch günstige Zeitpunkte für den Markteintritt darstellen.“
@@ -2537,7 +2537,7 @@ Print("Der aktuelle Wert der Signal-Linie ist: " + MACD(12,26,9).Avg[0]);
 Print("Die Differenz zw. MACD und Signallinie beträgt:" + MACD(12,26,9).Diff[0]);
 ```
 
-##MAEnvelopes
+## MAEnvelopes
 ### Beschreibung
 Im Indikator MAEnvelopes werden durch einen passenden Gleitendern Durchschnitt Bänder (Envelop = Umschlag) gebildet, die, angemessen um einen bestimmte Prozentsatz nach oben und unten verschoben, die Kursentwicklung einhüllen. Dadurch sollen die wahrscheinlichen Kursschwankungen eingegrenzt werden. Envelopes markieren die obere und untere Bewegungsgrenze der Kurse. Dadurch entsteht eine Handelszone, die in Form zweier Bänder einen variablen Kanal nachbildet. Dieser Indikator ist gut in Seitwärtsbewegungen einzusetzen.
 
@@ -2605,7 +2605,7 @@ Print("mittlere Band des MAEnvelope:" + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 
 Print("untere Band des MAEnvelope: " + MAEnvelopes(1.5, MAEnvelopesMAType.SMA, 14).Lower[0]);
 ```
 
-##MarketPhases
+## MarketPhases
 **Die Installation des Markttechnik Standard und Markttechnik Professional Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -2718,7 +2718,7 @@ Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
 Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
 
 
-##MarketValue
+## MarketValue
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Description
@@ -2751,7 +2751,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##Momentum (MOM)
+## Momentum (MOM)
 ### Beschreibung
 Das Momentum (MOM) ist einer der beliebtesten Indikatoren, der schon seit langer Zeit verwendet wird. Viele Trader schwören auf diesen simplen Indikator, weil er die Abschwächung der Bewegung misst, ohne mit einer zu komplizierten Formel das Letzte aus der Vorhersagbarkeit der Märkte herausholen zu wollen. Er ist ein einfaches Werkzeug und kann trotzdem gute Dienste leisten.
 Der Momentum-Indikator ist ein Vertreter einer ganzen Familie von Indikatoren, die die Stärke einer Bewegung messen. Weitere Vertreter sind zum Beispiel der RSI und der CCI.
@@ -2773,7 +2773,7 @@ Momentum (int period)[int barsAgo]
 Momentum (IDataSeries input, int period)[int barsAgo]
 ```
 
-###Rückgabewert
+### Rückgabewert
 **double**
 
 Bei Verwendung der Methode mit einem Index ( z.B.  **Momentum**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
@@ -2792,7 +2792,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für das Momentum ist " + Momentum(14)[0]);
 ```
 
-##Money Flow Index (MFI)
+## Money Flow Index (MFI)
 ### Beschreibung
 Der Money Flow Index (MFI) wurde von Gene Quong und Avrum Soudack veröffentlicht. Um den Relative Strength Index (RSI) zu verbessern wird eine Volumenkomponente eingebaut. Mit Hilfe des MFI soll die Stärke des in den Markt einfließenden Geldes messbar gemacht werden.
 Der MFI wird wie der RSI errechnet, mit dem Unterschied, dass zuvor die Kurse mit dem Volumen multipliziert werden. Es werden wie beim RSI 14 Tage als Einstellung empfohlen. (Quelle: VTAD)
@@ -2831,7 +2831,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert des MFI ist: " + MFI(14)[0]);
 ```
 
-##Moving Averages
+## Moving Averages
 ### Varianten
 [*DEMA*](#dema-double-exponential-moving-average) - Double Exponential Moving Average
 
@@ -2880,7 +2880,7 @@ Kreuzt der kurze Durchschnitt den langen Durchschnitt von oben nach unten, wird 
 Eine Erweiterung bietet die Benutzung von drei gleitenden Durchschnitten (= Triple Crossover Method). R.C. Allen verwendet den 4, 9 und 18 Tage Durchschnitt. Hierbei wird ein Trendwechsel angedeutet, wenn der 4-Tage-Durchschnitt den 9-Tage-Durchschnitt von unten nach oben schneidet. Jedoch erfolgt der Einstieg in eine Long-Position, wenn beide Durschnitte über dem 18-Tage-Durchschnitt liegen. Ein Ausstieg erfolgt wenn der 4-Tage-Durchschnitt unter den 9-Tage-Durchschnitt fällt. Genau Spiegelbildlich verhält es sich beim Ein- und Ausstieg in/aus eine(r) Short-Position.
 (Quelle: VTAD)
 
-##DEMA - Double Exponential Moving Average
+## DEMA - Double Exponential Moving Average
 ### Beschreibung
 Der DEMA ist ein technischer Indikator, der von Patrick Mulloy entwickelt wurde. Er erschien erstmals 1994 in der Februarausgabe der "Technical Analysis of Stocks & Commodities". Die Berechnung basiert sowohl auf einem einfachen als auch auf einem doppelten exponentiell gleitenden Durchschnitt (EMA).
 
@@ -2920,7 +2920,7 @@ Value.Set(2 * EMA(Inputs[0], Period)[0] - EMA(EMA(Inputs[0], Period), Period)[0]
 Print("Der aktuelle Wert für DEMA ist " + DEMA(20)[0]);
 ```
 
-##EMA - Exponential Moving Average
+## EMA - Exponential Moving Average
 ### Beschreibung
 Der Exponential Moving Average (EMA) ist einem einfachen gleitenden Durchschnitt, wie z.B. dem SMA oder dem MACD sehr ähnlich. Im Unterschied zu den einfachen gleitenden Durchschnitten wird in der Berechnung den aktuelleren Kursdaten eine hohere Bedeutung beigemessen.
 
@@ -2961,7 +2961,7 @@ Value.Set(ProcessingBarIndex == 0 ? InSeries[0] : InSeries[0] * (2.0 / (1 + Peri
 Print("Der aktuelle Wert für EMA ist " + EMA(20)[0]);
 ```
 
-##EMA MTF (MultiTimeFrame)
+## EMA MTF (MultiTimeFrame)
 ### Beschreibung
 Der Indikator EmaMTF ist die Multi TimeFrame-Variante des Exponential Moving Average (EMA).
 Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
@@ -2979,7 +2979,7 @@ Die Abbildung zeigt einen 5 Min.-Chart mit einem EMA(20) berechnet auf 1-Stunden
 
 ![EMA MTF (MultiTimeFrame)](./media/image55.png)
 
-##HMA - Hull Moving Average
+## HMA - Hull Moving Average
 ### Beschreibung
 Der Hull Moving Average wurde vom Trader Alan Hull entwickelt und ist ein sehr schnell arbeitender gleitender Durchschnitt, der Verzögerungen nahezu gänzlich eleminiert (Zero Lag). Für die Berechnung werden gewichtete gleitende Durchschnitte genutzt, weshalb die glättende Wirkung (und die daraus resultierende Verzögerung) herkömmlicher gleitender Durchschnitte abgemildert werden kann. Hull erreicht diese Verbesserung, indem er statt der Periode selbst, die Quadratwurzel aus der Zeit verwendet.
 
@@ -3022,7 +3022,7 @@ Value.Set(WMA(diffSeries, (int) Math.Sqrt(Period))[0]);
 Print("Der aktuelle Wert für HMA ist " + HMA(21)[0]);
 ```
 
-##KAMA - Kaufman's Adaptive Moving Average
+## KAMA - Kaufman's Adaptive Moving Average
 ### Beschreibung
 Der von Perry Kaufman entwickelte Kaufmann's Adaptive Moving Average (KAMA) stellt einen adaptiven Gleitenden Durchschnitt dar, der als Trendfolgeinstrument konstruiert wurde.
 Der KAMA beruht auf einem exponentiellen Durchschnitt (EMA), bei dem die Gewichtung des hinzukommenden Kurses über eine Trendeffizienz-Kennzahl, der Efficiency Ratio, gesteuert wird. Die Efficiency Ratio (der sog. quadrierte Effizienz-Faktor) ist eine Kennzahl, die auch eigenständig gute Dienste leisten kann. Die Trendeffizienz ist definiert als das Verhältnis der absoluten Kursänderung, von Anfang bis zum Ende des Betrachtungszeitraums, und der Summe der absoluten täglichen Kursänderungen. Bei hoher Trendeffizienz, also bei einer geradlinigen Bewegungen ohne starke Schwankungen, wird dem hinzukommenden Kurs ein hohes Gewicht eingeräumt, was einer kurzen Einstellung in Tagen entspricht. Bei geringer Trendeffizienz, also bei einer stark schwankenden Bewegung, wird dem hinzukommenden Kurs ein geringes Gewicht eingeräumt, dies entspricht einer langen Einstellung in Tagen. (Quelle: investor-verlag)
@@ -3066,7 +3066,7 @@ slow		lange Periode (s. Interpretation)
 Print("Der aktuelle Wert für KAMA ist " + KAMA(2,10,30)[0]);
 ```
 
-##MAMA - Mesa Adaptive Moving Average
+## MAMA - Mesa Adaptive Moving Average
 ### Beschreibung
 Der MAMA (Mesa Adaptive Moving Average) ist ein auto adaptiver gleitender Durchschnitt, dessen Periodenlänge über komplexe Berechnungen bestimmt wird. Er basiert auf einem exponentiellen Moving Average, dessen Alpha - Glättungsparameter in verschiedenen Marktphasen verändert wird.
 Dieser Indikator stammt aus Publikationen von John Ehlers und ist vor allem hinsichtlich der Berechnungen schwer zu verstehen. John Ehlers berechnet Zyklen in den Kursbewegungen, um Länge und Intensität einzelner Trendphasen zu ermitteln. An Hand der Länge der ermittelten Zyklen, kann dann der Gewichtungsfaktor des gleitenden Durchschnitts variabel gestaltet werden. Somit wird erreicht, dass der Indikator in Trendphasen möglichst lange mitläuft, ohne durch kleinen Gegenbewegungen zu sehr aus der Bahn geworfen zu werden. Somit steuert der Markt selbst die Agilität des gleitenden Durchschnitts.
@@ -3116,7 +3116,7 @@ Print("Der aktuelle Wert für MAMA ist " + MAMA(0.5, 0.05)[0]);
 Print("Der aktuelle Wert für MAMA ist " + MAMA(0.5, 0.05).Fama[0]);
 ```
 
-##SMA - Simple Moving Average
+## SMA - Simple Moving Average
 ### Beschreibung
 Der SMA ist die "Mutter aller gleitenden Durchschnitte" und stellt die einfachste Möglichkeit dar, einem Chartbild Informationen zum bereinigten Trendverlauf zu entnehmen. Von der mathematischen Seite her betrachtet handelt es sich um das arithmetische Mittel einer Zahlenreihe individueller Länge. 
 Der Begriff “gleitend” leitet sich von der Tatsache ab, dass bei dieser Form der Durchschnittsbildung immer der älteste Kurs dem aktuell hinzugekommenen “geopfert” wird. Grundsätzlich festzustellen ist dass, die Länge der Periodenangabe die Intensität der Glättung beeinflusst. Kürzere Betrachtungszeiträume (beispielsweise 10 Tage) führen dazu, dass der Indikator dem Kursverlauf relativ eng folgt, die berühmte 200-Tage-Linie (also SMA mit Periodenangabe 200 Tage) weist hingegen eine sehr große Trägheit auf.
@@ -3162,7 +3162,7 @@ Value.**Set**((last + InSeries\[0\] - InSeries\[Period\]) / Math.**Min**(Process
 Print("Der aktuelle Wert für SMA ist " + SMA(14)[0]);
 ```
 
-##SMA MTF (MultiTimeFrame)
+## SMA MTF (MultiTimeFrame)
 ### Beschreibung
 Der Indikator SmaMTF ist die Multi TimeFrame-Variante des Simple Moving Average (SMA).
 Er ist hauptsächlich für die Nutzung im Intraday-Bereich geeignet.
@@ -3180,7 +3180,7 @@ Die Abbildung zeigt einen 5 Min.-Chart mit einem SMA(14) berechnet auf 4-Stunden
 
 ![SMA MTF (MultiTimeFrame)](./media/image60.png)
 
-##SMMA - Smoothed Moving Average
+## SMMA - Smoothed Moving Average
 ### Beschreibung
 Der Smoothed Moving Average (SMMA) ist eine Art Mischung aus Simple Moving Average (SMA) und Exponential Moving Average (EMA).
 Er wird i.d.R. nur für eine größere Periodenanzahl verwendet.
@@ -3224,7 +3224,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für SMMA ist" + SMMA(14)[0]);
 ```
 
-##TEMA - Triple Exponential Moving Average
+## TEMA - Triple Exponential Moving Average
 ### Beschreibung
 Der Triple Exponential Moving Average (TEMA) ist die Kombination aus einem einzelnen exponentiellen gleitenden Durchschnitt (EMA), einem doppelten EMA und einem dreifachen EMA. Die Kombination der Indikatoren hilft, Verzögerungen zwischen den Indikatoren und der Preisbewegung zu eliminieren. TEMA ist ein sehr effektiver Glättungsindikator.
 
@@ -3261,7 +3261,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für TEMA ist" + TEMA(14)[0]);
 ```
 
-##TMA - Triangular Moving Average
+## TMA - Triangular Moving Average
 ### Beschreibung
 Der Triangular Moving Average (TMA) ist ein speziell gewichteter gleitender Durchschnitt mit einer besonderen Glättung. Die Gewichte sind nicht wie bei anderen gewichteten Durschnitten linear, sondern nach einem dreieckigen Muster zugeordnet. Die Gewichte für einen 7 Perioden unfassenden Zeitraum sind beispielsweise 1, 2, 3, 4, 3, 2, 1. Die Mitte der Zeitreihe wird hierdurch höher, die neuesten resp. ältesten Daten entsprechend geringer gewichtet.
 
@@ -3297,7 +3297,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für TMA ist" + TMA(14)[0]);
 ```
 
-##TRIX - Triple Exponential Moving Average
+## TRIX - Triple Exponential Moving Average
 ### Beschreibung
 Der TRIX - Indikator wurde von Jack Hutson präsentiert. Es handelt sich dabei um einen 1-Tages-Rate of Change-Indikator (ROC), d.h. Tag 2 dividiert durch Tag 1, Tag 3 durch Tag 2 usw., eines dreifach exponentiell geglätteten gleitenden Durchschnittes der Schlusskurse eines Wertes. Das Ergebnis ist ein um seine Null-Linie schwankender Oszillator, der aufgrund seiner Stabilität als Trendindikator verwendet wird.
 
@@ -3341,7 +3341,7 @@ Print("Der aktuelle Wert für TRIX ist" + TRIX(14, 3)[0]);
 Print("Der aktuelle Wert für TRIX ist" + TRIX(14, 3).Signal[0]);
 ```
 
-##T3 - Triple Exponential Moving Average
+## T3 - Triple Exponential Moving Average
 ### Beschreibung
 Der Triple Exponential Moving Average T3 (oder auch T3MA) ist ein Vertreter der extrem geglätteten Gleitenden Durchschnitte. Zur Berechnung wird eine gewichtete Summe eines einfachen EMA, eines doppelten EMA und eines dreifachen EMA verwendet. Dies ergibt einen sehr glatten und "weichen" Verlauf der Indikatorlinie.
 Die Anzahl der Iterationen ist bei der vorliegenden T3-Implementation mit dem Parameter tCount einstellbar. Die Standardeinstellung ist 3.
@@ -3385,7 +3385,7 @@ vFactor	Volumen Factor (Multiplicator) (default: 0,7)
 Print("TDer aktuelle Wert für T3 ist" + T3(14, 3, 0.7)[0]);
 ```
 
-##VMA - Variable Moving Average
+## VMA - Variable Moving Average
 ### Beschreibung
 Der Variable Moving Average (VMA) ist ein EMA, der in der Lage ist, seine Glättung automatisch auf die Schwankungen im Markt einstellen kann. Die Empfindlichkeit wächst, indem mehr Gewicht auf die jüngeren Daten gelegt wird.
 Durch die automatische Regulierung der Glättungskonstante wird versucht, den bekannten Nachteilen von gleitenden Durchschnitten zu begegnen. Der VMA soll auf diese Weise unter allen Marktbedingungen besser funktionieren.
@@ -3426,7 +3426,7 @@ volatility period	Anzahl der Bars, die in die Berechnung der Signal-Linie einbez
 Print("Der aktuelle Wert für VMA ist  " + VMA(9, 9)[0]);
 ```
 
-##VWMA - Volume Weighted Moving Average
+## VWMA - Volume Weighted Moving Average
 ### Beschreibung
 Der Volume Weighted Moving Average (VWMA) ist ein gewichteter gleitender Durchschnitt, der zur Gewichtung der Perioden das entspr. Volumen verwendet, d.h. Tage (Perioden) mit höherem Volumen bekommen mehr Gewicht. VWMA ist ein nicht-kumulativer gleitenden Durchschnitt.
 ### Interpretation
@@ -3461,7 +3461,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für VWMA ist " + VWMA(14)[0]);
 ```
 
-##WMA - Weighted Moving Average
+## WMA - Weighted Moving Average
 ### Beschreibung
 Der Weighted Moving Average (WMA) ist der bekannteste Vertreter der gewichteten gleitenden Durchschnitte.
 Gewichtete Durchschnitte werden verwendet um eine schnellere Reaktion auf die Kursverläufe zu erreichen. Dazu erhalten die aktuellen Kurse eine höhere Bewertung als ältere Werte. Ein weiterer Vorteil ist, daß Fehlsignale bei seitwärts gerichtetem Verlauf der Märkte minimiert werden. Der WMA glättet die Preiskurve und ermöglicht so eine bessere Trendidentifizierung.
@@ -3501,7 +3501,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für WMA ist " + WMA(14)[0]);
 ```
 
-##ZLEMA - Zero Lag Exponential Moving Average
+## ZLEMA - Zero Lag Exponential Moving Average
 ### Beschreibung
 Der Zero-Lag Exponential Moving Average (ZLEMA) ist eine Variante des Exponential Moving Average (EMA). Zero-Lag bedeutet soviel wie "keine Verzögerung". D.h., der Indikator passt sich im Gegensatz zu den herkömmlichen gleitenden Durchschnitte (z.B. dem SMA) den Kursen sehr eng an. Der Effekt kommt von der stärkeren Gewichtung aktueller Werte. Es wird versucht, durch das Herausnehmen älterer Kursdaten die Verzögerung (durch den kummulativen Effekt) zu minimieren.
 
@@ -3539,7 +3539,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für ZLEMA ist " + ZLEMA(14)[0]);
 ```
 
-##nBarsUp
+## nBarsUp
 ### Beschreibung
 Mit dem Indikator NBarsUp kann nach einer bestimmten Anzahl steigender Schlusskurse gesucht werden.
 Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
@@ -3584,7 +3584,7 @@ if (NBarsUp(3, true, true, true)[0] == 1)
 Print("Es sind 3 nacheinander höher liegende Schlusskurse aufgetreten.");
 ```
 
-##nBarsDown
+## nBarsDown
 ### Beschreibung
 Mit dem Indikator NBarsDown kann nach einer bestimmten Anzahl fallender Schlusskurse gesucht werden.
 Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
@@ -3630,7 +3630,7 @@ NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)[int barsAgo
 NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
 ```
 
-##OnBalanceVolume (OBV)
+## OnBalanceVolume (OBV)
 ### Beschreibung
 TDer On Balance Volume Indikator (OBV) stellt den Kauf- bzw. Verkaufsdruck dar. Kumulativ wird das Volumen eines aufwärts gerichtetenTages (d. h. Open < Close, grüne Kerze) addiert und das Volumen aus abwärts gerichteten Tagen (rote Kerze) subtrahiert.
 OBV wurde von Joe Granville entwickelt und 1963 in seinem Buch "Key to Stock Market Profits" vorgestellt. Es war einer der ersten Indikatoren für positive und negative Volumenstrommessungen
@@ -3666,11 +3666,11 @@ input	Eingangsdatenreihe für den Indikator
 Print("The current value for the OBV is " + OBV()[0]);
 ```
 
-##OutsideBars
+## OutsideBars
 ### Beschreibung
 Der Indikator OutsideBars ist eine veraltete Version von [*InsideBarsMT*](#insidebarsmt).
 
-##P123
+## P123
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -3874,7 +3874,7 @@ P123Pro(Close, 2).isTrendValid[0] - Inh. TimeFrame   ==   1
 UND (also neue Zeile)
 Close[0] - Inh. TimeFrame   <   P123Pro(Close, 2).ValidP3Price[0] - Inh. TimeFrame 
 
-##Parabolic SAR
+## Parabolic SAR
 ### Beschreibung
 Das Parabolic Time/Price System wurde 1978 von Welles Wilder jr. in seinem Buch „New Concepts in Technical Trading Systems“ vorgestellt. Der Name Parabolic SAR ergibt sich aus der parabolischen Form der Kurve. SAR steht für „Stop and Reverse“, was bedeutet, dass nach Erreichen des Stopps die Position gedreht wird. Das System ist also immer investiert.
 Der Stopp ist nicht nur in Relation zum Preis zu sehen, sondern auch in Relation zur Zeit. Je weiter der Trend voranschreitet, desto dichter wird der Stopp an den Preis herangezogen – was eine parabolische Kurve ergibt.
@@ -3922,7 +3922,7 @@ Bei Verwendung der Methode mit einem Index ( z.B.  **ParabolicSAR**(...)\[**int*
 Print("Der aktuelle Wert des Parabolic SAR ist " + ParabolicSAR(0.02, 0.2, 0.02)[0]);
 ```
 
-##Percentage Price Oscillator (PPO)
+## Percentage Price Oscillator (PPO)
 ### Beschreibung
 Der Percentage Price Oscillator (PPO) stellt die prozentuale Differenz zwischen 2 Exponential Moving Averages (EMA's) dar.
 Der PPO gehört in die Klasse der Momentum-Indikatoren. Von der Konstruktion her ähnelt er sehr dem MACD. 
@@ -3968,7 +3968,7 @@ Print("Der aktuelle Wert für PPO ist" + PPO(12, 26, 9)[0]);
 Print("Der aktuelle Wert für PPO ist " + PPO(12, 26, 9).Smoothed[0]);
 ```
 
-##PercentEnvelopes
+## PercentEnvelopes
 ### Beschreibung
 Der Indikator PercentEnvelopes zeichnet um einen vorgegebenen Wert im Abstand von einem Prozentwert ein oberes Band (Upper Band) und ein unteres Band (Lower Band).
 Der Eingangswert kann dabei eine beliebige Datenserie sein, z.B. die Hochs, Tiefs, die Schlusskurse oder auch ein anderer Indikator.
@@ -4014,7 +4014,7 @@ Print("Der Wert des oberen Prozent Bandes ist:  " + PercentEnvelopes(3).UpperPer
 Print("Der Wert des unteren Prozent Bandes ist: " + PercentEnvelopes(3).LowerPercentBand[0]);
 ```
 
-##Pivot Points
+## Pivot Points
 ### Beschreibung
 Futures-Händler kennen sie längst - die so genannten Pivot-Punkte (Pivot Points). Ursprünglich fanden sie Anwendung an den Commodity-Märkten, mittlerweile erobern sie sich aber mehr und mehr ihren festen Platz bei den Financial Futures.
 Pivot Punkte basieren auf einem Preiszonenansatz, der von Dr. Bruce Gould entwickelt und im Laufe zunehmend verfeinert wurde. Während die Preiszonen ursprünglich auf die Kursverläufe der letzten zwei bis drei Jahre berechnet wurden, basiert das praktische Konzept der Pivot-Punkte auf der Errechnung von Preiszonen im Tageschart auf der Grundlage der Vortageskurse. Ziel ist es hierbei, Kursniveaus zu definieren, die intraday als potenzielle Widerstandsbereiche (Resistance: R1, R2 usw.) genutzt werden können, sowie Kursniveaus als Unterstützungsbereiche (Support: S1, S2 usw.) zu bestimmen. (Quelle: finanznachrichten.de)
@@ -4175,7 +4175,7 @@ r3 = pp + 0.764 \* Range
 
 s3 = pp - 0.764 \* Range
 
-##Polarized Fractal Efficiency (PFE)
+## Polarized Fractal Efficiency (PFE)
 ### Beschreibung
 Der Polarized Fractal Efficiency (PFE) wurde von Hans Hannula entwickelt. Er gehört in die Klasse der Momentum-Indikatoren und verwendet Methoden der fraktalen Geometrie sowie der Chaostheorie, um zu bestimmen, mit welcher Effizienz der Preis sich bewegt.
 
@@ -4309,7 +4309,7 @@ Print("Der aktuelle Bar hat eine Range von: " + Range()[0]);
 Print("Der aktuelle Bar hat eine Range von: " + High[0] - Low[0]);
 ```
 
-##Range Indicator (RIND)
+## Range Indicator (RIND)
 ### Beschreibung
 Der Range Indicator (RIND) wurde von Jack Weinberg entwickelt. Veröffentlicht wurde er erstmals 1954 in einem Artikel der Juni-Ausgabe des Magazins "Technical Analysis of Stocks & Commodities".
 Der Indikator vergleicht die Spanne (Range) zwischen dem Hoch und Tief auf Intraday-Basis mit der Spanne zwischen dem aktuellen Schlusskurs und dem Vortages-Schlusskurs.
@@ -4349,7 +4349,7 @@ smooth	Anzahl der Bars für die Glättung des Indikators mit einem EMA
 Print("Der aktuelle Wert für den PFE ist: " + RIND(3, 10)[0]);
 ```
 
-##Rate of Change (ROC)
+## Rate of Change (ROC)
 ### Beschreibung
 Der Rate of Change Indikator (ROC, Rate of Change = Änderungsrate) ist ein ebenso einfacher wie effektiver Momentum-Oszillator, der die relative prozentuale Veränderung des Kurses von einer Periode zur nächsten Periode bzw. zu einer frei angegebenen Periode in der Vergangenheit misst. Der Indikator oszilliert um die Null-Linie.
 Die Berechnung vergleicht hierfür den aktuellen Kurs mit dem Kurs von vor n Perioden.
@@ -4389,7 +4389,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für den ROC ist: " + ROC(14)[0]);
 ```
 
-##Relative Spread Strength (RSS)
+## Relative Spread Strength (RSS)
 ### Beschreibung
 Der Relative Spread Strength (RSS) Indikator wurde 2006 von Ian Copsey in einem Artikel der Oktoberausgabe des "Stocks & Commodities" Magazins vorgestellt.
 Der RSS berechnet den Wert des RSI von der Differenz zwischen zwei SMA's.
@@ -4435,7 +4435,7 @@ eMA2	Periodenanzahl für den zweiten EMA
 Print("Der aktuelle Wert des RSS ist " + RSS (10, 40, 5)[0]);
 ```
 
-##Relative Strength Index (RSI)
+## Relative Strength Index (RSI)
 ### Beschreibung
 Der Relative Strength Index (RSI) wurde von J. Welles Wilder entwickelt und in seinem 1978 erschienenen Buch "New Concepts in Technical Trading Systems" erstmals vorgestellt. Der RSI ist ein äußerst nützlicher und beliebter Momentum-Oszillator. Er vergleicht die Größe der jüngsten Gewinne mit der Größe der jüngsten Verluste, bewertet also das Verhältnis der Aufwärts- zu den Abwärts-Schlusskursen innerhalb des Betrachtungszeitraums. Die Informationen werden in einer Zahl zwischen 0 und 100 abgebildet.
 
@@ -4482,7 +4482,7 @@ Print("Der aktuelle Wert für den RSI ist: " + RSI(14, 3)[0]);
 Print("Der aktuelle Wert der Avg-Linie ist: " + RSI(14, 3).Avg[0]);
 ```
 
-##Relative Strength Levy (RSL)
+## Relative Strength Levy (RSL)
 ### Beschreibung
 Dem Konzept der Relativen Stärke nach Levy, Relative Strength Levy (RSL) liegt die Annahme zugrunde, daß Titel, die in der Vergangenheit eine große relative Stärke aufwiesen, sich auch in Zukunft relativ stark entwickeln werden und umgekehrt. Man berechnet hier also nicht die Relative Stärke mehrerer Titel zueinander, sondern vergleicht die Performance der Vergangenheit mit der Performance von heute.
 Zur Berechnung wird der Wochenschlußkurs (oder Tagesschluss) des Basistitels durch das arithmetische Mittel der Schlußkurse im Betrachtungszeitraum dividiert. Das Ergebnis wird um die Marke 1,0 herum aufgetragen. Anschließend wird eine sortierte Liste erstellt, deren erster Platz vom Titel mit der höchsten RSL belegt wird.
@@ -4518,7 +4518,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Die Relative Stärke nach Levy beträgt" + RSL(27)[0]);
 ```
 
-##Relative Volatility Index (RVI)
+## Relative Volatility Index (RVI)
 ### Beschreibung
 Der Relative Volatility Index (RVI) wurde von Donald Dorsey entwickelt. Es gleicht dem RSI, wobei anstelle der täglichen Preisspanne die Standardabweichung über den Indikator Zeitraumverwendet wird.
 Um die grundlegende Volatilität eines Wertpapiers zu ermitteln eines Wertpapiers zu ermitteln, verwendet Donald Dorsey bei seinem Relative Volatility Index (RVI) die Standardabweichung über einen Zeitraum von zehn Tagen. Für die Berechnung der Dynamik der Volatilitätsentwicklung wendet er den Relative Strength Index (RSI) auf das Ergebnis der Volatilitätsberechnung an. Zur Berechnung der RSI verwendet er die üblichen 14 Tage.
@@ -4561,7 +4561,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für den RVI ist:" + RVI(14)[0]);
 ```
 
-##ReversalBars
+## ReversalBars
 **Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.**
 
 ### Beschreibung
@@ -4616,7 +4616,7 @@ if (Reversalbars()[0] == 1.0)
 Print("Der letzte Bar ist ein Long-Umkehrstab.");
 ```
 
-##R-Squared
+## R-Squared
 ### Beschreibung
 Der Indikator R-Squared gehört zu den Indikatoren aus dem Bereich der linearen Regression. R-Squared ist der sog. Korrelationskoeffizient. Er beschreibt die Qualität der linearen Regressionsgerade.
 
@@ -4659,7 +4659,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für R-Squared ist:  " + RSquared(8)[0]);
 ```
 
-##StandardDeviation(StdDev)
+## StandardDeviation(StdDev)
 ### Beschreibung
 Die Standardabweichung (StdDev) ist ein Begriff der Statistik und der Wahrscheinlichkeitsrechnung und ein Maß für die Streuung der Werte einer Zufallsvariablen um ihren Mittelwert. Die Standardabweichung der letzten n Tage findet z.B. auch bei der Berechnung der Bollinger Bänder Verwendung.
 
@@ -4696,7 +4696,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für die Standardabweichung ist:  " + StdDev(14)[0]);
 ```
 
-##Standard Error (StdError)
+## Standard Error (StdError)
 ### Beschreibung
 Die Standard Error Bänder (StdError) wurden von Jon Anderson entwickelt. Ihr Aussehen ähnelt stark den Bollinger Bändern, obwohl die Berechnung unterschiedlich ist. Die Bänder entstehen durch eine obere und eine untere Begrenzung um eine Mittellinie, der Linearen Regression.
 Die Empfehlungen von Andersen sind folgende Werte: die Anzahl der Perioden ist 21, die Glättung erfolgt mit einem einfachen gleitenden Durchschnitt (SMA) über 3-Perioden.
@@ -4750,7 +4750,7 @@ Print("Das untere Band des Standardfehlers verläuft aktuell bei: " + StdError(2
 Print("Das obere Band des Standardfehlers verläuft aktuell bei:" + StdError(21).Upper[0]);
 ```
 
-##Stochastics
+## Stochastics
 ### Beschreibung
 Der Stochastik-Indikator wurde von George C. Lane in den späten 1950er Jahren entwickelt. Er gehört zu der Klasse der Momentum-Indicatoren (Oszillatoren). Dargestellt wird der aktuelle Schlusskurs relative zu einem High- bzw. Low-Bereich über eine vorgegebene Anzahl von Perioden.
 Der Stochastik-Indikator basiert auf der Beobachtung, dass in Aufwärtsbewegungen der Schlußkurs nahe dem Tageshochkurs liegt, während in Abwärtsbewegungen der Schlußkurs nahe dem Tagestiefstkurs liegt.
@@ -4810,7 +4810,7 @@ Print("Die Stochastik Linie %K verläuft aktuell bei: " + Stochastics(3, 14, 7).
 Print("Die Stochastik Linie %D verläuft aktuell bei: " + Stochastics(3, 14, 7).D[0]);
 ```
 
-##Stochastics Fast
+## Stochastics Fast
 ### Beschreibung
 Seihe [*stochastics*](#stochastics).
 
@@ -4861,7 +4861,7 @@ Print("Die Stochastik Linie %K verläuft aktuell bei:" + StochasticsFast(3, 14).
 Print("Die Stochastik Linie %D verläuft aktuell bei: " + StochasticsFast(3, 14).D[0]);
 ```
 
-##Stochastics RSI (StochRSI)
+## Stochastics RSI (StochRSI)
 ### Beschreibung
 Bei der Stochastics RSI (StochRSI) handelt es sich um die Berechnung einer Stochastik auf den Relative Strength Index (RSI). Vorgestellt wurde diese Kombination von T. Chande und S. Kroll.
 
@@ -4898,7 +4898,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für den StochRSIist: " + StochRSI(14)[0]);
 ```
 
-##Summation (SUM)
+## Summation (SUM)
 ### Beschreibung
 Summation (SUM) liefert die Summe über eine bestimte Anzahl von Perioden.
 
@@ -4929,7 +4929,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print(SUM(Volume,10)[0]);
 ```
 
-##SuperTrend
+## SuperTrend
 ### Beschreibung
 Der SuperTrend-Indikator wurde von einem französchischen Trader entwickelt und ist ähnlich dem Parabolic Stop And Reverse System (Parabolic SAR), dass in den 1970er Jahren vorgestellt wurde. Er basiert auf dem Mittelwert der Stäbe und misst die Volatilität als Spanne zwischen Hoch und Tief, unter Berücksichtigung evtl. Kurslücken. Ausgehend von einem Startwert verläuft der Indikator solange in die eingeschlagene Richtung, bis der Markt bei steigender Volatilität eine starke Bewegung in die Gegenrichtung ausführt. Dann springt der Indikator auf den Startwert der Gegenrichtung. Der Indikator ist so programmiert, dass er sich nur in Trendrichtung verändern kann. Nachlassende Volatilität oder Bewegungen gegen die Trendrichtung führen nur dazu, dass er waagerecht weitergezeichnet wird. (Quelle: tradeSignalOnline)
 
@@ -5000,7 +5000,7 @@ if (Close[0] < SuperTrend(SuperTrendMAType.HMA, SuperTrendMode.ATR, 14, 2.618,  
   Print("Markt befindet sich in einem Abwärtstrend.");
 ```
 
-##SupportResistanceAreas
+## SupportResistanceAreas
 ### Beschreibung
 Der Indikator SupportResistanceAreas zeichnet Unterstützungs- und Widerstandsbereiche in den Chart. Es werden insgesamt 4 Arten von Unterstützungen bzw. Widerständen (farblich) unterschieden.
 
@@ -5033,7 +5033,7 @@ Die kleinste mögliche Einstellung ist 1. Default ist 5.                        
 ### Darstellung
 ![SupportResistanceAreas](./media/image99.png)
 
-##Swing
+## Swing
 ### Beschreibung
 Der Swing Indikator zeichnet Linien an den Swing-Hochs bzw. Swing-Tiefs basierend auf der "Stärke" dieser Punkte. Die Stärke ergibt sich dabei aus der Anzahl der Bars links und rechts neben diesem Extrempunkt.
 Methoden dieses Indikators können in anderen Scripten verwendet werden um z.B. den letzten zurückliegenden Extrempunkt und den entsprechenden Kurswert zu erhalten.
@@ -5080,7 +5080,7 @@ Print("The last swing high was " + barsAgo + " bars ago.");
 Print("The last swing high was at " + High[barsAgo]);
 ```
 
-##Time-Series-Forecast (TSF)
+## Time-Series-Forecast (TSF)
 ### Beschreibung
 Der Time-Series-Forecast (TSF) ähnelt einem gleitenden Durchschnitt. Der Trend wird mit einer Regressionsgleichung nach der Methode der kleinsten Quadrate ermittelt. Ziel ist es, den Kurs anhand des bestehenden Trends in die Zukunft zu extrapolieren.
 
@@ -5122,8 +5122,8 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für TSF ist: " + TSF(3, 14)[0]);
 ```
 
-##Tools
-##Constant Lines
+## Tools
+## Constant Lines
 ### Beschreibung
 Der Indikator ConstantLines zeichnet bis zu vier frei konfigurierbare horizontale Linien in den Chart. Er kann dazu verwendet werden, bestimmte Preisniveaus (charttechnisch interessante Punkte) zu markieren um sie nicht aus dem Blick zu verlieren.
 
@@ -5145,7 +5145,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **ConstantLines**(1,2,3,4)\[**
 ### Darstellung
 ![Constant Lines](./media/image102.png)
 
-##CurrentDayOHL
+## CurrentDayOHL
 ### Beschreibung
 Die Funktion CurrentDayOHL liefert für den aktuellen Tag (die aktuelle Session) die Werte für Open, High und Low.
 CurrentDayOHL ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.
@@ -5186,7 +5186,7 @@ CurrentDayOHL(IDataSeries input).CurrentLow[int barsAgo]
 Print("Das Tief der aktuellen Session liegt bei " + CurrentDayOHL().CurrentLow[0]);
 ```
 
-##Daily Performance
+## Daily Performance
 ### Beschreibung
 Der Indikator DailyPerformance liefert Angaben über die Veränderung des Kurses ausgehend entweder von einem Close in der Vergangenheit oder vom Open des aktuellen Tages zum aktuellen Kurs.
 
@@ -5255,7 +5255,7 @@ DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalcul
 DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalculationMode.Points, 1)[0]
 ```
 
-##DailyQuoteMoves
+## DailyQuoteMoves
 ### Beschreibung
 Dieser Indikator zeigt die täglichen Preisbewegungen des laufenden Markts an, täglich beginnend an der Null-Linie. Mit diesem Indikator können Sie sehen, ob der Markt im Augenblick über oder unter dem Einstiegspreis bei Marktstart ist. Ein Beispiel: Der FDAX hat die Eigenschaft, dass – sobald das 100, 200, 400-Level erreicht ist, der Markt das Potential hat, sich zu drehen.
 
@@ -5286,7 +5286,7 @@ input Eingangsdatenreihe für den Indikator
 DailyQuoteMoves()[0]
 ```
 
-##DayLines
+## DayLines
 ### Beschreibung
 Der DayLines-Indikator zeichnet im Chart  Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
 An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.
@@ -5335,7 +5335,7 @@ Wenn true, werden Hochs bzw. Tiefs, die noch nicht vom Kurs "gebrochen" wurden, 
 Hinweis: Um Widerstands- und Unterstützungszonen anzuzeigen, kann der darauf spezialisierte Indikator SupportResistanceAreas verwendet werden.
 ![highs and lows](./media/image111.png)
 
-##GetDayBar
+## GetDayBar
 ### Beschreibung
 Die Funktion GetDayBar() liefert alle Werte (Open, High, Low, Close, Time, Median, Typical, Volume und Weighted) eines bestimmten Tages (Session) in der Vergangenheit oder des aktuellen Tages (Besonderheiten s. unter Rückgabewert). GetDayBar() ist nicht zur Anzeige im Chart gedacht. Hierfür ist der Indikator DayLinesAdv zu verwenden.
 GetDayBar ist in erster Linie ein sehr performanter Ersatz für [*PriorDayOHLC*](#priordayohlc).
@@ -5384,7 +5384,7 @@ protected override void OnStart()
 **Wichtig:**
 Das Attribut *TimeFrameRequirements* muß immer auch für die aufrufende Klasse (hier class xy) angegeben werden, wenn der aufgerufene Indikator *Multibars* verwendet.
 
-##Info
+## Info
 ### Beschreibung
 Info ist kein Indikator im klassischen Sinn, sondern ein Tool.
 Im Hintergrund des Charts werden - abhängig vom dargestellten Handelsinstrument (Aktie, Future, Währung usw.) -  einige nützliche Zusatzinformationen angezeigt.
@@ -5393,7 +5393,7 @@ Die Textfarbe ist frei wählbar.
 ### Darstellung
 ![GetDayBar](./media/image112.png)
 
-##Maximum (MAX)
+## Maximum (MAX)
 ### Beschreibung
 Maximum (MAX) liefert den höchsten Wert aus einer bestimmten Anzahl von Perioden.
 
@@ -5426,7 +5426,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der höchste Wert der letzten 20 Perioden ist" + MAX(High, 20)[0]);
 ```
 
-##Minimum (MIN)
+## Minimum (MIN)
 ### Beschreibung
 Minimum (MIN) liefert den kleinsten Wert aus einer bestimmten Anzahl von Perioden.
 
@@ -5458,7 +5458,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der tiefste Wert der letzten 20 Perioden ist " + MIN(Low, 20)[0]);
 ```
 
-##MTFBoxes
+## MTFBoxes
 ### Beschreibung
 Der Indikator MTFBoxes zeichnet hinter die Kerzen in einem Chart eine farbige Fläche, die einer Kerze einer höheren Zeiteinheit entspricht.
 
@@ -5478,7 +5478,7 @@ Mark candles body  Färbt den Kerzenkörper (Bereich zwischen Open und Close) mi
 ### Darstellung
 ![MTFBoxes](./media/image115.png)
 
-##PriceLine
+## PriceLine
 ### Beschreibung
 PriceLine ist kein Indikator im klassischen Sinn, sondern ein Tool.
 Es wird am aktuellen Kurs im Chart eine horizontale Linie angezeigt.
@@ -5487,7 +5487,7 @@ Die Farbe der Linie und die Linienstärke sind frei wählbar.
 ### Darstellung
 ![PriceLine](./media/image116.png)
 
-##PriorDayOHLC
+## PriorDayOHLC
 ### Darstellung
 Die Funktion PriorDayOHLC liefert für den gestrigen Tag (bzw. die vorangegangene Session) die Werte für Open, High Low und Close.
 PriorDayOHLC ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.
@@ -5542,10 +5542,10 @@ Print("das Vortages-Tief liegt bei" + PriorDayOHLC().PriorLow[0]);
 Print("das Vortages-Close liegt bei " + PriorDayOHLC().PriorClose[0]);
 ```
 
-##PriorDayOHLCext
+## PriorDayOHLCext
 siehe [*PriorDayOHLC*](#priordayohlc).
 
-##SessionBreakLines
+## SessionBreakLines
 ### Beschreibung
 Der Indikator SessionBreakLines zeichnet an der ersten Kerze einer neuen Handelssession eine vertikale Linie.
 Die Besonderheit ist, dass eingestellt werden kann, wie die sog. "Wochenend-Sessions" behandelt werden sollen.  Ist der Parameter "IncludeWeekends" auf "true" gesetzt, werden die kurzen Sessions am Sonntag der Freitags-Session zugerechnet (Beschreibung aus Sicht der deutschen Zeitzone). 
@@ -5556,7 +5556,7 @@ siehe auch [*PriorDayOHLC*](#priordayohlc).
 ### Darstellung
 ![PriorDayOHLCext](./media/image118.png)
 
-##ShowBidAsk
+## ShowBidAsk
 ### Beschreibung
 Der Indikator ShowBidAsk zeigt am unteren Chart-Rand den aktuellen Bid- und Ask-Kurs jeweils mit dem entsprechenden Volumen an. Änderungen am Volumen werden auch dann angegeben, wenn es nicht tatsächlich zu einem Umsatz (Tick) kam.
 Schriftart und -farbe sind frei konfigurierbar.
@@ -5565,7 +5565,7 @@ Voraussetzung für die Nutzung ist die Verbindung mit einem Realtime-Datenfeed.
 ### Darstellung
 ![ShowBidAsk](./media/image119.png)
 
-##TickCounter
+## TickCounter
 ### Beschreibung
 Der Indikator TickCounter schreibt in den Chart eine Information über die im aktuell laufenden Bar enthaltene Anzahl von Ticks.
 TickCounter kann die Anzahl der Ticks sowohl von 0 hochzählen, als auch von der eingestellten max. Anzahl der Ticks in einem Bar herunterzählen auf 0.
@@ -5581,7 +5581,7 @@ Für die Programmierung in eigenen Scripts verwenden sie bitte Bars.TickCount bz
 ### Darstellung
 ![TickCounter](./media/image120.png)
 
-##True Strength Index (TSI)
+## True Strength Index (TSI)
 ### Beschreibung
 Der True Strength Index (TSI) wurde erstmals im Jahre 1991 von William Blau veröffentlicht. Er gehört zu der Gruppe der Momentum-Indikatoren und ist einerseits geeignet als Indikator für die Trendrichtung und andererseits zur Anzeige von überkauft- / überverkauft-Situationen
 Typischerweise gelten Momentum-Oszillatoren als Frühindikatoren der Preisbewegung, und gleitende Durchschnitte sind charakteristisch dafür, dem Kurs nachzulaufen. Der TSI kombiniert die Vorteile beider Indikator-Gruppen.
@@ -5621,7 +5621,7 @@ slow	Anzahl der Bars, für die Berechnung des Slow EMA
 Print("Der aktuelle Wert für den TSI ist " + TSI(3, 14)[0]);
 ```
 
-##Ultimate Oscillator
+## Ultimate Oscillator
 ### Beschreibung
 Der Ultimate Oscillator wurde 1985 von Larry Williams entwickelt und in der Aprilausgabe des Magazins "Technical Analysis of Stocks and Commodities" vorgestellt.
 
@@ -5672,7 +5672,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **UltimateOscillator** (5)\[**
 Print("Der aktuelle Wert des Ultimate-Oscillators ist " + UltimateOscillator(7, 14, 28)[0]);
 ```
 
-##Volume (VOL)
+## Volume (VOL)
 ### Beschreibung
 Das Volumen (VOL) ist die Anzahl der gehandelten Aktien, Futures, ETF's usw. in einer bestimmten Zeiteinheit. D.h. es ist der Umsatz in dem zugrundeliegenden Wert. Die Analyse des Volumens ist eine einfaches, aber sehr wichtiges Element der technischen Analyse. Volume bietet Hinweise auf die Intensität einer Kursbewegung.
 
@@ -5709,7 +5709,7 @@ input	Eingangsdatenreihe für den Indikator
 Print("Der aktuelle Umsatz beträgt " + VOL()[0]);
 ```
 
-##Volume Moving Average (VOLMA)
+## Volume Moving Average (VOLMA)
 ### Beschreibung
 Der Volume Moving Average (VOLMA) errechnet sich durch die Anwendung eines Exponential Moving Average (EMA) auf das jeder einzelnen Perioden zugehörige Volumen, also EMA(Volumen).
 
@@ -5759,7 +5759,7 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für VOLMA ist " + VOLMA(14)[0]);
 ```
 
-##Volume Oscillator
+## Volume Oscillator
 ### Beschreibung
 Der Volume Oscillator nutzt die Differenz zwischen zwei gleitenden Durchschnitten des Handelsvolumens. Das Ergebnis erinnert an den MACD bzw. an jeden anderen Oszillator, dem gleitende Durchschnitte zu Grunde liegen.
 
@@ -5796,7 +5796,7 @@ slow	Anzahl der Bars für die Berechnung des langfristigen GD's
 Print("Der aktuelle Wertes für den VolumeOszillator ist:  " + VolumeOszillator(12,26)[0]);
 ```
 
-##Volume Profile
+## Volume Profile
 ### Beschreibung
 Der VolumeProfile Indikator zeichnet ein Realtime-Volume Profil in Form eines vertikalen Histogramms in den Chart. Jeder Balken des Histogramms steht für das aufaddierte gehandelte Volumen an einem bestimmten Kurs. Der Bar, an dem die Berechnungen begonnen haben, wird mit wird einer kleinen Raute markiert.
 
@@ -5869,7 +5869,7 @@ smooth	Anzahl der Bars für die Berechnung des GD's für die Glättung
 Print("Der aktuelle Wert für den Volume ROC ist:  " + VROC(14, 3)[0]);
 ```
 
-##VolumeArea
+## VolumeArea
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -5891,7 +5891,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeGraph
+## VolumeGraph
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -5933,7 +5933,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeRiseFall
+## VolumeRiseFall
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -5954,7 +5954,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeSentimentLong
+## VolumeSentimentLong
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -5998,7 +5998,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeSentimentShort
+## VolumeSentimentShort
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -6041,7 +6041,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeSessionPro 
+## VolumeSessionPro 
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -6095,7 +6095,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeUDR 
+## VolumeUDR 
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
 ### Beschreibung
@@ -6120,7 +6120,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##VolumeUpDown
+## VolumeUpDown
 ### Beschreibung
 Der Indikator VolumeUpDown ist eine Variante des Volumen-Indikators (VOL). Der einzige Unterschied ist, dass die Volumenbars in Abhängig davon eingefärbt werden, ob es sich im Preischart um einen Aufwärtsbar oder Abwärtsbar handelt.
 Bei einem steigenden Bar wird das Volumen in grün dargestellt.
@@ -6152,7 +6152,7 @@ input	Eingangsdatenreihe für den Indikator
 Print("Der aktuelle Umsatz beträgt " + VolumeUpDown()[0]);
 ```
 
-##Volume Zones
+## Volume Zones
 ### Beschreibung
 Der VolumeZones Indikator zeichnet an der linken Seite des Charts ein Histogramm für das historische Volumen.
 
@@ -6185,7 +6185,7 @@ angekündigt werden
 angekündigt werden
 
 
-##Williams %R
+## Williams %R
 ### Beschreibung
 Situationen. Entwickelt wurde er bereits 1966 von Larry Williams. Der Indikator kann in allen Märkten und in allen Zeiteinheiten verwendet werden, wird jedoch meist intraday genutzt. Vom Aussehen her erinnert der Indikator aus der Klasse der Momentum-Oszillatoren am ehesten an die Stochastik.
 
@@ -6230,7 +6230,7 @@ WilliamsR(int period)[int barsAgo]
 WilliamsR(IDataSeries input, int period)[int barsAgo]
 ```
 
-##WyckoffWave
+## WyckoffWave
 
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
 
@@ -6257,7 +6257,7 @@ angekündigt werden
 ### Beispiel
 angekündigt werden
 
-##ZigZag
+## ZigZag
 ### Beschreibung
 Der ZigZag-Indikator findet Extrempunkte in verschiedenen Zeiteinheiten. Es werden so anhand eines frei bestimmbaren Schwellwertes bestehende Trends markiert. Der Schwellwert gibt an, um wieviel sich der Kurs verändern muss, bevor die Zig-Zag-Linie ihre Richtung ändert und einen Extrempunkt hinterläßt.
 
