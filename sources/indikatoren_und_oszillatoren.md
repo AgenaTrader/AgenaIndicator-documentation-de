@@ -325,7 +325,7 @@ BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int s
 ### Rückgabewert
 **double**
 
-Bei Verwendung der Methode mit einem Index ( z.B. BBBreakOutSpeed(...)[int barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
+Bei Verwendung der Methode mit einem Index ( z.B. **BBBreakOutSpeed**(...)[**int** barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Parameters
 input Eingangsdatenreihe für den Indikator
