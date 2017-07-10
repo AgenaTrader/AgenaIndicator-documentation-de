@@ -30,6 +30,7 @@ Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Res
 -   [Average Directional Index (ADX)](./indikatoren_und_oszillatoren.md#average-directional-index-adx)
 -   [Average Directional Movement Rating (ADXR)](./indikatoren_und_oszillatoren.md#average-directional-movement-rating-adxr)
 -   [Average True Range (ATR)](./indikatoren_und_oszillatoren.md#average-true-range-atr)
+-   [BBBreakOutSpeed](./indikatoren_und_oszillatoren.md#bbbreakoutspeed)
 -   [Balance of Power (BOP)](./indikatoren_und_oszillatoren.md#balance-of-power-bop)
 -   [Bollinger Bands](./indikatoren_und_oszillatoren.md#bollinger-bands)
 -   [Bollinger Percent B (%b)](./indikatoren_und_oszillatoren.md#bollinger-percent-b-b)
