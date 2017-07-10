@@ -345,13 +345,14 @@ if(BBBreakOutSpeed(2, 20, 15).BandWidthEntrySignalBuffer[0] != 0)
 {
  	OpenLong("BBBreakOutSpeedLong");
 	
-}//Wenn sich die Breite der Bollinger Bänder (Standardabweichung 2, Periode 20), im Vergleich zur vorigen Periode signifikant (Wert > 15) zusammengezogen hat, dann wird eine Short-Position eröffnet.
+}
+
+//Wenn sich die Breite der Bollinger Bänder (Standardabweichung 2, Periode 20), im Vergleich zur vorigen Periode signifikant (Wert > 15) zusammengezogen hat, dann wird eine Short-Position eröffnet.
 
 if(BBBreakOutSpeed(2, 20, 15).BandWidthExitSignalBuffer[0] != 0)
 {
  	OpenShort("BBBreakOutSpeedShort");
 }
-
 ```
 
 ## Balance of Power (BOP)
