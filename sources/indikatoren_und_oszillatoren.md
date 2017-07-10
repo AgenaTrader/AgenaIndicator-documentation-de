@@ -306,6 +306,54 @@ period Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("The current ATR value is: " + ATR(14)[0]);
 ```
 
+## BBBreakOutSpeed
+### Beschreibung
+Zeigt die Veränderung der Breite der Bollinger Bänder im Vergleich zu der Breite der Bollinger Bänder vom vorigen Bar.
+Negativ (Rot) heißt die Bollinger Bänder ziehen sich zusammen. (Größer als SignalSize -> Short, gekennzeichnet durch intensiveres Rot)
+Positiv (Grün) heißt die Bollinger Bänder gehen außeinander.  (Größer als SignalSize -> Long, gekennzeichnet durch intensiveres Grün)
+
+
+### Verwendung
+```cs
+BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize) 
+BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int signalsize) 
+BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo]
+BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo] 
+
+```
+
+### Rückgabewert
+**double**
+
+Bei Verwendung der Methode mit einem Index ( z.B. BBBreakOutSpeed(...)[int barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
+
+### Parameters
+input Eingangsdatenreihe für den Indikator
+bandsDeviation Standardabweichung für die Bollingerbänder
+bandsPeriod Periode für die Bollingerbänder
+signalsize Die Mindesthöhe der Balken damit es ein Signal ergibt (Long, Short)
+
+
+### Darstellung
+![BBBreakOutSpeed](./media/BBBreakOutSpeed.png)
+
+### Beispiel
+```cs
+//Wenn die Breite der Bollinger Bänder (Standardabweichung 2, Periode 20), im Vergleich zur vorigen Periode signifikant (Wert > 15) außeinander gegangen ist, dann wird eine Long-Position eröffnet.
+
+if(BBBreakOutSpeed(2, 20, 15).BandWidthEntrySignalBuffer[0] != 0)
+{
+ 	OpenLong("BBBreakOutSpeedLong");
+	
+}//Wenn sich die Breite der Bollinger Bänder (Standardabweichung 2, Periode 20), im Vergleich zur vorigen Periode signifikant (Wert > 15) zusammengezogen hat, dann wird eine Short-Position eröffnet.
+
+if(BBBreakOutSpeed(2, 20, 15).BandWidthExitSignalBuffer[0] != 0)
+{
+ 	OpenShort("BBBreakOutSpeedShort");
+}
+
+```
+
 ## Balance of Power (BOP)
 ### Beschreibung
 Der Balance of Power (BOP) wurde von Igor Livshin im August 2001 in der Ausgabe des "Stocks and Commodities Magazine" beschrieben.
