@@ -4438,6 +4438,34 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für den ROC ist: " + ROC(14)[0]);
 ```
 
+## Relative Performance
+### Beschreibung
+Berechnet das Preisverhältnis zwischen aktuellen und ausgewählten Symbolen.
+
+
+### Weitere Informationen
+http://stockcharts.com/articles/mailbag/2012/01/how-can-i-chart-relative-performance-qqq-underperforms-spy-.html?st=relative+performance
+
+http://www.wikinvest.com/wiki/Relative_performance
+
+
+### Verwendung
+```cs
+RelativePerformance (Instrument)
+RelativePerformance (Instrument)[int barsAgo]
+```
+
+### Rückgabewert
+**double**
+
+
+### Parameters
+IInstrument 
+
+### Darstellung
+![Relative Performance](./media/RelativePerformance.png)
+
+
 ## Relative Spread Strength (RSS)
 ### Beschreibung
 Der Relative Spread Strength (RSS) Indikator wurde 2006 von Ian Copsey in einem Artikel der Oktoberausgabe des "Stocks & Commodities" Magazins vorgestellt.
