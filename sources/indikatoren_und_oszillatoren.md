@@ -4440,8 +4440,7 @@ Print("Der aktuelle Wert für den ROC ist: " + ROC(14)[0]);
 
 ## Relative Performance
 ### Beschreibung
-Berechnet das Preisverhältnis zwischen aktuellen und ausgewählten Symbolen.
-
+Berechnet das Preisverhältnis zwischen aktuellen und gewählten Symbolen.
 
 ### Weitere Informationen
 http://stockcharts.com/articles/mailbag/2012/01/how-can-i-chart-relative-performance-qqq-underperforms-spy-.html?st=relative+performance
