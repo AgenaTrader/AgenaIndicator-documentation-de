@@ -2712,9 +2712,9 @@ Phase 4: 4
 
 Phase 5: 5
 
-Phase 5+ 55
+Phase 5+ 5.1
 
-Ballkönigin 66
+Ballkönigin 5.2
 
 In einem Abwärtstrend wird ein „-„ Zeichen vor den Werten gesetzt. Ist der Marktphase nicht definiert, wird der Wert 0 zurückgegeben.
 ```cs
@@ -2729,15 +2729,15 @@ trendsize: Trendgröße von 0 .. 3
 
 Für einen Vergleich von Doppelwerten wie z.B.: **if** (**MarketPhases**(1)\[0\] == 55) ...empfehlen wir, stattdessen folgendes zu verwenden:
 ```cs
-bool goLong = Math.Abs(MarketPhases(1)[0] - 55) <= Double.Epsilon;
+bool goLong = Math.Abs(MarketPhases(1)[0] - 5.1) <= Double.Epsilon;
 ```
 
 ### Verwendung innerhalb des Condition Escorts
-Bei der Verwendung von Marktphasen innerhalb von AgenaScript bietet der Indikator eine Datenserie an, die die oben genannten Werte von +/-3, 4, 5, 55, 66 hat.
+Bei der Verwendung von Marktphasen innerhalb von AgenaScript bietet der Indikator eine Datenserie an, die die oben genannten Werte von +/-3, 4, 5, 5.1, 5.2 hat.
 
 Sie können den Indikator als Filter verwenden, indem Sie die Signale von anderen Indikatoren hernehmen, wenn diese innerhalb den Marktphasen 55 oder 66 (long) sind:
 
-![Condition Escort](./media/image50.png)
+![Condition Escort](./media/MarketPhases.png)
 
 **Wichtiger Hinweis** 
 Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich::
