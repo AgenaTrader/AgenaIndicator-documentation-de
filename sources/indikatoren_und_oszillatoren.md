@@ -4586,7 +4586,7 @@ input  Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Relative Strength Levy (RSL)](./media/image86.png)
+![Relative Strength Levy (RSL)](./media/RSL.png)
 
 ### Beispiel
 ```cs
