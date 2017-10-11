@@ -4438,6 +4438,88 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 Print("Der aktuelle Wert für den ROC ist: " + ROC(14)[0]);
 ```
 
+## Relative Currency Strength (RCS)
+### Beschreibung
+Der Relative Currency Strength – Indikator (Übersetzt: Relative Währungs Stärke) ist ein
+Werkzeug der Technischen Analyse für den Forex (Foreign Exchange) -Markt. Dieser Indikator
+berechnet die aktuelle und historische Stärke bzw. Schwäche einer Währung. Der RCS kann in
+allen Zeiteinheiten verwendet werden, die Interpretation des Indikators ändert sich dabei nicht.
+
+Die Grundidee des RCS beruht darauf, die aktuell stärkste und schwächste Währung im
+historischen Kontext ausfindig zu machen. Wenn Sie sich alle Währungen simultan
+anzeigen lassen, können Sie die aktuell stärkste und die aktuell schwächste Währung
+heraussuchen. Die stärkste Währung ist diejenige, dessen Linie aktuell die höchste im
+Vergleich zu den anderen Linien ist, die schwächste Währung finden Sie vice versa als
+aktuell tiefste Linie. Das Währungspaar das sich daraus ergibt, ist ein potentieller TradeKandidat.
+
+Wenn der RCS anzeigt, dass aktuell der Euro die stärkste (überkaufte) und der US-Dollar die
+zurzeit schwächste (überverkaufte) Währung relativ zu den anderen Major-Währungen ist, ist
+ein Short-Einstieg im EURUSD – Forexpaar sinnvoll.
+Die dahinterliegende Logik besagt, dass EURUSD dann fällt, wenn entweder der Euro
+Schwäche zeigt oder der US-Dollar Stärke aufweist. Da der Euro überkauft ist, wird dessen
+Performance tendenziell abschwächen, zusätzlich ist der Dollar überverkauft, wodurch eine
+ansteigende Stärke des USD prognostiziert werden kann. Indem man die stärkste und
+schwächste Währung heraussucht, handelt man das Währungspaar, das aktuell die höchste
+Wahrscheinlichkeit einer Wertberichtigung beinhaltet
+
+### ANLEITUNG PACKAGE-INSTALLATION
+1. Aktivieren Sie als ersten Schritt Ihre Lizenz: Klicken Sie dafür auf das blaue Fragezeichen-Symbol in der Menüleiste des AgenaTraders und wählen Sie „Über“ -> „Aktivierungsschlüssel eingeben“
+2. Im nächsten Fenster suchen Sie unter „Packages & Mentors“ das RelativeCurrencyStrength-AddOn, klicken auf den Eintrag und geben daraufhin Ihren Aktivierungsschlüssel ganz unten in das Feld „Aktivierungsschlüssel“ ein.
+3. Klicken Sie auf „Aktivieren“
+4. Nun wählen Sie Tools->Pakete->Paket importieren
+5. Navigieren Sie zum Speicherort der .atpack-Datei des RelativeCurrencyStrength -
+Packages, die Sie per Mail übermittelt bekommen haben.
+6. Klicken Sie auf „Öffnen“.
+7. Bestätigen Sie die Aufforderung zum Neustart des AgenaTraders.
+8. Nach dem Neustart ist der RelativeCurrencyStrength-Indikator unter „Scripted indicators“ verfügbar.
+
+
+
+### Parameters
+01. Moving Average Type: [SMA/EMA] – Berechnung der Relativen Stärke auf Basis einer SMA (Simple Moving Average) oder EMA (Exponential Moving Average)
+
+02. Slow Period: Input Parameter für die Sensitivität der Berechnung. Höhere Werte bedeuten, dass ein langsamerer Durchschnitt für die Berechnung verwendet wird. Bitte belassen Sie diesen Paramter auf der Standardeinstellung (10) solang Sie nicht 100% sicher sind, was Sie damit verändern, da die Analyse des RCS durch abweichende Werte verfälscht werden kann. Eine höhere Periode gibt nur weniger Signale aus, die aber dafür jeweils höheres Potential aufweisen.
+
+03. Fast Period: Siehe Slow Period
+
+04. – 11. Setzen Sie die Währungen auf “True”, die im Chart angezeigt werden sollen
+
+
+
+### Signale
+#### Extrempunkte in der Bewertung von 2 Währungen
+
+![Extreme points in the valuation of 2 currencies](./media/relative_extreme.png)
+Für dieses Signal lassen Sie sich für das jeweilige Währungspaar vom RCS nur die beiden
+beinhalteten Währungen anzeigen. Im Beispiel oben ist im Chart der EURUSD geladen und
+der RCS zeigt den USD (grün) und den Euro (blau).
+
+Bei den roten horizontalen Linien ist tritt eine starke Überbewertung des Euro im Vergleich
+zum Dollar auf. In diesen Situationen weist der Euro enorme Stärke und der Dollar große
+Schwäche auf. Diese Tendenzen können nicht auf Dauer aufrechterhalten werden, da
+beide Währungen im Lauf der Zeit zu Ihrem fairen Wert tendieren. Daher folgt nach diesen
+Überbewertungen des Euro eine Abschwächung des EURUSD Verhältnisses, also ein
+fallen des EURUSD Währungskurses.
+
+Diese Interpretation ist für jedes Forex-Paar möglich. 
+
+#### Überschneiden der Währungslinien
+
+Auch das Schneiden von zwei Währungslinien kann als Signal eingesetzt werden. Im Beispiel entsteht ein Long-Signal (blau), wenn der USD die CHF-Linie von unten nach oben schneidet. Ein Short Signal entsteht, wenn der CHF die USD-Linie von oben nach unten
+schneidet.
+
+![Extreme points in the valuation of 2 currencies](./media/relative_intersecting.png)
+
+#### Divergenzen zwischen Chart und RCS
+Eine Divergenz entsteht z.B. wenn der Chart neue Hochs ausbildet, die von der Stärke des RCS nicht mehr bestätigt werden. Im Beispiel bildet der USDCHF neue Hochs nach einer starken Aufwärtsbewegung, die aber von der USD-Stärke des RCS nicht mehr bestätigt werden. Nach dem Auftreten der Divergenz kann der USDCHF seine Aufwärtsbewegung nicht fortsetzen und geht in eine Seitwärtsphase über. Eine Divergenz kann also als FrühIndikator verwendet werden, um z.B. das Ende einer längeren Bewegung „vorherzusehen“
+
+![Divergences between chart and RCS](./media/relative_divergences.png)
+
+#### Anzeige der aktuellen Performance
+In the right-hand side of the indicator window, you have a display showing how the currencies are currently developing. The values shown are the absolute changes of the individual currency in the RCS graph of the previous period compared to the current period. For example, a change in the USD from 0.0700 (previous period) to 0.0800 (current period) is outputted as +100 USD. This display serves to provide a global overview of how the Forex majors are currently developing relative to each other.
+
+![Display of the current performance](./media/relative_display.png)
+
 ## Relative Performance
 ### Beschreibung
 Berechnet das Preisverhältnis zwischen aktuellen und gewählten Symbolen.
