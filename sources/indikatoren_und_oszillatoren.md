@@ -4462,17 +4462,6 @@ ansteigende Stärke des USD prognostiziert werden kann. Indem man die stärkste 
 schwächste Währung heraussucht, handelt man das Währungspaar, das aktuell die höchste
 Wahrscheinlichkeit einer Wertberichtigung beinhaltet
 
-### ANLEITUNG PACKAGE-INSTALLATION
-1. Aktivieren Sie als ersten Schritt Ihre Lizenz: Klicken Sie dafür auf das blaue Fragezeichen-Symbol in der Menüleiste des AgenaTraders und wählen Sie „Über“ -> „Aktivierungsschlüssel eingeben“
-2. Im nächsten Fenster suchen Sie unter „Packages & Mentors“ das RelativeCurrencyStrength-AddOn, klicken auf den Eintrag und geben daraufhin Ihren Aktivierungsschlüssel ganz unten in das Feld „Aktivierungsschlüssel“ ein.
-3. Klicken Sie auf „Aktivieren“
-4. Nun wählen Sie Tools->Pakete->Paket importieren
-5. Navigieren Sie zum Speicherort der .atpack-Datei des RelativeCurrencyStrength -
-Packages, die Sie per Mail übermittelt bekommen haben.
-6. Klicken Sie auf „Öffnen“.
-7. Bestätigen Sie die Aufforderung zum Neustart des AgenaTraders.
-8. Nach dem Neustart ist der RelativeCurrencyStrength-Indikator unter „Scripted indicators“ verfügbar.
-
 
 
 ### Parameters
