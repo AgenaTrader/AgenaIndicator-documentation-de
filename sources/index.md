@@ -117,6 +117,7 @@ Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Res
 -   [Range](./indikatoren_und_oszillatoren.md#range)
 -   [Range Indicator (RIND)](./indikatoren_und_oszillatoren.md#range-indicator-rind)
 -   [Rate of Change (ROC)](./indikatoren_und_oszillatoren.md#rate-of-change-roc)
+-   [Relative Currency Strength (RCS)](./indikatoren_und_oszillatoren.md#relative-currency-strength-rcs)
 -   [Relative Performance](./indikatoren_und_oszillatoren.md#relative-performance)
 -   [Relative Spread Strength (RSS)](./indikatoren_und_oszillatoren.md#relative-spread-strength-rss)
 -   [Relative Strength Index (RSI)](./indikatoren_und_oszillatoren.md#relative-strength-index-rsi)
