@@ -273,6 +273,8 @@
                 
                     <li><a class="toctree-l4" href="#rate-of-change-roc">Rate of Change (ROC)</a></li>
                 
+                    <li><a class="toctree-l4" href="#relative-currency-strength-rcs">Relative Currency Strength (RCS)</a></li>
+                
                     <li><a class="toctree-l4" href="#relative-performance">Relative Performance</a></li>
                 
                     <li><a class="toctree-l4" href="#relative-spread-strength-rss">Relative Spread Strength (RSS)</a></li>
@@ -454,16 +456,16 @@ Fällt der ADL in einem Abwärtstrend, wird Geld aus der Aktie herausgezogen. De
 <p><a href="http://vtadwiki.vtad.de/index.php/Accumulation_Distribution_Linie">vtadwiki.vtad.de</a></p>
 <h3 id="verwendung">Verwendung</h3>
 <pre><code class="cs">ADL()
-ADL(IDataSeries input)
+ADL(IDataSeries inSeries)
 ADL()[int barsAgo]
-ADL(IDataSeries input)[int barsAgo]
+ADL(IDataSeries inSeries)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. ADL()[int barsAgo] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter">Parameter</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung">Darstellung</h3>
 <p><img alt="Accumulation/Distribution (ADL)" src="../media/image2.png" /></p>
 <h3 id="beispiel">Beispiel</h3>
@@ -482,13 +484,13 @@ Wenn die Preisbewegung das obere oder untere Band durchbricht, tendiert die APZ 
 <p><a href="http://www.investopedia.com/articles/trading/10/adaptive-price-zone-indicator-explained.asp">http://www.investopedia.com/articles/trading/10/adaptive-price-zone-indicator-explained.asp</a></p>
 <h3 id="verwendung_1">Verwendung</h3>
 <pre><code class="cs">APZ(double barPct, int period)
-APZ(IDataSeries input, double barPct, int period)
+APZ(IDataSeries inSeries, double barPct, int period)
 Upper Band
 APZ(double barPct, int period).Upper[int barsAgo]
-APZ(IDataSeries input, double barPct, int period).Upper[int barsAgo]
+APZ(IDataSeries inSeries, double barPct, int period).Upper[int barsAgo]
 Lower Band
 APZ(double barPct, int period).Lower[int barsAgo]
-APZ(IDataSeries input, double barPct, int period).Lower[int barsAgo]
+APZ(IDataSeries inSeries, double barPct, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_1">Rückgabewert</h3>
@@ -496,7 +498,7 @@ APZ(IDataSeries input, double barPct, int period).Lower[int barsAgo]
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>APZ</strong>(2, 20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters">Parameters</h3>
 <p>barPct Standardabweichung</p>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Number of bars included in the calculation</p>
 <h3 id="darstellung_1">Darstellung</h3>
 <p><img alt="Adaptive Price Zone (APZ)" src="../media/image3.png" /></p>
@@ -521,20 +523,20 @@ Ein Überkreuzen der beiden Linien ist ein erstes Anzeichen für einen mögliche
 <p><a href="http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon">http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon</a></p>
 <h3 id="verwendung_2">Verwendung</h3>
 <pre><code class="cs">Aroon(int period)
-Aroon(IDataSeries input, int period)
+Aroon(IDataSeries inSeries, int period)
 //For the upper value
 Aroon(int period).Up[int barsAgo]
-Aroon(IDataSeries input, int period).Up[int barsAgo]
+Aroon(IDataSeries inSeries, int period).Up[int barsAgo]
 //For the lower value
 Aroon(int period).Down[int barsAgo]
-Aroon(IDataSeries input, int period).Down[int barsAgo]
+Aroon(IDataSeries inSeries, int period).Down[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_2">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B. <strong>Aroon</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_1">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_2">Darstellung</h3>
 <p><img alt="Aroon" src="../media/image4.png" /></p>
@@ -552,16 +554,16 @@ Der Aroon Oszillator berechnet sich aus der Substraktion Aroon Down von Aroon Up
 <p>Der Arron Oszillator eignet sich als Trendfilter- und Trendstärke-Indikator. Er wird analog zum Average Directional Movement Indikator (ADX) verwendet.</p>
 <h3 id="verwendung_3">Verwendung</h3>
 <pre><code class="cs">AroonOscillator(int period)
-AroonOscillator(IDataSeries input, int period)
+AroonOscillator(IDataSeries inSeries, int period)
 AroonOscillator(int period)[int barsAgo]
-AroonOscillator(IDataSeries input, int period)[int barsAgo]
+AroonOscillator(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_3">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (<strong>AroonOcsillator</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_2">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_3">Darstellung</h3>
 <p><img alt="Aroon Oscillator" src="../media/image5.png" /></p>
@@ -579,16 +581,16 @@ Print(&quot;Value for the oscillator is: &quot; + AroonOscillator(20)[0]);
 <p><a href="http://de.wikipedia.org/wiki/Average_Directional_Movement_Index">http://de.wikipedia.org/wiki/Average_Directional_Movement_Index</a></p>
 <h3 id="verwendung_4">Verwendung</h3>
 <pre><code class="cs">ADX(int period)
-ADX(IDataSeries input, int period)
+ADX(IDataSeries inSeries, int period)
 ADX(int period)[int barsAgo]
-ADX(IDataSeries input, int period)[int barsAgo]
+ADX(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_4">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>ADX</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_3">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_4">Darstellung</h3>
 <p><img alt="Average Directional Index (ADX)" src="../media/image6.png" /></p>
@@ -606,16 +608,16 @@ Print(&quot;Value of the ADX: &quot; + ADX(20)[0]);
 Welles Wilder empfiehlt den Markt bei einem ADXR-Wert von 25 und größer zu kaufen, und solange der Wert über 20 bleibt, die Stücke zu halten.</p>
 <h3 id="verwendung_5">Verwendung</h3>
 <pre><code class="cs">ADXR(int interval, int period)
-ADXR(IDataSeries input, int interval, int period)
+ADXR(IDataSeries inSeries, int interval, int period)
 ADXR(int interval, int period)[int barsAgo]
-ADXR(IDataSeries input, int interval, int period)[int barsAgo]
+ADXR(IDataSeries inSeries, int interval, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_5">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>ADXR</strong>(10, 14)[<strong>int</strong> barsAgo]) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_4">Parameters</h3>
-<p>input Input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Input Eingangsdatenreihe für den Indikator</p>
 <p>interval Intervall zwischen dem ersten ADX-Wert und dem aktuellen ADX-Wert</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_5">Darstellung</h3>
@@ -641,16 +643,16 @@ Print(&quot;Value of the ADXR: &quot; + ADXR(10, 14)[0]);
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Average_True_Range">http://vtadwiki.vtad.de/index.php/Average_True_Range</a></p>
 <h3 id="verwendung_6">Verwendung</h3>
 <pre><code class="cs">ATR(int period)
-ATR(IDataSeries input, int period)
+ATR(IDataSeries inSeries, int period)
 ATR(int period)[int barsAgo]
-ATR(IDataSeries input, int period)[int barsAgo]
+ATR(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_6">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index(z.B. <strong>ATR</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_5">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_6">Darstellung</h3>
 <p><img alt="Average True Range (ATR)" src="../media/image8.png" /></p>
@@ -666,9 +668,9 @@ Negativ (Rot) heißt die Bollinger Bänder ziehen sich zusammen. (Größer als S
 Positiv (Grün) heißt die Bollinger Bänder gehen außeinander.  (Größer als SignalSize -&gt; Long, gekennzeichnet durch intensiveres Grün)</p>
 <h3 id="verwendung_7">Verwendung</h3>
 <pre><code class="cs">BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize) 
-BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int signalsize) 
+BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize) 
 BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo]
-BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo] 
+BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo] 
 
 </code></pre>
 
@@ -676,7 +678,7 @@ BBBreakOutSpeed(IDataSeries input, double bandsDeviation, int bandsPeriod, int s
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>BBBreakOutSpeed</strong>(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_6">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator
+<p>inSeries Eingangsdatenreihe für den Indikator
 bandsDeviation Standardabweichung für die Bollingerbänder
 bandsPeriod Periode für die Bollingerbänder
 signalsize Die Mindesthöhe der Balken damit es ein Signal ergibt (Long, Short)</p>
@@ -708,16 +710,16 @@ BOP=(Close-Open) / (High-Low)</p>
 <p>Eine Richtungsänderung des BOP kann als Warnsignal aufgefasst werden und zieht oftmals eine Preisänderung nach sich.</p>
 <h3 id="verwendung_8">Verwendung</h3>
 <pre><code class="cs">BOP(int smooth)
-BOP(IDataSeries input, int smooth)
+BOP(IDataSeries inSeries, int smooth)
 BOP(int smooth)[int barsAgo]
-BOP(IDataSeries input, int smooth)[int barsAgo]
+BOP(IDataSeries inSeries, int smooth)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_8">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>BOP</strong>(5)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_7">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>smooth Einstellung zur Glättung</p>
 <h3 id="darstellung_8">Darstellung</h3>
 <p><img alt="Balance of Power (BOP)" src="../media/image9.png" /></p>
@@ -750,20 +752,20 @@ Jedoch sind die Bollinger Bänder in ihrem theoretischen Ansatz nicht dazu konst
 <p>Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)</p>
 <h3 id="verwendung_9">Verwendung</h3>
 <pre><code class="cs">Bollinger(double numStdDev, int period)
-Bollinger(IDataSeries input, double numStdDev, int period)
+Bollinger(IDataSeries inSeries, double numStdDev, int period)
 //Für das obere Band
 Bollinger(double numStdDev, int period).Upper[int barsAgo]
-Bollinger(IDataSeries input, double numStdDev, int period).Upper[int barsAgo]
+Bollinger(IDataSeries inSeries, double numStdDev, int period).Upper[int barsAgo]
 //Für das untere Band
 Bollinger(double numStdDev, int period).Lower[int barsAgo]
-Bollinger(IDataSeries input, double numStdDev, int period).Lower[int barsAgo]
+Bollinger(IDataSeries inSeries, double numStdDev, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_9">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index(z.B. <strong>Bollinger</strong>(2, 20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_8">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>numStdDev Standardabweichung</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_9">Darstellung</h3>
@@ -800,16 +802,16 @@ Erkennen überdehnter Marktsituationen: Der Indikator lässt uns Situationen erk
 <p>Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)</p>
 <h3 id="verwendung_10">Verwendung</h3>
 <pre><code class="cs">BollingerPercentB(int period, double numStdDev)
-BollingerPercentB(IDataSeries input, int period, double numStdDev)
+BollingerPercentB(IDataSeries inSeries, int period, double numStdDev)
 BollingerPercentB(int period, double numStdDev) [int barsAgo]
-BollingerPercentB(IDataSeries input, int period, double numStdDev)[int barsAgo]
+BollingerPercentB(IDataSeries inSeries, int period, double numStdDev)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_10">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B.  <strong>BollingerPercentB</strong>(20, 2)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_9">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>numStdDev   Standardabweichung</p>
 <h3 id="darstellung_10">Darstellung</h3>
@@ -831,28 +833,28 @@ Der Indikator wird im Chart mit einer Signallinie dargestellt. Die Signallinie i
 <p>Buch "Technische Indikatoren - simplified" von Oliver Paesler (German only)</p>
 <h3 id="verwendung_11">Verwendung</h3>
 <pre><code class="cs">BBWidth(double numStdDev, int period)
-BBWidth(IDataSeries input, double numStdDev, int period)
+BBWidth(IDataSeries inSeries, double numStdDev, int period)
 BBWidth(double numStdDev, int period)[int barsAgo]
-BBWidth(IDataSeries input, double numStdDev, int period)[int barsAgo]
+BBWidth(IDataSeries inSeries, double numStdDev, int period)[int barsAgo]
 
 //für den Wert der BandBreite (wie oben)
 BBWidth(double numStdDev, int period).BandWidth
-BBWidth(IDataSeries input, double numStdDev, int period).BandWidth
+BBWidth(IDataSeries inSeries, double numStdDev, int period).BandWidth
 BBWidth(double numStdDev, int period).BandWidth[int barsAgo]
-BBWidth(IDataSeries input, double numStdDev, int period).BandWidth[int barsAgo]
+BBWidth(IDataSeries inSeries, double numStdDev, int period).BandWidth[int barsAgo]
 
 //für den Wert der Triggerlinie (Threshold)
 BBWidth(double numStdDev, int period).Threshold
-BBWidth(IDataSeries input, double numStdDev, int period).Threshold
+BBWidth(IDataSeries inSeries, double numStdDev, int period).Threshold
 BBWidth(double numStdDev, int period).Threshold[int barsAgo]
-BBWidth(IDataSeries input, double numStdDev, int period).Threshold[int barsAgo]
+BBWidth(IDataSeries inSeries, double numStdDev, int period).Threshold[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_11">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B <strong>BBWidth</strong>(2, 20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_10">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>numStdDev   Standardabweichung</p>
 <h3 id="darstellung_11">Darstellung</h3>
@@ -882,15 +884,15 @@ Dies ist ein Realtime-Indikator. Er funktioniert nur auf Realtime-Daten und wird
 <p>See <a href="#buysellvolume"><em>BuySellVolume</em></a>.</p>
 <h3 id="verwendung_12">Verwendung</h3>
 <pre><code class="cs">BuySellPressure()
-BuySellPressure(IDataSeries input)
+BuySellPressure(IDataSeries inSeries)
 
 //Für den Wert von buy pressure
 BuySellPressure().BuyPressure[int barsAgo]
-BuySellPressure(IDataSeries input).BuyPressure[int barsAgo]
+BuySellPressure(IDataSeries inSeries).BuyPressure[int barsAgo]
 
 //Für den Wert von sell pressure
 BuySellPressure().SellPressure[int barsAgo]
-BuySellPressure(IDataSeries input).SellPressure[int barsAgo]
+BuySellPressure(IDataSeries inSeries).SellPressure[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_12">Rückgabewert</h3>
@@ -901,7 +903,7 @@ BuySellPressure(IDataSeries input).SellPressure[int barsAgo]
 -   BuySellPressure().SellPressure[0] = 50
 -   BuySellPressure().SellPressure[0] = 50</p>
 <h3 id="parameters_11">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_13">Darstellung</h3>
 <p><img alt="BuySellPressure" src="../media/image14.png" /></p>
 <h3 id="beispiel_12">Beispiel</h3>
@@ -940,14 +942,14 @@ protected override void OnCalculate()
 <p>Siehe auch <a href="#buysellpressure"><em>BuySellPressure</em></a> </p>
 <h3 id="verwendung_13">Verwendung</h3>
 <pre><code class="cs">BuySellVolume BuySellVolume()
-BuySellVolume BuySellVolume(IDataSeries input)
+BuySellVolume BuySellVolume(IDataSeries inSeries)
 </code></pre>
 
 <h3 id="ruckgabewert_13">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>BuySellVolume</strong>().BuyVolume[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_1">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_14">Darstellung</h3>
 <p><img alt="BuySellVolume" src="../media/image15.png" /></p>
 <h3 id="beispiel_13">Beispiel</h3>
@@ -962,9 +964,9 @@ Print(&quot;The BuySellVolume is: &quot; + BuySellVolume()[0]);
 <p>Erklärung der einzelnen Formationen und ihrer jeweiligen Interpretation finden sich z.B. unter: <a href="http://en.wikipedia.org/wiki/Candlestick_pattern">http://en.wikipedia.org/wiki/Candlestick_pattern</a></p>
 <h3 id="verwendung_14">Verwendung</h3>
 <pre><code class="cs">CandleStickPattern(ChartPattern pattern, int trendStrength)
-CandleStickPattern(IDataSeries input, ChartPattern pattern, int trendStrength)
+CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)
 CandleStickPattern(ChartPattern pattern, int trendStrength)[int barsAgo]
-CandleStickPattern(IDataSeries input, ChartPattern pattern, int trendStrength)[int barsAgo]
+CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_14">Rückgabewert</h3>
@@ -1125,16 +1127,16 @@ Diese Indikatoren gehören unterschiedlichen Indikatorkategorien an und ergänze
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Chaikin_Money_Flow">http://vtadwiki.vtad.de/index.php/Chaikin_Money_Flow</a></p>
 <h3 id="verwendung_15">Verwendung</h3>
 <pre><code class="cs">ChaikinMoneyFlow(int period)
-ChaikinMoneyFlow(IDataSeries input, int period)
+ChaikinMoneyFlow(IDataSeries inSeries, int period)
 ChaikinMoneyFlow(int period)[int barsAgo]
-ChaikinMoneyFlow(IDataSeries input, int period)[int barsAgo]
+ChaikinMoneyFlow(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_15">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B.  <strong>ChaikinMoneyFlow</strong>(21)[<strong>int</strong> barsAgo] ),  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_13">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_16">Darstellung</h3>
 <p><img alt="ChaikinMoneyFlow (CMF)" src="../media/image17.png" /></p>
@@ -1152,16 +1154,16 @@ Der Chaikin Oszillator ist einfach der Moving Average Convergence Divergence Ind
 Als Oszillator zeigt er Veränderungen in der Liquidität an, die in eine Aktie hinein oder heraus fließt. Chaikin hat empfohlen, die Oszillator- Signale nur in Trendrichtung zu nutzen: In einem Aufwärtstrend gelten nur die Kaufsignale, in einem Abwärtstrend finden nur die Verkaufssignale Berücksichtigung. Dennoch kann der Chaikin-Oscillator auch gemäß der klassischen Oszillator-Anwendung als Indikator von überkauften bzw. überverkauften Situationen angewendet werden.</p>
 <h3 id="verwendung_16">Verwendung</h3>
 <pre><code class="cs">ChaikinOscillator(int fast, int slow)
-ChaikinOscillator(IDataSeries input, int fast, int slow)
+ChaikinOscillator(IDataSeries inSeries, int fast, int slow)
 ChaikinOscillator(int fast, int slow)[int barsAgo]
-ChaikinOscillator(IDataSeries input, int fast, int slow)[int barsAgo]
+ChaikinOscillator(IDataSeries inSeries, int fast, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_16">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B. <strong>ChaikinOscillator</strong>(3, 10)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_14">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>fast        Anzahl der Bars, für die Berechnung des Fast EMA</p>
 <p>slow        Anzahl der Bars, für die Berechnung des Slow EMA</p>
 <h3 id="darstellung_17">Darstellung</h3>
@@ -1183,16 +1185,16 @@ Bodenbildungen des Indikators im negativen Bereich deuten auf mögliche Ausbruch
 Die Chaikin´s Volatility dient in der Regel nicht zur Herleitung konkreter Signale, sondern vielmehr zur "Abrundung" eines Handelssystems. Er ist viel zu hippelig und lässt damit viel Interpretationsspielraum zu. Hinzu kommt, dass Kursverluste fast immer mit steigender Volatilität begleitet werden, Kursgewinne hingegen aber nicht zwingend von ansteigender Volatilität begleitet werden. Auch fehlen - insbesondere in langanhaltenden Trendphasen - eindeutige Signale.</p>
 <h3 id="verwendung_17">Verwendung</h3>
 <pre><code class="cs">ChaikinVolatility(int fast, int slow)
-ChaikinVolatility(IDataSeries input, int fast, int slow)
+ChaikinVolatility(IDataSeries inSeries, int fast, int slow)
 ChaikinVolatility(int fast, int slow)[int barsAgo]
-ChaikinVolatility(IDataSeries input, int fast, int slow)[int barsAgo]
+ChaikinVolatility(IDataSeries inSeries, int fast, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_17">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B. <strong>ChaikinVolatility</strong>(14)[<strong>int</strong> barsAgo] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_15">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_18">Darstellung</h3>
 <p><img alt="ChaikinVolatility (CVL)" src="../media/image19.png" /></p>
@@ -1213,16 +1215,16 @@ Je höher / tiefer der CMO ist, desto stärker ist der jeweilige Trend. Schwankt
 <p><a href="http://www.boersenwissen.de/content/content_bin/cont_bin18.html">http://www.boersenwissen.de/content/content_bin/cont_bin18.html</a></p>
 <h3 id="verwendung_18">Verwendung</h3>
 <pre><code class="cs">CMO(int period)
-CMO(IDataSeries input, int period)
+CMO(IDataSeries inSeries, int period)
 CMO(int period)[int barsAgo]
-CMO(IDataSeries input, int period)[int barsAgo]
+CMO(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_18">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B.. <strong>CMO</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_16">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_19">Darstellung</h3>
 <p><img alt="Chande Momentum Oscillator (CMO)" src="../media/image20.png" /></p>
@@ -1296,16 +1298,16 @@ Print(“Value of the upper band: “ + ClimacticDistnance(20, 80).MovingAverage
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index">http://vtadwiki.vtad.de/index.php/Commodity_Channel_Index</a></p>
 <h3 id="verwendung_20">Verwendung</h3>
 <pre><code class="cs">CCI(int period)
-CCI(IDataSeries input, int period)
+CCI(IDataSeries inSeries, int period)
 CCI(int period)[int barsAgo]
-CCI(IDataSeries input, int period)[int barsAgo]
+CCI(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_20">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B <strong>CCI</strong>(14)[<strong>int</strong> barsAgo] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_18">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_21">Darstellung</h3>
 <p><img alt="Commodity Channel Index (CCI)" src="../media/image21.png" /></p>
@@ -1637,22 +1639,22 @@ Sobald der Kurs aus eine dieser Boxen ausbricht, entsteht ein Kauf- bzw. Verkauf
 <a href="http://www.eusdoni.de/index.php?option=com_content&amp;view=article&amp;catid=13:eusdoni-version-3&amp;id=42:darvas-boxen">http://www.eusdoni.de/index.php?option=com_content&amp;view=article&amp;catid=13:eusdoni-version-3&amp;id=42:darvas-boxen</a></p>
 <h3 id="verwendung_29">Verwendung</h3>
 <pre><code class="cs">Darvas()
-Darvas(IDataSeries input)
+Darvas(IDataSeries inSeries)
 
 //For the upper Box boundary
 Darvas().Upper[int barsAgo]
-Darvas(IDataSeries input).Upper[int barsAgo]
+Darvas(IDataSeries inSeries).Upper[int barsAgo]
 
 //Returns the lower value
 Darvas().Lower[int barsAgo]
-Darvas(IDataSeries input).Lower[int barsAgo]
+Darvas(IDataSeries inSeries).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_29">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>Darvas</strong>()[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_2">Parameter</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_30">Darstellung</h3>
 <p><img alt="Darvas Boxes" src="../media/image22.png" /></p>
 <h3 id="beispiel_28">Beispiel</h3>
@@ -1672,22 +1674,22 @@ Die Plus- bzw. Minus-Zeichen sind nicht im math. Sinne zu verstehen. Sie geben n
 <p>siehe Directional Movement Index (<a href="#directional-movement-index-dmi"><em>DMI</em></a>)</p>
 <h3 id="verwendung_30">Verwendung</h3>
 <pre><code class="cs">DM(int period)
-DM(IDataSeries input, int period)
+DM(IDataSeries inSeries, int period)
 DM(int period)[int barsAgo]
-DM(IDataSeries input, int period)[int barsAgo]
+DM(IDataSeries inSeries, int period)[int barsAgo]
 //Für den Wert von +DM
 DM(int period).DiPlus[int barsAgo]
-DM(IDataSeries input, int period).DiPlus[int barsAgo]
+DM(IDataSeries inSeries, int period).DiPlus[int barsAgo]
 //Für den Wert von -DM
 DM(int period).DiMinus[int barsAgo]
-DM(IDataSeries input, int period).DiMinus[int barsAgo]
+DM(IDataSeries inSeries, int period).DiMinus[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_30">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>DM</strong>(14).DiPlus[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_27">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_31">Darstellung</h3>
 <p><img alt="Directional Movement (DM)" src="../media/image23.png" /></p>
@@ -1711,26 +1713,26 @@ Aktuelle Forschungsergebnisse zeigen, dass heute die langfristigen Ausbrüche zw
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Donchian_Channel">http://vtadwiki.vtad.de/index.php/Donchian_Channel</a></p>
 <h3 id="verwendung_31">Verwendung</h3>
 <pre><code class="cs">DonchianChannel(int period)
-DonchianChannel(IDataSeries input, int period)
+DonchianChannel(IDataSeries inSeries, int period)
 
 //Für das obere Band
 DonchianChannel(int period).Upper[int barsAgo]
-DonchianChannel(IDataSeries input, int period).Upper[int barsAgo]
+DonchianChannel(IDataSeries inSeries, int period).Upper[int barsAgo]
 
 //Für das mittlere Band
 DonchianChannel(int period)[int barsAgo]
-DonchianChannel(IDataSeries input, int period)[int barsAgo]
+DonchianChannel(IDataSeries inSeries, int period)[int barsAgo]
 
 //Für das untere Band
 DonchianChannel(int period).Lower[int barsAgo]
-DonchianChannel(IDataSeries input, int period).Lower[int barsAgo]
+DonchianChannel(IDataSeries inSeries, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_31">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B. <strong>DonchianChannel</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_28">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_32">Darstellung</h3>
 <p><img alt="Donchian Channel" src="../media/image24.png" /></p>
@@ -1754,16 +1756,16 @@ Print(&quot;The lower band is at: &quot; + DonchianChannel(14).Lower[0]);
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/DMI_-_Directional_Movement_Index">http://vtadwiki.vtad.de/index.php/DMI_-_Directional_Movement_Index</a></p>
 <h3 id="verwendung_32">Verwendung</h3>
 <pre><code class="cs">DMI(int period)
-DMI(IDataSeries input, int period)
+DMI(IDataSeries inSeries, int period)
 DMI(int period)[int barsAgo]
-DMI(IDataSeries input, int period)[int barsAgo]
+DMI(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_32">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>DMI</strong>(20)[<strong>int</strong> barsAgo] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_29">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_33">Darstellung</h3>
 <p><img alt="Directional Movement Index (DMI)" src="../media/image25.png" /></p>
@@ -1790,28 +1792,28 @@ In trendstarken Phasen läuft dieser Indikator relativ oft die entgegengesetzte 
 <pre><code class="cs">DoubleStochastics(int period)
 DoubleStochastics(int period)[int barsAgo]
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1)
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1)
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1)
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1)[int barsAgo]
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1)[int barsAgo]
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1)[int barsAgo]
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)[int barsAgo]
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)[int barsAgo]
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2)[int barsAgo]
 
 //Für den Wert von %K   (Signaturen sind nur noch aus Gründen der Kompatibilität vorhanden)
 DoubleStochastics(int period).K[int barsAgo]
-DoubleStochastics(IDataSeries input, int period).K[int barsAgo]
+DoubleStochastics(IDataSeries inSeries, int period).K[int barsAgo]
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1).K[int barsAgo]
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1).K[int barsAgo]
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1).K[int barsAgo]
 DoubleStochastics(int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2).K[int barsAgo]
-DoubleStochastics(IDataSeries input, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2).K[int barsAgo]
+DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, int EMA-Period1, int EMA-Period2).K[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_33">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>DoubleStochastics</strong>(...)[<strong>int</strong> barsAgo] bzw <strong>DoubleStochastics</strong>(...).K[<strong>int</strong> barsAgo]) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_30">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden. (default: 10)</p>
 <p>mode        Berechnungsmethode, mögliche Werte sind: Blau, Blau2 und Bressert. (default: Bressert)</p>
 <p>EMA-Period1 Periode für den EMA in der Berechnung nach Bressert. (default: 2) </p>
@@ -1835,16 +1837,16 @@ Der Dynamic Momentum Index (DMIndex), wurde von Tushar Chande entwickelt. Es han
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Dynamic_Momentum_Index">http://vtadwiki.vtad.de/index.php/Dynamic_Momentum_Index</a></p>
 <h3 id="verwendung_34">Verwendung</h3>
 <pre><code class="cs">DMIndex(int smooth)
-DMIndex(IDataSeries input, int smooth)
+DMIndex(IDataSeries inSeries, int smooth)
 DMIndex(int smooth)[int barsAgo]
-DMIndex(IDataSeries input, int smooth)[int barsAgo]
+DMIndex(IDataSeries inSeries, int smooth)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_34">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index  (z.B. <strong>DMIndex</strong>(3)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_31">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>smooth  Einstellung zur Glättung</p>
 <h3 id="darstellung_35">Darstellung</h3>
 <p><img alt="Dynamic Momentum Index (DMIndex)" src="../media/image27.png" /></p>
@@ -1867,16 +1869,16 @@ Die Beobachtung von neues Hochs bzw. neuen Tiefs im EOM zeigt die vorzeitige Umk
 <p><a href="http://www.volumen-analyse.de">http://www.volumen-analyse.de</a></p>
 <h3 id="verwendung_35">Verwendung</h3>
 <pre><code class="cs">EaseOfMovement(int smoothing, int volDivisor)
-EaseOfMovement(IDataSeries input, int smoothing, int volDivisor)
+EaseOfMovement(IDataSeries inSeries, int smoothing, int volDivisor)
 EaseOfMovement(int smoothing, int volDivisor)[int barsAgo]
-EaseOfMovement(IDataSeries input, int smoothing, int volDivisor)[int barsAgo]
+EaseOfMovement(IDataSeries inSeries, int smoothing, int volDivisor)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_35">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>EaseOfMovement</strong>(14, 10000)[<strong>int</strong> barsAgo] )  wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_32">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>smoothing   Einstellung zur Glättung</p>
 <p>volDivisor  Zur Berechnung der Box Ratio (s. unten Berechnung)</p>
 <h3 id="darstellung_36">Darstellung</h3>
@@ -1899,16 +1901,16 @@ Viele Indikatoren reagieren in seitwärts gerichteten Marktphasen mit chaotische
 <p>Ein System unter Verwendung des Indikators FisherTransform wird z.B. unter
 <a href="https://www.prorealtime.com/de/pdf/probacktest.pdf">https://www.prorealtime.com/de/pdf/probacktest.pdf</a> beschrieben.</p>
 <h3 id="parameters_33">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="ruckgabewert_36">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>FisherTransform</strong>(10)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="verwendung_36">Verwendung</h3>
 <pre><code class="cs">FisherTransform(int period)
-FisherTransform(IDataSeries input, int period)
+FisherTransform(IDataSeries inSeries, int period)
 FisherTransform(int period)[int barsAgo]
-FisherTransform(IDataSeries input, int period)[int barsAgo]
+FisherTransform(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="darstellung_37">Darstellung</h3>
@@ -1928,16 +1930,16 @@ Meist wird zusätzlich zur Linie des FOSC eine SMA-Linie eingezeichnet, um Rever
 <h3 id="weitere-informationen_18">Weitere Informationen</h3>
 <p>FMLabs: <a href="http://www.fmlabs.com/reference/default.htm?url=ForecastOscillator.htm">http://www.fmlabs.com/reference/default.htm?url=ForecastOscillator.htm</a></p>
 <h3 id="parameters_34">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="ruckgabewert_37">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index (z.B. <strong>FOSC</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="verwendung_37">Verwendung</h3>
 <pre><code class="cs">FOSC(int period)
-FOSC(IDataSeries input, int period)
+FOSC(IDataSeries inSeries, int period)
 FOSC(int period)[int barsAgo]
-FOSC(IDataSeries input, int period)[int barsAgo]
+FOSC(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="darstellung_38">Darstellung</h3>
@@ -2026,34 +2028,34 @@ Um diesen Teil der Wolke im Chart zu sehen, muß der Chart mit der Maus auf der 
 <p><a href="http://www.forexonlinegeheimnisse.com/ichimoku-kinko-hyo-teil-ii-das-perfekte-kauf-oder-verkaufssignal#top">http://www.forexonlinegeheimnisse.com/ichimoku-kinko-hyo-teil-ii-das-perfekte-kauf-oder-verkaufssignal#top</a> (Part 2, German)</p>
 <h3 id="verwendung_40">Verwendung</h3>
 <pre><code class="cs">IchimokuCloud(int periodFast, int periodMedium, int periodSlow)
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow)
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow)
 
 //TenkanSen
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow).TenkanSen[int barsAgo]
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).TenkanSen[int barsAgo]
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow).TenkanSen[int barsAgo]
 
 //KijunSen
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow).KijunSen[int barsAgo]
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).KijunSen[int barsAgo]
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow).KijunSen[int barsAgo]
 
 //ChikouSpan
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow).ChikouSpan[int barsAgo]
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).ChikouSpan[int barsAgo]
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow).ChikouSpan[int barsAgo]
 
 //SenkouSpanA
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow).SenkouSpanA[int barsAgo]
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).SenkouSpanA[int barsAgo]
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow).SenkouSpanA[int barsAgo]
 
 //SenkouSpanB
 IchimokuCloud(int periodFast, int periodMedium, int periodSlow).SenkouSpanB[int barsAgo]
-IchimokuCloud(IDataSeries input, int periodFast, int periodMedium, int periodSlow).SenkouSpanB[int barsAgo]
+IchimokuCloud(IDataSeries inSeries, int periodFast, int periodMedium, int periodSlow).SenkouSpanB[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_40">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>IchimokuCloud</strong>(9,26,52)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_35">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>periodFast      Anzahl der Perioden zur Berechnung der Tenkan Linie, (default: 9)</p>
 <p>periodMedium        Anzahl der Perioden zur Berechnung der Kijun Linie, (default: 26)</p>
 <p>periodSlow      Anzahl der Perioden zur Berechnung von Chikou Linie, (default: 52)</p>
@@ -2077,7 +2079,7 @@ InsideBarsMT().LowBeforeOutsideBar[int barsAgo]
 </code></pre>
 
 <h3 id="parameter_5">Parameter</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>unit        Mögliche Werte sind:
         InsideBarsMTToleranceUnit.Ticks
         InsideBarsMTToleranceUnit.Points
@@ -2145,26 +2147,26 @@ Bricht der Kurs aus dem unteren Band aus, so wird das als Verkaufssignal gewerte
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Keltner_Channel">http://vtadwiki.vtad.de/index.php/Keltner_Channel</a></p>
 <h3 id="verwendung_42">Verwendung</h3>
 <pre><code class="cs">KeltnerChannel(double offsetMutiplier, int period)
-KeltnerChannel(IDataSeries input, double offsetMutiplier, int period)
+KeltnerChannel(IDataSeries inSeries, double offsetMutiplier, int period)
 
 //Returns midline value
 KeltnerChannel(double offsetMutiplier, int period)[int barsAgo]
-KeltnerChannel(IDataSeries input, double offsetMutiplier, int period)[int barsAgo]
+KeltnerChannel(IDataSeries inSeries, double offsetMutiplier, int period)[int barsAgo]
 
 //Returns upper band value
 KeltnerChannel(double offsetMutiplier, int period).Upper[int barsAgo]
-KeltnerChannel(IDataSeries input, double offsetMutiplier, int period).Upper[int barsAgo]
+KeltnerChannel(IDataSeries inSeries, double offsetMutiplier, int period).Upper[int barsAgo]
 
 //Returns lower band value
 KeltnerChannel(double offsetMutiplier, int period).Lower[int barsAgo]
-KeltnerChannel(IDataSeries input, double offsetMutiplier, int period).Lower[int barsAgo]
+KeltnerChannel(IDataSeries inSeries, double offsetMutiplier, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_41">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>KeltnerChannel</strong>(1.5, 15)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_36">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries            Eingangsdatenreihe für den Indikator</p>
 <p>offsetMultiplier        Multiplikator für den SMA (siehe Berechnung)</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_43">Darstellung</h3>
@@ -2189,7 +2191,7 @@ Print(&quot;Current value of the lower Keltner Channel band: &quot; + KeltnerCha
 2.  Das aktuelle Tief ist kleiner oder gleich dem tiefsten Tief der letzten n Bars.</p>
 <p>Siehe auch  <a href="#keyreversaldown"><em>KeyReversalDown</em></a>, <a href="#keyreversalupatsma"><em>KeyReversalUpAtSMA</em></a>, <a href="#keyreversaldownatsma"><em>KeyReversalDownAtSMA</em></a>, <a href="#keyreversalupatema"><em>KeyReversalUpAtEMA</em></a>, <a href="#keyreversaldownatema"><em>KeyReversalDownAtEMA</em></a>.</p>
 <h3 id="parameter_6">Parameter</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="ruckgabewert_42">Rückgabewert</h3>
 <p><strong>double</strong></p>
@@ -2197,9 +2199,9 @@ period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_43">Verwendung</h3>
 <pre><code class="cs">KeyReversalUp(int period)
-KeyReversalUp(IDataSeries input, int period)
+KeyReversalUp(IDataSeries inSeries, int period)
 KeyReversalUp(int period)[int barsAgo]
-KeyReversalUp(IDataSeries input, int period)[int barsAgo]
+KeyReversalUp(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_40">Beispiel</h3>
@@ -2217,7 +2219,7 @@ Print(&quot;Es ist eine Long-Umkehrformation aufgetreten.&quot;);
 </ol>
 <p>Siehe auch <a href="#keyreversalup"><em>KeyReversalUp</em></a>, <a href="#keyreversalupatsma"><em>KeyReversalUpAtSMA</em></a>, <a href="#keyreversaldownatsma"><em>KeyReversalDownAtSMA</em></a>, <a href="#keyreversalupatema"><em>KeyReversalUpAtEMA</em></a>, <a href="#keyreversaldownatema"><em>KeyReversalDownAtEMA</em></a>.</p>
 <h3 id="parameters_37">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="ruckgabewert_43">Rückgabewert</h3>
 <p><strong>double</strong></p>
@@ -2225,9 +2227,9 @@ period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_44">Verwendung</h3>
 <pre><code class="cs">KeyReversalDown(int period)
-KeyReversalDown(IDataSeries input, int period)
+KeyReversalDown(IDataSeries inSeries, int period)
 KeyReversalDown(int period)[int barsAgo]
-KeyReversalDown(IDataSeries input, int period)[int barsAgo]
+KeyReversalDown(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_41">Beispiel</h3>
@@ -2246,7 +2248,7 @@ Print(&quot;Es ist eine Short-Umkehrformation aufgetreten.&quot;);
 </ol>
 <p>Siehe auch <a href="#keyreversalup"><em>KeyReversalUp</em></a>, <a href="#keyreversaldown"><em>KeyReversalDown</em></a>, <a href="#keyreversaldownatsma"><em>KeyReversalDownAtSMA</em></a>, <a href="#keyreversalupatema"><em>KeyReversalUpAtEMA</em></a>, <a href="#keyreversaldownatema"><em>KeyReversalDownAtEMA</em></a>.</p>
 <h3 id="parameters_38">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden
 SMAperiod   Anzahl der Perioden zur Berechnung des SMA</p>
 <h3 id="ruckgabewert_44">Rückgabewert</h3>
@@ -2255,9 +2257,9 @@ SMAperiod   Anzahl der Perioden zur Berechnung des SMA</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_45">Verwendung</h3>
 <pre><code class="cs">KeyReversalUpAtSMA(int period, int SMAperiod)
-KeyReversalUpAtSMA(IDataSeries input, int period, int SMAperiod)
+KeyReversalUpAtSMA(IDataSeries inSeries, int period, int SMAperiod)
 KeyReversalUpAtSMA(int period, int SMAperiod)[int barsAgo]
-KeyReversalUpAtSMA(IDataSeries input, int period, int SMAperiod)[int barsAgo]
+KeyReversalUpAtSMA(IDataSeries inSeries, int period, int SMAperiod)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_42">Beispiel</h3>
@@ -2276,7 +2278,7 @@ Print(&quot;Es ist eine Long-Umkehrformation aufgetreten.&quot;);
 </ol>
 <p>Siehe auch  <a href="#keyreversalup"><em>KeyReversalUp</em></a>, <a href="#keyreversaldown"><em>KeyReversalDown</em></a>, <a href="#keyreversalupatsma"><em>KeyReversalUpAtSMA</em></a>, <a href="#keyreversalupatema"><em>KeyReversalUpAtEMA</em></a>, <a href="#keyreversaldownatema"><em>KeyReversalDownAtEMA</em></a>.</p>
 <h3 id="parameters_39">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden
 SMAperiod   Anzahl der Perioden zur Berechnung des SMA</p>
 <h3 id="ruckgabewert_45">Rückgabewert</h3>
@@ -2285,9 +2287,9 @@ SMAperiod   Anzahl der Perioden zur Berechnung des SMA</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_46">Verwendung</h3>
 <pre><code class="cs">KeyReversalDownAtSMA(int period, int SMAperiod)
-KeyReversalDownAtSMA(IDataSeries input, int period, int SMAperiod)
+KeyReversalDownAtSMA(IDataSeries inSeries, int period, int SMAperiod)
 KeyReversalDownAtSMA(int period, int SMAperiod)[int barsAgo]
-KeyReversalDownAtSMA(IDataSeries input, int period, int SMAperiod)[int barsAgo]
+KeyReversalDownAtSMA(IDataSeries inSeries, int period, int SMAperiod)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_43">Beispiel</h3>
@@ -2306,7 +2308,7 @@ Print(&quot;Es ist eine Short-Umkehrformation aufgetreten.&quot;);
 </ol>
 <p>Siehe auch <a href="#keyreversalup"><em>KeyReversalUp</em></a>, <a href="#keyreversaldown"><em>KeyReversalDown</em></a>, <a href="#keyreversalupatsma"><em>KeyReversalUpAtSMA</em></a>, <a href="#keyreversaldownatsma"><em>KeyReversalDownAtSMA</em></a>, <a href="#keyreversaldownatema"><em>KeyReversalDownAtEMA</em></a>.</p>
 <h3 id="parameters_40">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden
 EMAperiod   Anzahl der Perioden zur Berechnung des EMA</p>
 <h3 id="ruckgabewert_46">Rückgabewert</h3>
@@ -2315,9 +2317,9 @@ EMAperiod   Anzahl der Perioden zur Berechnung des EMA</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_47">Verwendung</h3>
 <pre><code class="cs">KeyReversalUpAtEMA(int period, int EMAperiod)
-KeyReversalUpAtEMA(IDataSeries input, int period, int EMAperiod)
+KeyReversalUpAtEMA(IDataSeries inSeries, int period, int EMAperiod)
 KeyReversalUpAtEMA(int period, int EMAperiod)[int barsAgo]
-KeyReversalUpAtEMA(IDataSeries input, int period, int EMAperiod)[int barsAgo]
+KeyReversalUpAtEMA(IDataSeries inSeries, int period, int EMAperiod)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_44">Beispiel</h3>
@@ -2336,7 +2338,7 @@ Print(&quot;Es ist eine Long-Umkehrformation aufgetreten.&quot;);
 </ol>
 <p>Siehe auch <a href="#keyreversalup"><em>KeyReversalUp</em></a>, <a href="#keyreversaldown"><em>KeyReversalDown</em></a>, <a href="#keyreversalupatsma"><em>KeyReversalUpAtSMA</em></a>, <a href="#keyreversaldownatsma"><em>KeyReversalDownAtSMA</em></a>, <a href="#keyreversalupatema"><em>KeyReversalUpAtEMA</em></a>.</p>
 <h3 id="parameters_41">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator
+<p>inSeries    Eingangsdatenreihe für den Indikator
 period      Anzahl der Bars, die in die Berechnung einbezogen werden
 EMAperiod   Anzahl der Perioden zur Berechnung des EMA</p>
 <h3 id="ruckgabewert_47">Rückgabewert</h3>
@@ -2345,9 +2347,9 @@ EMAperiod   Anzahl der Perioden zur Berechnung des EMA</p>
 1 - Umkehrformation vorhanden</p>
 <h3 id="verwendung_48">Verwendung</h3>
 <pre><code class="cs">KeyReversalDownAtEMA(int period, int EMAperiod)
-KeyReversalDownAtEMA(IDataSeries input, int period, int EMAperiod)
+KeyReversalDownAtEMA(IDataSeries inSeries, int period, int EMAperiod)
 KeyReversalDownAtEMA(int period, int EMAperiod)[int barsAgo]
-KeyReversalDownAtEMA(IDataSeries input, int period, int EMAperiod)[int barsAgo]
+KeyReversalDownAtEMA(IDataSeries inSeries, int period, int EMAperiod)[int barsAgo]
 </code></pre>
 
 <h3 id="beispiel_45">Beispiel</h3>
@@ -2381,16 +2383,16 @@ Der Indikator Linear Regression stellt die Endwerte multipler linearer Regressio
 <p>Der Lineare Regression Indikator versteht sich als eine Prognose des zukünftigen Kurses, der heute bereits abgebildet wird. Wenn die Preise anhaltend höher oder niedriger als die prognostizierten Kurse sind, ist zu erwarten, dass sie schnell wieder auf ein realistischeres Niveau zurückzukehren. Mit anderen Worten: Der Indikator zeigt an, wo die Preise (nach statistischem Verständnis) sein sollten.Eine übermäßige Abweichung von der Regression ist wahrscheinlich kurzlebig und wird in naher Zukunft korrigiert.</p>
 <h3 id="verwendung_50">Verwendung</h3>
 <pre><code class="cs">LinReg(int period)
-LinReg(IDataSeries input, int period)
+LinReg(IDataSeries inSeries, int period)
 LinReg(int period)[int barsAgo]
-LinReg(IDataSeries input, int period)[int barsAgo]
+LinReg(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_49">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>LinReg</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_43">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_45">Darstellung</h3>
 <p><img alt="Linear Regression" src="../media/image37.png" /></p>
@@ -2408,16 +2410,16 @@ Print(&quot;Der aktuelle Wert der linearen Regression ist: &quot; + LinReg(14)[0
 <p>Der Indikator wird nicht eigenständig verwendet, sondern ist ein Bestandteil von Handelssystemen, die ihre Trenderkennung mit Mitteln der Linearen Regression vornehmen.</p>
 <h3 id="verwendung_51">Verwendung</h3>
 <pre><code class="cs">LinRegIntercept(int period)
-LinRegIntercept(IDataSeries input, int period)
+LinRegIntercept(IDataSeries inSeries, int period)
 LinRegIntercept(int period)[int barsAgo]
-LinRegIntercept(IDataSeries input, int period)[int barsAgo]
+LinRegIntercept(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_50">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>LinRegIntercept</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_44">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_46">Darstellung</h3>
 <p><img alt="LinRegIntercept" src="../media/image38.png" /></p>
@@ -2435,16 +2437,16 @@ Print(&quot;Der aktuelle Wert der Regressionskonstante ist: &quot; + LinRegInter
 Der Indikator ist nicht gut geeignet um überkauft/überverkauft Bereiche anzuzeigen, kann aber die Richtung und Stärke eines Trends messen. Er kann auch in Kombination mit anderen Indikatoren verwendet werden, um potenzielle Einstiegspunkte zu identifizieren.</p>
 <h3 id="verwendung_52">Verwendung</h3>
 <pre><code class="cs">LinRegSlope(int period)
-LinRegSlope(IDataSeries input, int period)
+LinRegSlope(IDataSeries inSeries, int period)
 LinRegSlope(int period)[int barsAgo]
-LinRegSlope(IDataSeries input, int period)[int barsAgo]
+LinRegSlope(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_51">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>LinRegSlope</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_45">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_47">Darstellung</h3>
 <p><img alt="LinRegSlope" src="../media/image39.png" /></p>
@@ -2519,26 +2521,26 @@ Kreuzt die MACD-Linie die Signallinie von oben nach unten, wird das Verkaufsigna
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/MACD">http://vtadwiki.vtad.de/index.php/MACD</a></p>
 <h3 id="verwendung_55">Verwendung</h3>
 <pre><code class="cs">MACD(int fast, int slow, int smooth)
-MACD(IDataSeries input, int fast, int slow, int smooth)
+MACD(IDataSeries inSeries, int fast, int slow, int smooth)
 
 //Für den Wert der MACD-Linie
 MACD(int fast, int slow, int smooth)[int barsAgo]
-MACD(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
+MACD(IDataSeries inSeries, int fast, int slow, int smooth)[int barsAgo]
 
 //Für den Wert der Signal-Linie
 MACD(int fast, int slow, int smooth).Avg[int barsAgo]
-MACD(IDataSeries input, int fast, int slow, int smooth).Avg[int barsAgo]
+MACD(IDataSeries inSeries, int fast, int slow, int smooth).Avg[int barsAgo]
 
 //Für die Differenz zwischen MACD- und Signal-Linie
 MACD(int fast, int slow, int smooth).Diff[int barsAgo]
-MACD(IDataSeries input, int fast, int slow, int smooth).Diff[int barsAgo]
+MACD(IDataSeries inSeries, int fast, int slow, int smooth).Diff[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_54">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>MACD</strong>(12,26,9)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_46">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>fast        Anzahl der Perioden zur Berechnung des fast-EMA</p>
 <p>slow        Anzahl der Perioden zur Berechnung des slow-EMA</p>
 <p>smooth  Anzahl der Perioden zur Berechnung des EMA für die Signallinie</p>
@@ -2565,26 +2567,26 @@ Print(&quot;Die Differenz zw. MACD und Signallinie beträgt:&quot; + MACD(12,26,
 (Quelle: www.chartundrat.de)</p>
 <h3 id="verwendung_56">Verwendung</h3>
 <pre><code class="cs">MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period)
-MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period)
+MAEnvelopes(IDataSeries inSeries, double envelopePercentage, MAEnvelopesMAType maType, int period)
 
 //Für das obere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Upper[int barsAgo]
-MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Upper[int barsAgo]
+MAEnvelopes(IDataSeries inSeries, double envelopePercentage, MAEnvelopesMAType maType, int period).Upper[int barsAgo]
 
 //Für das mittlere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Middle[int barsAgo]
-MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Middle[int barsAgo]
+MAEnvelopes(IDataSeries inSeries, double envelopePercentage, MAEnvelopesMAType maType, int period).Middle[int barsAgo]
 
 //Für das untere Band
 MAEnvelopes(double envelopePercentage, MAEnvelopesMAType maType, int period).Lower[int barsAgo]
-MAEnvelopes(IDataSeries input, double envelopePercentage, MAEnvelopesMAType maType, int period).Lower[int barsAgo]
+MAEnvelopes(IDataSeries inSeries, double envelopePercentage, MAEnvelopesMAType maType, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_55">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>MAEnvelopes</strong>(14,SMA,1.5)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_47">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>envelopePercentage  Abstand des oberen und unteren Bandes vom mittleren Band in Prozent</p>
 <p>maType      verwendete Art des gleitenden Durchschnitts (MA=Moving Average) mögliche Werte sind
@@ -2718,16 +2720,16 @@ In der Darstellung zeigt der Indikator eine Kurve, die um einen Nullpunkt pendel
 <p>Wikipedia: <a href="http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29">http://de.wikipedia.org/wiki/Momentum_%28Chartanalyse%29</a></p>
 <h3 id="verwendung_58">Verwendung</h3>
 <pre><code class="cs">Momentum(int period)
-Momentum (IDataSeries input, int period)
+Momentum (IDataSeries inSeries, int period)
 Momentum (int period)[int barsAgo]
-Momentum (IDataSeries input, int period)[int barsAgo]
+Momentum (IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_57">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>Momentum</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_49">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_53">Darstellung</h3>
 <p><img alt="Momentum (MOM)" src="../media/image51.png" /></p>
@@ -2746,16 +2748,16 @@ Der MFI wird wie der RSI errechnet, mit dem Unterschied, dass zuvor die Kurse mi
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Money_Flow_Index">http://vtadwiki.vtad.de/index.php/Money_Flow_Index</a></p>
 <h3 id="verwendung_59">Verwendung</h3>
 <pre><code class="cs">MFI(int period)
-MFI(IDataSeries input, int period)
+MFI(IDataSeries inSeries, int period)
 MFI(int period)[int barsAgo]
-MFI(IDataSeries input, int period)[int barsAgo]
+MFI(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_58">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>MFI</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_50">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_54">Darstellung</h3>
 <p><img alt="Money Flow Index (MFI)" src="../media/image52.png" /></p>
@@ -2800,21 +2802,21 @@ Bei der Double Cross Over Methode werden die Signale folgendermaßen generiert:<
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter Moving Averages.</p>
 <h3 id="verwendung_60">Verwendung</h3>
 <pre><code class="cs">DEMA(int period)
-DEMA(IDataSeries input, int period)
+DEMA(IDataSeries inSeries, int period)
 DEMA(int period)[int barsAgo]
-DEMA(IDataSeries input, int period)[int barsAgo]
+DEMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_59">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>DEMA</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_51">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_55">Darstellung</h3>
 <p><img alt="DEMA - Double Exponential Moving Average" src="../media/image53.png" /></p>
 <h3 id="berechnung_3">Berechnung</h3>
-<pre><code class="cs">Value.Set(2 * EMA(Inputs[0], Period)[0] - EMA(EMA(Inputs[0], Period), Period)[0]);
+<pre><code class="cs">Value.Set(2 * EMA(inSeries, Period)[0] - EMA(EMA(inSeries, Period), Period)[0]);
 </code></pre>
 
 <h3 id="beispiel_57">Beispiel</h3>
@@ -2831,16 +2833,16 @@ Steigt der Kurs eines Wertes stark an und entfernt sich deutlich von der jeweili
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter Moving Averages.</p>
 <h3 id="verwendung_61">Verwendung</h3>
 <pre><code class="cs">EMA(int period)
-EMA(IDataSeries input, int period)
+EMA(IDataSeries inSeries, int period)
 EMA(int period)[int barsAgo]
-EMA(IDataSeries input, int period)[int barsAgo]
+EMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_60">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>EMA</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_52">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_56">Darstellung</h3>
 <p><img alt="EMA - Exponential Moving Average" src="../media/image54.png" /></p>
@@ -2883,13 +2885,13 @@ HMA(IDataSeries InSeries, int period)[int barsAgo]
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>HMA</strong>(21)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_53">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_58">Darstellung</h3>
 <p><img alt="HMA - Hull Moving Average" src="../media/image56.png" /></p>
 <h3 id="berechnung_5">Berechnung</h3>
-<pre><code class="cs">double value1 = 2 * WMA(Inputs[0], (int)(Period / 2))[0];
-double value2 = WMA(Inputs[0], Period)[0];
+<pre><code class="cs">double value1 = 2 * WMA(inSeries, (int)(Period / 2))[0];
+double value2 = WMA(inSeries, Period)[0];
 diffSeries.Set(value1 - value2);
 Value.Set(WMA(diffSeries, (int) Math.Sqrt(Period))[0]);
 </code></pre>
@@ -2911,16 +2913,16 @@ Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a 
 <p><a href="http://www.investor-verlag.de/boersenwissen/kama/">http://www.investor-verlag.de/boersenwissen/kama/</a></p>
 <h3 id="verwendung_63">Verwendung</h3>
 <pre><code class="cs">KAMA(int fast, int period, int slow)
-KAMA(IDataSeries input, int fast, int period, int slow)
+KAMA(IDataSeries inSeries, int fast, int period, int slow)
 KAMA(int fast, int period, int slow)[int barsAgo]
-KAMA(IDataSeries input, int fast, int period, int slow)[int barsAgo]
+KAMA(IDataSeries inSeries, int fast, int period, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_62">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>KAMA</strong>(2,10,30)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_54">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>fast        kurze Periode (s. Interpretation)</p>
 <p>slow        lange Periode (s. Interpretation)</p>
@@ -2944,20 +2946,20 @@ Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter  <a
 <p><a href="http://www.tradesignalonline.com/de/lexicon/view.aspx?id=MAMA+adaptive+Moving+Average">http://www.tradesignalonline.com/de/lexicon/view.aspx?id=MAMA+adaptive+Moving+Average</a></p>
 <h3 id="verwendung_64">Verwendung</h3>
 <pre><code class="cs">MAMA(double fastLimit, double slowLimit)
-MAMA(IDataSeries input, double fastLimit, double slowLimit)
+MAMA(IDataSeries inSeries, double fastLimit, double slowLimit)
 MAMA(double fastLimit, double slowLimit)[int barsAgo]
-MAMA(IDataSeries input, double fastLimit, double slowLimit)[int barsAgo]
+MAMA(IDataSeries inSeries, double fastLimit, double slowLimit)[int barsAgo]
 
 Für den Wert des Following Adaptive Moving Average (FAMA)
 MAMA(double fastLimit, double slowLimit).Fama[int barsAgo]
-MAMA(IDataSeries input, double fastLimit, double slowLimit).Fama[int barsAgo]
+MAMA(IDataSeries inSeries, double fastLimit, double slowLimit).Fama[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_63">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>MAMA</strong>(0.5,0.05)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_55">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>fastLimit   Oberes Limit für den Alpha-Wert</p>
 <p>slowLimit   Unteres Limit für den Alpha-Wert</p>
 <h3 id="darstellung_60">Darstellung</h3>
@@ -2991,7 +2993,7 @@ SMA(IDataSeries InSeries, int period)[int barsAgo]
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>SMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_56">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_61">Darstellung</h3>
 <p><img alt="SMA - Simple Moving Average" src="../media/image59.png" /></p>
@@ -3029,16 +3031,16 @@ Ein SMMA(20) entspricht annährend einem EMA(40).</p>
 <p><a href="http://www2.wealth-lab.com/wiki/SMMA.ashx">http://www2.wealth-lab.com/wiki/SMMA.ashx</a></p>
 <h3 id="verwendung_66">Verwendung</h3>
 <pre><code class="cs">SMMA(int period)
-SMMA(IDataSeries input, int period)
+SMMA(IDataSeries inSeries, int period)
 SMMA(int period)[int barsAgo]
-SMMA(IDataSeries input, int period)[int barsAgo]
+SMMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_65">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>SMMA</strong>(14)[<strong>int</strong> barsAgo] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_57">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_63">Darstellung</h3>
 <p><img alt="SMMA - Smoothed Moving Average" src="../media/image61.png" /></p>
@@ -3057,16 +3059,16 @@ Für ein Verkaufssignal sollte der TEMA unterhalb der Kurse verlaufen, wenn der 
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a href="#moving-averages"><em>Moving Averages</em></a>.</p>
 <h3 id="verwendung_67">Verwendung</h3>
 <pre><code class="cs">TEMA(int period)
-TEMA(IDataSeries input, int period)
+TEMA(IDataSeries inSeries, int period)
 TEMA(int period)[int barsAgo]
-TEMA(IDataSeries input, int period)[int barsAgo]
+TEMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_66">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>TEMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_58">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
 <h3 id="darstellung_64">Darstellung</h3>
 <p><img alt="TEMA - Triple Exponential Moving Average" src="../media/image62.png" /></p>
@@ -3083,16 +3085,16 @@ Print(&quot;Der aktuelle Wert für TEMA ist&quot; + TEMA(14)[0]);
 <p>Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a href="#moving-averages"><em>Moving Averages</em></a>.</p>
 <h3 id="verwendung_68">Verwendung</h3>
 <pre><code class="cs">TMA(int period)
-TMA(IDataSeries input, int period)
+TMA(IDataSeries inSeries, int period)
 TMA(int period)[int barsAgo]
-TMA(IDataSeries input, int period)[int barsAgo]
+TMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_67">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>TMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_59">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
 <h3 id="darstellung_65">Darstellung</h3>
 <p><img alt="TMA - Triangular Moving Average" src="../media/image63.png" /></p>
@@ -3108,20 +3110,20 @@ Print(&quot;Der aktuelle Wert für TMA ist&quot; + TMA(14)[0]);
 <p>Es entsteht ein Kaufsignal, wenn der TRIX-Indikator seine Null-Linie von unten nach oben schneidet. Ein Verkaufssignal wird generiert, wenn er die Null-Linie nach unten durchbricht. Divergenzen deuten auf einen Trendwechsel hin.</p>
 <h3 id="verwendung_69">Verwendung</h3>
 <pre><code class="cs">TRIX(int period, int signalPeriod)
-TRIX(IDataSeries input, int period, int signalPeriod)
+TRIX(IDataSeries inSeries, int period, int signalPeriod)
 TRIX(int period, int signalPeriod)[int barsAgo]
-TRIX(IDataSeries input, int period, int signalPeriod)[int barsAgo]
+TRIX(IDataSeries inSeries, int period, int signalPeriod)[int barsAgo]
 
 Für die Signal-Linie
 TRIX(int period, int signalPeriod).Signal[int barsAgo]
-TRIX(IDataSeries input, int period, int signalPeriod).Signal[int barsAgo]
+TRIX(IDataSeries inSeries, int period, int signalPeriod).Signal[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_68">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>TRIX</strong>(14, 3)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_60">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>signal period   Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden</p>
 <h3 id="darstellung_66">Darstellung</h3>
@@ -3146,16 +3148,16 @@ Ist der VFactor = 1, entspricht der Verlauf dem DEMA.</p>
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a href="#moving-averages"><em>Moving Averages</em></a>.</p>
 <h3 id="verwendung_70">Verwendung</h3>
 <pre><code class="cs">T3(int period, int tCount, double vFactor)
-T3(IDataSeries input, int period, int tCount, double vFactor)
+T3(IDataSeries inSeries, int period, int tCount, double vFactor)
 T3(int period, int tCount, double vFactor)[int barsAgo]
-T3(IDataSeries input, int period, int tCount, double vFactor)[int barsAgo]
+T3(IDataSeries inSeries, int period, int tCount, double vFactor)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_69">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>T3</strong>(14,3,0.7)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_61">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>tCount      Anzahl der Iterationen für die Glättung (default: 3)</p>
 <p>vFactor Volumen Factor (Multiplicator) (default: 0,7)</p>
@@ -3177,16 +3179,16 @@ Die Abkürzung VMA wird in der Literatur bzw. in anderer Handelssoftware auch f�
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a href="#moving-averages"><em>Moving Averages</em></a>.</p>
 <h3 id="verwendung_71">Verwendung</h3>
 <pre><code class="cs">VMA(int period, int volatilityPeriod)
-VMA(IDataSeries input, int period, int volatilityPeriod)
+VMA(IDataSeries inSeries, int period, int volatilityPeriod)
 VMA(int period, int volatilityPeriod)[int barsAgo]
-VMA(IDataSeries input, int period, int volatilityPeriod)[int barsAgo]
+VMA(IDataSeries inSeries, int period, int volatilityPeriod)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_70">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>VMA</strong>(9,9)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_62">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>volatility period   Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden</p>
 <h3 id="darstellung_68">Darstellung</h3>
@@ -3205,16 +3207,16 @@ Intraday dient VWAP hauptsächlich zur Bestimmung des Trendes. VWAP hinkt dem Pr
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a href="#moving-averages"><em>Moving Averages</em></a>.</p>
 <h3 id="verwendung_72">Verwendung</h3>
 <pre><code class="cs">VWMA(int period)
-VWMA(IDataSeries input, int period)
+VWMA(IDataSeries inSeries, int period)
 VWMA(int period)[int barsAgo]
-VWMA(IDataSeries input, int period)[int barsAgo]
+VWMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_71">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>VWMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_63">Parameters</h3>
-<p>input           Eingangsdatenreihe für den Indikator</p>
+<p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period          Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_69">Darstellung</h3>
 <p><img alt="VWMA - Volume Weighted Moving Average" src="../media/image67.png" /></p>
@@ -3236,16 +3238,16 @@ Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a 
 <p><a href="http://www.tradesignalonline.com/de/lexicon/view.aspx?id=Moving+Average+Weighted+%28WMA%29">http://www.tradesignalonline.com/de/lexicon/view.aspx?id=Moving+Average+Weighted+%28WMA%29</a></p>
 <h3 id="verwendung_73">Verwendung</h3>
 <pre><code class="cs">WMA(int period)
-WMA(IDataSeries input, int period)
+WMA(IDataSeries inSeries, int period)
 WMA(int period)[int barsAgo]
-WMA(IDataSeries input, int period)[int barsAgo]
+WMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_72">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>WMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_64">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_70">Darstellung</h3>
 <p><img alt="WMA - Weighted Moving Average" src="../media/image68.png" /></p>
@@ -3264,16 +3266,16 @@ Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter <a 
 <p>FMLabs: <a href="http://www.fmlabs.com/reference/default.htm?url=ZeroLagExpMA.htm">http://www.fmlabs.com/reference/default.htm?url=ZeroLagExpMA.htm</a></p>
 <h3 id="verwendung_74">Verwendung</h3>
 <pre><code class="cs">ZLEMA(int period)
-ZLEMA(IDataSeries input, int period)
+ZLEMA(IDataSeries inSeries, int period)
 ZLEMA(int period)[int barsAgo]
-ZLEMA(IDataSeries input, int period)[int barsAgo]
+ZLEMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_73">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>ZLEMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_65">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_71">Darstellung</h3>
 <p><img alt="ZLEMA - Zero Lag Exponential Moving Average" src="../media/image69.png" /></p>
@@ -3291,9 +3293,9 @@ Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie
 - stetig steigende Tiefs</p>
 <h3 id="verwendung_75">Verwendung</h3>
 <pre><code class="cs">NBarsUp(int barCount, bool BarUp, bool higherHigh, bool higherLow)
-NBarsUp(IDataSeries input, int barCount, bool BarUp, bool higherHigh, bool higherLow)
+NBarsUp(IDataSeries inSeries, int barCount, bool BarUp, bool higherHigh, bool higherLow)
 NBarsUp(int barCount, int barCount, bool BarUp, bool higherHigh, bool higherLow)[int barsAgo]
-NBarsUp(IDataSeries input, int barCount, bool BarUp, bool higherHigh, bool higherLow)[int barsAgo]
+NBarsUp(IDataSeries inSeries, int barCount, bool BarUp, bool higherHigh, bool higherLow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_74">Rückgabewert</h3>
@@ -3302,7 +3304,7 @@ NBarsUp(IDataSeries input, int barCount, bool BarUp, bool higherHigh, bool highe
 <p>1 - Die Bedingung trifft zu
 0 - Die Bedingung trifft nicht zu</p>
 <h3 id="parameters_66">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>barCount    geforderte Anzahl der hintereinander höher liegenden Schlusskurse</p>
 <p>BarUp       Zusatzbedingung, (true): Jedes Close muß größer sein als Open (grüner Bar)</p>
 <p>higherHigh  Zusatzbedingung (true): stetig steigende Hochs</p>
@@ -3324,9 +3326,9 @@ Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie
 - stetig fallende Tiefs</p>
 <h3 id="verwendung_76">Verwendung</h3>
 <pre><code class="cs">NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
-NBarsDown(IDataSeries input, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
+NBarsDown(IDataSeries inSeries, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
 NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
-NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
+NBarsDown(IDataSeries inSeries, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_75">Rückgabewert</h3>
@@ -3335,7 +3337,7 @@ NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lo
 <p>1 - Die Bedingung trifft zu
 0 - Die Bedingung trifft nicht zu</p>
 <h3 id="parameter_8">Parameter</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>barCount    geforderte Anzahl der hintereinander tiefer liegenden Schlusskurse</p>
 <p>BarDown Zusatzbedingung, (true): Jedes Close muß kleiner sein als Open (roter Bar)</p>
 <p>lowerHigh   Zusatzbedingung (true): stetig fallende Hochs</p>
@@ -3344,9 +3346,9 @@ NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lo
 <p><img alt="nBarsDown" src="../media/image71.png" /></p>
 <h3 id="beispiel_73">Beispiel</h3>
 <pre><code class="cs">NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
-NBarsDown(IDataSeries input, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
+NBarsDown(IDataSeries inSeries, int barCount, bool BarDown, bool lowerHigh, bool lowerLow)
 NBarsDown(int barCount, bool BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
-NBarsDown(IDataSeries input, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
+NBarsDown(IDataSeries inSeries, bool barCount, int BarDown, bool lowerHigh, bool lowerLow)[int barsAgo]
 </code></pre>
 
 <h2 id="onbalancevolume-obv">OnBalanceVolume (OBV)</h2>
@@ -3359,16 +3361,16 @@ OBV wurde von Joe Granville entwickelt und 1963 in seinem Buch "Key to Stock Mar
 Schließlich müssen auch Volumenspitzen bei der Suche nach einer bevorstehenden Trendwende Beachtung finden.</p>
 <h3 id="verwendung_77">Verwendung</h3>
 <pre><code class="cs">OBV()
-OBV(IDataSeries input)
+OBV(IDataSeries inSeries)
 OBV()[int barsAgo]
-OBV(IDataSeries input)[int barsAgo]
+OBV(IDataSeries inSeries)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_76">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>OBV</strong>()[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_9">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_74">Darstellung</h3>
 <p><img alt="OnBalanceVolume (OBV)" src="../media/image72.png" /></p>
 <h3 id="beispiel_74">Beispiel</h3>
@@ -3673,9 +3675,9 @@ Damit werden prinzipiell die Bedingungen für ein Handelssystem erfüllt. (Quell
 <p>Wikipedia: <a href="http://en.wikipedia.org/wiki/Parabolic_SAR">http://en.wikipedia.org/wiki/Parabolic_SAR</a></p>
 <h3 id="verwendung_78">Verwendung</h3>
 <pre><code class="cs">ParabolicSAR(double acceleration, double accelerationStep, double accelerationMax)
-ParabolicSAR(IDataSeries input, double acceleration, double accelerationStep, double accelerationMax)
+ParabolicSAR(IDataSeries inSeries, double acceleration, double accelerationStep, double accelerationMax)
 ParabolicSAR(double acceleration, double accelerationStep, double accelerationMax)[int barsAgo]
-ParabolicSAR(IDataSeries input, double acceleration, double accelerationStep, double accelerationMax)[int barsAgo]
+ParabolicSAR(IDataSeries inSeries, double acceleration, double accelerationStep, double accelerationMax)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_77">Rückgabewert</h3>
@@ -3723,20 +3725,20 @@ Der PPO gehört in die Klasse der Momentum-Indikatoren. Von der Konstruktion her
 <p>Der PPO kann sehr gut für die Divergenzanalyse eingesetzt werden. Divergenzen haben einerseits den Vorteil, eine hohe Trefferquote zu haben, andererseits kommen sie häufig so früh, dass es für den unerfahrenen Akteur schwer einzuschätzen ist, wann er in den Markt eintreten bzw. diesen verlassen sollte.</p>
 <h3 id="verwendung_79">Verwendung</h3>
 <pre><code class="cs">PPO(int fast, int slow, int smooth)
-PPO(IDataSeries input, int fast, int slow, int smooth)
+PPO(IDataSeries inSeries, int fast, int slow, int smooth)
 PPO(int fast, int slow, int smooth)[int barsAgo]
-PPO(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
+PPO(IDataSeries inSeries, int fast, int slow, int smooth)[int barsAgo]
 
 Für den geglätteten Wert -Smoothed value
 PPO(int fast, int slow, int smooth).Smoothed[int barsAgo]
-PPO(IDataSeries input, int fast, int slow, int smooth).Smoothed[int barsAgo]
+PPO(IDataSeries inSeries, int fast, int slow, int smooth).Smoothed[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_78">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>PPO</strong>(12,26,9)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_69">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>fast        Anzahl der Bars, für die Berechnung des fast EMA</p>
 <p>slow        Anzahl der Bars, für die Berechnung des slow EMA</p>
 <p>smooth  Anzahl der Bars, für die Berechnung der EMA Signal-Linie</p>
@@ -3760,22 +3762,22 @@ Es ist z.B. möglich, als Eingangswert einen Simple Moving Average (SMA) zu verw
 PercentEnvelope sollte nie als alleiniger Indikator für Handelsentscheidungen verantwortlich sein, sondern immer in Kombination mit weiteren Indikatoren verwendet werden.</p>
 <h3 id="verwendung_80">Verwendung</h3>
 <pre><code class="cs">PercentEnvelopes(double percent)
-PercentEnvelopes(IDataSeries input, double percent)
+PercentEnvelopes(IDataSeries inSeries, double percent)
 
 //Für das obere Band
 PercentEnvelopes(double percent).UpperPercentBand[int barsAgo]
-PercentEnvelopes(IDataSeries input, double percent).UpperPercentBand[int barsAgo]
+PercentEnvelopes(IDataSeries inSeries, double percent).UpperPercentBand[int barsAgo]
 
 //Für das untere Band
 PercentEnvelopes(double percent).LowerPercentBand[int barsAgo]
-PercentEnvelopes(IDataSeries input, double percent).LowerPercentBand[int barsAgo]
+PercentEnvelopes(IDataSeries inSeries, double percent).LowerPercentBand[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_79">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.<strong>PercentEnvelopes</strong>(2)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_70">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>percent  Abstend der Bänder in Prozent (%) vom Eingangswert</p>
 <h3 id="darstellung_77">Darstellung</h3>
 <p><img alt="PercentEnvelopes" src="../media/image77.png" /></p>
@@ -3809,11 +3811,11 @@ Ferner kann überlegt werden, die Widerstände bzw. Unterstützungen als Zielzon
 <pre><code class="cs">PivotPoints()
 PivotPoints(PivotPointsMode mode)
 PivotPoints(PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)
-PivotPoints(IDataSeries input, PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)
+PivotPoints(IDataSeries inSeries, PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)
 PivotPoints()[barsAgo]
 PivotPoints(PivotPointsMode mode)[barsAgo]
 PivotPoints(PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)[barsAgo]
-PivotPoints(IDataSeries input, PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)[barsAgo]
+PivotPoints(IDataSeries inSeries, PivotPointsMode mode, int LineWidth, bool ShowPrices, int DaysBack, Color RColor, Color PPColor, Color SColor)[barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_80">Rückgabewert</h3>
@@ -3958,16 +3960,16 @@ Range = H-L</p>
 <p>Wenn der PFE sich im Zickzack um die Null-Linie bewegt, dann liegt kein deutlicher Trend vor. Wenn der PFE gleichmäßig läuft und sich über bzw. unter der Null-Linie bewegt, befindet sich der Markt in einem Aufwärts bzw. Abwärtstrend. Je höher bzw. niedriger der PFE-Wert dabei ist, desto stärker ist der Trend (desto höher ist die Effizienz).</p>
 <h3 id="verwendung_82">Verwendung</h3>
 <pre><code class="cs">PFE(int period)
-PFE(IDataSeries input, int period)
+PFE(IDataSeries inSeries, int period)
 PFE(int period)[int barsAgo]
-PFE(IDataSeries input, int period)[int barsAgo]
+PFE(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_81">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>PFE</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_71">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
 <h3 id="darstellung_79">Darstellung</h3>
 <p><img alt="Polarized Fractal Efficiency (PFE)" src="../media/image79.png" /></p>
@@ -3983,16 +3985,16 @@ Print(&quot;Der aktuelle Wert für den PFE ist: &quot; + PFE(20)[0]);
 <p>Der Price Oscillator wird analog zum PPO bzw. zum MACD verwendet. </p>
 <h3 id="verwendung_83">Verwendung</h3>
 <pre><code class="cs">PriceOscillator(int fast, int slow, int smooth)
-PriceOscillator(IDataSeries input, int fast, int slow, int smooth)
+PriceOscillator(IDataSeries inSeries, int fast, int slow, int smooth)
 PriceOscillator(int fast, int slow, int smooth)[int barsAgo]
-PriceOscillator(IDataSeries input, int fast, int slow, int smooth)[int barsAgo]
+PriceOscillator(IDataSeries inSeries, int fast, int slow, int smooth)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_82">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>PriceOscillator</strong>(12,26,9)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_72">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>fast        Anzahl der Bars, für die Berechnung des fast EMA</p>
 <p>slow        Anzahl der Bars, für die Berechnung des slow EMA</p>
 <p>smooth  Anzahl der Bars, für die Berechnung der EMA Signal-Linie</p>
@@ -4052,16 +4054,16 @@ Pinker  ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185,
 <p>Range liefert ist für jeden Bar die Spanne zwischen Hoch und Tief in Ticks. Range ist damit immer größer oder gleich 0.</p>
 <h3 id="verwendung_84">Verwendung</h3>
 <pre><code class="cs">Range()
-Range(IDataSeries input)
+Range(IDataSeries inSeries)
 Range()[int barsAgo]
-Range(IDataSeries input)[int barsAgo]
+Range(IDataSeries inSeries)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_84">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>Range</strong>()[<strong>int</strong> barsAgo] ) wird der Range-Wert für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_11">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeriesEingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_81">Darstellung</h3>
 <p><img alt="Range" src="../media/image81.png" /></p>
 <h3 id="beispiel_83">Beispiel</h3>
@@ -4082,16 +4084,16 @@ Der Indikator vergleicht die Spanne (Range) zwischen dem Hoch und Tief auf Intra
 <p><a href="http://www.fmlabs.com/reference/default.htm?url=RangeIndicator.htm">http://www.fmlabs.com/reference/default.htm?url=RangeIndicator.htm</a></p>
 <h3 id="verwendung_85">Verwendung</h3>
 <pre><code class="cs">RIND(int periodQ, int smooth)
-RIND(IDataSeries input, int periodQ, int smooth)
+RIND(IDataSeries inSeries, int periodQ, int smooth)
 RIND(int periodQ, int smooth)[int barsAgo]
-RIND(IDataSeries input, int periodQ, int smooth)[int barsAgo]
+RIND(IDataSeries inSeries, int periodQ, int smooth)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_85">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>RIND</strong>(3,10)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_74">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>periodQ Anzahl der Bars, für die Berechnung der kurzfristigen Stochastik</p>
 <p>smooth  Anzahl der Bars für die Glättung des Indikators mit einem EMA</p>
 <h3 id="darstellung_82">Darstellung</h3>
@@ -4113,16 +4115,16 @@ Divergenzen zwischen dem Indikator- und dem Kursverlauf lassen auf eine Trendän
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/RoC">http://vtadwiki.vtad.de/index.php/RoC</a></p>
 <h3 id="verwendung_86">Verwendung</h3>
 <pre><code class="cs">ROC(int period)
-ROC(IDataSeries input, int period)
+ROC(IDataSeries inSeries, int period)
 ROC(int period)[int barsAgo]
-ROC(IDataSeries input, int period)[int barsAgo]
+ROC(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_86">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>ROC</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_75">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_83">Darstellung</h3>
 <p><img alt="Rate of Change (ROC)" src="../media/image83.png" /></p>
@@ -4131,8 +4133,67 @@ ROC(IDataSeries input, int period)[int barsAgo]
 Print(&quot;Der aktuelle Wert für den ROC ist: &quot; + ROC(14)[0]);
 </code></pre>
 
-<h2 id="relative-performance">Relative Performance</h2>
+<h2 id="relative-currency-strength-rcs">Relative Currency Strength (RCS)</h2>
 <h3 id="beschreibung_91">Beschreibung</h3>
+<p>Der Relative Currency Strength – Indikator (Übersetzt: Relative Währungs Stärke) ist ein
+Werkzeug der Technischen Analyse für den Forex (Foreign Exchange) -Markt. Dieser Indikator
+berechnet die aktuelle und historische Stärke bzw. Schwäche einer Währung. Der RCS kann in
+allen Zeiteinheiten verwendet werden, die Interpretation des Indikators ändert sich dabei nicht.</p>
+<p>Die Grundidee des RCS beruht darauf, die aktuell stärkste und schwächste Währung im
+historischen Kontext ausfindig zu machen. Wenn Sie sich alle Währungen simultan
+anzeigen lassen, können Sie die aktuell stärkste und die aktuell schwächste Währung
+heraussuchen. Die stärkste Währung ist diejenige, dessen Linie aktuell die höchste im
+Vergleich zu den anderen Linien ist, die schwächste Währung finden Sie vice versa als
+aktuell tiefste Linie. Das Währungspaar das sich daraus ergibt, ist ein potentieller TradeKandidat.</p>
+<p>Wenn der RCS anzeigt, dass aktuell der Euro die stärkste (überkaufte) und der US-Dollar die
+zurzeit schwächste (überverkaufte) Währung relativ zu den anderen Major-Währungen ist, ist
+ein Short-Einstieg im EURUSD – Forexpaar sinnvoll.
+Die dahinterliegende Logik besagt, dass EURUSD dann fällt, wenn entweder der Euro
+Schwäche zeigt oder der US-Dollar Stärke aufweist. Da der Euro überkauft ist, wird dessen
+Performance tendenziell abschwächen, zusätzlich ist der Dollar überverkauft, wodurch eine
+ansteigende Stärke des USD prognostiziert werden kann. Indem man die stärkste und
+schwächste Währung heraussucht, handelt man das Währungspaar, das aktuell die höchste
+Wahrscheinlichkeit einer Wertberichtigung beinhaltet</p>
+<h3 id="parameters_76">Parameters</h3>
+<ol>
+<li>
+<p>Moving Average Type: [SMA/EMA] – Berechnung der Relativen Stärke auf Basis einer SMA (Simple Moving Average) oder EMA (Exponential Moving Average)</p>
+</li>
+<li>
+<p>Slow Period: Input Parameter für die Sensitivität der Berechnung. Höhere Werte bedeuten, dass ein langsamerer Durchschnitt für die Berechnung verwendet wird. Bitte belassen Sie diesen Paramter auf der Standardeinstellung (10) solang Sie nicht 100% sicher sind, was Sie damit verändern, da die Analyse des RCS durch abweichende Werte verfälscht werden kann. Eine höhere Periode gibt nur weniger Signale aus, die aber dafür jeweils höheres Potential aufweisen.</p>
+</li>
+<li>
+<p>Fast Period: Siehe Slow Period</p>
+</li>
+<li>
+<p>– 11. Setzen Sie die Währungen auf “True”, die im Chart angezeigt werden sollen</p>
+</li>
+</ol>
+<h3 id="signale">Signale</h3>
+<h4 id="extrempunkte-in-der-bewertung-von-2-wahrungen">Extrempunkte in der Bewertung von 2 Währungen</h4>
+<p><img alt="Extreme points in the valuation of 2 currencies" src="../media/relative_extreme.png" />
+Für dieses Signal lassen Sie sich für das jeweilige Währungspaar vom RCS nur die beiden
+beinhalteten Währungen anzeigen. Im Beispiel oben ist im Chart der EURUSD geladen und
+der RCS zeigt den USD (grün) und den Euro (blau).</p>
+<p>Bei den roten horizontalen Linien ist tritt eine starke Überbewertung des Euro im Vergleich
+zum Dollar auf. In diesen Situationen weist der Euro enorme Stärke und der Dollar große
+Schwäche auf. Diese Tendenzen können nicht auf Dauer aufrechterhalten werden, da
+beide Währungen im Lauf der Zeit zu Ihrem fairen Wert tendieren. Daher folgt nach diesen
+Überbewertungen des Euro eine Abschwächung des EURUSD Verhältnisses, also ein
+fallen des EURUSD Währungskurses.</p>
+<p>Diese Interpretation ist für jedes Forex-Paar möglich. </p>
+<h4 id="uberschneiden-der-wahrungslinien">Überschneiden der Währungslinien</h4>
+<p>Auch das Schneiden von zwei Währungslinien kann als Signal eingesetzt werden. Im Beispiel entsteht ein Long-Signal (blau), wenn der USD die CHF-Linie von unten nach oben schneidet. Ein Short Signal entsteht, wenn der CHF die USD-Linie von oben nach unten
+schneidet.</p>
+<p><img alt="Extreme points in the valuation of 2 currencies" src="../media/relative_intersecting.png" /></p>
+<h4 id="divergenzen-zwischen-chart-und-rcs">Divergenzen zwischen Chart und RCS</h4>
+<p>Eine Divergenz entsteht z.B. wenn der Chart neue Hochs ausbildet, die von der Stärke des RCS nicht mehr bestätigt werden. Im Beispiel bildet der USDCHF neue Hochs nach einer starken Aufwärtsbewegung, die aber von der USD-Stärke des RCS nicht mehr bestätigt werden. Nach dem Auftreten der Divergenz kann der USDCHF seine Aufwärtsbewegung nicht fortsetzen und geht in eine Seitwärtsphase über. Eine Divergenz kann also als FrühIndikator verwendet werden, um z.B. das Ende einer längeren Bewegung „vorherzusehen“</p>
+<p><img alt="Divergences between chart and RCS" src="../media/relative_divergences.png" /></p>
+<h4 id="anzeige-der-aktuellen-performance">Anzeige der aktuellen Performance</h4>
+<p>In the right-hand side of the indicator window, you have a display showing how the currencies are currently developing. The values shown are the absolute changes of the individual currency in the RCS graph of the previous period compared to the current period. For example, a change in the USD from 0.0700 (previous period) to 0.0800 (current period) is outputted as +100 USD. This display serves to provide a global overview of how the Forex majors are currently developing relative to each other.</p>
+<p><img alt="Display of the current performance" src="../media/relative_display.png" /></p>
+<h2 id="relative-performance">Relative Performance</h2>
+<h3 id="beschreibung_92">Beschreibung</h3>
 <p>Berechnet das Preisverhältnis zwischen aktuellen und gewählten Symbolen.</p>
 <h3 id="weitere-informationen_34">Weitere Informationen</h3>
 <p>http://stockcharts.com/articles/mailbag/2012/01/how-can-i-chart-relative-performance-qqq-underperforms-spy-.html?st=relative+performance</p>
@@ -4144,12 +4205,12 @@ RelativePerformance (Instrument)[int barsAgo]
 
 <h3 id="ruckgabewert_87">Rückgabewert</h3>
 <p><strong>double</strong></p>
-<h3 id="parameters_76">Parameters</h3>
+<h3 id="parameters_77">Parameters</h3>
 <p>IInstrument </p>
 <h3 id="darstellung_84">Darstellung</h3>
 <p><img alt="Relative Performance" src="../media/RelativePerformance.png" /></p>
 <h2 id="relative-spread-strength-rss">Relative Spread Strength (RSS)</h2>
-<h3 id="beschreibung_92">Beschreibung</h3>
+<h3 id="beschreibung_93">Beschreibung</h3>
 <p>Der Relative Spread Strength (RSS) Indikator wurde 2006 von Ian Copsey in einem Artikel der Oktoberausgabe des "Stocks &amp; Commodities" Magazins vorgestellt.
 Der RSS berechnet den Wert des RSI von der Differenz zwischen zwei SMA's.</p>
 <h3 id="interpretation_59">Interpretation</h3>
@@ -4163,16 +4224,16 @@ Der RSS berechnet den Wert des RSI von der Differenz zwischen zwei SMA's.</p>
 </ul>
 <h3 id="verwendung_88">Verwendung</h3>
 <pre><code class="cs">RSS(int eMA1, int eMA2, int length)
-RSS(IDataSeries input, int eMA1, int eMA2, int length)
+RSS(IDataSeries inSeries, int eMA1, int eMA2, int length)
 RSS(int eMA1, int eMA2, int length)[int barsAgo]
-RSS(IDataSeries input, int eMA1, int eMA2, int length)[int barsAgo]
+RSS(IDataSeries inSeries, int eMA1, int eMA2, int length)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_88">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>RSS</strong>(10,40,5)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_77">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_78">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>length  Anzahl der Bars, die in der Berechnung verwendet werden</p>
 <p>eMA1    Periodenanzahl für den ersten EMA</p>
 <p>eMA2    Periodenanzahl für den zweiten EMA</p>
@@ -4184,7 +4245,7 @@ Print(&quot;Der aktuelle Wert des RSS ist &quot; + RSS (10, 40, 5)[0]);
 </code></pre>
 
 <h2 id="relative-strength-index-rsi">Relative Strength Index (RSI)</h2>
-<h3 id="beschreibung_93">Beschreibung</h3>
+<h3 id="beschreibung_94">Beschreibung</h3>
 <p>Der Relative Strength Index (RSI) wurde von J. Welles Wilder entwickelt und in seinem 1978 erschienenen Buch "New Concepts in Technical Trading Systems" erstmals vorgestellt. Der RSI ist ein äußerst nützlicher und beliebter Momentum-Oszillator. Er vergleicht die Größe der jüngsten Gewinne mit der Größe der jüngsten Verluste, bewertet also das Verhältnis der Aufwärts- zu den Abwärts-Schlusskursen innerhalb des Betrachtungszeitraums. Die Informationen werden in einer Zahl zwischen 0 und 100 abgebildet.</p>
 <h3 id="interpretation_60">Interpretation</h3>
 <p>Der RSI ist einfach zu interpretieren und er ist einer der am häufigsten verwendeten Indikatoren. Wertpapiere tendieren dazu, länger anhaltende aufwärts- oder abwärtsbewegungen zu vollziehen. Wenn in einem Zeitraum die Kursbewegung zu stark in eine Richtung verläuft, so wird häufig von einer Kursübertreibung gesprochen. Der RSI ist ein Hilsmittel, der darauf abzielt, diese Übertreibung zu messen und quantitativ in einer Skala zwischen 0 und 100 festzuhalten. 
@@ -4193,20 +4254,20 @@ Dabei gilt, dass ein Wertpapier überverkauft ist, wenn der Indikator sich unter
 <p><a href="http://technische-analyse.eu/index.php?title=RSI">http://technische-analyse.eu/index.php?title=RSI</a></p>
 <h3 id="verwendung_89">Verwendung</h3>
 <pre><code class="cs">RSI(int period, int smooth)
-RSI(IDataSeries input, int period, int smooth)
+RSI(IDataSeries inSeries, int period, int smooth)
 RSI(int period, int smooth)[int barsAgo]
-RSI(IDataSeries input, int period, int smooth)[int barsAgo]
+RSI(IDataSeries inSeries, int period, int smooth)[int barsAgo]
 
 //Für den Avg-Wert
 RSI(int period, int smooth).Avg[int barsAgo]
-RSI(IDataSeries input, int period, int smooth).Avg[int barsAgo]
+RSI(IDataSeries inSeries, int period, int smooth).Avg[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_89">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>RSI</strong>(14,3)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_78">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_79">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <p>smooth  Anzahl der Perioden für die Glättung</p>
 <h3 id="darstellung_86">Darstellung</h3>
@@ -4220,7 +4281,7 @@ Print(&quot;Der aktuelle Wert der Avg-Linie ist: &quot; + RSI(14, 3).Avg[0]);
 </code></pre>
 
 <h2 id="relative-strength-levy-rsl">Relative Strength Levy (RSL)</h2>
-<h3 id="beschreibung_94">Beschreibung</h3>
+<h3 id="beschreibung_95">Beschreibung</h3>
 <p>Dem Konzept der Relativen Stärke nach Levy, Relative Strength Levy (RSL) liegt die Annahme zugrunde, daß Titel, die in der Vergangenheit eine große relative Stärke aufwiesen, sich auch in Zukunft relativ stark entwickeln werden und umgekehrt. Man berechnet hier also nicht die Relative Stärke mehrerer Titel zueinander, sondern vergleicht die Performance der Vergangenheit mit der Performance von heute.
 Zur Berechnung wird der Wochenschlußkurs (oder Tagesschluss) des Basistitels durch das arithmetische Mittel der Schlußkurse im Betrachtungszeitraum dividiert. Das Ergebnis wird um die Marke 1,0 herum aufgetragen. Anschließend wird eine sortierte Liste erstellt, deren erster Platz vom Titel mit der höchsten RSL belegt wird.</p>
 <h3 id="interpretation_61">Interpretation</h3>
@@ -4228,16 +4289,16 @@ Zur Berechnung wird der Wochenschlußkurs (oder Tagesschluss) des Basistitels du
 Einer zweiten Interpretation Levys folgend, sind zunächst die Standardabweichungen der letzten 27 Wochenschlußkurse durch das arithmetische Mittel der letzten 27 Wochenschlußkurse zu dividieren. Mit diesem Verfahren soll die Volatilität der beobachteten Aktien ermittelt werden. Aus dem Ergebnis dieser Operation ist nun wieder eine Ranking-Liste aufzustellen. Als Kauf bewertete Levy die Titel der Schnittmenge aus den ersten 5% der RSL-Rangfolge und den ersten 12,5% der Volatilitätsrangfolge. Die Titel, die zu den letzten 30% der RSL-Liste gehören, sind zum Verkauf zu stellen. Ebenso wie die Relative Stärke sollte man die RSL als Filter benutzen, um die gefundenen Titel mit anderen technischen Indikatoren näher zu untersuchen.</p>
 <h3 id="verwendung_90">Verwendung</h3>
 <pre><code class="cs">RSL(int period)
-RSLDataSeries input, int period)
+RSLDataSeries inSeries, int period)
 RSLnt period)[int barsAgo]
-RSL(IDataSeries input, int period)[int barsAgo]
+RSL(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_90">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>RSL</strong>(27)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_79">Parameters</h3>
-<p>input  Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_80">Parameters</h3>
+<p>inSeries  Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_87">Darstellung</h3>
 <p><img alt="Relative Strength Levy (RSL)" src="../media/RSL.png" /></p>
@@ -4247,7 +4308,7 @@ Print(&quot;Die Relative Stärke nach Levy beträgt&quot; + RSL(27)[0]);
 </code></pre>
 
 <h2 id="relative-volatility-index-rvi">Relative Volatility Index (RVI)</h2>
-<h3 id="beschreibung_95">Beschreibung</h3>
+<h3 id="beschreibung_96">Beschreibung</h3>
 <p>Der Relative Volatility Index (RVI) wurde von Donald Dorsey entwickelt. Es gleicht dem RSI, wobei anstelle der täglichen Preisspanne die Standardabweichung über den Indikator Zeitraumverwendet wird.
 Um die grundlegende Volatilität eines Wertpapiers zu ermitteln eines Wertpapiers zu ermitteln, verwendet Donald Dorsey bei seinem Relative Volatility Index (RVI) die Standardabweichung über einen Zeitraum von zehn Tagen. Für die Berechnung der Dynamik der Volatilitätsentwicklung wendet er den Relative Strength Index (RSI) auf das Ergebnis der Volatilitätsberechnung an. Zur Berechnung der RSI verwendet er die üblichen 14 Tage.
 Der Relative Volatility Index (RVI) misst die Richtung der Volatilitätsentwicklung auf einer Skala von 1 bis 100. Indem der RSI auf die Volatilität angewendet wird, werden die Schwankungen auf den Wertebereich zwischen 0 und 100 normiert und sind dadurch sowohl historisch als auch mit anderen Wertpapieren vergleichbar. (Quelle: VTAD)</p>
@@ -4261,16 +4322,16 @@ Ein ignoriertes Signal auf steigende Kurse wird nachgeholt, wenn gilt: RVI &gt; 
 <p><a href="http://vtadwiki.vtad.de/index.php/Relative_Volatility_Index_%28RVI%29">http://vtadwiki.vtad.de/index.php/Relative_Volatility_Index_%28RVI%29</a></p>
 <h3 id="verwendung_91">Verwendung</h3>
 <pre><code class="cs">RVI(int period)
-RVI(IDataSeries input, int period)
+RVI(IDataSeries inSeries, int period)
 RVI(int period)[int barsAgo]
-RVI(IDataSeries input, int period)[int barsAgo]
+RVI(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_91">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>RVI</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_80">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_81">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_88">Darstellung</h3>
 <p><img alt="Relative Volatility Index (RVI)" src="../media/image87.png" /></p>
@@ -4281,7 +4342,7 @@ Print(&quot;Der aktuelle Wert für den RVI ist:&quot; + RVI(14)[0]);
 
 <h2 id="reversalbars">ReversalBars</h2>
 <p><strong>Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.</strong></p>
-<h3 id="beschreibung_96">Beschreibung</h3>
+<h3 id="beschreibung_97">Beschreibung</h3>
 <p>Der Indikator ReversalBars dient der Erkennung und Markierung von Umkehrstäben im Chart. Die Umkehrstäbe konnen im Chart mit einer frei wählbaren Farbe eingefärbt werden. Zusätzlich könnnen auch Pfeile über bzw. unter einem Umkehrstab angezeigt werden.
 Der Indikator besitzt einen Plot, und liefert für einen LOng-Umkehrstab den Wert 1, für einen Short-Umkehstab den Wert -1 und ansonsten den Wert 0. Somit kann der Indikator auch in einem Subchart unter dem Hauptchart dargestellt werden. (Die Farbe des Plots ist auf Transparent gesetzt und muß geändert werden.)
 Die Rückgabewerte des Indikators erlauben eine Verwendung in anderen Indikatioren bzw. Strategien.</p>
@@ -4289,13 +4350,13 @@ Die Rückgabewerte des Indikators erlauben eine Verwendung in anderen Indikatior
 <p>Zur Interpretation von Umkehrstäben wird auf die ausführliche Beschreibung in "Das große Buch der Markttechnik") v. M. Voigt verwiesen.</p>
 <h3 id="verwendung_92">Verwendung</h3>
 <pre><code class="cs">Reversalbars()
-Reversalbars(IDataSeries input)
+Reversalbars(IDataSeries inSeries)
 Reversalbars()[int barsAgo]
-Reversalbars(IDataSeries input)[int barsAgo]
+Reversalbars(IDataSeries inSeries)[int barsAgo]
 Reversalbars(int tolerance)
-Reversalbars(IDataSeries input, int tolreance)
+Reversalbars(IDataSeries inSeries, int tolreance)
 Reversalbars(int tolerance)[int barsAgo]
-Reversalbars(IDataSeries input, int tolerance)[int barsAgo]
+Reversalbars(IDataSeries inSeries, int tolerance)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_92">Rückgabewert</h3>
@@ -4304,8 +4365,8 @@ Reversalbars(IDataSeries input, int tolerance)[int barsAgo]
 <p>-1 = Short-Umkehrstab</p>
 <p>0 = kein Umkehrstab</p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>Reversalbars</strong>()[<strong>int</strong> barsAgo] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_81">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator
+<h3 id="parameters_82">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator
 tolerance  s. nachfolgende Beschreibung</p>
 <h3 id="darstellung_89">Darstellung</h3>
 <p><img alt="ReversalBars" src="../media/image88.png" /></p>
@@ -4320,7 +4381,7 @@ Print(&quot;Der letzte Bar ist ein Long-Umkehrstab.&quot;);
 </code></pre>
 
 <h2 id="r-squared">R-Squared</h2>
-<h3 id="beschreibung_97">Beschreibung</h3>
+<h3 id="beschreibung_98">Beschreibung</h3>
 <p>Der Indikator R-Squared gehört zu den Indikatoren aus dem Bereich der linearen Regression. R-Squared ist der sog. Korrelationskoeffizient. Er beschreibt die Qualität der linearen Regressionsgerade.</p>
 <p>R-Squared hat seinen Namen von der Berechnung. Der Wert ist das Quadrat des Korrelationskoeffizienten, der in der Mathematik mit dem grichischen Buchstaben Rho (P) bezeichnet wird.</p>
 <p>Siehe auch  <a href="#linearregression"><em>Linear Regression</em></a>, <a href="#linregslope"><em>LinRegSlope</em></a>, <a href="#linregintercept"><em>LinRegIntercept</em></a>.</p>
@@ -4332,16 +4393,16 @@ In einer starken Trendphase, in der die Kurse längere Zeit in einem engen Schwa
 <p><a href="http://www.blastchart.com/Community/IndicatorGuide/Indicators/LinearRegressionRSquared.aspx">http://www.blastchart.com/Community/IndicatorGuide/Indicators/LinearRegressionRSquared.aspx</a></p>
 <h3 id="verwendung_93">Verwendung</h3>
 <pre><code class="cs">RSquared(int period)
-RSquared(IDataSeries input, int period)
+RSquared(IDataSeries inSeries, int period)
 RSquared(int period)[int barsAgo]
-RSquared(IDataSeries input, int period)[int barsAgo]
+RSquared(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_93">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>RSquared</strong>(8)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_82">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_83">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_90">Darstellung</h3>
 <p><img alt="R-Squared" src="../media/image90.png" /></p>
@@ -4351,7 +4412,7 @@ Print(&quot;Der aktuelle Wert für R-Squared ist:  &quot; + RSquared(8)[0]);
 </code></pre>
 
 <h2 id="standarddeviationstddev">StandardDeviation(StdDev)</h2>
-<h3 id="beschreibung_98">Beschreibung</h3>
+<h3 id="beschreibung_99">Beschreibung</h3>
 <p>Die Standardabweichung (StdDev) ist ein Begriff der Statistik und der Wahrscheinlichkeitsrechnung und ein Maß für die Streuung der Werte einer Zufallsvariablen um ihren Mittelwert. Die Standardabweichung der letzten n Tage findet z.B. auch bei der Berechnung der Bollinger Bänder Verwendung.</p>
 <h3 id="interpretation_65">Interpretation</h3>
 <p>Eine niedrige Standardabweichung zeigt, dass die Datenpunkte sehr nahe an ihrem Mittelwert notieren. Eine hohe Standardabweichung zeigt an, dass die Daten über einen großen Bereich von Werten "ausgebreitet" notieren. Der Tradingansatz geht dann davon aus, dass die Kurse sich wieder ihrem Mittelwert annähern.</p>
@@ -4359,16 +4420,16 @@ Print(&quot;Der aktuelle Wert für R-Squared ist:  &quot; + RSquared(8)[0]);
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Standard_Abweichung">http://vtadwiki.vtad.de/index.php/Standard_Abweichung</a></p>
 <h3 id="verwendung_94">Verwendung</h3>
 <pre><code class="cs">StdDev (int period)
-StdDev (IDataSeries input, int period)
+StdDev (IDataSeries inSeries, int period)
 StdDev (int period)[int barsAgo]
-StdDev (IDataSeries input, int period)[int barsAgo]
+StdDev (IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_94">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.<strong>StdDev</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_83">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_84">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_91">Darstellung</h3>
 <p><img alt="StandardDeviation(StdDev)" src="../media/image92.png" /></p>
@@ -4378,7 +4439,7 @@ Print(&quot;Der aktuelle Wert für die Standardabweichung ist:  &quot; + StdDev(
 </code></pre>
 
 <h2 id="standard-error-stderror">Standard Error (StdError)</h2>
-<h3 id="beschreibung_99">Beschreibung</h3>
+<h3 id="beschreibung_100">Beschreibung</h3>
 <p>Die Standard Error Bänder (StdError) wurden von Jon Anderson entwickelt. Ihr Aussehen ähnelt stark den Bollinger Bändern, obwohl die Berechnung unterschiedlich ist. Die Bänder entstehen durch eine obere und eine untere Begrenzung um eine Mittellinie, der Linearen Regression.
 Die Empfehlungen von Andersen sind folgende Werte: die Anzahl der Perioden ist 21, die Glättung erfolgt mit einem einfachen gleitenden Durchschnitt (SMA) über 3-Perioden.
 Die Subtraktion von zwei Standard-Fehlern von dem Endwert der Regressionsgeraden entspricht dem niedrigeren Standard Fehler, also des unteren Bandes. Einzelne Schlusskurse können einen großen Einfluss auf die Werte der Bänder haben und diese sehr stark schwanken lassen. Daher ist es notwendig, den Verlauf mit einem einfache gleitenden Durchschnitt (SMA) über die Endwerte der Linearen Regression und über die Standardfehler zu glätten.</p>
@@ -4389,24 +4450,24 @@ Eine der Anwendungsmöglichkeiten von Standard Error Bändern ist, die Verengung
 <p><a href="http://www.forexrealm.com/technical-analysis/technical-indicators/standard-error-bands.html">http://www.forexrealm.com/technical-analysis/technical-indicators/standard-error-bands.html</a></p>
 <h3 id="verwendung_95">Verwendung</h3>
 <pre><code class="cs">StdError(int period)
-StdError(IDataSeries input, int period)
+StdError(IDataSeries inSeries, int period)
 StdError(int period)[int barsAgo]
-StdError(IDataSeries input, int period)[int barsAgo]
+StdError(IDataSeries inSeries, int period)[int barsAgo]
 
 //Für das obere Band
 StdError(int period).Upper[int barsAgo]
-StdError(IDataSeries input, int period).Upper[int barsAgo]
+StdError(IDataSeries inSeries, int period).Upper[int barsAgo]
 
 //Für das untere Band
 StdError(int period).Lower[int barsAgo]
-StdError(IDataSeries input, int period).Lower[int barsAgo]
+StdError(IDataSeries inSeries, int period).Lower[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_95">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>StdError</strong>(21)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_84">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_85">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_92">Darstellung</h3>
 <p><img alt="Standard Error (StdError)" src="../media/image93.png" /></p>
@@ -4422,7 +4483,7 @@ Print(&quot;Das obere Band des Standardfehlers verläuft aktuell bei:&quot; + St
 </code></pre>
 
 <h2 id="stochastics">Stochastics</h2>
-<h3 id="beschreibung_100">Beschreibung</h3>
+<h3 id="beschreibung_101">Beschreibung</h3>
 <p>Der Stochastik-Indikator wurde von George C. Lane in den späten 1950er Jahren entwickelt. Er gehört zu der Klasse der Momentum-Indicatoren (Oszillatoren). Dargestellt wird der aktuelle Schlusskurs relative zu einem High- bzw. Low-Bereich über eine vorgegebene Anzahl von Perioden.
 Der Stochastik-Indikator basiert auf der Beobachtung, dass in Aufwärtsbewegungen der Schlußkurs nahe dem Tageshochkurs liegt, während in Abwärtsbewegungen der Schlußkurs nahe dem Tagestiefstkurs liegt.
 Der Stochastik-Indikator setzt sich aus zwei exponentiellen Durchschnittslinien ( %K und %D) zusammen. Beide Linien schwanken zwischen 0 und 100.
@@ -4438,22 +4499,22 @@ Der Stochastik-Indikator als klassischer Oszillator wird hauptsächlich in Seitw
 <p>VTAD: <a href="http://vtadwiki.vtad.de/index.php/Stochastik">http://vtadwiki.vtad.de/index.php/Stochastik</a></p>
 <h3 id="verwendung_96">Verwendung</h3>
 <pre><code class="cs">Stochastics(int periodD, int periodK, int smooth)
-Stochastics(IDataSeries input, int periodD, int periodK, int smooth)
+Stochastics(IDataSeries inSeries, int periodD, int periodK, int smooth)
 
 //Für die %D Linie
 Stochastics(int periodD, int periodK, int smooth).D[int barsAgo]
-Stochastics(IDataSeries input, int periodD, int periodK, int smooth).D[int barsAgo]
+Stochastics(IDataSeries inSeries, int periodD, int periodK, int smooth).D[int barsAgo]
 
 //Für die %K Linie
 Stochastics(int periodD, int periodK, int smooth).K[int barsAgo]
-Stochastics(IDataSeries input, int periodD, int periodK, int smooth).K[int barsAgo]
+Stochastics(IDataSeries inSeries, int periodD, int periodK, int smooth).K[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_96">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>Stochastics</strong>(7,14,3)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_85">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_86">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>periodD Anzahl der Perioden für die Glättung von %K</p>
 <p>periodK Anzahl der Bars, die in die Berechnung für %K einbezogen werden</p>
 <p>smooth  Anzahl der Perioden für die Glättung von %D</p>
@@ -4468,7 +4529,7 @@ Print(&quot;Die Stochastik Linie %D verläuft aktuell bei: &quot; + Stochastics(
 </code></pre>
 
 <h2 id="stochastics-fast">Stochastics Fast</h2>
-<h3 id="beschreibung_101">Beschreibung</h3>
+<h3 id="beschreibung_102">Beschreibung</h3>
 <p>Seihe <a href="#stochastics"><em>stochastics</em></a>.</p>
 <h3 id="interpretation_68">Interpretation</h3>
 <p>Schlusskurse, die sich dauerhaft im oberen Bereich befinden, deuten auf Akkumulation (d.h. Kaufdruck) hin, während die Distribution (d.h. Verkaufsdruck) durch einen Indikatorwert im unteren Bereich angezeigt wird.
@@ -4478,22 +4539,22 @@ Der Stochastik-Indikator als klassischer Oszillator wird hauptsächlich in Seitw
 <p>Charttec: <a href="http://www.charttec.de/html/indikator_stochastics.php">http://www.charttec.de/html/indikator_stochastics.php</a></p>
 <h3 id="verwendung_97">Verwendung</h3>
 <pre><code class="cs">StochasticsFast(int periodD, int periodK)
-StochasticsFast(IDataSeries input, int periodD, int periodK)
+StochasticsFast(IDataSeries inSeries, int periodD, int periodK)
 
 //Für die %D Linie
 StochasticsFast(int periodD, int periodK).D[int barsAgo]
-StochasticsFast(IDataSeries input, int periodD, int periodK).D[int barsAgo]
+StochasticsFast(IDataSeries inSeries, int periodD, int periodK).D[int barsAgo]
 
 //Für die %K Linie
 StochasticsFast(int periodD, int periodK).K[int barsAgo]
-StochasticsFast(IDataSeries input, int periodD, int periodK).K[int barsAgo]
+StochasticsFast(IDataSeries inSeries, int periodD, int periodK).K[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_97">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>StochasticsFast</strong>(7,14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_86">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_87">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>periodD Anzahl der Perioden für die Glättung von %K</p>
 <p>periodK Anzahl der Bars, die in die Berechnung für %K einbezogen werden</p>
 <h3 id="darstellung_94">Darstellung</h3>
@@ -4507,7 +4568,7 @@ Print(&quot;Die Stochastik Linie %D verläuft aktuell bei: &quot; + StochasticsF
 </code></pre>
 
 <h2 id="stochastics-rsi-stochrsi">Stochastics RSI (StochRSI)</h2>
-<h3 id="beschreibung_102">Beschreibung</h3>
+<h3 id="beschreibung_103">Beschreibung</h3>
 <p>Bei der Stochastics RSI (StochRSI) handelt es sich um die Berechnung einer Stochastik auf den Relative Strength Index (RSI). Vorgestellt wurde diese Kombination von T. Chande und S. Kroll.</p>
 <h3 id="interpretation_69">Interpretation</h3>
 <p>Gute Ergebnisse liefert StochRSI als überkauft / überverkauft - Oszillator. Es wird sehr präzise (fast) jeder Extremzustand angezeigt. Der StochRSI kann sowohl als Trendfilter in höheren Zeiteinheiten, sowie für das Timing beim Einstieg in kleineren Zeiteeinheiten eingesetzt werden.</p>
@@ -4515,16 +4576,16 @@ Print(&quot;Die Stochastik Linie %D verläuft aktuell bei: &quot; + StochasticsF
 <p><a href="http://www.investopedia.com/terms/s/stochrsi.asp#axzz263tizhIG">http://www.investopedia.com/terms/s/stochrsi.asp#axzz263tizhIG</a></p>
 <h3 id="verwendung_98">Verwendung</h3>
 <pre><code class="cs">StochRSI(int period)
-StochRSI(IDataSeries input, int period)
+StochRSI(IDataSeries inSeries, int period)
 StochRSI(int period)[int barsAgo]
-StochRSI(IDataSeries input, int period)[int barsAgo]
+StochRSI(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_98">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>StochRSI</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_87">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_88">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_95">Darstellung</h3>
 <p><img alt="Stochastics RSI (StochRSI)" src="../media/image96.png" /></p>
@@ -4534,20 +4595,20 @@ Print(&quot;Der aktuelle Wert für den StochRSIist: &quot; + StochRSI(14)[0]);
 </code></pre>
 
 <h2 id="summation-sum">Summation (SUM)</h2>
-<h3 id="beschreibung_103">Beschreibung</h3>
+<h3 id="beschreibung_104">Beschreibung</h3>
 <p>Summation (SUM) liefert die Summe über eine bestimte Anzahl von Perioden.</p>
 <h3 id="verwendung_99">Verwendung</h3>
 <pre><code class="cs">SUM(int period)
-SUM(IDataSeries input, int period)
+SUM(IDataSeries inSeries, int period)
 SUM(int period)[int barsAgo]
-SUM(IDataSeries input, int period)[int barsAgo]
+SUM(IDataSeries v, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_99">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>SUM</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_88">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_89">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_96">Darstellung</h3>
 <p><img alt="Summation (SUM)" src="../media/image97.png" /></p>
@@ -4557,7 +4618,7 @@ Print(SUM(Volume,10)[0]);
 </code></pre>
 
 <h2 id="supertrend">SuperTrend</h2>
-<h3 id="beschreibung_104">Beschreibung</h3>
+<h3 id="beschreibung_105">Beschreibung</h3>
 <p>Der SuperTrend-Indikator wurde von einem französchischen Trader entwickelt und ist ähnlich dem Parabolic Stop And Reverse System (Parabolic SAR), dass in den 1970er Jahren vorgestellt wurde. Er basiert auf dem Mittelwert der Stäbe und misst die Volatilität als Spanne zwischen Hoch und Tief, unter Berücksichtigung evtl. Kurslücken. Ausgehend von einem Startwert verläuft der Indikator solange in die eingeschlagene Richtung, bis der Markt bei steigender Volatilität eine starke Bewegung in die Gegenrichtung ausführt. Dann springt der Indikator auf den Startwert der Gegenrichtung. Der Indikator ist so programmiert, dass er sich nur in Trendrichtung verändern kann. Nachlassende Volatilität oder Bewegungen gegen die Trendrichtung führen nur dazu, dass er waagerecht weitergezeichnet wird. (Quelle: tradeSignalOnline)</p>
 <h3 id="interpretation_70">Interpretation</h3>
 <p>Es gibt viele verschiedene Anwendungsmethoden für SuperTrend. Unter Forex Händlern ist es verbreitet, die Überkreuzungen direkt zu handeln. Das System ist dann immer im Markt und wird lediglich durch einen Stopp und weitere Regeln zur Gewinnsicherung ergänzt.
@@ -4565,23 +4626,23 @@ Für analytische Zwecke kann der SuperTrend-Indikator einfach nur eine Informati
 Der Indikator kann auch als Exit für ein weiteres Handelssystem dienen. Das heißt, offene Positionen werden beim Trendwechsel des Indikators geschlossen. Hier ist allerdings zu beachten, dass die Positionseröffnungen an den Indikator angepasst werden, oder dass es für die Situationen, in denen Indikator und Position seit der Eröffnung nicht trendgleich verlaufen, eine Sonderbehandlung geben muss.</p>
 <h3 id="verwendung_100">Verwendung</h3>
 <pre><code class="cs">SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)
-SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)
+SuperTrend(IDataSeries inSeries, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)[int barsAgo]
-SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)[int barsAgo]
+SuperTrend(IDataSeries inSeries, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth)[int barsAgo]
 
 //Für den Wert von UpTrend:
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).UpTrend[int barsAgo]
-SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).UpTrend[int barsAgo]
+SuperTrend(IDataSeries inSeries, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).UpTrend[int barsAgo]
 
 //Für den Wert von DownTrend:
 SuperTrend(SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).DownTrend[int barsAgo]
-SuperTrend(IDataSeries input, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).DownTrend[int barsAgo]
+SuperTrend(IDataSeries inSeries, SuperTrendMode stMode, int length, double multiplier, SuperTrendMAType maType, int smooth).DownTrend[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_100">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>SuperTrend</strong>(...).UpTrend[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_89">Parameters</h3>
+<h3 id="parameters_90">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -4660,7 +4721,7 @@ if (Close[0] &lt; SuperTrend(SuperTrendMAType.HMA, SuperTrendMode.ATR, 14, 2.618
 </code></pre>
 
 <h2 id="supportresistanceareas">SupportResistanceAreas</h2>
-<h3 id="beschreibung_105">Beschreibung</h3>
+<h3 id="beschreibung_106">Beschreibung</h3>
 <p>Der Indikator SupportResistanceAreas zeichnet Unterstützungs- und Widerstandsbereiche in den Chart. Es werden insgesamt 4 Arten von Unterstützungen bzw. Widerständen (farblich) unterschieden.</p>
 <p>Support durch einen zurückliegenden lokalen Hochpunkt   (ColorLowerHigh)</p>
 <p>Support durch einen zurückliegenden lokalen Tiefpunkt   (ColorLowerLow)</p>
@@ -4671,7 +4732,7 @@ if (Close[0] &lt; SuperTrend(SuperTrendMAType.HMA, SuperTrendMode.ATR, 14, 2.618
 An deutlich erkennbaren Unterstützungen bieten sich Einstiegsgelegenheiten, an Widerständen entsprechend Zielpunkte.
 Einmal gebrochene Widerstände erweisen sich im weiteren Handel oftmals als Unterstützungen und umgekehrt.</p>
 <p><a href="http://finanzportal.wiwi.uni-saarland.de/tech/Kapitel5_4.htm">http://finanzportal.wiwi.uni-saarland.de/tech/Kapitel5_4.htm</a></p>
-<h3 id="parameters_90">Parameters</h3>
+<h3 id="parameters_91">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -4709,7 +4770,7 @@ Einmal gebrochene Widerstände erweisen sich im weiteren Handel oftmals als Unte
 <h3 id="darstellung_98">Darstellung</h3>
 <p><img alt="SupportResistanceAreas" src="../media/image99.png" /></p>
 <h2 id="swing">Swing</h2>
-<h3 id="beschreibung_106">Beschreibung</h3>
+<h3 id="beschreibung_107">Beschreibung</h3>
 <p>Der Swing Indikator zeichnet Linien an den Swing-Hochs bzw. Swing-Tiefs basierend auf der "Stärke" dieser Punkte. Die Stärke ergibt sich dabei aus der Anzahl der Bars links und rechts neben diesem Extrempunkt.
 Methoden dieses Indikators können in anderen Scripten verwendet werden um z.B. den letzten zurückliegenden Extrempunkt und den entsprechenden Kurswert zu erhalten.</p>
 <h3 id="interpretation_72">Interpretation</h3>
@@ -4717,18 +4778,18 @@ Methoden dieses Indikators können in anderen Scripten verwendet werden um z.B. 
 <h3 id="verwendung_101">Verwendung</h3>
 <pre><code class="cs">//Für einen Hochpunkt
 Swing(int strength).SwingHighBar(int barsAgo, int instance, int lookBackPeriod)
-Swing(IDataSeries input, int strength).SwingHighBar(int barsAgo, int instance, int lookBackPeriod)
+Swing(IDataSeries inSeries, int strength).SwingHighBar(int barsAgo, int instance, int lookBackPeriod)
 
 //Für einen Tiefpunkt
 Swing(int strength).SwingLowBar(int barsAgo, int instance, int lookBackPeriod)
-Swing(IDataSeries input, int strength).SwingLowBar(int barsAgo, int instance, int lookBackPeriod)
+Swing(IDataSeries inSeries, int strength).SwingLowBar(int barsAgo, int instance, int lookBackPeriod)
 </code></pre>
 
 <h3 id="ruckgabewert_101">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>Swing</strong>(5)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <p><strong>Wenn CurrentBar kleiner ist als der Parameter "strength" oder wenn noch kein SwingHigh bzw SwingLow gefunden wurde, ist der Rückgabewert -1.</strong></p>
-<h3 id="parameters_91">Parameters</h3>
+<h3 id="parameters_92">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -4773,7 +4834,7 @@ Print(&quot;The last swing high was at &quot; + High[barsAgo]);
 </code></pre>
 
 <h2 id="time-series-forecast-tsf">Time-Series-Forecast (TSF)</h2>
-<h3 id="beschreibung_107">Beschreibung</h3>
+<h3 id="beschreibung_108">Beschreibung</h3>
 <p>Der Time-Series-Forecast (TSF) ähnelt einem gleitenden Durchschnitt. Der Trend wird mit einer Regressionsgleichung nach der Methode der kleinsten Quadrate ermittelt. Ziel ist es, den Kurs anhand des bestehenden Trends in die Zukunft zu extrapolieren.</p>
 <h3 id="interpretation_73">Interpretation</h3>
 <p>TSF reagiert schneller als gleitende Durchschnitte. Diese bilden immer mit Zeitverzögerung den vorherrschenden Trend ab. Die TSF-Formel lässt den Abstand zum aktuellen Kurs jedoch nie zu groß werden. Dadurch gelingt es dem Indikator in vielen Fällen, schneller auf Trendwenden zu reagieren.
@@ -4784,17 +4845,17 @@ Die Anzahl von Fehlsignalen läßt sich verringern, wenn der Einstieg nur dann e
 <p><a href="http://en.wikipedia.org/wiki/Time_series">http://en.wikipedia.org/wiki/Time_series</a></p>
 <h3 id="verwendung_102">Verwendung</h3>
 <pre><code class="cs">TSF(int forecast, int period)
-TSF(IDataSeries input, int forecast, int period)
+TSF(IDataSeries inSeries, int forecast, int period)
 TSF(int forecast, int period)[int barsAgo]
-TSF(IDataSeries input, int forecast, int period)[int barsAgo]
+TSF(IDataSeries inSeries, int forecast, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_102">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>TSF</strong>(3,14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_92">Parameters</h3>
+<h3 id="parameters_93">Parameters</h3>
 <p>forecast Anzahl der Bars für Forecast</p>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_100">Darstellung</h3>
 <p><img alt="Time-Series-Forecast (TSF)" src="../media/image101.png" /></p>
@@ -4805,7 +4866,7 @@ Print(&quot;Der aktuelle Wert für TSF ist: &quot; + TSF(3, 14)[0]);
 
 <h2 id="tools">Tools</h2>
 <h2 id="constant-lines">Constant Lines</h2>
-<h3 id="beschreibung_108">Beschreibung</h3>
+<h3 id="beschreibung_109">Beschreibung</h3>
 <p>Der Indikator ConstantLines zeichnet bis zu vier frei konfigurierbare horizontale Linien in den Chart. Er kann dazu verwendet werden, bestimmte Preisniveaus (charttechnisch interessante Punkte) zu markieren um sie nicht aus dem Blick zu verlieren.</p>
 <h3 id="verwendung_103">Verwendung</h3>
 <pre><code class="cs">ConstantLines(double line1Value, double line2Value, double line3Value, double line4Value)
@@ -4822,30 +4883,30 @@ ConstantLines(double line1Value, double line2Value, double line3Value, double li
 <h3 id="darstellung_101">Darstellung</h3>
 <p><img alt="Constant Lines" src="../media/image102.png" /></p>
 <h2 id="currentdayohl">CurrentDayOHL</h2>
-<h3 id="beschreibung_109">Beschreibung</h3>
+<h3 id="beschreibung_110">Beschreibung</h3>
 <p>Die Funktion CurrentDayOHL liefert für den aktuellen Tag (die aktuelle Session) die Werte für Open, High und Low.
 CurrentDayOHL ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.</p>
 <p>Siehe auch <a href="#priordayohlc"><em>PriorDayOHLC</em></a>, <a href="#daylines"><em>DayLines</em></a>.</p>
 <h3 id="parameter_12">Parameter</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <h3 id="ruckgabewert_104">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>CurrentDayOHL</strong>.CurrentOpen(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="verwendung_104">Verwendung</h3>
 <pre><code class="cs">CurrentDayOHL()
-CurrentDayOHL(IDataSeries input)
+CurrentDayOHL(IDataSeries inSeries)
 
 //Für den Wert von Open
 CurrentDayOHL().CurrentOpen[int barsAgo]
-CurrentDayOHL(IDataSeries input).CurrentOpen[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentOpen[int barsAgo]
 
 //Für den Wert von High
 CurrentDayOHL().CurrentHigh[int barsAgo]
-CurrentDayOHL(IDataSeries input).CurrentHigh[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentHigh[int barsAgo]
 
 //Für den Wert von Low
 CurrentDayOHL().CurrentLow[int barsAgo]
-CurrentDayOHL(IDataSeries input).CurrentLow[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentLow[int barsAgo]
 </code></pre>
 
 <h3 id="darstellung_102">Darstellung</h3>
@@ -4855,7 +4916,7 @@ CurrentDayOHL(IDataSeries input).CurrentLow[int barsAgo]
 </code></pre>
 
 <h2 id="daily-performance">Daily Performance</h2>
-<h3 id="beschreibung_110">Beschreibung</h3>
+<h3 id="beschreibung_111">Beschreibung</h3>
 <p>Der Indikator DailyPerformance liefert Angaben über die Veränderung des Kurses ausgehend entweder von einem Close in der Vergangenheit oder vom Open des aktuellen Tages zum aktuellen Kurs.</p>
 <p>Die Performance kann in Punkten, Ticks, Prozent oder einem Währungsbetrag angegene werden.</p>
 <p>Für die Darstellung im Chart sind die Schriftart und die Farbe frei wählbar.</p>
@@ -4867,16 +4928,16 @@ Um z.B. die bekannte Liste von Aktien mit ihrer täglichen prozentualen Verände
 <p><img alt="scanner" src="../media/image105.png" /></p>
 <h3 id="verwendung_105">Verwendung</h3>
 <pre><code class="cs">DailyPerformance(DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)
-DailyPerformance(IDataSeries input,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)
+DailyPerformance(IDataSeries inSeries,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)
 DailyPerformance(DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)[int barsAgo]
-DailyPerformance(IDataSeries input,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)[int barsAgo]
+DailyPerformance(IDataSeries inSeries,DailyPerformanceReference reference, DailyPerformanceCalculationMode mode, int daysAgo)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_105">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>DailyPerformance</strong>(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_93">Parameters</h3>
-<p>input       Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_94">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <p>reference   mögliche Werte sind:
         - DailyPerformanceReference.Open
         - DailyPerformanceReference.PreviousClose</p>
@@ -4907,21 +4968,21 @@ DailyPerformance(DailyPerformanceReference.PreviousClose, DailyPerformanceCalcul
 </code></pre>
 
 <h2 id="dailyquotemoves">DailyQuoteMoves</h2>
-<h3 id="beschreibung_111">Beschreibung</h3>
+<h3 id="beschreibung_112">Beschreibung</h3>
 <p>Dieser Indikator zeigt die täglichen Preisbewegungen des laufenden Markts an, täglich beginnend an der Null-Linie. Mit diesem Indikator können Sie sehen, ob der Markt im Augenblick über oder unter dem Einstiegspreis bei Marktstart ist. Ein Beispiel: Der FDAX hat die Eigenschaft, dass – sobald das 100, 200, 400-Level erreicht ist, der Markt das Potential hat, sich zu drehen.</p>
 <p><strong>Klappt nur bei Intraday charts!</strong></p>
 <h3 id="verwendung_106">Verwendung</h3>
 <pre><code class="cs">DailyQuoteMoves()
-DailyQuoteMoves(IDataSeries input)
+DailyQuoteMoves(IDataSeries inSeries)
 DailyQuoteMoves()[int barsAgo]
-DailyQuoteMoves(IDataSeries input) [int barsAgo]
+DailyQuoteMoves(IDataSeries inSeries) [int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_106">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>DailyQuoteMoves</strong>(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_94">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_95">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_104">Darstellung</h3>
 <p><img alt="DailyQuoteMoves" src="../media/DailyQuoteMoves.png" /></p>
 <h3 id="beispiel_103">Beispiel</h3>
@@ -4930,7 +4991,7 @@ DailyQuoteMoves()[0]
 </code></pre>
 
 <h2 id="daylines">DayLines</h2>
-<h3 id="beschreibung_112">Beschreibung</h3>
+<h3 id="beschreibung_113">Beschreibung</h3>
 <p>Der DayLines-Indikator zeichnet im Chart  Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
 An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.
 Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind frei konfigurierbar.</p>
@@ -4938,7 +4999,7 @@ Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind
 <h3 id="darstellung_105">Darstellung</h3>
 <p><img alt="DayLines" src="../media/image107.png" /></p>
 <h2 id="daylinesadv">DayLinesAdv</h2>
-<h3 id="beschreibung_113">Beschreibung</h3>
+<h3 id="beschreibung_114">Beschreibung</h3>
 <p>Der Indikator DayLinesAdv zeichnet im Chart  horizontale Linien für das gestrige Hoch, Tief und Close sowie das heutige Open ein.
 An diesen Linien (Kursniveaus) ist sehr oft mit einer Reaktion des Marktes zu rechnen.</p>
 <p>Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind frei konfigurierbar.</p>
@@ -4964,13 +5025,13 @@ Wenn true, werden Hochs bzw. Tiefs, die noch nicht vom Kurs "gebrochen" wurden, 
 Hinweis: Um Widerstands- und Unterstützungszonen anzuzeigen, kann der darauf spezialisierte Indikator SupportResistanceAreas verwendet werden.
 <img alt="highs and lows" src="../media/image111.png" /></p>
 <h2 id="getdaybar">GetDayBar</h2>
-<h3 id="beschreibung_114">Beschreibung</h3>
+<h3 id="beschreibung_115">Beschreibung</h3>
 <p>Die Funktion GetDayBar() liefert alle Werte (Open, High, Low, Close, Time, Median, Typical, Volume und Weighted) eines bestimmten Tages (Session) in der Vergangenheit oder des aktuellen Tages (Besonderheiten s. unter Rückgabewert). GetDayBar() ist nicht zur Anzeige im Chart gedacht. Hierfür ist der Indikator DayLinesAdv zu verwenden.
 GetDayBar ist in erster Linie ein sehr performanter Ersatz für <a href="#priordayohlc"><em>PriorDayOHLC</em></a>.</p>
 <p>Einige Anbieter von Datenfeeds liefern neben Intraday-Daten (Realtime oder verzögerten Daten) auch separate Kurse auf Tagesbasis. Wenn Tageskurse vorhanden sind, werden diese von GetDayBar() direkt verwendet.  </p>
 <p>Dies ist der Unterschied zum Indikator <a href="#priordayohlc"><em>PriorDayOHLC</em></a>, bei dem die Werte immer aus den Intraday-Kursen gebildet werden.</p>
 <p>Wenn sich Unterschiede zwischen den Werten beider Funktionen zeigen, ist die Ursache meist in der abweichenden Definition von Session-Beginn und Session-Ende zu suchen (Zeitzonen-Unterschiede) oder die Daten werden vom Datenanbieter bereits mit diesen Unterschieden geliefert. </p>
-<h3 id="parameters_95">Parameters</h3>
+<h3 id="parameters_96">Parameters</h3>
 <p>daysAgo Anzahl der Tage in der Vergangenheit
 (0 für den aktuellen Tag)</p>
 <h3 id="ruckgabewert_107">Rückgabewert</h3>
@@ -5001,27 +5062,27 @@ protected override void OnStart()
 <p><strong>Wichtig:</strong>
 Das Attribut <em>TimeFrameRequirements</em> muß immer auch für die aufrufende Klasse (hier class xy) angegeben werden, wenn der aufgerufene Indikator <em>Multibars</em> verwendet.</p>
 <h2 id="info">Info</h2>
-<h3 id="beschreibung_115">Beschreibung</h3>
+<h3 id="beschreibung_116">Beschreibung</h3>
 <p>Info ist kein Indikator im klassischen Sinn, sondern ein Tool.
 Im Hintergrund des Charts werden - abhängig vom dargestellten Handelsinstrument (Aktie, Future, Währung usw.) -  einige nützliche Zusatzinformationen angezeigt.
 Die Textfarbe ist frei wählbar.</p>
 <h3 id="darstellung_106">Darstellung</h3>
 <p><img alt="GetDayBar" src="../media/image112.png" /></p>
 <h2 id="maximum-max">Maximum (MAX)</h2>
-<h3 id="beschreibung_116">Beschreibung</h3>
+<h3 id="beschreibung_117">Beschreibung</h3>
 <p>Maximum (MAX) liefert den höchsten Wert aus einer bestimmten Anzahl von Perioden.</p>
 <h3 id="verwendung_108">Verwendung</h3>
 <pre><code class="cs">MAX(int period)
-MAX (IDataSeries input, int period)
+MAX (IDataSeries inSeries, int period)
 MAX (int period)[int barsAgo]
-MAX (IDataSeries input, int period)[int barsAgo]
+MAX (IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_108">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>MAX</strong>(Close, 10)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_96">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_97">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_107">Darstellung</h3>
 <p><img alt="Maximum (MAX)" src="../media/image113.png" /></p>
@@ -5033,20 +5094,20 @@ Print(&quot;Der höchste Wert der letzten 20 Perioden ist&quot; + MAX(High, 20)[
 </code></pre>
 
 <h2 id="minimum-min">Minimum (MIN)</h2>
-<h3 id="beschreibung_117">Beschreibung</h3>
+<h3 id="beschreibung_118">Beschreibung</h3>
 <p>Minimum (MIN) liefert den kleinsten Wert aus einer bestimmten Anzahl von Perioden.</p>
 <h3 id="verwendung_109">Verwendung</h3>
 <pre><code class="cs">MIN (int period)
-MIN (IDataSeries input, int period)
+MIN (IDataSeries inSeries, int period)
 MIN (int period)[int barsAgo]
-MIN (IDataSeries input, int period)[int barsAgo]
+MIN (IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_109">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>MIN</strong>(Close, 10)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_97">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator
+<h3 id="parameters_98">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator
 period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_108">Darstellung</h3>
 <p><img alt="Minimum (MIN)" src="../media/image114.png" /></p>
@@ -5058,20 +5119,20 @@ Print(&quot;Der tiefste Wert der letzten 20 Perioden ist &quot; + MIN(Low, 20)[0
 </code></pre>
 
 <h2 id="mtfboxes">MTFBoxes</h2>
-<h3 id="beschreibung_118">Beschreibung</h3>
+<h3 id="beschreibung_119">Beschreibung</h3>
 <p>Der Indikator MTFBoxes zeichnet hinter die Kerzen in einem Chart eine farbige Fläche, die einer Kerze einer höheren Zeiteinheit entspricht.</p>
 <p>So kann beispielsweise in einem 5-Minuten-Candle-Chart eine Fläche gezeichnet werden, die einer Kerze auf 60 Minuten entspricht. Die Fläche beinhaltet alle Kerzen, die in der 60-Minuten Kerze enthalten sind.</p>
 <p>Sollte die "virtuelle" Kerze der höheren Zeiteinheit eine steigende Kerze sein (Close größer Open), so wird die Fläche in grüner, sonst in roter Farbe dargestellt. Bei einem Doji wird eine graue Farbe verwendet.</p>
 <p>Mit dem Parameter "Mark candles body" kann der Kerzenkörper der höheren Zeiteinheit sichtbar gemacht werden.
 Die Farben der Boxen und der Grad der Transparenz ist einstellbar (0 ist volle Transparenz, 255 ist voll deckend).</p>
-<h3 id="parameters_98">Parameters</h3>
+<h3 id="parameters_99">Parameters</h3>
 <p>TimeFrame  Zeiteinheit der "virtuellen" Kerze (Sekunde, Minute, Stunde, Tag, Woche, Monat)
 TimeFrame Value  Wert für die Zeiteinheit (Zahl)
 Mark candles body  Färbt den Kerzenkörper (Bereich zwischen Open und Close) mit etwas dunklerer Farbe ein.</p>
 <h3 id="darstellung_109">Darstellung</h3>
 <p><img alt="MTFBoxes" src="../media/image115.png" /></p>
 <h2 id="priceline">PriceLine</h2>
-<h3 id="beschreibung_119">Beschreibung</h3>
+<h3 id="beschreibung_120">Beschreibung</h3>
 <p>PriceLine ist kein Indikator im klassischen Sinn, sondern ein Tool.
 Es wird am aktuellen Kurs im Chart eine horizontale Linie angezeigt.
 Die Farbe der Linie und die Linienstärke sind frei wählbar.</p>
@@ -5088,29 +5149,29 @@ deutschen Zeitzone bereits am Sonntag Abend. Diese "Sonntags-Session" wird als e
 Um die wesentlich relevanteren Daten der vergangenen "Freitags-Session" zu erhalten, gibt es den Indikator <strong>PriorDayOHLCext</strong> mit erweiterter Funktion. Wird der zusätzliche Parameter "Include Weekend" auf "true" gestellt, werden alle Kursdaten von einem Samstag oder Sonntag so behandelt, als ob sie zur letzten "Freitags-Session" gehören.</p>
 <p>Siehe auch <a href="#currentdayohl"><em>CurrentDayOHL</em></a>, <a href="#daylines"><em>DayLines</em></a>.</p>
 <h3 id="parameter_13">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <h3 id="ruckgabewert_110">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>PriorDayOHLC</strong>().PriorHigh[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="verwendung_110">Verwendung</h3>
 <pre><code class="cs">PriorDayOHLC()
-PriorDayOHLC(IDataSeries input)
+PriorDayOHLC(IDataSeries inSeries)
 
 //Für den Wert von Open
 PriorDayOHLC().PriorOpen[int barsAgo]
-PriorDayOHLC(IDataSeries input).PriorOpen[int barsAgo]
+PriorDayOHLC(IDataSeries inSeries).PriorOpen[int barsAgo]
 
 //Für den Wert von High
 PriorDayOHLC().PriorHigh[int barsAgo]
-PriorDayOHLC(IDataSeries input).PriorHigh[int barsAgo]
+PriorDayOHLC(IDataSeries inSeries).PriorHigh[int barsAgo]
 
 //Für den Wert von Low
 PriorDayOHLC().PriorLow[int barsAgo]
-PriorDayOHLC(IDataSeries input).PriorLow[int barsAgo]
+PriorDayOHLC(IDataSeries inSeries).PriorLow[int barsAgo]
 
 //Für den Wert von Close
 PriorDayOHLC().PriorClose[int barsAgo]
-PriorDayOHLC(IDataSeries input).PriorClose[int barsAgo]
+PriorDayOHLC(IDataSeries inSeries).PriorClose[int barsAgo]
 </code></pre>
 
 <h3 id="darstellung_112">Darstellung</h3>
@@ -5126,7 +5187,7 @@ Print(&quot;das Vortages-Close liegt bei &quot; + PriorDayOHLC().PriorClose[0]);
 <h2 id="priordayohlcext">PriorDayOHLCext</h2>
 <p>siehe <a href="#priordayohlc"><em>PriorDayOHLC</em></a>.</p>
 <h2 id="sessionbreaklines">SessionBreakLines</h2>
-<h3 id="beschreibung_120">Beschreibung</h3>
+<h3 id="beschreibung_121">Beschreibung</h3>
 <p>Der Indikator SessionBreakLines zeichnet an der ersten Kerze einer neuen Handelssession eine vertikale Linie.
 Die Besonderheit ist, dass eingestellt werden kann, wie die sog. "Wochenend-Sessions" behandelt werden sollen.  Ist der Parameter "IncludeWeekends" auf "true" gesetzt, werden die kurzen Sessions am Sonntag der Freitags-Session zugerechnet (Beschreibung aus Sicht der deutschen Zeitzone). 
 Die Linienfarbe, die Linienstärke und die Linienart sind frei wählbar.</p>
@@ -5134,14 +5195,14 @@ Die Linienfarbe, die Linienstärke und die Linienart sind frei wählbar.</p>
 <h3 id="darstellung_113">Darstellung</h3>
 <p><img alt="PriorDayOHLCext" src="../media/image118.png" /></p>
 <h2 id="showbidask">ShowBidAsk</h2>
-<h3 id="beschreibung_121">Beschreibung</h3>
+<h3 id="beschreibung_122">Beschreibung</h3>
 <p>Der Indikator ShowBidAsk zeigt am unteren Chart-Rand den aktuellen Bid- und Ask-Kurs jeweils mit dem entsprechenden Volumen an. Änderungen am Volumen werden auch dann angegeben, wenn es nicht tatsächlich zu einem Umsatz (Tick) kam.
 Schriftart und -farbe sind frei konfigurierbar.
 Voraussetzung für die Nutzung ist die Verbindung mit einem Realtime-Datenfeed.</p>
 <h3 id="darstellung_114">Darstellung</h3>
 <p><img alt="ShowBidAsk" src="../media/image119.png" /></p>
 <h2 id="tickcounter">TickCounter</h2>
-<h3 id="beschreibung_122">Beschreibung</h3>
+<h3 id="beschreibung_123">Beschreibung</h3>
 <p>Der Indikator TickCounter schreibt in den Chart eine Information über die im aktuell laufenden Bar enthaltene Anzahl von Ticks.
 TickCounter kann die Anzahl der Ticks sowohl von 0 hochzählen, als auch von der eingestellten max. Anzahl der Ticks in einem Bar herunterzählen auf 0.</p>
 <p>Der Wert kann jeweils als absolute Anzahl von Ticks oder als Prozentwert ausgegeben werden.
@@ -5152,7 +5213,7 @@ Für die Programmierung in eigenen Scripts verwenden sie bitte Bars.TickCount bz
 <h3 id="darstellung_115">Darstellung</h3>
 <p><img alt="TickCounter" src="../media/image120.png" /></p>
 <h2 id="true-strength-index-tsi">True Strength Index (TSI)</h2>
-<h3 id="beschreibung_123">Beschreibung</h3>
+<h3 id="beschreibung_124">Beschreibung</h3>
 <p>Der True Strength Index (TSI) wurde erstmals im Jahre 1991 von William Blau veröffentlicht. Er gehört zu der Gruppe der Momentum-Indikatoren und ist einerseits geeignet als Indikator für die Trendrichtung und andererseits zur Anzeige von überkauft- / überverkauft-Situationen
 Typischerweise gelten Momentum-Oszillatoren als Frühindikatoren der Preisbewegung, und gleitende Durchschnitte sind charakteristisch dafür, dem Kurs nachzulaufen. Der TSI kombiniert die Vorteile beider Indikator-Gruppen.</p>
 <h3 id="interpretation_74">Interpretation</h3>
@@ -5161,18 +5222,18 @@ Typischerweise gelten Momentum-Oszillatoren als Frühindikatoren der Preisbewegu
 <p><a href="http://en.wikipedia.org/wiki/True_strength_index">http://en.wikipedia.org/wiki/True_strength_index</a></p>
 <h3 id="verwendung_111">Verwendung</h3>
 <pre><code class="cs">TSI(int fast, int slow)
-TSI(IDataSeries input, int fast, int slow)
+TSI(IDataSeries inSeries, int fast, int slow)
 TSI(int fast, int slow)[int barsAgo]
-TSI(IDataSeries input, int fast, int slow)[int barsAgo]
+TSI(IDataSeries inSeries, int fast, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_111">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>TSI</strong>(3,14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_99">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
-<p>fast    Anzahl der Bars, für die Berechnung des Fast EMA</p>
-<p>slow    Anzahl der Bars, für die Berechnung des Slow EMA</p>
+<h3 id="parameters_100">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
+<p>fast        Anzahl der Bars, für die Berechnung des Fast EMA</p>
+<p>slow        Anzahl der Bars, für die Berechnung des Slow EMA</p>
 <h3 id="darstellung_116">Darstellung</h3>
 <p><img alt="True Strength Index (TSI)" src="../media/image121.png" /></p>
 <h3 id="beispiel_108">Beispiel</h3>
@@ -5181,7 +5242,7 @@ Print(&quot;Der aktuelle Wert für den TSI ist &quot; + TSI(3, 14)[0]);
 </code></pre>
 
 <h2 id="ultimate-oscillator">Ultimate Oscillator</h2>
-<h3 id="beschreibung_124">Beschreibung</h3>
+<h3 id="beschreibung_125">Beschreibung</h3>
 <p>Der Ultimate Oscillator wurde 1985 von Larry Williams entwickelt und in der Aprilausgabe des Magazins "Technical Analysis of Stocks and Commodities" vorgestellt.</p>
 <p>Der Indikator berechnet eine gewichtete Summe aus drei Oszillatoren unterschiedlicher Zeitebenen. Die drei Zeitebenen stehen für einen kurzfristigen, einen mittelfristigen und einen langfristigen Marktzyklus. Die typischen Periodenlängen sind 7, 14 und 28. Der Wer des Indikators schwankt zwischen 0 und 100. Werte über 70 werden als überkauft und Werte unter 30 als überverkauft angesehen.</p>
 <h3 id="interpretation_75">Interpretation</h3>
@@ -5204,15 +5265,15 @@ Print(&quot;Der aktuelle Wert für den TSI ist &quot; + TSI(3, 14)[0]);
 <p>Ein Verkaufssignal wird gegeben, wenn sich bei Werten oberhalb von 70 eine bearische Divergenz ausbildet. Diese Position wird mit dem Unterschreiten von 30 geschlossen.</p>
 <h3 id="verwendung_112">Verwendung</h3>
 <pre><code class="cs">UltimateOscillator(int fast, int intermediate, int slow)
-UltimateOscillator(IDataSeries input, int fast, int intermediate, int slow)
+UltimateOscillator(IDataSeries inSeries, int fast, int intermediate, int slow)
 UltimateOscillator(int fast, int intermediate, int slow)[int barsAgo]
-UltimateOscillator(IDataSeries input, int fast, int intermediate, int slow)[int barsAgo]
+UltimateOscillator(IDataSeries inSeries, int fast, int intermediate, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_112">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>UltimateOscillator</strong> (5)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_100">Parameters</h3>
+<h3 id="parameters_101">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -5222,7 +5283,7 @@ UltimateOscillator(IDataSeries input, int fast, int intermediate, int slow)[int 
 </thead>
 <tbody>
 <tr>
-<td>input</td>
+<td>inSeries</td>
 <td>Eingangsdatenreihe für den Indikator</td>
 </tr>
 <tr>
@@ -5247,7 +5308,7 @@ Print(&quot;Der aktuelle Wert des Ultimate-Oscillators ist &quot; + UltimateOsci
 </code></pre>
 
 <h2 id="volume-vol">Volume (VOL)</h2>
-<h3 id="beschreibung_125">Beschreibung</h3>
+<h3 id="beschreibung_126">Beschreibung</h3>
 <p>Das Volumen (VOL) ist die Anzahl der gehandelten Aktien, Futures, ETF's usw. in einer bestimmten Zeiteinheit. D.h. es ist der Umsatz in dem zugrundeliegenden Wert. Die Analyse des Volumens ist eine einfaches, aber sehr wichtiges Element der technischen Analyse. Volume bietet Hinweise auf die Intensität einer Kursbewegung.</p>
 <h3 id="interpretation_76">Interpretation</h3>
 <p>In einem gesunden Aufwärtstrend steigt sowohl der Kurs, als auch das Volumen an. In einem Abwärtstrend fallen die Kurse unter steigendem Volumen. Die Korrekturphasen weisen in beiden Fällen ein vermindertes Volumen auf.
@@ -5257,16 +5318,16 @@ Bei einem schwachen Volumen und einem nur mäßigem Kursfortschritt trifft ein g
 <p><a href="http://de.wikipedia.org/wiki/Volumenanalyse">http://de.wikipedia.org/wiki/Volumenanalyse</a></p>
 <h3 id="verwendung_113">Verwendung</h3>
 <pre><code class="cs">VOL()
-VOL(IDataSeries input)
+VOL(IDataSeries inSeries)
 VOL()[int barsAgo]
-VOL(IDataSeries input)[int barsAgo]
+VOL(IDataSeries inSeries)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_113">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>VOL</strong>()[<strong>int</strong> barsAgo] )wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_14">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_118">Darstellung</h3>
 <p><img alt="Volume (VOL)" src="../media/image123.png" /></p>
 <h3 id="beispiel_110">Beispiel</h3>
@@ -5275,7 +5336,7 @@ Print(&quot;Der aktuelle Umsatz beträgt &quot; + VOL()[0]);
 </code></pre>
 
 <h2 id="volume-moving-average-volma">Volume Moving Average (VOLMA)</h2>
-<h3 id="beschreibung_126">Beschreibung</h3>
+<h3 id="beschreibung_127">Beschreibung</h3>
 <p>Der Volume Moving Average (VOLMA) errechnet sich durch die Anwendung eines Exponential Moving Average (EMA) auf das jeder einzelnen Perioden zugehörige Volumen, also EMA(Volumen).</p>
 <p><strong>Verwechselungsgefahr!</strong>
 Gelegentlich wird in der Literatur und in anderer Handelssoftware für den Volumen Moving Average auch die Abkürzung VMA verwendet. In AgenaTrader steht VMA für den Indikator Variable Moving Average (siehe VMA).</p>
@@ -5298,16 +5359,16 @@ Gelegentlich wird in der Literatur und in anderer Handelssoftware für den Volum
 <p>Volumen-Analyse.de: <a href="http://www.volumen-analyse.de">http://www.volumen-analyse.de</a></p>
 <h3 id="verwendung_114">Verwendung</h3>
 <pre><code class="cs">VOLMA(int period)
-VOLMA(IDataSeries input, int period)
+VOLMA(IDataSeries inSeries, int period)
 VOLMA(int period)[int barsAgo]
-VOLMA(IDataSeries input, int period)[int barsAgo]
+VOLMA(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_114">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>VOLMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_101">Parameters</h3>
-<p>input Eingangsdatenreihe für den Indikator</p>
+<h3 id="parameters_102">Parameters</h3>
+<p>inSeries Eingangsdatenreihe für den Indikator</p>
 <p>period Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_119">Darstellung</h3>
 <p><img alt="Volume Moving Average (VOLMA)" src="../media/image124.png" /></p>
@@ -5317,25 +5378,25 @@ Print(&quot;Der aktuelle Wert für VOLMA ist &quot; + VOLMA(14)[0]);
 </code></pre>
 
 <h2 id="volume-oscillator">Volume Oscillator</h2>
-<h3 id="beschreibung_127">Beschreibung</h3>
+<h3 id="beschreibung_128">Beschreibung</h3>
 <p>Der Volume Oscillator nutzt die Differenz zwischen zwei gleitenden Durchschnitten des Handelsvolumens. Das Ergebnis erinnert an den MACD bzw. an jeden anderen Oszillator, dem gleitende Durchschnitte zu Grunde liegen.</p>
 <h3 id="interpretation_78">Interpretation</h3>
 <p>Der VolumeOszillator wird verwendet, um die Trendstärke zu bestimmen. Werden Entwicklungen im Kurs der Aktie von überproportionalen Volume Oscillator Werten begleitet, ist ihnen eine hohe Relevanz zuzuschreiben. Auf diese Weise kann der VolumeOszillator als Filter gegen Fehlsignale eingesetzt werden.
 Ein Wert über Null bedeutet, dass der kürzere GD des Volumens über dem längerfristigen GD liegt. Steigende Kurse mit erhöhtem kurzfristigen Volumen zeigen eine bullishe Situation an, genau wie fallende Kurse mit vermindertem Volumen eine Marktschwäche anzeigt.</p>
 <h3 id="verwendung_115">Verwendung</h3>
 <pre><code class="cs">VolumeOscillator(int fast, int slow)
-VolumeOscillator(IDataSeries input, int fast, int slow)
+VolumeOscillator(IDataSeries inSeries, int fast, int slow)
 VolumeOscillator(int fast, int slow)[int barsAgo]
-VolumeOscillator(IDataSeries input, int fast, int slow)[int barsAgo]
+VolumeOscillator(IDataSeries inSeries, int fast, int slow)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_115">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>VolumeOszillator</strong>(12,26)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_102">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
-<p>fast    Anzahl der Bars für die Berechnung des kurzfristigen GD's</p>
-<p>slow    Anzahl der Bars für die Berechnung des langfristigen GD's</p>
+<h3 id="parameters_103">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
+<p>fast        Anzahl der Bars für die Berechnung des kurzfristigen GD's</p>
+<p>slow        Anzahl der Bars für die Berechnung des langfristigen GD's</p>
 <h3 id="darstellung_121">Darstellung</h3>
 <p><img alt="Volume Oscillator" src="../media/image125.png" /></p>
 <h3 id="beispiel_111">Beispiel</h3>
@@ -5344,7 +5405,7 @@ Print(&quot;Der aktuelle Wertes für den VolumeOszillator ist:  &quot; + VolumeO
 </code></pre>
 
 <h2 id="volume-profile">Volume Profile</h2>
-<h3 id="beschreibung_128">Beschreibung</h3>
+<h3 id="beschreibung_129">Beschreibung</h3>
 <p>Der VolumeProfile Indikator zeichnet ein Realtime-Volume Profil in Form eines vertikalen Histogramms in den Chart. Jeder Balken des Histogramms steht für das aufaddierte gehandelte Volumen an einem bestimmten Kurs. Der Bar, an dem die Berechnungen begonnen haben, wird mit wird einer kleinen Raute markiert.</p>
 <p>Die Balken des Histogramms sind farblich unterschiedlich. Umsätze am Ask (oder darüber) werden als Kauf betrachtet und grün eingefärbt. Umsätze am bzw. unter dem Bid werden als Verkäufe rot dargestellt und Umsätze "in the market" (last) werden als neutral in grauer Farbe dargestellt.</p>
 <p>Der Indikator funktioniert nur, wenn AgenaTrader mit einem Realtime-Datenfeed verbunden ist.</p>
@@ -5366,7 +5427,7 @@ Opacity:    Durchsichtigkeit der Balken. 0 = nicht sichtbar    255 = hohe Sichtb
 <p>Der Indikator ist lediglich für die Darstellung im Chart vorgesehen.
 Er besitzt keine Datenreihe zur Auswertung in anderen Scripts. Damit ist er nicht in AgenaScript und auch nicht im Condition Escort für weitere Auswertungen einsetzbar.</p>
 <h2 id="volume-rate-of-change-vroc">Volume Rate of Change (VROC)</h2>
-<h3 id="beschreibung_129">Beschreibung</h3>
+<h3 id="beschreibung_130">Beschreibung</h3>
 <p>Der Volume Rate of Change (ROC, Rate of Change = Änderungsrate) ist identisch mit dem Indikator Rate Of Change (ROC) mit dem Unterschied, dass anstelle der Kursdaten die Volumendaten (VOL) in die Berechnung einfließen.</p>
 <p>Der VROC beschreibt die relative Änderung des Umsatzes in Prozent. Es ergeben sich daher Schwankungen um Null herum. Im Gegensatz zum ROC erfolgt noch eine Glättung durch einen gleitenden Durchschnitt, um zu starke Schwankungen zu vermeiden.</p>
 <h3 id="interpretation_80">Interpretation</h3>
@@ -5376,18 +5437,18 @@ Ein rückläufiger VROC bei steigenden Kursen deutet auf eine Trendwende hin, d.
 <p><a href="http://www.shareholder24.de/boersensoftware-wiki/pages/viewpage.action?pageId=9207904">http://www.shareholder24.de/boersensoftware-wiki/pages/viewpage.action?pageId=9207904</a></p>
 <h3 id="verwendung_116">Verwendung</h3>
 <pre><code class="cs">VROC(int period, int smooth)
-VROC(IDataSeries input, int period, int smooth)
+VROC(IDataSeries inSeries, int period, int smooth)
 VROC(int period, int smooth)[int barsAgo]
-VROC(IDataSeries input, int period, int smooth)[int barsAgo]
+VROC(IDataSeries inSeries, int period, int smooth)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_116">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>VROC</strong>(14,3)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_103">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
-<p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
-<p>smooth  Anzahl der Bars für die Berechnung des GD's für die Glättung</p>
+<h3 id="parameters_104">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
+<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
+<p>smooth      Anzahl der Bars für die Berechnung des GD's für die Glättung</p>
 <h3 id="darstellung_123">Darstellung</h3>
 <p><img alt="Volume Rate of Change (VROC)" src="../media/image127.png" /></p>
 <h3 id="beispiel_112">Beispiel</h3>
@@ -5397,9 +5458,9 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 
 <h2 id="volumearea">VolumeArea</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_130">Beschreibung</h3>
+<h3 id="beschreibung_131">Beschreibung</h3>
 <p>Auch mit diesem Indikator können Sie eigene Volumen-Profile anzeigen lassen. Sie können hier nun den Anfangs- und Endzeitpunkt durch klicken auf die bevorzugte Position ganz frei festlegen. Es gibt keine Beschränkungen wo die Berechnung starten und enden soll. Im rechten oberen Eck haben Sie die Einstellungsmöglichkeiten mit denen Sie zwischen den Profil-Typen umschalten können (Beschreibung hierzu siehe unter VolumeSessionPro). Mit einem Klick auf das kleine rote „+“ unter den Profil-Einstellungen können Sie ein weiteres Volumenprofil zu Ihrem Chart hinzufügen, indem Sie erneut den Anfangs- und Endzeitpunkt durch klicken mit der linken Maustaste festlegen. Die Einstellungen und die Anzeige des Indikators enstprechen exakt dem VolumeSessionPro: über ProfileType wählen sie, welche Berechnungsmethode verwendet werden soll, über ValueArea legen Sie den Prozentsatz fest, welcher Anteil des Volumenbereichs mit der höchsten Aktivität eingefärbt werden soll. Die wohl effektivste Arbeitsweise mit dem VolumeArea ist, diesen Indikator in die ActionBar zu legen und einen Hotkey zuzuweisen. Bei Bedarf kann der Indikator so schnell aufgerufen werden und Sie können den gwünschten Volume-Bereich angeben.</p>
-<h3 id="parameters_104">Parameters</h3>
+<h3 id="parameters_105">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_117">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5411,9 +5472,9 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumegraph">VolumeGraph</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_131">Beschreibung</h3>
+<h3 id="beschreibung_132">Beschreibung</h3>
 <p>Dieser Indikator beinhaltet ein übliches Volumen-Histogramm, die Färbung wird hier aber aufgrund von Preistrends vorgenommen. Der VolumeGraph stellt kurz- oder langfristige Preistrends fest, die Sensibilität dafür können Sie über den Paramter „SlopeLength“ einstellen. Ein hoher Wert liefert langfristige Trends, niedrige Werte stellen kurzfristige Preistrends dar. Über die Einstellung „Exponential“ können Sie wählen, ob die Berechnung zur Trendbestimmung auf einem exponentiellen(=True) oder linearen (=False) Algorithmus basieren soll. Dabei handelt es sich um die Feinabstimmung und es sind keine gravierenden Änderungen durch diesen Parameter zu erwarten. Zusätzlich beinhaltet das Volumen-Histogramm noch einen gleitenden Durchschnitt, für den Sie mit dem Parameter „AvgLength“ die Periode eingeben können.</p>
-<h3 id="parameters_105">Parameters</h3>
+<h3 id="parameters_106">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_118">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5425,9 +5486,9 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumekeltnerchannels">VolumeKeltnerChannels</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_132">Beschreibung</h3>
+<h3 id="beschreibung_133">Beschreibung</h3>
 <p>The VolumeKeltnerChannels are a great tool to determine very high or very low volume in comparison to past periods. Beginning with an upper Keltner channel line calculated with volume data, this line is shifted ever further upwards or downwards using special multipliers. Volume that is higher than the highest Keltner channel line can be interpreted as extremely high volume that shows that huge numbers of trades have been carried out in the current price period and that an unusually large number of traders are buying or selling positions at the current price level.</p>
-<h3 id="parameters_106">Parameters</h3>
+<h3 id="parameters_107">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_119">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5439,9 +5500,9 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumerisefall">VolumeRiseFall</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_133">Beschreibung</h3>
+<h3 id="beschreibung_134">Beschreibung</h3>
 <p>Beim VolumeRiseFall – Indikator handelt es sich um eine normale Volumenanzeige als Volumenbars, jedoch mit anderer Farbgebung als üblicherweise. Ein Volumenbar wird grün gezeichnet, wenn das Volumen dieses Bars höher ist, als das Volumen des vorangegangenen Bars und somit ansteigendes Volumen gegeben ist. Ein Volumenbar wird grau gezeichnet, wenn das Volumen dieses Bars niedriger ist, als das Volumen des vorangegangenen Bars und zeigt somit fallendes Volumen an. </p>
-<h3 id="parameters_107">Parameters</h3>
+<h3 id="parameters_108">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_120">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5453,7 +5514,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumesentimentlong">VolumeSentimentLong</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_134">Beschreibung</h3>
+<h3 id="beschreibung_135">Beschreibung</h3>
 <p>Dieser Indikator spürt bullische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis).</p>
 <p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): </p>
 <ul>
@@ -5480,7 +5541,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 </li>
 </ul>
 <p>Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bullisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.</p>
-<h3 id="parameters_108">Parameters</h3>
+<h3 id="parameters_109">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_121">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5492,7 +5553,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumesentimentshort">VolumeSentimentShort</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_135">Beschreibung</h3>
+<h3 id="beschreibung_136">Beschreibung</h3>
 <p>Dieser Indikator ist das Gegenstück zum VolumeSentimentLong und spürt bearische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis). </p>
 <p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): </p>
 <ul>
@@ -5519,7 +5580,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 </li>
 </ul>
 <p>Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bearisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.</p>
-<h3 id="parameters_109">Parameters</h3>
+<h3 id="parameters_110">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_122">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5531,14 +5592,14 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumesessionpro">VolumeSessionPro</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_136">Beschreibung</h3>
+<h3 id="beschreibung_137">Beschreibung</h3>
 <p>Dieser Indikator entspricht dem bekannten VolumeProfile-Indikator mit Anzeige für einen bestimmten Zeitabschnitt (Session). Sie können die Anfangszeit und die Dauer einer Session beliebig festlegen. Für jede Session wird dann das VolumeProfile angezeigt. Verwenden Sie diesen Indikator nur auf Zeiteinheiten kleiner als 1Tag, je kleiner die Zeiteinheit gewählt ist, desto detaillierter wird das VolumeProfile angezeigt. Der Preis, zu dem in der jeweiligen Session das meiste Volumen gehandelt wurde, wird als roter Balken angezeigt. Der Preisbereich, zu dem z.B. 70% der Trading-Aktivität der jeweiligen Session stattgefunden hat, wird hellblau eingefärbt. Sie können diesen Prozentwert selbst unter dem Parameter „ValueArea“ beliebig festlegen. </p>
 <p>Weiters haben Sie vier verschiedene Optionen um die Volumen-Informationen anzuzeigen: </p>
 <p><strong>4.1.1. VOC (Volume on close):</strong> Lädt das gesamte Volumen eines Bars auf den Schlusskurs dieses Bars – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 und eine Range von 1,5 Punkten mit einem Schlusskurs bei 1534,25 hat, werden alle 280 Volumeneinheiten auf den Schlusskurs bei 1534,24 gezählt.</p>
 <p><strong> 4.1.2. TPO (Time price opportunity):</strong>Diese Methode beachtet das tatsächlich gehandelte Volumen nicht, sondern zählt eine einzelne Volumen-Einheit zu jedem Preis in der gehandelten Range des Bars – z.B. wenn ein 5-Minuten Bar das Hoch bei 1534 und das Tief bei 1532,5 hat, wird je eine Volumeneinheit zu folgenden Preisen gezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534</p>
 <p><strong>4.1.3. VWTPO (Volume weighted time price opportunity):</strong> Diese Variante verteilt das gehandelte Volumen eines Bars über dessen Preisrange – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 bei einer Range von 1,5 Punkten aufweist, mit dem Hoch bei 1534 und dem Tief bei 1532,5, dann werden 40 Volumeneinheiten (=280/7) zu jedem der sieben Preise in dieser Range zugezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534.</p>
 <p><strong>4.1.4. VTPO (Volume time price opportunity):</strong> Hier wird das gehandelte Volumen zu jedem Preis der Range zugezählt – z.B. wenn ein 5-Minuten Bar hat 280 Volumeneinheiten, eine Range von 1,5 Punkten mit dem Hoch bei 1534 und dem Tief bei 1532,5, dann werden 280 Volumeneinheiten zu jedem der sieben Preise der Range zugerechnet: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534</p>
-<h3 id="parameters_110">Parameters</h3>
+<h3 id="parameters_111">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_123">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5550,9 +5611,9 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumetickspeed">VolumeTickSpeed</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_137">Beschreibung</h3>
+<h3 id="beschreibung_138">Beschreibung</h3>
 <p><strong>ACHTUNG!</strong> Diesen Indikator können Sie nur im Tickchart verwenden! Der Indikator misst die Anzahl an Ticks, die während einer vom User bestimmten Anzahl an Sekunden gehandelt wird. Die Anzahl an Sekunden können Sie unter dem Parameter „Period“ einstellen. Ein hoher TickSpeed ist also mit hoher Handelsintensität gleichzusetzen, die wiederum oft an Wendepunkten im Markt beobachtet werden kann. Mit dem Parameter „LimitValue“ können Sie angeben, ab welcher Anzahl an Ticks während der gewählten Periode der Hintergrund gefärbt werden soll, um Extremwerte anzuzeigen.</p>
-<h3 id="parameters_111">Parameters</h3>
+<h3 id="parameters_112">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_124">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5564,7 +5625,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>angekündigt werden</p>
 <h2 id="volumeudr">VolumeUDR</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_138">Beschreibung</h3>
+<h3 id="beschreibung_139">Beschreibung</h3>
 <p>Das VolumeUpDownRatio ist das Verhältnis zwischen UpVolume und DownVolume, angezeigt als Oszillator. Volumen wird als UpVolume gewertet, wenn der aktuelle Close der Preiskerze über dem Close der vorangegangenen Kerze liegt, vice versa gilt für DownVolume. Werte über 80 sind als bearisches Signal zu werten, Werte unter 20 als bullisches Signal. Außerdem kann ein gleitender Durchschnitt eingeblendet werden, der zusätzlich als Signalgeber dienen kann.</p>
 <ul>
 <li>
@@ -5574,7 +5635,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p>PriceWeightChange regelt, ob Sie die gewichtete Veränderung des Marktpreises in die Berechnung des Indikator miteinfließen lassen möchten.</p>
 </li>
 </ul>
-<h3 id="parameters_112">Parameters</h3>
+<h3 id="parameters_113">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_125">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5585,23 +5646,23 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <h3 id="beispiel_121">Beispiel</h3>
 <p>angekündigt werden</p>
 <h2 id="volumeupdown">VolumeUpDown</h2>
-<h3 id="beschreibung_139">Beschreibung</h3>
+<h3 id="beschreibung_140">Beschreibung</h3>
 <p>Der Indikator VolumeUpDown ist eine Variante des Volumen-Indikators (VOL). Der einzige Unterschied ist, dass die Volumenbars in Abhängig davon eingefärbt werden, ob es sich im Preischart um einen Aufwärtsbar oder Abwärtsbar handelt.
 Bei einem steigenden Bar wird das Volumen in grün dargestellt.
 Bei einem fallenden Bar wird das Volumen in rot dargestellt.
 Bei einem Diji (Open = Close)  wird das Volumen in blau dargestellt.</p>
 <h3 id="verwendung_126">Verwendung</h3>
 <pre><code class="cs">VolumeUpDown()
-VolumeUpDown(IDataSeries input)
+VolumeUpDown(IDataSeries inSeries)
 VolumeUpDown()[int barsAgo]
-VolumeUpDown(IDataSeries input)[int barsAgo]
+VolumeUpDown(IDataSeries inSeries)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_126">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>VolumeUpDown</strong>()[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameter_16">Parameter</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
 <h3 id="darstellung_133">Darstellung</h3>
 <p><img alt="Volume Rate of Change (VROC)" src="../media/image128.png" /></p>
 <h3 id="beispiel_122">Beispiel</h3>
@@ -5610,16 +5671,16 @@ Print(&quot;Der aktuelle Umsatz beträgt &quot; + VolumeUpDown()[0]);
 </code></pre>
 
 <h2 id="volume-zones">Volume Zones</h2>
-<h3 id="beschreibung_140">Beschreibung</h3>
+<h3 id="beschreibung_141">Beschreibung</h3>
 <p>Der VolumeZones Indikator zeichnet an der linken Seite des Charts ein Histogramm für das historische Volumen.</p>
 <p>Die Länge der Balken entspricht dem addierten Volumen. Herangezogen wird standardmäßig der Schlusskurs der Perioden. Die zu verwendende Kursreihe (Open, High, Low usw.) ist über den Eigenschaftendialog konfigurierbar.</p>
 <p>Wenn es sich um einen steigenden Bar handelt (Close über Open) wird das Volumen des Bars in grün dargestellt. Bei fallenden Bars (Close unter Open) wird das Volumen in rot dargestellt.</p>
 <p>Der Indikator ist nur zur Verwendung mit historischen Daten vorgesehen. Für die Darstellung von Volumenänderungen in Realtime verwenden Sie bitte den Indikator VolumeProfile.</p>
 <h2 id="volumezoneoscillator">VolumeZoneOscillator</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_141">Beschreibung</h3>
+<h3 id="beschreibung_142">Beschreibung</h3>
 <p>Der VolumeZoneOscillator unterteilt die Volumenaktivität in UpVolume und DownVolume, ähnlich wie der VolumeUDR. Volumen wird dann als UpVolume gewertet, wenn der aktuelle Schlusskurs über dem vorangegangenen Schlusskurs liegt, vice versa für DownVolume. Der dadurch errechnete Oszillator gibt relative Prozentwerte aus. Ein Instrument befindet sich in einem positiven Trend, wenn der VolumeZoneOscillator über eine Level von 5% steigt und vice versa in einem negativen Trend, wenn er unter -5% fällt. Werte über 40% zeigen überkaufte Situationen an, während Werte über 60% ein Indiz für eine extreme Übertreibung im Markt sind. Auf der anderen Seite sind Werte kleiner -40% als überverkauft anzusehen und Werte kleiner -60% als enorm überverkauft und übertrieben zu werten.</p>
-<h3 id="parameters_113">Parameters</h3>
+<h3 id="parameters_114">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_127">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5630,7 +5691,7 @@ Print(&quot;Der aktuelle Umsatz beträgt &quot; + VolumeUpDown()[0]);
 <h3 id="beispiel_123">Beispiel</h3>
 <p>angekündigt werden</p>
 <h2 id="williams-r">Williams %R</h2>
-<h3 id="beschreibung_142">Beschreibung</h3>
+<h3 id="beschreibung_143">Beschreibung</h3>
 <p>Situationen. Entwickelt wurde er bereits 1966 von Larry Williams. Der Indikator kann in allen Märkten und in allen Zeiteinheiten verwendet werden, wird jedoch meist intraday genutzt. Vom Aussehen her erinnert der Indikator aus der Klasse der Momentum-Oszillatoren am ehesten an die Stochastik.</p>
 <h3 id="interpretation_81">Interpretation</h3>
 <p>Die Werte schwanken zwischen 0 und 100. Der Indikator ist darauf ausgerichtet, die Differenz zwischen dem Periodenhoch und dem heutigen Schlußkurs mit der Handelsspanne des Beobachtungszeitraumes in Bezug zu setzen und ist speziell in Seitwärtsbewegungen und leichten Trendphasen geeignet. In Zeiten mit ausgeprägten Trends ist er nicht sinnvoll anzuwenden. Bei einem Trend kommen die Kauf- bzw. Verkaufssignale zu früh. </p>
@@ -5642,33 +5703,33 @@ Werte des Indikators unter -90 zeigen eine überverkaufte Situation an. Ein Kauf
 <p><a href="http://www.broker-test.de/finanzwissen/technische-analyse/williams-percent-r/">http://www.broker-test.de/finanzwissen/technische-analyse/williams-percent-r/</a></p>
 <h3 id="verwendung_128">Verwendung</h3>
 <pre><code class="cs">WilliamsR(int period)
-WilliamsR(IDataSeries input, int period)
+WilliamsR(IDataSeries inSeries, int period)
 WilliamsR(int period)[int barsAgo]
-WilliamsR(IDataSeries input, int period)[int barsAgo]
+WilliamsR(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_128">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>WilliamsR</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
-<h3 id="parameters_114">Parameters</h3>
-<p>input   Eingangsdatenreihe für den Indikator</p>
-<p>period  Anzahl der Bars, die in die Berechnung einbezogen werden</p>
+<h3 id="parameters_115">Parameters</h3>
+<p>inSeries    Eingangsdatenreihe für den Indikator</p>
+<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_135">Darstellung</h3>
 <p><img alt="Williams %R" src="../media/image129.png" /></p>
 <h3 id="beispiel_124">Beispiel</h3>
 <pre><code class="cs">WilliamsR(int period)
-WilliamsR(IDataSeries input, int period)
+WilliamsR(IDataSeries inSeries, int period)
 WilliamsR(int period)[int barsAgo]
-WilliamsR(IDataSeries input, int period)[int barsAgo]
+WilliamsR(IDataSeries inSeries, int period)[int barsAgo]
 </code></pre>
 
 <h2 id="wyckoffwave">WyckoffWave</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
-<h3 id="beschreibung_143">Beschreibung</h3>
+<h3 id="beschreibung_144">Beschreibung</h3>
 <p>Der WyckoffWave-Indikator addiert das Volumen für jeden folgenden Bar, bis eine Preiswelle beendet ist. Sie können einstellen, wie sensibel die Preiswellen festgestellt werden sollen. Wenn das Volumen einer Welle auf besonders hohe Werte steigt, ist sehr oft ein Wendepunkt im Chart erreicht. Wenn die Volumenbars rot gefärbt sind, handelt es sich um eine Short-Welle, grüne Volumenbars indizieren eine Long-Welle. </p>
 <p>Über den Parameter „MedianPeriod“ wählen Sie, wie sensibel der Indikator die einzelnen Preiswellen bestimmen soll. Je geringer der Wert, desto größer die Preiswellen, die der Indikator berechnet.</p>
 <p>Der Parameter Poles dient zur Feinabstimmung der Anzeige der Volumen-Wellen, Sie können einen Parameter zwischen 1-4 wählen. Die Änderung dieses Wertes verursacht meist nur unmerkbare Änderungen.</p>
-<h3 id="parameters_115">Parameters</h3>
+<h3 id="parameters_116">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_129">Rückgabewert</h3>
 <p>angekündigt werden</p>
@@ -5679,7 +5740,7 @@ WilliamsR(IDataSeries input, int period)[int barsAgo]
 <h3 id="beispiel_125">Beispiel</h3>
 <p>angekündigt werden</p>
 <h2 id="zigzag">ZigZag</h2>
-<h3 id="beschreibung_144">Beschreibung</h3>
+<h3 id="beschreibung_145">Beschreibung</h3>
 <p>Der ZigZag-Indikator findet Extrempunkte in verschiedenen Zeiteinheiten. Es werden so anhand eines frei bestimmbaren Schwellwertes bestehende Trends markiert. Der Schwellwert gibt an, um wieviel sich der Kurs verändern muss, bevor die Zig-Zag-Linie ihre Richtung ändert und einen Extrempunkt hinterläßt.</p>
 <h3 id="interpretation_82">Interpretation</h3>
 <p>Die zurückliegenden Extremwerte (lokale Hochs bzw. Tiefs) eignen sich klassisch zum Einstieg oder zur Stoppversetzung.</p>
@@ -5689,18 +5750,18 @@ WilliamsR(IDataSeries input, int period)[int barsAgo]
 <h3 id="verwendung_130">Verwendung</h3>
 <pre><code class="cs">//Für den oberen Extrempunkt
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
-ZigZag(IDataSeries input, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
+ZigZag(IDataSeries inSeries, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
 
 //Für den unteren Extrempunkt 
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
-ZigZag(IDataSeries input, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
+ZigZag(IDataSeries inSeries, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_130">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <p>Bei Verwendung der Methode mit einem Index ( z.B.<strong>ZigZag</strong>(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <p>Der Rückgabewert 0 (Null) zeigt an, dass noch kein Hoch- bzw. Tiefpunkt gefunden werden konnte.</p>
-<h3 id="parameters_116">Parameters</h3>
+<h3 id="parameters_117">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -5710,7 +5771,7 @@ ZigZag(IDataSeries input, DeviationType deviationType, double deviationValue, bo
 </thead>
 <tbody>
 <tr>
-<td>input</td>
+<td>inSeries</td>
 <td>Eingangsdatenreihe für den Indikator</td>
 </tr>
 <tr>
