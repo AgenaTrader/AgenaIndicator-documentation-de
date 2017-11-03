@@ -2740,7 +2740,9 @@ Sie können den Indikator als Filter verwenden, indem Sie die Signale von andere
 ![Condition Escort](./media/MarketPhases.png)
 
 **Wichtiger Hinweis** 
-Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich::
+Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich.
+
+Der Scanner und Chart verwenden eine unterschiedliche Berechnung der Historie. Da Markttechnik Indikatoren sehr Bar sensibel sind, können wir nicht zu 100% garantieren, dass die Ergebnisse im Chart und im Scanner dieselben sind. Wir empfehlen die Daten des Scanners gelegentlich neu zu laden.
 
 - Charteinstellung:
   - Bars count
