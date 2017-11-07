@@ -2767,6 +2767,37 @@ Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
 **Phase4Level**
 Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
 
+### Verwendung
+Da dieser Indikator die Eingabedaten ignoriert, kann der Benutzer nur folgende 2 Methoden anwenden:
+
+```cs
+public MarketPhasesPro MarketPhasesPro(Int32 trendSize,
+            double phase4Level,
+            double phase5Level,
+            P123ProValidationMethod validationMethod,
+            double p2Distance,
+            double p3Distance,
+            double p3BreakageDistance,
+            bool breakTheTrendByCS)
+
+public MarketPhasesPro MarketPhasesPro(Int32 trendSize,
+            P123ProValidationMethod validationMethod,
+            double p2Distance,
+            double p3Distance,
+            double p3BreakageDistance,
+            bool breakTheTrendByCS)
+```
+### Parameter
+
+phase4Level = 0.2
+phase5Level = 0.5
+
+Die Parameter trendSize, validationMethod, p2Distance, p3Distance, p3BreakageDistance und breakTheTrendByCS sind nur für den P123-Indikator bestimmt, der innerhalb des MarketPhasesPro verwendet wird. Diese Parameter können unter der Beschreibung des P123Pro kontrolliert werden.
+
+Der wichtigste Parameter ist der „int trendSize“-Parameter. Dieser definiert, welcher Trend kontrolliert wird.
+
+Der Ausgabewert bezeichnet die Phase in dem spezifischen Trend (1, 2, 3, 4, 5, 5.1, 5.2, 5.3 / sowie die negativen Werte in der Short-Richtung, siehe Screenshot).
+![MarketPhasesPro](./media/MarketPhasesPro.png)
 
 ## MarketValue
 **Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.**
