@@ -2797,6 +2797,7 @@ Die Parameter trendSize, validationMethod, p2Distance, p3Distance, p3BreakageDis
 Der wichtigste Parameter ist der „int trendSize“-Parameter. Dieser definiert, welcher Trend kontrolliert wird.
 
 Der Ausgabewert bezeichnet die Phase in dem spezifischen Trend (1, 2, 3, 4, 5, 5.1, 5.2, 5.3 / sowie die negativen Werte in der Short-Richtung, siehe Screenshot).
+
 ![MarketPhasesPro](./media/MarketPhasesPro.png)
 
 ## MarketValue
