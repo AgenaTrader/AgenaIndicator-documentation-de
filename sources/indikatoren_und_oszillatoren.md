@@ -2762,10 +2762,10 @@ Hier ein paar Screenshots:
 ### MarketPhases Pro Beschreibung
 
 **Phase5Level**
-Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
+Wieviel Prozent der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.
 
 **Phase4Level**
-Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
+Wieviel Prozent  der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.
 
 ### Verwendung
 Da dieser Indikator die Eingabedaten ignoriert, kann der Benutzer nur folgende 2 Methoden anwenden:
@@ -2789,8 +2789,8 @@ public MarketPhasesPro MarketPhasesPro(Int32 trendSize,
 ```
 ### Parameter
 
-phase4Level = 0.2
-phase5Level = 0.5
+phase4Level = 0.2 (0.2 = 20%)
+phase5Level = 0.5 (0.5 = 50%)
 
 Die Parameter trendSize, validationMethod, p2Distance, p3Distance, p3BreakageDistance und breakTheTrendByCS sind nur für den P123-Indikator bestimmt, der innerhalb des MarketPhasesPro verwendet wird. Diese Parameter können unter der Beschreibung des P123Pro kontrolliert werden.
 
