@@ -1,6 +1,6 @@
 ![AgenaTrader](./images/logo_100.png)
 
-**Die folgende API-Dokumentation benötigt AgenaTrader in der Version 1.9.0.563**
+**Die folgende API-Dokumentation benötigt AgenaTrader in der Version  2.0.1.x**
 
 #Willkommen im offiziellen AgenaIndicator Repository!
 Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Ressourcen, um Ihnen den Einstieg zu erleichtern.
