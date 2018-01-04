@@ -5338,7 +5338,7 @@ inSeries Eingangsdatenreihe für den Indikator
 ### Rückgabewert
 **double**
 
-Bei Verwendung der Methode mit einem Index ( z.B.  **CurrentDayOHL**.CurrentOpen(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
+Bei Verwendung der Methode mit einem Index ( z.B.  **CurrentDayOHL**.GetCurrentBar().Open(...)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Verwendung
 ```cs
@@ -5346,16 +5346,16 @@ CurrentDayOHL()
 CurrentDayOHL(IDataSeries inSeries)
 
 //Für den Wert von Open
-CurrentDayOHL().CurrentOpen[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).CurrentOpen[int barsAgo]
+CurrentDayOHL().GetCurrentBar().Open[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Open[int barsAgo]
 
 //Für den Wert von High
-CurrentDayOHL().CurrentHigh[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).CurrentHigh[int barsAgo]
+CurrentDayOHL().GetCurrentBar().High[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().High[int barsAgo]
 
 //Für den Wert von Low
-CurrentDayOHL().CurrentLow[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).CurrentLow[int barsAgo]
+CurrentDayOHL().GetCurrentBar().Low[int barsAgo]
+CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Low[int barsAgo]
 ```
 
 ### Darstellung
@@ -5363,7 +5363,7 @@ CurrentDayOHL(IDataSeries inSeries).CurrentLow[int barsAgo]
 
 ### Beispiel
 ```cs
-Print("Das Tief der aktuellen Session liegt bei " + CurrentDayOHL().CurrentLow[0]);
+Print("Das Tief der aktuellen Session liegt bei " + CurrentDayOHL().GetCurrentBar().Low[0]);
 ```
 
 ## Daily Performance
