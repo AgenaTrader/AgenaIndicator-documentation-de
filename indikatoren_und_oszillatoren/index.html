@@ -2668,9 +2668,9 @@ Hier ein paar Screenshots:</p>
 <p><img alt="MarketPhasesScanner" src="../media/MarketPhases_scanner.png" /></p>
 <h3 id="marketphases-pro-beschreibung">MarketPhases Pro Beschreibung</h3>
 <p><strong>Phase5Level</strong>
-Wie weit der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.</p>
+Wieviel Prozent der Preis korrigieren muss, um eine gültige Marktphase 5 zu erhalten.</p>
 <p><strong>Phase4Level</strong>
-Wie weit der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.</p>
+Wieviel Prozent  der Preis korrigieren muss, um eine gültige Marktphase 4 zu erhalten.</p>
 <h3 id="verwendung_57">Verwendung</h3>
 <p>Da dieser Indikator die Eingabedaten ignoriert, kann der Benutzer nur folgende 2 Methoden anwenden:</p>
 <pre><code class="cs">public MarketPhasesPro MarketPhasesPro(Int32 trendSize,
@@ -2691,8 +2691,8 @@ public MarketPhasesPro MarketPhasesPro(Int32 trendSize,
 </code></pre>
 
 <h3 id="parameter_8">Parameter</h3>
-<p>phase4Level = 0.2
-phase5Level = 0.5</p>
+<p>phase4Level = 0.2 (0.2 = 20%)
+phase5Level = 0.5 (0.5 = 50%)</p>
 <p>Die Parameter trendSize, validationMethod, p2Distance, p3Distance, p3BreakageDistance und breakTheTrendByCS sind nur für den P123-Indikator bestimmt, der innerhalb des MarketPhasesPro verwendet wird. Diese Parameter können unter der Beschreibung des P123Pro kontrolliert werden.</p>
 <p>Der wichtigste Parameter ist der „int trendSize“-Parameter. Dieser definiert, welcher Trend kontrolliert wird.</p>
 <p>Der Ausgabewert bezeichnet die Phase in dem spezifischen Trend (1, 2, 3, 4, 5, 5.1, 5.2, 5.3 / sowie die negativen Werte in der Short-Richtung, siehe Screenshot).</p>
