@@ -3809,7 +3809,7 @@ Die Parametereinstellungen sind für die Anzeige im Chart nicht relevant, und we
 
 Die Darstellung im Chart wird hauptsächlich von den Einstellungen „Display 123“ und „Display Lines“ beeinflusst.
 
-![parameter settings](./media/image74.png)
+![parameter settings](./media/P123.jpg)
 
 Die gelb markierten Einstellungen haben keinen Einfluss auf den Chart. Es müssen keine Änderungen gemacht werden.
 
@@ -3878,7 +3878,7 @@ Unter den Parametereinstellungen (s. Abb.) findet sich der Parameter TrendSize.
 Dieser ist nur für die Verwendung im Condition Escort vorgesehen. Für die Darstellung im Chart ist dieser Paramenet nicht relevant.
 Die Darstellung wird ausschließlich mit den Einstellungen unter "Display 123" und "Display Lines" gesteuert.
 
-![parameter settings](./media/P123Pro.png)
+![parameter settings](./media/p123Pro_settings.jpg)
 
 Inwieweit die jeweiligen Parameter Einfluss auf den Chart bzw. ConditionEscort und AgenaScript haben können Sie dem jeweiligen Beschreibungfeld für jeden Parameter entnehmen.
 
@@ -5379,7 +5379,7 @@ siehe auch [*Momentum*](#momentum), [*ROC*](#rate-of-change-roc).
 **Hinweis zur Verwendung im Scanner:**
 Um z.B. die bekannte Liste von Aktien mit ihrer täglichen prozentualen Veränderung zu erhalten, stellen sie bitte CalculateOnBarClose auf "false", TimeFrame auf "1 Day", Calculation mode auf "Percent" und Days ago auf "0". 
 
-![settings](./media/image104.png)
+![settings](./media/Daily_Performance.jpg)
 
 Das Ergebnis ist dann folgende Liste:
 
