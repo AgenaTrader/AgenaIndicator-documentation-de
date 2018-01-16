@@ -11,7 +11,7 @@ Indikatoren können Sie verwenden
 
 Für jeden Indikator finden Sie eine kurze Beschreibung der Funktionsweise, Wissenswertes zur Interpretation, eine Darstellung im Chart und viele techn. Details zur Verwendung in AgenaScript
 
-![indicators](./media/image1.png)
+![indicators](./media/1image.jpg)
 
 ## Accumulation/Distribution (ADL)
 ### Beschreibung
@@ -47,7 +47,7 @@ Bei Verwendung der Methode mit einem Index (z.B. ADL()\[int barsAgo\] )  wird de
 inSeries Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![Accumulation/Distribution (ADL)](./media/image2.png)
+![Accumulation/Distribution (ADL)](./media/ADL.jpg)
 
 ### Beispiel
 ```cs
@@ -92,7 +92,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Number of bars included in the calculation
 
 ### Darstellung
-![Adaptive Price Zone (APZ)](./media/image3.png)
+![Adaptive Price Zone (APZ)](./media/APZ.jpg)
 
 ### Beispiel
 ```cs
@@ -140,7 +140,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Aroon](./media/image4.png)
+![Aroon](./media/aroon.jpg)
 
 ### Beispiel
 ```cs
@@ -176,7 +176,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Aroon Oscillator](./media/image5.png)
+![Aroon Oscillator](./media/ArronOscillator.jpg)
 
 ### Beispiel
 ```cs
@@ -214,7 +214,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Average Directional Index (ADX)](./media/image6.png)
+![Average Directional Index (ADX)](./media/ADX.jpg)
 
 ### Beispiel
 ```cs
@@ -252,7 +252,7 @@ interval Intervall zwischen dem ersten ADX-Wert und dem aktuellen ADX-Wert
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Average Directional Movement Rating (ADXR)](./media/image7.png)
+![Average Directional Movement Rating (ADXR)](./media/ADXR.jpg)
 
 ### Beispiel
 ```cs
@@ -298,7 +298,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Average True Range (ATR)](./media/image8.png)
+![Average True Range (ATR)](./media/ATR.jpg)
 
 ### Beispiel
 ```cs
@@ -335,7 +335,7 @@ signalsize Die Mindesthöhe der Balken damit es ein Signal ergibt (Long, Short)
 
 
 ### Darstellung
-![BBBreakOutSpeed](./media/BBBreakOutSpeed.png)
+![BBBreakOutSpeed](./media/BBBreakOutSpeed.jpg)
 
 ### Beispiel
 ```cs
@@ -383,7 +383,7 @@ inSeries Eingangsdatenreihe für den Indikator
 smooth Einstellung zur Glättung
 
 ### Darstellung
-![Balance of Power (BOP)](./media/image9.png)
+![Balance of Power (BOP)](./media/BOP.jpg)
 
 ### Beispiel
 ```cs
@@ -449,7 +449,7 @@ numStdDev Standardabweichung
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Bollinger Bands](./media/image10.png)
+![Bollinger Bands](./media/BollingerBands.jpg)
 
 ### Beispiel
 ```cs
@@ -516,7 +516,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 numStdDev	Standardabweichung
 
 ### Darstellung
-![Bollinger Percent B (%b)](./media/image11.png)
+![Bollinger Percent B (%b)](./media/BollingerPercentB.jpg)
 
 ### Beispiel
 //Ausgabe des Wertes des BollingerPercentB
@@ -574,7 +574,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 numStdDev	Standardabweichung
 
 ### Darstellung
-![Bollinger Band Width (BBWidth)](./media/image12.png)
+![Bollinger Band Width (BBWidth)](./media/BBWidth.jpg)
 
 ### Beispiel
 ```cs
@@ -594,7 +594,7 @@ Im Indikator BollingerMTF kommt ein weiterer Parameter (MTFMinutes) hinzu, der d
 ### Darstellung
 Die Abbildung zeigt einen 5 Min.-Chart mit einem 60-Min.Bollinger Band
 
-![Bollinger MTF (MultiTimeFrame)](./media/image13.png)
+![Bollinger MTF (MultiTimeFrame)](./media/BollingerMTF.jpg)
 
 ## BuySellPressure
 ### Beschreibung
@@ -635,7 +635,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **BuySellPressure**().BuyPress
 inSeries	Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![BuySellPressure](./media/image14.png)
+![BuySellPressure](./media/BuySellPressure.jpg)
 
 ### Beispiel
 ```cs
@@ -756,7 +756,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **CandleStickPattern**(...)\[*
 | trendStrength | Die Anzahl der Bars links und rechts neben dem Umkehrpunkt (Swing High bzw. Low), die zur Identifizierung eines Trends verwendet werden. Der Wert 0 schaltet die Trendsuche ab, d.h. es wird ausschließlich nach den Chartmustern gesucht. |
 
 ### Darstellung
-![CandleStickPattern](./media/image16.png)
+![CandleStickPattern](./media/CandleStickPattern.jpg)
 
 ### Beispiel
 ```cs
@@ -803,7 +803,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![ChaikinMoneyFlow (CMF)](./media/image17.png)
+![ChaikinMoneyFlow (CMF)](./media/ChaikinMoneyFlow.jpg)
 
 ### Beispiel
 ```cs
@@ -841,7 +841,7 @@ fast		Anzahl der Bars, für die Berechnung des Fast EMA
 slow		Anzahl der Bars, für die Berechnung des Slow EMA
 
 ### Darstellung
-![Chaikin Oscillator](./media/image18.png)
+![Chaikin Oscillator](./media/ChaikinOscillator.jpg)
 
 ### Beispiel
 ```cs
@@ -879,7 +879,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 ### Darstellung
-![ChaikinVolatility (CVL)](./media/image19.png)
+![ChaikinVolatility (CVL)](./media/ChaikinVolatility.jpg)
 
 ### Beispiel
 ```cs
@@ -919,7 +919,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Chande Momentum Oscillator (CMO)](./media/image20.png)
+![Chande Momentum Oscillator (CMO)](./media/CMO.jpg)
 
 ### Beispiel
 ```cs
@@ -973,7 +973,7 @@ ClimacticDistance(IDataSeries InSeries, int sMAPeriod, int thresholdPercent, Col
 Int
 
 ### Darstellung
-**IMAGE**
+![ClimacticDistance](./media/ClimacticDistance.jpg)
 
 ### Beispiel
 ```cs
@@ -1021,7 +1021,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Commodity Channel Index (CCI)](./media/image21.png)
+![Commodity Channel Index (CCI)](./media/CCI.jpg)
 
 ### Beispiel
 ```cs
@@ -1415,7 +1415,7 @@ Bei Verwendung der Methode mit einem Index (z.B. **Darvas**()\[**int** barsAgo\]
 inSeries		Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![Darvas Boxes](./media/image22.png)
+![Darvas Boxes](./media/Darvas.jpg)
 
 ### Beispiel
 ```cs
@@ -1461,7 +1461,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Directional Movement (DM)](./media/image23.png)
+![Directional Movement (DM)](./media/DM.jpg)
 
 ### Beispiel
 ```cs
@@ -1514,7 +1514,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Donchian Channel](./media/image24.png)
+![Donchian Channel](./media/DonchianChannel.jpg)
 
 ### Beispiel
 ```cs
@@ -1561,7 +1561,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Directional Movement Index (DMI)](./media/image25.png)
+![Directional Movement Index (DMI)](./media/DMI.jpg)
 
 ### Beispiel
 ```cs
@@ -1628,7 +1628,7 @@ EMA-Period1	Periode für den EMA in der Berechnung nach Bressert. (default: 2)
 EMA-Period2	Periode für den zweiten EMA in der Berechnung für Variante Blau2. (default: 5) 
 
 ### Darstellung
-![Double Stochastics (DSS)](./media/image26.png)
+![Double Stochastics (DSS)](./media/DSS.jpg)
 
 ### Beispiel
 ```cs
@@ -1670,7 +1670,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 smooth	Einstellung zur Glättung
 
 ### Darstellung
-![Dynamic Momentum Index (DMIndex)](./media/image27.png)
+![Dynamic Momentum Index (DMIndex)](./media/DMIindex.jpg)
 
 ### Beispiel
 ```cs
@@ -1714,7 +1714,7 @@ smoothing	Einstellung zur Glättung
 volDivisor	Zur Berechnung der Box Ratio (s. unten Berechnung)
 
 ### Darstellung
-![Ease of Movement (EOM)](./media/image28.png)
+![Ease of Movement (EOM)](./media/EaseOfMovement.jpg)
 
 ### Berechnung
 Midpoint = (High + Low) / 2
@@ -1756,7 +1756,7 @@ FisherTransform(IDataSeries inSeries, int period)[int barsAgo]
 ```
 
 ### Darstellung
-![Fisher Transform](./media/image29.png)
+![Fisher Transform](./media/FisherTransform.jpg)
 
 ### Beispiel
 ```cs
@@ -1795,7 +1795,7 @@ FOSC(IDataSeries inSeries, int period)[int barsAgo]
 ```
 
 ### Darstellung
-![Forecast Oscillator (FOSC)](./media/image30.png)
+![Forecast Oscillator (FOSC)](./media/FOSC.jpg)
 
 ### Beispiele
 ```cs
@@ -1829,7 +1829,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **HighestHighIndex**(14)\[**in
 BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wird
 
 ### Darstellung
-![HighestHighIndex()](./media/image31.png)
+![HighestHighIndex()](./media/HighestHighIndex.jpg)
 
 ### Beispiel
 ```cs
@@ -1860,7 +1860,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **HighestHighPrice**(14)\[**in
 BarsBack	Anzahl der Perioden, innerhalb derer nach dem höchsten Hoch gesucht wird
 
 ### Darstellung
-![HighestHighPrice()](./media/image32.png)
+![HighestHighPrice()](./media/HighestHighPrice.jpg)
 
 ### Beispiel
 ```cs
@@ -1948,7 +1948,7 @@ periodMedium		Anzahl der Perioden zur Berechnung der Kijun Linie, (default: 26)
 periodSlow		Anzahl der Perioden zur Berechnung von Chikou Linie, (default: 52)
 
 ### Darstellung
-![IchimokuCloud](./media/image33.png)
+![IchimokuCloud](./media/IchimokuCloud.jpg)
 
 ## InsideBarsMT
 **Für diesen Indikator ist die Installation des Markttechnik-Paketes Voraussetzung.**
@@ -2007,7 +2007,7 @@ liefert für einen Innenstab das Tief (double-Wert) des Bars vor dem zugehörige
 
 
 ### Darstellung
-![InsideBarsMT](./media/image34.png)
+![InsideBarsMT](./media/InsideBarsMT.jpg)
 
 ### Die Parameter "ToleranceUnit" und "ToleranceValue"
 Im Bild ist eine längere Phase zu erkennen, in der sich der Markt in Innenstäben befindet.
@@ -2084,7 +2084,7 @@ offsetMultiplier		Multiplikator für den SMA (siehe Berechnung)
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Keltner Channel](./media/image36.png)
+![Keltner Channel](./media/KeltnerChannel.jpg)
 
 ### Berechnung
 diff.**Set**(High\[0\] - Low\[0\]);
@@ -2373,7 +2373,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Linear Regression](./media/image37.png)
+![Linear Regression](./media/LinReg.jpg)
 
 ### Beispiel
 ```cs
@@ -2411,7 +2411,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![LinRegIntercept](./media/image38.png)
+![LinRegIntercept](./media/LinRegIntercept.jpg)
 
 ### Beispiel
 ```cs
@@ -2448,7 +2448,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![LinRegSlope](./media/image39.png)
+![LinRegSlope](./media/LinRegSlope.jpg)
 
 ### Beispiel
 ```cs
@@ -2480,7 +2480,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **LowestLowIndex**(14)\[**int*
 BarsBack  Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
 
 ### Darstellung
-![LowestLowIndex()](./media/image40.png)
+![LowestLowIndex()](./media/LowestLowIndex.jpg)
 
 ### Beispiel
 ```cs
@@ -2512,7 +2512,7 @@ Bei Verwendung der Methode mit einem Index ( z.B.  **LowestLowPrice**(14)\[**int
 BarsBack	Anzahl der Perioden, innerhalb derer nach dem tiefsten Tief gesucht wird
 
 ### Darstellung
-![LowestLowPrice()](./media/image41.png)
+![LowestLowPrice()](./media/LowestLowPrice.jpg)
 
 ### Beispiel
 ```cs
@@ -2576,7 +2576,7 @@ slow		Anzahl der Perioden zur Berechnung des slow-EMA
 smooth	Anzahl der Perioden zur Berechnung des EMA für die Signallinie
 
 ### Darstellung
-![MACD](./media/image42.png)
+![MACD](./media/MACD.jpg)
 
 ### Beispiel
 ```cs
@@ -2640,7 +2640,7 @@ maType		verwendete Art des gleitenden Durchschnitts (MA=Moving Average) möglich
 -   WMA
 
 ### Darstellung
-![MAEnvelopes](./media/image43.png)
+![MAEnvelopes](./media/MAEnvelopes.jpg)
 
 ### Beispiel
 ```cs
@@ -2866,7 +2866,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Momentum (MOM)](./media/image51.png)
+![Momentum (MOM)](./media/Momentum.jpg)
 
 ### Beispiel
 ```cs
@@ -2905,7 +2905,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Money Flow Index (MFI)](./media/image52.png)
+![Money Flow Index (MFI)](./media/MoneyFlowIndex.jpg)
 
 ### Beispiel
 ```cs
@@ -2989,7 +2989,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![DEMA - Double Exponential Moving Average](./media/image53.png)
+![DEMA - Double Exponential Moving Average](./media/DEMA.jpg)
 
 ### Berechnung
 ```cs
@@ -3030,7 +3030,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![EMA - Exponential Moving Average](./media/image54.png)
+![EMA - Exponential Moving Average](./media/EMA.jpg)
 
 ### Berechnung
 ```cs
@@ -3059,7 +3059,7 @@ Siehe auch [*BollingerMTF*](#bollingermtf), [*SmaMTF*](#smamtf).
 ### Darstellung
 Die Abbildung zeigt einen 5 Min.-Chart mit einem EMA(20) berechnet auf 1-Stunden-Bars.
 
-![EMA MTF (MultiTimeFrame)](./media/image55.png)
+![EMA MTF (MultiTimeFrame)](./media/EMAmtf.jpg)
 
 ## HMA - Hull Moving Average
 ### Beschreibung
@@ -3088,7 +3088,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![HMA - Hull Moving Average](./media/image56.png)
+![HMA - Hull Moving Average](./media/HMA.jpg)
 
 ### Berechnung
 ```cs
@@ -3140,7 +3140,7 @@ fast		kurze Periode (s. Interpretation)
 slow		lange Periode (s. Interpretation)
 
 ### Darstellung
-![KAMA - Kaufman](./media/image57.png)
+![KAMA - Kaufman](./media/KAMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3188,7 +3188,7 @@ fastLimit	Oberes Limit für den Alpha-Wert
 slowLimit	Unteres Limit für den Alpha-Wert
 
 ### Darstellung
-![MAMA - Mesa Adaptive Moving Average](./media/image58.png)
+![MAMA - Mesa Adaptive Moving Average](./media/MAMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3233,7 +3233,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![SMA - Simple Moving Average](./media/image59.png)
+![SMA - Simple Moving Average](./media/SMA.jpg)
 
 ### Berechnung
 Value.**Set**((last + InSeries\[0\] - InSeries\[Period\]) / Math.**Min**(ProcessingBarIndex, Period));
@@ -3260,7 +3260,7 @@ Siehe auch [*BollingerMTF*](#bollingermtf), [*EmaMTF*](#ema-mtf-multitimeframe).
 ### Darstellung
 Die Abbildung zeigt einen 5 Min.-Chart mit einem SMA(14) berechnet auf 4-Stunden-Bars.
 
-![SMA MTF (MultiTimeFrame)](./media/image60.png)
+![SMA MTF (MultiTimeFrame)](./media/SMAmtf.jpg)
 
 ## SMMA - Smoothed Moving Average
 ### Beschreibung
@@ -3298,7 +3298,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![SMMA - Smoothed Moving Average](./media/image61.png)
+![SMMA - Smoothed Moving Average](./media/SMMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3335,7 +3335,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
 ### Darstellung
-![TEMA - Triple Exponential Moving Average](./media/image62.png)
+![TEMA - Triple Exponential Moving Average](./media/TEMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3371,7 +3371,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
 ### Darstellung
-![TMA - Triangular Moving Average](./media/image63.png)
+![TMA - Triangular Moving Average](./media/TMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3412,7 +3412,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 signal period	Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
 
 ### Darstellung
-![TRIX - Triple Exponential Moving Average](./media/image64.png)
+![TRIX - Triple Exponential Moving Average](./media/TRIX.jpg)
 
 ### Beispiel
 ```cs
@@ -3459,7 +3459,7 @@ tCount		Anzahl der Iterationen für die Glättung (default: 3)
 vFactor	Volumen Factor (Multiplicator) (default: 0,7)
 
 ### Darstellung
-![T3 - Triple Exponential Moving Average](./media/image65.png)
+![T3 - Triple Exponential Moving Average](./media/T3.jpg)
 
 ### Beispiel
 ```cs
@@ -3500,7 +3500,7 @@ period			Anzahl der Bars, die in die Berechnung einbezogen werden
 volatility period	Anzahl der Bars, die in die Berechnung der Signal-Linie einbezogen werden
 
 ### Darstellung
-![VMA - Variable Moving Average](./media/image66.png)
+![VMA - Variable Moving Average](./media/VMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3535,7 +3535,7 @@ inSeries		Eingangsdatenreihe für den Indikator
 period			Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![VWMA - Volume Weighted Moving Average](./media/image67.png)
+![VWMA - Volume Weighted Moving Average](./media/VWMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3575,7 +3575,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![WMA - Weighted Moving Average](./media/image68.png)
+![WMA - Weighted Moving Average](./media/WMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3585,7 +3585,7 @@ Print("Der aktuelle Wert für WMA ist " + WMA(14)[0]);
 
 ## ZLEMA - Zero Lag Exponential Moving Average
 ### Beschreibung
-Der Zero-Lag Exponential Moving Average (ZLEMA) ist eine Variante des Exponential Moving Average (EMA). Zero-Lag bedeutet soviel wie "keine Verzögerung". D.h., der Indikator passt sich im Gegensatz zu den herkömmlichen gleitenden Durchschnitte (z.B. dem SMA) den Kursen sehr eng an. Der Effekt kommt von der stärkeren Gewichtung aktueller Werte. Es wird versucht, durch das Herausnehmen älterer Kursdaten die Verzögerung (durch den kummulativen Effekt) zu minimieren.
+Der Zero-Lag Exponential Moving Average (ZLEMA) ist eine Variante des Exponential Moving Average (EMA). Zero-Lag bedeutet soviel wie "keine Verzögerung". D.h., der Indikator passt sich im Gegensatz zu den herkömmlichen gleitenden Durchschnitte (z.B. dem SMA) den Kursen sehr eng an. Der Effekt kommt von der stärkeren Gewichtung aktueller Werte. Es wird versucht, durch das Herausnehmen älterer Kursdaten die Verzögerung (durch den kummulativen Effekt) zu minimiecen.
 
 ### Interpretation
 Die Verwendung zur Identifizierung der Trendrichtung entspricht im Wesentlichen der des EMA-Indikators. Bei der Verwendung sind keine Besonderheiten zu beachten.
@@ -3613,7 +3613,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![ZLEMA - Zero Lag Exponential Moving Average](./media/image69.png)
+![ZLEMA - Zero Lag Exponential Moving Average](./media/ZLEMA.jpg)
 
 ### Beispiel
 ```cs
@@ -3657,7 +3657,7 @@ higherHigh	Zusatzbedingung (true): stetig steigende Hochs
 higherLow	Zusatzbedingung (true); stetig steigende Tiefs
 
 ### Darstellung
-![nBarsUp](./media/image70.png)
+![nBarsUp](./media/nBarsUp.jpg)
 
 ### Beispiel
 ```cs
@@ -3702,7 +3702,7 @@ lowerHigh	Zusatzbedingung (true): stetig fallende Hochs
 lowerLow	Zusatzbedingung (true); stetig fallende Tiefs
 
 ### Darstellung
-![nBarsDown](./media/image71.png)
+![nBarsDown](./media/nBarsDown.jpg)
 
 ### Beispiel
 ```cs
@@ -3740,7 +3740,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **OBV**()\[**int** barsAgo\] )
 inSeries	Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![OnBalanceVolume (OBV)](./media/image72.png)
+![OnBalanceVolume (OBV)](./media/OBV.jpg)
 
 ### Beispiel
 ```cs
@@ -3803,7 +3803,7 @@ Für die Standardeinstellungen ist der Trend T2 standardmäßig aktiviert.
 
 Die Darstellung im Chart kann sich mit den wechselnden Marktbewegungen verändern. Wenn der Markt sich unter dem letzten Punkt 3 bewegt und den Aufwärtstrend bricht, wird dieser Punkt mit einem „3?“ markiert. Der neu gebildete Tief wird zum neuen Punkt 2, und der letzte Punkt 2 wird zum Punkt 1.
 
-![Visualization in the chart](./media/image73.png)
+![Visualization in the chart](./media/P123Chart.jpg)
 
 Die Parametereinstellungen sind für die Anzeige im Chart nicht relevant, und werden hauptsächlich für den Condition Escort verwendet.
 
@@ -3996,7 +3996,7 @@ Bei Verwendung der Methode mit einem Index ( z.B.  **ParabolicSAR**(...)\[**int*
 | InSeries         | Eingangsdatenreihe für den Indikator|
 
 ### Darstellung
-![Parabolic SAR](./media/image75.png)
+![Parabolic SAR](./media/ParabolicSAR.jpg)
 
 ### Beispiel
 ```cs
@@ -4039,7 +4039,7 @@ slow		Anzahl der Bars, für die Berechnung des slow EMA
 smooth	Anzahl der Bars, für die Berechnung der EMA Signal-Linie
 
 ### Darstellung
-![Percentage Price Oscillator (PPO)](./media/image76.png)
+![Percentage Price Oscillator (PPO)](./media/PPO.jpg)
 
 ### Beispiel
 ```cs
@@ -4085,7 +4085,7 @@ inSeries Eingangsdatenreihe für den Indikator
 percent	 Abstend der Bänder in Prozent (%) vom Eingangswert
 
 ### Darstellung
-![PercentEnvelopes](./media/image77.png)
+![PercentEnvelopes](./media/PercentEnvelopes.jpg)
 
 ### Beispiel
 ```cs
@@ -4163,7 +4163,7 @@ Default: false                                                                  
 | SColor          | Unterstützung Linienfarbe                                                               |
 
 ### Darstellung
-![Pivot Points](./media/image78.png)
+![Pivot Points](./media/PivotPoints.jpg)
 
 ### Beispiel
 ```cs
@@ -4283,7 +4283,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden 
 
 ### Darstellung
-![Polarized Fractal Efficiency (PFE)](./media/image79.png)
+![Polarized Fractal Efficiency (PFE)](./media/PFE.jpg)
 
 ### Beispiel
 ```cs
@@ -4321,7 +4321,7 @@ slow		Anzahl der Bars, für die Berechnung des slow EMA
 smooth	Anzahl der Bars, für die Berechnung der EMA Signal-Linie
 
 ### Darstellung
-![Price Oscillator](./media/image80.png)
+![Price Oscillator](./media/PriceOscillator.jpg)
 
 ### Beispiel
 ```cs
@@ -4357,7 +4357,7 @@ Pinker  ЕМА: 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185,
 | Step           | Definiert die Anzahl von gleitender Durchschnittslinien, die im Chart innerhalb des Rainbow-Indikators angezeigt werden. Je kleiner diese Nummer, desto größer die Anzahl von Linien, die eingezeichnet werden. In unserem Beispiel würde Step 2 bedeuten, dass der Indikator 80 EMA-Linien enthalten wird: EMA(2), EMA(4), EMA(6) und so weiter.                       |
 
 ### Visualisierung
-![Rainbow](./media/rainbow.png)
+![Rainbow](./media/Rainbow.jpg)
 
 ## Range
 ### Beschreibung
@@ -4380,7 +4380,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **Range**()\[**int** barsAgo\]
 inSeriesEingangsdatenreihe für den Indikator
 
 ### Darstellung
-![Range](./media/image81.png)
+![Range](./media/Range.jpg)
 
 ### Beispiel
 ```cs
@@ -4423,7 +4423,7 @@ periodQ	Anzahl der Bars, für die Berechnung der kurzfristigen Stochastik
 smooth	Anzahl der Bars für die Glättung des Indikators mit einem EMA
 
 ### Darstellung
-![Range Indicator (RIND)](./media/image82.png)
+![Range Indicator (RIND)](./media/Rind.jpg)
 
 ### Beispiel
 ```cs
@@ -4463,7 +4463,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Rate of Change (ROC)](./media/image83.png)
+![Rate of Change (ROC)](./media/ROC.jpg)
 
 ### Beispiel
 ```cs
@@ -4607,7 +4607,7 @@ eMA1	Periodenanzahl für den ersten EMA
 eMA2	Periodenanzahl für den zweiten EMA
 
 ### Darstellung
-![Relative Spread Strength (RSS)](./media/image84.png)
+![Relative Spread Strength (RSS)](./media/RSS.jpg)
 
 ### Beispiel
 ```cs
@@ -4651,7 +4651,7 @@ period	Anzahl der Bars, die in die Berechnung einbezogen werden
 smooth	Anzahl der Perioden für die Glättung
 
 ### Darstellung
-![Relative Strength Index (RSI)](./media/image85.png)
+![Relative Strength Index (RSI)](./media/RSI.jpg)
 
 ### Beispiel
 ```cs
@@ -4733,7 +4733,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Relative Volatility Index (RVI)](./media/image87.png)
+![Relative Volatility Index (RVI)](./media/RVI.jpg)
 
 ### Beispiel
 ```cs
@@ -4781,7 +4781,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 tolerance  s. nachfolgende Beschreibung
 
 ### Darstellung
-![ReversalBars](./media/image88.png)
+![ReversalBars](./media/ReversalBars.jpg)
 
 ### Der Parameter Tolerance
 Umkehrstäbe müssen nach Definition ihren vorhergehenden Bar mindestens um 1 Tick übersteigen (Long-Umkehrstab) bzw. unterschreiten (Short-Umkehrstab). Mit dem Parameter Toleranz kann eine zusätzliche Anzahl Ticks angegeben werden, die - im Falle eines Long-Umkehrstabes - das Hoch des Umkehrstabes das Hoch des vorhergehenden Bars mindestens überschreiten muss.
@@ -4831,7 +4831,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![R-Squared](./media/image90.png)
+![R-Squared](./media/RSquared.jpg)
 
 ### Beispiel
 ```cs
@@ -4868,7 +4868,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![StandardDeviation(StdDev)](./media/image92.png)
+![StandardDeviation(StdDev)](./media/StdDev.jpg)
 
 ### Beispiel
 ```cs
@@ -4916,7 +4916,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Standard Error (StdError)](./media/image93.png)
+![Standard Error (StdError)](./media/StdError.jpg)
 
 ### Beispiel
 ```cs
@@ -4979,7 +4979,7 @@ periodK	Anzahl der Bars, die in die Berechnung für %K einbezogen werden
 smooth	Anzahl der Perioden für die Glättung von %D
 
 ### Darstellung
-![Stochastics](./media/image94.png)
+![Stochastics](./media/Stochastics.jpg)
 
 ### Beispiel
 ```cs
@@ -5030,7 +5030,7 @@ periodD	Anzahl der Perioden für die Glättung von %K
 periodK	Anzahl der Bars, die in die Berechnung für %K einbezogen werden
 
 ### Darstellung
-![Stochastics Fast](./media/image95.png)
+![Stochastics Fast](./media/StochasticsFast.jpg)
 
 ### Beispiel
 ```cs
@@ -5070,7 +5070,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Stochastics RSI (StochRSI)](./media/image96.png)
+![Stochastics RSI (StochRSI)](./media/StochRSI.jpg)
 
 ### Beispiel
 ```cs
@@ -5101,7 +5101,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Summation (SUM)](./media/image97.png)
+![Summation (SUM)](./media/SUM.jpg)
 
 ### Beispiel
 ```cs
@@ -5170,7 +5170,7 @@ Im DualThrust-Modus hat der Parameter Period einen sehr großen Einfluss. Je kle
 Default: SuperTrendMode.ATR     |
 
 ### Darstellung
-![SuperTrend](./media/image98.png)
+![SuperTrend](./media/SuperTrend.jpg)
 
 ### Beispiel
 ```cs
@@ -5211,7 +5211,7 @@ Der kleinste einstellbarer Wert ist 0,1 default ist 0.3                         
 Die kleinste mögliche Einstellung ist 1. Default ist 5.                                                       |
 
 ### Darstellung
-![SupportResistanceAreas](./media/image99.png)
+![SupportResistanceAreas](./media/SupportResistanceAreas.jpg)
 
 ## Swing
 ### Beschreibung
@@ -5250,7 +5250,7 @@ Bei Verwendung der Methode mit einem Index ( z.B.  **Swing**(5)\[**int** barsAgo
 | strength       | Anzahl der Bars links und rechts von einem Extrempunkt                                                       |
 
 ### Darstellung
-![Swing](./media/image100.png)
+![Swing](./media/Swing.jpg)
 
 ### Beispiel
 ```cs
@@ -5294,7 +5294,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Time-Series-Forecast (TSF)](./media/image101.png)
+![Time-Series-Forecast (TSF)](./media/TSF.jpg)
 
 ### Beispiel
 ```cs
@@ -5323,7 +5323,7 @@ ConstantLines(double line1Value, double line2Value, double line3Value, double li
 Bei Verwendung der Methode mit einem Index ( z.B. **ConstantLines**(1,2,3,4)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
 
 ### Darstellung
-![Constant Lines](./media/image102.png)
+![Constant Lines](./media/ConstantLines.jpg)
 
 ## CurrentDayOHL
 ### Beschreibung
@@ -5359,7 +5359,7 @@ CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Low[int barsAgo]
 ```
 
 ### Darstellung
-![CurrentDayOHL](./media/image103.png)
+![CurrentDayOHL](./media/CurrentDayOHL.jpg)
 
 ### Beispiel
 ```cs
@@ -5414,7 +5414,7 @@ mode		mögliche Werte sind:
 daysAgo	        Anzahl der Tage in der Vergangenheit
 
 ### Darstellung
-![DailyPerformance](./media/image106.png)
+![DailyPerformance](./media/DailyPerformance.jpg)
 
 ### Beispiel
 ```cs
@@ -5458,7 +5458,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **DailyQuoteMoves**(...)\[**in
 inSeries Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![DailyQuoteMoves](./media/DailyQuoteMoves.png)
+![DailyQuoteMoves](./media/DailyQuoteMoves.jpg)
 
 ### Beispiel
 ```cs
@@ -5475,7 +5475,7 @@ Jede Linie ist einzeln ein- bzw. ausblendbar. Die Farben und Linienstärken sind
 Siehe auch [*CurrentDayOHL*](#currentdayohl), [*PriorDayOHLC*](#priordayohlc).
 
 ### Darstellung
-![DayLines](./media/image107.png)
+![DayLines](./media/DayLines.jpg)
 
 ## DayLinesAdv
 ### Beschreibung
@@ -5499,21 +5499,21 @@ Bei IncludeWeekends = true werden die wenigen Stunden aus dem Handel am Sonntag 
 Im ersten Bild ist IncludeWeekends = false.
 Hoch und Tief des Vortages werden anhand der kleinen grünen Kerze vom Sonntag berechnet.
 
-![IncludeWeekends = false](./media/image108.png)
+![IncludeWeekends = false](./media/DayLinesAdvFalse.jpg)
 
 Im zweiten Bild ist IncludeWeekends = true. Die Linien besitzen nun eine deutlich höhere Aussagekraft.
 
-![IncludeWeekends = true](./media/image109.png)
+![IncludeWeekends = true](./media/DayLinesAdvTrue.jpg)
 
 **Parameter Show Prices**
 Wenn true, wird rechts von der Bezeichnung der Linie zusätzlich der Kurswert angegeben.
 
-![prices are displayed](./media/image110.png)
+![prices are displayed](./media/DayLinesAdvTrueShowPrice.jpg)
 
 **Parameter Extend high lines und Extend low lines**
 Wenn true, werden Hochs bzw. Tiefs, die noch nicht vom Kurs "gebrochen" wurden, mit gepunkteten Linien bis an den rechten Chartrand verlängert.
 Hinweis: Um Widerstands- und Unterstützungszonen anzuzeigen, kann der darauf spezialisierte Indikator SupportResistanceAreas verwendet werden.
-![highs and lows](./media/image111.png)
+![highs and lows](./media/DayLinesAdvExtend.jpg)
 
 ## GetDayBar
 ### Beschreibung
@@ -5596,7 +5596,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Maximum (MAX)](./media/image113.png)
+![Maximum (MAX)](./media/MAX.jpg)
 
 ### Beispiel
 ```cs
@@ -5628,7 +5628,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period	Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Minimum (MIN)](./media/image114.png)
+![Minimum (MIN)](./media/MIN.jpg)
 
 ### Beispiel
 ```cs
@@ -5656,7 +5656,7 @@ Mark candles body  Färbt den Kerzenkörper (Bereich zwischen Open und Close) mi
 
 
 ### Darstellung
-![MTFBoxes](./media/image115.png)
+![MTFBoxes](./media/MTFBoxes.jpg)
 
 ## PriceLine
 ### Beschreibung
@@ -5665,7 +5665,7 @@ Es wird am aktuellen Kurs im Chart eine horizontale Linie angezeigt.
 Die Farbe der Linie und die Linienstärke sind frei wählbar.
 
 ### Darstellung
-![PriceLine](./media/image116.png)
+![PriceLine](./media/PriceLine.jpg)
 
 ## PriorDayOHLC
 ### Darstellung
@@ -5711,7 +5711,7 @@ PriorDayOHLC(IDataSeries inSeries).PriorClose[int barsAgo]
 ```
 
 ### Darstellung
-![PriorDayOHLC](./media/image117.png)
+![PriorDayOHLC](./media/PriorDayOHLC.jpg)
 
 ### Beispiel
 ```cs
@@ -5734,7 +5734,7 @@ Die Linienfarbe, die Linienstärke und die Linienart sind frei wählbar.
 siehe auch [*PriorDayOHLC*](#priordayohlc).
 
 ### Darstellung
-![PriorDayOHLCext](./media/image118.png)
+![SessionBreakLines](./media/SessionBreakLines.jpg)
 
 ## ShowBidAsk
 ### Beschreibung
@@ -5743,7 +5743,7 @@ Schriftart und -farbe sind frei konfigurierbar.
 Voraussetzung für die Nutzung ist die Verbindung mit einem Realtime-Datenfeed.
 
 ### Darstellung
-![ShowBidAsk](./media/image119.png)
+![ShowBidAsk](./media/ShowBidAsk.jpg)
 
 ## TickCounter
 ### Beschreibung
@@ -5759,7 +5759,7 @@ Der Indikator funktioniert nur in Candle-Charts, in dem die Bars aus einer feste
 Für die Programmierung in eigenen Scripts verwenden sie bitte Bars.TickCount bzw. Bars.PercentComplete.
 
 ### Darstellung
-![TickCounter](./media/image120.png)
+![TickCounter](./media/TickCounter.jpg)
 
 ## True Strength Index (TSI)
 ### Beschreibung
@@ -5793,7 +5793,7 @@ fast		Anzahl der Bars, für die Berechnung des Fast EMA
 slow		Anzahl der Bars, für die Berechnung des Slow EMA
 
 ### Darstellung
-![True Strength Index (TSI)](./media/image121.png)
+![True Strength Index (TSI)](./media/TSI.jpg)
 
 ### Beispiel
 ```cs
@@ -5844,7 +5844,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **UltimateOscillator** (5)\[**
 | slow         | Anzahl der Bars zur Berechnung des langfristigen Oszillators      |
 
 ### Darstellung
-![Ultimate Oscillator](./media/image122.png)
+![Ultimate Oscillator](./media/UltimateOscillator.jpg)
 
 ### Beispiel
 ```cs
@@ -5881,7 +5881,7 @@ Bei Verwendung der Methode mit einem Index ( z.B.  **VOL**()\[**int** barsAgo\] 
 inSeries	Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![Volume (VOL)](./media/image123.png)
+![Volume (VOL)](./media/VOL.jpg)
 
 ### Beispiel
 ```cs
@@ -5931,7 +5931,7 @@ inSeries Eingangsdatenreihe für den Indikator
 period Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Volume Moving Average (VOLMA)](./media/image124.png)
+![Volume Moving Average (VOLMA)](./media/VOLMA.jpg)
 
 ### Darstellung
 ```cs
@@ -5968,7 +5968,7 @@ fast		Anzahl der Bars für die Berechnung des kurzfristigen GD's
 slow		Anzahl der Bars für die Berechnung des langfristigen GD's
 
 ### Darstellung
-![Volume Oscillator](./media/image125.png)
+![Volume Oscillator](./media/VolumeOscillator.jpg)
 
 ### Beispiel
 ```cs
@@ -5992,7 +5992,7 @@ siehe auch: [*VolumeZones*](#volumezones)
 An Kursen mit besonders hohem Handelsvolumen findet i.d.R. eine ausgeprägte Akkumulation bzw. Distribution statt. In der Folge bilden sich an diesen Kursniveaus Widerstands- bzw. Unterstützungszonen aus, die im laufenden Handel berücksichtigt werden können.
 
 ### Darstellung
-![Volume Profile](./media/image126.png)
+![Volume Profile](./media/VolumeProfile.jpg)
 
 ### Parameter
 Buy color:	Farbe der Balken für das Volumen bei Umsätzen am Ask.
@@ -6041,7 +6041,7 @@ period		Anzahl der Bars, die in die Berechnung einbezogen werden
 smooth		Anzahl der Bars für die Berechnung des GD's für die Glättung
 
 ### Darstellung
-![Volume Rate of Change (VROC)](./media/image127.png)
+![Volume Rate of Change (VROC)](./media/VROC.jpg)
 
 ### Beispiel
 ```cs
@@ -6324,7 +6324,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **VolumeUpDown**()\[**int** ba
 inSeries	Eingangsdatenreihe für den Indikator
 
 ### Darstellung
-![Volume Rate of Change (VROC)](./media/image128.png)
+![VolumeUpDown](./media/VolumeUpDown.jpg)
 
 ### Beispiel
 ```cs
@@ -6400,7 +6400,7 @@ inSeries	Eingangsdatenreihe für den Indikator
 period		Anzahl der Bars, die in die Berechnung einbezogen werden
 
 ### Darstellung
-![Williams %R](./media/image129.png)
+![Williams %R](./media/WilliamsR.jpg)
 
 ### Beispiel
 ```cs
@@ -6477,7 +6477,7 @@ DeviationType.Points und DeviationType.Percent       |
 | useHighLow     | legt fest, ob des Hoch/Tief eines Bars für die Suche von Extremwerten verwendet wird oder der Schlusskurs der Kerze |
 
 ### Darstellung
-![ZigZag](./media/image130.png)
+![ZigZag](./media/ZigZag.jpg)
 
 ### Beispiel
 ```cs
