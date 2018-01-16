@@ -2701,7 +2701,7 @@ Marktphasen 1, 2, 6, und 9 sind für erfolgreiches Handeln nicht relevant.
 ### Darstellung im Chart
 Keine Parameter erforderlich.
 
-![MarketPhases in chart window](./media/image49.png)
+![MarketPhases in chart window](./media/MarketPhasesChart.jpg)
 
 ### Verwendung in AgenaScript
 Der Indikator bietet folgende Werte für die Marktphasen:
