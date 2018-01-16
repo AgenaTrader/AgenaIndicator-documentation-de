@@ -5571,7 +5571,7 @@ Im Hintergrund des Charts werden - abhängig vom dargestellten Handelsinstrument
 Die Textfarbe ist frei wählbar.
 
 ### Darstellung
-![GetDayBar](./media/image112.png)
+![Info](./media/Info.jpg)
 
 ## Maximum (MAX)
 ### Beschreibung
