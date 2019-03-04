@@ -708,10 +708,10 @@ Erklärung der einzelnen Formationen und ihrer jeweiligen Interpretation finden 
 
 ### Verwendung
 ```cs
-CandleStickPattern(ChartPattern pattern, int trendStrength)
-CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)
-CandleStickPattern(ChartPattern pattern, int trendStrength)[int barsAgo]
-CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)[int barsAgo]
+CandleStickPattern(CandleStickPattern pattern, int trendStrength)
+CandleStickPattern(IDataSeries inSeries, CandleStickPattern pattern, int trendStrength)
+CandleStickPattern(CandleStickPattern pattern, int trendStrength)[int barsAgo]
+CandleStickPattern(IDataSeries inSeries, CandleStickPattern pattern, int trendStrength)[int barsAgo]
 ```
 
 ### Rückgabewert
@@ -728,31 +728,31 @@ Bei Verwendung der Methode mit einem Index ( z.B. **CandleStickPattern**(...)\[*
 | InSeries      | Eingangsdatenreihe für den Indikator
 |
 | pattern       | Mögliche Werte sind:
-                ChartPattern.BearishBeltHold
-                 ChartPattern.BearishEngulfing
-                 ChartPattern.BearishHarami
-                 ChartPattern.BearishHaramiCross
-                 ChartPattern.BullishBeltHold
-                ChartPattern.BullishEngulfing
-                ChartPattern.BullishHarami
-                ChartPattern.BullishHaramiCross  
-                ChartPattern.DarkCloudCover
-                ChartPattern.Doji
-                ChartPattern.DownsideTasukiGap
-                ChartPattern.EveningStar
-                ChartPattern.FallingThreeMethods
-                ChartPattern.Hammer
-                ChartPattern.HangingMan
-                ChartPattern.InvertedHammer
-                ChartPattern.MorningStart
-                ChartPattern.PiercingLine
-                ChartPattern.RisingThreeMethods
-                ChartPattern.ShootingStar
-                ChartPattern.StickSandwich
-                ChartPattern.ThreeBlackCrows
-                ChartPattern.ThreeWhiteSoldiers
-                ChartPattern.UpsideGapTwoCrows
-                ChartPattern.UpsideTasukiGap    |
+                CandleStickPattern.BearishBeltHold
+                 CandleStickPattern.BearishEngulfing
+                 CandleStickPattern.BearishHarami
+                 CandleStickPattern.BearishHaramiCross
+                 CandleStickPattern.BullishBeltHold
+                CandleStickPattern.BullishEngulfing
+                CandleStickPattern.BullishHarami
+                CandleStickPattern.BullishHaramiCross  
+                CandleStickPattern.DarkCloudCover
+                CandleStickPattern.Doji
+                CandleStickPattern.DownsideTasukiGap
+                CandleStickPattern.EveningStar
+                CandleStickPattern.FallingThreeMethods
+                CandleStickPattern.Hammer
+                CandleStickPattern.HangingMan
+                CandleStickPattern.InvertedHammer
+                CandleStickPattern.MorningStart
+                CandleStickPattern.PiercingLine
+                CandleStickPattern.RisingThreeMethods
+                CandleStickPattern.ShootingStar
+                CandleStickPattern.StickSandwich
+                CandleStickPattern.ThreeBlackCrows
+                CandleStickPattern.ThreeWhiteSoldiers
+                CandleStickPattern.UpsideGapTwoCrows
+                CandleStickPattern.UpsideTasukiGap    |
 | trendStrength | Die Anzahl der Bars links und rechts neben dem Umkehrpunkt (Swing High bzw. Low), die zur Identifizierung eines Trends verwendet werden. Der Wert 0 schaltet die Trendsuche ab, d.h. es wird ausschließlich nach den Chartmustern gesucht. |
 
 ### Darstellung
@@ -760,7 +760,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **CandleStickPattern**(...)\[*
 
 ### Beispiel
 ```cs
-if (CandelStickPattern(ChartPattern.ShootingStar, 5)[0] == 1)
+if (CandelStickPattern(CandleStickPattern.ShootingStar, 5)[0] == 1)
 Print("Pattern ShootingStar found!");
 ```
 
