@@ -7,32 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../favicon.ico">
-  
+  <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Indikatoren & Oszillatoren - AgenaIndicator Dokumentation (Deutsch)</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   <link href="../custom.css" rel="stylesheet">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Indikatoren & Oszillatoren";
     var mkdocs_page_input_path = "indikatoren_und_oszillatoren.md";
-    var mkdocs_page_url = "/indikatoren_und_oszillatoren/";
+    var mkdocs_page_url = "/AgenaIndicator-documentation-de/index.html/indikatoren_und_oszillatoren/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-74646070-1', 'agenatrader.github.io');
       ga('send', 'pageview');
@@ -50,7 +50,7 @@
         <a href=".." class="icon icon-home"> AgenaIndicator Dokumentation (Deutsch)</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -505,8 +505,8 @@ Print(&quot;Value for the lower APZ band: &quot; + APZ(2, 20).Lower[0]);
 <h2 id="aroon">Aroon</h2>
 <h3 id="beschreibung_2">Beschreibung</h3>
 <p>Der Aroon, 1995 von Tushar Chande entwickelt, ist ein Indikator der technischen Analyse und dient der Trendbestimmung eines Kurses.
-Der AROON besteht aus zwei Indikatorlinien - dem AROON-UP und dem AROON-DOWN. 
-Die AROON-UP Linie misst die Tage, die seit dem letzten Kurshoch vergangen sind, die AROON-DOWN Linie misst die Tage, die seit dem letzten Kurstief vergangen sind. Die Linien oszillieren in einer Skala zwischen 0 und 100. 
+Der AROON besteht aus zwei Indikatorlinien - dem AROON-UP und dem AROON-DOWN.
+Die AROON-UP Linie misst die Tage, die seit dem letzten Kurshoch vergangen sind, die AROON-DOWN Linie misst die Tage, die seit dem letzten Kurstief vergangen sind. Die Linien oszillieren in einer Skala zwischen 0 und 100.
 Bei einem neuen 14-Tage Hoch nimmt der 14er AROON-UP den Wert 100 an, analog dazu nimmt bei einem neuen 14-Tage Tief der 14er AROON-DOWNs den Wert 100 an.
 Beim AROON-UP subtrahiert man den Berechnungszeitraum (n) mit der Anzahl der Tage seit dem letzten Hoch (TsH) und dividiert diesen Wert durch n und multipliziert diesen wiederrum mit 100. (Quelle: VTAD)</p>
 <h3 id="interpretation_2">Interpretation</h3>
@@ -661,10 +661,10 @@ Print(&quot;The current ATR value is: &quot; + ATR(14)[0]);
 Negativ (Rot) heißt die Bollinger Bänder ziehen sich zusammen. (Größer als SignalSize -&gt; Short, gekennzeichnet durch intensiveres Rot)
 Positiv (Grün) heißt die Bollinger Bänder gehen außeinander.  (Größer als SignalSize -&gt; Long, gekennzeichnet durch intensiveres Grün)</p>
 <h3 id="verwendung_7">Verwendung</h3>
-<pre><code class="cs">BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize) 
-BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize) 
+<pre><code class="cs">BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize)
+BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize)
 BBBreakOutSpeed(double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo]
-BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo] 
+BBBreakOutSpeed(IDataSeries inSeries, double bandsDeviation, int bandsPeriod, int signalsize)[int barsAgo]
 
 </code></pre>
 
@@ -782,7 +782,7 @@ Print(&quot;Value of the lower band: &quot; + Bollinger(2, 20).Lower[0]);
 <p>Siehe auch  <a href="#bollingerbands"><em>Bollinger Bands</em></a>, <a href="#bbwidth"><em>BBWidth</em></a></p>
 <p><strong>Eine weitere Anwendung: Normalisieren von Indikatoren</strong></p>
 <p>Bollinger Bands und damit auch der %b-Indikator können nicht nur auf die Kurse von Aktien und Indices, sondern auch auf Zeitreihen mit fundamentalen Daten, Volumendaten von Aktien und auf andere Indikatoren, angewendet werden. Immer dann, wenn es interessant zu wissen ist, ob ein Wert relativ hoch oder niedrig ist, kann der %b-Indikator eine neue Perspektive eröffnen. Wenn Sie wissen möchten, ob das Volumen einer Aktie relativ hoch oder niedrig liegt, können Sie die Bollinger Bänder oder %b auch auf die Volumendaten anwenden.
-John Bollinger sieht in der Anwendung der %b auf andere Indikatoren eine der wichtigsten Einsatzgebiete des %b. Wenn Sie einen Indikator mit %b normalisieren, berechnen Sie zuerst den Indikator, z.B. den RSI und nutzen bei der Berechnung des %b die Daten des RSI anstelle der Kursdaten. Sie wenden also den %b auf den RSI an, wie es auch schon beim StochRSI, StochMACD und StochMomentum mit dem Stochastic %K getan wurde. Da zeigt sich die enge Verwandtschaft des %b mit dem Stochastic %K. Die Anwendung des %b auf einen Indikator wirkt genauso, als würden Sie Bollinger Bands über den Verlauf des Indikators legen und die Schnittpunkte der Bänder mit dem Indikator entsprechen folglich den Werten 1 und 0 eines mit %b normalisierten Indikators. Der mit %b normalisierte Indikator stellt die relative Position des Ursprungsindikators zu seinem oberen und unteren Band dar. Damit werden die starren Grenzen durch die Berücksichtigung der Beweglichkeit des Ursprungsindikators aufgehoben. John Bollinger formuliert es sehr treffend: „Sie definieren einen Hoch- oder Tiefstand auf einer relativen Basis. Dies kann oft zu tiefen Einblicken und Erkenntnissen führen, die von den traditionellen Richtlinien und Regelwerken nicht zu erwarten sind." ... 
+John Bollinger sieht in der Anwendung der %b auf andere Indikatoren eine der wichtigsten Einsatzgebiete des %b. Wenn Sie einen Indikator mit %b normalisieren, berechnen Sie zuerst den Indikator, z.B. den RSI und nutzen bei der Berechnung des %b die Daten des RSI anstelle der Kursdaten. Sie wenden also den %b auf den RSI an, wie es auch schon beim StochRSI, StochMACD und StochMomentum mit dem Stochastic %K getan wurde. Da zeigt sich die enge Verwandtschaft des %b mit dem Stochastic %K. Die Anwendung des %b auf einen Indikator wirkt genauso, als würden Sie Bollinger Bands über den Verlauf des Indikators legen und die Schnittpunkte der Bänder mit dem Indikator entsprechen folglich den Werten 1 und 0 eines mit %b normalisierten Indikators. Der mit %b normalisierte Indikator stellt die relative Position des Ursprungsindikators zu seinem oberen und unteren Band dar. Damit werden die starren Grenzen durch die Berücksichtigung der Beweglichkeit des Ursprungsindikators aufgehoben. John Bollinger formuliert es sehr treffend: „Sie definieren einen Hoch- oder Tiefstand auf einer relativen Basis. Dies kann oft zu tiefen Einblicken und Erkenntnissen führen, die von den traditionellen Richtlinien und Regelwerken nicht zu erwarten sind." ...
 John Bollinger gibt für einige Indikatoren die Parameter für die %b-Berechnung an. Für einen 9-Tage-RSI verwendet er 40 Tage und einen Faktor 2,0 und für einen 14-Tage-RSI nutzt er 50 Tage und einen Faktor von 2,1 zur Berechnung des %b. Für den über 10 Tage berechneten Volumenindikator Money Flow Index (MFI) gibt er für %b 40 Tage und einen Faktor von 2,0 an."</p>
 <p>(Quelle: Oliver Paesler: "Technische Indikatoren - simplified" und John Bollinger: "Bollinger Bänder")</p>
 <h3 id="interpretation_8">Interpretation</h3>
@@ -917,7 +917,7 @@ protected override void OnCalculate()
   if (Close[0] &gt; DonchianChannel(20).Upper[5])
   {
   // Der Indikator BuySellPressure kann nur für Realtime-Daten berechnet werden.
-     // Um eine Strategie, in der BuySellPressure verwendet wird, dennoch einem Backtest 
+     // Um eine Strategie, in der BuySellPressure verwendet wird, dennoch einem Backtest
      // unterziehen zu können, muß mit if (Historical ... geprüft werden,
      // ob die Strategie mit Realtime- oder historischen Daten aufgerufen wurde.
      // Im Beispiel wird ein Breakout-Signal mit dem DonchianChannel(20) generiert.
@@ -933,7 +933,7 @@ protected override void OnCalculate()
 <h3 id="beschreibung_12">Beschreibung</h3>
 <p>Der Indikator BuySellVolume zeigt für den aktuellen Bar den Kauf- und den Verkaufsdruck als Umsatzbar ähnlich dem Volumen (Vol) unter dem Chart an. Dazu werden Trades als "Kauf" bzw. als "Verkauf" klassifiziert. Für diese Klassifizierung wird ein "Kauf" immer dann angenommen, wenn die Transaktion am oder über dem Ask ausgeführt wurde. Als "Verkauf" wird ein Umsatz am oder unter dem Bid gewertet. Trades im Inside Market werden ignoriert.</p>
 <p><strong>Achtung: Dies ist ein Realtime-Indikator. Er funktioniert nur auf Realtime-Daten und wird deshalb nicht für historische Daten gezeichnet. Wenn Sie den Eigenschaften-Dialog des Indikators aufrufen und dort Änderungen vornehmen, wird der Indikator im Anschluß neu gestartet und alle bisher in den Chart gezeichneten Daten gehen verloren.</strong></p>
-<p>Siehe auch <a href="#buysellpressure"><em>BuySellPressure</em></a> </p>
+<p>Siehe auch <a href="#buysellpressure"><em>BuySellPressure</em></a></p>
 <h3 id="verwendung_13">Verwendung</h3>
 <pre><code class="cs">BuySellVolume BuySellVolume()
 BuySellVolume BuySellVolume(IDataSeries inSeries)
@@ -957,10 +957,10 @@ Print(&quot;The BuySellVolume is: &quot; + BuySellVolume()[0]);
 <h3 id="weitere-informationen_8">Weitere Informationen</h3>
 <p>Erklärung der einzelnen Formationen und ihrer jeweiligen Interpretation finden sich z.B. unter: <a href="http://en.wikipedia.org/wiki/Candlestick_pattern">http://en.wikipedia.org/wiki/Candlestick_pattern</a></p>
 <h3 id="verwendung_14">Verwendung</h3>
-<pre><code class="cs">CandleStickPattern(ChartPattern pattern, int trendStrength)
-CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)
-CandleStickPattern(ChartPattern pattern, int trendStrength)[int barsAgo]
-CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength)[int barsAgo]
+<pre><code class="cs">CandleStickPattern(CandleStickPattern pattern, int trendStrength)
+CandleStickPattern(IDataSeries inSeries, CandleStickPattern pattern, int trendStrength)
+CandleStickPattern(CandleStickPattern pattern, int trendStrength)[int barsAgo]
+CandleStickPattern(IDataSeries inSeries, CandleStickPattern pattern, int trendStrength)[int barsAgo]
 </code></pre>
 
 <h3 id="ruckgabewert_14">Rückgabewert</h3>
@@ -982,112 +982,8 @@ CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength
 <td>Eingangsdatenreihe für den Indikator</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>pattern</td>
-<td>Mögliche Werte sind:</td>
-</tr>
-<tr>
-<td>ChartPattern.BearishBeltHold</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BearishEngulfing</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BearishHarami</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BearishHaramiCross</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BullishBeltHold</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BullishEngulfing</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BullishHarami</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.BullishHaramiCross</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.DarkCloudCover</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.Doji</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.DownsideTasukiGap</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.EveningStar</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.FallingThreeMethods</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.Hammer</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.HangingMan</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.InvertedHammer</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.MorningStart</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.PiercingLine</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.RisingThreeMethods</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.ShootingStar</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.StickSandwich</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.ThreeBlackCrows</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.ThreeWhiteSoldiers</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.UpsideGapTwoCrows</td>
-<td></td>
-</tr>
-<tr>
-<td>ChartPattern.UpsideTasukiGap</td>
-<td></td>
+<td>Mögliche Werte sind:  <br>CandleStickPattern.BearishBeltHold   <br> CandleStickPattern.BearishEngulfing   <br>CandleStickPattern.BearishHarami       <br>CandleStickPattern.BearishHaramiCross <br> CandleStickPattern.BullishBeltHold    <br>CandleStickPcattern.BullishEngulfing  <br>CandleStickPattern.BullishHarami  <br>CandleStickPattern.BullishHaramiCross    <br>CandleStickPattern.DarkCloudCover  <br>CandleStickPattern.Doji  <br>CandleStickPattern.DownsideTasukiGap  <br>CandleStickPattern.EveningStar  <br>  CandleStickPattern.FallingThreeMethods  <br>CandleStickPattern.Hammer  <br>CandleStickPattern.HangingMan  <br>CandleStickPattern.InvertedHammer  <br>CandleStickPattern.MorningStart  <br>CandleStickPattern.PiercingLine  <br>CandleStickPattern.RisingThreeMethods <br>CandleStickPattern.ShootingStar  <br>CandleStickPattern.StickSandwich <br>CandleStickPattern.ThreeBlackCrows  <br>CandleStickPattern.ThreeWhiteSoldiers <br>CandleStickPattern.UpsideGapTwoCrows  <br>CandleStickPattern.UpsideTasukiGap</td>
 </tr>
 <tr>
 <td>trendStrength</td>
@@ -1098,7 +994,7 @@ CandleStickPattern(IDataSeries inSeries, ChartPattern pattern, int trendStrength
 <h3 id="darstellung_15">Darstellung</h3>
 <p><img alt="CandleStickPattern" src="../media/CandleStickPattern.jpg" /></p>
 <h3 id="beispiel_14">Beispiel</h3>
-<pre><code class="cs">if (CandelStickPattern(ChartPattern.ShootingStar, 5)[0] == 1)
+<pre><code class="cs">if (CandelStickPattern(CandleStickPattern.ShootingStar, 5)[0] == 1)
 Print(&quot;Pattern ShootingStar found!&quot;);
 </code></pre>
 
@@ -1316,17 +1212,17 @@ Print(&quot;The value of the Commodity Channel Index is: &quot; + CCI(14));
 <p>Dieser Indikator hat ebenfalls dieselbe Funktionsweise wie der COTAggregatedndexPositionsLegacy, für die Interpretation und nähere Informationen lesen Sie bitte unter <a href="#COTAggregatedIndexPositionLegacy"><em>COTAggregatedIndexPositionLegacy</em></a> nach. Der Unterschied besteht wiederum in der Verwendung der detaillierteren Disaggregated-Daten für die Berechnung des Indikators.</p>
 <p>Für den COTAggregatedIndexPositionDisaggregated stehen folgende Parameter zur Verfügung:</p>
 <ul>
-<li>AddIndices: </li>
-<li><strong>DowJones:</strong> wählen Sie [True], wenn die Positionen des DowJones dem Gesamtergebnis zugezählt werden sollen. </li>
+<li>AddIndices:</li>
+<li><strong>DowJones:</strong> wählen Sie [True], wenn die Positionen des DowJones dem Gesamtergebnis zugezählt werden sollen.</li>
 <li><strong>Nasdaq100:</strong> wählen Sie [True], wenn die Positionen des Nasdaq100 dem Gesamtergebnis zugezählt werden sollen.</li>
-<li><strong>Russell2000:</strong> wählen Sie [True], wenn die Positionen des Russell2000 dem Gesamtergebnis zugezählt werden sollen </li>
+<li><strong>Russell2000:</strong> wählen Sie [True], wenn die Positionen des Russell2000 dem Gesamtergebnis zugezählt werden sollen</li>
 <li>
 <p><strong>SP500:</strong> wählen Sie [True], wenn die Positionen des SP500 dem Gesamtergebnis zugezählt werden sollen.</p>
 </li>
 <li>
 <p>Categories: Financial</p>
 </li>
-<li>Sie können hier nur die Kategorien der Financials auswählen, da mit diesem Indikator 4 Financial-Märkte angesprochen werden. Sie können den Indikator aber in Financial- UND Commoditie-Charts laden. </li>
+<li>Sie können hier nur die Kategorien der Financials auswählen, da mit diesem Indikator 4 Financial-Märkte angesprochen werden. Sie können den Indikator aber in Financial- UND Commoditie-Charts laden.</li>
 <li>
 <p>Wählen Sie [True] für die Kategorien aus, für die die Positionen für die ausgewählten Märkte zusammengezählt und angezeigt werden sollen.</p>
 </li>
@@ -1356,14 +1252,14 @@ Print(&quot;The value of the Commodity Channel Index is: &quot; + CCI(14));
 <h2 id="cotcommercialindex">COTCommercialIndex</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_21">Beschreibung</h3>
-<p>Der CommercialIndex ist ein sehr aussagekräftiger COT-Indikator. Er setzt zwei der wichtigsten COT-Kenngrößen ins Verhältnis – die Nettopositionen der Commercials zum gesamten OpenInterest. Dieser Werte werden normalisiert und danach ausgegeben. Ein hoher Wert des CommercialIndex zeigt starkes Kaufverhalten der Commercials an, vice versa zeigt ein niedriger Wert starken Verkaufsdruck von Seiten der Commercials. </p>
-<p>Die Parameter sind ähnlich wie beim COTReport gestaltet. </p>
+<p>Der CommercialIndex ist ein sehr aussagekräftiger COT-Indikator. Er setzt zwei der wichtigsten COT-Kenngrößen ins Verhältnis – die Nettopositionen der Commercials zum gesamten OpenInterest. Dieser Werte werden normalisiert und danach ausgegeben. Ein hoher Wert des CommercialIndex zeigt starkes Kaufverhalten der Commercials an, vice versa zeigt ein niedriger Wert starken Verkaufsdruck von Seiten der Commercials.</p>
+<p>Die Parameter sind ähnlich wie beim COTReport gestaltet.</p>
 <p>Folgende Parameter stehen beim COTCommercialIndex zur Verfügung:</p>
 <ul>
 <li><strong>CotType</strong>: siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> – CotType</li>
 <li><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> – ReportType</li>
 <li><strong>StochasticPeriod:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a>  – ComparativePeriod</li>
-<li><strong>OpenInterestType:</strong> Hier können Sie zwischen [Native/Stochastic] wählen, ob die absoluten Werte oder die stochastischen Werte der Positionen der Commercials zur Berechnung herangezogen werden. Die Standardeinstellung ist „Native“, verändern Sie diese nicht, um die Aussagekraft des Indikators beizubehalten. </li>
+<li><strong>OpenInterestType:</strong> Hier können Sie zwischen [Native/Stochastic] wählen, ob die absoluten Werte oder die stochastischen Werte der Positionen der Commercials zur Berechnung herangezogen werden. Die Standardeinstellung ist „Native“, verändern Sie diese nicht, um die Aussagekraft des Indikators beizubehalten.</li>
 </ul>
 <h3 id="parameters_20">Parameters</h3>
 <p>angekündigt werden</p>
@@ -1384,27 +1280,27 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p>2) Producer[Short] + SwapDealer[Short] + SwapDealer[Spread] + ManagedMoney[Short] + ManagedMoney[Spread] + OtherReportables[Short] + OtherReportables[Spread] + NonReportable[Short] = OpenInterest</p>
 <p>Folgende Parameter stehen für den COTOpenInterestDisaggregated zur Verfügung:</p>
 <ul>
-<li><strong>Categories: Commodity</strong> </li>
-<li><strong>OpenInterest_Comm:</strong> (=gesamtes OpenInterest für Commodities) <ul>
+<li><strong>Categories: Commodity</strong></li>
+<li><strong>OpenInterest_Comm:</strong> (=gesamtes OpenInterest für Commodities)<ul>
 <li>[Absolute]:  gibt das OpenInterest als absolute Zahl aus</li>
-<li>[Stochastic]:  OpenInterest als Oszillator mit Werten zw. 0-100 </li>
+<li>[Stochastic]:  OpenInterest als Oszillator mit Werten zw. 0-100</li>
 <li>[None]: keine Ausgabe des OpenInterests.</li>
 </ul>
 </li>
-<li><strong>%ofOIProd Long/Short/Spread:</strong> (=Percent of OpenInterest for Producer Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll. Hierbei handelt es sich um den Anteil, den die Positionen der Producer am gesamten OpenInterest haben. Ein Wert von 0,5 bedeutet z.B. dass die Producer Long-Positionen in der Größe von 50% des gesamten OpenInterest aufgebaut haben. </li>
+<li><strong>%ofOIProd Long/Short/Spread:</strong> (=Percent of OpenInterest for Producer Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll. Hierbei handelt es sich um den Anteil, den die Positionen der Producer am gesamten OpenInterest haben. Ein Wert von 0,5 bedeutet z.B. dass die Producer Long-Positionen in der Größe von 50% des gesamten OpenInterest aufgebaut haben.</li>
 <li><strong>%ofOISwapDealer Long/Short/Spread:</strong> (=Percent of OpenInterest for SwapDealers Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.</li>
 <li><strong>%ofOIManagedMoney Long/Short/Spread</strong>: (=Percent of OpenInterest for ManagedMoney Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.</li>
-<li><strong>%ofOIComOther Long/Short/Spread:</strong> (=Percent of OpenInterest for Other Traders in Commodities Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll. </li>
+<li><strong>%ofOIComOther Long/Short/Spread:</strong> (=Percent of OpenInterest for Other Traders in Commodities Long/Short/Spread – Position) – wählen Sie [True], wenn dieser Wert angezeigt warden soll.</li>
 <li><strong>%ofOIComNonreportables Long/Short/Spread</strong>: (=Percent of OpenInterest for NonReportables in Commodites Long/Short/Spread – Position)  – wählen Sie [True], wenn dieser Wert angezeigt warden soll.</li>
 <li><strong>Categories: Financial</strong></li>
 <li>
 <p>Alle Parameter funktionieren analog zu den Einstellungen unter„Categories: Commodity“, der einzige Unterschied liegt in der Aufteilung in unterschiedliche Gruppen der Marktteilnehmer</p>
 </li>
 <li>
-<p><strong>Database:</strong> </p>
+<p><strong>Database:</strong></p>
 </li>
-<li><strong>CotType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - CotType </li>
-<li><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - ReportType </li>
+<li><strong>CotType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - CotType</li>
+<li><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - ReportType</li>
 <li><strong>StochasticPeriod:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> – ComparativePeriod</li>
 </ul>
 <h3 id="parameters_21">Parameters</h3>
@@ -1424,7 +1320,7 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p>Es gibt zwei Möglichkeiten das OpenInterest zu berechnen:</p>
 <p>1) Commercial[Long] + NonCommercial[Long] + NonCommercial[Spread] + NonReportable[Long] = OpenInterest
  2) Commercial[Short] + NonCommercial[Short] + NonCommercial[Spread] + NonReportable[Short] = OpenInterest</p>
-<p>Da es zu jedem Long-Kontrakt auch einen Marktteilnehmer auf der Short-Seite gibt, ergeben beide Berechnungsmethoden den exakt gleichen Wert. Zusatzinfo: Bei der CFTC wird nicht das OpenInterest berechnet - die CFTC kann das OpenInterest einsehen, indem alle am Markt offenen Kontrakte registriert und gezählt werden. Mit dadurch bekanntem OpenInterest können die NonReportable-Positionen berechnet werden, da die folgende Gleichung gelten muss: TotalReportable + NonReportable = OpenInterest. TotalReportable und OpenInterest sind bekannt, wodurch die NonReportables berechnet werden können. </p>
+<p>Da es zu jedem Long-Kontrakt auch einen Marktteilnehmer auf der Short-Seite gibt, ergeben beide Berechnungsmethoden den exakt gleichen Wert. Zusatzinfo: Bei der CFTC wird nicht das OpenInterest berechnet - die CFTC kann das OpenInterest einsehen, indem alle am Markt offenen Kontrakte registriert und gezählt werden. Mit dadurch bekanntem OpenInterest können die NonReportable-Positionen berechnet werden, da die folgende Gleichung gelten muss: TotalReportable + NonReportable = OpenInterest. TotalReportable und OpenInterest sind bekannt, wodurch die NonReportables berechnet werden können.</p>
 <p>Folgende Parameter sind beim OpenInterestLegacy verfügbar:</p>
 <ul>
 <li>
@@ -1434,7 +1330,7 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> – ReportType</p>
 </li>
 <li>
-<p><strong>StochasticPeriod:</strong> siehe  <a href="#COTReportLegacy"><em>COTReportLegacy</em></a>– ComparativePeriod </p>
+<p><strong>StochasticPeriod:</strong> siehe  <a href="#COTReportLegacy"><em>COTReportLegacy</em></a>– ComparativePeriod</p>
 </li>
 <li>
 <p><strong>IsNative:</strong> gibt das OpenInterest als absolute Zahl aus, so wie die Daten aus den Reports der CFTC ausgelesen werden.</p>
@@ -1443,7 +1339,7 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p><strong>IsStochastic:</strong> das OpenInterest wird als Oszillator mit Werten zwischen 0-100 ausgegeben und berechnet. Mit der StochasticPeriod können Sie einstellen, mit welcher Periode die Stochastik berechnet werden soll.</p>
 </li>
 <li>
-<p><strong>IsCommercialLong/IsCommercialShort:</strong> wählen Sie [True], wenn Sie die Daten der Commercials angezeigt habe möchten. Die ausgegebenen Werte sind Prozentzahlen, wenn Sie z.B. IsCommercialLong=True setzten, wird der Prozentsatz ausgegeben, den die Long-Positionen der Commercials am gesamten OpenInterest haben. Ein Wert von z.B. 0,5 bedeutet, dass das OpenInterest aus 50% Long-Positionen der Commercials besteht, was als sehr große Long-Position der Commercials angesehen werden kann. </p>
+<p><strong>IsCommercialLong/IsCommercialShort:</strong> wählen Sie [True], wenn Sie die Daten der Commercials angezeigt habe möchten. Die ausgegebenen Werte sind Prozentzahlen, wenn Sie z.B. IsCommercialLong=True setzten, wird der Prozentsatz ausgegeben, den die Long-Positionen der Commercials am gesamten OpenInterest haben. Ein Wert von z.B. 0,5 bedeutet, dass das OpenInterest aus 50% Long-Positionen der Commercials besteht, was als sehr große Long-Position der Commercials angesehen werden kann.</p>
 </li>
 <li>
 <p><strong>IsNonCommercialLong/IsNonCommercialShort:</strong> wenn Sie [True] wählen, wird der Prozentsatz ausgegeben, den die NonCommercial-LongPositionen bzw. NonCommercial-ShortPositionen am gesamten OpenInterest haben.</p>
@@ -1469,21 +1365,21 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_24">Beschreibung</h3>
 <p>Der COTReportDisaggregated greift auf die detaillierteren Disaggregated-Berichteder CFTC zu, die seit 2009 veröffentlicht werden und als Weiterentwicklung derLegacy-Berichte angesehen werden können. Die Notwendigkeit zu Verbesserungenresultierte aus dem sich stark verändernden und weiterentwickelten Marktumfeld seit der Einführung der COT-Berichte 1986.  </p>
-<p>Die Marktteilnehmer werden nun feiner unterschieden und sind in 5 Kategorien eingeteilt. Diese 5 Kategorien unterscheiden sich je nachdem, ob es sich um einen Commodity-Future oder einen Financial-Future handelt. </p>
+<p>Die Marktteilnehmer werden nun feiner unterschieden und sind in 5 Kategorien eingeteilt. Diese 5 Kategorien unterscheiden sich je nachdem, ob es sich um einen Commodity-Future oder einen Financial-Future handelt.</p>
 <p>Die <strong>commodity futures</strong> sind in folgende Gruppen aufgeteilt:</p>
 <ul>
-<li>Producer/Merchant/Processor/User </li>
-<li>SwapDealers o ManagedMoney </li>
-<li>Other Reportables </li>
-<li>Nonreportables </li>
+<li>Producer/Merchant/Processor/User</li>
+<li>SwapDealers o ManagedMoney</li>
+<li>Other Reportables</li>
+<li>Nonreportables</li>
 <li>Nähere Infos zur Klassifizierung der Commodities finden Sie <a href="http://www.cftc.gov/idc/groups/public/@commitmentsoftraders/documents/file/disaggregatedcotexplanatorynot.pdf">HIER</a></li>
 </ul>
 <p>Bei den <strong>financial futures</strong> gibt es folgende Gruppen:</p>
 <ul>
-<li>Dealer/Intermediary </li>
-<li>AssetManager/Institutional </li>
-<li>Leveraged Funds </li>
-<li>Other Reportables </li>
+<li>Dealer/Intermediary</li>
+<li>AssetManager/Institutional</li>
+<li>Leveraged Funds</li>
+<li>Other Reportables</li>
 <li>Nonreportabes</li>
 <li>Nähere Infos zur Klassifizierung der Financials finden Sie <a href="http://www.cftc.gov/idc/groups/public/@commitmentsoftraders/documents/file/tfmexplanatorynotes.pdf">HIER</a></li>
 </ul>
@@ -1494,11 +1390,11 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p>Wählen Sie [True] für die Gruppen, die Sie im Chart angezeigt bekommen möchten. Wenn Sie einen Commodity-Chart geöffnet haben, werden nur die Einstellungen unter „Categories Commodity“ beachtet, vice versa wenn Sie einen Financial-Chart geöffnet haben.</p>
 </li>
 <li>
-<p><strong>Database:</strong> </p>
+<p><strong>Database:</strong></p>
 </li>
-<li><strong>CotType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - CotType </li>
-<li><strong>IndexType::</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - IndexType </li>
-<li><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - ReportType </li>
+<li><strong>CotType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - CotType</li>
+<li><strong>IndexType::</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - IndexType</li>
+<li><strong>ReportType:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> - ReportType</li>
 <li>
 <p><strong>StochasticPeriod:</strong> siehe <a href="#COTReportLegacy"><em>COTReportLegacy</em></a> – ComparativePeriod</p>
 </li>
@@ -1525,7 +1421,7 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p>Dieser Indikator ist das Herzstück der COT-Analyse, mit dem direkt die reinen Daten angezeigt werden können, die der Indikator aus den wöchentlich veröffentlichten Berichten der CFTCC (www.cftc.gov/CommitmentsofTraders) ausliest. Die veröffentlichten Reports können von jedem Marktteilnehmer eingesehen werden. Die Legacy-Daten entsprechen den Short-Reports auf der CFTC-Website. Folgende Parameter sind beim COTReportLegacy verfügbar:</p>
 <ul>
 <li>
-<p><strong>Comparative Period:</strong> mit dieser Einstellung können Sie eine Vergleichsperiode eingeben, mit der die stochastische Darstellung berechnet wird (=StochasticPeriod). Dieser Parameter wird nur angesteuert, wenn auf „IndexType = Stochastic“ gestellt ist. </p>
+<p><strong>Comparative Period:</strong> mit dieser Einstellung können Sie eine Vergleichsperiode eingeben, mit der die stochastische Darstellung berechnet wird (=StochasticPeriod). Dieser Parameter wird nur angesteuert, wenn auf „IndexType = Stochastic“ gestellt ist.</p>
 </li>
 <li>
 <p><strong>CotType:</strong> wählen Sie unter [All/Other/Old] welche Kontrakte zur Anzeige genutzt werden sollen, nähere Infos finden Sie <a href="http://www.cftc.gov/MarketReports/CommitmentsofTraders/ExplanatoryNotes/index.htm">HIER</a></p>
@@ -1533,15 +1429,15 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <li>
 <p><strong>IndexType:</strong> wählen Sie zwischen [Absolute/Stochastic], wie die Werte ausgegeben werden sollen.</p>
 </li>
-<li>Absolute = die Werte werden in ganzen Zahlen ausgegeben, genauso wie Sie aus den Reports gelesen werden. </li>
+<li>Absolute = die Werte werden in ganzen Zahlen ausgegeben, genauso wie Sie aus den Reports gelesen werden.</li>
 <li>
-<p>Stochastic =  die Werte werden als Oszillator mit Werten zwischen 0-100 ausgegeben und berechnet. Mit der ComparativePeriod können Sie einstellen, mit welcher Periode die Stochastik berechnet werden soll. </p>
+<p>Stochastic =  die Werte werden als Oszillator mit Werten zwischen 0-100 ausgegeben und berechnet. Mit der ComparativePeriod können Sie einstellen, mit welcher Periode die Stochastik berechnet werden soll.</p>
 </li>
 <li>
 <p><strong>ReportType:</strong> : unter diesem Parameter wählen Sie, ob die Daten aus den Reports nur für Futures oder für Futures+Optionen gelesen werden sollen.</p>
 </li>
 <li>
-<p><strong>ReturnType:</strong> </p>
+<p><strong>ReturnType:</strong></p>
 </li>
 <li>Netto: gibt die Nettoposition (=LongKontrakte – ShortKontrakte) der gewählten Marktteilnehmer aus</li>
 <li>Long/Short: gibt die Anzahl der Long bzw. Short-Kontrakte der gewählten Marktteilnehmer aus</li>
@@ -1572,7 +1468,7 @@ Auch die Berechnung erfolgt analog zu den Legacy-Berichten, da es zu jedem LongK
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_26">Beschreibung</h3>
 <p>Dieser Indikator versucht mit einem speziellen Algorithmus, das Verhalten der Commercials in Aktienmärkten zu simulieren. Die Werte können Absolut oder als Stochastik ausgegeben werden. Die Interpretation dieses Indikators erfolgt analog zur Interpretation der Commercial-Daten in den Standard-COT-Indikatoren. Die Ausgabe dieses Indikators sollte mit anderen Indikatoren bestätigt werden. Sie
-müssen sich bewusst sein, dass es sich nicht um echte COT Daten von Marktteilnehmern handelt, sondern um Berechnungen aus den Preisdaten. Um die Aussagekraft des COTStockDummy zu verbessern, bietet sich eine Analyse in Kombination mit dem LargeTraderActivity-Indikator an. Wie bei den COT-Daten ist auch für den COTStockDummy die Analyse im Wochenchart zu empfehlen. </p>
+müssen sich bewusst sein, dass es sich nicht um echte COT Daten von Marktteilnehmern handelt, sondern um Berechnungen aus den Preisdaten. Um die Aussagekraft des COTStockDummy zu verbessern, bietet sich eine Analyse in Kombination mit dem LargeTraderActivity-Indikator an. Wie bei den COT-Daten ist auch für den COTStockDummy die Analyse im Wochenchart zu empfehlen.</p>
 <p>Folgende Parameter stehen für den COTStockDummy zur Verfügung:</p>
 <ul>
 <li><strong>ComparativePeriod:</strong> Input-Periode für die Stochastische Berechnung</li>
@@ -1609,15 +1505,15 @@ müssen sich bewusst sein, dass es sich nicht um echte COT Daten von Marktteilne
 <p>angekündigt werden</p>
 <h2 id="darvas-boxes">Darvas Boxes</h2>
 <h3 id="beschreibung_28">Beschreibung</h3>
-<p>Die Darvas Boxes sind ein Teil der Handelsstrategie des ungarischen Tänzers Nicolas Darvas. Im stark steigenden Aktienmarkt 1957/58 generierte Darvas mit seinem System innerhalb von 18 Monaten aus etwa 20.000 US$ mehr als 2.000.000 US$. Vorgestellt wurde das Handelssystem erstmals in seinem Buch "How I made 2.000.000$ in the Stock Market". 
+<p>Die Darvas Boxes sind ein Teil der Handelsstrategie des ungarischen Tänzers Nicolas Darvas. Im stark steigenden Aktienmarkt 1957/58 generierte Darvas mit seinem System innerhalb von 18 Monaten aus etwa 20.000 US$ mehr als 2.000.000 US$. Vorgestellt wurde das Handelssystem erstmals in seinem Buch "How I made 2.000.000$ in the Stock Market".
 Eine Box besteht aus einer oberen ("Deckel") und einer unteren Begrenzung ("Boden"). Jede neue Box setzt auf der vorhergeneden Box auf, so dass eine treppenförmige Darstellung entsteht.
 Im ersten Schritt wird der "Deckel" bestimmt.  Wenn eine Aktie an drei aufeinanderfolgenden Tagen kein neues Hoch markiert, wird dieses zurückliegende Hoch die obere Begrenzung der Box.
-Anschließend wird der "Boden" der Box bestimmt, der sich als niedrigster Kurs ergibt, auf den die Aktie nachgab. Dieser Tiefstkurs darf dann an den drei Folgetagen nicht mehr unterschritten werden. </p>
+Anschließend wird der "Boden" der Box bestimmt, der sich als niedrigster Kurs ergibt, auf den die Aktie nachgab. Dieser Tiefstkurs darf dann an den drei Folgetagen nicht mehr unterschritten werden.</p>
 <h3 id="interpretation_15">Interpretation</h3>
-<p>Das System gleicht einem trendfolgenden Channel-Breakout-System. 
+<p>Das System gleicht einem trendfolgenden Channel-Breakout-System.
 Sobald der Kurs aus eine dieser Boxen ausbricht, entsteht ein Kauf- bzw. Verkauf-Signal.</p>
 <p>Wenn der Kurs (in einer Long-Position) durch eine untere Begrenzung fällt, wird die Position geschlossen.</p>
-<p>Für Short-Positionen ist der Ablauf analog. </p>
+<p>Für Short-Positionen ist der Ablauf analog.</p>
 <h3 id="erlauterung">Erläuterung</h3>
 <p>Das anfängliche Top der Box ist der Hoch vom Tag 1. Zuerst sollten Sie ein neues Hoch finden, das höher als das Hoch vom Tag 1 sein sollte. Es macht nichts, wann das Hoch kommt – auch nach 5 Tagen. Wird allerdings der Boden festgestellt, ist die Box abgeschlossen.</p>
 <p>Um den Boden festzustellen, muss der Tief nach dem Tag 2 des letzten Tages sein, an dem das Box-Top festgestellt wurde, und sollte tiefer als der Tief des ursprünglichen Tiefes vom Tag 1 sein.</p>
@@ -1695,8 +1591,8 @@ Print(&quot;The current –DM value is: &quot; + DM(14).DiMinus[0]);
 
 <h2 id="donchian-channel">Donchian Channel</h2>
 <h3 id="beschreibung_30">Beschreibung</h3>
-<p>Der Donchian Channel ist unter dem Begriff 4-Wochen-Regel bekannt geworden und funktioniert folgendermaßen: Wenn der aktuelle Kurs den Höchstkurs der letzten vier Wochen übersteigt, wird eine Long-Position eröffnet. Besteht zur gleichen Zeit eine Short-Position, wird diese geschlossen. Fällt der Kurs unter den Tiefstkurs der letzten vier Wochen, wird eine Long-Position geschlossen bzw. eine Short-Position aufgebaut. 
-Der Handelsansatz des Donchian Channel ist ein reines Trendfolgesystem und setzt das Prinzip „Bei Stärke kaufen, bei Schwäche verkaufen“ direkt um. Es ist ein Breakout System und wurde von den "Turtles" verwendet. 
+<p>Der Donchian Channel ist unter dem Begriff 4-Wochen-Regel bekannt geworden und funktioniert folgendermaßen: Wenn der aktuelle Kurs den Höchstkurs der letzten vier Wochen übersteigt, wird eine Long-Position eröffnet. Besteht zur gleichen Zeit eine Short-Position, wird diese geschlossen. Fällt der Kurs unter den Tiefstkurs der letzten vier Wochen, wird eine Long-Position geschlossen bzw. eine Short-Position aufgebaut.
+Der Handelsansatz des Donchian Channel ist ein reines Trendfolgesystem und setzt das Prinzip „Bei Stärke kaufen, bei Schwäche verkaufen“ direkt um. Es ist ein Breakout System und wurde von den "Turtles" verwendet.
 Bei diesem Indikator werden die Höchst- und Tiefstkurse der letzten n-Tage als Linien über und unter den Kursverlauf gezeichnet. Die vier Wochen entsprechen 20 Handelstagen.</p>
 <h3 id="interpretation_17">Interpretation</h3>
 <p><strong>Früher</strong>
@@ -1771,7 +1667,7 @@ Print(&quot;The current DMI value is: &quot; + DMI(20)[0]);
 <h2 id="double-stochastics-dss">Double Stochastics (DSS)</h2>
 <h3 id="beschreibung_32">Beschreibung</h3>
 <p>Die Double Smothed Stochastic (DSS) wurde zuerst von W. Blau vorgestellt. Es handelt sich um einen doppelt geglätteten Stochastic-Indikator. Einige Zeit später wurde von W. Bressert eine weitere Variante einer doppelt geglätteten Stochastik vorgestellt. Diese auch als DSS Bressert bekannte Variante konnte die Qualität der Signale gegenüber der Variante von Blau deutlich verbessern.  Der Indikator reagiert sensibler auf kleinere Kursbewegungen und erzeugt mehr Signale als die Version von W. Blau. Die Bressert-Version taucht wesentlich deutlicher in die Extremzonen ein als die Blau-Version.</p>
-<p>Von der Blau-Version existiert eine weitere Variante, die mit 2 EMA's berechnet wird. Diese Version ist in AgenaTrader mit "Blau2" bezeichnet. </p>
+<p>Von der Blau-Version existiert eine weitere Variante, die mit 2 EMA's berechnet wird. Diese Version ist in AgenaTrader mit "Blau2" bezeichnet.</p>
 <p>Unabhängig von der konkreten Berechnungsvariante bewegt sich der Indikator DSS immer in einer Skala von 0 bis 100. Für die Extremzonen gelten die gleichen Werte wie bei Lanes Original-Stochastik und den Blau-Versionen. Der obere Extrembereich wird bei 80 und der untere Extrembereich bei 20 festgelegt. Diese Werte können variiert werden. Es kann oft sehr profitabel sein, die Extremzonen zu verändern. Für diverse Anwendungen ist es sinnvoll, eine zusätzliche Linie als Mittellinie bei 50 einzuzeichnen.
 Die Glättung hat in Bresserts Version nicht die herausragende Bedeutung wie bei Blau. Das soll heißen, der Aufwand zum Auffinden der optimalen Einstellung kann gering gehalten werden. Bei den Blau-Versionen ist es wichtiger, verschiedene Parameter zu testen. (Quelle: z.T. tradesignalonline)</p>
 <h3 id="interpretation_19">Interpretation</h3>
@@ -1810,8 +1706,8 @@ DoubleStochastics(IDataSeries inSeries, int period, DoubleStochasticsMode mode, 
 <p>inSeries        Eingangsdatenreihe für den Indikator</p>
 <p>period      Anzahl der Bars, die in die Berechnung einbezogen werden. (default: 10)</p>
 <p>mode        Berechnungsmethode, mögliche Werte sind: Blau, Blau2 und Bressert. (default: Bressert)</p>
-<p>EMA-Period1 Periode für den EMA in der Berechnung nach Bressert. (default: 2) </p>
-<p>EMA-Period2 Periode für den zweiten EMA in der Berechnung für Variante Blau2. (default: 5) </p>
+<p>EMA-Period1 Periode für den EMA in der Berechnung nach Bressert. (default: 2)</p>
+<p>EMA-Period2 Periode für den zweiten EMA in der Berechnung für Variante Blau2. (default: 5)</p>
 <h3 id="darstellung_34">Darstellung</h3>
 <p><img alt="Double Stochastics (DSS)" src="../media/DSS.jpg" /></p>
 <h3 id="beispiel_32">Beispiel</h3>
@@ -1823,7 +1719,7 @@ Print(&quot;The value of the DSS Bressert %K is: &quot; + DoubleStochastics(10, 
 <h3 id="beschreibung_33">Beschreibung</h3>
 <p>Hyperlink+Keywords
 Der Dynamic Momentum Index (DMIndex), wurde von Tushar Chande entwickelt. Es handelt sich hierbei um eine spezielle Variante des Relative Strength Index (RSI).</p>
-<p>Chande veränderte den Dynamic Momentum Index so, dass dieser die Periodeneinstellung je nach Marktsituation automatisch selbst verändert. Dies erreichte er durch die Kopplung des RSI an eine Volatilitätskomponente. Diese Volatilitätskomponente des Dynamic Momentum Index bestimmt sich aus einer 5-tägigen Standardabweichung der Schlusskurse, die in das Verhältnis zu einem 10-tätigen Durchschnitt einer 5-tägigen Standardabweichung gesetzt wird. </p>
+<p>Chande veränderte den Dynamic Momentum Index so, dass dieser die Periodeneinstellung je nach Marktsituation automatisch selbst verändert. Dies erreichte er durch die Kopplung des RSI an eine Volatilitätskomponente. Diese Volatilitätskomponente des Dynamic Momentum Index bestimmt sich aus einer 5-tägigen Standardabweichung der Schlusskurse, die in das Verhältnis zu einem 10-tätigen Durchschnitt einer 5-tägigen Standardabweichung gesetzt wird.</p>
 <p>Als Basis werden werden beim RSI üblicherweise 14 Tage zur Berechnung gewählt, diese Konstante wird nun durch den Volatilitätsquotienten (V) geteilt. Das Ergebnis wird nun mit einem Minimal- und einem Maximalwert verglichen und darf nicht außerhalb des festgelegten Bereichs von minimal 5 Tagen und maximal 30 Tagen liegen.</p>
 <h3 id="interpretation_20">Interpretation</h3>
 <p>Zeigt der Dynamic Momentum Index den Überkauftbereich an, so wird auf fallende Kurse gesetzt, zeigt der Dynamic Momentum Index den Überverkauftbereich an, so wird auf steigende Kurse gesetzt. Ein solches Handeln ist sinnvoll, wenn andere Indikatoren eine trendlose Phase anzeigen, es soll also gegen den Trend gehandelt werden. Während einer starken Trendphase empfiehlt sich ein Handeln in Trendrichtung, in der Phase eines Aufwärtstrends wird auf eine Überverkauftsituation gewartet bis ein Kaufsignal erfolgt.</p>
@@ -1939,7 +1835,7 @@ FOSC(IDataSeries inSeries, int period)[int barsAgo]
 <h3 id="darstellung_38">Darstellung</h3>
 <p><img alt="Forecast Oscillator (FOSC)" src="../media/FOSC.jpg" /></p>
 <h3 id="beispiele">Beispiele</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Forecast Oscillator (FOSC) 
+<pre><code class="cs">//Ausgabe des Wertes für den Forecast Oscillator (FOSC)
 Print(&quot;The current value for the Forecast Oscillator is: &quot; + FOSC(14)[0]);
 
 //Bestimmung der zukünftigen Marktrichtung mit dem FOSC
@@ -2110,7 +2006,7 @@ Der mit dem Pfeil markierte Bar öffnet genau am Tief des roten Außenstabes.
 Würde das Open der grünen Kerze nur einen Tick tiefer liegen, wäre der markierte Bar kein Innenstab und damit der rote Bar auch kein Außenstab.
 Die Parameter "ToleranceUnit" und "ToleranceValue" legen einen Wert fest, um den die Innenstäbe die Hoch/Tief-Spanne ihres Außenstabes noch über- bzw. unterschreiten dürfen, um dennoch als Innenstäbe zu gelten.
 Diese Toleranz kann in Ticks, Punkten, Prozent oder einem ATR-Vielfachen angegeben werden.</p>
-<p>In der Defaulteinstellung ist der Parametzer "Tolerance" =  0. </p>
+<p>In der Defaulteinstellung ist der Parametzer "Tolerance" =  0.</p>
 <p><img alt="InsideBarsMT" src="../media/image35.png" /></p>
 <h3 id="beispiel_38">Beispiel</h3>
 <pre><code class="cs">double StopPrice;
@@ -2355,7 +2251,7 @@ Print(&quot;Es ist eine Short-Umkehrformation aufgetreten.&quot;);
 <h2 id="klingervolumeoscillator">KlingerVolumeOscillator</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_48">Beschreibung</h3>
-<p>Der KlingerVolumeOszillator ist ein technischer Indikator, der von Stephen Klinger entwickelt wurde, um Langzeit-Trends des Geldflusses zu bestimmen. Gleichzeitig ist der Indikator empfindlich genug, um auch kurzzeitige Fluktuationen festzustellen und gibt dem Trader so die Möglichkeit, auch Kurzfrist-Reversals im Markt aufzuspüren. Der Indikator vergleicht das ein- und ausfließende Volumen eines Instruments mit dessen Preisbewegungen und wird als Oszillator ausgegeben. Eine Signallinie (13-Perioden gleitender Durchschnitt) wird zur Signalgenerierung verwendet. Auch Divergenzen im KlingerVolumeOscillator im Vergleich zur Preisbewegung können für Ein- und Ausstiegsentscheidungen genutzt werden. Ein bullisches Signal entsteht, wenn der KlingerVolumeOscillator beginnt zu steigen, während der Preis weiter fällt, vice versa für ein bearisches Signal. </p>
+<p>Der KlingerVolumeOszillator ist ein technischer Indikator, der von Stephen Klinger entwickelt wurde, um Langzeit-Trends des Geldflusses zu bestimmen. Gleichzeitig ist der Indikator empfindlich genug, um auch kurzzeitige Fluktuationen festzustellen und gibt dem Trader so die Möglichkeit, auch Kurzfrist-Reversals im Markt aufzuspüren. Der Indikator vergleicht das ein- und ausfließende Volumen eines Instruments mit dessen Preisbewegungen und wird als Oszillator ausgegeben. Eine Signallinie (13-Perioden gleitender Durchschnitt) wird zur Signalgenerierung verwendet. Auch Divergenzen im KlingerVolumeOscillator im Vergleich zur Preisbewegung können für Ein- und Ausstiegsentscheidungen genutzt werden. Ein bullisches Signal entsteht, wenn der KlingerVolumeOscillator beginnt zu steigen, während der Preis weiter fällt, vice versa für ein bearisches Signal.</p>
 <h3 id="parameters_42">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_48">Rückgabewert</h3>
@@ -2497,18 +2393,18 @@ Print(&quot;Das tiefste Tief der letzten 14 Bars ist &quot; + LowestLowPrice(14)
 
 <h2 id="macd">MACD</h2>
 <h3 id="beschreibung_54">Beschreibung</h3>
-<p>Der Moving Average Convergence/Divergence (MACD) wurde Ende der siebziger Jahre (des vergangenen Jahrhunderts) von Gerald Appel erfunden und ist einer der beliebtesten Instrumente der technischen Analyse geworden. 
+<p>Der Moving Average Convergence/Divergence (MACD) wurde Ende der siebziger Jahre (des vergangenen Jahrhunderts) von Gerald Appel erfunden und ist einer der beliebtesten Instrumente der technischen Analyse geworden.
 Laut Gerald Appel ist „der MACD ein Indikator für alle Zeitebenen. Mit Monatsdaten kann er zur Analyse längerfristiger Börsentrends herangezogen werden, mit Wochen- oder Tagesdaten für mittel- und kürzerfristige Trends und mit Intraday-Daten sogar für stündlichen oder minütliche Marktentwicklungen. Damit ist er auch für den kurzfristigen Tageshandel geeignet. Der Indikator ist häufig in der Lage, genaue Signale für den Marktein- und ausstieg zu geben. Eine seiner stärksten Eigenschaften ist seine Fähigkeit, das nahende Ende größerer mittelfristiger Kursrückgänge festzustellen, die zugleich auch günstige Zeitpunkte für den Markteintritt darstellen.“</p>
 <p>Die Unterscheidung zum Price Oscillator liegt im Verfahren der Durchschnittsberechnung und der Art der Signalerzeugung, sonst gelten dieselben Regeln. Statt arithmetischer Durchschnitte werden beim MACD exponentielle Durchschnitte (EMA) verwendet. (Quelle: VTAD)</p>
 <h3 id="interpretation_30">Interpretation</h3>
-<p>Der MACD liefert klare Signale hinsichtlich der Trendrichtung und der Trendstärke mit Überkauft-/Überverkauft-Zonen, er generiert Kauf- und Verkaufssignale und er liefert Signale für einen möglicherweise bevorstehenden Trendwechsel. 
+<p>Der MACD liefert klare Signale hinsichtlich der Trendrichtung und der Trendstärke mit Überkauft-/Überverkauft-Zonen, er generiert Kauf- und Verkaufssignale und er liefert Signale für einen möglicherweise bevorstehenden Trendwechsel.
 Trendrichtung:
 Ein steigender MACD zeigt einen Aufwärtstrend an, ein fallender MACD zeigt einen Abwärtstrend an.
 Trendstärke:
-Der Abstand des MACD von der Mittellinie gibt Hinweise auf die Stärke des Trends. Die Trendstärke erhöht sich, je weiter sich der MACD von seiner Mittellinie entfernt. Nähert sich der MACD der Mittellinie an, wird der Trend schwächer. Ein sehr großer Abstand weist auf Überkauft-/Überverkauft-Phasen hin. Da der MACD nicht in einer festen Skala von z.B. 0-100 wie der RSI oder die Stochastik angezeigt wird, muss der Begriff „sehr großer Abstand“ über den historischen Kursverlauf definiert werden. 
+Der Abstand des MACD von der Mittellinie gibt Hinweise auf die Stärke des Trends. Die Trendstärke erhöht sich, je weiter sich der MACD von seiner Mittellinie entfernt. Nähert sich der MACD der Mittellinie an, wird der Trend schwächer. Ein sehr großer Abstand weist auf Überkauft-/Überverkauft-Phasen hin. Da der MACD nicht in einer festen Skala von z.B. 0-100 wie der RSI oder die Stochastik angezeigt wird, muss der Begriff „sehr großer Abstand“ über den historischen Kursverlauf definiert werden.
 Ein Kaufsignal wird generiert, wenn die MACD-Linie die Richtung von abwärts gerichtet nach aufwärts gerichtet ändert.
-Ein Verkaufssignal wird generiert, wenn die MACD-Linie die Richtung von aufwärts gerichtet nach abwärts gerichtet ändert. 
-Die Bestätigung des Kauf- bzw. Verkaufsignals erfolgt, wenn die MACD-Linie die Signallinie kreuzt. 
+Ein Verkaufssignal wird generiert, wenn die MACD-Linie die Richtung von aufwärts gerichtet nach abwärts gerichtet ändert.
+Die Bestätigung des Kauf- bzw. Verkaufsignals erfolgt, wenn die MACD-Linie die Signallinie kreuzt.
 Die generelle Regel lautet: Kreuzt die MACD-Linie die Signallinie von unten nach oben, wird das Kaufsignal bestätigt.
 Kreuzt die MACD-Linie die Signallinie von oben nach unten, wird das Verkaufsignal bestätigt.</p>
 <h3 id="weitere-informationen_22">Weitere Informationen</h3>
@@ -2554,7 +2450,7 @@ Print(&quot;Die Differenz zw. MACD und Signallinie beträgt:&quot; + MACD(12,26,
 <p>Handeslsignale entstehen, wenn die obere bzw. untere Grenze des Bandes berührt, oder das Band verlassen wird. Hierbei sind zwei Varianten zu unterscheiden:
 1. Handelssignal innerhalb der Envelopes
 - Kauf = Bestätigung des unteren Bandes
-    - Verkauf = Bestätigung des oberen Bandes (jedoch kein Verkauf bei gleichzeitig steigendem Gleitenden Durchschnitt) 
+    - Verkauf = Bestätigung des oberen Bandes (jedoch kein Verkauf bei gleichzeitig steigendem Gleitenden Durchschnitt)
 2. Handelssignal außerhalb der Envelopes
 - Kauf = Ausbruch durch das obere Band (Verkauf dieser Position bei Durchbruch durch den Gleitenden Durchschnitt nach unten)
     - Verkauf = Ausbruch durch das untere Band (Rückkauf dieser Position bei Durchbruch durch den Gleitenden Durchschnitt nach oben)
@@ -2608,7 +2504,7 @@ Print(&quot;untere Band des MAEnvelope: &quot; + MAEnvelopes(1.5, MAEnvelopesMAT
 <h3 id="beschreibung_56">Beschreibung</h3>
 <p>Der Market Phases-Indikator ist ein weiterer wichtiger Bestandteil des Technical Analysis-Pakets, und beruht auf integrierte Trenderkennung für die unterschiedlichen relevanten Handelsmarktphasen.</p>
 <p>Die Marktphasen werden nach der Buchserie „Der Händler“ von Michael Voigt definiert.</p>
-<p><strong>Wichtiger Hinweis</strong> 
+<p><strong>Wichtiger Hinweis</strong>
 Marktphase-Indikatoren sind im Bezug auf die Historien sehr sensibel, für gute Ergebnisse müssen mindestens 2000 Intraday-Candles geladen werden.</p>
 <p><strong>Phase 3:</strong></p>
 <p>Der Markt ist von der Bewegung weit entfernt; eine Korrektur steht unmittelbar bevor.</p>
@@ -2651,7 +2547,7 @@ Marktphase-Indikatoren sind im Bezug auf die Historien sehr sensibel, für gute 
 <p>Bei der Verwendung von Marktphasen innerhalb von AgenaScript bietet der Indikator eine Datenserie an, die die oben genannten Werte von +/-3, 4, 5, 5.1, 5.2 hat.</p>
 <p>Sie können den Indikator als Filter verwenden, indem Sie die Signale von anderen Indikatoren hernehmen, wenn diese innerhalb den Marktphasen 55 oder 66 (long) sind:</p>
 <p><img alt="Condition Escort" src="../media/MarketPhases.png" /></p>
-<p><strong>Wichtiger Hinweis</strong> 
+<p><strong>Wichtiger Hinweis</strong>
 Der Scanner und Chart verwenden eine unterschiedliche Berechnung der Historie. Da Markttechnik Indikatoren sehr Bar sensibel sind, können wir nicht zu 100% garantieren, dass die Ergebnisse im Chart und im Scanner dieselben sind. Wir empfehlen die Daten des Scanners gelegentlich neu zu laden.</p>
 <p>Wenn Sie den Market Phases (auch Pro und Advanced Versionen) Indikator in Verbindung mit dem Scanner nutzen möchten, sind folgende Einstellungen erforderlich:
 - Charteinstellung:
@@ -2700,8 +2596,8 @@ phase5Level = 0.5 (0.5 = 50%)</p>
 <h2 id="marketvalue">MarketValue</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="description">Description</h3>
-<p>Dieser Indikator vergleicht den Wert eines Marktes zum aktuellen Preis von Gold oder dem Dollar Index. Es werden also Märkte in Relation zum Goldpreis oder dem Dollar Index gesetzt, wodurch sehr gut Über- bzw. Unterbewertungen in Instrumenten festgestellt werden können. Niedrige Werte des MarketValues bedeuten, dass ein Markt relativ zu Gold bzw. dem DollarIndex günstig ist, vice versa bedeutet ein hoher Wert das der betrachtete Markt relativ teuer ist. </p>
-<p>Grundsätzlich sollten Commodities mit dem Goldpreis verglichen werden und Financials mit dem DollarIndex. Je nach Marktumfeld kann es aber auch sinnvoll sein, von dieser Regel abzuweichen. </p>
+<p>Dieser Indikator vergleicht den Wert eines Marktes zum aktuellen Preis von Gold oder dem Dollar Index. Es werden also Märkte in Relation zum Goldpreis oder dem Dollar Index gesetzt, wodurch sehr gut Über- bzw. Unterbewertungen in Instrumenten festgestellt werden können. Niedrige Werte des MarketValues bedeuten, dass ein Markt relativ zu Gold bzw. dem DollarIndex günstig ist, vice versa bedeutet ein hoher Wert das der betrachtete Markt relativ teuer ist.</p>
+<p>Grundsätzlich sollten Commodities mit dem Goldpreis verglichen werden und Financials mit dem DollarIndex. Je nach Marktumfeld kann es aber auch sinnvoll sein, von dieser Regel abzuweichen.</p>
 <p>Folgende Parameter stehen für den MarketValue zur Verfügung:</p>
 <ul>
 <li>
@@ -2714,7 +2610,7 @@ phase5Level = 0.5 (0.5 = 50%)</p>
 <p><strong>EMA2:</strong>  hierbei handelt es sich um eine EMA-Periode, die zur Berechnung der Daten notwendig ist. Sofern Sie nicht detaillierte Infos zur Funktionsweise dieses Indikators besitzen, belassen Sie diese Periode bitte in den Standardeinstellungen. (Standardwert = 3)</p>
 </li>
 </ul>
-<p>Die Verwendung des MarketValue-Indikators im ConditionEscort ist aktuell noch nicht möglich, da darin ein Multi-Instrument-Indikator nicht abgebildet werden kann. Da der MarketValue die Preisdaten vom aktuellen Chart und ebenso von Gold bzw dem DollarIndex benötigt, handelt es sich hierbei um einen Multi-Instrument Indikator, der wie erwähnt aktuell im ConditionEscort nicht verwendet werden kann. </p>
+<p>Die Verwendung des MarketValue-Indikators im ConditionEscort ist aktuell noch nicht möglich, da darin ein Multi-Instrument-Indikator nicht abgebildet werden kann. Da der MarketValue die Preisdaten vom aktuellen Chart und ebenso von Gold bzw dem DollarIndex benötigt, handelt es sich hierbei um einen Multi-Instrument Indikator, der wie erwähnt aktuell im ConditionEscort nicht verwendet werden kann.</p>
 <h3 id="parameters_48">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_56">Rückgabewert</h3>
@@ -2846,7 +2742,7 @@ Print(&quot;Der aktuelle Wert für DEMA ist &quot; + DEMA(20)[0]);
 <p>Der Exponential Moving Average (EMA) ist einem einfachen gleitenden Durchschnitt, wie z.B. dem SMA oder dem MACD sehr ähnlich. Im Unterschied zu den einfachen gleitenden Durchschnitten wird in der Berechnung den aktuelleren Kursdaten eine hohere Bedeutung beigemessen.</p>
 <h3 id="interpretation_35">Interpretation</h3>
 <p>Der EMA wird von vielen Trader in den unterschiedlichsten Zeiteinheiten benutzt. Bedeutung erhält der EMA insbesondere in 15, 60 und 240-Minuten-Charts. Sehr beliebt ist auch die EMA-200-Linie.
-Steigt der Kurs eines Wertes stark an und entfernt sich deutlich von der jeweilig zuzuordnenden EMA-Linie, so ist es möglich, mit einer der Marktrichtung entgegengesetzten Position (im Bsp. einer Shortposition) von der wahrscheinlichen Rückkehr des Kurse an seinen Durchschnitt zu profitieren. 
+Steigt der Kurs eines Wertes stark an und entfernt sich deutlich von der jeweilig zuzuordnenden EMA-Linie, so ist es möglich, mit einer der Marktrichtung entgegengesetzten Position (im Bsp. einer Shortposition) von der wahrscheinlichen Rückkehr des Kurse an seinen Durchschnitt zu profitieren.
 Zur generellen Interpretation von gleitenden Durchschnitten siehe auch unter Moving Averages.</p>
 <h3 id="verwendung_62">Verwendung</h3>
 <pre><code class="cs">EMA(int period)
@@ -2990,7 +2886,7 @@ Print(&quot;Der aktuelle Wert für MAMA ist &quot; + MAMA(0.5, 0.05).Fama[0]);
 
 <h2 id="sma-simple-moving-average">SMA - Simple Moving Average</h2>
 <h3 id="beschreibung_65">Beschreibung</h3>
-<p>Der SMA ist die "Mutter aller gleitenden Durchschnitte" und stellt die einfachste Möglichkeit dar, einem Chartbild Informationen zum bereinigten Trendverlauf zu entnehmen. Von der mathematischen Seite her betrachtet handelt es sich um das arithmetische Mittel einer Zahlenreihe individueller Länge. 
+<p>Der SMA ist die "Mutter aller gleitenden Durchschnitte" und stellt die einfachste Möglichkeit dar, einem Chartbild Informationen zum bereinigten Trendverlauf zu entnehmen. Von der mathematischen Seite her betrachtet handelt es sich um das arithmetische Mittel einer Zahlenreihe individueller Länge.
 Der Begriff “gleitend” leitet sich von der Tatsache ab, dass bei dieser Form der Durchschnittsbildung immer der älteste Kurs dem aktuell hinzugekommenen “geopfert” wird. Grundsätzlich festzustellen ist dass, die Länge der Periodenangabe die Intensität der Glättung beeinflusst. Kürzere Betrachtungszeiträume (beispielsweise 10 Tage) führen dazu, dass der Indikator dem Kursverlauf relativ eng folgt, die berühmte 200-Tage-Linie (also SMA mit Periodenangabe 200 Tage) weist hingegen eine sehr große Trägheit auf.
 Der Simple Moving Avergage weist gewisse Nachteile auf weshalb auch diverse Abwandlungen des Orginalkonzeptes im Laufe der Jahre entstanden. An erster Stelle zu nennen ist die Trägheit des SMA (oft auch als “lag” bezeichnet) und die gleiche Gewichtung aller Datensätze im Betrachtungszeitraum. So hat der letzte Kurs bei einer 14-Tages-Linie die gleiche Wertigkeit für den Indikatorverlauf wie der erste Wert. (Quelle: forex-trading-online.de)</p>
 <h3 id="interpretation_39">Interpretation</h3>
@@ -3086,11 +2982,11 @@ TEMA(IDataSeries inSeries, int period)[int barsAgo]
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>TEMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_58">Parameters</h3>
 <p>inSeries    Eingangsdatenreihe für den Indikator</p>
-<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
+<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_64">Darstellung</h3>
 <p><img alt="TEMA - Triple Exponential Moving Average" src="../media/TEMA.jpg" /></p>
 <h3 id="beispiel_64">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Triple Exponential Moving Average (TEMA) 
+<pre><code class="cs">//Ausgabe des Wertes für den Triple Exponential Moving Average (TEMA)
 Print(&quot;Der aktuelle Wert für TEMA ist&quot; + TEMA(14)[0]);
 </code></pre>
 
@@ -3112,11 +3008,11 @@ TMA(IDataSeries inSeries, int period)[int barsAgo]
 <p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>TMA</strong>(14)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_59">Parameters</h3>
 <p>inSeries    Eingangsdatenreihe für den Indikator</p>
-<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
+<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_65">Darstellung</h3>
 <p><img alt="TMA - Triangular Moving Average" src="../media/TMA.jpg" /></p>
 <h3 id="beispiel_65">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Triangular Moving Average (TMA) 
+<pre><code class="cs">//Ausgabe des Wertes für den Triangular Moving Average (TMA)
 Print(&quot;Der aktuelle Wert für TMA ist&quot; + TMA(14)[0]);
 </code></pre>
 
@@ -3146,10 +3042,10 @@ TRIX(IDataSeries inSeries, int period, int signalPeriod).Signal[int barsAgo]
 <h3 id="darstellung_66">Darstellung</h3>
 <p><img alt="TRIX - Triple Exponential Moving Average" src="../media/TRIX.jpg" /></p>
 <h3 id="beispiel_66">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Triple Exponential Moving Average (TRIX) 
+<pre><code class="cs">//Ausgabe des Wertes für den Triple Exponential Moving Average (TRIX)
 Print(&quot;Der aktuelle Wert für TRIX ist&quot; + TRIX(14, 3)[0]);
 
-//Ausgabe des Wertes für die TRIX-Signallinie 
+//Ausgabe des Wertes für die TRIX-Signallinie
 Print(&quot;Der aktuelle Wert für TRIX ist&quot; + TRIX(14, 3).Signal[0]);
 </code></pre>
 
@@ -3181,7 +3077,7 @@ T3(IDataSeries inSeries, int period, int tCount, double vFactor)[int barsAgo]
 <h3 id="darstellung_67">Darstellung</h3>
 <p><img alt="T3 - Triple Exponential Moving Average" src="../media/T3.jpg" /></p>
 <h3 id="beispiel_67">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den T3 Moving Average (T3) 
+<pre><code class="cs">//Ausgabe des Wertes für den T3 Moving Average (T3)
 Print(&quot;TDer aktuelle Wert für T3 ist&quot; + T3(14, 3, 0.7)[0]);
 </code></pre>
 
@@ -3211,7 +3107,7 @@ VMA(IDataSeries inSeries, int period, int volatilityPeriod)[int barsAgo]
 <h3 id="darstellung_68">Darstellung</h3>
 <p><img alt="VMA - Variable Moving Average" src="../media/VMA.jpg" /></p>
 <h3 id="beispiel_68">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Variable Moving Average (VMA) 
+<pre><code class="cs">//Ausgabe des Wertes für den Variable Moving Average (VMA)
 Print(&quot;Der aktuelle Wert für VMA ist  &quot; + VMA(9, 9)[0]);
 </code></pre>
 
@@ -3304,7 +3200,7 @@ Print(&quot;Der aktuelle Wert für ZLEMA ist &quot; + ZLEMA(14)[0]);
 <h2 id="nbarsup">nBarsUp</h2>
 <h3 id="beschreibung_76">Beschreibung</h3>
 <p>Mit dem Indikator NBarsUp kann nach einer bestimmten Anzahl steigender Schlusskurse gesucht werden.
-Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
+Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie
 - stetig steigende Bars, d.h. Close &lt; Open (rote Candles)
 - stetig steigende Hochs
 - stetig steigende Tiefs</p>
@@ -3337,7 +3233,7 @@ Print(&quot;Es sind 3 nacheinander höher liegende Schlusskurse aufgetreten.&quo
 <h2 id="nbarsdown">nBarsDown</h2>
 <h3 id="beschreibung_77">Beschreibung</h3>
 <p>Mit dem Indikator NBarsDown kann nach einer bestimmten Anzahl fallender Schlusskurse gesucht werden.
-Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie 
+Zusätzlich können noch weitere Bedingungen an die Suche gestellt werden, wie
 - stetig fallende Bars, d.h. Close &lt; Open (rote Candles)
 - stetig fallende Hochs
 - stetig fallende Tiefs</p>
@@ -3673,9 +3569,9 @@ P123Pro(Close, 1).TrendDirection[0] - Inh. TimeFrame   ==   1</p>
 <p>Abfrage, ob im aktuell laufenden kleinsten Trend im Chart der letzte Punkt ein Punkt2 ist:
 P123Pro(Close, 3).LastPoint[0] - Inh. TimeFrame   ==   2</p>
 <p>Abfrage, ob der letzte Bar unter einem gültigen Punkt 3 (also nicht 3?) eines kleinen Trends geschlossen hat:
-P123Pro(Close, 2).isTrendValid[0] - Inh. TimeFrame   ==   1 
+P123Pro(Close, 2).isTrendValid[0] - Inh. TimeFrame   ==   1
 UND (also neue Zeile)
-Close[0] - Inh. TimeFrame   &lt;   P123Pro(Close, 2).ValidP3Price[0] - Inh. TimeFrame </p>
+Close[0] - Inh. TimeFrame   &lt;   P123Pro(Close, 2).ValidP3Price[0] - Inh. TimeFrame</p>
 <h2 id="parabolic-sar">Parabolic SAR</h2>
 <h3 id="beschreibung_81">Beschreibung</h3>
 <p>Das Parabolic Time/Price System wurde 1978 von Welles Wilder jr. in seinem Buch „New Concepts in Technical Trading Systems“ vorgestellt. Der Name Parabolic SAR ergibt sich aus der parabolischen Form der Kurve. SAR steht für „Stop and Reverse“, was bedeutet, dass nach Erreichen des Stopps die Position gedreht wird. Das System ist also immer investiert.
@@ -3737,7 +3633,7 @@ Print(&quot;Der aktuelle Wert des Parabolic SAR ist &quot; + ParabolicSAR(0.02, 
 <h2 id="percentage-price-oscillator-ppo">Percentage Price Oscillator (PPO)</h2>
 <h3 id="beschreibung_82">Beschreibung</h3>
 <p>Der Percentage Price Oscillator (PPO) stellt die prozentuale Differenz zwischen 2 Exponential Moving Averages (EMA's) dar.
-Der PPO gehört in die Klasse der Momentum-Indikatoren. Von der Konstruktion her ähnelt er sehr dem MACD. </p>
+Der PPO gehört in die Klasse der Momentum-Indikatoren. Von der Konstruktion her ähnelt er sehr dem MACD.</p>
 <h3 id="interpretation_52">Interpretation</h3>
 <p>Der PPO kann sehr gut für die Divergenzanalyse eingesetzt werden. Divergenzen haben einerseits den Vorteil, eine hohe Trefferquote zu haben, andererseits kommen sie häufig so früh, dass es für den unerfahrenen Akteur schwer einzuschätzen ist, wann er in den Markt eintreten bzw. diesen verlassen sollte.</p>
 <h3 id="verwendung_80">Verwendung</h3>
@@ -3987,7 +3883,7 @@ PFE(IDataSeries inSeries, int period)[int barsAgo]
 <p>Bei Verwendung der Methode mit einem Index ( z.B. <strong>PFE</strong>(20)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="parameters_71">Parameters</h3>
 <p>inSeries    Eingangsdatenreihe für den Indikator</p>
-<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden </p>
+<p>period      Anzahl der Bars, die in die Berechnung einbezogen werden</p>
 <h3 id="darstellung_79">Darstellung</h3>
 <p><img alt="Polarized Fractal Efficiency (PFE)" src="../media/PFE.jpg" /></p>
 <h3 id="beispiel_81">Beispiel</h3>
@@ -3999,7 +3895,7 @@ Print(&quot;Der aktuelle Wert für den PFE ist: &quot; + PFE(20)[0]);
 <h3 id="beschreibung_86">Beschreibung</h3>
 <p>Der PriceOscillator ist ein Indikator, der auf der Differenz zwischen zwei gleitenden Durchschnitten beruht. Die Differenz wird im Gegensatz zum Percent Price Oscillator (PPO) in absoluten Werten angegeben.</p>
 <h3 id="interpretation_56">Interpretation</h3>
-<p>Der Price Oscillator wird analog zum PPO bzw. zum MACD verwendet. </p>
+<p>Der Price Oscillator wird analog zum PPO bzw. zum MACD verwendet.</p>
 <h3 id="verwendung_84">Verwendung</h3>
 <pre><code class="cs">PriceOscillator(int fast, int slow, int smooth)
 PriceOscillator(IDataSeries inSeries, int fast, int slow, int smooth)
@@ -4198,7 +4094,7 @@ Schwäche auf. Diese Tendenzen können nicht auf Dauer aufrechterhalten werden, 
 beide Währungen im Lauf der Zeit zu Ihrem fairen Wert tendieren. Daher folgt nach diesen
 Überbewertungen des Euro eine Abschwächung des EURUSD Verhältnisses, also ein
 fallen des EURUSD Währungskurses.</p>
-<p>Diese Interpretation ist für jedes Forex-Paar möglich. </p>
+<p>Diese Interpretation ist für jedes Forex-Paar möglich.</p>
 <h4 id="uberschneiden-der-wahrungslinien">Überschneiden der Währungslinien</h4>
 <p>Auch das Schneiden von zwei Währungslinien kann als Signal eingesetzt werden. Im Beispiel entsteht ein Long-Signal (blau), wenn der USD die CHF-Linie von unten nach oben schneidet. Ein Short Signal entsteht, wenn der CHF die USD-Linie von oben nach unten
 schneidet.</p>
@@ -4223,7 +4119,7 @@ RelativePerformance (Instrument)[int barsAgo]
 <h3 id="ruckgabewert_87">Rückgabewert</h3>
 <p><strong>double</strong></p>
 <h3 id="parameters_77">Parameters</h3>
-<p>IInstrument </p>
+<p>IInstrument</p>
 <h3 id="darstellung_84">Darstellung</h3>
 <p><img alt="Relative Performance" src="../media/RelativePerformance.png" /></p>
 <h2 id="relative-spread-strength-rss">Relative Spread Strength (RSS)</h2>
@@ -4265,8 +4161,8 @@ Print(&quot;Der aktuelle Wert des RSS ist &quot; + RSS (10, 40, 5)[0]);
 <h3 id="beschreibung_94">Beschreibung</h3>
 <p>Der Relative Strength Index (RSI) wurde von J. Welles Wilder entwickelt und in seinem 1978 erschienenen Buch "New Concepts in Technical Trading Systems" erstmals vorgestellt. Der RSI ist ein äußerst nützlicher und beliebter Momentum-Oszillator. Er vergleicht die Größe der jüngsten Gewinne mit der Größe der jüngsten Verluste, bewertet also das Verhältnis der Aufwärts- zu den Abwärts-Schlusskursen innerhalb des Betrachtungszeitraums. Die Informationen werden in einer Zahl zwischen 0 und 100 abgebildet.</p>
 <h3 id="interpretation_60">Interpretation</h3>
-<p>Der RSI ist einfach zu interpretieren und er ist einer der am häufigsten verwendeten Indikatoren. Wertpapiere tendieren dazu, länger anhaltende aufwärts- oder abwärtsbewegungen zu vollziehen. Wenn in einem Zeitraum die Kursbewegung zu stark in eine Richtung verläuft, so wird häufig von einer Kursübertreibung gesprochen. Der RSI ist ein Hilsmittel, der darauf abzielt, diese Übertreibung zu messen und quantitativ in einer Skala zwischen 0 und 100 festzuhalten. 
-Dabei gilt, dass ein Wertpapier überverkauft ist, wenn der Indikator sich unter 30 befindet, und überkauft, wenn der Wert mehr als 70 beträgt. Die Erfahrung zeigt, dass der Vorstoß in diese Grenzbereiche ein Warnsignal darstellt. Aber erst der Wendepunkt innerhalb der Gefahrenzonen warnt vor einer Trendwende. </p>
+<p>Der RSI ist einfach zu interpretieren und er ist einer der am häufigsten verwendeten Indikatoren. Wertpapiere tendieren dazu, länger anhaltende aufwärts- oder abwärtsbewegungen zu vollziehen. Wenn in einem Zeitraum die Kursbewegung zu stark in eine Richtung verläuft, so wird häufig von einer Kursübertreibung gesprochen. Der RSI ist ein Hilsmittel, der darauf abzielt, diese Übertreibung zu messen und quantitativ in einer Skala zwischen 0 und 100 festzuhalten.
+Dabei gilt, dass ein Wertpapier überverkauft ist, wenn der Indikator sich unter 30 befindet, und überkauft, wenn der Wert mehr als 70 beträgt. Die Erfahrung zeigt, dass der Vorstoß in diese Grenzbereiche ein Warnsignal darstellt. Aber erst der Wendepunkt innerhalb der Gefahrenzonen warnt vor einer Trendwende.</p>
 <h3 id="weitere-informationen_35">Weitere Informationen</h3>
 <p><a href="http://technische-analyse.eu/index.php?title=RSI">http://technische-analyse.eu/index.php?title=RSI</a></p>
 <h3 id="verwendung_90">Verwendung</h3>
@@ -4331,7 +4227,7 @@ Um die grundlegende Volatilität eines Wertpapiers zu ermitteln eines Wertpapier
 Der Relative Volatility Index (RVI) misst die Richtung der Volatilitätsentwicklung auf einer Skala von 1 bis 100. Indem der RSI auf die Volatilität angewendet wird, werden die Schwankungen auf den Wertebereich zwischen 0 und 100 normiert und sind dadurch sowohl historisch als auch mit anderen Wertpapieren vergleichbar. (Quelle: VTAD)</p>
 <h3 id="interpretation_62">Interpretation</h3>
 <p>Beim RVI bedeuten Werte über 50 eine Zunahme der Volatilität. Werte unter 50 deuten auf eine nachlassende Volatilität hin.
-Donald Dorsey bezeichnet die Verwendung als Filter für andere Indikatoren als Hauptaufgabe des RVI. Der RVI muss Signale eines Indikators bestätigen, damit sie als gültig gelten. 
+Donald Dorsey bezeichnet die Verwendung als Filter für andere Indikatoren als Hauptaufgabe des RVI. Der RVI muss Signale eines Indikators bestätigen, damit sie als gültig gelten.
 Z.B. kann das Überkreuzen eines 10- und eines 20-Tage-Durchschnitts als signalgebender Indikator verwendet werden. Signale für steigende Kurse werden dann ausschließlich ausgeführt, wenn gilt: RVI &gt; 50. Signale für fallende Kurse werden nur berücksichtigt, wenn gilt: RVI &lt; 50.
 Der Ausstieg aus einer Long-Position erfolgt, wenn gilt: RVI &lt; 40. Der Ausstieg aus einer Short-Position erfolgt, wenn gilt: RVI &gt; 60.
 Ein ignoriertes Signal auf steigende Kurse wird nachgeholt, wenn gilt: RVI &gt; 60. Ein ignoriertes Signal auf fallende Kurse wird nachgeholt, wenn gilt: RVI &lt; 40.</p>
@@ -4492,10 +4388,10 @@ StdError(IDataSeries inSeries, int period).Lower[int barsAgo]
 <pre><code class="cs">//Ausgabe des Wertes für die Mittellinie. Dieser Wert entspricht der Linearen Regression
 Print(&quot;Die Mittellinie verläuft aktuell bei: &quot; + StdError(21)[0]);
 
-//Ausgabe des Wertes für das untere Band 
+//Ausgabe des Wertes für das untere Band
 Print(&quot;Das untere Band des Standardfehlers verläuft aktuell bei: &quot; + StdError(21).Lower[0]);
 
-//Ausgabe des Wertes für das obere Band 
+//Ausgabe des Wertes für das obere Band
 Print(&quot;Das obere Band des Standardfehlers verläuft aktuell bei:&quot; + StdError(21).Upper[0]);
 </code></pre>
 
@@ -4877,7 +4773,7 @@ TSF(IDataSeries inSeries, int forecast, int period)[int barsAgo]
 <h3 id="darstellung_100">Darstellung</h3>
 <p><img alt="Time-Series-Forecast (TSF)" src="../media/TSF.jpg" /></p>
 <h3 id="beispiel_100">Beispiel</h3>
-<pre><code class="cs">//Ausgabe des Wertes für den Time-Series-Forecast (TSF) 
+<pre><code class="cs">//Ausgabe des Wertes für den Time-Series-Forecast (TSF)
 Print(&quot;Der aktuelle Wert für TSF ist: &quot; + TSF(3, 14)[0]);
 </code></pre>
 
@@ -4908,22 +4804,23 @@ CurrentDayOHL ist nur zur Verwendung mit Intraday-Datenserien vorgesehen.</p>
 <p>inSeries Eingangsdatenreihe für den Indikator</p>
 <h3 id="ruckgabewert_104">Rückgabewert</h3>
 <p><strong>double</strong></p>
-<p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>CurrentDayOHL</strong>.GetCurrentBar().Open(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
+<p>Bei Verwendung der Methode mit einem Index ( z.B.  <strong>CurrentDayOHL</strong>.CurrentOpen(...)[<strong>int</strong> barsAgo] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.</p>
 <h3 id="verwendung_105">Verwendung</h3>
-<pre><code class="cs">CurrentDayOHL()
+<pre><code class="cs">
+CurrentDayOHL()
 CurrentDayOHL(IDataSeries inSeries)
-
+int barsAgo = 0;
 //Für den Wert von Open
-CurrentDayOHL().GetCurrentBar().Open[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Open[int barsAgo]
+CurrentDayOHL().CurrentOpen[ barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentOpen[ barsAgo]
 
 //Für den Wert von High
-CurrentDayOHL().GetCurrentBar().High[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().High[int barsAgo]
+CurrentDayOHL().CurrentHigh[ barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentBarHigh[ barsAgo]
 
 //Für den Wert von Low
-CurrentDayOHL().GetCurrentBar().Low[int barsAgo]
-CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Low[int barsAgo]
+CurrentDayOHL().CurrentLow[ barsAgo]
+CurrentDayOHL(IDataSeries inSeries).CurrentLow[ barsAgo]
 </code></pre>
 
 <h3 id="darstellung_102">Darstellung</h3>
@@ -4939,7 +4836,7 @@ CurrentDayOHL(IDataSeries inSeries).GetCurrentBar().Low[int barsAgo]
 <p>Für die Darstellung im Chart sind die Schriftart und die Farbe frei wählbar.</p>
 <p>siehe auch <a href="#momentum"><em>Momentum</em></a>, <a href="#rate-of-change-roc"><em>ROC</em></a>.</p>
 <p><strong>Hinweis zur Verwendung im Scanner:</strong>
-Um z.B. die bekannte Liste von Aktien mit ihrer täglichen prozentualen Veränderung zu erhalten, stellen sie bitte CalculateOnBarClose auf "false", TimeFrame auf "1 Day", Calculation mode auf "Percent" und Days ago auf "0". </p>
+Um z.B. die bekannte Liste von Aktien mit ihrer täglichen prozentualen Veränderung zu erhalten, stellen sie bitte CalculateOnBarClose auf "false", TimeFrame auf "1 Day", Calculation mode auf "Percent" und Days ago auf "0".</p>
 <p><img alt="settings" src="../media/Daily_Performance.jpg" /></p>
 <p>Das Ergebnis ist dann folgende Liste:</p>
 <p><img alt="scanner" src="../media/image105.png" /></p>
@@ -5028,7 +4925,7 @@ Der Parameter regelt die Behandlung von Kursdaten von Wochenenden.
 Ist IncludeWeekends = true, werden die Kursdaten, die aus einer Handelssession an einem Wochenende entstehen, der letzten Handelssession zugerechnet.
 Beispiel: Ein Händler in der deutschen Zeitzone bekommt im EURUSD einen Bar für die Session, die am Sonntag abend in Amerika beginnt.
 Die Tageslinien für den Montag werden (bei IncludeWeekend = false) auf der letzten Session (der Sonntags-Session) berechnet.
-Bei IncludeWeekends = true werden die wenigen Stunden aus dem Handel am Sonntag so behandelt, als gehörten sie zur Session vom Freitag. Damit ergeben sich am Montag deutlich relevantere Tageslinien. 
+Bei IncludeWeekends = true werden die wenigen Stunden aus dem Handel am Sonntag so behandelt, als gehörten sie zur Session vom Freitag. Damit ergeben sich am Montag deutlich relevantere Tageslinien.
 Im ersten Bild ist IncludeWeekends = false.
 Hoch und Tief des Vortages werden anhand der kleinen grünen Kerze vom Sonntag berechnet.</p>
 <p><img alt="IncludeWeekends = false" src="../media/DayLinesAdvFalse.jpg" /></p>
@@ -5047,7 +4944,7 @@ Hinweis: Um Widerstands- und Unterstützungszonen anzuzeigen, kann der darauf sp
 GetDayBar ist in erster Linie ein sehr performanter Ersatz für <a href="#priordayohlc"><em>PriorDayOHLC</em></a>.</p>
 <p>Einige Anbieter von Datenfeeds liefern neben Intraday-Daten (Realtime oder verzögerten Daten) auch separate Kurse auf Tagesbasis. Wenn Tageskurse vorhanden sind, werden diese von GetDayBar() direkt verwendet.  </p>
 <p>Dies ist der Unterschied zum Indikator <a href="#priordayohlc"><em>PriorDayOHLC</em></a>, bei dem die Werte immer aus den Intraday-Kursen gebildet werden.</p>
-<p>Wenn sich Unterschiede zwischen den Werten beider Funktionen zeigen, ist die Ursache meist in der abweichenden Definition von Session-Beginn und Session-Ende zu suchen (Zeitzonen-Unterschiede) oder die Daten werden vom Datenanbieter bereits mit diesen Unterschieden geliefert. </p>
+<p>Wenn sich Unterschiede zwischen den Werten beider Funktionen zeigen, ist die Ursache meist in der abweichenden Definition von Session-Beginn und Session-Ende zu suchen (Zeitzonen-Unterschiede) oder die Daten werden vom Datenanbieter bereits mit diesen Unterschieden geliefert.</p>
 <h3 id="parameters_96">Parameters</h3>
 <p>daysAgo Anzahl der Tage in der Vergangenheit
 (0 für den aktuellen Tag)</p>
@@ -5206,7 +5103,7 @@ Print(&quot;das Vortages-Close liegt bei &quot; + PriorDayOHLC().PriorClose[0]);
 <h2 id="sessionbreaklines">SessionBreakLines</h2>
 <h3 id="beschreibung_121">Beschreibung</h3>
 <p>Der Indikator SessionBreakLines zeichnet an der ersten Kerze einer neuen Handelssession eine vertikale Linie.
-Die Besonderheit ist, dass eingestellt werden kann, wie die sog. "Wochenend-Sessions" behandelt werden sollen.  Ist der Parameter "IncludeWeekends" auf "true" gesetzt, werden die kurzen Sessions am Sonntag der Freitags-Session zugerechnet (Beschreibung aus Sicht der deutschen Zeitzone). 
+Die Besonderheit ist, dass eingestellt werden kann, wie die sog. "Wochenend-Sessions" behandelt werden sollen.  Ist der Parameter "IncludeWeekends" auf "true" gesetzt, werden die kurzen Sessions am Sonntag der Freitags-Session zugerechnet (Beschreibung aus Sicht der deutschen Zeitzone).
 Die Linienfarbe, die Linienstärke und die Linienart sind frei wählbar.</p>
 <p>siehe auch <a href="#priordayohlc"><em>PriorDayOHLC</em></a>.</p>
 <h3 id="darstellung_113">Darstellung</h3>
@@ -5224,7 +5121,7 @@ Voraussetzung für die Nutzung ist die Verbindung mit einem Realtime-Datenfeed.<
 TickCounter kann die Anzahl der Ticks sowohl von 0 hochzählen, als auch von der eingestellten max. Anzahl der Ticks in einem Bar herunterzählen auf 0.</p>
 <p>Der Wert kann jeweils als absolute Anzahl von Ticks oder als Prozentwert ausgegeben werden.
 Farbe und Schriftart der Ausgabe sind frei wählbar.</p>
-<p>Der Indikator funktioniert nur in Candle-Charts, in dem die Bars aus einer festen Anzahl Ticks gebildet werden.In Minuten-, Stunden- oder Tagescharts wird eine entsprechende Hinweismeldung ausgegeben. </p>
+<p>Der Indikator funktioniert nur in Candle-Charts, in dem die Bars aus einer festen Anzahl Ticks gebildet werden.In Minuten-, Stunden- oder Tagescharts wird eine entsprechende Hinweismeldung ausgegeben.</p>
 <p><strong>Hinweis:</strong>
 Für die Programmierung in eigenen Scripts verwenden sie bitte Bars.TickCount bzw. Bars.PercentComplete.</p>
 <h3 id="darstellung_115">Darstellung</h3>
@@ -5518,7 +5415,7 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <h2 id="volumerisefall">VolumeRiseFall</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_134">Beschreibung</h3>
-<p>Beim VolumeRiseFall – Indikator handelt es sich um eine normale Volumenanzeige als Volumenbars, jedoch mit anderer Farbgebung als üblicherweise. Ein Volumenbar wird grün gezeichnet, wenn das Volumen dieses Bars höher ist, als das Volumen des vorangegangenen Bars und somit ansteigendes Volumen gegeben ist. Ein Volumenbar wird grau gezeichnet, wenn das Volumen dieses Bars niedriger ist, als das Volumen des vorangegangenen Bars und zeigt somit fallendes Volumen an. </p>
+<p>Beim VolumeRiseFall – Indikator handelt es sich um eine normale Volumenanzeige als Volumenbars, jedoch mit anderer Farbgebung als üblicherweise. Ein Volumenbar wird grün gezeichnet, wenn das Volumen dieses Bars höher ist, als das Volumen des vorangegangenen Bars und somit ansteigendes Volumen gegeben ist. Ein Volumenbar wird grau gezeichnet, wenn das Volumen dieses Bars niedriger ist, als das Volumen des vorangegangenen Bars und zeigt somit fallendes Volumen an.</p>
 <h3 id="parameters_108">Parameters</h3>
 <p>angekündigt werden</p>
 <h3 id="ruckgabewert_120">Rückgabewert</h3>
@@ -5533,28 +5430,28 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_135">Beschreibung</h3>
 <p>Dieser Indikator spürt bullische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis).</p>
-<p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): </p>
+<p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen):</p>
 <ul>
 <li>
-<p>SellingClimax (Dunkelgrün) 
- 6.11..1. Tiefstes Tief seit 50 Perioden 
- 6.11..2. Bar mit großer Range 
- 6.11..3. Extrem hohes Volumen </p>
+<p>SellingClimax (Dunkelgrün)
+ 6.11..1. Tiefstes Tief seit 50 Perioden
+ 6.11..2. Bar mit großer Range
+ 6.11..3. Extrem hohes Volumen</p>
 </li>
 <li>
-<p>DemandComingIn (Limettengrün) 
- 6.11..1. UpBar (aktueller Close größer vorheriger Close) 
- 6.11..2. Vorheriger Bar: DownBar (Close kleiner vorheriger Close) 
- 6.11..3. Vorheriger Bar: Bar mit großer Range 
+<p>DemandComingIn (Limettengrün)
+ 6.11..1. UpBar (aktueller Close größer vorheriger Close)
+ 6.11..2. Vorheriger Bar: DownBar (Close kleiner vorheriger Close)
+ 6.11..3. Vorheriger Bar: Bar mit großer Range
  6.11..4. Vorheriger Bar: Überdurchschnittlich hohes Volumen</p>
 </li>
 <li>
-<p>BagHolding (Hellgrün) 
- 6.11..1. Tiefstes Tief seit 50 Perioden 
- 6.11..2. DownBar 
- 6.11..3. Bar mit geringer Range 
- 6.11..4. Überdurchschnittlich hohes Volumen 
- 6.11..5. Close größer gleich der Mitte des Bars </p>
+<p>BagHolding (Hellgrün)
+ 6.11..1. Tiefstes Tief seit 50 Perioden
+ 6.11..2. DownBar
+ 6.11..3. Bar mit geringer Range
+ 6.11..4. Überdurchschnittlich hohes Volumen
+ 6.11..5. Close größer gleich der Mitte des Bars</p>
 </li>
 </ul>
 <p>Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bullisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.</p>
@@ -5571,29 +5468,29 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <h2 id="volumesentimentshort">VolumeSentimentShort</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_136">Beschreibung</h3>
-<p>Dieser Indikator ist das Gegenstück zum VolumeSentimentLong und spürt bearische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis). </p>
-<p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen): </p>
+<p>Dieser Indikator ist das Gegenstück zum VolumeSentimentLong und spürt bearische Volumen-Aktivität auf Basis der Analyse des Volumens einer Periode, der Preisspanne eines Bars und dem Close des Bars auf (=VolumeSpreadAnalysis).</p>
+<p>Es wird nach 3 Signalen gescreent (angeführt sind die Unterbedingungen, die für das jeweilige Signal erfüllt sein müssen):</p>
 <ul>
 <li>
-<p>BuyingClimax (Dunkelrot) 
- 6.12..1. Höchstes Hoch seit 50 Perioden 
- 6.12..2. Bar mit großer Range 
- 6.12..3. Extrem hohes Volumen </p>
+<p>BuyingClimax (Dunkelrot)
+ 6.12..1. Höchstes Hoch seit 50 Perioden
+ 6.12..2. Bar mit großer Range
+ 6.12..3. Extrem hohes Volumen</p>
 </li>
 <li>
-<p>SupplyComingIn (Rot) 
- 6.12..1. DownBar 
- 6.12..2. Vorheriger Bar: UpBar 
- 6.12..3. Vorheriger Bar: Bar mit großer Range 
- 6.12..4.Vorheriger Bar: Überdurchschnittlich hohes Volumen </p>
+<p>SupplyComingIn (Rot)
+ 6.12..1. DownBar
+ 6.12..2. Vorheriger Bar: UpBar
+ 6.12..3. Vorheriger Bar: Bar mit großer Range
+ 6.12..4.Vorheriger Bar: Überdurchschnittlich hohes Volumen</p>
 </li>
 <li>
-<p>EndOfRisingMarket (Koralle) 
- 6.12..1. Höchstes Hoch seit 50 Perioden 
- 6.12..2. UpBar 
- 6.12..3. Bar mit geringer Range 
- 6.12..4.Überdurchschnittlich hohes Volumen 
- 6.12..5.Close kleiner gleich der Mitte des Bars </p>
+<p>EndOfRisingMarket (Koralle)
+ 6.12..1. Höchstes Hoch seit 50 Perioden
+ 6.12..2. UpBar
+ 6.12..3. Bar mit geringer Range
+ 6.12..4.Überdurchschnittlich hohes Volumen
+ 6.12..5.Close kleiner gleich der Mitte des Bars</p>
 </li>
 </ul>
 <p>Die VolumeSentiments bieten die Grundlage für die Berechnung der VolumenConditions, siehe Punkt 5. Wenn ein bearisches VolumeSentiment auftritt, wird der Bar in der jeweiligen Farbe des Signals gefärbt, diese Farbe können Sie in den Paramtereinstellungen verändern.</p>
@@ -5610,8 +5507,8 @@ Print(&quot;Der aktuelle Wert für den Volume ROC ist:  &quot; + VROC(14, 3)[0])
 <h2 id="volumesessionpro">VolumeSessionPro</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_137">Beschreibung</h3>
-<p>Dieser Indikator entspricht dem bekannten VolumeProfile-Indikator mit Anzeige für einen bestimmten Zeitabschnitt (Session). Sie können die Anfangszeit und die Dauer einer Session beliebig festlegen. Für jede Session wird dann das VolumeProfile angezeigt. Verwenden Sie diesen Indikator nur auf Zeiteinheiten kleiner als 1Tag, je kleiner die Zeiteinheit gewählt ist, desto detaillierter wird das VolumeProfile angezeigt. Der Preis, zu dem in der jeweiligen Session das meiste Volumen gehandelt wurde, wird als roter Balken angezeigt. Der Preisbereich, zu dem z.B. 70% der Trading-Aktivität der jeweiligen Session stattgefunden hat, wird hellblau eingefärbt. Sie können diesen Prozentwert selbst unter dem Parameter „ValueArea“ beliebig festlegen. </p>
-<p>Weiters haben Sie vier verschiedene Optionen um die Volumen-Informationen anzuzeigen: </p>
+<p>Dieser Indikator entspricht dem bekannten VolumeProfile-Indikator mit Anzeige für einen bestimmten Zeitabschnitt (Session). Sie können die Anfangszeit und die Dauer einer Session beliebig festlegen. Für jede Session wird dann das VolumeProfile angezeigt. Verwenden Sie diesen Indikator nur auf Zeiteinheiten kleiner als 1Tag, je kleiner die Zeiteinheit gewählt ist, desto detaillierter wird das VolumeProfile angezeigt. Der Preis, zu dem in der jeweiligen Session das meiste Volumen gehandelt wurde, wird als roter Balken angezeigt. Der Preisbereich, zu dem z.B. 70% der Trading-Aktivität der jeweiligen Session stattgefunden hat, wird hellblau eingefärbt. Sie können diesen Prozentwert selbst unter dem Parameter „ValueArea“ beliebig festlegen.</p>
+<p>Weiters haben Sie vier verschiedene Optionen um die Volumen-Informationen anzuzeigen:</p>
 <p><strong>4.1.1. VOC (Volume on close):</strong> Lädt das gesamte Volumen eines Bars auf den Schlusskurs dieses Bars – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 und eine Range von 1,5 Punkten mit einem Schlusskurs bei 1534,25 hat, werden alle 280 Volumeneinheiten auf den Schlusskurs bei 1534,24 gezählt.</p>
 <p><strong> 4.1.2. TPO (Time price opportunity):</strong>Diese Methode beachtet das tatsächlich gehandelte Volumen nicht, sondern zählt eine einzelne Volumen-Einheit zu jedem Preis in der gehandelten Range des Bars – z.B. wenn ein 5-Minuten Bar das Hoch bei 1534 und das Tief bei 1532,5 hat, wird je eine Volumeneinheit zu folgenden Preisen gezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534</p>
 <p><strong>4.1.3. VWTPO (Volume weighted time price opportunity):</strong> Diese Variante verteilt das gehandelte Volumen eines Bars über dessen Preisrange – z.B. wenn ein 5-Minuten Bar ein Volumen von 280 bei einer Range von 1,5 Punkten aufweist, mit dem Hoch bei 1534 und dem Tief bei 1532,5, dann werden 40 Volumeneinheiten (=280/7) zu jedem der sieben Preise in dieser Range zugezählt: 1532.50, 1532.75, 1533.0, 1533.25, 1533.50, 1533.75, and 1534.</p>
@@ -5711,7 +5608,7 @@ Print(&quot;Der aktuelle Umsatz beträgt &quot; + VolumeUpDown()[0]);
 <h3 id="beschreibung_143">Beschreibung</h3>
 <p>Situationen. Entwickelt wurde er bereits 1966 von Larry Williams. Der Indikator kann in allen Märkten und in allen Zeiteinheiten verwendet werden, wird jedoch meist intraday genutzt. Vom Aussehen her erinnert der Indikator aus der Klasse der Momentum-Oszillatoren am ehesten an die Stochastik.</p>
 <h3 id="interpretation_81">Interpretation</h3>
-<p>Die Werte schwanken zwischen 0 und 100. Der Indikator ist darauf ausgerichtet, die Differenz zwischen dem Periodenhoch und dem heutigen Schlußkurs mit der Handelsspanne des Beobachtungszeitraumes in Bezug zu setzen und ist speziell in Seitwärtsbewegungen und leichten Trendphasen geeignet. In Zeiten mit ausgeprägten Trends ist er nicht sinnvoll anzuwenden. Bei einem Trend kommen die Kauf- bzw. Verkaufssignale zu früh. </p>
+<p>Die Werte schwanken zwischen 0 und 100. Der Indikator ist darauf ausgerichtet, die Differenz zwischen dem Periodenhoch und dem heutigen Schlußkurs mit der Handelsspanne des Beobachtungszeitraumes in Bezug zu setzen und ist speziell in Seitwärtsbewegungen und leichten Trendphasen geeignet. In Zeiten mit ausgeprägten Trends ist er nicht sinnvoll anzuwenden. Bei einem Trend kommen die Kauf- bzw. Verkaufssignale zu früh.</p>
 <p>Der Indikator sollte nur in Verbindung mit trendfolgenden bzw. trendbestätigenden Indikatoren verwendet werden.
 Werte des Indikators über -10 zeigen eine überkaufte Situtation an. Ein Verkaufssignal entsteht bei der Wende des Indikators nach unten.
 Werte des Indikators unter -90 zeigen eine überverkaufte Situation an. Ein Kaufsignal entsteht bei der Wende des Indikators nach oben.</p>
@@ -5743,7 +5640,7 @@ WilliamsR(IDataSeries inSeries, int period)[int barsAgo]
 <h2 id="wyckoffwave">WyckoffWave</h2>
 <p><strong>Die Installation des Technical Analysis-Pakets ist erforderlich, um auf diesen Indikator zugreifen zu können.</strong></p>
 <h3 id="beschreibung_144">Beschreibung</h3>
-<p>Der WyckoffWave-Indikator addiert das Volumen für jeden folgenden Bar, bis eine Preiswelle beendet ist. Sie können einstellen, wie sensibel die Preiswellen festgestellt werden sollen. Wenn das Volumen einer Welle auf besonders hohe Werte steigt, ist sehr oft ein Wendepunkt im Chart erreicht. Wenn die Volumenbars rot gefärbt sind, handelt es sich um eine Short-Welle, grüne Volumenbars indizieren eine Long-Welle. </p>
+<p>Der WyckoffWave-Indikator addiert das Volumen für jeden folgenden Bar, bis eine Preiswelle beendet ist. Sie können einstellen, wie sensibel die Preiswellen festgestellt werden sollen. Wenn das Volumen einer Welle auf besonders hohe Werte steigt, ist sehr oft ein Wendepunkt im Chart erreicht. Wenn die Volumenbars rot gefärbt sind, handelt es sich um eine Short-Welle, grüne Volumenbars indizieren eine Long-Welle.</p>
 <p>Über den Parameter „MedianPeriod“ wählen Sie, wie sensibel der Indikator die einzelnen Preiswellen bestimmen soll. Je geringer der Wert, desto größer die Preiswellen, die der Indikator berechnet.</p>
 <p>Der Parameter Poles dient zur Feinabstimmung der Anzeige der Volumen-Wellen, Sie können einen Parameter zwischen 1-4 wählen. Die Änderung dieses Wertes verursacht meist nur unmerkbare Änderungen.</p>
 <h3 id="parameters_116">Parameters</h3>
@@ -5769,7 +5666,7 @@ WilliamsR(IDataSeries inSeries, int period)[int barsAgo]
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
 ZigZag(IDataSeries inSeries, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagHigh[int barsAgo]
 
-//Für den unteren Extrempunkt 
+//Für den unteren Extrempunkt
 ZigZag(DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
 ZigZag(IDataSeries inSeries, DeviationType deviationType, double deviationValue, bool useHighLow).ZigZagLow[int barsAgo]
 </code></pre>
@@ -5840,18 +5737,18 @@ Print(&quot;Der letzte Tiefpunkt des ZigZag-Indikators liegt bei &quot; + ZigZag
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/AgenaTrader/AgenaIndicator-documentation-de" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/AgenaTrader/AgenaIndicator-documentation-de/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../daten/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -5859,7 +5756,9 @@ Print(&quot;Der letzte Tiefpunkt des ZigZag-Indikators liegt bei &quot; + ZigZag
       
     </span>
 </div>
-    <script src="../js/theme.js"></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
