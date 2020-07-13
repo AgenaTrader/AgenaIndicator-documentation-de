@@ -4750,7 +4750,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **Reversalbars**()\[**int** ba
 
 ### Parameters
 inSeries	Eingangsdatenreihe für den Indikator
-tolerance  s. nachfolgende Beschreibung
+
 
 ### Darstellung
 ![ReversalBars](./media/ReversalBars.jpg)
