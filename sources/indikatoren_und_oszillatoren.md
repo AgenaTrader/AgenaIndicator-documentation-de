@@ -4732,10 +4732,8 @@ Reversalbars()
 Reversalbars(IDataSeries inSeries)
 Reversalbars()[int barsAgo]
 Reversalbars(IDataSeries inSeries)[int barsAgo]
-Reversalbars(int tolerance)
-Reversalbars(IDataSeries inSeries, int tolreance)
-Reversalbars(int tolerance)[int barsAgo]
-Reversalbars(IDataSeries inSeries, int tolerance)[int barsAgo]
+Reversalbars(IDataSeries inSeries)
+Reversalbars(IDataSeries inSeries)[int barsAgo]
 ```
 
 ### Rückgabewert
@@ -4757,11 +4755,6 @@ tolerance  s. nachfolgende Beschreibung
 ### Darstellung
 ![ReversalBars](./media/ReversalBars.jpg)
 
-### Der Parameter Tolerance
-Umkehrstäbe müssen nach Definition ihren vorhergehenden Bar mindestens um 1 Tick übersteigen (Long-Umkehrstab) bzw. unterschreiten (Short-Umkehrstab). Mit dem Parameter Toleranz kann eine zusätzliche Anzahl Ticks angegeben werden, die - im Falle eines Long-Umkehrstabes - das Hoch des Umkehrstabes das Hoch des vorhergehenden Bars mindestens überschreiten muss.
-Der Parameter per default auf 0 gesetzt, was in einem seitwärs verlaufenden Markt dazu führen kann, dass sehr viele nicht relevante Umkehrstäbe markiert werden.  
-
-![The tolerance parameter](./media/image89.png)
 
 ### Beispiel
 ```cs
