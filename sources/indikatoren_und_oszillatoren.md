@@ -3217,6 +3217,42 @@ Value.**Set**((last + InSeries\[0\] - InSeries\[Period\]) / Math.**Min**(Process
 //Ausgabe des Wertes für den Simple Moving Average (SMA)
 Print("Der aktuelle Wert für SMA ist " + SMA(14)[0]);
 ```
+## GapSMA - Gap Simple Moving Average
+### Beschreibung
+The SimpleSMA has the Issue, that in case of an big opening Gap, the SMA takes very long to adjust to the candles.
+The GapSMA ignores the Gaps and ends calculating on the Market Close and starts calculating on the Market Open again.
+
+If there is a Gap between the Market Close and the Market Open it will not be taken into account.
+
+
+### Verwendung
+```cs
+GapSMA(int period)
+GapSMA(IDataSeries InSeries, int period)
+GapSMA(int period)[int barsAgo]
+GapSMA(IDataSeries InSeries, int period)[int barsAgo]
+```
+
+### Rückgabewert
+**double**
+
+Bei Verwendung der Methode mit einem Index ( z.B. **GapSMA**(14)\[**int** barsAgo\] ) wird der Wert des Indikators für den referenzierten Bar ausgegeben.
+
+### Parameters
+inSeries	Eingangsdatenreihe für den Indikator
+
+period		Anzahl der Bars, die in die Berechnung einbezogen werden
+
+### Darstellung
+![GapSMA - Gap Simple Moving Average](./media/GapSma.png)
+
+
+### Beispiel
+```cs
+//Ausgabe des Wertes für den Gap Simple Moving Average (GapSMA)
+Print("Der aktuelle Wert für GapSMA ist" + GapSMA(14)[0]);
+```
+
 
 ## SMA MTF (MultiTimeFrame)
 ### Beschreibung

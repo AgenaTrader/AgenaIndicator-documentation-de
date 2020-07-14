@@ -92,6 +92,7 @@ Möchten Sie mehr über die AgenaTrader Indikatoren zu lernen? Wir haben die Res
 -   [KAMA - Kaufman's Adaptive Moving Average](./indikatoren_und_oszillatoren.md#kama-kaufmans-adaptive-moving-average)
 -   [MAMA - Mesa Adaptive Moving Average](./indikatoren_und_oszillatoren.md#mama-mesa-adaptive-moving-average)
 -   [SMA - Simple Moving Average](./indikatoren_und_oszillatoren.md#sma-simple-moving-average)
+-   [GapSMA - Gap Simple Moving Average](./indikatoren_und_oszillatoren.md#gap-sma-simple-moving-average)
 -   [SMA MTF (MultiTimeFrame)](./indikatoren_und_oszillatoren.md#sma-mtf-multitimeframe)
 -   [SMMA - Smoothed Moving Average](./indikatoren_und_oszillatoren.md#smma-smoothed-moving-average)
 -   [TEMA - Triple Exponential Moving Average](./indikatoren_und_oszillatoren.md#tema-triple-exponential-moving-average)
