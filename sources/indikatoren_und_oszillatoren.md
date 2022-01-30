@@ -734,7 +734,7 @@ Bei Verwendung der Methode mit einem Index ( z.B. **CandleStickPattern**(...)\[*
 
 ### Beispiel
 ```cs
-if (CandelStickPattern(CandleStickPattern.ShootingStar, 5)[0] == 1)
+if (CandleStickPattern(CandleStickPatterns.ShootingStar, 5)[0] == 1) [0] == 1)
 Print("Pattern ShootingStar found!");
 ```
 
